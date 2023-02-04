@@ -10,18 +10,15 @@ An **interface** is a general term which represents how one can interact with a 
 
 For example, take computers.
 The computer, which represents the relevant system, is treated as a magical unknown entity by the user, which is to say, they don't know or care how it works.
-They use the keyboard and mouse to send signals to the computer, and look at the computer screen to view responses from the system (e.g. clicking the mouse button opens a program, typing on the keyboard types the keypresses into the text editor software).
-These things represent the interface of a computer system.
+They use the keyboard and mouse to send signals to the computer, and look at the computer screen to view responses from the system (e.g. clicking the mouse button opens a program, typing on the keyboard types the key presses into the text editor software).
+These two components, namely the input and the output, represent the interface of a computer system.
 The user is completely oblivious to the inner workings of the computer system, they might as well not know it exists, because all they ever interact with is the interface.
+In other words, the system can be treated as a **black box**.
 
-> If you find not knowing it exists unbelievable, ask youself if you know what exact parts your computer is made up of,
-> or could you tell by looking at the interface if some of those parts were swapped out.
-> You probably don't, which goes to show that your computer is likely just a "black box" for you.
-
-To be clear, the computer system is never considered a part of the interface, the interface is comprised of just the input and the output devices that help the user interact with the computer system.
+To be clear, the computer system is never considered part of the interface, the interface of computer is comprised of just the input and the output devices that help the user interact with the computer system.
 Anything that's used to interact with the computer is considered part of the interface, even USB ports on the computer box, or the power switch.
 
-In general terms, the user of a system that does actions is often called an **actor**, while the system in question is often referred to as an **implementation**, especially in the programming sense of the term.
+In general terms, the user of a system that does actions is often called an **actor**, while the details of the system in question are often referred to as the **implementation**, especially in the programming sense of the term.
 
 These terms are often used in the design of software systems.
 
@@ -33,7 +30,7 @@ Let's take another example -- a video game.
 It's common and good practice to separate the game components into the underlying game logic part, the user input part and the graphics, or the view part.
 The **view** or the graphics part is what the user would see on the screen, aka the character animations, buttons, damage numbers, etc.
 The user input part, often named **controller**, is the part of the system responsible for converting user input, like clicking buttons on the screen or keys on the keyboard, into commands that can be interpreted by the game logic, like moving the character, or zooming the camera, or using an ability.
-The game logic part, also named **model**, applies the user input from the controller and displays the results via the view to the user.
+The game logic part, also named **model**, applies the commands from the controller and displays the results via the view to the user.
 
 Now, this setup would interact with the user through the view (showing the game state to the user), but also by interpreting commands from the input devices, via the controller.
 So it's not wrong to say that the controller is also part of the interface.
@@ -41,23 +38,28 @@ So it's not wrong to say that the controller is also part of the interface.
 
 ### Breaking the system down into individual parts
 
-The difference between an interface and a **user interface** is that the latter is designed specifically for interaction with humans, while interface is a more general term. It's possible for one interface to interact with another.
+The difference between an interface and a **user interface** is that the latter is designed specifically for interaction with humans, while an interface is a more general thing.
+It's possible for one interface to interact with another.
 
-For example, a keyboard has on its own a interface.
+For example, a keyboard has its own interface.
 A keyboard has an input part (the keys), the implementation or the **"black box"** system part (how key presses are converted into electric waves) and the output part (the wire that connects to the computer).
 The input and the output parts comprise the interface of a keyboard.
 The input is manipulated by humans, while the output is interpreted by the computer.
-An observation is that in an interface, the actor is not necessarily the **observer** of the effects. In case of computers, the effect eventually reaches the actor via the graphical interface, but in scope of a keyboard it's not necessarily the case.
+An observation is that in an interface, the actor is not necessarily the **observer** of the effects.
+In case of computers, the effect eventually reaches the actor via the graphical interface, but in scope of a keyboard it's not necessarily the case.
 
 Likewise, a computer screen has its own interface.
 It's got the actual screen that's seen by the user, it's got the input wire that receives signals from the computer, and it's got some system that knows which LEDs to light up.
 In this case, the actor of this system is the computer, while the observer is the person looking at the screen.
 
 Any part of e.g. the computer is its own little system and has its own little interface.
-This is done this way so that any part could be substituted for any other compatible part, making the entire system highly **modular** and flexible. For example, you can connect any keyboard or any screen to a computer, as long as it has a kind of wire that the *output* (screen) or *input* (keyboard) *interface* of a computer supports.
+One of the reasons this is done this way is to enable any part to be substituted for any other compatible part, making the entire system highly **modular** and flexible.
+For example, you can connect any keyboard or any screen to a computer, as long as it has a kind of wire that the *output* (screen) or *input* (keyboard) *interface* of a computer supports.
 
-So interfaces allow part designers to **implement** the parts in isolation, as long as these parts comply to the interface specification that the part **consumers** (the interfaces that will allow connection to these parts / use them) require, consituting the interface of these parts.
-In other words, interfaces are the outward facing components of things, which are able to connect to other things via their interfaces, because their inputs correspond to the other's outputs, or vice-versa (they match each other's expections).
+The second benefit of interfaces is that they allow part designers to **implement** the parts in isolation, as long as these parts comply to the interface specification that the part **consumers** (the interfaces that will allow connection to these parts / use them) require, consituting the interface of these parts.
+
+To sum up, interfaces are the outward facing components of things.
+Interfaces enable connecting of multiple components via their interfaces, such that the inputs of one correspond to the outputs of the other, or vice-versa (they match each other's expections).
 
 
 ## Abstraction
@@ -95,8 +97,6 @@ Read e.g. [this](https://www.computerhope.com/jargon/c/compile.htm) if you don't
 
 ## Command Line
 
-[General information about CLIs](https://www.lifewire.com/what-is-a-command-line-interpreter-2625827)
-
 A command line interface is an interface that allows launching or executing commands (or programs) and communicating with them.
 On Windows, the most commonly used, simple CLI application (program) is the CMD (short for "command").
 
@@ -110,7 +110,7 @@ After starting a program, and until it completes, whatever you type into the CLI
 Like mentioned above, to start a program, you type its name and hit Enter.
 For example, if there's a file named "prog.exe" and you type "prog.exe" and hit Enter, it will run the file "prog.exe".
 ".exe" is optional to type on Windows, so just typing "prog" would also start the same program.
-".exe" is the only special extension that works like this, to run programs with other extensions you need to type the name fully.
+".exe" is one of few special extensions that work like this, to run programs with other extensions you need to type the name fully.
 
 > "exe" stands for "executable".
 
@@ -122,7 +122,8 @@ The CWD path can be used by the program in order to find out where it's being ru
 
 You can change the working directory by using the `cd` command.
 - To navigate to a subfolder named "A", you do `cd A`.
-- To return back to the parent directory, you do `cd ..`, double dot meaning "go back".
+- To return back to the parent directory, you do `cd ..`.
+  The double dot can be used multiple times and even accompanied with normal child directory names, for example `cd ../../A` would mean "go back, go back, go to directory A", so "go to directory A in the grandparent".
 - Finally, if you want to change the working directory to some **absolute path**, like `C:/Users/Anton/Documents/projects` or `D:/Downloads/movies`, you just type `cd` followed by that absolute path.
 - If you're trying to switch e.g. from disk `C` to disk `D`, you also need to input the disk name you're trying to switch to as a command `D:` and hit Enter.
 
