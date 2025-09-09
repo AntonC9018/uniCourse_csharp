@@ -1,4 +1,6 @@
-﻿var client = new Client
+﻿using System.Diagnostics;
+
+var client = new Client
 {
     FirstName = "Anton",
     LastName = "Curmanschii",
@@ -28,8 +30,6 @@ if (Functions.AreSet(whereAreDifferent, diffCheckMask))
     Console.WriteLine("Either first or last name are different");
 }
 
-
-
 return;
 
 // Field Masks
@@ -49,6 +49,16 @@ record struct ClientFieldMask
     public bool BelongsToGroups;
 }
 
+enum ClientField
+{
+    FirstName,
+    LastName,
+    BelongToGroups,
+    Count,
+
+    FirstField = FirstName,
+}
+
 enum Group
 {
     HighlyValued,
@@ -57,6 +67,68 @@ enum Group
 
 static class Functions
 {
+    // Contract
+    public static bool Get(
+        ClientFieldMask m,
+        ClientField field)
+    {
+        switch (field)
+        {
+            case ClientField.FirstName:
+            {
+                return m.FirstName;
+            }
+            case ClientField.LastName:
+            {
+                return m.LastName;
+            }
+            case ClientField.BelongToGroups:
+            {
+                return m.BelongsToGroups;
+            }
+            default:
+            {
+                // Debug.Fail("Invalid value");
+                throw new ArgumentException(
+                    paramName: nameof(field),
+                    message: "Invalid value");
+            }
+        }
+        // Assert: на время разработки. расчитывается, что проблема будет сразу устранена.
+        // exception
+    }
+
+    public static ClientFieldMask Set(
+        ClientFieldMask mask,
+        ClientField field,
+        bool value)
+    {
+        switch (field)
+        {
+            case ClientField.FirstName:
+            {
+                mask.FirstName = value;
+                return mask;
+            }
+            case ClientField.LastName:
+            {
+                mask.LastName = value;
+                return mask;
+            }
+            case ClientField.BelongToGroups:
+            {
+                mask.BelongsToGroups = value;
+                return mask;
+            }
+            default:
+            {
+                throw new ArgumentException(
+                    paramName: nameof(field),
+                    message: "Invalid value");
+            }
+        }
+    }
+
     public static bool FirstNameEquals(Client a, Client b)
     {
         if (a.FirstName.SequenceEqual(b.FirstName))
@@ -90,25 +162,14 @@ static class Functions
         ClientFieldMask mask,
         ClientFieldMask toCheck)
     {
-        if (toCheck.FirstName)
+        for (var i = ClientField.FirstField; i != ClientField.Count; i++)
         {
-            if (!mask.FirstName)
+            if (Get(toCheck, i))
             {
-                return false;
-            }
-        }
-        if (toCheck.LastName)
-        {
-            if (!mask.LastName)
-            {
-                return false;
-            }
-        }
-        if (toCheck.BelongsToGroups)
-        {
-            if (!mask.BelongsToGroups)
-            {
-                return false;
+                if (Get(mask, i))
+                {
+                    return false;
+                }
             }
         }
         return true;
@@ -120,17 +181,15 @@ static class Functions
         ClientFieldMask mask,
         ClientFieldMask toDelete)
     {
-        if (toDelete.FirstName)
+        for (var i = ClientField.FirstField; i != ClientField.Count; i++)
         {
-            mask.FirstName = false;
-        }
-        if (toDelete.LastName)
-        {
-            mask.LastName = false;
-        }
-        if (toDelete.BelongsToGroups)
-        {
-            mask.BelongsToGroups = false;
+            if (Get(toDelete, i))
+            {
+                mask = Set(
+                    mask: mask,
+                    field: i,
+                    value: false);
+            }
         }
         return mask;
     }
