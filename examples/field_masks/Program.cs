@@ -25,6 +25,7 @@ var diffCheckMask = new ClientFieldMask
     FirstName = true,
     LastName = true,
 };
+diffCheckMask.FirstName = true;
 if (Functions.AreSet(whereAreDifferent, diffCheckMask))
 {
     Console.WriteLine("Either first or last name are different");
@@ -44,16 +45,59 @@ sealed class Client
 
 record struct ClientFieldMask
 {
-    public bool FirstName;
-    public bool LastName;
-    public bool BelongsToGroups;
+    internal int _value;
+
+    public bool Get(ClientField field)
+    {
+        int firstNameIndex = (int) field;
+        int v = 1 << firstNameIndex;
+        int valueWithOnlyRequiredBit = _value & v;
+        // _value   = 1 1 0 1
+        // v        = 1 0 0 0
+        //          = 1 0 0 0
+
+        // _value   = 0 1 0 1
+        // v        = 1 0 0 0
+        //          = 0 0 0 0
+        return valueWithOnlyRequiredBit != 0;
+    }
+
+    public void Set(ClientField field, bool value)
+    {
+        int firstNameIndex = (int) field;
+        int v = 1 << firstNameIndex;
+        if (value == true)
+        {
+            _value |= v;
+        }
+        else
+        {
+            _value = _value & (~v);
+        }
+    }
+
+    public bool FirstName
+    {
+        get => Get(ClientField.FirstName);
+        set => Set(ClientField.FirstName, value);
+    }
+    public bool LastName
+    {
+        get => Get(ClientField.LastName);
+        set => Set(ClientField.LastName, value);
+    }
+    public bool BelongsToGroups
+    {
+        get => Get(ClientField.BelongToGroups);
+        set => Set(ClientField.BelongToGroups, value);
+    }
 }
 
 enum ClientField
 {
-    FirstName,
-    LastName,
-    BelongToGroups,
+    FirstName = 0,
+    LastName = 1,
+    BelongToGroups = 2,
     Count,
 
     FirstField = FirstName,
@@ -67,68 +111,6 @@ enum Group
 
 static class Functions
 {
-    // Contract
-    public static bool Get(
-        ClientFieldMask m,
-        ClientField field)
-    {
-        switch (field)
-        {
-            case ClientField.FirstName:
-            {
-                return m.FirstName;
-            }
-            case ClientField.LastName:
-            {
-                return m.LastName;
-            }
-            case ClientField.BelongToGroups:
-            {
-                return m.BelongsToGroups;
-            }
-            default:
-            {
-                // Debug.Fail("Invalid value");
-                throw new ArgumentException(
-                    paramName: nameof(field),
-                    message: "Invalid value");
-            }
-        }
-        // Assert: на время разработки. расчитывается, что проблема будет сразу устранена.
-        // exception
-    }
-
-    public static ClientFieldMask Set(
-        ClientFieldMask mask,
-        ClientField field,
-        bool value)
-    {
-        switch (field)
-        {
-            case ClientField.FirstName:
-            {
-                mask.FirstName = value;
-                return mask;
-            }
-            case ClientField.LastName:
-            {
-                mask.LastName = value;
-                return mask;
-            }
-            case ClientField.BelongToGroups:
-            {
-                mask.BelongsToGroups = value;
-                return mask;
-            }
-            default:
-            {
-                throw new ArgumentException(
-                    paramName: nameof(field),
-                    message: "Invalid value");
-            }
-        }
-    }
-
     public static bool FirstNameEquals(Client a, Client b)
     {
         if (a.FirstName.SequenceEqual(b.FirstName))
@@ -162,35 +144,32 @@ static class Functions
         ClientFieldMask mask,
         ClientFieldMask toCheck)
     {
-        for (var i = ClientField.FirstField; i != ClientField.Count; i++)
-        {
-            if (Get(toCheck, i))
-            {
-                if (Get(mask, i))
-                {
-                    return false;
-                }
-            }
-        }
-        return true;
+        // mask:     1 1 0 1
+        // toCheck:  1 1 0 0
+        // &:        1 1 0 0
+
+        // mask:     1 0 0 1
+        // toCheck:  1 1 0 0
+        // &:        1 0 0 0
+        return (mask._value & toCheck._value) == toCheck._value;
     }
 
     // HashSet Except
-    // побитовый &
+    // побитовый & ~x
     public static ClientFieldMask Without(
         ClientFieldMask mask,
         ClientFieldMask toDelete)
     {
-        for (var i = ClientField.FirstField; i != ClientField.Count; i++)
-        {
-            if (Get(toDelete, i))
-            {
-                mask = Set(
-                    mask: mask,
-                    field: i,
-                    value: false);
-            }
-        }
+        // mask:      1 1 0
+        // delete:    1 0 1
+        // ~delete:   0 1 0
+        // result:    0 1 0
+
+        // mask:      1 1 1
+        // delete:    1 0 0
+        // ~delete:   0 1 1
+        // result:    0 1 1
+        mask._value = mask._value & ~toDelete._value;
         return mask;
     }
 
