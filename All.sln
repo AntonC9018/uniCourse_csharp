@@ -1,0 +1,21 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "field_masks", "field_masks\field_masks.csproj", "{088C22F7-C8A2-45C9-8868-999DDE5AA56B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{088C22F7-C8A2-45C9-8868-999DDE5AA56B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{088C22F7-C8A2-45C9-8868-999DDE5AA56B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{088C22F7-C8A2-45C9-8868-999DDE5AA56B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{088C22F7-C8A2-45C9-8868-999DDE5AA56B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {47497782-2BB4-4EE7-9482-3686AACC5AB9}
+	EndGlobalSection
+EndGlobal
