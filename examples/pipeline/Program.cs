@@ -1,4 +1,16 @@
 ﻿var pipeline = new Pipeline();
+pipeline.Steps.Add(Wrap(new ChangeNamePipelineStep
+{
+    Name = "Lucy",
+}));
+pipeline.Steps.Add(Wrap(new PrintDogPipelineStep
+{
+}));
+
+IPipelineStep Wrap(IPipelineStep step)
+{
+    return new PrintStep_AndExecute_PipelineStep(step);
+}
 
 while (true)
 {
@@ -97,6 +109,29 @@ interface IPipelineStep
 {
     void Execute(Context context);
     void Introspect();
+}
+
+// Wrapper / Proxy
+sealed class PrintStep_AndExecute_PipelineStep : IPipelineStep
+{
+    public readonly IPipelineStep Step;
+
+    public PrintStep_AndExecute_PipelineStep(IPipelineStep step)
+    {
+        Step = step;
+    }
+
+    public void Execute(Context context)
+    {
+        Step.Introspect();
+        Step.Execute(context);
+    }
+
+    public void Introspect()
+    {
+        Console.WriteLine("PrintName_AndExecute_ThingBelowMe");
+        Step.Introspect();
+    }
 }
 
 sealed class ChangeOwnerPipelineStep : IPipelineStep
