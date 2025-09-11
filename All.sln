@@ -1,5 +1,7 @@
 ﻿Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "field_masks", "field_masks\field_masks.csproj", "{088C22F7-C8A2-45C9-8868-999DDE5AA56B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "field_masks", "examples\field_masks\field_masks.csproj", "{5463EAE1-5E26-4B0B-BB44-8C7293E6A34F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "pipeline", "examples\pipeline\pipeline.csproj", "{3F1C776D-0A51-41CC-979E-B0EF6A991D2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -7,10 +9,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{088C22F7-C8A2-45C9-8868-999DDE5AA56B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{088C22F7-C8A2-45C9-8868-999DDE5AA56B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{088C22F7-C8A2-45C9-8868-999DDE5AA56B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{088C22F7-C8A2-45C9-8868-999DDE5AA56B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5463EAE1-5E26-4B0B-BB44-8C7293E6A34F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5463EAE1-5E26-4B0B-BB44-8C7293E6A34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5463EAE1-5E26-4B0B-BB44-8C7293E6A34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5463EAE1-5E26-4B0B-BB44-8C7293E6A34F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F1C776D-0A51-41CC-979E-B0EF6A991D2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F1C776D-0A51-41CC-979E-B0EF6A991D2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F1C776D-0A51-41CC-979E-B0EF6A991D2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F1C776D-0A51-41CC-979E-B0EF6A991D2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
