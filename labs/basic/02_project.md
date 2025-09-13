@@ -1,8 +1,7 @@
 # Лабораторная работа 2
 
-Тема: **Понимание базового проекта**.
-
-[Видео](https://www.youtube.com/watch?v=jLWY_id6nXU&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=2)
+- Тема: **Понимание базового проекта**.
+- [Видео](https://www.youtube.com/watch?v=jLWY_id6nXU&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=2)
 
 
 ## Концепты, которые необходимо изучить
