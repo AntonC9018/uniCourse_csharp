@@ -1,7 +1,7 @@
 # Лабораторная работа 10
 
 - Тема: **static классы**.
-- [Видео (до минуты 5)](https://www.youtube.com/watch?v=zeuNRQBdwuY&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=7), 
+- [Видео (до минуты 5)](https://www.youtube.com/watch?v=UVLUbfcCcG0&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=8), 
 
 ## Задания
 
