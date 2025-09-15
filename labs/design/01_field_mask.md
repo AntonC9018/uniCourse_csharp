@@ -1,7 +1,7 @@
 # Лабораторная работа #1
 
 - Тема: **Field Mask**
-- [Видео](https://www.youtube.com/watch?v=jEsu2rlfRZE&list=PL4sUOB8DjVlXKTknA5IW75BGwcTw6PU3r&index=1)
+- [Видео](https://www.youtube.com/watch?v=BmdWiUEgwNw&list=PL4sUOB8DjVlXKTknA5IW75BGwcTw6PU3r&index=2)
 - [Поэтапный код из видео](https://github.com/AntonC9018/uniCourse_csharp/pull/1) (смотрите коммиты)
 
 ## Концепты
