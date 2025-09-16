@@ -1,7 +1,7 @@
 # Лабораторная работа 2
 
 - Тема: **Pipelines**.
-- [Видео (сырое)](https://www.youtube.com/watch?v=tsx90GHPKkw&list=PL4sUOB8DjVlXKTknA5IW75BGwcTw6PU3r&index=3)
+- [Видео](https://www.youtube.com/watch?v=X4IDL3CmV-A&list=PL4sUOB8DjVlXKTknA5IW75BGwcTw6PU3r&index=3)
 - [Поэтапный код из видео](https://github.com/AntonC9018/uniCourse_csharp/pull/3) (смотрите коммиты)
 
 ## Концепты
