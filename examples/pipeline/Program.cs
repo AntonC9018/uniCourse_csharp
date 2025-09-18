@@ -97,8 +97,6 @@ while (true)
 // });
 //
 
-return;
-
 sealed class Context
 {
     public List<Owner> PreviousOwners = [];
