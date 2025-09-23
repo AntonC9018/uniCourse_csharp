@@ -1,7 +1,7 @@
 # Лабораторная работа 3
 
 - Тема: **Настройка git**.
-- [Видео](https://www.youtube.com/watch?v=fcxFAW1EE_A&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=3).
+- [Видео](https://www.youtube.com/watch?v=fcxFAW1EE_A&list=PL4sUOB8DjVlWUcSaCu0xPcK7rYeRwGpl7&index=13).
 
 ## Задания
 
