@@ -25,6 +25,14 @@ s.Age(32);
 
 // Could program different operations for the builder vs the immutable object.
 var c = city.Build();
+
+// a) overload
+// b) type safety
+// CitizenId citizenId = new(0);
+// var citizen = c.Get(citizenId);
+
+Home? h = c.Get(c.Citizens[0].Home);
+
 Console.WriteLine(c.Citizens[0].Age);
 Console.WriteLine(c.Citizens[1].Age);
 Console.WriteLine(c.Citizens[2].Age);
@@ -42,7 +50,7 @@ static void InitializationWithoutBuilder()
     {
         Age = 18,
         Name = "John",
-        Home = home,
+        Home = new(0),
     };
     var city = new City
     {
@@ -97,19 +105,11 @@ sealed class CityBuilder
             retHomes[i] = immut;
         }
 
-        var mutToImmutHome = new Dictionary<MutableHome, Home>(retHomes.Length);
-        for (int i = 0; i < retHomes.Length; i++)
-        {
-            var mut = Model.Homes[i];
-            var immut = retHomes[i];
-            mutToImmutHome.Add(mut, immut);
-        }
-
         var retCitizens = new Citizen[Model.Citizens.Count];
         for (int i = 0; i < retCitizens.Length; i++)
         {
             var mut = Model.Citizens[i];
-            var home = mut.Home != null ? mutToImmutHome[mut.Home] : null;
+            var home = mut.Home;
             if (mut.Name is not { } name)
             {
                 throw new InvalidOperationException("Name not given for citizen");
@@ -195,16 +195,27 @@ sealed class MutableCitizen
 
     public int Age = InvalidAge;
     public string? Name = null;
-    public MutableHome? Home = null;
+    public OptionalHomeId Home = null;
 }
 
 // Single Responsibility
 sealed class CitizenBuilder
 {
-    public readonly MutableCitizen Model;
-    public CitizenBuilder(MutableCitizen model)
+    public readonly CitizenId Id;
+    public readonly CityBuilder Builder;
+
+    public MutableCitizen Model
     {
-        Model = model;
+        get
+        {
+            return Builder.Model.Citizens[Id.Value];
+        }
+    }
+
+    public CitizenBuilder(CityBuilder builder, CitizenId citizenId)
+    {
+        Builder = builder;
+        Id = citizenId;
     }
 
     // Encapsulation is on the builder level
@@ -298,16 +309,75 @@ sealed class City
 {
     public required Citizen[] Citizens { get; init; }
     public required Home[] Homes { get; init; }
+
+    public Citizen Get(CitizenId id)
+    {
+        return Citizens[id.Value];
+    }
+    public Home Get(HomeId id)
+    {
+        return Homes[id.Value];
+    }
+    public Home? Get(OptionalHomeId id)
+    {
+        if (id.IsNull)
+        {
+            return null;
+        }
+        return Get(id.Id);
+    }
 }
 
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value
 
-sealed class Citizen
+sealed class Citizen()
 {
     public required string Name;
     public required int Age;
-    public Home? Home;
+    public OptionalHomeId Home = new();
     // public Citizen[] Cohabitants;
+}
+
+readonly record struct CitizenId
+{
+    public readonly int Value;
+
+    public CitizenId(int value)
+    {
+        Value = value;
+    }
+}
+
+readonly record struct OptionalHomeId
+{
+    public static readonly HomeId NoHomeId = new(-1);
+
+    public readonly HomeId Id;
+
+    public readonly bool IsNull => Id == NoHomeId;
+
+    public OptionalHomeId(HomeId id)
+    {
+        Id = id;
+    }
+
+    public OptionalHomeId() : this(NoHomeId)
+    {
+    }
+}
+
+// serialization
+// lifetime control
+// flat
+// builder (без словарей)
+readonly record struct HomeId
+{
+    public readonly int Value;
+
+    public HomeId(int value)
+    {
+        Value = value;
+    }
 }
 
 sealed class Home
