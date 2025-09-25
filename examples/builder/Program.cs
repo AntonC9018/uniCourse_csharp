@@ -10,9 +10,7 @@ s.Home(home);
 s.Age(32);
 
 {
-    var john = s.Citizen();
-    john.Age(18);
-    john.Name("John");
+    s.Citizen().Age(18).Name("John");
 }
 {
     var joe = s.Citizen();
@@ -140,11 +138,10 @@ sealed class CityBuilder
     }
 }
 
-sealed class CityScopeBuilder : ICitizenBuilder
+sealed class CityScopeBuilder
 {
     public readonly CityBuilder CityBuilder;
     public readonly CitizenBuilder CitizenBuilder;
-    public MutableCitizen Model => CitizenBuilder.Model;
 
     public CityScopeBuilder(CityBuilder city)
     {
@@ -174,6 +171,19 @@ sealed class CityScopeBuilder : ICitizenBuilder
     {
         return CityBuilder.Home();
     }
+
+    public void Age(int age)
+    {
+        CitizenBuilder.Age(age);
+    }
+    public void Name(string name)
+    {
+        CitizenBuilder.Name(name);
+    }
+    public void Home(HomeBuilder home)
+    {
+        CitizenBuilder.Home(home);
+    }
 }
 
 // The model is without encapsulation
@@ -187,40 +197,34 @@ sealed class MutableCitizen
 }
 
 // Single Responsibility
-sealed class CitizenBuilder : ICitizenBuilder
+sealed class CitizenBuilder
 {
-    public MutableCitizen Model { get; }
-
+    public readonly MutableCitizen Model;
     public CitizenBuilder(MutableCitizen model)
     {
         Model = model;
     }
-}
 
-interface ICitizenBuilder
-{
-    MutableCitizen Model { get; }
-}
-
-static class CitizenBuilderExtensions
-{
     // Encapsulation is on the builder level
-    public static void Age(this ICitizenBuilder builder, int age)
+    public CitizenBuilder Age(int age)
     {
         // Contract
         if (age < 0)
         {
             throw new InvalidOperationException("Invalid age");
         }
-        builder.Model.Age = age;
+        Model.Age = age;
+        return this;
     }
-    public static void Name(this ICitizenBuilder builder, string name)
+    public CitizenBuilder Name(string name)
     {
-        builder.Model.Name = name;
+        Model.Name = name;
+        return this;
     }
-    public static void Home(this ICitizenBuilder builder, HomeBuilder home)
+    public CitizenBuilder Home(HomeBuilder home)
     {
-        builder.Model.Home = home.Home;
+        Model.Home = home.Home;
+        return this;
     }
 }
 
