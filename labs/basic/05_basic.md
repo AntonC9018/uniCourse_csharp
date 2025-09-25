@@ -96,7 +96,7 @@
    Поэтому, возвращаемый тип будет int.
    
    ```csharp
-   int CustomerTotal(Prices prices, int choice1, int choice2)
+   static int CustomerTotal(Prices prices, int choice1, int choice2)
    {
        // ...
    }
@@ -114,7 +114,7 @@
    Цена это результат, тип цены - `int`, значит возвращаемый тип тоже `int`.
 
    ```csharp
-   int ChoicePrice(Prices prices, int choice)
+   static int ChoicePrice(Prices prices, int choice)
    {
        int result;
        if (choice == 0)
