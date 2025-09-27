@@ -1,8 +1,6 @@
-﻿using System.Diagnostics;
+﻿#pragma warning disable CS8321 // Local function is declared but never used
 
-#pragma warning disable CS8321 // Local function is declared but never used
-
-ICityBuilder city = new CityBuilder();
+var city = new CityBuilder();
 
 var home = city.Home();
 home.Address("123");
@@ -60,57 +58,9 @@ sealed class MutableCity
     public List<MutableHome> Homes = new();
 }
 
-interface ICityScopeCommon
-{
-    ICitizenBuilder Citizen();
-    IHomeBuilder Home();
-}
-interface ICityBuilder : ICityScopeCommon
-{
-    ICityScopeBuilder Scope();
-}
-interface ICityFinalBuilder
-{
-    ICity Build();
-}
-interface ICitizenBuilder
-{
-    void Age(int age);
-    void Name(string name);
-    void Home(IHomeBuilder home);
-}
-interface IHomeBuilder
-{
-    void Address(string address);
-}
-
-sealed class GenericCityBuilder
-{
-    public required ICityBuilder Builder;
-    public required ICityFinalBuilder Final;
-}
-
-sealed class CityXBuilder : ICityBuilder
-{
-
-}
-
-sealed class CityBuilder : ICityBuilder
+sealed class CityBuilder
 {
     public MutableCity Model = new();
-
-    ICitizenBuilder ICityScopeCommon.Citizen()
-    {
-        return Citizen();
-    }
-    IHomeBuilder ICityScopeCommon.Home()
-    {
-        return Home();
-    }
-    ICity ICityBuilder.Build()
-    {
-        return Build();
-    }
 
     public CitizenBuilder Citizen()
     {
@@ -188,18 +138,9 @@ sealed class CityBuilder : ICityBuilder
     {
         return new(this);
     }
-
-    ICityScopeBuilder ICityBuilder.Scope()
-    {
-        return Scope();
-    }
 }
 
-interface ICityScopeBuilder : ICitizenBuilder, ICityScopeCommon
-{
-}
-
-sealed class CityScopeBuilder : ICityScopeBuilder
+sealed class CityScopeBuilder
 {
     public readonly CityBuilder CityBuilder;
     public readonly CitizenBuilder CitizenBuilder;
@@ -209,11 +150,6 @@ sealed class CityScopeBuilder : ICityScopeBuilder
         CityBuilder = city;
         var citizen = new MutableCitizen();
         CitizenBuilder = new(citizen);
-    }
-
-    ICitizenBuilder ICityScopeCommon.Citizen()
-    {
-        return Citizen();
     }
 
     public CitizenBuilder Citizen()
@@ -233,11 +169,6 @@ sealed class CityScopeBuilder : ICityScopeBuilder
         }
         return citizen;
     }
-
-    IHomeBuilder ICityScopeCommon.Home()
-    {
-        return Home();
-    }
     public HomeBuilder Home()
     {
         return CityBuilder.Home();
@@ -255,12 +186,6 @@ sealed class CityScopeBuilder : ICityScopeBuilder
     {
         CitizenBuilder.Home(home);
     }
-
-    void ICitizenBuilder.Home(IHomeBuilder home)
-    {
-        Debug.Assert(home is HomeBuilder);
-        Home((HomeBuilder) home);
-    }
 }
 
 // The model is without encapsulation
@@ -274,7 +199,7 @@ sealed class MutableCitizen
 }
 
 // Single Responsibility
-sealed class CitizenBuilder : ICitizenBuilder
+sealed class CitizenBuilder
 {
     public readonly MutableCitizen Model;
     public CitizenBuilder(MutableCitizen model)
@@ -296,13 +221,6 @@ sealed class CitizenBuilder : ICitizenBuilder
     {
         Model.Name = name;
     }
-
-    void ICitizenBuilder.Home(IHomeBuilder home)
-    {
-        Debug.Assert(home is HomeBuilder);
-        Home((HomeBuilder) home);
-    }
-
     public void Home(HomeBuilder home)
     {
         Model.Home = home.Home;
@@ -314,7 +232,7 @@ sealed class MutableHome
     public string? Address;
 }
 
-sealed class HomeBuilder : IHomeBuilder
+sealed class HomeBuilder
 {
     public readonly MutableHome Home;
 
@@ -373,42 +291,13 @@ sealed class CityLogic
     }
 }
 
-interface ICity
-{
-    Citizen Citizen(CitizenId citizen);
-    Home Home(HomeId homeId);
-}
 // Immutabibilty -- нельзя будет изменить
 // Mutable -- можно изменять
 // This is an immutable model and must not be changed.
-sealed class City : ICity
+sealed class City
 {
     public required Citizen[] Citizens { get; init; }
     public required Home[] Homes { get; init; }
-    public Citizen Citizen(CitizenId citizen)
-    {
-        throw new NotImplementedException();
-    }
-
-    public Home Home(HomeId homeId)
-    {
-        throw new NotImplementedException();
-    }
-}
-
-sealed class DynamicCity : ICity
-{
-    public Dictionary<int, Citizen> Citizens { get; init; }
-    public Dictionary<int, Home> Homes { get; init; }
-
-
-    public Citizen Citizen(CitizenId citizen)
-    {
-    }
-
-    public Home Home(HomeId homeId)
-    {
-    }
 }
 
 #pragma warning disable CS0649 // Field is never assigned to, and will always have its default value
