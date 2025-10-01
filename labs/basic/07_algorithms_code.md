@@ -1,7 +1,7 @@
 # Лабораторная работа 7
 
 - Тема: **Реализация алгоритмов в языке программирования**.
-- [Видео](https://www.youtube.com/watch?v=C6plSGSYuyc&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=5)
+- [Видео](https://youtu.be/VhA2OupAYRc?list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD)
 
 ## Концепты
 
