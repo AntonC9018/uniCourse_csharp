@@ -180,7 +180,7 @@
    F(a);
    Console.WriteLine(a);
 
-   static void F(int b)
+   static void F(string b)
    {
        b = "world";
    }
