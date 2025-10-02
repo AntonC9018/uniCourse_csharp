@@ -1,28 +1,38 @@
-var mage = CreateDefaultMage();
-mage.Experience = 0;
-mage.Damage = 10;
+#pragma warning disable CS0414 // Field is assigned but its value is never used
 
-List<FatStructEntity> characters = new();
-characters.Add(mage);
-
-static void DamageAll(List<FatStructEntity> entities)
+static class FatStructExample
 {
-    foreach (var e in entities)
+    public static void Demo()
     {
-        if (e.Health != FatStructEntity.EmptyInt)
+        var mage = CreateDefaultMage();
+        mage.Experience = 0;
+        mage.Damage = 10;
+
+        List<FatStructEntity> characters = new();
+        characters.Add(mage);
+
+        DamageAll(characters);
+    }
+
+    static void DamageAll(List<FatStructEntity> entities)
+    {
+        foreach (var e in entities)
         {
-            e.Health -= 1;
+            if (e.Health != FatStructEntity.EmptyInt)
+            {
+                e.Health -= 1;
+            }
         }
     }
-}
 
-FatStructEntity CreateDefaultMage()
-{
-    return new()
+    static FatStructEntity CreateDefaultMage()
     {
-        Health = 100,
-        Position = new(0, 0),
-    };
+        return new()
+        {
+            Health = 100,
+            Position = new(0, 0),
+        };
+    }
 }
 
 sealed class FatStructEntity
