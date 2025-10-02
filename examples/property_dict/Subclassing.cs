@@ -1,15 +1,7 @@
-static class Helper
+#pragma warning disable CS0649 // Field is never assigned to, and will always have its default value
+static class SubclassingExample
 {
-    public static float Distance(Position a, Position b)
-    {
-        var diff = new Position(
-            a.X - b.X,
-            a.Y - b.Y);
-        var dist = (float) Math.Sqrt(diff.X * diff.X + diff.Y * diff.Y);
-        return dist;
-    }
-
-    public static void Demo()
+    public static void DemoSubclassing()
     {
         var characters = new List<Character>();
         characters.Add(new Hero
@@ -19,11 +11,14 @@ static class Helper
             Level = 1,
             Position = new(0, 0),
         });
-        characters.Add(new Mage
+        characters.Add(new MageAlly
         {
             Experience = 0,
             Health = 100,
-            Intelligence = 8,
+            Mage = new()
+            {
+                Intelligence = 8,
+            },
             Position = new(1, 0),
         });
         characters.Add(new Zombie
@@ -44,50 +39,7 @@ static class Helper
         SimulateEnemyAttack(characters);
         Stuff(characters[0]);
 
-
-        // Array of properties (component, tag)
-        // Fat struct
-
-        var a = new object[]
-        {
-            new IntStat
-            {
-                Type = IntStatType.Health,
-                Value = 10,
-            },
-            new Position(1, 2),
-            new ExperienceComponent
-            {
-                Experience = 18,
-            },
-        };
-        var b = new object[]
-        {
-            new ExperienceComponent
-            {
-                Experience = 18,
-            },
-        };
-        List<object[]> entities = [a, b];
-        Hurricane(entities);
     }
-
-
-    static void Hurricane(List<object[]> entities)
-    {
-        foreach (var e in entities)
-        {
-            for (int i = 0; i < e.Length; i++)
-            {
-                if (e[i] is Position p)
-                {
-                    e[i] = new Position(p.X + 1, p.Y);
-                }
-            }
-        }
-    }
-
-
 
     static void Stuff(Character character)
     {
@@ -99,7 +51,6 @@ static class Helper
         var mageTrait = mage.Mage;
         mageTrait.Intelligence = 10;
     }
-
 
     static void SimulateEnemyAttack(List<Character> characters)
     {
@@ -143,30 +94,23 @@ static class Helper
             {
                 continue;
             }
-            var dist = Helper.Distance(enemy.Position, ally.Position);
+            var dist = Distance(enemy.Position, ally.Position);
             if (dist <= enemy.AggroRadius)
             {
                 yield return (ally, dist);
             }
         }
     }
+
+    static float Distance(Position a, Position b)
+    {
+        var diff = new Position(
+            a.X - b.X,
+            a.Y - b.Y);
+        var dist = (float) Math.Sqrt(diff.X * diff.X + diff.Y * diff.Y);
+        return dist;
+    }
 }
-
-
-sealed class IntStat
-{
-    public required IntStatType Type;
-    public required int Value;
-}
-
-enum IntStatType
-{
-    Health,
-    Experience,
-    Damage,
-    Intelligence,
-}
-
 
 record struct Position(float X, float Y);
 
@@ -215,7 +159,7 @@ class Zombie : Enemy
 
 sealed class Lich : Zombie, IMage
 {
-    public MageTrait Mage { get; set; }
+    public required MageTrait Mage { get; set; }
 }
 
 sealed class Skeleton : Enemy
@@ -233,9 +177,9 @@ sealed class Hero : Ally
     public int Level;
 }
 
-sealed class Mage : Ally, IMage
+sealed class MageAlly : Ally, IMage
 {
-    public MageTrait Mage { get; set; }
+    public required MageTrait Mage { get; set; }
 }
 
 sealed class Warrior : Ally
