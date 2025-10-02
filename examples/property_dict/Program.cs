@@ -32,6 +32,47 @@ SimulateEnemyAttack(characters);
 Stuff(characters[0]);
 
 
+// Array of properties (component, tag)
+var a = new object[]
+{
+    new IntStat
+    {
+        Type = IntStatType.Health,
+        Value = 10,
+    },
+    new Position(1, 2),
+    new ExperienceComponent
+    {
+        Experience = 18,
+    },
+};
+var b = new object[]
+{
+    new ExperienceComponent
+    {
+        Experience = 18,
+    },
+};
+List<object[]> entities = [a, b];
+Hurricane(entities);
+
+
+static void Hurricane(List<object[]> entities)
+{
+    foreach (var e in entities)
+    {
+        for (int i = 0; i < e.Length; i++)
+        {
+            if (e[i] is Position p)
+            {
+                e[i] = new Position(p.X + 1, p.Y);
+            }
+        }
+    }
+}
+
+
+
 static void Stuff(Character character)
 {
     if (character is not IMage mage)
@@ -107,7 +148,34 @@ static class Helper
     }
 }
 
+
+sealed class IntStat
+{
+    public required IntStatType Type;
+    public required int Value;
+}
+
+enum IntStatType
+{
+    Health,
+    Experience,
+    Damage,
+    Intelligence,
+}
+
+
 record struct Position(float X, float Y);
+
+
+sealed class HealthComponent
+{
+    public int Health;
+}
+
+sealed class ExperienceComponent
+{
+    public int Experience;
+}
 
 abstract class Character
 {
