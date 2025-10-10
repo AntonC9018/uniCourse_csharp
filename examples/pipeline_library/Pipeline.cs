@@ -1,3 +1,5 @@
+namespace PipelineNS;
+
 public sealed class Context
 {
     public List<Owner> PreviousOwners = [];

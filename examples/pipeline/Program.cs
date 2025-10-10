@@ -1,4 +1,6 @@
-﻿var pipeline = new Pipeline();
+﻿using PipelineNS;
+
+var pipeline = new Pipeline();
 pipeline.Steps.Add(Wrap(new ChangeNamePipelineStep
 {
     Name = "Lucy",
