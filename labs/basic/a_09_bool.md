@@ -18,6 +18,7 @@
 1. ```csharp
    bool a = true;
    Console.WriteLine(a);
+   ```
    
    <details>
    <summary>Ответ</summary>
