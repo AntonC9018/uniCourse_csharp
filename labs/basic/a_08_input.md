@@ -100,8 +100,8 @@
    
    struct A
    {
-       int f1;
-       int f2;
+       public int f1;
+       public int f2;
    }
    ```
    
@@ -124,8 +124,8 @@
    
    struct A
    {
-       int f1;
-       int f2;
+       public int f1;
+       public int f2;
    }
    ```
    
@@ -148,8 +148,8 @@
    
    struct A
    {
-       int f1;
-       int f2;
+       public int f1;
+       public int f2;
    }
    ```
    
@@ -172,8 +172,8 @@
    
    struct A
    {
-       int f1;
-       int f2;
+       public int f1;
+       public int f2;
    }
    ```
    
@@ -197,8 +197,8 @@
    
    struct A
    {
-       int f1;
-       int f2;
+       public int f1;
+       public int f2;
    }
    ```
    
@@ -225,8 +225,8 @@
    
    struct A
    {
-       int f1;
-       int f2;
+       public int f1;
+       public int f2;
    }
    ```
    
@@ -253,26 +253,6 @@
    
     Возвращаемое значение никуда не сохраняется.
     Здесь в `a` (переданное как адрес) лишь запишется значение.
-    </details>
-
-11. ```csharp
-    int a = 0;
-    int b = 0;
-    b = F(out a);
-    Console.WriteLine(a);
-    Console.WriteLine(b);
-   
-    static int F(out int c)
-    {
-        c = 1;
-        return 2;
-    }
-    ```
-   
-    <details>
-    <summary>Ответ</summary>
-   
-    `a` будет 1, `b` будет 2.
     </details>
 
 12. ```csharp
