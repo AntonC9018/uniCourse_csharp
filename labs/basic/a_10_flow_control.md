@@ -115,7 +115,7 @@
    Разница может быть:
    - эстетическая — одно субъективно выглядит красивее другого;
    - синтактическая — функции записаны, используя различный код, но совершают то же действие;
-   - семантическая — различие в том, какие именно операции произойдут, как достигается цель;
+   - семантическая — различие в том, какие именно операции используются, как достигается цель;
    - функциональная — функции производят разный видимый результат (печать в консоль, возвращаемое значение).
    - нефункциональная — например, малозаметная разница в скорости выполнения.
    </details>
@@ -183,6 +183,93 @@
    }
    Console.WriteLine("B");
    ```
+   </details>
+
+1. ```csharp
+   if (false)
+   {
+       Console.WriteLine("A");
+   }
+   else
+   {
+       Console.WriteLine("B");
+   }
+   ```
+
+   <details>
+   <summary>Ответ</summary>
+
+   Данный код выведет "B", поскольку блок `else` выполняется тогда, когда не выполняется условие.
+   </details>
+
+1. ```csharp
+   bool a = true;
+   if (a)
+   {
+       a = false;
+   }
+   else
+   {
+       Console.WriteLine("B");
+   }
+   ```
+
+   <details>
+   <summary>Ответ</summary>
+
+   "B" не напечатается, потому что то, выполнится ли `else`, определяется на момент проверки `a` в `if`,
+   а это происходит до его изменения.
+   </details>
+
+1. ```csharp
+   F();
+
+   static void F()
+   {
+       if (true)
+       {
+           return;
+       }
+       else
+       {
+           Console.WriteLine("B");
+       }
+   }
+   ```
+
+   <details>
+   <summary>Ответ</summary>
+
+   Здесь "B" не напечатается. То, выполнится ли блок `else`, зависит лишь от условия в `if`.
+   </details>
+
+1. ```csharp
+   if (true)
+       Console.WriteLine("A");
+   else
+       Console.WriteLine("B");
+   Console.WriteLine("C");
+   ```
+
+   <details>
+   <summary>Ответ</summary>
+
+   "B" не напечатается. Напечатаются "A" и "C".
+   </details>
+
+1. ```csharp
+   if (true)
+       Console.WriteLine("A");
+   else
+   {
+       Console.WriteLine("B");
+   }
+   ```
+
+   <details>
+   <summary>Ответ</summary>
+
+   Допустимо комбинировать прилепление инструкции и явный блок.
    </details>
 
 1. Как обычно записывают данный код, используя цепочку `if`-`else`?
@@ -262,7 +349,7 @@
    <details>
    <summary>Ответ (цепочка)</summary>
 
-   Это код невозможно представить как цепочку.
+   Этот код невозможно представить как цепочку.
    Некуда поставить "After B" и "After C" так, чтобы они выполнялись по тем же правилам.
    Можно попробовать их продублировать, но тогда они не будут семантически эквивалентны:
 
@@ -402,3 +489,85 @@
    }
    ```
    </details>
+
+1. Выполните в голове данный код:
+   ```csharp
+   int i = 0;
+   while (true)
+   {
+      if (i == 4)
+      {
+          Console.WriteLine("ERROR: Should not happen");
+          break;
+      }
+      if (i == 3)
+      {
+          Console.WriteLine("Exit");
+          break;
+      }
+      if (i == 0)
+      {
+          Console.WriteLine("Increase by 2 on first iter");
+          i += 2;
+          continue;
+      }
+
+      Console.WriteLine("Increase by 1 normally");
+      i++;
+
+      // Implicit continue.
+      // continue;
+   }
+   ```
+   
+   <details>
+   <summary>Что делают <code>break</code> и <code>continue</code></summary>
+
+   `break` прекращает выполнение цикла (переходит на первую инструкцию после цикла).
+
+   `continue` переходит в начало цикла (дальнейшие инструкции из тела цикла не выполняются для этой итерации).
+   </details>
+
+   <details>
+   <summary>Ответ</summary>
+
+   "Increase by 2 on first iter" напечатается в первой итерации цикла, `i++` не выполнится из-за `continue`.
+
+   "Increase by 1 normally" напечатается во второй итерации цикла, 
+   после прохождения с неудачей всех проверок `if`-ов.
+
+   "Exit" напечатается в третьей итерации, тогда как проверка `i == 0` и инструкция `i++` не выполнится,
+   поскольку `break` прервет выполнение цикла.
+
+   ```
+   Increase by 2 on first iter
+   Increase by 1 normally
+   Exit
+   ```
+   </details>
+
+1. Что вернет эта функция, если ее вызвать?
+   ```csharp
+   static int F()
+   {
+       while (true)
+       {
+          if (true)
+          {
+              return 0;
+          }
+          break;
+       }
+       return 1;
+   }
+   ```
+   
+   <details>
+   <summary>Ответ</summary>
+
+   При выполнении `return 0`, прерывается не только цикл, 
+   но и последующее выполнение оставшегося кода функции.
+
+   `break` и `return 1` никогда не выполнятся.
+   </details>
+   
