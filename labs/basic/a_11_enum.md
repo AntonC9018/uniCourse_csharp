@@ -1,4 +1,4 @@
-# Лабораторная работа 10
+# Лабораторная работа 11
 
 - Тема: **`enum`**.
 - [Видео](https://www.youtube.com/watch?v=LLfU1a7pTxg&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=15)
