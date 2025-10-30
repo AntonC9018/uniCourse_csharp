@@ -1,28 +1,32 @@
 ﻿using System.Diagnostics;
+using Xunit;
 
-Helper.Config CreateConfig()
+public sealed class Tests
 {
-    return new([
-        new(Length: 1, Coefficient: 15),
-        new(Length: 1, Coefficient: 8),
-        new(Length: 5, Coefficient: 3),
-        new(Length: 99999, Coefficient: 2),
-    ]);
-}
+    [Theory]
+    [InlineData(0, 0)]
+    [InlineData(1, 15)]
+    [InlineData(2, 23)]
+    [InlineData(3, 26)]
+    [InlineData(4, 29)]
+    [InlineData(6, 35)]
+    [InlineData(7, 38)]
+    [InlineData(8, 40)]
+    [InlineData(15, 54)]
+    public void Test(int input, int expected)
+    {
+        var config = CreateConfig();
+        var actual = Helper.GetHumanAge_New(config, input);
+        Assert.Equal(expected, actual);
+    }
 
-void Test(int input, int expected)
-{
-    var config = CreateConfig();
-    var actual = Helper.GetHumanAge_New(config, input);
-    Debug.Assert(actual == expected, $"Output for {input} is {actual}, expected {expected}");
+    private static Helper.Config CreateConfig()
+    {
+        return new([
+            new(Length: 1, Coefficient: 15),
+            new(Length: 1, Coefficient: 8),
+            new(Length: 5, Coefficient: 3),
+            new(Length: 99999, Coefficient: 2),
+        ]);
+    }
 }
-
-Test(0, 0);
-Test(1, 15);
-Test(2, 23);
-Test(3, 26);
-Test(4, 29);
-Test(6, 35);
-Test(7, 38);
-Test(8, 40);
-Test(15, 54);
