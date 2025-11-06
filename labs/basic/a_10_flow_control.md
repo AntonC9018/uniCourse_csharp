@@ -1,7 +1,7 @@
 # Лабораторная работа 10
 
 - Тема: **Flow Control**.
-- [Видео](https://www.youtube.com/watch?v=LLfU1a7pTxg&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=15)
+- [Видео](https://www.youtube.com/watch?v=mj9E9BhOAhU&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=18&t=659)
 
 ## Концепты
 
