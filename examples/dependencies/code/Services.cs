@@ -123,9 +123,91 @@ public static class Helper
 
         return ret;
     }
+
+    public static void PrintMissingEvents(
+        Database database,
+        ScheduleAtLocation schedule,
+        List<PlannedEvent> actualEvents,
+        Action<string>? print = null)
+    {
+        print ??= Console.WriteLine;
+
+        var knownEvents = schedule.Events;
+        LocalHelper.AssertOrdered(knownEvents, x => x.DateTime);
+        LocalHelper.AssertOrdered(actualEvents, x => x.DateTime);
+
+        int indexKnown = 0;
+        int indexActual = 0;
+
+        while (true)
+        {
+            if (indexKnown >= knownEvents.Count)
+            {
+                break;
+            }
+            if (indexActual >= actualEvents.Count)
+            {
+                break;
+            }
+
+            var knownEvent = knownEvents[indexKnown];
+            var actualEvent = actualEvents[indexActual];
+
+            var databaseEvent = database.Get(actualEvent.Event);
+            var databaseLocation = database.Get(databaseEvent.Location);
+            if (databaseLocation.PrimaryName != schedule.LocationName)
+            {
+                indexActual++;
+                continue;
+            }
+            if (knownEvent.DateTime == actualEvent.DateTime
+                && knownEvent.EventName == databaseEvent.Name)
+            {
+                indexKnown++;
+                indexActual++;
+                print("Exact match");
+                continue;
+            }
+
+            if (knownEvent.DateTime > actualEvent.DateTime)
+            {
+                print($"Missing event: {databaseEvent.Name}");
+                indexActual++;
+                continue;
+            }
+            if (actualEvent.DateTime > knownEvent.DateTime)
+            {
+                print($"Superfluous event: {knownEvent.EventName}");
+                indexKnown++;
+                continue;
+            }
+            if (actualEvent.DateTime == knownEvent.DateTime)
+            {
+                print($"Updated event: {knownEvent.EventName}");
+                indexActual++;
+                indexKnown++;
+                continue;
+            }
+
+            Debug.Fail("Something is wrong!!!");
+        }
+    }
 }
 
-internal static class DayHelper
+public sealed class KnownEventAtLocation
+{
+    public string EventName;
+    public DateTimeOffset DateTime;
+}
+
+public sealed class ScheduleAtLocation
+{
+    public List<KnownEventAtLocation> Events = new();
+    public required string LocationName;
+}
+
+
+file static class LocalHelper
 {
     public static DateOnly GetDayOfThisWeek(this DateOnly d, DayOfWeek day)
     {
@@ -140,5 +222,13 @@ internal static class DayHelper
         var offset = (day - DayOfWeek.Monday + weekdayCount) % weekdayCount;
         var ret = monday.AddDays(offset);
         return ret;
+    }
+
+    [Conditional("DEBUG")]
+    internal static void AssertOrdered<T, U>(IEnumerable<T> items, Func<T, U> selector)
+    {
+        items = items.ToArray();
+        var sorted = items.OrderBy(selector);
+        Debug.Assert(items.SequenceEqual(sorted));
     }
 }
