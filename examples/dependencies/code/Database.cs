@@ -1,4 +1,6 @@
-public readonly record struct PlannedEvent(EventId Event, DateTimeOffset DateTime);
+public readonly record struct PlannedEvent(
+    EventId Event,
+    DateTimeOffset DateTime);
 
 public sealed class Database
 {
