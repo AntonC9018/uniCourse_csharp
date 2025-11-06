@@ -7,5 +7,6 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=0301c237_002De489_002D4bed_002D91b4_002D41933589f266/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="SnapshotTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::9D8DF72D-0205-4C21-AB9C-2B13D88F987C::net9.0::Tests.SnapshotTest&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::9D8DF72D-0205-4C21-AB9C-2B13D88F987C::net9.0::Tests.Test1&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
