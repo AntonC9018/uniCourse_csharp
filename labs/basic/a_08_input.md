@@ -296,6 +296,34 @@
     Можно передавать несколько `out` параметров.
     </details>
 
+13. ```csharp
+    Position p = new()
+    {
+        X = 0,
+        Y = 1,
+    };
+    F(out p.X);
+    Console.WriteLine(p.X);
+   
+    static void F(out int a)
+    {
+        c = 2;
+    }
+
+    struct Position
+    {
+        public int X;
+        public int Y;
+    }
+    ```
+   
+    <details>
+    <summary>Ответ</summary>
+   
+    Можно передавать ссылки на поля как `out` параметры.
+    В `p.X` будет записано `2`.
+    </details>
+
 ## Практика
 
 Создайте программу, где вводятся 3 числа больше 2, считается их произведение и выводится на экран.
