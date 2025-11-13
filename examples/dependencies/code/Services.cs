@@ -66,14 +66,14 @@ public static class Helper
 
     public static List<PlannedEvent> GetPlannedEvents(
         Database database,
+        List<EventId> eventIds,
         DateOnly startDate,
         DateOnly endDateExclusive)
     {
         var ret = new List<PlannedEvent>();
-        for (int i = 0; i < database.Events.Count; i++)
+        foreach (var eventId in eventIds)
         {
-            var id = new EventId(i);
-            var ev = database.Get(id);
+            var ev = database.Get(eventId);
             Debug.Assert((ev.FixedDate == null) != (ev.RegularDate == null));
 
             if (ev.FixedDate is { } fixedDate)
@@ -84,7 +84,7 @@ public static class Helper
                     day: fixedDate.Day);
                 if (dateOnlyFixed >= startDate && dateOnlyFixed < endDateExclusive)
                 {
-                    ret.Add(new(id, fixedDate));
+                    ret.Add(new(eventId, fixedDate));
                 }
 
                 continue;
@@ -102,7 +102,7 @@ public static class Helper
                 while (currentDay < endDateExclusive)
                 {
                     var dateTime = new DateTime(currentDay, regularDate.Time);
-                    var plannedEvent = new PlannedEvent(id, dateTime);
+                    var plannedEvent = new PlannedEvent(eventId, dateTime);
                     ret.Add(plannedEvent);
 
                     currentDay = currentDay.AddDays(7);
@@ -124,18 +124,34 @@ public static class Helper
         return ret;
     }
 
-    public static void PrintMissingEvents(
+    public static PlannedEventsAtLocation GetPlannedEvents(
         Database database,
         EventIdsByLocation eventsByLocation,
+        string locationName,
+        DateOnly startDate,
+        DateOnly endDateExclusive)
+    {
+        var actualEvents = GetPlannedEvents(
+            database,
+            eventsByLocation.Dict[locationName],
+            startDate,
+            endDateExclusive);
+        LocalHelper.AssertOrdered(actualEvents, x => x.DateTime);
+        return new(actualEvents);
+    }
+
+
+    public static void PrintMissingEvents(
+        Database database,
+        PlannedEventsAtLocation plannedEvents,
         ScheduleAtLocation schedule,
-        List<PlannedEvent> actualEvents,
         Action<string>? print = null)
     {
         print ??= Console.WriteLine;
 
         var knownEvents = schedule.Events;
         LocalHelper.AssertOrdered(knownEvents, x => x.DateTime);
-        LocalHelper.AssertOrdered(actualEvents, x => x.DateTime);
+        var actualEvents = plannedEvents.List;
 
         int indexKnown = 0;
         int indexActual = 0;
@@ -156,11 +172,8 @@ public static class Helper
 
             var databaseEvent = database.Get(actualEvent.Event);
             var databaseLocation = database.Get(databaseEvent.Location);
-            if (databaseLocation.PrimaryName != schedule.LocationName)
-            {
-                indexActual++;
-                continue;
-            }
+            Debug.Assert(databaseLocation.PrimaryName == schedule.LocationName);
+
             if (knownEvent.DateTime == actualEvent.DateTime
                 && knownEvent.EventName == databaseEvent.Name)
             {
@@ -235,3 +248,5 @@ file static class LocalHelper
 }
 
 public readonly record struct EventIdsByLocation(Dictionary<string, List<EventId>> Dict);
+
+public readonly record struct PlannedEventsAtLocation(List<PlannedEvent> List);
