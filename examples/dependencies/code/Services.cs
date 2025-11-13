@@ -140,55 +140,12 @@ public static class Helper
         return new(actualEvents);
     }
 
-    private static string DifferenceToString(
-        IDifference diff,
-        ConvertToStringDependencies deps)
-    {
-        var ret = GetMainString();
-        return $"{deps.Before}{ret}{deps.After}";
-
-        string GetMappedEventName(string name)
-        {
-            var ret1 = deps.EventNameMappings.Remap(name);
-            return ret1;
-        }
-
-        string GetMainString()
-        {
-            switch (diff)
-            {
-                case ExactMatch _:
-                {
-                    return "Exact match";
-                }
-                case MissingDifference missing:
-                {
-                    var databaseEvent = deps.Database.Get(missing.Actual.Event);
-                    return $"Missing event: {GetMappedEventName(databaseEvent.Name)}";
-                }
-                case UpdateDifference update:
-                {
-                    return $"Update event: {GetMappedEventName(update.Known.EventName)}";
-                }
-                case SuperfluousDifference super:
-                {
-                    return $"Superfluous event: {GetMappedEventName(super.Known.EventName)}";
-                }
-                default:
-                {
-                    Debug.Fail("Not possible");
-                    throw null!;
-                }
-            }
-        }
-    }
-
     public static void PrintMissingEvents(
         Database database,
         PlannedEventsAtLocation plannedEvents,
         ScheduleAtLocation schedule,
         List<string> difference,
-        ConvertToStringDependencies toStringDeps)
+        DifferenceToStringConverter converter)
     {
         var knownEvents = schedule.Events;
         LocalHelper.AssertOrdered(knownEvents, x => x.DateTime);
@@ -218,7 +175,7 @@ public static class Helper
 
             void AddDiff(IDifference diff)
             {
-                var s = DifferenceToString(diff, toStringDeps);
+                var s = converter.DifferenceToString(diff);
                 difference.Add(s);
             }
 
@@ -331,8 +288,52 @@ public readonly struct EventNameMap
     }
 }
 
-public sealed record class ConvertToStringDependencies(
+public sealed record class DifferenceToStringConverter(
     Database Database,
     string Before,
     string After,
-    EventNameMap EventNameMappings);
+    EventNameMap EventNameMappings)
+{
+    public string DifferenceToString(
+        IDifference diff)
+    {
+        var ret = GetMainString();
+        return $"{Before}{ret}{After}";
+
+        string GetMappedEventName(string name)
+        {
+            var ret1 = EventNameMappings.Remap(name);
+            return ret1;
+        }
+
+        string GetMainString()
+        {
+            switch (diff)
+            {
+                case ExactMatch _:
+                {
+                    return "Exact match";
+                }
+                case MissingDifference missing:
+                {
+                    var databaseEvent = Database.Get(missing.Actual.Event);
+                    return $"Missing event: {GetMappedEventName(databaseEvent.Name)}";
+                }
+                case UpdateDifference update:
+                {
+                    return $"Update event: {GetMappedEventName(update.Known.EventName)}";
+                }
+                case SuperfluousDifference super:
+                {
+                    return $"Superfluous event: {GetMappedEventName(super.Known.EventName)}";
+                }
+                default:
+                {
+                    Debug.Fail("Not possible");
+                    throw null!;
+                }
+            }
+        }
+    }
+
+}
