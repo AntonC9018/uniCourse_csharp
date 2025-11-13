@@ -1,4 +1,6 @@
-﻿public sealed class Tests
+﻿using System.Runtime.InteropServices;
+
+public sealed class Tests
 {
     [Fact]
     public async Task SnapshotTest()
@@ -61,8 +63,35 @@
         }
 
         var differences = new List<string>();
+
+        var eventsByLocation = new EventIdsByLocation(new());
+        {
+            for (int eventIndex = 0; eventIndex < database.Events.Count; eventIndex++)
+            {
+                var eventId = new EventId(eventIndex);
+                var ev = database.Get(eventId);
+                var locationId = ev.Location;
+                var location = database.Get(locationId);
+                foreach (var name in location.Names)
+                {
+                    ref var list = ref CollectionsMarshal.GetValueRefOrAddDefault(eventsByLocation.Dict, name, out bool exists);
+                    if (!exists)
+                    {
+                        list = new();
+                    }
+                    // if (!eventsByLocation.TryGetValue(name, out var list))
+                    // {
+                    //     list = new();
+                    //     eventsByLocation.Add(name, list);
+                    // }
+                    list!.Add(eventId);
+                }
+            }
+        }
+
         Helper.PrintMissingEvents(
             database,
+            eventsByLocation,
             locationSchedule,
             plannedEvents,
             s => differences.Add(s));

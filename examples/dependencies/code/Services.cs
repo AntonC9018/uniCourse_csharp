@@ -126,6 +126,7 @@ public static class Helper
 
     public static void PrintMissingEvents(
         Database database,
+        EventIdsByLocation eventsByLocation,
         ScheduleAtLocation schedule,
         List<PlannedEvent> actualEvents,
         Action<string>? print = null)
@@ -232,3 +233,5 @@ file static class LocalHelper
         Debug.Assert(items.SequenceEqual(sorted));
     }
 }
+
+public readonly record struct EventIdsByLocation(Dictionary<string, List<EventId>> Dict);
