@@ -140,17 +140,60 @@ public static class Helper
         return new(actualEvents);
     }
 
+    private static string DifferenceToString(
+        IDifference diff,
+        ConvertToStringDependencies deps)
+    {
+        var ret = GetMainString();
+        return $"{deps.Before}{ret}{deps.After}";
+
+        string GetMappedEventName(string name)
+        {
+            var ret1 = deps.EventNameMappings.Remap(name);
+            return ret1;
+        }
+
+        string GetMainString()
+        {
+            switch (diff)
+            {
+                case ExactMatch _:
+                {
+                    return "Exact match";
+                }
+                case MissingDifference missing:
+                {
+                    var databaseEvent = deps.Database.Get(missing.Actual.Event);
+                    return $"Missing event: {GetMappedEventName(databaseEvent.Name)}";
+                }
+                case UpdateDifference update:
+                {
+                    return $"Update event: {GetMappedEventName(update.Known.EventName)}";
+                }
+                case SuperfluousDifference super:
+                {
+                    return $"Superfluous event: {GetMappedEventName(super.Known.EventName)}";
+                }
+                default:
+                {
+                    Debug.Fail("Not possible");
+                    throw null!;
+                }
+            }
+        }
+    }
+
     public static void PrintMissingEvents(
         Database database,
         PlannedEventsAtLocation plannedEvents,
         ScheduleAtLocation schedule,
-        Action<IDifference>? handleMatch = null)
+        List<string> difference,
+        ConvertToStringDependencies toStringDeps)
     {
-        handleMatch ??= Console.WriteLine;
-
         var knownEvents = schedule.Events;
         LocalHelper.AssertOrdered(knownEvents, x => x.DateTime);
         var actualEvents = plannedEvents.List;
+        LocalHelper.AssertOrdered(actualEvents, x => x.DateTime);
 
         int indexKnown = 0;
         int indexActual = 0;
@@ -173,12 +216,18 @@ public static class Helper
             var databaseLocation = database.Get(databaseEvent.Location);
             Debug.Assert(databaseLocation.PrimaryName == schedule.LocationName);
 
+            void AddDiff(IDifference diff)
+            {
+                var s = DifferenceToString(diff, toStringDeps);
+                difference.Add(s);
+            }
+
             if (knownEvent.DateTime == actualEvent.DateTime
                 && knownEvent.EventName == databaseEvent.Name)
             {
                 var match = new ExactMatch(actualEvent, knownEvent);
-                handleMatch(match);
-                
+                AddDiff(match);
+
                 indexKnown++;
                 indexActual++;
                 continue;
@@ -187,7 +236,7 @@ public static class Helper
             if (knownEvent.DateTime > actualEvent.DateTime)
             {
                 var diff = new MissingDifference(actualEvent);
-                handleMatch(diff);
+                AddDiff(diff);
 
                 indexActual++;
                 continue;
@@ -195,7 +244,7 @@ public static class Helper
             if (actualEvent.DateTime > knownEvent.DateTime)
             {
                 var diff = new SuperfluousDifference(knownEvent);
-                handleMatch(diff);
+                AddDiff(diff);
 
                 indexKnown++;
                 continue;
@@ -203,7 +252,7 @@ public static class Helper
             if (actualEvent.DateTime == knownEvent.DateTime)
             {
                 var diff = new UpdateDifference(actualEvent, knownEvent);
-                handleMatch(diff);
+                AddDiff(diff);
 
                 indexActual++;
                 indexKnown++;
@@ -266,3 +315,24 @@ file static class LocalHelper
 public readonly record struct EventIdsByLocation(Dictionary<string, List<EventId>> Dict);
 
 public readonly record struct PlannedEventsAtLocation(List<PlannedEvent> List);
+
+public readonly struct EventNameMap
+{
+    private readonly Dictionary<string, string> _map;
+
+    public EventNameMap(Dictionary<string, string> map)
+    {
+        _map = map;
+    }
+
+    public string Remap(string eventName)
+    {
+        return _map.GetValueOrDefault(eventName, eventName);
+    }
+}
+
+public sealed record class ConvertToStringDependencies(
+    Database Database,
+    string Before,
+    string After,
+    EventNameMap EventNameMappings);
