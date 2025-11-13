@@ -94,38 +94,21 @@ public sealed class Tests
         }
 
         var differences = new List<string>();
+        var before = "{";
+        var after = "}";
+        var eventNameMappings = new Dictionary<string, string>();
+        var toStringDeps = new ConvertToStringDependencies(
+            database,
+            before,
+            after,
+            new(eventNameMappings));
 
         Helper.PrintMissingEvents(
             database,
             plannedEvents,
             locationSchedule,
-            (IDifference diff) =>
-            {
-                switch (diff)
-                {
-                    case ExactMatch _:
-                    {
-                        differences.Add("Exact match");
-                        break;
-                    }
-                    case MissingDifference missing:
-                    {
-                        var databaseEvent = database.Get(missing.Actual.Event);
-                        differences.Add($"Missing event: {databaseEvent.Name}");
-                        break;
-                    }
-                    case UpdateDifference update:
-                    {
-                        differences.Add($"Update event: {update.Known.EventName}");
-                        break;
-                    }
-                    case SuperfluousDifference super:
-                    {
-                        differences.Add($"Superfluous event: {super.Known.EventName}");
-                        break;
-                    }
-                }
-            });
+            differences,
+            toStringDeps);
         await Verify(differences);
     }
 }
