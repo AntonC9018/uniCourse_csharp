@@ -97,7 +97,7 @@ public sealed class Tests
         var before = "{";
         var after = "}";
         var eventNameMappings = new Dictionary<string, string>();
-        var toStringDeps = new ConvertToStringDependencies(
+        var converter = new DifferenceToStringConverter(
             database,
             before,
             after,
@@ -108,7 +108,7 @@ public sealed class Tests
             plannedEvents,
             locationSchedule,
             differences,
-            toStringDeps);
+            converter);
         await Verify(differences);
     }
 }
