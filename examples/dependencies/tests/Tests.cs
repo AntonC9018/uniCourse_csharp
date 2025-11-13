@@ -99,7 +99,33 @@ public sealed class Tests
             database,
             plannedEvents,
             locationSchedule,
-            s => differences.Add(s));
+            (IDifference diff) =>
+            {
+                switch (diff)
+                {
+                    case ExactMatch _:
+                    {
+                        differences.Add("Exact match");
+                        break;
+                    }
+                    case MissingDifference missing:
+                    {
+                        var databaseEvent = database.Get(missing.Actual.Event);
+                        differences.Add($"Missing event: {databaseEvent.Name}");
+                        break;
+                    }
+                    case UpdateDifference update:
+                    {
+                        differences.Add($"Update event: {update.Known.EventName}");
+                        break;
+                    }
+                    case SuperfluousDifference super:
+                    {
+                        differences.Add($"Superfluous event: {super.Known.EventName}");
+                        break;
+                    }
+                }
+            });
         await Verify(differences);
     }
 }

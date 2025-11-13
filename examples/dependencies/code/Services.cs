@@ -140,14 +140,13 @@ public static class Helper
         return new(actualEvents);
     }
 
-
     public static void PrintMissingEvents(
         Database database,
         PlannedEventsAtLocation plannedEvents,
         ScheduleAtLocation schedule,
-        Action<string>? print = null)
+        Action<IDifference>? handleMatch = null)
     {
-        print ??= Console.WriteLine;
+        handleMatch ??= Console.WriteLine;
 
         var knownEvents = schedule.Events;
         LocalHelper.AssertOrdered(knownEvents, x => x.DateTime);
@@ -177,27 +176,35 @@ public static class Helper
             if (knownEvent.DateTime == actualEvent.DateTime
                 && knownEvent.EventName == databaseEvent.Name)
             {
+                var match = new ExactMatch(actualEvent, knownEvent);
+                handleMatch(match);
+                
                 indexKnown++;
                 indexActual++;
-                print("Exact match");
                 continue;
             }
 
             if (knownEvent.DateTime > actualEvent.DateTime)
             {
-                print($"Missing event: {databaseEvent.Name}");
+                var diff = new MissingDifference(actualEvent);
+                handleMatch(diff);
+
                 indexActual++;
                 continue;
             }
             if (actualEvent.DateTime > knownEvent.DateTime)
             {
-                print($"Superfluous event: {knownEvent.EventName}");
+                var diff = new SuperfluousDifference(knownEvent);
+                handleMatch(diff);
+
                 indexKnown++;
                 continue;
             }
             if (actualEvent.DateTime == knownEvent.DateTime)
             {
-                print($"Updated event: {knownEvent.EventName}");
+                var diff = new UpdateDifference(actualEvent, knownEvent);
+                handleMatch(diff);
+
                 indexActual++;
                 indexKnown++;
                 continue;
@@ -207,6 +214,15 @@ public static class Helper
         }
     }
 }
+
+public interface IDifference
+{
+}
+
+public sealed record class ExactMatch(PlannedEvent Actual, KnownEventAtLocation Known) : IDifference;
+public sealed record class MissingDifference(PlannedEvent Actual) : IDifference;
+public sealed record class SuperfluousDifference(KnownEventAtLocation Known) : IDifference;
+public sealed record class UpdateDifference(PlannedEvent Actual, KnownEventAtLocation Known) : IDifference;
 
 public sealed class KnownEventAtLocation
 {
