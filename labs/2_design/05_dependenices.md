@@ -52,4 +52,6 @@
      `SourceReader`, `SourceWriter` и т.д. (Постарайтесь соблюсти SRP)
   3. Задайте конфигурацию, используя scope DI контейнера, и смотрите ее в фабриках.
      ([Инфа](https://medium.com/%40serasiyasavan14/understanding-the-ambient-context-pattern-in-net-from-theory-to-production-2eb9ae7eab17).)
-- Используйте паттерн registry
+
+
+Пример приложения можете найти в папке [/examples/lab5_example](../../examples/lab5_example).
