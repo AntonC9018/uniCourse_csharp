@@ -4,9 +4,9 @@ using CsvHelper.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 var services = new ServiceCollection();
-services.AddScoped<FileReaderFactory>();
-services.AddScoped<FileWriterFactory>();
-services.AddScoped<RandomReaderFactory>();
+services.AddTransient<FileReaderFactory>();
+services.AddTransient<FileWriterFactory>();
+services.AddTransient<RandomReaderFactory>();
 
 // Created directly.
 // services.AddScoped<LoggingWriterFactory>();
