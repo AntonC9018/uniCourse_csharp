@@ -2,7 +2,7 @@
 
 - Тема: **Зависимости абстракций**.
 - Видео пока нет
-- [PR](https://github.com/AntonC9018/uniCourse_csharp/pull/9)
+- [PR](https://github.com/AntonC9018/uniCourse_csharp/pull/10)
 
 ## Концепты
 
