@@ -4,12 +4,6 @@ using CsvHelper.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 var services = new ServiceCollection();
-services.AddTransient<FileReaderFactory>();
-services.AddTransient<FileWriterFactory>();
-services.AddTransient<RandomReaderFactory>();
-
-// Created directly.
-// services.AddScoped<LoggingWriterFactory>();
 
 services.AddOptions<FormatFileOptions>(FormatFileOptions.ReaderKey);
 services.AddOptions<FormatFileOptions>(FormatFileOptions.WriterKey);
@@ -53,9 +47,38 @@ services.AddSingleton<ListItemTransformationPipeline>();
 
 await using var serviceProvider = services.BuildServiceProvider();
 
+await Run(builder =>
+{
+    builder.UsePipeline<SingleStepTransformationPipeline>();
+    builder.UseRandomReader(opts =>
+    {
+        opts.GeneratedCount = 10;
+    });
+    builder.UseFileWriter(ConfigureCsv);
+});
+await Run(builder =>
+{
+    builder.UsePipeline<ListItemTransformationPipeline>();
+    builder.UseFileReader(ConfigureCsv);
+    builder.UseFileWriter(ConfigureJson);
+});
+await Run(builder =>
+{
+    builder.UseFileReader(ConfigureJson);
+    builder.UseLoggingWriter();
+});
+
+async Task Run(Action<OrchestrationBuilder> configure)
+{
+    // ReSharper disable once AccessToDisposedClosure
+    await using var scope = serviceProvider.CreateAsyncScope();
+    var builder = scope.CreateReadWritePipelineBuilder();
+    configure(builder);
+    var executor = builder.Build();
+    await executor.Execute();
+}
+
 // These could also be in the di container if needed.
-
-
 void ConfigureCsv(FormatFileOptions opts)
 {
     var csvConfig = new CsvConfiguration(CultureInfo.InvariantCulture);
@@ -63,7 +86,6 @@ void ConfigureCsv(FormatFileOptions opts)
     opts.Format = Format.CreateCsv(csvConfig);
     opts.FileName = csvFileName;
 }
-
 void ConfigureJson(FormatFileOptions opts)
 {
     var jsonConfig = new JsonSerializerOptions
@@ -74,32 +96,3 @@ void ConfigureJson(FormatFileOptions opts)
     opts.Format = Format.CreateJson(jsonConfig);
     opts.FileName = jsonFileName;
 }
-
-{
-    await using var scope = serviceProvider.CreateAsyncScope();
-    var builder = scope.BuildReadWritePipeline();
-    builder.UsePipeline<SingleStepTransformationPipeline>();
-    builder.UseRandomReader(opts =>
-    {
-        opts.GeneratedCount = 10;
-    });
-    builder.UseFileWriter(ConfigureCsv);
-    var executor = builder.Build();
-    await executor.Execute();
-}
-{
-    await using var scope = serviceProvider.CreateAsyncScope();
-    var builder = scope.BuildReadWritePipeline();
-    builder.UsePipeline<ListItemTransformationPipeline>();
-    builder.UseFileReader(ConfigureCsv);
-    builder.UseFileWriter(ConfigureJson);
-    await builder.Execute();
-}
-{
-    await using var scope = serviceProvider.CreateAsyncScope();
-    var builder = scope.BuildReadWritePipeline();
-    builder.UseFileReader(ConfigureJson);
-    builder.UseLoggingWriter();
-    await builder.Execute();
-}
-
