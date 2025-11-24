@@ -1,0 +1,14 @@
+﻿[
+  {
+    Name: MARK,
+    Price: 40.0
+  },
+  {
+    Name: FORK,
+    Price: 26.0
+  },
+  {
+    Name: LOWER-CASE,
+    Price: 40.0
+  }
+]

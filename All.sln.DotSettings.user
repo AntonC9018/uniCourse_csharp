@@ -12,5 +12,6 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::9D8DF72D-0205-4C21-AB9C-2B13D88F987C::net9.0::Tests.SnapshotTest&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::9D8DF72D-0205-4C21-AB9C-2B13D88F987C::net9.0::Tests.Test1&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::5ECFC698-7624-4200-93E4-9210577285A0::net9.0::Tests.Test1&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
