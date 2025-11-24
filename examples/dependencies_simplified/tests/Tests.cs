@@ -42,10 +42,13 @@ public sealed class Tests
         // config -> container
         // mutable -> immutable
         var services = new ServiceCollection();
-        var cutoffService = new PriceCutoffService(
-            minPrice: 5.0f,
-            maxPrice: 50.0f);
-        services.AddSingleton(cutoffService);
+        var priceCutoffConfig = new PriceCutoffConfig
+        {
+            MaxPrice = 50.0f,
+            MinPrice = 5.0f,
+        };
+        services.AddSingleton(priceCutoffConfig);
+        services.AddSingleton<PriceCutoffService>();
         services.AddSingleton<IRemapNameService>(sp =>
         {
             _ = sp;

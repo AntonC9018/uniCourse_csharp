@@ -132,26 +132,27 @@ public sealed class RemapNameService_RemovePrefix : IRemapNameService
     }
 }
 
+public sealed class PriceCutoffConfig
+{
+    public required float MinPrice { get; set; }
+    public required float MaxPrice { get; set; }
+}
 public sealed class PriceCutoffService
 {
-    private readonly float _minPrice;
-    private readonly float _maxPrice;
+    private readonly PriceCutoffConfig _config;
 
-    public PriceCutoffService(
-        float minPrice,
-        float maxPrice)
+    public PriceCutoffService(PriceCutoffConfig config)
     {
-        _minPrice = minPrice;
-        _maxPrice = maxPrice;
+        _config = config;
     }
 
     public bool AllowsPrice(float price)
     {
-        if (price <= _minPrice)
+        if (price <= _config.MinPrice)
         {
             return false;
         }
-        if (price >= _maxPrice)
+        if (price >= _config.MaxPrice)
         {
             return false;
         }
