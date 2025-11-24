@@ -30,6 +30,11 @@
                 Name = "lower-case",
                 Price = 40.0f,
             },
+            new()
+            {
+                Name = "ignored",
+                Price = 30.0f,
+            },
         };
 
         var result = Helper.ProcessItems(items,
@@ -38,7 +43,8 @@
             nameRemap: new()
             {
                 ["Anton"] = "Mark",
-            });
+            },
+            ["ignored"]);
 
         await Verify(result);
     }
