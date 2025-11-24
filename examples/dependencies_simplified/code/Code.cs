@@ -39,6 +39,7 @@ public sealed class ProcessItemService
             return null;
         }
 
+        // polymorphism
         name = _config.nameRemap.RemapName(name);
         name = name.ToUpper();
 
@@ -51,7 +52,13 @@ public sealed class ProcessItemService
     }
 }
 
-public sealed class RemapNameService
+public interface IRemapNameService
+{
+    public string RemapName(string itemName);
+}
+
+
+public sealed class RemapNameService : IRemapNameService
 {
     private readonly Dictionary<string, string> _nameRemap;
 
@@ -64,6 +71,25 @@ public sealed class RemapNameService
     {
         var name = _nameRemap.GetValueOrDefault(itemName, itemName);
         return name;
+    }
+}
+
+public sealed class RemapNameService_RemovePrefix : IRemapNameService
+{
+    private readonly string _removedPrefix;
+
+    public RemapNameService_RemovePrefix(string removedPrefix)
+    {
+        _removedPrefix = removedPrefix;
+    }
+
+    public string RemapName(string itemName)
+    {
+        if (itemName.StartsWith(_removedPrefix))
+        {
+            return itemName[(_removedPrefix.Length) ..];
+        }
+        return itemName;
     }
 }
 
@@ -96,7 +122,7 @@ public sealed class PriceCutoffService
 
 public readonly record struct ProcessItemConfig(
     PriceCutoffService priceCutoff,
-    RemapNameService nameRemap,
+    IRemapNameService nameRemap,
     HashSet<string> ignoredNames);
 
 public sealed class Item

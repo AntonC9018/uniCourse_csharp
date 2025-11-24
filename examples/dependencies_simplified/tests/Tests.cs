@@ -45,6 +45,7 @@
             {
                 ["Anton"] = "Mark",
             });
+        // var remap = new RemapNameService_RemovePrefix("A");
         var config = new ProcessItemConfig(
             cutoffService,
             remap,
