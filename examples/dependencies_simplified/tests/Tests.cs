@@ -49,9 +49,10 @@
             cutoffService,
             remap,
             ["ignored"]);
+        var processItemService = new ProcessItemService(config);
         var result = Helper.ProcessItems(
             items,
-            config);
+            processItemService);
 
         await Verify(result);
     }
