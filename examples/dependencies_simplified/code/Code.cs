@@ -1,20 +1,45 @@
 public static class Helper
 {
-    private static Item? ProcessItem(
-        Item item,
-        ProcessItemConfig config)
+    // Single Responsibility
+    public static List<Item> ProcessItems(
+        List<Item> items,
+        ProcessItemService processItemService)
     {
-        if (!config.priceCutoff.AllowsPrice(item.Price))
+        var ret = new List<Item>();
+        foreach (var item in items)
+        {
+            var newItem = processItemService.Process(item);
+            if (newItem != null)
+            {
+                ret.Add(newItem);
+            }
+        }
+        return ret;
+    }
+}
+
+public sealed class ProcessItemService
+{
+    private readonly ProcessItemConfig _config;
+
+    public ProcessItemService(ProcessItemConfig config)
+    {
+        _config = config;
+    }
+
+    public Item? Process(Item item)
+    {
+        if (!_config.priceCutoff.AllowsPrice(item.Price))
         {
             return null;
         }
         string name = item.Name;
-        if (config.ignoredNames.Contains(name))
+        if (_config.ignoredNames.Contains(name))
         {
             return null;
         }
 
-        name = config.nameRemap.RemapName(name);
+        name = _config.nameRemap.RemapName(name);
         name = name.ToUpper();
 
         var newItem = new Item
@@ -23,27 +48,6 @@ public static class Helper
             Price = item.Price,
         };
         return newItem;
-    }
-
-    // Single Responsibility
-    public static List<Item> ProcessItems(
-        List<Item> items,
-        ProcessItemConfig processItemConfig)
-    {
-        var ret = new List<Item>();
-        foreach (var item in items)
-        {
-            var newItem = ProcessItem(
-                // item -> прямая зависимость - параметр
-                item,
-                // конфигурация
-                processItemConfig);
-            if (newItem != null)
-            {
-                ret.Add(newItem);
-            }
-        }
-        return ret;
     }
 }
 
