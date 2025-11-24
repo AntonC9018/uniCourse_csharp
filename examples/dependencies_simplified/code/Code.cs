@@ -20,29 +20,39 @@ public static class Helper
     }
 }
 
+// Dependency Injection
+// Inversion of Control
+// IoC container - DI container
 public sealed class ProcessItemService
 {
-    private readonly ProcessItemConfig _config;
+    private readonly PriceCutoffService _priceCutoff;
+    private readonly IRemapNameService _nameRemap;
+    private readonly HashSet<string> _ignoredNames;
 
-    public ProcessItemService(ProcessItemConfig config)
+    public ProcessItemService(
+        PriceCutoffService priceCutoff,
+        IRemapNameService nameRemap,
+        HashSet<string> ignoredNames)
     {
-        _config = config;
+        _priceCutoff = priceCutoff;
+        _nameRemap = nameRemap;
+        _ignoredNames = ignoredNames;
     }
 
     public Item? Process(Item item)
     {
-        if (!_config.priceCutoff.AllowsPrice(item.Price))
+        if (!_priceCutoff.AllowsPrice(item.Price))
         {
             return null;
         }
         string name = item.Name;
-        if (_config.ignoredNames.Contains(name))
+        if (_ignoredNames.Contains(name))
         {
             return null;
         }
 
         // polymorphism
-        name = _config.nameRemap.RemapName(name);
+        name = _nameRemap.RemapName(name);
         name = name.ToUpper();
 
         var newItem = new Item
@@ -148,11 +158,6 @@ public sealed class PriceCutoffService
         return true;
     }
 }
-
-public readonly record struct ProcessItemConfig(
-    PriceCutoffService priceCutoff,
-    IRemapNameService nameRemap,
-    HashSet<string> ignoredNames);
 
 public sealed class Item
 {
