@@ -37,7 +37,7 @@
             },
         };
 
-        var result = Helper.ProcessItems(items,
+        var config = new ProcessItemConfig(
             minPriceCutoff: 5.0f,
             maxPriceCutoff: 50.0f,
             nameRemap: new()
@@ -45,6 +45,9 @@
                 ["Anton"] = "Mark",
             },
             ["ignored"]);
+        var result = Helper.ProcessItems(
+            items,
+            config);
 
         await Verify(result);
     }
