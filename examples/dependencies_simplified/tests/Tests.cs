@@ -48,7 +48,7 @@
         // var remap = new RemapNameService_RemovePrefix("A");
         var config = new ProcessItemConfig(
             cutoffService,
-            remap,
+            new(remap),
             ["ignored"]);
         var processItemService = new ProcessItemService(config);
         var result = Helper.ProcessItems(

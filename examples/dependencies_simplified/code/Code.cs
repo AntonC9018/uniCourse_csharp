@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 public static class Helper
 {
     // Single Responsibility
@@ -52,13 +54,35 @@ public sealed class ProcessItemService
     }
 }
 
-public interface IRemapNameService
+public readonly struct RemapNameService_TaggedUnion
 {
-    public string RemapName(string itemName);
+    private readonly object _impl;
+
+    public RemapNameService_TaggedUnion(RemapNameService remapNameService)
+    {
+        _impl = remapNameService;
+    }
+    public RemapNameService_TaggedUnion(RemapNameService_RemovePrefix removePrefix)
+    {
+        _impl = removePrefix;
+    }
+
+    public string RemapName(string name)
+    {
+        if (_impl is RemapNameService a)
+        {
+            return a.RemapName(name);
+        }
+        if (_impl is RemapNameService_RemovePrefix b)
+        {
+            return b.RemapName(name);
+        }
+        Debug.Fail("Impossible");
+        return null;
+    }
 }
 
-
-public sealed class RemapNameService : IRemapNameService
+public sealed class RemapNameService
 {
     private readonly Dictionary<string, string> _nameRemap;
 
@@ -74,7 +98,7 @@ public sealed class RemapNameService : IRemapNameService
     }
 }
 
-public sealed class RemapNameService_RemovePrefix : IRemapNameService
+public sealed class RemapNameService_RemovePrefix
 {
     private readonly string _removedPrefix;
 
@@ -122,7 +146,7 @@ public sealed class PriceCutoffService
 
 public readonly record struct ProcessItemConfig(
     PriceCutoffService priceCutoff,
-    IRemapNameService nameRemap,
+    RemapNameService_TaggedUnion nameRemap,
     HashSet<string> ignoredNames);
 
 public sealed class Item
