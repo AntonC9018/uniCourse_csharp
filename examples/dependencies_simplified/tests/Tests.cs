@@ -37,13 +37,17 @@
             },
         };
 
-        var config = new ProcessItemConfig(
-            minPriceCutoff: 5.0f,
-            maxPriceCutoff: 50.0f,
-            nameRemap: new()
+        var cutoffService = new PriceCutoffService(
+            minPrice: 5.0f,
+            maxPrice: 50.0f);
+        var remap = new RemapNameService(
+            new()
             {
                 ["Anton"] = "Mark",
-            },
+            });
+        var config = new ProcessItemConfig(
+            cutoffService,
+            remap,
             ["ignored"]);
         var result = Helper.ProcessItems(
             items,

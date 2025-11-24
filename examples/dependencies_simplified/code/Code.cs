@@ -4,11 +4,7 @@ public static class Helper
         Item item,
         ProcessItemConfig config)
     {
-        if (item.Price <= config.minPriceCutoff)
-        {
-            return null;
-        }
-        if (item.Price >= config.maxPriceCutoff)
+        if (!config.priceCutoff.AllowsPrice(item.Price))
         {
             return null;
         }
@@ -18,7 +14,7 @@ public static class Helper
             return null;
         }
 
-        name = config.nameRemap.GetValueOrDefault(name, name);
+        name = config.nameRemap.RemapName(name);
         name = name.ToUpper();
 
         var newItem = new Item
@@ -51,10 +47,52 @@ public static class Helper
     }
 }
 
+public sealed class RemapNameService
+{
+    private readonly Dictionary<string, string> _nameRemap;
+
+    public RemapNameService(Dictionary<string, string> nameRemap)
+    {
+        _nameRemap = nameRemap;
+    }
+
+    public string RemapName(string itemName)
+    {
+        var name = _nameRemap.GetValueOrDefault(itemName, itemName);
+        return name;
+    }
+}
+
+public sealed class PriceCutoffService
+{
+    private readonly float _minPrice;
+    private readonly float _maxPrice;
+
+    public PriceCutoffService(
+        float minPrice,
+        float maxPrice)
+    {
+        _minPrice = minPrice;
+        _maxPrice = maxPrice;
+    }
+
+    public bool AllowsPrice(float price)
+    {
+        if (price <= _minPrice)
+        {
+            return false;
+        }
+        if (price >= _maxPrice)
+        {
+            return false;
+        }
+        return true;
+    }
+}
+
 public readonly record struct ProcessItemConfig(
-    float minPriceCutoff,
-    float maxPriceCutoff,
-    Dictionary<string, string> nameRemap,
+    PriceCutoffService priceCutoff,
+    RemapNameService nameRemap,
     HashSet<string> ignoredNames);
 
 public sealed class Item
