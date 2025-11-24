@@ -1,4 +1,6 @@
-﻿public sealed class Tests
+﻿using Microsoft.Extensions.DependencyInjection;
+
+public sealed class Tests
 {
     [Fact]
     public async Task Test1()
@@ -37,20 +39,39 @@
             },
         };
 
+        // config -> container
+        // mutable -> immutable
+        var services = new ServiceCollection();
         var cutoffService = new PriceCutoffService(
             minPrice: 5.0f,
             maxPrice: 50.0f);
-        var remap = new RemapNameService(
-            new()
-            {
-                ["Anton"] = "Mark",
-            });
-        // var remap = new RemapNameService_RemovePrefix("A");
-        var config = new ProcessItemConfig(
-            cutoffService,
-            remap,
-            ["ignored"]);
-        var processItemService = new ProcessItemService(config);
+        services.AddSingleton(cutoffService);
+        services.AddSingleton<IRemapNameService>(sp =>
+        {
+            _ = sp;
+            var remap = new RemapNameService(
+                new()
+                {
+                    ["Anton"] = "Mark",
+                });
+            // var remap = new RemapNameService_RemovePrefix("A");
+            return remap;
+        });
+
+        services.AddSingleton(sp =>
+        {
+            var ret = ActivatorUtilities.CreateInstance<ProcessItemService>(
+                sp,
+                new HashSet<string>
+                {
+                    "ignored",
+                });
+            return ret;
+
+        });
+        var serviceProvider = services.BuildServiceProvider();
+
+        var processItemService = serviceProvider.GetRequiredService<ProcessItemService>();
         var result = Helper.ProcessItems(
             items,
             processItemService);
