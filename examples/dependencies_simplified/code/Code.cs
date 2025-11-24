@@ -82,7 +82,12 @@ public readonly struct RemapNameService_TaggedUnion
     }
 }
 
-public sealed class RemapNameService
+public interface IRemapNameService
+{
+    string RemapName(string itemName);
+}
+
+public sealed class RemapNameService : IRemapNameService
 {
     private readonly Dictionary<string, string> _nameRemap;
 
@@ -98,7 +103,7 @@ public sealed class RemapNameService
     }
 }
 
-public sealed class RemapNameService_RemovePrefix
+public sealed class RemapNameService_RemovePrefix : IRemapNameService
 {
     private readonly string _removedPrefix;
 
@@ -146,7 +151,7 @@ public sealed class PriceCutoffService
 
 public readonly record struct ProcessItemConfig(
     PriceCutoffService priceCutoff,
-    RemapNameService_TaggedUnion nameRemap,
+    IRemapNameService nameRemap,
     HashSet<string> ignoredNames);
 
 public sealed class Item
