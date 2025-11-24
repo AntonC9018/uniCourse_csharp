@@ -42,7 +42,7 @@ public sealed class OrchestrationBuilder
 
 public static class OrchestratorBuilderExtensions
 {
-    public static OrchestrationBuilder BuildReadWritePipeline(this IServiceScope scope)
+    public static OrchestrationBuilder CreateReadWritePipelineBuilder(this IServiceScope scope)
     {
         return new OrchestrationBuilder
         {
@@ -57,8 +57,8 @@ public static class OrchestratorBuilderExtensions
             throw new InvalidOperationException("Reader factory is already set.");
         }
 
-        b.Model.Reader = b.ServiceProvider
-            .GetRequiredService<FileReaderFactory>();
+
+        b.Model.Reader = ActivatorUtilities.GetServiceOrCreateInstance<FileReaderFactory>(b.ServiceProvider);
         var snapshot = b.ServiceProvider
             .GetRequiredService<IOptionsSnapshot<FormatFileOptions>>();
         var options = snapshot.Get(FormatFileOptions.ReaderKey);
@@ -72,8 +72,7 @@ public static class OrchestratorBuilderExtensions
             throw new InvalidOperationException("Writer factory is already set.");
         }
 
-        b.Model.Writer = b.ServiceProvider
-            .GetRequiredService<FileWriterFactory>();
+        b.Model.Writer = ActivatorUtilities.GetServiceOrCreateInstance<FileWriterFactory>(b.ServiceProvider);
         var snapshot = b.ServiceProvider
             .GetRequiredService<IOptionsSnapshot<FormatFileOptions>>();
         var options = snapshot.Get(FormatFileOptions.WriterKey);
@@ -88,8 +87,7 @@ public static class OrchestratorBuilderExtensions
             throw new InvalidOperationException("Reader factory is already set.");
         }
 
-        b.Model.Reader = b.ServiceProvider
-            .GetRequiredService<RandomReaderFactory>();
+        b.Model.Reader = ActivatorUtilities.GetServiceOrCreateInstance<RandomReaderFactory>(b.ServiceProvider);
         var snapshot = b.ServiceProvider
             .GetRequiredService<IOptionsSnapshot<RandomReaderFactoryOptions>>();
         var options = snapshot.Value;
