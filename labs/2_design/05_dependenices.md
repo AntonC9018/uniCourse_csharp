@@ -1,7 +1,7 @@
 # Лабораторная работа 5
 
 - Тема: **Зависимости абстракций**.
-- Видео пока нет
+- [Видео](https://www.youtube.com/watch?v=z5CUTiubzwU&list=PL4sUOB8DjVlXKTknA5IW75BGwcTw6PU3r&index=6)
 - [PR](https://github.com/AntonC9018/uniCourse_csharp/pull/10)
 
 ## Концепты
