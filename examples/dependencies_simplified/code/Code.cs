@@ -2,26 +2,23 @@ public static class Helper
 {
     private static Item? ProcessItem(
         Item item,
-        float minPriceCutoff,
-        float maxPriceCutoff,
-        Dictionary<string, string> nameRemap,
-        HashSet<string> ignoredNames)
+        ProcessItemConfig config)
     {
-        if (item.Price <= minPriceCutoff)
+        if (item.Price <= config.minPriceCutoff)
         {
             return null;
         }
-        if (item.Price >= maxPriceCutoff)
+        if (item.Price >= config.maxPriceCutoff)
         {
             return null;
         }
         string name = item.Name;
-        if (ignoredNames.Contains(name))
+        if (config.ignoredNames.Contains(name))
         {
             return null;
         }
 
-        name = nameRemap.GetValueOrDefault(name, name);
+        name = config.nameRemap.GetValueOrDefault(name, name);
         name = name.ToUpper();
 
         var newItem = new Item
@@ -35,10 +32,7 @@ public static class Helper
     // Single Responsibility
     public static List<Item> ProcessItems(
         List<Item> items,
-        float minPriceCutoff,
-        float maxPriceCutoff,
-        Dictionary<string, string> nameRemap,
-        HashSet<string> ignoredNames)
+        ProcessItemConfig processItemConfig)
     {
         var ret = new List<Item>();
         foreach (var item in items)
@@ -47,10 +41,7 @@ public static class Helper
                 // item -> прямая зависимость - параметр
                 item,
                 // конфигурация
-                minPriceCutoff,
-                maxPriceCutoff,
-                nameRemap,
-                ignoredNames);
+                processItemConfig);
             if (newItem != null)
             {
                 ret.Add(newItem);
@@ -59,6 +50,12 @@ public static class Helper
         return ret;
     }
 }
+
+public readonly record struct ProcessItemConfig(
+    float minPriceCutoff,
+    float maxPriceCutoff,
+    Dictionary<string, string> nameRemap,
+    HashSet<string> ignoredNames);
 
 public sealed class Item
 {
