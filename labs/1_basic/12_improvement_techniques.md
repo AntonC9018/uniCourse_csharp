@@ -1,4 +1,4 @@
-# Лабораторная работа 8
+# Лабораторная работа 12
 
 - Тема: **Улучшение программы**.
 - [Видео](https://www.youtube.com/watch?v=zeuNRQBdwuY&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=7), 

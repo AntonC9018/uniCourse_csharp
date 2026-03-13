@@ -1,4 +1,4 @@
-# Лабораторная работа 12
+# Лабораторная работа 16
 
 - Тема: **инкапсуляция**.
 - [Видео](https://www.youtube.com/watch?v=IESVXL16OBA&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=11), 

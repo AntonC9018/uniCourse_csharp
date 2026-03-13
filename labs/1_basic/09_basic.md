@@ -1,4 +1,4 @@
-# Лабораторная работа 5
+# Лабораторная работа 9
 
 - Тема: **Элементарные техники программирования**.
 - [Видео](https://www.youtube.com/watch?v=z51K0UhriOk&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=4)

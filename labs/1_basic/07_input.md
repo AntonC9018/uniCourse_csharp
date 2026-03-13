@@ -1,4 +1,4 @@
-# Лабораторная работа 8
+# Лабораторная работа 7
 
 - Тема: **Ввод данных с консоли**.
 - [Видео](https://www.youtube.com/watch?v=SSTFFX5heuY&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=10)

@@ -1,4 +1,4 @@
-# Лабораторная работа 9
+# Лабораторная работа 5
 
 - Тема: **Логические выражения и операторы**.
 - [Видео (до `if`)](https://www.youtube.com/watch?v=mj9E9BhOAhU&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=18)

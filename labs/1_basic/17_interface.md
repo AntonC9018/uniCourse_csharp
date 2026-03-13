@@ -1,4 +1,4 @@
-# Лабораторная работа 13
+# Лабораторная работа 17
 
 - Тема: **полиморфизм и интерфейсы**.
 - [Видео (меню)](https://www.youtube.com/watch?v=nKGsQISMrbQ&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=17), 

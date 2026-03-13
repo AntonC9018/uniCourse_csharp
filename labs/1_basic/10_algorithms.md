@@ -1,4 +1,4 @@
-# Лабораторная работа 6
+# Лабораторная работа 10
 
 - Тема: **Алгоритмы**.
 - [Видео](https://www.youtube.com/watch?v=C6plSGSYuyc&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=5)
