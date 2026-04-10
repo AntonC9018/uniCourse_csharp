@@ -15,10 +15,11 @@
 
 Что произойдет в программе? Что выведется?
 
-1. ```csharp
+### 1. Что печатает `true`
+```csharp
    bool a = true;
    Console.WriteLine(a);
-   ```
+```
    
    <details>
    <summary>Ответ</summary>
@@ -27,9 +28,10 @@
    При выводе в консоль они преобразуются в текстовую форму.
    </details>
 
-2. ```csharp
+### 2. Присвоение пустой ссылки к `bool`
+```csharp
    bool a = null;
-   ```
+```
 
    <details>
    <summary>Ответ</summary>
@@ -42,10 +44,11 @@
 
 
 
-3. ```csharp
+### 3. Сравнение это логическое выражение
+```csharp
    bool a = 1 == 2;
    Console.WriteLine(a);
-   ```
+```
 
    <details>
    <summary>Ответ</summary>
@@ -55,12 +58,13 @@
    </details>
 
 
-4. ```csharp
+### 4. Сравнение переменных это выражение
+```csharp
    int x = 3;
    int y = 4;
    bool b = x == y;
    Console.WriteLine(b);
-   ```
+```
 
    <details>
    <summary>Ответ</summary>
@@ -69,12 +73,13 @@
    При выполнении, вместо `x` как бы вставится значение из `x` (как с выражениями), и так далее.
    </details>
   
-4. ```csharp
+### 5. Сложное сравнение переменных
+```csharp
    int x = 3;
    int y = 4;
    bool b = x * 2 == y + 4;
    Console.WriteLine(b);
-   ```
+```
 
    <details>
    <summary>Ответ</summary>
@@ -86,11 +91,12 @@
    </details>
 
 
-5. ```csharp
+### 6. Перезапись `bool` переменной
+```csharp
    bool a = 1 > 2;
    a = 3 == 3;
    Console.WriteLine(a);
-   ```
+```
 
    <details>
    <summary>Ответ</summary>
@@ -99,7 +105,8 @@
    </details>
 
 
-6. ```csharp
+### 7. Передача `bool` переменной функции
+```csharp
    bool a = true;
    F(a);
 
@@ -107,16 +114,17 @@
    {
        Console.WriteLine(x);
    }
-   ```
+```
 
-7. ```csharp
+### 8. Передача `bool` выражения функции
+```csharp
    F(5 > 3);
    
    static void F(bool flag)
    {
        Console.WriteLine(flag);
    }
-   ```
+```
 
    <details>
    <summary>Ответ</summary>
@@ -125,7 +133,8 @@
    В `flag` попадет результат `true`.
    </details>
 
-8. ```csharp
+### 9. Возвращение `bool` значения
+```csharp
    bool result = F();
    Console.WriteLine(result);
    
@@ -133,9 +142,10 @@
    {
        return true;
    }
-   ```
+```
 
-9. ```csharp
+### 10. Возвращение `bool` выражения
+```csharp
    bool result = IsGreater(5, 3);
    Console.WriteLine(result);
    
@@ -143,14 +153,15 @@
    {
        return a > b;
    }
-   ```
+```
 
-10. ```csharp
+### 11. Сравнение логических значений
+```csharp
     bool a = true;
     bool b = false;
     bool c = a == b;
     Console.WriteLine(c);
-    ```
+```
  
     <details>
     <summary>Ответ</summary>
@@ -160,11 +171,12 @@
     </details>
 
 
-1. ```csharp
+### 12. Оператор `!`
+```csharp
    bool a = false;
    bool b = !a;
    Console.WriteLine(b);
-   ```
+```
 
    <details>
    <summary>Ответ</summary>
@@ -172,12 +184,13 @@
    Оператор `!` делает из `false` `true` (и наоборот).
    </details>
 
-2. ```csharp
+### 13. Оператор `&&`
+```csharp
    bool a = true;
    bool b = false;
    bool c = a && b;
    Console.WriteLine(c);
-   ```
+```
 
    <details>
    <summary>Ответ</summary>
@@ -185,7 +198,8 @@
    `a && b` -> `true && false` -> `false`, потому что оба операнда должны быть `true`.
    </details>
 
-3. ```csharp
+### 14. Тонкости оператора `&&` (1)
+```csharp
    bool result = A() && B();
     
    static bool A()
@@ -199,7 +213,7 @@
        Console.WriteLine("B");
        return true;
    }
-   ```
+```
 
    <details>
    <summary>Ответ</summary>
@@ -212,7 +226,8 @@
    ```
    </details>
 
-4. ```csharp
+### 15. Тонкости оператора `&&` (2)
+```csharp
    bool result = A() && B();
     
    static bool A()
@@ -226,7 +241,7 @@
        Console.WriteLine("B");
        return false;
    }
-   ```
+```
 
    <details>
    <summary>Ответ</summary>
@@ -240,7 +255,8 @@
    ```
    </details>
 
-5. ```csharp
+### 16. Тонкости оператора `&&` (3)
+```csharp
    bool result = A() && B();
 
    static bool A()
@@ -254,7 +270,7 @@
        Console.WriteLine("B");
        return true;
    }
-   ```
+```
 
    <details>
    <summary>Ответ</summary>
@@ -267,7 +283,8 @@
    ```
    </details>
 
-6. ```csharp
+### 17. Тонкости оператора `||`
+```csharp
    bool result = A() || B();
 
    static bool A()
@@ -281,7 +298,7 @@
        Console.WriteLine("B");
        return true;
    }
-   ```
+```
 
    <details>
    <summary>Ответ</summary>
