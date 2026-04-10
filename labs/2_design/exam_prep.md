@@ -175,7 +175,7 @@
 
 ## Guard Clause / Early Return
 
-Проанализируйте пример из вопроса 14 [в документе](../1_basic/a_06_flow_control.md).
+Проанализируйте пример из [вопроса 14 в документе](../1_basic/a_06_flow_control.md/#14-early-return).
 
 ## Зависимости
 
