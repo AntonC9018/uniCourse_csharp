@@ -1,7 +1,7 @@
 # Лабораторная работа 4
 
 - Тема: **Возможности представления свойств объекта в системе**.
-- [Видео](https://www.youtube.com/watch?v=TRfnDs891cg&list=PL4sUOB8DjVlXKTknA5IW75BGwcTw6PU3r&index=4)
+- [Видео](https://www.youtube.com/watch?v=-YG0SKqdL0U&list=PL4sUOB8DjVlXKTknA5IW75BGwcTw6PU3r&index=4)
 - [PR](https://github.com/AntonC9018/uniCourse_csharp/pull/8)
 
 ## Концепты
