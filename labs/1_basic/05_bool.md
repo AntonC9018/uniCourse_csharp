@@ -17,296 +17,296 @@
 
 ### 1. Что печатает `true`
 ```csharp
-   bool a = true;
-   Console.WriteLine(a);
+bool a = true;
+Console.WriteLine(a);
 ```
-   
-   <details>
-   <summary>Ответ</summary>
+
+<details>
+<summary>Ответ</summary>
  
-   Тип `bool` принимает только два значения: `true` и `false`.  
-   При выводе в консоль они преобразуются в текстовую форму.
-   </details>
+Тип `bool` принимает только два значения: `true` и `false`.  
+При выводе в консоль они преобразуются в текстовую форму.
+</details>
 
 ### 2. Присвоение пустой ссылки к `bool`
 ```csharp
-   bool a = null;
+bool a = null;
 ```
 
-   <details>
-   <summary>Ответ</summary>
+<details>
+<summary>Ответ</summary>
  
-   Ошибка компиляции.
+Ошибка компиляции.
  
-   `bool` — это тип-значение, не ссылочный тип.  
-   Он не может содержать `null`.  
-   </details>
+`bool` — это тип-значение, не ссылочный тип.  
+Он не может содержать `null`.  
+</details>
 
 
 
 ### 3. Сравнение это логическое выражение
 ```csharp
-   bool a = 1 == 2;
-   Console.WriteLine(a);
+bool a = 1 == 2;
+Console.WriteLine(a);
 ```
 
-   <details>
-   <summary>Ответ</summary>
+<details>
+<summary>Ответ</summary>
  
-   Оператор `==` применяется к 2 выражениям и возвращает результат проверки на равенство, как логическое значение.
-   Результат `false`.
-   </details>
+Оператор `==` применяется к 2 выражениям и возвращает результат проверки на равенство, как логическое значение.
+Результат `false`.
+</details>
 
 
 ### 4. Сравнение переменных это выражение
 ```csharp
-   int x = 3;
-   int y = 4;
-   bool b = x == y;
-   Console.WriteLine(b);
+int x = 3;
+int y = 4;
+bool b = x == y;
+Console.WriteLine(b);
 ```
 
-   <details>
-   <summary>Ответ</summary>
+<details>
+<summary>Ответ</summary>
  
-   Здесь, оператор работает не с числами напрямую, а со значениями переменных.
-   При выполнении, вместо `x` как бы вставится значение из `x` (как с выражениями), и так далее.
-   </details>
+Здесь, оператор работает не с числами напрямую, а со значениями переменных.
+При выполнении, вместо `x` как бы вставится значение из `x` (как с выражениями), и так далее.
+</details>
   
 ### 5. Сложное сравнение переменных
 ```csharp
-   int x = 3;
-   int y = 4;
-   bool b = x * 2 == y + 4;
-   Console.WriteLine(b);
+int x = 3;
+int y = 4;
+bool b = x * 2 == y + 4;
+Console.WriteLine(b);
 ```
 
-   <details>
-   <summary>Ответ</summary>
+<details>
+<summary>Ответ</summary>
  
-   Пример использования более сложных выражений как операнд.
+Пример использования более сложных выражений как операнд.
  
-   `bool b = x * 2 == y + 4` воспринимается как `bool b = ((x * 2) == (y + 4))`.
-   Дальше вычисления происходят согласно правилам выражений.
-   </details>
+`bool b = x * 2 == y + 4` воспринимается как `bool b = ((x * 2) == (y + 4))`.
+Дальше вычисления происходят согласно правилам выражений.
+</details>
 
 
 ### 6. Перезапись `bool` переменной
 ```csharp
-   bool a = 1 > 2;
-   a = 3 == 3;
-   Console.WriteLine(a);
+bool a = 1 > 2;
+a = 3 == 3;
+Console.WriteLine(a);
 ```
 
-   <details>
-   <summary>Ответ</summary>
+<details>
+<summary>Ответ</summary>
  
-   Здесь, `a` перезапишется с `false` на другое значение (`true`).
-   </details>
+Здесь, `a` перезапишется с `false` на другое значение (`true`).
+</details>
 
 
 ### 7. Передача `bool` переменной функции
 ```csharp
-   bool a = true;
-   F(a);
+bool a = true;
+F(a);
 
-   static void F(bool x)
-   {
-       Console.WriteLine(x);
-   }
+static void F(bool x)
+{
+    Console.WriteLine(x);
+}
 ```
 
 ### 8. Передача `bool` выражения функции
 ```csharp
-   F(5 > 3);
-   
-   static void F(bool flag)
-   {
-       Console.WriteLine(flag);
-   }
+F(5 > 3);
+
+static void F(bool flag)
+{
+    Console.WriteLine(flag);
+}
 ```
 
-   <details>
-   <summary>Ответ</summary>
+<details>
+<summary>Ответ</summary>
  
-   Аргумент `5 > 3` вычисляется перед вызовом функции.  
-   В `flag` попадет результат `true`.
-   </details>
+Аргумент `5 > 3` вычисляется перед вызовом функции.  
+В `flag` попадет результат `true`.
+</details>
 
 ### 9. Возвращение `bool` значения
 ```csharp
-   bool result = F();
-   Console.WriteLine(result);
-   
-   static bool F()
-   {
-       return true;
-   }
+bool result = F();
+Console.WriteLine(result);
+
+static bool F()
+{
+    return true;
+}
 ```
 
 ### 10. Возвращение `bool` выражения
 ```csharp
-   bool result = IsGreater(5, 3);
-   Console.WriteLine(result);
-   
-   static bool IsGreater(int a, int b)
-   {
-       return a > b;
-   }
+bool result = IsGreater(5, 3);
+Console.WriteLine(result);
+
+static bool IsGreater(int a, int b)
+{
+    return a > b;
+}
 ```
 
 ### 11. Сравнение логических значений
 ```csharp
-    bool a = true;
-    bool b = false;
-    bool c = a == b;
-    Console.WriteLine(c);
+bool a = true;
+bool b = false;
+bool c = a == b;
+Console.WriteLine(c);
 ```
  
-    <details>
-    <summary>Ответ</summary>
-  
-    Оператор равенства `==` можно применять к выражениям типа `bool`.
-    Сравнение `true == false` даёт `false`.
-    </details>
+<details>
+<summary>Ответ</summary>
+
+Оператор равенства `==` можно применять к выражениям типа `bool`.
+Сравнение `true == false` даёт `false`.
+</details>
 
 
 ### 12. Оператор `!`
 ```csharp
-   bool a = false;
-   bool b = !a;
-   Console.WriteLine(b);
+bool a = false;
+bool b = !a;
+Console.WriteLine(b);
 ```
 
-   <details>
-   <summary>Ответ</summary>
+<details>
+<summary>Ответ</summary>
   
-   Оператор `!` делает из `false` `true` (и наоборот).
-   </details>
+Оператор `!` делает из `false` `true` (и наоборот).
+</details>
 
 ### 13. Оператор `&&`
 ```csharp
-   bool a = true;
-   bool b = false;
-   bool c = a && b;
-   Console.WriteLine(c);
+bool a = true;
+bool b = false;
+bool c = a && b;
+Console.WriteLine(c);
 ```
 
-   <details>
-   <summary>Ответ</summary>
+<details>
+<summary>Ответ</summary>
 
-   `a && b` -> `true && false` -> `false`, потому что оба операнда должны быть `true`.
-   </details>
+`a && b` -> `true && false` -> `false`, потому что оба операнда должны быть `true`.
+</details>
 
 ### 14. Тонкости оператора `&&` (1)
 ```csharp
-   bool result = A() && B();
-    
-   static bool A()
-   {
-       Console.WriteLine("A");
-       return true;
-   }
-    
-   static bool B()
-   {
-       Console.WriteLine("B");
-       return true;
-   }
+bool result = A() && B();
+ 
+static bool A()
+{
+    Console.WriteLine("A");
+    return true;
+}
+ 
+static bool B()
+{
+    Console.WriteLine("B");
+    return true;
+}
 ```
 
-   <details>
-   <summary>Ответ</summary>
+<details>
+<summary>Ответ</summary>
 
-   Для того, чтобы удостоверится, что `A()` и `B()` оба вернут `true`, программе необходимо их обоих вызвать.
+Для того, чтобы удостоверится, что `A()` и `B()` оба вернут `true`, программе необходимо их обоих вызвать.
 
-   ```
-   A
-   B
-   ```
-   </details>
+```
+A
+B
+```
+</details>
 
 ### 15. Тонкости оператора `&&` (2)
 ```csharp
-   bool result = A() && B();
-    
-   static bool A()
-   {
-       Console.WriteLine("A");
-       return true;
-   }
-    
-   static bool B()
-   {
-       Console.WriteLine("B");
-       return false;
-   }
+bool result = A() && B();
+ 
+static bool A()
+{
+    Console.WriteLine("A");
+    return true;
+}
+ 
+static bool B()
+{
+    Console.WriteLine("B");
+    return false;
+}
 ```
 
-   <details>
-   <summary>Ответ</summary>
+<details>
+<summary>Ответ</summary>
   
-   Первая функция возвращает `true`, поэтому вторая тоже выполняется.  
-   Вторая вернет `false`, и результат выражения будет `A() && B()` -> `true && false` -> `false`.
+Первая функция возвращает `true`, поэтому вторая тоже выполняется.  
+Вторая вернет `false`, и результат выражения будет `A() && B()` -> `true && false` -> `false`.
 
-   ```
-   A
-   B
-   ```
-   </details>
+```
+A
+B
+```
+</details>
 
 ### 16. Тонкости оператора `&&` (3)
 ```csharp
-   bool result = A() && B();
+bool result = A() && B();
 
-   static bool A()
-   {
-       Console.WriteLine("A");
-       return false;
-   }
+static bool A()
+{
+    Console.WriteLine("A");
+    return false;
+}
 
-   static bool B()
-   {
-       Console.WriteLine("B");
-       return true;
-   }
+static bool B()
+{
+    Console.WriteLine("B");
+    return true;
+}
 ```
 
-   <details>
-   <summary>Ответ</summary>
+<details>
+<summary>Ответ</summary>
 
-   При `&&`, если первый операнд `false`, второй не вычисляется.  
-   Это называется lazy evaluation (ленивое вычисление).
+При `&&`, если первый операнд `false`, второй не вычисляется.  
+Это называется lazy evaluation (ленивое вычисление).
 
-   ```
-   A
-   ```
-   </details>
+```
+A
+```
+</details>
 
 ### 17. Тонкости оператора `||`
 ```csharp
-   bool result = A() || B();
+bool result = A() || B();
 
-   static bool A()
-   {
-       Console.WriteLine("A");
-       return true;
-   }
+static bool A()
+{
+    Console.WriteLine("A");
+    return true;
+}
 
-   static bool B()
-   {
-       Console.WriteLine("B");
-       return true;
-   }
+static bool B()
+{
+    Console.WriteLine("B");
+    return true;
+}
 ```
 
-   <details>
-   <summary>Ответ</summary>
+<details>
+<summary>Ответ</summary>
 
-   При `||`, если первый операнд `true`, второй не вычисляется.  
-   Это тоже ленивое вычисление.
-    
-   ```
-   A
-   ```
-   </details>
+При `||`, если первый операнд `true`, второй не вычисляется.  
+Это тоже ленивое вычисление.
+ 
+```
+A
+```
+</details>
