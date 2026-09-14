@@ -1,10 +1,10 @@
 ---
 theme: default
-title: 'Reference implementations'
-info: 'Software design lessons with C# examples'
+title: 'Эталонные реализации'
+info: 'Уроки проектирования ПО с примерами на C#'
 layout: cover
 class: cover
-colorSchema: light
+colorSchema: dark
 aspectRatio: 16/9
 canvasWidth: 1280
 fonts:
@@ -17,17 +17,17 @@ transition: none
 mdc: false
 ---
 
-# Reference implementations
+# Эталонные реализации
 
-Software design · C#
+Проектирование ПО · C#
 
 <!--
-Basic C# is assumed. Read the concept, then use the examples to explain it. Sections spanning several slides share their original teaching-time allocation.
+Базовое знание C# предполагается. Сначала изложите понятие, затем объясните его на примерах. Если раздел занимает несколько слайдов, отведённое на него учебное время распределяется между ними.
 -->
 
 ---
 
-# Complete interval implementation · 1/5
+# Полная реализация интервала · 1/5
 
 ```csharp
 public enum Boundary { Inclusive, Exclusive }
@@ -47,7 +47,7 @@ public readonly struct Interval
 
 ---
 
-# Complete interval implementation · 2/5
+# Полная реализация интервала · 2/5
 
 ```csharp
     public static Interval Create(
@@ -69,7 +69,7 @@ public readonly struct Interval
 
 ---
 
-# Complete interval implementation · 3/5
+# Полная реализация интервала · 3/5
 
 ```csharp
         if (startInclusive >= endExclusive)
@@ -89,13 +89,13 @@ public readonly struct Interval
 
 ---
 
-# Complete interval implementation · 4/5
+# Полная реализация интервала · 4/5
 
-Boundary enums are construction inputs only. All empty intervals normalize to [0,0), including `default(Interval)`. Internal `long` bounds support every `int` endpoint without overflow.
+Значения перечисления Boundary — только входные данные для создания интервала. Все пустые интервалы приводятся к виду [0,0), включая `default(Interval)`. Внутренние границы типа `long` позволяют хранить любые границы типа `int` без переполнения.
 
 ---
 
-# Complete interval implementation · 5/5
+# Полная реализация интервала · 5/5
 
 ```csharp
 var interval = Interval.Create(
@@ -115,7 +115,7 @@ Debug.Assert(!interval.Contains(20));
 
 ---
 
-# Parser used in the call-order example
+# Парсер из примера про порядок вызовов
 
 ```csharp
 sealed class TextParser
@@ -127,11 +127,11 @@ sealed class TextParser
 static string[] Parse(string text, char separator) => text.Split(separator);
 ```
 
-This splits a single string by one separator; it is not a CSV implementation.
+Метод разбивает одну строку по заданному разделителю; это не реализация CSV.
 
 ---
 
-# Statistics and the restricted writing view · 1/4
+# Статистика и ограниченный вид для записи · 1/4
 
 ```csharp
 interface IRemovalCounter
@@ -149,7 +149,7 @@ sealed class ImportStatistics : IRemovalCounter
 
 ---
 
-# Statistics and the restricted writing view · 2/4
+# Статистика и ограниченный вид для записи · 2/4
 
 ```csharp
     public void AddRead(int count)
@@ -168,7 +168,7 @@ sealed class ImportStatistics : IRemovalCounter
 
 ---
 
-# Statistics and the restricted writing view · 3/4
+# Статистика и ограниченный вид для записи · 3/4
 
 ```csharp
     public void AddWritten(int count)
@@ -177,8 +177,9 @@ sealed class ImportStatistics : IRemovalCounter
         Written = checked(Written + count);
     }
 
-    // Only the orchestrator should reset between runs.
-    // Pass IRemovalCounter to code that should only report removals.
+    // Сбрасывать между запусками должен только оркестратор.
+    // Коду, который лишь сообщает об удалениях,
+    // передавайте IRemovalCounter.
     public void Reset()
     {
         Read = 0;
@@ -190,6 +191,6 @@ sealed class ImportStatistics : IRemovalCounter
 
 ---
 
-# Statistics and the restricted writing view · 4/4
+# Статистика и ограниченный вид для записи · 4/4
 
-The operations reject negative increments. Checked addition prevents integer overflow from silently turning an increment into a negative count. Through IRemovalCounter, a step is not offered Reset, AddRead, or AddWritten. The orchestrator may retain the concrete instance to manage its lifetime. This example is single-threaded; it makes no concurrency guarantee.
+Операции отклоняют отрицательные приращения. Контролируемое сложение не даёт переполнению незаметно превратить приращение в отрицательный счётчик. При доступе через IRemovalCounter шагу недоступны методы Reset, AddRead и AddWritten. Оркестратор может хранить конкретный экземпляр, чтобы управлять его жизненным циклом. Пример — однопоточный; потокобезопасность не гарантируется.

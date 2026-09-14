@@ -1,10 +1,10 @@
 ---
 theme: default
-title: 'Deciding what code should know'
-info: 'Software design lessons with C# examples'
+title: 'Решаем, что код должен знать'
+info: 'Уроки проектирования ПО с примерами на C#'
 layout: cover
 class: cover
-colorSchema: light
+colorSchema: dark
 aspectRatio: 16/9
 canvasWidth: 1280
 fonts:
@@ -17,17 +17,17 @@ transition: none
 mdc: false
 ---
 
-# Deciding what code should know
+# Решаем, что код должен знать
 
-Software design · C#
+Проектирование ПО · C#
 
 <!--
-Basic C# is assumed. Read the concept, then use the examples to explain it. Sections spanning several slides share their original teaching-time allocation.
+Базовое знание C# предполагается. Сначала изложите понятие, затем объясните его на примерах. Если раздел занимает несколько слайдов, отведённое на него учебное время распределяется между ними.
 -->
 
 ---
 
-# Add reporting to a working import
+# Добавим отчётность в рабочий импорт
 
 ```csharp
 var names = ReadNames(source);
@@ -35,9 +35,9 @@ var unique = RemoveDuplicates(names);
 WriteNames(destination, unique);
 ```
 
-For `["Ann", "Bob", "Ann"]`, we write `["Ann", "Bob"]`.
+Для `["Ann", "Bob", "Ann"]` записываем `["Ann", "Bob"]`.
 
-New requirement:
+Новое требование:
 
 ```text
 Read: 3
@@ -45,21 +45,21 @@ Removed as duplicates: 1
 Written: 2
 ```
 
-Where should the workflow get these numbers?
+Откуда сценарий возьмёт эти числа?
 
 <!--
-Teaching notes · 2 minutes
+Заметки для преподавателя · 2 мин.
 
-Recap the input/output contract from lesson 1. This is one small program; no project structure or pipeline framework is required.
+Повторите контракт входа/выхода из урока 1. Это одна небольшая программа; структура проекта или фреймворк конвейеров не требуются.
 
-Assume eager collections and a writer whose successful return means all supplied names were written. If partial writes must be reported, that requires a richer writer contract. Do not drag that scenario into this example.
+Считаем коллекции сразу вычисляемыми (eager), а успешное завершение записи означает, что записаны все переданные имена. Если нужно сообщать о частичных записях, потребуется более богатый контракт писателя. Не усложняйте этот пример таким сценарием.
 -->
 
 ---
 
-# A direct implementation makes the step know the import report
+# Прямая реализация знакомит шаг с отчётом импорта
 
-**Coupling:** dependencies and assumptions connecting different parts of a program.
+**Зацепление** (coupling): зависимости и допущения, связывающие разные части программы.
 
 <div class="grid grid-cols-2 gap-6">
 
@@ -81,20 +81,20 @@ IReadOnlyList<string> RemoveDuplicatesForReport(
 
 <div>
 
-The reporting type supports the whole workflow:
+Тип отчётности поддерживает весь сценарий:
 
 ```csharp
 sealed class ImportStatistics
 {
-    // Workflow writers add counts;
-    // only the orchestrator should reset.
+    // Шаги сценария добавляют к счётчикам;
+    // сбрасывать должен только оркестратор.
     public void AddRead(int count)
-    { /* accumulate */ }
+    { /* накапливаем */ }
     public void AddRemoved(int count)
-    { /* accumulate */ }
+    { /* накапливаем */ }
     public void AddWritten(int count)
-    { /* accumulate */ }
-    public void Reset() { /* clear for another run */ }
+    { /* накапливаем */ }
+    public void Reset() { /* сброс между запусками */ }
 }
 ```
 
@@ -102,27 +102,27 @@ sealed class ImportStatistics
 
 </div>
 
-The step is given more knowledge and access than duplicate removal needs.
+Шаг получает больше знаний и доступа, чем нужно для удаления дубликатов.
 
 <!--
-Teaching notes · 3 minutes
+Заметки для преподавателя · 3 мин.
 
-Method bodies are abbreviated API sketches; the actual accumulator implementation is in the reference code. Counts are private and additions reject negative values. No public setter is offered.
+Тела методов — сокращённые наброски API; настоящая реализация накопителей — в эталонном коде. Счётчики закрыты, методы добавления отклоняют отрицательные значения. Публичных сеттеров нет.
 
-The outStatistics name and AddRemoved operation make mutation explicit. Do not present mutation itself as the problem. The concern is that a step intended for independent use accepts the whole ImportStatistics type.
+Имя outStatistics и операция AddRemoved делают изменение явным. Не подавайте само изменение как проблему. Проблема в том, что шаг для независимого использования принимает весь тип ImportStatistics.
 
-The comment communicates the reset restriction but does not enforce it. We will later compare this with a narrower interface rather than silently pretending the comment prevents misuse.
+Комментарий сообщает об ограничении на сброс, но не обеспечивает его. Позже сравним это с более узким интерфейсом, а не будем молча делать вид, будто комментарий предотвращает злоупотребление.
 -->
 
 ---
 
-# Show what the extra dependency permits
+# Покажем, что позволяет лишняя зависимость
 
 <div class="grid grid-cols-2 gap-6">
 
 <div>
 
-A second feature only wants unique names:
+Второму сценарию нужны только уникальные имена:
 
 ```csharp
 var unusedImportReport = new ImportStatistics();
@@ -134,10 +134,10 @@ var unique = RemoveDuplicatesForReport(
 
 <div>
 
-An accidental change inside the reporting step:
+Случайное изменение внутри шага отчётности:
 
 ```csharp
-// Compiles, but erases earlier workflow counts:
+// Компилируется, но стирает прежние счётчики:
 outStatistics.Reset();
 outStatistics.AddRemoved(removedCount);
 ```
@@ -146,19 +146,19 @@ outStatistics.AddRemoved(removedCount);
 
 </div>
 
-The first caller must invent an irrelevant import report. The second fragment violates the report's accumulation rule.
+Первый вызывающий вынужден создавать ненужный ему отчёт импорта. Второй фрагмент нарушает правило накопления отчёта.
 
 <!--
-Teaching notes · 2 minutes
+Заметки для преподавателя · 2 мин.
 
-Distinguish the two consequences. Reuse requiring an irrelevant object is architectural friction, not a compiler error. Resetting inside the step is a concrete behavioral error under the stated workflow convention.
+Различайте два последствия. Повторное использование, требующее ненужного объекта, — архитектурное затруднение, а не ошибка компилятора. Сброс внутри шага — конкретная поведенческая ошибка при заявленном соглашении сценария.
 
-Not every dependency causes either problem. Name the actual dependency and its consequence instead of saying that coupling is bad in the abstract.
+Не каждая зависимость вызывает ту или иную проблему. Называйте конкретную зависимость и её последствие вместо абстрактного «зацепление — это плохо».
 -->
 
 ---
 
-# Return information about the operation itself
+# Вернём сведения о самой операции
 
 ```csharp
 record DeduplicationResult(IReadOnlyList<string> Names, int RemovedCount);
@@ -178,21 +178,21 @@ var result = Deduplicate(new[] { "Ann", "Bob", "Ann" });
 // result.RemovedCount: 1
 ```
 
-The result describes duplicate removal. It has no import-specific fields.
+Результат описывает удаление дубликатов. Полей, специфичных для импорта, в нём нет.
 
 <!--
-Teaching notes · 3 minutes
+Заметки для преподавателя · 3 мин.
 
-Keep the returned-result approach as the main positive example. RemoveDuplicates is the complete implementation already shown in lesson 1; Deduplicate adds the required information to the result.
+Используйте подход с возвращаемым результатом в качестве основного положительного примера. RemoveDuplicates — полная реализация, уже показанная в уроке 1; Deduplicate добавляет к результату требуемые сведения.
 
-A tuple could work too. A named result keeps the explanation readable. IReadOnlyList limits what result consumers can do through that view; it is not a deep immutability guarantee.
+Кортеж тоже подошёл бы. Именованный результат сохраняет объяснение понятным. IReadOnlyList ограничивает то, что потребители результата могут делать через этот вид; это не гарантия глубокой неизменяемости.
 
-For this eager collection, the caller could calculate the count from lengths. That simpler alternative is valid. A result becomes more valuable when it contains information callers cannot reconstruct, such as distinct rejection reasons. Do not require a wrapper result without such a need.
+Для этой сразу вычисляемой коллекции вызывающий мог бы сам вычислить количество как разность длин. Эта более простая альтернатива корректна. Результат становится ценнее, когда несёт сведения, которые вызывающие восстановить не могут, например отдельные причины отклонения. Не требуйте результат-обёртку без такой нужды.
 -->
 
 ---
 
-# The workflow builds its own report
+# Сценарий сам строит свой отчёт
 
 ```csharp
 record ImportReport(string Source, int Read, int Removed, int Written);
@@ -219,7 +219,7 @@ ShowReport(report);
 
 <div>
 
-A different caller can use the same operation:
+Другой вызывающий использует ту же операцию:
 
 ```csharp
 var result = Deduplicate(selectedNames);
@@ -231,22 +231,22 @@ ShowNames(result.Names);
 </div>
 
 <!--
-Teaching notes · 3 minutes
+Заметки для преподавателя · 3 мин.
 
-Read both caller examples. The import assembles a report because it knows the source, the write operation, and the meaning of the report fields. The other caller does not create an import report at all.
+Прочитайте оба примера вызова. Сценарий импорта собирает отчёт, потому что знает источник, операцию записи и смысл полей отчёта. Другой вызывающий отчёт импорта вообще не создаёт.
 
-Name orchestration as arranging calls and combining their results. No extra orchestrator class is required. The workflow legitimately depends on the operations it uses.
+Называйте оркестрацией (orchestration) расстановку вызовов и объединение их результатов. Отдельный класс-оркестратор не требуется. Сценарий закономерно зависит от используемых операций.
 -->
 
 ---
 
-# Architecture includes deciding who knows about whom
+# Архитектура включает решение, кто о ком знает
 
 <div class="grid grid-cols-2 gap-6">
 
 <div>
 
-An unwanted relationship:
+Нежелательное отношение:
 
 ```csharp
 RemoveDuplicatesForReport(names, importStatistics);
@@ -254,10 +254,10 @@ RemoveDuplicatesForReport(names, importStatistics);
 
 ```mermaid
 flowchart TD
-    W["Import workflow"] --> S["Duplicate-removal step"]
-    W --> R["Import statistics"]
+    W["Сценарий импорта"] --> S["Шаг удаления дубликатов"]
+    W --> R["Статистика импорта"]
     S --> R
-    V["Another feature"] --> S
+    V["Другой сценарий"] --> S
     V --> R
 ```
 
@@ -265,48 +265,48 @@ flowchart TD
 
 <div>
 
-The independent result:
+Независимый результат:
 
 ```csharp
-// No import report required:
+// Отчёт импорта не нужен:
 var result = Deduplicate(names);
 ```
 
 ```mermaid
 flowchart TD
-    W["Import workflow"] --> S["Deduplicate"]
-    W --> R["Import report"]
-    V["Another feature"] --> S
-    S --> D["Deduplication result"]
+    W["Сценарий импорта"] --> S["Deduplicate"]
+    W --> R["Отчёт импорта"]
+    V["Другой сценарий"] --> S
+    S --> D["Результат дедупликации"]
 ```
 
 </div>
 
 </div>
 
-Arrows show selected code dependencies, not execution order.
+Стрелки показывают выбранные зависимости кода, а не порядок выполнения.
 
 <!--
-Teaching notes · 2 minutes
+Заметки для преподавателя · 2 мин.
 
-The second diagram omits the callers' dependencies on the result type for readability; explain that both callers also use its contract. It is not a claim that results are dependency-free.
+Вторая диаграмма для читаемости опускает зависимости вызывающих от типа результата; объясните, что оба вызывающих тоже используют его контракт. Это не утверждение, будто результаты свободны от зависимостей.
 
-Architecture is the significant arrangement of responsibilities and dependencies. These decisions exist even in one file. A folder move alone does not remove the ImportStatistics parameter. Assemblies can enforce boundaries later; they are not needed to understand the difference.
+Архитектура (architecture) — значимая организация ответственностей и зависимостей. Эти решения есть даже в одном файле. Один лишь перенос по папкам не уберёт параметр ImportStatistics. Сборки смогут позже обеспечить границы; для понимания разницы они не нужны.
 
-Refer to the previous slide's executable use patterns and the reset error on slide 3. The diagram should summarize concrete code the students have already seen.
+Сошлитесь на примеры использования с прошлого слайда и на ошибку сброса. Диаграмма должна подытожить конкретный код, который студенты уже видели.
 -->
 
 ---
 
-# Call order can be another dependency
+# Порядок вызовов бывает зависимостью
 
-Suppose a parser defaults to comma-separated input.
+Допустим, парсер по умолчанию разбирает вход с запятыми.
 
 <div class="grid grid-cols-2 gap-6">
 
 <div>
 
-Correct setup order:
+Правильный порядок настройки:
 
 ```csharp
 var parser = new TextParser();
@@ -318,7 +318,7 @@ var values = parser.Parse("a;b"); // ["a", "b"]
 
 <div>
 
-The setup comes too late:
+Настройка опоздала:
 
 ```csharp
 var parser = new TextParser();
@@ -330,25 +330,25 @@ parser.Separator = ';';
 
 </div>
 
-No setup sequence to remember:
+Без запоминаемой последовательности настройки:
 
 ```csharp
 var values = Parse("a;b", separator: ';'); // ["a", "b"]
 ```
 
 <!--
-Teaching notes · 3 minutes
+Заметки для преподавателя · 3 мин.
 
-The simple parser just uses text.Split(Separator). This is not a full CSV parser. The replacement Parse helper is text.Split(separator); both implementations appear in the reference code.
+Простой парсер использует text.Split(Separator). Это не полный CSV-парсер. Заменяющий его помощник Parse — это text.Split(separator); обе реализации есть в эталонном коде.
 
-A configured parser object can also be appropriate: new TextParser(';') can establish the setting before the instance is usable. Prefer that when the object owns useful configuration across many calls. The point is to expose required information or enforce setup, rather than demand one universal syntax.
+Настроенный объект парсера тоже может быть уместен: new TextParser(';') устанавливает настройку до того, как экземпляр можно использовать. Предпочитайте его, когда объект владеет полезной конфигурацией для многих вызовов. Суть — показать требуемую информацию или обеспечить настройку, а не требовать один универсальный синтаксис.
 
-This demonstrates a dependency on call order even when method signatures do not mention it. Memory ownership is not needed to explain this example.
+Это демонстрирует зависимость от порядка вызовов, даже когда сигнатуры методов о ней молчат. Владение памятью для объяснения примера не нужно.
 -->
 
 ---
 
-# An increment-only view can make mutation more precise
+# Вид «только приращение» делает изменение точнее
 
 ```csharp
 interface IRemovalCounter
@@ -363,37 +363,37 @@ IReadOnlyList<string> DeduplicateAndCount(
 {
     var result = Deduplicate(names);
     outStatistics.AddRemoved(result.RemovedCount);
-    // outStatistics.Reset(); // Does not compile through this interface.
+    // outStatistics.Reset(); // Через этот интерфейс недоступно.
     return result.Names;
 }
 ```
 
-The contract allows adding non-negative counts. It does not offer resetting them.
+Контракт разрешает добавлять к счётчикам только неотрицательные значения. Сбрасывать их объявленный интерфейс не предусматривает.
 
 <!--
-Teaching notes · 3 minutes
+Заметки для преподавателя · 3 мин.
 
-This is a valid alternative when reporting during an operation is actually useful. The implementation of AddRemoved must reject negative values if increment-only behavior is promised. A method name alone does not establish that restriction.
+Это корректная альтернатива, когда отчётность по ходу операции действительно полезна. Реализация AddRemoved должна отвергать отрицательные значения, если обещано поведение «только приращение». Одно имя метода это ограничение не устанавливает.
 
-The orchestrator can hold an ImportStatistics instance that implements IRemovalCounter and exposes Reset to the orchestrator. The step is passed only the narrow view. Deliberate downcasts can bypass an interface restriction; this is an API design technique, not a security boundary.
+Оркестратор может хранить экземпляр ImportStatistics, реализующий IRemovalCounter и открывающий оркестратору доступ к Reset. Шагу передаётся только узкий вид. Намеренные нисходящие приведения могут обойти ограничение интерфейса; это приём проектирования API, а не граница безопасности.
 
-Compare cost explicitly: a comment is less code but relies on callers respecting it; a narrow interface better describes permitted operations but adds another type. The returned result remains the simplest main path here.
+Сравните цену явно: комментарий — меньше кода, но полагается на соблюдение соглашения вызывающими; узкий интерфейс лучше описывает разрешённые операции, но добавляет ещё один тип. Возвращаемый результат остаётся простейшим главным путём.
 -->
 
 ---
 
-# Generic reporting can let the outside interpret an event
+# Общая отчётность отдаёт толкование события наружу
 
-The operation reports a fact:
+Операция сообщает факт:
 
 ```csharp
 record ItemsRemoved(int Count);
 
-// Inside the operation:
+// Внутри операции:
 context.Report(new ItemsRemoved(removedCount));
 ```
 
-The workflow chooses what that fact means for its report:
+Сценарий решает, что факт значит для его отчёта:
 
 ```csharp
 var context = new ReportingContext();
@@ -401,36 +401,36 @@ context.On<ItemsRemoved>(e => importStatistics.AddRemoved(e.Count));
 var unique = DeduplicateWithReporting(names, context);
 ```
 
-Another caller can label it differently:
+Другой вызывающий может пометить его иначе:
 
 ```csharp
 context.On<ItemsRemoved>(e => Console.WriteLine($"Selection shortened by {e.Count}"));
 ```
 
 <!--
-Teaching notes · 2 minutes
+Заметки для преподавателя · 2 мин.
 
-ReportingContext is an illustrative small event-dispatch API, not a built-in .NET type. It is intentionally not implemented as a framework exercise in this lesson. For the alternative caller, use a separate context; the fragments show different caller choices, not necessarily simultaneous subscriptions.
+ReportingContext — небольшой иллюстративный API рассылки событий, а не встроенный тип .NET. Он намеренно не оформлен как упражнение по созданию фреймворка в этом уроке. Для альтернативного вызывающего используйте отдельный контекст; фрагменты показывают разные выборы вызывающих, а не обязательно одновременные подписки.
 
-The step knows ItemsRemoved, a fact about its own operation. It does not know the import report or its fields. This is a legitimate use of the generic context, not a deliberately broken example dressed up as one.
+Шаг знает ItemsRemoved — факт о собственной операции. Отчёт импорта и его поля он не знает. Это легитимное использование общего контекста, а не намеренно сломанный пример под видом корректного.
 
-Callbacks and event dispatch add behavior to understand: when reporting happens and how failures are handled. For the current one-result operation, returning a result is simpler. The alternative is useful to recognize, not a new required pattern to memorize.
+Обратные вызовы и рассылка событий усложняют понимание поведения: когда происходит отчётность и как обрабатываются сбои. Для текущей операции с одним результатом вернуть результат проще. Альтернативу полезно узнавать, а не заучивать как новый обязательный паттерн.
 -->
 
 ---
 
-# Cohesion asks what belongs together
+# Связность спрашивает, что чему принадлежит
 
-**Cohesion:** how well the things inside a function, class, or module belong together.
+**Связность** (cohesion): насколько хорошо вещи внутри функции, класса или модуля подходят друг другу.
 
-These values have a shared rule:
+У этих значений общее правило:
 
 ```csharp
 if (min > max)
     throw new ArgumentException("Bounds are reversed.");
 ```
 
-So we give them a meaningful home:
+Поэтому помещаем их в подходящий тип с осмысленным именем:
 
 ```csharp
 var interval = Interval.Create(10, 20,
@@ -438,56 +438,56 @@ var interval = Interval.Create(10, 20,
 bool allowed = interval.Contains(15);
 ```
 
-The bounds, their endpoint kinds, and their interpretation belong together because they define one interval.
+Границы, типы их концов и их трактовка связаны друг с другом, потому что задают один интервал.
 
 <!--
-Teaching notes · 3 minutes
+Заметки для преподавателя · 3 мин.
 
-This begins five consecutive cohesion slides. Avoid explaining the word through another equally abstract definition. Start with the interval students already know.
+Далее идут пять слайдов подряд про связность. Не объясняйте слово через другое столь же абстрактное определение. Начните с уже знакомого студентам интервала.
 
-Related things are related for a reason. Two values can belong together because a rule connects them. A method can belong with them because it needs that rule and representation.
+Вещи связаны друг с другом не случайно. Два значения принадлежат друг другу, потому что их соединяет правило. Метод принадлежит им, потому что ему нужны это правило и представление.
 
-Cohesion does not mean every class has one field or every function has one instruction.
+Связность не значит, что в каждом классе одно поле, а в каждой функции одна инструкция.
 -->
 
 ---
 
-# Two operations may share one rule
+# Две операции делят одно правило
 
-Names in this index are ASCII identifiers and should match without case differences.
+Имена в этом индексе — ASCII-идентификаторы и должны сравниваться без учёта регистра.
 
 ```csharp
 index.Add("ann".ToLowerInvariant(), 7);
-index.TryGetValue("ann", out var id); // true, id is 7
+index.TryGetValue("ann", out var id); // true, id равен 7
 ```
 
-Now a different caller uses uppercase:
+Теперь другой вызывающий использует верхний регистр:
 
 ```csharp
-index.TryGetValue("ANN", out var id); // false: caller forgot normalization
+index.TryGetValue("ANN", out var id); // false: забыли нормализацию
 ```
 
-Correcting this caller alone leaves the same trap for the next one:
+Исправление только этого вызывающего оставит ту же ловушку следующему:
 
 ```csharp
 index.TryGetValue(name.ToLowerInvariant(), out var id);
 ```
 
-Insertion and lookup must agree about name comparison.
+Вставка и поиск должны использовать одно правило сравнения имён.
 
 <!--
-Teaching notes · 3 minutes
+Заметки для преподавателя · 3 мин.
 
-Assume index is an ordinary case-sensitive Dictionary<string,int>. Start with the successful lowercase lookup, then show the failed uppercase lookup. The requirement is already established, so false is a behavior defect rather than merely another reasonable convention.
+Считайте index обычным чувствительным к регистру Dictionary<string,int>. Начните с успешного поиска в нижнем регистре, затем покажите неудавшийся поиск в верхнем. Требование уже установлено, поэтому false — дефект поведения, а не просто другое разумное соглашение.
 
-Do not turn this into a lesson about international names. ASCII identifiers keep the example's comparison behavior focused.
+Не превращайте это в урок про интернациональные имена. ASCII-идентификаторы сохраняют пример сфокусированным на сравнении.
 
-Ask which rule is duplicated across callers. Moving only the lowercasing expression into a helper would still require callers to remember to use it at every relevant point.
+Спросите, какое правило дублируется между вызывающими. Вынос одного лишь приведения к нижнему регистру в помощник всё равно требовал бы от вызывающих помнить о нём в каждой нужной точке.
 -->
 
 ---
 
-# One abstraction can own both sides of that rule
+# Одна абстракция владеет обеими сторонами правила
 
 ```csharp
 sealed class NameIndex
@@ -504,24 +504,24 @@ sealed class NameIndex
 ```csharp
 var index = new NameIndex();
 index.Add("Ann", 7);
-index.TryFind("ANN", out var id); // true, id is 7
+index.TryFind("ANN", out var id); // true, id равен 7
 ```
 
-Both operations use the same comparison rule. Callers no longer prepare keys themselves.
+Обе операции используют одно правило сравнения. Вызывающие больше не подготавливают ключи вручную.
 
 <!--
-Teaching notes · 3 minutes
+Заметки для преподавателя · 3 мин.
 
-Name the contract: equivalent keys compare without case differences, duplicate Add calls are rejected, and TryFind reports whether a matching key exists.
+Назовите контракт: эквивалентные ключи сравниваются без учёта регистра, повторные вызовы Add отклоняются, а TryFind сообщает, есть ли совпадающий ключ.
 
-The wrapper is useful when it establishes a boundary used by several consumers. A correctly configured dictionary inside one local function may already suffice. The improvement is not “every dictionary needs a wrapper.”
+Обёртка полезна, когда устанавливает границу для нескольких потребителей. Корректно настроенный словарь внутри одной локальной функции может оказаться достаточным. Улучшение — не «каждому словарю нужна обёртка».
 
-This is cohesion between operations, not only between fields. Encapsulation prevents ordinary clients from bypassing the chosen comparison by manipulating the private dictionary directly.
+Это связность между операциями, а не только между полями. Инкапсуляция не даёт обычным клиентам обойти выбранное сравнение, напрямую меняя закрытый словарь.
 -->
 
 ---
 
-# Separate helpers can still leave the shared rule with every caller
+# Отдельные помощники оставляют общее правило каждому вызывающему
 
 ```csharp
 string NormalizeKey(string name) => name.ToLowerInvariant();
@@ -535,18 +535,18 @@ bool Find(Dictionary<string, int> data, string key, out int id)
 
 <div>
 
-A caller must assemble them correctly:
+Вызывающий собирает их вручную:
 
 ```csharp
 Store(data, NormalizeKey(name), id);
-Find(data, name, out id); // Again forgets NormalizeKey.
+Find(data, name, out id); // Опять без NormalizeKey.
 ```
 
 </div>
 
 <div>
 
-With the shared rule owned by the index:
+С общим правилом, принадлежащим индексу:
 
 ```csharp
 index.Add(name, id);
@@ -557,21 +557,21 @@ index.TryFind(name, out id);
 
 </div>
 
-More functions did not by themselves establish a better boundary.
+Само по себе увеличение числа функций лучшей границы не дало.
 
 <!--
-Teaching notes · 3 minutes
+Заметки для преподавателя · 3 мин.
 
-The general Store and Find helpers could be useful elsewhere. They do not solve the case-insensitive index requirement on their own. Their caller still owns the obligation to normalize correctly.
+Общие помощники Store и Find могут пригодиться в другом месте. Требование к регистронезависимому индексу само по себе они не решают. Обязанность корректно нормализовать по-прежнему лежит на вызывающем.
 
-Do not claim all separation is harmful. Show the specific knowledge that remains scattered after this particular extraction. The NameIndex version owns the relationship that these call sites repeatedly have to reconstruct.
+Не утверждайте, что всякое разделение вредно. Покажите конкретное знание, которое после этого выноса осталось разбросанным. Версия NameIndex владеет отношением, которое эти места вызова раз за разом восстанавливают.
 -->
 
 ---
 
-# Using the same data does not make responsibilities belong together
+# Одно использование данных ещё не роднит ответственности
 
-A broad helper:
+Широкий помощник:
 
 ```csharp
 void AddName(NameIndex index, string name, int id, string reportPath)
@@ -581,13 +581,13 @@ void AddName(NameIndex index, string name, int id, string reportPath)
 }
 ```
 
-Now every insertion needs a file-report destination.
+Теперь каждой вставке нужно передавать путь к файлу отчёта.
 
 <div class="grid grid-cols-2 gap-6">
 
 <div>
 
-An independently useful index plus a caller-specific action:
+Независимо полезный индекс плюс действие вызывающего:
 
 ```csharp
 index.Add(name, id);
@@ -598,7 +598,7 @@ File.AppendAllText(reportPath, $"Added {name}\n");
 
 <div>
 
-Another caller can simply write:
+Другой вызывающий просто пишет:
 
 ```csharp
 index.Add(name, id);
@@ -608,23 +608,23 @@ index.Add(name, id);
 
 </div>
 
-Cohesion asks what belongs together. Coupling asks what each part depends on.
+Связность спрашивает, что чему принадлежит. Зацепление спрашивает, от чего зависит каждая часть.
 
 <!--
-Teaching notes · 3 minutes
+Заметки для преподавателя · 3 мин.
 
-Insertion and name comparison belong together because of the shared index rule. Insertion and file reporting merely happen together in this workflow. Another caller demonstrates why the distinction matters.
+Вставка и сравнение имён принадлежат друг другу из-за общего правила индекса. Вставка и запись в файл лишь случаются вместе в этом сценарии. Другой вызывающий показывает, почему различие важно.
 
-The two-line workflow can itself deserve a named function if that compound action is a meaningful operation. Give it a name such as RegisterNameAndWriteAudit and an appropriate contract. Do not pretend it is the general-purpose index insertion operation.
+Двухстрочный сценарий сам может заслуживать именованной функции, если это составное действие — осмысленная операция. Дайте ей имя вроде RegisterNameAndWriteAudit и подходящий контракт. Не выдавайте это за обобщённую операцию вставки в индекс.
 
-End the cohesion section by having students state the shared rule or purpose in their own words. “Both use strings” and “they are in the same file” do not justify grouping.
+Завершите раздел связности, попросив студентов своими словами назвать общее правило или назначение. «Оба используют строки» и «они в одном файле» группировку не оправдывают.
 -->
 
 ---
 
-# A concrete change shows whether the boundary helps
+# Конкретное изменение показывает, помогает ли граница
 
-New requirement: include the destination in the import report.
+Новое требование: включить адресат в отчёт импорта.
 
 ```diff
  record ImportReport(
@@ -636,7 +636,7 @@ New requirement: include the destination in the import report.
 
 <div>
 
-The workflow adds it:
+Сценарий добавляет его:
 
 ```csharp
 var report = new ImportReport(source, destination,
@@ -648,7 +648,7 @@ var report = new ImportReport(source, destination,
 
 <div>
 
-Duplicate removal still has the same interface:
+У удаления дубликатов тот же интерфейс:
 
 ```csharp
 DeduplicationResult Deduplicate(
@@ -659,39 +659,39 @@ DeduplicationResult Deduplicate(
 
 </div>
 
-The report changes where it is assembled.
+Отчёт меняется там, где собирается.
 
 <!--
-Teaching notes · 2 minutes
+Заметки для преподавателя · 2 мин.
 
-Maintainability concerns understanding, correcting, and changing a program while preserving the behavior that should remain. Ask what must be read, edited, and checked for this concrete change.
+Сопровождаемость — это понимание, исправление и изменение программы с сохранением нужного поведения. Спросите, что для этого конкретного изменения нужно прочитать, отредактировать и проверить.
 
-Do not promise that all changes affect one place. An intended contract change can appropriately affect many callers. This example isolates a report-only change that should not change duplicate removal's job.
+Не обещайте, что все изменения затрагивают одно место. Задуманное изменение контракта может обоснованно затронуть многих вызывающих. Этот пример изолирует изменение только отчёта, которое не должно менять работу удаления дубликатов.
 -->
 
 ---
 
-# Technical debt has a continuing cost you can point to
+# У технического долга есть видимая постоянная цена
 
-**Technical debt:** an existing condition that imposes extra future work or risk.
+**Технический долг** (technical debt): существующее состояние, влекущее лишнюю будущую работу или риск.
 
 <div class="grid grid-cols-2 gap-6">
 
 <div>
 
-Repeated convention:
+Повторяемое соглашение:
 
 ```csharp
 Store(data, NormalizeKey(name), id);
 Find(data, NormalizeKey(name), out id);
-// Every new caller must remember the same preparation.
+// Каждый новый вызов — та же подготовка.
 ```
 
 </div>
 
 <div>
 
-A rule owned in one place:
+Правило в одном месте:
 
 ```csharp
 index.Add(name, id);
@@ -702,14 +702,14 @@ index.TryFind(name, out id);
 
 </div>
 
-Interest is the repeated work around it. Repayment is work to reduce that condition.
+Проценты — это повторяющаяся дополнительная работа из-за этого состояния. Погашение — работа по его устранению.
 
 <!--
-Teaching notes · 2 minutes
+Заметки для преподавателя · 2 мин.
 
-Use the metaphor to discuss this particular cost, not to classify every imperfect design. A new caller forgetting normalization, repeated fixes, or repeated coordinated edits are concrete evidence.
+Используйте метафору для обсуждения именно этой цены, а не для классификации любого несовершенного дизайна. Конкретные свидетельства — новый вызывающий, забывший нормализацию, повторные исправления или повторные согласованные правки.
 
-Debt can be deliberate, accidental, or discovered after learning more. A simple design that later needs a new feature is not automatically a mistake. Whether to change it depends on the cost of leaving it and the cost of changing it.
+Долг бывает намеренным, случайным или обнаруженным после новых знаний. Простой дизайн, которому позже понадобилась новая возможность, — не обязательно ошибка. Менять ли его, зависит от цены бездействия и цены изменения.
 
 [Sources]
 - https://martinfowler.com/bliki/TechnicalDebtQuadrant.html
@@ -717,15 +717,15 @@ Debt can be deliberate, accidental, or discovered after learning more. A simple 
 
 ---
 
-# Refactoring changes structure while keeping the promised behavior
+# Рефакторинг меняет структуру, сохраняя обещанное поведение
 
-**Refactoring:** change internal structure while preserving observable behavior.
+**Рефакторинг** (refactoring): изменение внутреннего устройства, сохраняющее наблюдаемое поведение.
 
 <div class="grid grid-cols-2 gap-6">
 
 <div>
 
-Before, repeated in the screen and alarm:
+До, повтор в экране и тревоге:
 
 ```csharp
 bool allowed = interval.Contains(readings.Left)
@@ -737,7 +737,7 @@ bool allowed = interval.Contains(readings.Left)
 
 <div>
 
-After:
+После:
 
 ```csharp
 bool allowed = AllWithin(readings, interval);
@@ -747,20 +747,20 @@ bool allowed = AllWithin(readings, interval);
 
 </div>
 
-Check the same cases before and after:
+Проверяем те же случаи до и после:
 
 ```csharp
-AllWithin(new Readings(12, 15, 18), interval); // true for [10,20)
+AllWithin(new Readings(12, 15, 18), interval); // true при [10,20)
 AllWithin(new Readings(12, 25, 18), interval); // false
 AllWithin(new Readings(10, 15, 20), interval); // false
 ```
 
 <!--
-Teaching notes · 2 minutes
+Заметки для преподавателя · 2 мин.
 
-The full AllWithin body is in lesson 1. These are example behavior checks; a test would assert the expected results. Preserve relevant failures and effects too, not just the most common return value.
+Полное тело AllWithin — в уроке 1. Это примеры проверок поведения; тест фиксировал бы ожидаемые результаты. Сохраняйте как существенные отказы и эффекты, так и не только самое частое возвращаемое значение.
 
-Repairing the broken uppercase lookup changes behavior and is a bug fix. Subsequent restructuring that preserves the corrected behavior is refactoring. Do not silently combine the two and call all of it refactoring.
+Исправление сломанного поиска в верхнем регистре меняет поведение и является исправлением ошибки. Последующая реструктуризация с сохранением исправленного поведения — рефакторинг. Не объединяйте молча то и другое и не называйте всё это рефакторингом.
 
 [Sources]
 - https://martinfowler.com/refactoring/
@@ -768,9 +768,9 @@ Repairing the broken uppercase lookup changes behavior and is a bug fix. Subsequ
 
 ---
 
-# Over-engineering adds complexity that the problem does not justify
+# Переусложнение добавляет сложность без нужды задачи
 
-Current requirement: write one plain-text report to a file.
+Текущее требование: записать один текстовый отчёт в файл.
 
 <div class="grid grid-cols-2 gap-6">
 
@@ -785,7 +785,7 @@ File.WriteAllText(path, text);
 
 <div>
 
-An elaborate alternative:
+Вычурная альтернатива:
 
 ```csharp
 var destination = destinationFactory
@@ -801,25 +801,25 @@ writer.Write(report);
 
 </div>
 
-The second version needs factories, configuration, and registrations even though only one format and destination are required.
+Вторая версия требует фабрик, конфигурации и регистрации, хотя нужен лишь один формат и один адресат.
 
-What useful requirement pays for that complexity today?
+Какое полезное требование сегодня оплачивает эту сложность?
 
 <!--
-Teaching notes · 3 minutes
+Заметки для преподавателя · 3 мин.
 
-The factories are hypothetical application APIs, not a framework to implement. The displayed code reveals the extra decisions and dependencies. Code bodies would add still more maintenance work.
+Фабрики — гипотетические API приложения, а не фреймворк для реализации. Показанный код раскрывает лишние решения и зависимости. Тела кода добавили бы ещё больше работы по сопровождению.
 
-This design could be appropriate if several formats and destinations are actual requirements, or a present testing/deployment constraint calls for a boundary. Do not portray factories as inherently bad.
+Этот дизайн мог бы быть уместен, если несколько форматов и адресатов — настоящие требования либо нынешнее ограничение тестирования/развёртывания требует границы. Не изображайте фабрики изначально плохими.
 
-Define over-engineering as complexity disproportionate to the problem and justified needs. It includes excessive indirection, speculative configuration, and unnecessary extensibility, not only excessive numbers of classes.
+Определите переусложнение (over-engineering) как сложность, несоразмерную задаче и обоснованным нуждам. Сюда входят чрезмерная косвенность, избыточная конфигурация впрок и ненужная расширяемость, а не только чрезмерное число классов.
 -->
 
 ---
 
-# Do not build an abstraction around an imagined future
+# Не стройте абстракцию вокруг воображаемого будущего
 
-Only a file destination is required today:
+Сегодня нужен только файл-адресат:
 
 ```csharp
 File.WriteAllText(path, FormatReport(report));
@@ -829,7 +829,7 @@ File.WriteAllText(path, FormatReport(report));
 
 <div>
 
-A hypothetical future leads to:
+Гипотетическое будущее ведёт к:
 
 ```csharp
 writer.Write(report, destinationKind, formatKind,
@@ -840,7 +840,7 @@ writer.Write(report, destinationKind, formatKind,
 
 <div>
 
-But a later browser preview might need:
+А позже предпросмотр в браузере потребует:
 
 ```csharp
 string text = FormatReport(report);
@@ -851,21 +851,21 @@ ShowPreview(text);
 
 </div>
 
-The imagined destination framework may not help with the actual request.
+Воображаемый фреймворк адресатов может не помочь с настоящим запросом.
 
 <!--
-Teaching notes · 2 minutes
+Заметки для преподавателя · 2 мин.
 
-State the rule explicitly: do not introduce an abstraction solely because a speculative future use might need it. You may not know the future requirements well enough to choose the right boundary or contract.
+Сформулируйте правило явно: не вводите абстракцию лишь потому, что предполагаемое будущее использование может её потребовать. Будущие требования могут быть известны недостаточно хорошо, чтобы выбрать правильную границу или контракт.
 
-Formatting separate from writing can already help explain and test the current behavior. Its justification is present. A generalized remote-delivery framework is a different investment.
+Отделение форматирования от записи уже помогает объяснять и тестировать текущее поведение. Его оправдание — в настоящем. Обобщённый фреймворк удалённой доставки — другая инвестиция.
 
-This does not mean intentionally tangling current responsibilities until there are two callers. Meaningful names, isolated representation-dependent operations, and clear contracts can earn their place today.
+Это не значит, что нужно намеренно спутывать текущие ответственности, пока не появятся два вызывающих. Осмысленные имена, изолированные зависимые от представления операции и ясные контракты оправдывают себя уже сегодня.
 -->
 
 ---
 
-# A workflow-specific wrapper can be an intentional choice
+# Специфичная для сценария обёртка бывает осознанным выбором
 
 ```csharp
 private static IReadOnlyList<string> DeduplicateForImport(
@@ -881,7 +881,7 @@ private static IReadOnlyList<string> DeduplicateForImport(
 
 <div>
 
-Used inside that import:
+Использование внутри этого импорта:
 
 ```csharp
 var unique = DeduplicateForImport(
@@ -892,7 +892,7 @@ var unique = DeduplicateForImport(
 
 <div>
 
-Another feature uses the independent operation:
+Другой сценарий использует независимую операцию:
 
 ```csharp
 var result = Deduplicate(names);
@@ -902,34 +902,34 @@ var result = Deduplicate(names);
 
 </div>
 
-The wrapper intentionally knows the import. Its name and scope make that choice visible.
+Обёртка намеренно привязана к импорту. Её имя и область видимости делают выбор видимым.
 
 <!--
-Teaching notes · 2 minutes
+Заметки для преподавателя · 2 мин.
 
-A short operation deliberately confined to one workflow may reasonably use that workflow's context. Here we preserve the independent operation and make the adaptation explicit. We do not need a generic event bus to adapt one call.
+Короткая операция, намеренно замкнутая на один сценарий, вполне может использовать контекст этого сценария. Здесь мы сохраняем независимую операцию и делаем адаптацию явной. Общая шина событий для адаптации одного вызова не нужна.
 
-Even without a separate independent operation yet, a one-off workflow function can be a reasonable simple design. If independent use becomes a requirement, reconsider its boundary. Do not promise that a comment or private modifier removes the dependency; they communicate the intended scope.
+Даже без отдельной независимой операции разовая функция сценария бывает разумным простым дизайном. Если независимое использование станет требованием, пересмотрите границу. Не обещайте, что комментарий или модификатор private убирают зависимость; они сообщают задуманную область.
 
-The AddRemoved-only convention still applies to this wrapper. A narrower view can enforce the offered operations if the added type is worth it.
+Соглашение «только AddRemoved» действует и для этой обёртки. Узкий вид может обеспечить предлагаемые операции, если дополнительный тип того стоит.
 -->
 
 ---
 
-# Compare what each abstraction buys and costs
+# Сравним выигрыш и цену каждой абстракции
 
 <div class="grid grid-cols-2 gap-6">
 
 <div>
 
-A direct readable requirement:
+Прямое читаемое требование:
 
 ```csharp
 if (min > max)
     throw new ArgumentException("Bounds are reversed.");
 ```
 
-A useful operation hiding repeated field knowledge:
+Полезная операция, прячущая повторное знание полей:
 
 ```csharp
 bool allowed = AllWithin(readings, interval);
@@ -939,7 +939,7 @@ bool allowed = AllWithin(readings, interval);
 
 <div>
 
-A restricted writing interface:
+Ограниченный интерфейс записи:
 
 ```csharp
 IReadOnlyList<string> DeduplicateAndCount(
@@ -949,8 +949,8 @@ IReadOnlyList<string> DeduplicateAndCount(
     var result = RemoveDuplicates(names);
     outStatistics.AddRemoved(
         names.Count - result.Count);
-    // outStatistics.Reset(); // Not available
-    // through this interface.
+    // outStatistics.Reset(); // Недоступно
+    // через этот интерфейс.
     return result;
 }
 ```
@@ -959,21 +959,21 @@ IReadOnlyList<string> DeduplicateAndCount(
 
 </div>
 
-The helper can hide details. The interface can restrict access. Each also adds a name, contract, or type to understand.
+Помощник прячет детали. Интерфейс ограничивает доступ. Каждый добавляет имя, контракт или тип для понимания.
 
 <!--
-Teaching notes · 2 minutes
+Заметки для преподавателя · 2 мин.
 
-This slide repeats the code rather than asking students to remember a reference in the notes. Discuss why AllWithin earned extraction, why the direct guard can remain inline, and why the reporting interface is a trade-off in capability clarity versus additional declarations.
+Этот слайд повторяет код, а не просит студентов вспомнить ссылку в заметках. Обсудите, почему AllWithin заслужил вынос, почему прямая проверка может остаться встроенной и почему интерфейс отчётности — компромисс между ясностью возможностей и лишними объявлениями.
 
-The restricted parameter makes the allowed mutation visible: this operation can add to the removed count, but its declared interface offers no reset. The cost is defining and understanding another interface. For a small, deliberately confined workflow, a documented convention may be sufficient.
+Ограниченный параметр делает разрешённое изменение видимым: операция может добавить к счётчику удалений, но объявленный интерфейс не предусматривает сброса. Цена — определение и понимание ещё одного интерфейса. Для небольшого, намеренно замкнутого сценария документированного соглашения может хватить.
 
-There is no universal line count or parameter count that settles these decisions. State the benefit, the cost, and the current need.
+Универсальной границы по числу строк или параметров, решающей эти вопросы, нет. Называйте выгоду, цену и текущую нужду.
 -->
 
 ---
 
-# Review a function that knows too much
+# Разберём функцию, знающую слишком много
 
 ```csharp
 IReadOnlyList<string> CleanNames(
@@ -987,25 +987,25 @@ IReadOnlyList<string> CleanNames(
 }
 ```
 
-For `["", "Ann", "Ann"]`, the desired accepted names are `["Ann"]`.
+Для `["", "Ann", "Ann"]` желаемые принятые имена — `["Ann"]`.
 
-The workflow also needs separate empty and duplicate counts, the source filename, and completion time.
+Сценарию также нужны отдельные счётчики пустых и дубликатов, имя файла-источника и время завершения.
 
-Which information should come from the operation? Which belongs to its caller?
+Какая информация должна прийти из операции? Какая принадлежит её вызывающему?
 
 <!--
-Teaching notes · 2 minutes
+Заметки для преподавателя · 2 мин.
 
-ImportContext is an illustrative application type. The shown Reset breaks accumulation if earlier stages have reported counts. The input view is correctly read-only; the issue is the workflow-specific context and reset access.
+ImportContext — иллюстративный тип приложения. Показанный Reset нарушает накопление, если предыдущие стадии уже учли счётчики. Вход корректно имеет вид «только для чтения»; проблема — специфичный для сценария контекст и доступ к сбросу.
 
-Students should request separate operation facts because they cannot recover both rejection categories from the final length. The filename and completion clock belong to the workflow. State the classification rule: discard empty strings first; among non-empty strings, retain first occurrences using ordinal comparison.
+Студенты должны запросить отдельные факты операции, потому что обе категории отклонения по итоговой длине не восстановить. Имя файла и метка времени принадлежат сценарию. Сформулируйте правило классификации: сначала отбрасываем пустые строки; среди непустых сохраняем первые вхождения при ординальном сравнении.
 
-Next slide supplies concrete implementation code and the following slide shows its caller, so the exercise does not end in an instruction to imagine the missing code.
+Следующий слайд даёт конкретный код реализации, а ещё следующий показывает вызывающий его код, так что упражнение не заканчивается поручением вообразить недостающий код.
 -->
 
 ---
 
-# Return the rejection facts from the operation
+# Вернём факты отклонения из операции
 
 ```csharp
 record CleanResult(IReadOnlyList<string> Names, int Empty, int Duplicates);
@@ -1026,21 +1026,21 @@ static CleanResult CleanNames(IReadOnlyList<string> names)
 }
 ```
 
-`["", "Ann", "Ann"]` produces names `["Ann"]`, empty `1`, duplicates `1`.
+`["", "Ann", "Ann"]` даёт имена `["Ann"]`, число пустых — `1`, число дубликатов — `1`.
 
 <!--
-Teaching notes · 3 minutes
+Заметки для преподавателя · 3 мин.
 
-Assume non-null strings. Empty means length zero; whitespace-only strings are not silently treated as empty. Show an ordinary already-clean input too: ["Ann", "Bob"] has zero rejection counts.
+Считаем, что строки — не null. Пустая значит нулевой длины; строки из одних пробелов пустыми без явного указания не считаем. Покажите и обычный уже чистый вход: у ["Ann", "Bob"] оба счётчика отклонения равны нулю.
 
-The result carries information intrinsic to the cleaning operation. No report name, source path, or clock is needed. The loop's branches implement one coherent classification operation, not three unrelated responsibilities.
+Результат несёт сведения, присущие операции очистки. Ни имя отчёта, ни путь источника, ни часы не нужны. Ветви цикла реализуют одну связную операцию классификации, а не три несвязанные ответственности.
 
-The compact guards are for fitting this prototype. A presentation renderer may spread the code across reveals; do not shrink text to fit it on a final slide.
+Проверки записаны компактно, чтобы прототип уместился на слайде. Рендерер презентации может разносить код по пошаговым появлениям; не уменьшайте текст, чтобы уместить его на финальном слайде.
 -->
 
 ---
 
-# The caller adds the workflow information
+# Вызывающий добавляет сведения сценария
 
 <div class="grid grid-cols-2 gap-6">
 
@@ -1064,7 +1064,7 @@ ShowReport(report);
 
 <div>
 
-Another caller:
+Другой вызывающий:
 
 ```csharp
 var result = CleanNames(selectedNames);
@@ -1075,14 +1075,14 @@ ShowNames(result.Names);
 
 </div>
 
-The operation owns cleaning. The workflow owns its report and execution context.
+Операция отвечает за очистку. Сценарий отвечает за свой отчёт и контекст выполнения.
 
 <!--
-Teaching notes · 2 minutes
+Заметки для преподавателя · 2 мин.
 
-CleaningReport is a data record with the displayed named members; clock is an explicitly supplied clock dependency of the workflow. Completion here means successful reading, cleaning, and writing; a failed write does not reach this reporting code.
+CleaningReport — запись данных с показанными именованными членами; `clock` — зависимость сценария от службы времени, переданная явно. Завершение здесь означает успешное чтение, очистку и запись; до этого кода отчётности неудачная запись не доходит.
 
-The operation's contract is usable without knowing either caller. The import legitimately combines facts from its steps with its source and clock. Both caller examples are present on the slide.
+Контракт операции пригоден без знания любого из вызывающих. Импорт закономерно объединяет факты своих шагов с источником и меткой времени. Оба примера вызова есть на слайде.
 
-Finish by asking for one actual cost: a result type is another contract; counters add work; richer diagnostics may need storage. Those costs are justified by the reporting requirement we started with. A hypothetical reporting framework has not yet earned its place.
+Завершите вопросом об одной настоящей цене: тип результата — ещё один контракт; счётчики добавляют работу; богатой диагностике может понадобиться хранение. Эти цены оправданы требованием к отчётности, с которого начали. Гипотетический фреймворк отчётности своего места пока не заслужил.
 -->

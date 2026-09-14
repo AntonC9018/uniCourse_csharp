@@ -1,49 +1,49 @@
-# Software design lessons
+# Уроки проектирования ПО
 
-Two Slidev presentations with C# examples and private presenter notes.
+Две презентации Slidev с примерами на C# и скрытыми заметками для докладчика.
 
-## Run a lesson
+## Запуск урока
 
-Install Node.js 22.12 or newer. Open a terminal in this folder and run:
+Установите Node.js 22.12 или новее. Откройте терминал в этой папке и выполните:
 
 ```sh
 npm ci
 npm run dev
 ```
 
-This opens lesson 1. For lesson 2, stop the first command with Ctrl+C and run:
+Откроется урок 1. Для урока 2 остановите выполнение первой команды сочетанием Ctrl+C и выполните:
 
 ```sh
 npm run lesson2
 ```
 
-For the complete reference implementations:
+Для полных эталонных реализаций:
 
 ```sh
 npm run reference
 ```
 
-The terminal prints the audience and presenter addresses. Open presenter mode from the bottom-left toolbar, or add `/presenter` to the local address.
+Терминал покажет адреса для аудитории и для докладчика. Откройте режим докладчика кнопкой на панели слева внизу или допишите `/presenter` в адресной строке к локальному адресу.
 
-Use extended display mode: put the audience browser window on the projector and keep the presenter window on your laptop. For a video call, share only the audience window. Presenter navigation synchronizes the audience window. Arrow keys advance; `f` toggles fullscreen.
+Используйте режим расширенного дисплея: окно браузера для аудитории выведите на проектор, а окно докладчика оставьте на ноутбуке. Для видеозвонка демонстрируйте только окно аудитории. Переключение слайдов докладчиком автоматически обновляет окно аудитории. Клавиши со стрелками переключают слайды; `f` включает полноэкранный режим.
 
-## Edit the slides
+## Редактирование слайдов
 
-- `lesson-1.md`: 21 slides, including the cover.
-- `lesson-2.md`: 25 slides, including the cover.
-- `reference.md`: 11 reference slides, including the cover.
-- `style.css`: shared typography and colors.
-- `global-bottom.vue`: slide numbering.
-- `source-notes.md`: original review document, preserved for context.
-- `slide-map.json`: correspondence between slides and original sections.
+- `lesson-1.md`: 21 слайд, включая титульный.
+- `lesson-2.md`: 25 слайдов, включая титульный.
+- `reference.md`: 11 справочных слайдов, включая титульный.
+- `style.css`: общая типографика и цвета.
+- `global-bottom.vue`: нумерация слайдов.
+- `source-notes.md`: исходный документ ревью, сохранён для контекста.
+- `slide-map.json`: соответствие слайдов исходным разделам.
 
-The lesson files are the editable presentation sources. A line containing `---` separates slides. The HTML comment at the end of each slide contains its presenter notes and stays off the audience screen.
+Файлы уроков — редактируемые исходные файлы презентаций. Строка с `---` разделяет слайды. HTML-комментарий в конце каждого слайда содержит заметки докладчика и не виден аудитории.
 
-Each section is one slide: related examples and their questions sit side by side in two columns so the context stays visible. The HTML comment at the end of each slide contains its presenter notes and stays off the audience screen. The stated teaching time belongs to the section as a whole. The reference deck and source document retain the supporting implementations.
+Каждый раздел — один слайд: связанные примеры и вопросы к ним расположены рядом в двух колонках, чтобы контекст оставался видимым. HTML-комментарий в конце каждого слайда содержит заметки докладчика и не виден аудитории. Указанное учебное время относится к разделу целиком. Вспомогательные реализации вынесены в справочную презентацию и исходный документ.
 
-Code uses C# highlighting. Existing `diff` blocks show additions and removals. To emphasize selected lines on successive clicks, change a fence from `csharp` to `csharp {all|2-4|all}`.
+Код подсвечивается как C#. Существующие блоки `diff` показывают добавления и удаления. Чтобы подсвечивать выбранные строки при пошаговом показе, замените метку языка в открывающей строке блока с `csharp` на `csharp {all|2-4|all}`.
 
-## Export or build
+## Экспорт или сборка
 
 ```sh
 npm run export:lesson1
@@ -51,8 +51,8 @@ npm run export:lesson2
 npm run build
 ```
 
-PDF export may require a browser download on first use. If requested by Playwright, run `npx playwright install chromium`.
+Для экспорта в PDF при первом использовании может понадобиться загрузка браузера. Если Playwright запросит это, выполните `npx playwright install chromium`.
 
-Build output goes into `dist/lesson-1` and `dist/lesson-2`. These are separate web builds intended to be served individually at a web root, not opened directly as local HTML files. You do not need to build to present locally.
+Результат сборки попадает в `dist/lesson-1` и `dist/lesson-2`. Это отдельные веб-сборки, каждую из которых нужно размещать в корне сайта отдельно, а не открывать напрямую как локальные HTML-файлы. Для локального показа сборка не нужна.
 
-Official guides: [Slidev setup](https://sli.dev/guide/), [presenter mode](https://sli.dev/guide/ui#presenter-mode), [Markdown and notes](https://sli.dev/guide/syntax), [line highlighting](https://sli.dev/features/line-highlighting).
+Официальные руководства: [Slidev setup](https://sli.dev/guide/), [presenter mode](https://sli.dev/guide/ui#presenter-mode), [Markdown and notes](https://sli.dev/guide/syntax), [line highlighting](https://sli.dev/features/line-highlighting).
