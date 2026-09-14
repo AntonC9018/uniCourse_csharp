@@ -1,13 +1,20 @@
 
-.slidev-layout { padding: 44px 58px 48px; font-family: Arial, sans-serif; font-size: 24px; line-height: 1.4; color: #192638; background: #fafbf8; }
-.slidev-layout h1 { font-size: 36px; line-height: 1.14; font-weight: 650; color: #173c45; margin-bottom: 24px; max-width: 1100px; }
+.slidev-layout { padding: 44px 58px 48px; font-family: Arial, sans-serif; font-size: 24px; line-height: 1.4; }
+html.light .slidev-layout { color: #192638; background: #fafbf8; }
+html.dark .slidev-layout { color: #dde6e9; background: #141b21; }
+.slidev-layout h1 { font-size: 36px; line-height: 1.14; font-weight: 650; margin-bottom: 24px; max-width: 1100px; }
+html.light .slidev-layout h1 { color: #173c45; }
+html.dark .slidev-layout h1 { color: #c3dde2; }
 .slidev-layout p { margin: 12px 0; }
-.slidev-layout pre { font-size: 19px !important; line-height: 1.4 !important; padding: 16px 20px !important; border: 1px solid #d6dfe2; border-radius: 3px; }
+.slidev-layout pre { font-size: 19px !important; line-height: 1.4 !important; padding: 16px 20px !important; border-radius: 3px; }
+html.light .slidev-layout pre { border: 1px solid #d6dfe2; }
+html.dark .slidev-layout pre { border: 1px solid #2c3b42; }
 .slidev-layout pre code { font-size: inherit !important; line-height: inherit !important; }
 .slidev-layout li { margin: 7px 0; }
 .slidev-layout table { font-size: 21px; line-height: 1.3; }
 .slidev-layout th, .slidev-layout td { padding: 9px 12px; }
-.slidev-layout strong { color: #174f57; }
+html.light .slidev-layout strong { color: #174f57; }
+html.dark .slidev-layout strong { color: #9fd0d8; }
 .slidev-layout.cover { display: flex; flex-direction: column; justify-content: center; }
 .slidev-layout.cover h1 { font-size: 58px; max-width: 970px; }
 .slidev-layout .mermaid { max-height: 440px; }
