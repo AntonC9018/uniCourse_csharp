@@ -1,0 +1,24 @@
+{
+  "name": "software-design-lessons",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "slidev lesson-1.md --open",
+    "lesson2": "slidev lesson-2.md --open",
+    "reference": "slidev reference.md --open",
+    "build": "slidev build lesson-1.md --out dist/lesson-1 && slidev build lesson-2.md --out dist/lesson-2",
+    "export:lesson1": "slidev export lesson-1.md",
+    "export:lesson2": "slidev export lesson-2.md"
+  },
+  "dependencies": {
+    "@slidev/cli": "52.19.1",
+    "@slidev/theme-default": "^0.25.0",
+    "vue": "^3.5.0"
+  },
+  "devDependencies": {
+    "playwright-chromium": "^1.55.0"
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  }
+}

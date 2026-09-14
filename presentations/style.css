@@ -1,0 +1,15 @@
+
+.slidev-layout { padding: 44px 58px 48px; font-family: Arial, sans-serif; font-size: 24px; line-height: 1.4; color: #192638; background: #fafbf8; }
+.slidev-layout h1 { font-size: 36px; line-height: 1.14; font-weight: 650; color: #173c45; margin-bottom: 24px; max-width: 1100px; }
+.slidev-layout p { margin: 12px 0; }
+.slidev-layout pre { font-size: 19px !important; line-height: 1.4 !important; padding: 16px 20px !important; border: 1px solid #d6dfe2; border-radius: 3px; }
+.slidev-layout pre code { font-size: inherit !important; line-height: inherit !important; }
+.slidev-layout li { margin: 7px 0; }
+.slidev-layout table { font-size: 21px; line-height: 1.3; }
+.slidev-layout th, .slidev-layout td { padding: 9px 12px; }
+.slidev-layout strong { color: #174f57; }
+.slidev-layout.cover { display: flex; flex-direction: column; justify-content: center; }
+.slidev-layout.cover h1 { font-size: 58px; max-width: 970px; }
+.slidev-layout .mermaid { max-height: 440px; }
+.slidev-layout .grid pre { font-size: 16px !important; line-height: 1.35 !important; padding: 12px 14px !important; }
+.slidev-layout .grid table { font-size: 18px; line-height: 1.3; }
