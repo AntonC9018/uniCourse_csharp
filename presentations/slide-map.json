@@ -1,0 +1,326 @@
+[
+  {
+    "deck": "lesson-1.md",
+    "slide": 2,
+    "source": "1. Start with the ordinary cases",
+    "part": 1
+  },
+  {
+    "deck": "lesson-1.md",
+    "slide": 3,
+    "source": "2. Make argument roles and endpoint behavior clear",
+    "part": 1
+  },
+  {
+    "deck": "lesson-1.md",
+    "slide": 4,
+    "source": "3. State the contract, and make the name help",
+    "part": 1
+  },
+  {
+    "deck": "lesson-1.md",
+    "slide": 5,
+    "source": "4. Validate an input or assert an established assumption",
+    "part": 1
+  },
+  {
+    "deck": "lesson-1.md",
+    "slide": 6,
+    "source": "5. A useful abstraction can hide a substantial operation",
+    "part": 1
+  },
+  {
+    "deck": "lesson-1.md",
+    "slide": 7,
+    "source": "6. The caller and implementation work at different levels",
+    "part": 1
+  },
+  {
+    "deck": "lesson-1.md",
+    "slide": 8,
+    "source": "7. Changing notation is not the same as hiding implementation",
+    "part": 1
+  },
+  {
+    "deck": "lesson-1.md",
+    "slide": 9,
+    "source": "7a. Names can express meaning in the system",
+    "part": 1
+  },
+  {
+    "deck": "lesson-1.md",
+    "slide": 10,
+    "source": "8. Normalize the interval's representation",
+    "part": 1
+  },
+  {
+    "deck": "lesson-1.md",
+    "slide": 11,
+    "source": "9. An invariant keeps the normalized bounds valid",
+    "part": 1
+  },
+  {
+    "deck": "lesson-1.md",
+    "slide": 12,
+    "source": "10. Encapsulation keeps bound interpretation inside the interval",
+    "part": 1
+  },
+  {
+    "deck": "lesson-1.md",
+    "slide": 13,
+    "source": "11. Local reasoning means using the contracts of your dependencies",
+    "part": 1
+  },
+  {
+    "deck": "lesson-1.md",
+    "slide": 14,
+    "source": "12. A caller should not have to list all the fields",
+    "part": 1
+  },
+  {
+    "deck": "lesson-1.md",
+    "slide": 15,
+    "source": "13. Put the field-by-field operation in one place",
+    "part": 1
+  },
+  {
+    "deck": "lesson-1.md",
+    "slide": 16,
+    "source": "14. Another call can help, or just make you look elsewhere",
+    "part": 1
+  },
+  {
+    "deck": "lesson-1.md",
+    "slide": 17,
+    "source": "15. Show the workflow without its subordinate algorithm",
+    "part": 1
+  },
+  {
+    "deck": "lesson-1.md",
+    "slide": 18,
+    "source": "16. Make the necessary input visible",
+    "part": 1
+  },
+  {
+    "deck": "lesson-1.md",
+    "slide": 19,
+    "source": "17. Use a parameter view that matches the intended access",
+    "part": 1
+  },
+  {
+    "deck": "lesson-1.md",
+    "slide": 20,
+    "source": "18. Two references can observe the same change",
+    "part": 1
+  },
+  {
+    "deck": "lesson-1.md",
+    "slide": 21,
+    "source": "19. Compare the knowledge required by two callers",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 2,
+    "source": "1. Add reporting to a working import",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 3,
+    "source": "2. A direct implementation makes the step know the import report",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 4,
+    "source": "3. Show what the extra dependency permits",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 5,
+    "source": "4. Return information about the operation itself",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 6,
+    "source": "5. The workflow builds its own report",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 7,
+    "source": "6. Architecture includes deciding who knows about whom",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 8,
+    "source": "7. Call order can be another dependency",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 9,
+    "source": "8. An increment-only view can make mutation more precise",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 10,
+    "source": "9. Generic reporting can let the outside interpret an event",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 11,
+    "source": "10. Cohesion asks what belongs together",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 12,
+    "source": "11. Two operations may share one rule",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 13,
+    "source": "12. One abstraction can own both sides of that rule",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 14,
+    "source": "13. Separate helpers can still leave the shared rule with every caller",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 15,
+    "source": "14. Using the same data does not make responsibilities belong together",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 16,
+    "source": "15. A concrete change shows whether the boundary helps",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 17,
+    "source": "16. Technical debt has a continuing cost you can point to",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 18,
+    "source": "17. Refactoring changes structure while keeping the promised behavior",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 19,
+    "source": "18. Over-engineering adds complexity that the problem does not justify",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 20,
+    "source": "19. Do not build an abstraction around an imagined future",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 21,
+    "source": "20. A workflow-specific wrapper can be an intentional choice",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 22,
+    "source": "21. Compare what each abstraction buys and costs",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 23,
+    "source": "22. Review a function that knows too much",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 24,
+    "source": "23. Return the rejection facts from the operation",
+    "part": 1
+  },
+  {
+    "deck": "lesson-2.md",
+    "slide": 25,
+    "source": "24. The caller adds the workflow information",
+    "part": 1
+  },
+  {
+    "deck": "reference.md",
+    "slide": 2,
+    "source": "Complete interval implementation",
+    "part": 1
+  },
+  {
+    "deck": "reference.md",
+    "slide": 3,
+    "source": "Complete interval implementation",
+    "part": 2
+  },
+  {
+    "deck": "reference.md",
+    "slide": 4,
+    "source": "Complete interval implementation",
+    "part": 3
+  },
+  {
+    "deck": "reference.md",
+    "slide": 5,
+    "source": "Complete interval implementation",
+    "part": 4
+  },
+  {
+    "deck": "reference.md",
+    "slide": 6,
+    "source": "Complete interval implementation",
+    "part": 5
+  },
+  {
+    "deck": "reference.md",
+    "slide": 7,
+    "source": "Parser used in the call-order example",
+    "part": 1
+  },
+  {
+    "deck": "reference.md",
+    "slide": 8,
+    "source": "Statistics and the restricted writing view",
+    "part": 1
+  },
+  {
+    "deck": "reference.md",
+    "slide": 9,
+    "source": "Statistics and the restricted writing view",
+    "part": 2
+  },
+  {
+    "deck": "reference.md",
+    "slide": 10,
+    "source": "Statistics and the restricted writing view",
+    "part": 3
+  },
+  {
+    "deck": "reference.md",
+    "slide": 11,
+    "source": "Statistics and the restricted writing view",
+    "part": 4
+  }
+]
