@@ -1,3 +1,9 @@
+---
+slug: ru/labs/design/builder
+---
+<!-- course-site-backlink:start -->
+[Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/design/builder/)
+<!-- course-site-backlink:end -->
 # Лабораторная работа 3
 
 - Тема: **Builder**.

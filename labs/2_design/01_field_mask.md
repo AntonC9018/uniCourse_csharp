@@ -1,3 +1,9 @@
+---
+slug: ru/labs/design/field-mask
+---
+<!-- course-site-backlink:start -->
+[Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/design/field-mask/)
+<!-- course-site-backlink:end -->
 # Лабораторная работа #1
 
 - Тема: **Field Mask**

@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "default_language": "ru",
+  "languages": [
+    {
+      "code": "ru",
+      "root": "labs",
+      "label": "Русский"
+    }
+  ],
+  "exclude": [],
+  "route_sections": [
+    {
+      "source": "1_basic",
+      "destination": "labs/basic"
+    },
+    {
+      "source": "2_design",
+      "destination": "labs/design"
+    },
+    {
+      "source": "3_advanced",
+      "destination": "labs/advanced"
+    }
+  ],
+  "site_title": {
+    "ru": "Программирование на C#"
+  },
+  "root_lesson": "labs/1_basic/01_install.md",
+  "peer_repositories": []
+}

@@ -1,3 +1,9 @@
+---
+slug: ru/labs/basic/variables
+---
+<!-- course-site-backlink:start -->
+[Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/basic/variables/)
+<!-- course-site-backlink:end -->
 # Лабораторная работа 4
 
 - Тема: **Базовое взаимодействие с памятью через переменные**.

@@ -1,3 +1,9 @@
+---
+slug: ru/labs/design/properties
+---
+<!-- course-site-backlink:start -->
+[Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/design/properties/)
+<!-- course-site-backlink:end -->
 # Лабораторная работа 4
 
 - Тема: **Возможности представления свойств объекта в системе**.
@@ -68,4 +74,3 @@
 
 5. Задокументируйте, что вы изучили и ваш ход мыслей при выполнении разных подходов, в markdown документе.
    
-

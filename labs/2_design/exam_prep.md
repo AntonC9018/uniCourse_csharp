@@ -1,3 +1,9 @@
+---
+slug: ru/labs/design/exam-prep
+---
+<!-- course-site-backlink:start -->
+[Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/design/exam-prep/)
+<!-- course-site-backlink:end -->
 # Подготовка к экзамену
 
 ## Абстракция
@@ -175,7 +181,7 @@
 
 ## Guard Clause / Early Return
 
-Проанализируйте пример из [вопроса 14 в документе](../1_basic/a_06_flow_control.md/#14-early-return).
+Проанализируйте пример из [вопроса 14 в документе](../1_basic/06_flow_control.md#14-early-return).
 
 ## Зависимости
 

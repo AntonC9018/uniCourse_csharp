@@ -1,3 +1,9 @@
+---
+slug: ru/labs/basic/bool
+---
+<!-- course-site-backlink:start -->
+[Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/basic/bool/)
+<!-- course-site-backlink:end -->
 # Лабораторная работа 5
 
 - Тема: **Логические выражения и операторы**.

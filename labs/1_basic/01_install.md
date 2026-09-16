@@ -1,3 +1,9 @@
+---
+slug: ru/labs/basic/install
+---
+<!-- course-site-backlink:start -->
+[Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/basic/install/)
+<!-- course-site-backlink:end -->
 # Лабораторная работа 1
 
 - Тема: **Установка .NET**.
