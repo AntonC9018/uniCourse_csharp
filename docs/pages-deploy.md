@@ -101,7 +101,7 @@ BASE_URL=https://AntonC9018.github.io/uniCourse_csharp \
 Bounded retry (`SMOKE_RETRIES=30`, `SMOKE_SLEEP_S=10` by default). Checks:
 
 - `/` references `/ru/labs/basic/install/` (root redirect);
-- `/ru/labs/basic/install/` serves "Лабораторная работа 1";
+- `/ru/labs/basic/install/` serves "Установка .NET";
 - `/ru/labs/design/field-mask/` serves "Field Mask";
 - representative RU page references `pagefind` + `pagefind/pagefind.js`
   (fallback `_pagefind/pagefind.js`) is reachable (search).

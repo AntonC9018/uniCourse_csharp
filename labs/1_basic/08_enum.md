@@ -4,9 +4,8 @@ slug: ru/labs/basic/enum
 <!-- course-site-backlink:start -->
 [Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/basic/enum/)
 <!-- course-site-backlink:end -->
-# Лабораторная работа 8
+# `enum`
 
-- Тема: **`enum`**.
 - [Видео](https://www.youtube.com/watch?v=LLfU1a7pTxg&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=15)
 
 ## Практика

@@ -4,9 +4,8 @@ slug: ru/labs/basic/encapsulation
 <!-- course-site-backlink:start -->
 [Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/basic/encapsulation/)
 <!-- course-site-backlink:end -->
-# Лабораторная работа 16
+# Инкапсуляция
 
-- Тема: **инкапсуляция**.
 - [Видео](https://www.youtube.com/watch?v=IESVXL16OBA&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=11), 
 
 ## Идеи

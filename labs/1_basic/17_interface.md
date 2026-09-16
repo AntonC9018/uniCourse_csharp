@@ -4,9 +4,8 @@ slug: ru/labs/basic/interface
 <!-- course-site-backlink:start -->
 [Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/basic/interface/)
 <!-- course-site-backlink:end -->
-# Лабораторная работа 17
+# Полиморфизм и интерфейсы
 
-- Тема: **полиморфизм и интерфейсы**.
 - [Видео (меню)](https://www.youtube.com/watch?v=nKGsQISMrbQ&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=17), 
 - [Видео (динамическая типизация)](https://www.youtube.com/watch?v=t2T88IiiP48&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=12),
 - [Видео (интерфейсы и виртуальные методы)](https://www.youtube.com/watch?v=82vaxb6o_rg&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=19),

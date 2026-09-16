@@ -4,9 +4,8 @@ slug: ru/labs/basic/algorithms-code
 <!-- course-site-backlink:start -->
 [Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/basic/algorithms-code/)
 <!-- course-site-backlink:end -->
-# Лабораторная работа 11
+# Реализация алгоритмов в языке программирования
 
-- Тема: **Реализация алгоритмов в языке программирования**.
 - [Видео](https://youtu.be/VhA2OupAYRc?list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD)
 
 ## Концепты

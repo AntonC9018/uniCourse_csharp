@@ -4,9 +4,8 @@ slug: ru/labs/basic/nullability
 <!-- course-site-backlink:start -->
 [Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/basic/nullability/)
 <!-- course-site-backlink:end -->
-# Лабораторная работа 13
+# Nullability
 
-- Тема: **Nullability**.
 - [Видео](https://www.youtube.com/watch?v=zeuNRQBdwuY&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=7), 
 
 ## Вопросы

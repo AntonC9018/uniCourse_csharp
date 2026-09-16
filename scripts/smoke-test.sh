@@ -87,7 +87,7 @@ check_contains "root redirect" \
 # 2. Representative Russian route (root lesson).
 check_contains "ru route (install)" \
   "$BASE_URL/ru/labs/basic/install/" \
-  "Лабораторная работа 1" || true
+  "Установка .NET" || true
 
 # 3. Representative Russian route (design labs).
 check_contains "ru route (field-mask)" \

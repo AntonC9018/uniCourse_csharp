@@ -4,9 +4,8 @@ slug: ru/labs/basic/project
 <!-- course-site-backlink:start -->
 [Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/basic/project/)
 <!-- course-site-backlink:end -->
-# Лабораторная работа 2
+# Понимание базового проекта
 
-- Тема: **Понимание базового проекта**.
 - [Видео](https://www.youtube.com/watch?v=jLWY_id6nXU&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=2)
 
 

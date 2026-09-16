@@ -4,9 +4,8 @@ slug: ru/labs/basic/bool
 <!-- course-site-backlink:start -->
 [Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/basic/bool/)
 <!-- course-site-backlink:end -->
-# Лабораторная работа 5
+# Логические выражения и операторы
 
-- Тема: **Логические выражения и операторы**.
 - [Видео (до `if`)](https://www.youtube.com/watch?v=mj9E9BhOAhU&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=18)
 
 ## Концепты

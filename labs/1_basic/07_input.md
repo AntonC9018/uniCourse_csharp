@@ -4,9 +4,8 @@ slug: ru/labs/basic/input
 <!-- course-site-backlink:start -->
 [Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/basic/input/)
 <!-- course-site-backlink:end -->
-# Лабораторная работа 7
+# Ввод данных с консоли
 
-- Тема: **Ввод данных с консоли**.
 - [Видео](https://www.youtube.com/watch?v=SSTFFX5heuY&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=10)
 
 ## Концепты

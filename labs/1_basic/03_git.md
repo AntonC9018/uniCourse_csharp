@@ -4,9 +4,8 @@ slug: ru/labs/basic/git
 <!-- course-site-backlink:start -->
 [Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/basic/git/)
 <!-- course-site-backlink:end -->
-# Лабораторная работа 3
+# Настройка git
 
-- Тема: **Настройка git**.
 - [Видео](https://www.youtube.com/watch?v=fcxFAW1EE_A&list=PL4sUOB8DjVlWUcSaCu0xPcK7rYeRwGpl7&index=13).
 
 ## Задания

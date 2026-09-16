@@ -4,9 +4,8 @@ slug: ru/labs/basic/flow-control
 <!-- course-site-backlink:start -->
 [Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/basic/flow-control/)
 <!-- course-site-backlink:end -->
-# Лабораторная работа 6
+# Flow Control
 
-- Тема: **Flow Control**.
 - [Видео](https://www.youtube.com/watch?v=mj9E9BhOAhU&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=18&t=659)
 
 ## Концепты

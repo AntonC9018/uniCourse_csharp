@@ -4,9 +4,8 @@ slug: ru/labs/design/pipeline
 <!-- course-site-backlink:start -->
 [Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/design/pipeline/)
 <!-- course-site-backlink:end -->
-# Лабораторная работа 2
+# Pipelines
 
-- Тема: **Pipelines**.
 - [Видео](https://www.youtube.com/watch?v=X4IDL3CmV-A&list=PL4sUOB8DjVlXKTknA5IW75BGwcTw6PU3r&index=3)
 - [Поэтапный код из видео](https://github.com/AntonC9018/uniCourse_csharp/pull/3) (смотрите коммиты)
 

@@ -4,9 +4,8 @@ slug: ru/labs/design/builder
 <!-- course-site-backlink:start -->
 [Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/design/builder/)
 <!-- course-site-backlink:end -->
-# Лабораторная работа 3
+# Builder
 
-- Тема: **Builder**.
 - [Видео 1](https://www.youtube.com/watch?v=lIKqnGtzQrA&list=PL4sUOB8DjVlXKTknA5IW75BGwcTw6PU3r&index=5)
 - [Pull Request](https://github.com/AntonC9018/uniCourse_csharp/pull/6)
 

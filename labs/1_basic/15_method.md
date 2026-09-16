@@ -4,9 +4,8 @@ slug: ru/labs/basic/method
 <!-- course-site-backlink:start -->
 [Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/basic/method/)
 <!-- course-site-backlink:end -->
-# Лабораторная работа 15
+# instance методы
 
-- Тема: **instance методы**.
 - [Видео](https://www.youtube.com/watch?v=UVLUbfcCcG0&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=8&t=822s), 
 
 ## Идеи

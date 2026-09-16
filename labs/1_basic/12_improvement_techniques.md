@@ -4,9 +4,8 @@ slug: ru/labs/basic/improvement-techniques
 <!-- course-site-backlink:start -->
 [Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/basic/improvement-techniques/)
 <!-- course-site-backlink:end -->
-# Лабораторная работа 12
+# Улучшение программы
 
-- Тема: **Улучшение программы**.
 - [Видео](https://www.youtube.com/watch?v=zeuNRQBdwuY&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=7), 
 
 ## Задание
