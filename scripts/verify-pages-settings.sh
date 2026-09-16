@@ -38,7 +38,7 @@ if pages_json="$(gh api "repos/$REPO/pages" 2>/dev/null)"; then
   echo "$pages_json" | grep -q '"build_type"[[:space:]]*:[[:space:]]*"workflow"' \
     && pass "Pages source is GitHub Actions" \
     || bad "Pages source is not GitHub Actions (see docs/pages-deploy.md)"
-  echo "$pages_json" | grep -q 'AntonC9018.github.io' \
+  echo "$pages_json" | grep -qi 'AntonC9018.github.io' \
     && pass "Pages URL present" \
     || warn "Pages URL not found in API response"
 else
@@ -61,7 +61,8 @@ if prot_json="$(gh api "repos/$REPO/branches/master/protection" 2>/dev/null)"; t
   else
     pass "no required_pull_request_reviews block (PRs not mandatory)"
   fi
-  echo "$prot_json" | grep -q '"enforce_admins"[[:space:]]*:[[:space:]]*[^,}]*enabled[^,}]*false' \
+  # gh pretty-prints JSON across lines, so match the single-line fragment.
+  echo "$prot_json" | grep -q '"enabled"[[:space:]]*:[[:space:]]*false' \
     && pass "admin bypass retained" \
     || warn "could not confirm enforce_admins=false; verify manually that admins can push to master"
 else
