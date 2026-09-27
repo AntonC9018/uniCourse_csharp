@@ -1,0 +1,606 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "QsO1HedgKt8",
+  "uploadId": "QsO1HedgKt8",
+  "transcriptSha256": "584fad9d8c8e0faa2d3e64af349bc72dc36ca0b109568a82e44a7b87edfe1cab",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 799,
+      "endMilliseconds": 15029,
+      "kind": "fact",
+      "text": "The .NET SDK must be installed to compile C# scripts because it supplies the compilation tools.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 0,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=0s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 799,
+          "endMilliseconds": 15029
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#install-the-net-sdk-without-administrator-rights"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 30880,
+      "endMilliseconds": 47270,
+      "kind": "code_change",
+      "text": "Save the downloaded PowerShell installer as a .ps1 file, removing any .txt suffix so it has a script extension.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 30,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=30s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 30880,
+          "endMilliseconds": 47270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#save-the-installer-script"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 47280,
+      "endMilliseconds": 61790,
+      "kind": "explanation",
+      "text": "Enabling File name extensions in Explorer reveals a downloaded .txt suffix so it can be removed.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 47,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=47s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 47280,
+          "endMilliseconds": 61790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#save-the-installer-script"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 61800,
+      "endMilliseconds": 81119,
+      "kind": "code_change",
+      "text": "Search for PowerShell from the Windows Start menu and open it to run the downloaded script.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 61,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=61s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 61800,
+          "endMilliseconds": 81119
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reach-the-script-in-powershell"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 81119,
+      "endMilliseconds": 97640,
+      "kind": "code_change",
+      "text": "Use cd with the script folder's path to move PowerShell into that folder before running the script.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 81,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=81s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 81119,
+          "endMilliseconds": 97640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reach-the-script-in-powershell"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 97640,
+      "endMilliseconds": 113119,
+      "kind": "explanation",
+      "text": "A relative path can be used with cd to enter a folder from the current directory, while a full path also works.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 97,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=97s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 97640,
+          "endMilliseconds": 113119
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reach-the-script-in-powershell"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 120240,
+      "endMilliseconds": 131510,
+      "kind": "edge_case",
+      "text": "If the download is on drive D rather than drive C, entering D: changes the console to that drive.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 120,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=120s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 120240,
+          "endMilliseconds": 131510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reach-the-script-in-powershell"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 135840,
+      "endMilliseconds": 153869,
+      "kind": "code_change",
+      "text": "Copy the script's path and remove the filename when using cd, because cd needs the folder path.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 135,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=135s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 135840,
+          "endMilliseconds": 153869
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reach-the-script-in-powershell"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 153879,
+      "endMilliseconds": 175280,
+      "kind": "explanation",
+      "text": "A direct attempt to run the PowerShell script can fail under the execution policy, so the demonstrated policy adjustment precedes retrying it.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 153,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=153s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 153879,
+          "endMilliseconds": 175280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#run-the-installer"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 180360,
+      "endMilliseconds": 191390,
+      "kind": "fact",
+      "text": "Specifying 9.0 selects the .NET 9 SDK; the demonstrated installer otherwise selects version 8, which the lesson says can also be used.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 180,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=180s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 180360,
+          "endMilliseconds": 191390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#run-the-installer"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 191400,
+      "endMilliseconds": 212760,
+      "kind": "explanation",
+      "text": "At the script confirmation prompt, choosing R runs the script once.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 191,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=191s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 191400,
+          "endMilliseconds": 212760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#run-the-installer"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 212760,
+      "endMilliseconds": 241239,
+      "kind": "edge_case",
+      "text": "The installed dotnet command works in the current console but initially fails in a newly opened console because the new session cannot find it.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 212,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=212s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 212760,
+          "endMilliseconds": 241239
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-dotnet-available-in-new-consoles"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 241239,
+      "endMilliseconds": 293310,
+      "kind": "code_change",
+      "text": "Add the directory containing dotnet to PATH via Edit and New so the dotnet command can be found.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 241,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=241s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 241239,
+          "endMilliseconds": 293310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-dotnet-available-in-new-consoles"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 295000,
+      "endMilliseconds": 305029,
+      "kind": "explanation",
+      "text": "The directory added to PATH contains dotnet, so typing dotnet in the console launches that program.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 295,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=295s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 295000,
+          "endMilliseconds": 305029
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-dotnet-available-in-new-consoles"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 305039,
+      "endMilliseconds": 310000,
+      "kind": "fact",
+      "text": "A .NET project can be created in a folder with any chosen name and location.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 305,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=305s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 305039,
+          "endMilliseconds": 310000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#construct-a-minimal-project"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 310000,
+      "endMilliseconds": 350880,
+      "kind": "fact",
+      "text": "The minimal project shown has a C# source file named Program.cs and a separate .csproj project file.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 310,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=310s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 310000,
+          "endMilliseconds": 350880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#construct-a-minimal-project"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 350880,
+      "endMilliseconds": 365479,
+      "kind": "explanation",
+      "text": "A .csproj file is editable XML text that holds project settings.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 350,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=350s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 350880,
+          "endMilliseconds": 365479
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#construct-a-minimal-project"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 381080,
+      "endMilliseconds": 393629,
+      "kind": "scope_boundary",
+      "text": "The console can generate the minimal project files, and the instructor leaves the command demonstration for later.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 381,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=381s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 381080,
+          "endMilliseconds": 393629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#construct-a-minimal-project"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 423840,
+      "endMilliseconds": 448520,
+      "kind": "code_change",
+      "text": "Set the project file to describe an executable rather than a library so the project can run.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 423,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=423s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 423840,
+          "endMilliseconds": 448520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#construct-a-minimal-project"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 459639,
+      "endMilliseconds": 488759,
+      "kind": "code_change",
+      "text": "In an empty project folder, dotnet new console generates a minimal console application.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 459,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=459s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 459639,
+          "endMilliseconds": 488759
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#generate-the-project-from-a-template"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 491000,
+      "endMilliseconds": 509759,
+      "kind": "test_result",
+      "text": "The console project template generates the project file and Program.cs automatically.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 491,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=491s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 491000,
+          "endMilliseconds": 509759
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#generate-the-project-from-a-template"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 516680,
+      "endMilliseconds": 528399,
+      "kind": "scope_boundary",
+      "text": "VS Code is optional for this lesson; the instructor also recommends Rider as an IDE.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 516,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=516s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 516680,
+          "endMilliseconds": 528399
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-an-optional-editor"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 555680,
+      "endMilliseconds": 572959,
+      "kind": "code_change",
+      "text": "Install the C# Dev Kit extension in VS Code to add C# support.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 555,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=555s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 555680,
+          "endMilliseconds": 572959
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-an-optional-editor"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 582959,
+      "endMilliseconds": 592519,
+      "kind": "explanation",
+      "text": "The C# extension uses DOTNET_ROOT to locate the SDK, while the console uses PATH.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 582,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=582s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 582959,
+          "endMilliseconds": 592519
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-an-optional-editor"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 592519,
+      "endMilliseconds": 614640,
+      "kind": "code_change",
+      "text": "Create DOTNET_ROOT with the SDK directory already added to PATH so the C# extension can locate that installation.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 592,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=592s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 592519,
+          "endMilliseconds": 614640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-an-optional-editor"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 614640,
+      "endMilliseconds": 622680,
+      "kind": "code_change",
+      "text": "Reopen VS Code after setting DOTNET_ROOT so it can use the new environment variable.",
+      "evidence": [
+        {
+          "type": "video_timestamp",
+          "seconds": 614,
+          "url": "https://www.youtube.com/watch?v=QsO1HedgKt8&t=614s"
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 614640,
+          "endMilliseconds": 622680
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-an-optional-editor"
+      }
+    }
+  ]
+}
