@@ -181,7 +181,7 @@ slug: ru/labs/design/exam-prep
 
 ## Guard Clause / Early Return
 
-Проанализируйте пример из [вопроса 14 в документе](../1_basic/06_flow_control.md#14-early-return).
+Проанализируйте пример из [вопроса 14 в документе](../1_basic/07_flow_control.md#14-early-return).
 
 ## Зависимости
 
