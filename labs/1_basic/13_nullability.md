@@ -57,23 +57,23 @@ slug: ru/labs/basic/nullability
   `!` позволяет присвоить результат выражения, который возмножно `null`,
   переменной, которая не поддерживает `null`.
   Пример:
-  ```
-  static string? MaybeString(int num)
-  {
-      if (num == 0)
-      {
-          return "Hello";
-      }
-      else
-      {
-          return null;
-      }
-  }
-  
-  // Мы знаем, что функция по факту вернет не `null`, 
-  // но компилятор это не способен определить.
-  string s = MaybeString(0)!;
-  ```
+```
+static string? MaybeString(int num)
+{
+    if (num == 0)
+    {
+        return "Hello";
+    }
+    else
+    {
+        return null;
+    }
+}
+
+// Мы знаем, что функция по факту вернет не `null`, 
+// но компилятор это не способен определить.
+string s = MaybeString(0)!;
+```
   </details>
 
 - Приведите пример, как с помощью оператора `!` можно обойти гарантии nullability компилятора.  
@@ -81,31 +81,31 @@ slug: ru/labs/basic/nullability
   <details>
   <summary>Пример</summary>
   
-  ```
-  static string? MaybeString(int num)
-  {
-      if (num == 0)
-      {
-          return "Hello";
-      }
-      else
-      {
-          return null;
-      }
-  }
-  
-  // Функция вернет `null`, который мы без ошибок сохраняем в переменную,
-  // тип которой не поддерживает `null`.
-  string s = MaybeString(1)!;
-  ```
+```
+static string? MaybeString(int num)
+{
+    if (num == 0)
+    {
+        return "Hello";
+    }
+    else
+    {
+        return null;
+    }
+}
+
+// Функция вернет `null`, который мы без ошибок сохраняем в переменную,
+// тип которой не поддерживает `null`.
+string s = MaybeString(1)!;
+```
   </details>
 
   <details>
   <summary>Еще пример</summary>
   
-  ```
-  string s = null!;
-  ```
+```
+string s = null!;
+```
   </details>
 
 

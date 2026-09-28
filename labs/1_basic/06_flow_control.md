@@ -494,13 +494,13 @@ static void SendWelcomeEmail(User user)
             Console.WriteLine("User not found.");
             return;
         }
-    
+
         if (!user.IsActive)
         {
             Console.WriteLine("User is not active.");
             return;
         }
-    
+
         if (!user.EmailConfirmed)
         {
             Console.WriteLine("Email not confirmed.");
@@ -520,28 +520,28 @@ static void SendWelcomeEmail(User user)
 int i = 0;
 while (true)
 {
-   if (i == 4)
-   {
-       Console.WriteLine("ERROR: Should not happen");
-       break;
-   }
-   if (i == 3)
-   {
-       Console.WriteLine("Exit");
-       break;
-   }
-   if (i == 0)
-   {
-       Console.WriteLine("Increase by 2 on first iter");
-       i += 2;
-       continue;
-   }
+    if (i == 4)
+    {
+        Console.WriteLine("ERROR: Should not happen");
+        break;
+    }
+    if (i == 3)
+    {
+        Console.WriteLine("Exit");
+        break;
+    }
+    if (i == 0)
+    {
+        Console.WriteLine("Increase by 2 on first iter");
+        i += 2;
+        continue;
+    }
 
-   Console.WriteLine("Increase by 1 normally");
-   i++;
+    Console.WriteLine("Increase by 1 normally");
+    i++;
 
-   // Implicit continue.
-   // continue;
+    // Implicit continue.
+    // continue;
 }
 ```
 
@@ -578,11 +578,11 @@ static int F()
 {
     while (true)
     {
-       if (true)
-       {
-           return 0;
-       }
-       break;
+        if (true)
+        {
+            return 0;
+        }
+        break;
     }
     return 1;
 }

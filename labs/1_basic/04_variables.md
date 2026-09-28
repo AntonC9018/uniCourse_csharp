@@ -35,11 +35,11 @@ slug: ru/labs/basic/variables
 
 ### 1. Присваивание одной переменной к другой
 ```csharp
-   int a = 5;
-   int b = 6;
-   a = b;
-   b = 7;
-   Console.WriteLine(a);
+int a = 5;
+int b = 6;
+a = b;
+b = 7;
+Console.WriteLine(a);
 ```
    <details>
    <summary>Правильный ответ:</summary>
@@ -57,10 +57,10 @@ slug: ru/labs/basic/variables
 
 ### 2. Присваивание выражения, включающего переменную
 ```csharp
-   int a = 5;
-   int b = a + 6;
-   a = 7;
-   Console.WriteLine(b);
+int a = 5;
+int b = a + 6;
+a = 7;
+Console.WriteLine(b);
 ```
    <details>
    <summary>Правильный ответ:</summary>
@@ -77,11 +77,11 @@ slug: ru/labs/basic/variables
 
 ### 3. Присваивание ссылочной переменной
 ```csharp
-   string a = "1";
-   string b = a;
-   a = "2";
-   Console.WriteLine(a);
-   Console.WriteLine(b);
+string a = "1";
+string b = a;
+a = "2";
+Console.WriteLine(a);
+Console.WriteLine(b);
 ```
    <details>
    <summary>Правильный ответ:</summary>
@@ -104,7 +104,7 @@ slug: ru/labs/basic/variables
    
 ### 4. Присваивание `int` к `string`
 ```csharp
-   string a = 5;
+string a = 5;
 ```
    
    <details>
@@ -115,8 +115,8 @@ slug: ru/labs/basic/variables
 
 ### 5. Создание переменной с тем же именем
 ```csharp
-   int a = 5;
-   int a = 6;
+int a = 5;
+int a = 6;
 ```
    
    <details>

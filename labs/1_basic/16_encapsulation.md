@@ -108,27 +108,27 @@ slug: ru/labs/basic/encapsulation
    <details>
    <summary>Ничего не понял</summary>
 
-   ```csharp
-   sealed class LibraryFilter
-   {
-       public string? _nameInclude;
+```csharp
+sealed class LibraryFilter
+{
+    public string? _nameInclude;
 
-       public string? NameInclude
-       {
-           get
-           {
-               return _nameInclude;
-           }
-           set
-           {
-               Debug.Assert(value != "");
-               _nameInclude = value;
-           }
-       }
+    public string? NameInclude
+    {
+        get
+        {
+            return _nameInclude;
+        }
+        set
+        {
+            Debug.Assert(value != "");
+            _nameInclude = value;
+        }
+    }
 
-       // ...
-   }
-   ```
+    // ...
+}
+```
    </details>
 
 7. Сделайте еще один класс, `InputLibraryFilter`,
@@ -143,29 +143,29 @@ slug: ru/labs/basic/encapsulation
      <details>
      <summary>Ничего не понял</summary>
 
-     ```csharp
-     LibraryFilter ReadLibraryFilter()
-     {
-         var ret = new LibraryFilter();
-         var inputFilter = new InputLibraryFilter(ret);
+```csharp
+LibraryFilter ReadLibraryFilter()
+{
+    var ret = new LibraryFilter();
+    var inputFilter = new InputLibraryFilter(ret);
 
-         while (true)
-         {
-             Console.Write("Status (Free, Taken, Any): ");
-             var str = Console.ReadLine();
-             if (!inputFilter.Status(str))
-             {
-                 Console.WriteLine("Invalid input");
-                 continue;
-             }
-             break;
-         }
+    while (true)
+    {
+        Console.Write("Status (Free, Taken, Any): ");
+        var str = Console.ReadLine();
+        if (!inputFilter.Status(str))
+        {
+            Console.WriteLine("Invalid input");
+            continue;
+        }
+        break;
+    }
 
-         // ...
+    // ...
 
-         return ret;
-     }
-     ```
+    return ret;
+}
+```
      </details>
 
    - `InputLibraryFilter` будет хранить в себе `LibraryFilter` как поле,
@@ -177,23 +177,23 @@ slug: ru/labs/basic/encapsulation
      <details>
      <summary>Не понял</summary>
 
-     ```csharp
-     sealed class InputLibraryFilter
-     {
-         private readonly InputFilter _impl;
+```csharp
+sealed class InputLibraryFilter
+{
+    private readonly InputFilter _impl;
 
-         public void NameInclude(string? str)
-         {
-             if (str == "")
-             {
-                 str = null;
-             }
-             _impl.NameInclude = str;
-         }
+    public void NameInclude(string? str)
+    {
+        if (str == "")
+        {
+            str = null;
+        }
+        _impl.NameInclude = str;
+    }
 
-         // ...
-     }
-     ```
+    // ...
+}
+```
      </details>
 
    - В случае `enum`-a сделайте функцию, 
@@ -202,29 +202,29 @@ slug: ru/labs/basic/encapsulation
      <details>
      <summary>Чего???</summary>
 
-     ```csharp
-     sealed class InputLibraryFilter
-     {
-         private readonly InputFilter _impl;
+```csharp
+sealed class InputLibraryFilter
+{
+    private readonly InputFilter _impl;
 
-         public bool Status(string? str)
-         {
-             if (str == null)
-             {
-                 return false;
-             }
-             bool ok = Enum.TryParse(
-                value: str,
-                ignoreCase: true,
-                result: out TakenStatusFilter status);
-             if (!ok)
-             {
-                 return false;
-             }
-             _impl.TakenStatus = status;
-         }
-     }
-     ```
+    public bool Status(string? str)
+    {
+        if (str == null)
+        {
+            return false;
+        }
+        bool ok = Enum.TryParse(
+            value: str,
+            ignoreCase: true,
+            result: out TakenStatusFilter status);
+        if (!ok)
+        {
+            return false;
+        }
+        _impl.TakenStatus = status;
+    }
+}
+```
      </details>
    - Примените фильтр в функции `main`.
 

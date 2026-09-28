@@ -206,13 +206,13 @@ Console.WriteLine(c);
 ### 14. Тонкости оператора `&&` (1)
 ```csharp
 bool result = A() && B();
- 
+
 static bool A()
 {
     Console.WriteLine("A");
     return true;
 }
- 
+
 static bool B()
 {
     Console.WriteLine("B");
@@ -234,13 +234,13 @@ B
 ### 15. Тонкости оператора `&&` (2)
 ```csharp
 bool result = A() && B();
- 
+
 static bool A()
 {
     Console.WriteLine("A");
     return true;
 }
- 
+
 static bool B()
 {
     Console.WriteLine("B");

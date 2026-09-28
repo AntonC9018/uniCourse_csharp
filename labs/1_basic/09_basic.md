@@ -35,23 +35,23 @@ slug: ru/labs/basic/basic
    Значения переменных задаются в зависимости от заказа.
    Например:
    
-   ```csharp
-   int client1_drink = 100; // 100г напитка
-   int client1_first = 0; // нет первого
-   int client1_second = 250; // 250г второго
-   
-   int client2_drink = 0; // 0 напитка
-   int client2_first = 300; // 300г первого
-   int client2_second = 0; // 0 второго
-   ```
+```csharp
+int client1_drink = 100; // 100г напитка
+int client1_first = 0; // нет первого
+int client1_second = 250; // 250г второго
+
+int client2_drink = 0; // 0 напитка
+int client2_first = 300; // 300г первого
+int client2_second = 0; // 0 второго
+```
    </details>
 
    <details>
    <summary>Получение стоимости</summary>
 
-   ```csharp
-   int client1_total = client1_drink * 10 + client_first * 20 + client_second * 30;
-   ```
+```csharp
+int client1_total = client1_drink * 10 + client_first * 20 + client_second * 30;
+```
    </details>
 
 2. Отделите работу с отдельными клиентами блоками.
@@ -84,12 +84,12 @@ slug: ru/labs/basic/basic
    Поиск стоимости.
    Поэтому, возвращаемый тип будет `int`.
    
-   ```csharp
-   static int CustomerTotal(Prices prices, Choices choices)
-   {
-       // ...
-   }
-   ```
+```csharp
+static int CustomerTotal(Prices prices, Choices choices)
+{
+    // ...
+}
+```
    </details>
 
 ## Вопросы на анализ
