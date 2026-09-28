@@ -2,40 +2,61 @@
 
 # Install the .NET SDK without administrator rights
 
-[00:00:00](https://www.youtube.com/watch?v=QsO1HedgKt8&t=0s) This lesson shows how the instructor installs a .NET SDK for C# development without administrator rights, makes its `dotnet` command available to new consoles, constructs a tiny project, and prepares an optional editor. The **.NET SDK** is the software development kit containing the tools needed to compile C# source. A **console** is a text command window; **PowerShell** is the Windows console used here. A **script** is a file of commands, and `.ps1` is a PowerShell script extension. An **extension** after a filename's last dot tells Windows what type of file it is.
+[00:00:00](https://www.youtube.com/watch?v=QsO1HedgKt8&t=0s) The **.NET SDK** contains the tools needed to compile C# source. This lesson covers how to:
 
-The terms used during the walkthrough are: **path**, the location of a file or folder; **`cd`**, the command that changes the current folder; **relative path**, a path measured from that folder; **full path**, one that includes the drive and folders; **execution policy**, PowerShell's script-running rule; **environment variable**, a named setting inherited by programs; **`PATH`**, the environment variable searched for commands; and **`DOTNET_ROOT`**, the environment variable pointing to the .NET installation folder. A **project** is a folder of source and build settings: `Program.cs` is a C# source file, while a `.csproj` file is the project's XML settings file. **XML** is editable text with nested tags. An **executable** can be run; a **library** supplies code for another program. A **template** generates starter files. An **IDE** is an editor with development tools; VS Code and Rider are the two editors mentioned here.
+- Install the SDK without administrator rights.
+- Make the `dotnet` command available in new consoles.
+- Build a minimal project by hand and generate one from a template.
+- Set up an optional editor.
+
+Related lesson: [Install .NET and create a first project](../../../labs/1_basic/01_install.md).
+
+Concepts used in the walkthrough:
+
+- **Console:** a text command window. **PowerShell** is the Windows console used here.
+- **Script:** a file of commands. `.ps1` is a PowerShell script extension; a filename **extension** is the suffix after its last dot.
+- **Path:** a file or folder location. `cd` changes the current folder; a **relative path** starts from that folder, while a **full path** includes the drive and folders.
+- **Execution policy:** PowerShell's rule for running scripts.
+- **Environment variable:** a named setting inherited by programs. `PATH` lists folders searched for commands; `DOTNET_ROOT` points to the .NET installation folder.
+- **Project:** a folder of source and build settings. `Program.cs` holds C# source; a `.csproj` file holds project settings in **XML**, editable text with nested tags.
+- **Executable:** a program that can run. A **library** supplies code for another program.
+- **Template:** a pattern that generates starter files.
+- **IDE:** an editor with development tools. VS Code and Rider are the two editors mentioned here.
 
 ## Save the installer script
 
-[00:00:30](https://www.youtube.com/watch?v=QsO1HedgKt8&t=30s) The instructor saves the downloaded PowerShell installer with Ctrl+S. The first filename may end in `.ps1.txt`; `.txt` makes it look like a text document instead of the `.ps1` script PowerShell should run. Remove only the trailing `.txt`. This filename transition is a simplified example of the [recorded save and rename](https://www.youtube.com/watch?v=QsO1HedgKt8&t=30s); no repository commit captures the downloaded file:
+To install .NET without administrator rights, use [Microsoft's PowerShell installation script](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script). The video illustrates these preparation steps:
 
-```text
-dotnet-install.ps1.txt  →  dotnet-install.ps1
-```
+1. [00:00:30](https://www.youtube.com/watch?v=QsO1HedgKt8&t=30s) Download the script and save it with Ctrl+S.
+2. Check the saved filename. If it ends in `.ps1.txt`, remove only the trailing `.txt` so PowerShell sees a `.ps1` script. This simplified example follows the [recorded save and rename](https://www.youtube.com/watch?v=QsO1HedgKt8&t=30s); the downloaded file has no repository snapshot:
 
-[00:00:47](https://www.youtube.com/watch?v=QsO1HedgKt8&t=47s) If the suffix is hidden, the instructor opens File Explorer and turns on **View → Show → File name extensions**. File name extensions are the visible suffixes such as `.txt` and `.ps1`. This lets the instructor see and remove the extra suffix even after the file has been downloaded.
+   ```text
+   dotnet-install.ps1.txt  →  dotnet-install.ps1
+   ```
+
+[00:00:47](https://www.youtube.com/watch?v=QsO1HedgKt8&t=47s) If filename extensions are hidden, open File Explorer and enable **View → Show → File name extensions**. Then remove the extra `.txt` suffix, either before or after saving the file.
 
 ## Reach the script in PowerShell
 
-[00:01:01](https://www.youtube.com/watch?v=QsO1HedgKt8&t=61s) The instructor opens the Windows Start menu, searches for **PowerShell**, and presses Enter. PowerShell is the command window that will run the `.ps1` file.
+1. [00:01:01](https://www.youtube.com/watch?v=QsO1HedgKt8&t=61s) Open the Windows Start menu, search for **PowerShell**, and press Enter.
+2. [00:01:21](https://www.youtube.com/watch?v=QsO1HedgKt8&t=81s) Use `cd` (**change directory**) to enter the folder containing the script. Pass the folder path, not the script filename. This simplified command illustrates the [recorded navigation](https://www.youtube.com/watch?v=QsO1HedgKt8&t=81s):
 
-[00:01:21](https://www.youtube.com/watch?v=QsO1HedgKt8&t=81s) Before running it, the instructor uses `cd` (**change directory**) to enter the folder containing the script. A **folder path** names the directory; the script's filename is not part of the `cd` argument. This simplified command illustrates the [recorded navigation](https://www.youtube.com/watch?v=QsO1HedgKt8&t=81s):
+   ```powershell
+   cd "C:\Users\Student\Downloads"
+   ```
 
-```powershell
-cd "C:\Users\Student\Downloads"
-```
+[00:01:37](https://www.youtube.com/watch?v=QsO1HedgKt8&t=97s) A **relative path** starts from PowerShell's current folder, so `cd Downloads` works when Downloads is directly inside it. A **full path** names the drive and folders, as in the example above. Either form works when it identifies the script's folder.
 
-[00:01:37](https://www.youtube.com/watch?v=QsO1HedgKt8&t=97s) A **relative path** starts from PowerShell's current folder, so `cd Downloads` works if that folder is directly inside the current one. A **full path** identifies the drive and all folders, as in the sample above; the instructor says either form works.
-
-[00:02:00](https://www.youtube.com/watch?v=QsO1HedgKt8&t=120s) If the script is on drive D while PowerShell is on drive C, the instructor enters `D:` to switch drives, then navigates to the folder. The [recorded drive change](https://www.youtube.com/watch?v=QsO1HedgKt8&t=120s) is illustrated by:
+[00:02:00](https://www.youtube.com/watch?v=QsO1HedgKt8&t=120s) If the script is on drive D while PowerShell is on drive C, enter `D:` to switch to D's current location, then use `cd` to reach the folder. This is the [recorded drive change](https://www.youtube.com/watch?v=QsO1HedgKt8&t=120s):
 
 ```powershell
 D:
 cd "D:\Downloads"
 ```
 
-[00:02:15](https://www.youtube.com/watch?v=QsO1HedgKt8&t=135s) When Explorer shows an abbreviated path, the instructor uses its copy-path option. A copied **file path** includes the filename, so the instructor removes that filename before passing the remaining folder path to `cd`. The intermediate state is PowerShell positioned beside the installer, ready to invoke it.
+In PowerShell, `cd "D:\Downloads"` can also switch drive and folder in one command: `cd` is an alias for `Set-Location`, which accepts paths on other drives ([PowerShell location reference](https://learn.microsoft.com/en-us/powershell/scripting/samples/managing-current-location)).
+
+[00:02:15](https://www.youtube.com/watch?v=QsO1HedgKt8&t=135s) If Explorer displays an abbreviated path, use its copy-path option. A copied **file path** includes the filename; remove that filename before passing the containing folder to `cd`. PowerShell is then positioned beside the installer.
 
 <details>
 <summary>Predict: what happens if the copied path still ends in the script filename when passed to <code>cd</code>?</summary>
@@ -45,36 +66,46 @@ cd "D:\Downloads"
 
 ## Run the installer
 
-[00:02:33](https://www.youtube.com/watch?v=QsO1HedgKt8&t=153s) The instructor first tries to run the script directly. PowerShell rejects it under its **execution policy**, the rule controlling script execution, so the instructor adjusts that policy and retries. The transcript does not preserve the exact policy command shown on screen. For a session-only example, Microsoft's [PowerShell execution-policy reference](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy) documents **Process** scope, which applies to the current PowerShell process. This is an illustrative command beside the [recorded failure and adjustment](https://www.youtube.com/watch?v=QsO1HedgKt8&t=153s), not a transcription of the on-screen switch:
+[00:02:33](https://www.youtube.com/watch?v=QsO1HedgKt8&t=153s) Running the script directly can fail under PowerShell's **execution policy**. If that happens, adjust the policy for the current session and retry. The transcript does not preserve the exact on-screen command. Microsoft's [`Set-ExecutionPolicy` reference](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy) documents **Process** scope, which applies only to the current PowerShell process. This example accompanies the [recorded failure and adjustment](https://www.youtube.com/watch?v=QsO1HedgKt8&t=153s); it is not a transcription:
 
 ```powershell
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
 
-[00:03:00](https://www.youtube.com/watch?v=QsO1HedgKt8&t=180s) The instructor retries the installer and adds `9.0` to select the .NET 9 SDK. In this recording the installer would otherwise select version 8, which the instructor says is also usable. The `-Channel` spelling below is a simplified, documented way to select a major SDK line, supported by the [install-script reference](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script); the [recorded 9.0 selection](https://www.youtube.com/watch?v=QsO1HedgKt8&t=180s) is the source for the lesson state, and no exact command snapshot is committed:
+[00:03:00](https://www.youtube.com/watch?v=QsO1HedgKt8&t=180s) Select a supported SDK channel when retrying the installer.
+
+> **Recording (.NET 9):** The video selects SDK 9.0. Without that selection, its installer would have chosen .NET 8, which the lesson says was also usable. The [recorded selection](https://www.youtube.com/watch?v=QsO1HedgKt8&t=180s) is represented by the simplified command `.\dotnet-install.ps1 -Channel 9.0`; the exact on-screen command is not preserved in a repository snapshot.
+
+For a new setup, install the .NET 10 SDK. As of September 2026, [.NET 10 is the active LTS release](https://dotnet.microsoft.com/en-us/platform/support/policy), supported through November 14, 2028. The same policy lists .NET 9 in maintenance support through November 10, 2026; it is not yet out of support. The [install-script reference](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script) documents `-Channel` for selecting a major release:
 
 ```powershell
-.\dotnet-install.ps1 -Channel 9.0
+.\dotnet-install.ps1 -Channel 10.0
 ```
 
-[00:03:11](https://www.youtube.com/watch?v=QsO1HedgKt8&t=191s) When PowerShell asks for confirmation, the instructor chooses **R**, meaning **Run once**, rather than granting a broader standing choice. The installer then makes `dotnet` usable in that current console.
+[00:03:11](https://www.youtube.com/watch?v=QsO1HedgKt8&t=191s) If PowerShell asks for confirmation, choose **R** for **Run once**. After installation, `dotnet` works in that console.
 
 ## Make dotnet available in new consoles
 
-[00:03:32](https://www.youtube.com/watch?v=QsO1HedgKt8&t=212s) The instructor tests `dotnet`: it works in the console used for installation, but a newly opened console initially cannot find it. The **`dotnet` command** starts the installed .NET command-line program; the result shows that the new session lacks the installation folder in its command search path. This simplified [recorded test](https://www.youtube.com/watch?v=QsO1HedgKt8&t=212s) contrasts the two sessions:
+[00:03:32](https://www.youtube.com/watch?v=QsO1HedgKt8&t=212s) Test `dotnet` in the installation console and a new console. In the recording it works in the first but is initially missing in the second. The installer adds its location to the current session's command search path, not the persistent user `PATH` ([install-script reference](https://learn.microsoft.com/en-us/dotnet/core/tools/dotnet-install-script)). This simplified [recorded test](https://www.youtube.com/watch?v=QsO1HedgKt8&t=212s) shows the difference:
 
 ```text
 installation console: dotnet  → found
 new console:          dotnet  → not found yet
 ```
 
-[00:04:01](https://www.youtube.com/watch?v=QsO1HedgKt8&t=241s) The instructor copies the installation directory containing `dotnet`, opens Windows' environment-variable editor, selects the user **Path**, clicks **Edit**, then **New**, pastes the directory, and confirms. **`PATH`** is the list of directories searched when a command is entered without a full path. The instructor uses the user setting because this installation is being done without administrator rights. The path below is illustrative; use the directory that actually contains your installed `dotnet.exe`. It sits beside the [recorded PATH edit](https://www.youtube.com/watch?v=QsO1HedgKt8&t=241s):
+[00:04:01](https://www.youtube.com/watch?v=QsO1HedgKt8&t=241s) Add the directory containing `dotnet.exe` to the user **Path**, the list of directories Windows searches for a command entered without a full path:
+
+1. Copy the installation directory containing `dotnet.exe`.
+2. Open Windows' environment-variable editor and select the user **Path**.
+3. Click **Edit**, then **New**, paste that directory, and confirm.
+
+Use the directory from your installation. This example sits beside the [recorded PATH edit](https://www.youtube.com/watch?v=QsO1HedgKt8&t=241s):
 
 ```text
 User Path:  C:\Users\Student\.dotnet
 ```
 
-[00:04:55](https://www.youtube.com/watch?v=QsO1HedgKt8&t=295s) Because that directory contains `dotnet.exe`, entering `dotnet` in a console lets Windows find and launch it. The key result is command discovery in a newly opened console, not merely in the installer session.
+[00:04:55](https://www.youtube.com/watch?v=QsO1HedgKt8&t=295s) Open a new console and enter `dotnet`. Windows can find and launch `dotnet.exe` because its directory is now in the user `PATH`.
 
 <details>
 <summary>Why did the first console find <code>dotnet</code> while a new one did not?</summary>
@@ -84,7 +115,12 @@ The installer session had access to its installation path. The new session neede
 
 ## Construct a minimal project
 
-[00:05:05](https://www.youtube.com/watch?v=QsO1HedgKt8&t=305s) The instructor makes a **project folder**, a place to keep the program and its build settings; its name and location are up to the learner. [00:05:10](https://www.youtube.com/watch?v=QsO1HedgKt8&t=310s) The initial minimal project consists of two distinct files: **`Program.cs`**, the C# source text that runs, and **`<project-name>.csproj`**, the project settings read by the SDK. The [related course exercise at the synchronization revision](https://github.com/AntonC9018/uniCourse_csharp/blob/a944ae1fd13128aa386007b0681b6019d2b8b97e/labs/1_basic/01_install.md) asks for those files but is **not an exact commit of the instructor's on-screen project**. These short samples illustrate their roles:
+[00:05:05](https://www.youtube.com/watch?v=QsO1HedgKt8&t=305s) Create a **project folder** wherever you want to keep the program and its build settings. [00:05:10](https://www.youtube.com/watch?v=QsO1HedgKt8&t=310s) Start with two distinct files:
+
+- **`Program.cs`:** C# source text containing the program's statements.
+- **`<project-name>.csproj`:** project settings read by the SDK.
+
+These short samples illustrate their roles. They adapt the project's target framework to .NET 10 for a new setup; the recording does not preserve an exact copy of its project files:
 
 ```csharp
 // Program.cs — simplified example
@@ -92,38 +128,38 @@ Console.WriteLine("Hello, World!");
 ```
 
 ```xml
-<!-- Example.csproj — simplified intermediate state -->
+<!-- Example.csproj — simplified intermediate state for .NET 10 -->
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net9.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
   </PropertyGroup>
 </Project>
 ```
 
-[00:05:50](https://www.youtube.com/watch?v=QsO1HedgKt8&t=350s) The instructor describes the `.csproj` file as editable **XML**, meaning ordinary text structured by opening and closing tags. Here `Project` encloses the settings, `PropertyGroup` groups them, and `TargetFramework` names the .NET version the project targets. The code above is an explanatory sample; the transcript does not preserve the exact project text.
+[00:05:50](https://www.youtube.com/watch?v=QsO1HedgKt8&t=350s) A `.csproj` file is editable **XML**: `Project` encloses the settings, `PropertyGroup` groups them, and `TargetFramework` names the .NET version the project targets. The sample uses [`net10.0`](https://learn.microsoft.com/en-us/dotnet/standard/frameworks) for the current recommendation; it is not a transcription of the on-screen file.
 
-[00:06:21](https://www.youtube.com/watch?v=QsO1HedgKt8&t=381s) The instructor notes that the console can generate the minimal files and leaves that command demonstration for later in the lesson. This is the scope boundary at this point: first understand the hand-built files, then see generation.
+[00:06:21](https://www.youtube.com/watch?v=QsO1HedgKt8&t=381s) The console can generate these files too. First examine the hand-built files; the generation command appears later in the lesson.
 
-[00:07:03](https://www.youtube.com/watch?v=QsO1HedgKt8&t=423s) The hand-built project still needs to say it is an **executable**, a program that can run, rather than a **library**, code intended for use by another program. The instructor adds `OutputType` set to `Exe` in the `.csproj`. The following simplified change is beside the [recorded project edit](https://www.youtube.com/watch?v=QsO1HedgKt8&t=423s); the [related commit-pinned course exercise](https://github.com/AntonC9018/uniCourse_csharp/blob/a944ae1fd13128aa386007b0681b6019d2b8b97e/labs/1_basic/01_install.md) describes the project but does not contain this exact intermediate file:
+[00:07:03](https://www.youtube.com/watch?v=QsO1HedgKt8&t=423s) Add `OutputType` set to `Exe` in the `.csproj` so the project builds as an **executable**, a program that can run, rather than a **library**, which supplies code to another program. This simplified change accompanies the [recorded project edit](https://www.youtube.com/watch?v=QsO1HedgKt8&t=423s) and uses the .NET 10 target for a new project:
 
 ```xml
 <PropertyGroup>
   <OutputType>Exe</OutputType>
-  <TargetFramework>net9.0</TargetFramework>
+  <TargetFramework>net10.0</TargetFramework>
 </PropertyGroup>
 ```
 
-The intermediate project had source and a target framework; the changed project now declares a runnable output type. The lesson does not show a separate successful run of the hand-built project at this point.
+The intermediate project had source and a target framework; it now also declares a runnable output type. The recording does not show a separate successful run of the hand-built project here.
 
 ## Generate the project from a template
 
-[00:07:39](https://www.youtube.com/watch?v=QsO1HedgKt8&t=459s) In a new empty folder, the instructor uses the `dotnet` command with **`new console`**. A **template** is a starter pattern built into the SDK; the `console` template creates a minimal console application. The [related course exercise at a fixed revision](https://github.com/AntonC9018/uniCourse_csharp/blob/a944ae1fd13128aa386007b0681b6019d2b8b97e/labs/1_basic/01_install.md) also asks for this command, and the [recorded invocation](https://www.youtube.com/watch?v=QsO1HedgKt8&t=459s) shows this lesson state:
+[00:07:39](https://www.youtube.com/watch?v=QsO1HedgKt8&t=459s) In a new empty folder, run `dotnet new console`. The `console` **template** generates a minimal console application. The [recorded invocation](https://www.youtube.com/watch?v=QsO1HedgKt8&t=459s) shows this step:
 
 ```powershell
 dotnet new console
 ```
 
-[00:08:11](https://www.youtube.com/watch?v=QsO1HedgKt8&t=491s) The instructor inspects the result: the template has produced both a `.csproj` project file and `Program.cs` automatically. The [recorded generated state](https://www.youtube.com/watch?v=QsO1HedgKt8&t=491s) is summarized below; these filenames are the observed result, not a claim about an exact committed snapshot:
+[00:08:11](https://www.youtube.com/watch?v=QsO1HedgKt8&t=491s) Inspect the generated files. The template creates `Program.cs` and a `.csproj` file automatically. This simplified tree summarizes the [recorded generated state](https://www.youtube.com/watch?v=QsO1HedgKt8&t=491s); it is not an exact committed snapshot:
 
 ```text
 new-project/
@@ -139,23 +175,21 @@ new-project/
 
 ## Configure an optional editor
 
-[00:08:36](https://www.youtube.com/watch?v=QsO1HedgKt8&t=516s) VS Code is optional: the console and SDK already provide the project workflow. The instructor also recommends **Rider**, an alternative **IDE**, meaning a program that combines editing and development tools. The recording does not teach Rider setup. The instructor proceeds with VS Code for the demonstration.
+[00:08:36](https://www.youtube.com/watch?v=QsO1HedgKt8&t=516s) VS Code is optional: the SDK and console already provide the project workflow. The video also recommends **Rider** as an alternative **IDE**, but does not teach its setup. It uses VS Code for the remaining demonstration.
 
-[00:09:15](https://www.youtube.com/watch?v=QsO1HedgKt8&t=555s) In VS Code, the instructor installs **C# Dev Kit**, an **extension** that adds C# development support. The extension is selected from VS Code's Extensions view; installing it is an editor setup step, not a change to `Program.cs` or the project file.
+1. [00:09:15](https://www.youtube.com/watch?v=QsO1HedgKt8&t=555s) In VS Code's Extensions view, install **C# Dev Kit** for C# development support. This changes editor setup, not `Program.cs` or the project file.
+2. [00:09:42](https://www.youtube.com/watch?v=QsO1HedgKt8&t=582s) Distinguish the two **environment variables**: `PATH` lets a console find `dotnet` by name, while `DOTNET_ROOT` points the C# extension in this video to the installation directory. Microsoft's [Windows installation guidance](https://learn.microsoft.com/en-us/dotnet/core/install/windows) documents setting both for a user installation.
+3. [00:09:52](https://www.youtube.com/watch?v=QsO1HedgKt8&t=592s) Create a user variable named `DOTNET_ROOT` with the same directory added to `PATH`. Use the folder containing `dotnet.exe`, not the executable's filename. This illustrative value accompanies the [recorded variable edit](https://www.youtube.com/watch?v=QsO1HedgKt8&t=592s):
 
-[00:09:42](https://www.youtube.com/watch?v=QsO1HedgKt8&t=582s) The instructor distinguishes two **environment variables**, named settings that programs read from their environment. **`PATH`** lets a console locate the `dotnet` command by name; **`DOTNET_ROOT`** points an editor or .NET-dependent tool to the installed .NET directory. This describes the instructor's setup; Microsoft's [Windows install guidance](https://learn.microsoft.com/dotnet/core/install/windows) also notes that some tools use `DOTNET_ROOT`.
+   ```text
+   DOTNET_ROOT = C:\Users\Student\.dotnet
+   ```
 
-[00:09:52](https://www.youtube.com/watch?v=QsO1HedgKt8&t=592s) The instructor creates a user variable named `DOTNET_ROOT` and gives it the same SDK directory added to `PATH`. It must be the folder containing the installed `dotnet.exe`, not the executable's filename. This illustrative value is beside the [recorded variable edit](https://www.youtube.com/watch?v=QsO1HedgKt8&t=592s):
-
-```text
-DOTNET_ROOT = C:\Users\Student\.dotnet
-```
-
-[00:10:14](https://www.youtube.com/watch?v=QsO1HedgKt8&t=614s) Finally, the instructor closes and reopens VS Code so the application can receive the new environment-variable value. The lesson ends with that expected editor setup; it does not show a separate successful VS Code build or run after reopening.
+4. [00:10:14](https://www.youtube.com/watch?v=QsO1HedgKt8&t=614s) Close and reopen VS Code so it receives the new variable. The lesson ends at that expected editor setup; it does not show a separate successful VS Code build or run.
 
 ## Recorded code trail
 
-No repository commit was found that holds the exact PowerShell command or the intermediate project files shown in this recording. These upload-specific links identify the lesson's recorded states, oldest to newest; the [commit-pinned related course exercise](https://github.com/AntonC9018/uniCourse_csharp/blob/a944ae1fd13128aa386007b0681b6019d2b8b97e/labs/1_basic/01_install.md) describes the final student task and is not an exact snapshot. Its requested file pair can be pictured with this simplified final-state sample:
+No repository commit holds the exact PowerShell command or intermediate project files shown in the recording. These links identify the recorded states in order. The requested project files can be pictured with this simplified final-state sample:
 
 ```text
 project/
@@ -163,7 +197,7 @@ project/
 └── project.csproj
 ```
 
-- [Installer invocation at 03:00](https://www.youtube.com/watch?v=QsO1HedgKt8&t=180s) — after the execution-policy obstacle, the instructor selects SDK 9.0 and runs the script.
+- [Installer invocation at 03:00](https://www.youtube.com/watch?v=QsO1HedgKt8&t=180s) — after the execution-policy obstacle, the video selects SDK 9.0 and runs the script.
 - [Hand-built project at 05:50](https://www.youtube.com/watch?v=QsO1HedgKt8&t=350s) — source and editable XML project settings exist.
 - [Executable project at 07:03](https://www.youtube.com/watch?v=QsO1HedgKt8&t=423s) — `OutputType` changes to `Exe`.
 - [Generated console project at 08:11](https://www.youtube.com/watch?v=QsO1HedgKt8&t=491s) — the template produces `Program.cs` and the `.csproj` file.
