@@ -1,4 +1,5 @@
 > Această notă a fost generată de AI (opencode/muse-spark-1.3-contributor-free) pe baza videoclipului asociat și poate conține greșeli. Verificați videoclipul și sursele citate atunci când acuratețea contează.
+> Traducerea în limba română a fost generată de AI (opencode/muse-spark-1.3-contributor-free) din nota în limba engleză și poate conține greșeli. Verificați nota originală atunci când acuratețea contează.
 
 # Instalarea .NET SDK fără drepturi de administrator
 
