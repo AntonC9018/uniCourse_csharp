@@ -37,7 +37,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#what-an-algorithm-is-made-of"
+        "anchor": "#example-tasks"
       }
     },
     {
@@ -55,7 +55,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#what-an-algorithm-is-made-of"
+        "anchor": "#input-and-output-exist-even-when-unstated"
       }
     },
     {
