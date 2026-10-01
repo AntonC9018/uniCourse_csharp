@@ -334,7 +334,7 @@ Before the commit, the recorded state still contains the files. After the commit
 [00:19:30](https://www.youtube.com/watch?v=fcxFAW1EE_A&t=1170s) To continue from the older commit, create a named branch there. A **branch** names a line of work; it gives subsequent changes a line independent of `master`. [00:19:47](https://www.youtube.com/watch?v=fcxFAW1EE_A&t=1187s) This is useful for an experimental feature you want to develop separately from the main project state.
 
 1. Select the old file-containing commit again.
-2. [00:20:01](https://www.youtube.com/watch?v=fcxFAW1EE_A&t=1201s) Create and select a new branch with `git checkout -b`. The lowercase `-b` is the branch-creation option; the following argument names the branch. The simplified name used throughout this note is `experiment`.
+2. [00:20:01](https://www.youtube.com/watch?v=fcxFAW1EE_A&t=1201s) Create and select a new branch with `git checkout -b`. A branch-creation flag creates the branch from the current state; the following argument names the branch. The simplified name used throughout this note is `experiment`.
 3. [00:20:13](https://www.youtube.com/watch?v=fcxFAW1EE_A&t=1213s) Compare the states: the experimental branch contains the earlier files, while `master` contains their deletion.
 4. [00:20:32](https://www.youtube.com/watch?v=fcxFAW1EE_A&t=1232s) Use the log to inspect the selected branch's history.
 5. [00:20:39](https://www.youtube.com/watch?v=fcxFAW1EE_A&t=1239s) Checkout by branch name to switch between these states.
