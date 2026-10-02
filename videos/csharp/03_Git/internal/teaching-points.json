@@ -19,7 +19,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#check-git-in-a-windows-console"
+        "anchor": "#check-whether-windows-can-run-git"
       }
     },
     {
@@ -37,7 +37,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#check-git-in-a-windows-console"
+        "anchor": "#check-whether-windows-can-run-git"
       }
     },
     {
@@ -55,7 +55,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#check-git-in-a-windows-console"
+        "anchor": "#check-whether-windows-can-run-git"
       }
     },
     {
@@ -73,7 +73,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#check-git-in-a-windows-console"
+        "anchor": "#check-whether-windows-can-run-git"
       }
     },
     {
@@ -91,7 +91,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#check-git-in-a-windows-console"
+        "anchor": "#check-whether-windows-can-run-git"
       }
     },
     {
@@ -109,7 +109,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#install-git-and-open-its-help"
+        "anchor": "#install-git-and-find-command-documentation"
       }
     },
     {
@@ -132,7 +132,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#install-git-and-open-its-help"
+        "anchor": "#install-git-and-find-command-documentation"
       }
     },
     {
@@ -155,7 +155,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#install-git-and-open-its-help"
+        "anchor": "#install-git-and-find-command-documentation"
       }
     },
     {
@@ -173,7 +173,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#install-git-and-open-its-help"
+        "anchor": "#install-git-and-find-command-documentation"
       }
     },
     {
@@ -191,7 +191,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#install-git-and-open-its-help"
+        "anchor": "#install-git-and-find-command-documentation"
       }
     },
     {
@@ -209,7 +209,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#separate-git-from-github"
+        "anchor": "#understand-what-stays-local"
       }
     },
     {
@@ -227,7 +227,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#separate-git-from-github"
+        "anchor": "#understand-what-stays-local"
       }
     },
     {
@@ -245,7 +245,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#separate-git-from-github"
+        "anchor": "#understand-what-stays-local"
       }
     },
     {
@@ -263,7 +263,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#initialize-the-project-repository"
+        "anchor": "#make-the-project-folder-a-repository"
       }
     },
     {
@@ -281,7 +281,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#initialize-the-project-repository"
+        "anchor": "#make-the-project-folder-a-repository"
       }
     },
     {
@@ -299,7 +299,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#initialize-the-project-repository"
+        "anchor": "#make-the-project-folder-a-repository"
       }
     },
     {
@@ -317,7 +317,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#initialize-the-project-repository"
+        "anchor": "#make-the-project-folder-a-repository"
       }
     },
     {
@@ -335,7 +335,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#initialize-the-project-repository"
+        "anchor": "#make-the-project-folder-a-repository"
       }
     },
     {
@@ -358,7 +358,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#stage-the-first-source-file"
+        "anchor": "#prepare-a-source-file-for-its-first-commit"
       }
     },
     {
@@ -376,7 +376,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#stage-the-first-source-file"
+        "anchor": "#prepare-a-source-file-for-its-first-commit"
       }
     },
     {
@@ -394,7 +394,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#stage-the-first-source-file"
+        "anchor": "#prepare-a-source-file-for-its-first-commit"
       }
     },
     {
@@ -412,7 +412,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#stage-the-first-source-file"
+        "anchor": "#prepare-a-source-file-for-its-first-commit"
       }
     },
     {
@@ -430,7 +430,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#stage-the-first-source-file"
+        "anchor": "#prepare-a-source-file-for-its-first-commit"
       }
     },
     {
@@ -448,7 +448,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#stage-the-first-source-file"
+        "anchor": "#prepare-a-source-file-for-its-first-commit"
       }
     },
     {
@@ -471,7 +471,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#configure-the-author-and-create-the-first-commit"
+        "anchor": "#resolve-the-missing-author-and-record-the-file"
       }
     },
     {
@@ -489,7 +489,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#configure-the-author-and-create-the-first-commit"
+        "anchor": "#resolve-the-missing-author-and-record-the-file"
       }
     },
     {
@@ -507,7 +507,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#configure-the-author-and-create-the-first-commit"
+        "anchor": "#resolve-the-missing-author-and-record-the-file"
       }
     },
     {
@@ -525,7 +525,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#configure-the-author-and-create-the-first-commit"
+        "anchor": "#resolve-the-missing-author-and-record-the-file"
       }
     },
     {
@@ -548,7 +548,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#configure-the-author-and-create-the-first-commit"
+        "anchor": "#resolve-the-missing-author-and-record-the-file"
       }
     },
     {
@@ -571,7 +571,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#configure-the-author-and-create-the-first-commit"
+        "anchor": "#resolve-the-missing-author-and-record-the-file"
       }
     },
     {
@@ -589,7 +589,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#configure-the-author-and-create-the-first-commit"
+        "anchor": "#resolve-the-missing-author-and-record-the-file"
       }
     },
     {
@@ -607,7 +607,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#configure-the-author-and-create-the-first-commit"
+        "anchor": "#resolve-the-missing-author-and-record-the-file"
       }
     },
     {
@@ -625,7 +625,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#configure-the-author-and-create-the-first-commit"
+        "anchor": "#resolve-the-missing-author-and-record-the-file"
       }
     },
     {
@@ -643,7 +643,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#configure-the-author-and-create-the-first-commit"
+        "anchor": "#resolve-the-missing-author-and-record-the-file"
       }
     },
     {
@@ -666,7 +666,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#inspect-the-recorded-state"
+        "anchor": "#read-the-first-history-entry"
       }
     },
     {
@@ -684,7 +684,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#inspect-the-recorded-state"
+        "anchor": "#read-the-first-history-entry"
       }
     },
     {
@@ -702,7 +702,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#inspect-the-recorded-state"
+        "anchor": "#read-the-first-history-entry"
       }
     },
     {
@@ -720,7 +720,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#build-the-program-and-keep-source"
+        "anchor": "#build-an-executable-from-the-recorded-source"
       }
     },
     {
@@ -743,7 +743,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#build-the-program-and-keep-source"
+        "anchor": "#build-an-executable-from-the-recorded-source"
       }
     },
     {
@@ -766,7 +766,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#build-the-program-and-keep-source"
+        "anchor": "#build-an-executable-from-the-recorded-source"
       }
     },
     {
@@ -784,7 +784,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#build-the-program-and-keep-source"
+        "anchor": "#build-an-executable-from-the-recorded-source"
       }
     },
     {
@@ -802,7 +802,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#build-the-program-and-keep-source"
+        "anchor": "#build-an-executable-from-the-recorded-source"
       }
     },
     {
@@ -820,7 +820,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#build-the-program-and-keep-source"
+        "anchor": "#build-an-executable-from-the-recorded-source"
       }
     },
     {
@@ -838,7 +838,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#build-the-program-and-keep-source"
+        "anchor": "#build-an-executable-from-the-recorded-source"
       }
     },
     {
@@ -856,7 +856,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#build-the-program-and-keep-source"
+        "anchor": "#build-an-executable-from-the-recorded-source"
       }
     },
     {
@@ -879,7 +879,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#build-the-program-and-keep-source"
+        "anchor": "#build-an-executable-from-the-recorded-source"
       }
     },
     {
@@ -897,7 +897,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#ignore-build-outputs-and-record-the-rules"
+        "anchor": "#develop-and-save-ignore-rules"
       }
     },
     {
@@ -915,7 +915,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#ignore-build-outputs-and-record-the-rules"
+        "anchor": "#develop-and-save-ignore-rules"
       }
     },
     {
@@ -933,7 +933,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#ignore-build-outputs-and-record-the-rules"
+        "anchor": "#develop-and-save-ignore-rules"
       }
     },
     {
@@ -951,7 +951,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#ignore-build-outputs-and-record-the-rules"
+        "anchor": "#develop-and-save-ignore-rules"
       }
     },
     {
@@ -974,7 +974,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#ignore-build-outputs-and-record-the-rules"
+        "anchor": "#develop-and-save-ignore-rules"
       }
     },
     {
@@ -997,7 +997,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#ignore-build-outputs-and-record-the-rules"
+        "anchor": "#develop-and-save-ignore-rules"
       }
     },
     {
@@ -1015,7 +1015,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#ignore-build-outputs-and-record-the-rules"
+        "anchor": "#develop-and-save-ignore-rules"
       }
     },
     {
@@ -1033,7 +1033,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#ignore-build-outputs-and-record-the-rules"
+        "anchor": "#develop-and-save-ignore-rules"
       }
     },
     {
@@ -1051,7 +1051,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#ignore-build-outputs-and-record-the-rules"
+        "anchor": "#develop-and-save-ignore-rules"
       }
     },
     {
@@ -1069,7 +1069,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#edit-review-and-commit-the-source"
+        "anchor": "#review-a-source-edit-before-recording-it"
       }
     },
     {
@@ -1087,7 +1087,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#edit-review-and-commit-the-source"
+        "anchor": "#review-a-source-edit-before-recording-it"
       }
     },
     {
@@ -1105,7 +1105,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#edit-review-and-commit-the-source"
+        "anchor": "#review-a-source-edit-before-recording-it"
       }
     },
     {
@@ -1123,7 +1123,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#edit-review-and-commit-the-source"
+        "anchor": "#review-a-source-edit-before-recording-it"
       }
     },
     {
@@ -1141,7 +1141,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#edit-review-and-commit-the-source"
+        "anchor": "#review-a-source-edit-before-recording-it"
       }
     },
     {
@@ -1159,7 +1159,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#record-several-files-and-undo-an-uncommitted-deletion"
+        "anchor": "#save-several-files-and-recover-an-unstaged-deletion"
       }
     },
     {
@@ -1177,7 +1177,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#record-several-files-and-undo-an-uncommitted-deletion"
+        "anchor": "#save-several-files-and-recover-an-unstaged-deletion"
       }
     },
     {
@@ -1195,7 +1195,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#record-several-files-and-undo-an-uncommitted-deletion"
+        "anchor": "#save-several-files-and-recover-an-unstaged-deletion"
       }
     },
     {
@@ -1218,7 +1218,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#record-several-files-and-undo-an-uncommitted-deletion"
+        "anchor": "#save-several-files-and-recover-an-unstaged-deletion"
       }
     },
     {
@@ -1236,7 +1236,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#record-several-files-and-undo-an-uncommitted-deletion"
+        "anchor": "#save-several-files-and-recover-an-unstaged-deletion"
       }
     },
     {
@@ -1254,7 +1254,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#record-several-files-and-undo-an-uncommitted-deletion"
+        "anchor": "#save-several-files-and-recover-an-unstaged-deletion"
       }
     },
     {
@@ -1277,7 +1277,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#inspect-history-after-a-committed-deletion"
+        "anchor": "#visit-the-state-before-a-committed-deletion"
       }
     },
     {
@@ -1295,7 +1295,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#inspect-history-after-a-committed-deletion"
+        "anchor": "#visit-the-state-before-a-committed-deletion"
       }
     },
     {
@@ -1313,7 +1313,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#inspect-history-after-a-committed-deletion"
+        "anchor": "#visit-the-state-before-a-committed-deletion"
       }
     },
     {
@@ -1331,7 +1331,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#inspect-history-after-a-committed-deletion"
+        "anchor": "#visit-the-state-before-a-committed-deletion"
       }
     },
     {
@@ -1349,7 +1349,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#inspect-history-after-a-committed-deletion"
+        "anchor": "#visit-the-state-before-a-committed-deletion"
       }
     },
     {
@@ -1367,7 +1367,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#inspect-history-after-a-committed-deletion"
+        "anchor": "#visit-the-state-before-a-committed-deletion"
       }
     },
     {
@@ -1385,7 +1385,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#create-an-independent-working-branch"
+        "anchor": "#start-a-separate-line-of-work"
       }
     },
     {
@@ -1403,7 +1403,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#create-an-independent-working-branch"
+        "anchor": "#start-a-separate-line-of-work"
       }
     },
     {
@@ -1421,7 +1421,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#create-an-independent-working-branch"
+        "anchor": "#start-a-separate-line-of-work"
       }
     },
     {
@@ -1439,7 +1439,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#create-an-independent-working-branch"
+        "anchor": "#start-a-separate-line-of-work"
       }
     },
     {
@@ -1462,7 +1462,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#create-an-independent-working-branch"
+        "anchor": "#start-a-separate-line-of-work"
       }
     },
     {
@@ -1485,7 +1485,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#create-an-independent-working-branch"
+        "anchor": "#start-a-separate-line-of-work"
       }
     },
     {
@@ -1503,7 +1503,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#create-an-independent-working-branch"
+        "anchor": "#start-a-separate-line-of-work"
       }
     },
     {
@@ -1521,7 +1521,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#create-an-independent-working-branch"
+        "anchor": "#start-a-separate-line-of-work"
       }
     },
     {
@@ -1539,7 +1539,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#identify-the-changes-after-the-common-commit"
+        "anchor": "#locate-the-work-unique-to-each-branch"
       }
     },
     {
@@ -1557,7 +1557,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#identify-the-changes-after-the-common-commit"
+        "anchor": "#locate-the-work-unique-to-each-branch"
       }
     },
     {
@@ -1575,7 +1575,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#identify-the-changes-after-the-common-commit"
+        "anchor": "#locate-the-work-unique-to-each-branch"
       }
     },
     {
@@ -1593,7 +1593,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#rebase-the-working-branch-onto-master"
+        "anchor": "#move-the-experiment-onto-the-newer-master-history"
       }
     },
     {
@@ -1611,7 +1611,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#rebase-the-working-branch-onto-master"
+        "anchor": "#move-the-experiment-onto-the-newer-master-history"
       }
     },
     {
@@ -1634,7 +1634,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#rebase-the-working-branch-onto-master"
+        "anchor": "#move-the-experiment-onto-the-newer-master-history"
       }
     },
     {
@@ -1652,7 +1652,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#rebase-the-working-branch-onto-master"
+        "anchor": "#move-the-experiment-onto-the-newer-master-history"
       }
     },
     {
@@ -1670,7 +1670,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#rebase-the-working-branch-onto-master"
+        "anchor": "#move-the-experiment-onto-the-newer-master-history"
       }
     },
     {
@@ -1688,7 +1688,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#rebase-the-working-branch-onto-master"
+        "anchor": "#move-the-experiment-onto-the-newer-master-history"
       }
     },
     {
@@ -1711,7 +1711,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#rebase-the-working-branch-onto-master"
+        "anchor": "#move-the-experiment-onto-the-newer-master-history"
       }
     },
     {
@@ -1729,7 +1729,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#rebase-the-working-branch-onto-master"
+        "anchor": "#move-the-experiment-onto-the-newer-master-history"
       }
     },
     {
@@ -1747,7 +1747,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#rebase-the-working-branch-onto-master"
+        "anchor": "#move-the-experiment-onto-the-newer-master-history"
       }
     },
     {
@@ -1765,7 +1765,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#choose-a-branch-integration-workflow"
+        "anchor": "#choose-how-branch-work-enters-the-main-history"
       }
     },
     {
@@ -1783,7 +1783,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#choose-a-branch-integration-workflow"
+        "anchor": "#choose-how-branch-work-enters-the-main-history"
       }
     },
     {
@@ -1801,7 +1801,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#choose-a-branch-integration-workflow"
+        "anchor": "#choose-how-branch-work-enters-the-main-history"
       }
     },
     {
@@ -1824,7 +1824,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#choose-a-branch-integration-workflow"
+        "anchor": "#choose-how-branch-work-enters-the-main-history"
       }
     },
     {
@@ -1842,7 +1842,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#choose-a-branch-integration-workflow"
+        "anchor": "#choose-how-branch-work-enters-the-main-history"
       }
     },
     {
@@ -1860,7 +1860,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#choose-a-branch-integration-workflow"
+        "anchor": "#choose-how-branch-work-enters-the-main-history"
       }
     },
     {
@@ -1878,7 +1878,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#choose-a-branch-integration-workflow"
+        "anchor": "#choose-how-branch-work-enters-the-main-history"
       }
     },
     {
@@ -1901,7 +1901,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#connect-an-empty-github-repository"
+        "anchor": "#give-the-local-project-a-remote-address"
       }
     },
     {
@@ -1919,7 +1919,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#connect-an-empty-github-repository"
+        "anchor": "#give-the-local-project-a-remote-address"
       }
     },
     {
@@ -1937,7 +1937,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#connect-an-empty-github-repository"
+        "anchor": "#give-the-local-project-a-remote-address"
       }
     },
     {
@@ -1955,7 +1955,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#connect-an-empty-github-repository"
+        "anchor": "#give-the-local-project-a-remote-address"
       }
     },
     {
@@ -1973,7 +1973,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#connect-an-empty-github-repository"
+        "anchor": "#give-the-local-project-a-remote-address"
       }
     },
     {
@@ -1991,7 +1991,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#connect-an-empty-github-repository"
+        "anchor": "#give-the-local-project-a-remote-address"
       }
     },
     {
@@ -2009,7 +2009,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#connect-an-empty-github-repository"
+        "anchor": "#give-the-local-project-a-remote-address"
       }
     },
     {
@@ -2027,7 +2027,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#connect-an-empty-github-repository"
+        "anchor": "#give-the-local-project-a-remote-address"
       }
     },
     {
@@ -2045,7 +2045,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#connect-an-empty-github-repository"
+        "anchor": "#give-the-local-project-a-remote-address"
       }
     },
     {
@@ -2063,7 +2063,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#connect-an-empty-github-repository"
+        "anchor": "#give-the-local-project-a-remote-address"
       }
     },
     {
@@ -2081,7 +2081,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#publish-master-and-distinguish-authorship-from-login"
+        "anchor": "#publish-the-main-branch-with-an-upstream"
       }
     },
     {
@@ -2104,7 +2104,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#publish-master-and-distinguish-authorship-from-login"
+        "anchor": "#publish-the-main-branch-with-an-upstream"
       }
     },
     {
@@ -2122,7 +2122,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#publish-master-and-distinguish-authorship-from-login"
+        "anchor": "#publish-the-main-branch-with-an-upstream"
       }
     },
     {
@@ -2140,7 +2140,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#publish-master-and-distinguish-authorship-from-login"
+        "anchor": "#publish-the-main-branch-with-an-upstream"
       }
     },
     {
@@ -2158,7 +2158,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#publish-master-and-distinguish-authorship-from-login"
+        "anchor": "#publish-the-main-branch-with-an-upstream"
       }
     },
     {
@@ -2181,7 +2181,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#publish-master-and-distinguish-authorship-from-login"
+        "anchor": "#publish-the-main-branch-with-an-upstream"
       }
     },
     {
@@ -2199,7 +2199,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#commit-locally-then-push-the-next-edit"
+        "anchor": "#send-a-later-local-commit"
       }
     },
     {
@@ -2217,7 +2217,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#commit-locally-then-push-the-next-edit"
+        "anchor": "#send-a-later-local-commit"
       }
     },
     {
@@ -2235,7 +2235,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#commit-locally-then-push-the-next-edit"
+        "anchor": "#send-a-later-local-commit"
       }
     },
     {
@@ -2253,7 +2253,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#prepare-and-publish-the-working-branch"
+        "anchor": "#publish-the-next-experiment-separately"
       }
     },
     {
@@ -2271,7 +2271,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#prepare-and-publish-the-working-branch"
+        "anchor": "#publish-the-next-experiment-separately"
       }
     },
     {
@@ -2289,7 +2289,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#prepare-and-publish-the-working-branch"
+        "anchor": "#publish-the-next-experiment-separately"
       }
     },
     {
@@ -2307,7 +2307,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#prepare-and-publish-the-working-branch"
+        "anchor": "#publish-the-next-experiment-separately"
       }
     },
     {
@@ -2330,7 +2330,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#open-and-merge-the-pull-request"
+        "anchor": "#bring-the-experiment-into-master-through-a-pull-request"
       }
     },
     {
@@ -2348,7 +2348,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#open-and-merge-the-pull-request"
+        "anchor": "#bring-the-experiment-into-master-through-a-pull-request"
       }
     },
     {
@@ -2366,7 +2366,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#open-and-merge-the-pull-request"
+        "anchor": "#bring-the-experiment-into-master-through-a-pull-request"
       }
     },
     {
@@ -2384,7 +2384,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#open-and-merge-the-pull-request"
+        "anchor": "#bring-the-experiment-into-master-through-a-pull-request"
       }
     },
     {
@@ -2402,7 +2402,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#open-and-merge-the-pull-request"
+        "anchor": "#bring-the-experiment-into-master-through-a-pull-request"
       }
     },
     {
@@ -2420,7 +2420,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#pull-the-merged-result-back-to-local-master"
+        "anchor": "#receive-the-merged-work-on-this-computer"
       }
     },
     {
@@ -2443,7 +2443,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#pull-the-merged-result-back-to-local-master"
+        "anchor": "#receive-the-merged-work-on-this-computer"
       }
     },
     {
@@ -2461,7 +2461,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#pull-the-merged-result-back-to-local-master"
+        "anchor": "#receive-the-merged-work-on-this-computer"
       }
     },
     {
@@ -2479,7 +2479,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#pull-the-merged-result-back-to-local-master"
+        "anchor": "#receive-the-merged-work-on-this-computer"
       }
     }
   ]
