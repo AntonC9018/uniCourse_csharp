@@ -15,11 +15,17 @@
           "type": "transcript_range",
           "startMilliseconds": 2480,
           "endMilliseconds": 10510
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "c79a3523fbee1e5fc4916628888cf269c26a0f67",
+          "path": "examples/builder/pipeline.csproj"
         }
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#how-the-compiler-finds-source-files"
+        "anchor": "#source-and-project-files"
       }
     },
     {
@@ -37,7 +43,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#top-level-statements-what-the-project-starts-as"
+        "anchor": "#source-and-project-files"
       }
     },
     {
@@ -55,7 +61,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#how-the-compiler-finds-source-files"
+        "anchor": "#source-and-project-files"
       }
     },
     {
@@ -73,7 +79,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#bin-the-folder-of-compiled-output"
+        "anchor": "#build-output-and-separate-launches"
       }
     },
     {
@@ -91,7 +97,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#obj-the-build-cache-folder"
+        "anchor": "#build-output-and-separate-launches"
       }
     },
     {
@@ -109,7 +115,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#bin-the-folder-of-compiled-output"
+        "anchor": "#build-output-and-separate-launches"
       }
     },
     {
@@ -132,7 +138,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#bin-the-folder-of-compiled-output"
+        "anchor": "#build-output-and-separate-launches"
       }
     },
     {
@@ -150,7 +156,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#bin-the-folder-of-compiled-output"
+        "anchor": "#build-output-and-separate-launches"
       }
     },
     {
@@ -168,7 +174,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#dotnet-build-compiles-without-launching"
+        "anchor": "#build-output-and-separate-launches"
       }
     },
     {
@@ -186,7 +192,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#dotnet-build-compiles-without-launching"
+        "anchor": "#build-output-and-separate-launches"
       }
     },
     {
@@ -204,7 +210,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#obj-the-build-cache-folder"
+        "anchor": "#disposable-build-artifacts"
       }
     },
     {
@@ -222,7 +228,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#obj-the-build-cache-folder"
+        "anchor": "#disposable-build-artifacts"
       }
     },
     {
@@ -241,11 +247,17 @@
           "type": "transcript_range",
           "startMilliseconds": 163000,
           "endMilliseconds": 178830
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "c70666b5a2c1f3be23798f9a90d2952249a938a4",
+          "path": ".gitignore"
         }
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#keeping-generated-folders-out-of-git"
+        "anchor": "#ignoring-reproducible-files"
       }
     },
     {
@@ -263,7 +275,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#what-this-lesson-covers-and-leaves-for-later"
+        "anchor": "#startup-code-and-the-lessons-scope"
       }
     },
     {
@@ -281,7 +293,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#statements-one-line-one-action"
+        "anchor": "#statements-execute-in-source-order"
       }
     },
     {
@@ -299,7 +311,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#statements-run-top-to-bottom"
+        "anchor": "#statements-execute-in-source-order"
       }
     },
     {
@@ -317,7 +329,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#statements-one-line-one-action"
+        "anchor": "#statements-execute-in-source-order"
       }
     },
     {
@@ -335,7 +347,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#statements-run-top-to-bottom"
+        "anchor": "#statements-execute-in-source-order"
       }
     },
     {
@@ -353,7 +365,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#statements-run-top-to-bottom"
+        "anchor": "#statements-execute-in-source-order"
       }
     },
     {
@@ -371,7 +383,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#statements-run-top-to-bottom"
+        "anchor": "#statements-execute-in-source-order"
       }
     },
     {
@@ -389,7 +401,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#proving-the-order-with-threadsleep"
+        "anchor": "#making-a-delay-visible"
       }
     },
     {
@@ -407,7 +419,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#a-function-groups-several-statements"
+        "anchor": "#defining-a-named-sequence"
       }
     },
     {
@@ -425,7 +437,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#a-function-groups-several-statements"
+        "anchor": "#defining-a-named-sequence"
       }
     },
     {
@@ -443,7 +455,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#a-function-groups-several-statements"
+        "anchor": "#defining-a-named-sequence"
       }
     },
     {
@@ -461,7 +473,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#a-function-groups-several-statements"
+        "anchor": "#defining-a-named-sequence"
       }
     },
     {
@@ -479,7 +491,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#moving-statements-into-hello-and-calling-it"
+        "anchor": "#entering-a-function-and-coming-back"
       }
     },
     {
@@ -502,7 +514,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#moving-statements-into-hello-and-calling-it"
+        "anchor": "#entering-a-function-and-coming-back"
       }
     },
     {
@@ -520,7 +532,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#moving-statements-into-hello-and-calling-it"
+        "anchor": "#entering-a-function-and-coming-back"
       }
     },
     {
@@ -538,7 +550,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#moving-statements-into-hello-and-calling-it"
+        "anchor": "#entering-a-function-and-coming-back"
       }
     },
     {
@@ -556,7 +568,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#calling-the-same-function-again"
+        "anchor": "#running-the-same-body-again"
       }
     },
     {
@@ -574,7 +586,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#calling-the-same-function-again"
+        "anchor": "#running-the-same-body-again"
       }
     },
     {
@@ -592,7 +604,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#calling-the-same-function-again"
+        "anchor": "#running-the-same-body-again"
       }
     },
     {
@@ -610,7 +622,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#a-definition-is-not-a-statement"
+        "anchor": "#definitions-and-names"
       }
     },
     {
@@ -628,7 +640,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#a-definition-is-not-a-statement"
+        "anchor": "#definitions-and-names"
       }
     },
     {
@@ -646,7 +658,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#a-definition-is-not-a-statement"
+        "anchor": "#definitions-and-names"
       }
     },
     {
@@ -664,7 +676,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#an-unused-function-never-runs"
+        "anchor": "#unused-functions-and-explicit-calls"
       }
     },
     {
@@ -687,7 +699,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#an-unused-function-never-runs"
+        "anchor": "#unused-functions-and-explicit-calls"
       }
     },
     {
@@ -705,7 +717,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#a-function-that-calls-another-function"
+        "anchor": "#calls-inside-function-bodies"
       }
     },
     {
@@ -723,7 +735,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#a-function-that-calls-another-function"
+        "anchor": "#calls-inside-function-bodies"
       }
     },
     {
@@ -741,7 +753,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#a-function-that-calls-another-function"
+        "anchor": "#calls-inside-function-bodies"
       }
     },
     {
@@ -759,7 +771,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#a-function-that-calls-another-function"
+        "anchor": "#calls-inside-function-bodies"
       }
     },
     {
@@ -777,7 +789,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#the-rule-for-calls-and-returns"
+        "anchor": "#following-the-whole-execution-path"
       }
     },
     {
@@ -795,7 +807,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#the-rule-for-calls-and-returns"
+        "anchor": "#following-the-whole-execution-path"
       }
     },
     {
@@ -813,7 +825,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#the-rule-for-calls-and-returns"
+        "anchor": "#following-the-whole-execution-path"
       }
     },
     {
@@ -831,7 +843,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#the-rule-for-calls-and-returns"
+        "anchor": "#following-the-whole-execution-path"
       }
     },
     {
@@ -849,7 +861,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#a-definition-is-not-a-statement"
+        "anchor": "#following-the-whole-execution-path"
       }
     }
   ]
