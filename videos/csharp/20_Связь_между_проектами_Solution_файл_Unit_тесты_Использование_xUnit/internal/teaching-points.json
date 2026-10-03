@@ -1,0 +1,4265 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "9DBoMknXbVQ",
+  "uploadId": "9DBoMknXbVQ",
+  "transcriptSha256": "c6371f22a31b5bbf199d142fdb2d7a979b1acffed800fbef5babd7498b4e57ad",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 359,
+      "endMilliseconds": 12470,
+      "kind": "explanation",
+      "text": "The lesson builds a runnable example with a main code project and a separate test project so that unit testing can be demonstrated concretely rather than only described.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 359,
+          "endMilliseconds": 12470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#purpose-and-vocabulary"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 12470,
+      "endMilliseconds": 46110,
+      "kind": "code_change",
+      "text": "Two projects are created in one folder and initialized with the dotnet console template for both, which simply supplies a default starting structure to fill in later.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 12470,
+          "endMilliseconds": 46110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-two-console-projects"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 46110,
+      "endMilliseconds": 48120,
+      "kind": "scope_boundary",
+      "text": "The projects are left unconfigured for now, because the detailed configuration is only needed later in the setup.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 46110,
+          "endMilliseconds": 48120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-two-console-projects"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 48120,
+      "endMilliseconds": 61010,
+      "kind": "reason",
+      "text": "The project with the code is never launched directly because it holds only the function under test, while the test project is the one that gets executed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 48120,
+          "endMilliseconds": 61010
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-two-console-projects"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 61010,
+      "endMilliseconds": 79700,
+      "kind": "fact",
+      "text": "MSBuild-based .NET projects keep their configuration in .csproj files, which is where targets, build settings and package references are declared.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 61010,
+          "endMilliseconds": 79700
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-build-settings"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 79700,
+      "endMilliseconds": 91300,
+      "kind": "correction",
+      "text": "The projects are not compiled by the C# compiler (csc) directly, because MSBuild is the build engine that drives the actual compilation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 79700,
+          "endMilliseconds": 91300
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 85240,
+          "endMilliseconds": 91300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-build-settings"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 91300,
+      "endMilliseconds": 96000,
+      "kind": "fact",
+      "text": "MSBuild in turn runs compile commands for the individual source files, which is the mechanism that turns the sources into assemblies.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 91300,
+          "endMilliseconds": 96000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-build-settings"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 96000,
+      "endMilliseconds": 102510,
+      "kind": "fact",
+      "text": "MSBuild does not restrict configuration to .csproj files, because it also reads .props and .targets files.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 96000,
+          "endMilliseconds": 102510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-build-settings"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 102510,
+      "endMilliseconds": 122270,
+      "kind": "explanation",
+      "text": "A configuration written in such a file is applied automatically to every project located under the folder that contains the file, which is how shared settings avoid duplication.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 102510,
+          "endMilliseconds": 122270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-build-settings"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 122270,
+      "endMilliseconds": 133300,
+      "kind": "explanation",
+      "text": "Putting common settings into a Directory.Build.props lets the same configuration apply to both the code project and the test project at once.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 122270,
+          "endMilliseconds": 133300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-build-settings"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 133300,
+      "endMilliseconds": 154870,
+      "kind": "code_change",
+      "text": "The shared settings are copied into the new file while project-specific values such as OutputType are left inside each project, so shared and per-project configuration stay separate.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 133300,
+          "endMilliseconds": 154870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-build-settings"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 154870,
+      "endMilliseconds": 184480,
+      "kind": "code_change",
+      "text": "The duplicated settings are then deleted from the individual projects, since the extracted file now provides them and duplication would only drift over time.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 154870,
+          "endMilliseconds": 184480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-build-settings"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 174720,
+      "endMilliseconds": 192870,
+      "kind": "code_change",
+      "text": "The shared configuration duplicated in the project files is deleted from them because the extracted Directory.Build.props file now supplies it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 174720,
+          "endMilliseconds": 192870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-build-settings"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 184480,
+      "endMilliseconds": 199310,
+      "kind": "explanation",
+      "text": "Whatever is declared in Directory.Build.props applies to both the code project and the test project, so both stay in sync from a single place.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 184480,
+          "endMilliseconds": 199310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-build-settings"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 199310,
+      "endMilliseconds": 201310,
+      "kind": "fact",
+      "text": "Directory.Build.props is a special file named by convention, and it is imported automatically by every project below it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 199310,
+          "endMilliseconds": 201310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-build-settings"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 201310,
+      "endMilliseconds": 203310,
+      "kind": "scope_boundary",
+      "text": "Importing additional custom build files is possible but is deliberately not demonstrated in this lesson.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 201310,
+          "endMilliseconds": 203310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-build-settings"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 203310,
+      "endMilliseconds": 209000,
+      "kind": "reason",
+      "text": "Tests are placed in a separate project because C# tooling assumes the tests live in their own assembly, which keeps the test setup automatic.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 203310,
+          "endMilliseconds": 209000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reference-the-code-library"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 209000,
+      "endMilliseconds": 218000,
+      "kind": "reason",
+      "text": "Writing tests in the same project is technically possible but would force many manual steps, so a separate test project is the conventional layout.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 209000,
+          "endMilliseconds": 218000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reference-the-code-library"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 218000,
+      "endMilliseconds": 238350,
+      "kind": "reason",
+      "text": "The test project must be able to see the code project so it can call any of its functions, which requires a project reference to it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 218000,
+          "endMilliseconds": 238350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reference-the-code-library"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 238350,
+      "endMilliseconds": 245110,
+      "kind": "code_change",
+      "text": "The reference is declared as a ProjectReference Include pointing at the relative path to the code project's .csproj file.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 238350,
+          "endMilliseconds": 245110
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 243480,
+          "endMilliseconds": 245110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reference-the-code-library"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 245110,
+      "endMilliseconds": 250599,
+      "kind": "reason",
+      "text": "Relative paths are recommended for the project reference because absolute paths break on Linux, Windows and macOS alike.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 245110,
+          "endMilliseconds": 250599
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reference-the-code-library"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 250599,
+      "endMilliseconds": 253230,
+      "kind": "reason",
+      "text": "Relative paths are preferred for portability because each of Linux, Windows and macOS has its own quirks with hard-coded absolute paths.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 250599,
+          "endMilliseconds": 253230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reference-the-code-library"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 253230,
+      "endMilliseconds": 263180,
+      "kind": "fact",
+      "text": "After adding the reference, any code from the code project becomes available inside the test project.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 253230,
+          "endMilliseconds": 263180
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reference-the-code-library"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 263180,
+      "endMilliseconds": 272950,
+      "kind": "reason",
+      "text": "The code project must be built as a library rather than an executable because its functions are only meant to be consumed by the test project.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 263180,
+          "endMilliseconds": 272950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reference-the-code-library"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 272950,
+      "endMilliseconds": 278910,
+      "kind": "explanation",
+      "text": "A library is a set of functions that another part of the program can use, which is exactly the role of the code project here.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 272950,
+          "endMilliseconds": 278910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reference-the-code-library"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 278910,
+      "endMilliseconds": 282270,
+      "kind": "code_change",
+      "text": "The OutputType entry is deleted from the code project's .csproj because a console executable is the wrong output kind for tested code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 278910,
+          "endMilliseconds": 282270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reference-the-code-library"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 282270,
+      "endMilliseconds": 294590,
+      "kind": "code_change",
+      "text": "A helper function that will be tested is written in the code project, giving the test project something concrete to exercise.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 282270,
+          "endMilliseconds": 294590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reference-the-code-library"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 294590,
+      "endMilliseconds": 303310,
+      "kind": "fact",
+      "text": "A solution file lists all projects included in it, so working with the solution means building and running all those projects together.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 294590,
+          "endMilliseconds": 303310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-the-projects-to-a-solution"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 303310,
+      "endMilliseconds": 318190,
+      "kind": "explanation",
+      "text": "The .sln file is a solution: it enumerates the projects that belong to the same unit of work, which lets the code and test projects be managed as one whole.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 303310,
+          "endMilliseconds": 318190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-the-projects-to-a-solution"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 318190,
+      "endMilliseconds": 328720,
+      "kind": "explanation",
+      "text": "Both newly created projects have to be added to the solution's project list for the solution to build and test them together.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 318190,
+          "endMilliseconds": 328720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-the-projects-to-a-solution"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 318199,
+      "endMilliseconds": 331900,
+      "kind": "explanation",
+      "text": "The simplest way to add new projects to an existing solution is the dotnet sln command, so a solution file can be maintained from the terminal instead of the IDE.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 318199,
+          "endMilliseconds": 331900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-the-projects-to-a-solution"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 331919,
+      "endMilliseconds": 340070,
+      "kind": "fact",
+      "text": "Besides dotnet sln, a standalone sln tool can be used, so developers may pick whichever solution-editing command they prefer.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 331919,
+          "endMilliseconds": 340070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-the-projects-to-a-solution"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 343560,
+      "endMilliseconds": 361029,
+      "kind": "explanation",
+      "text": "The dotnet sln help output lists commands to add a project, remove it, and list all projects, which shows what solution edits are possible from the CLI.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 343560,
+          "endMilliseconds": 361029
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-the-projects-to-a-solution"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 361029,
+      "endMilliseconds": 372550,
+      "kind": "explanation",
+      "text": "The list command simply enumerates the project entries recorded in the solution file, letting you verify what the solution currently contains.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 361029,
+          "endMilliseconds": 372550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-the-projects-to-a-solution"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 372550,
+      "endMilliseconds": 395270,
+      "kind": "code_change",
+      "text": "A project is added to the solution by passing its relative path to the dotnet sln add command, after which the project appears in the solution's project list.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 372550,
+          "endMilliseconds": 395270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-the-projects-to-a-solution"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 395270,
+      "endMilliseconds": 407919,
+      "kind": "fact",
+      "text": "After dotnet sln add runs, the solution entry for the project also covers its code and test folders.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 395270,
+          "endMilliseconds": 407919
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-the-projects-to-a-solution"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 400039,
+      "endMilliseconds": 412390,
+      "kind": "fact",
+      "text": "The projects added with dotnet sln appear in the solution's project list together with their code and test folders, so the solution now covers the whole course workspace.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 400039,
+          "endMilliseconds": 412390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-the-projects-to-a-solution"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 425000,
+      "endMilliseconds": 432390,
+      "kind": "fact",
+      "text": "The sln generator is a console command installed with dotnet tool install, so it can be run directly from the terminal.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 425000,
+          "endMilliseconds": 432390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#generate-a-solution-with-a-tool"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 432390,
+      "endMilliseconds": 445189,
+      "kind": "explanation",
+      "text": "You pass the generator the set of projects to include in the solution, letting it build a solution file covering all of them at once.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 432390,
+          "endMilliseconds": 445189
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#generate-a-solution-with-a-tool"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 445189,
+      "endMilliseconds": 454710,
+      "kind": "fact",
+      "text": "The generator accepts a launch-false option that means Visual Studio is not started automatically when the solution file is produced.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 445189,
+          "endMilliseconds": 454710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#generate-a-solution-with-a-tool"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 454710,
+      "endMilliseconds": 465790,
+      "kind": "test_result",
+      "text": "Running the generator created the solution and included both the code and the test projects in its project list.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 454710,
+          "endMilliseconds": 465790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#generate-a-solution-with-a-tool"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 468430,
+      "endMilliseconds": 483080,
+      "kind": "reason",
+      "text": "The solution file is needed because IDE navigation features such as go-to-type and symbol search only span the projects that belong to the opened solution.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 468430,
+          "endMilliseconds": 483080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#open-the-solution-for-navigation"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 474520,
+      "endMilliseconds": 489950,
+      "kind": "fact",
+      "text": "A symbol search started from one project does not reach code in another project, which shows that cross-project navigation depends on the solution context.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 474520,
+          "endMilliseconds": 489950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#open-the-solution-for-navigation"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 493950,
+      "endMilliseconds": 513350,
+      "kind": "reason",
+      "text": "For IntelliSense features to work, the project must belong to a solution and you must open that solution in Rider or Visual Studio rather than the individual project.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 493950,
+          "endMilliseconds": 513350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#open-the-solution-for-navigation"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 513350,
+      "endMilliseconds": 525190,
+      "kind": "explanation",
+      "text": "The example code under test converts a cat's age into the equivalent human age, giving the tests a concrete function to exercise.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 513350,
+          "endMilliseconds": 525190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-first-age-conversion"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 525190,
+      "endMilliseconds": 545870,
+      "kind": "reason",
+      "text": "Tests exist so that after you swap an implementation or a subsystem you can prove the new behaviour is equivalent to the old one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 525190,
+          "endMilliseconds": 545870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-first-age-conversion"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 545870,
+      "endMilliseconds": 559440,
+      "kind": "fact",
+      "text": "The cat-age conversion treats a zero cat year as zero human years and a one cat year as 15 human years, which is the baseline the tests must pin down.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 545870,
+          "endMilliseconds": 559440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-first-age-conversion"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 549440,
+      "endMilliseconds": 557790,
+      "kind": "fact",
+      "text": "A one-year-old cat counts as 15 human years, so that ratio forms the first test case of the conversion function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 549440,
+          "endMilliseconds": 557790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-first-age-conversion"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 557790,
+      "endMilliseconds": 577790,
+      "kind": "explanation",
+      "text": "The second cat year counts as 7 human years, so a two-year-old cat maps to 15 plus 7, which is roughly 22 human years.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 557790,
+          "endMilliseconds": 577790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-first-age-conversion"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 591990,
+      "endMilliseconds": 611560,
+      "kind": "explanation",
+      "text": "For ages inside the 3-to-7 band the conversion starts at 23 and adds 3 human years per cat year, computed as the age minus the interval start times 3.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 591990,
+          "endMilliseconds": 611560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-first-age-conversion"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 616600,
+      "endMilliseconds": 633509,
+      "kind": "edge_case",
+      "text": "When the age exceeds the interval end the function counts the 1 and 2 fully, then the whole 3-to-7 interval, and then continues with a flat number of human years per following year.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 616600,
+          "endMilliseconds": 633509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-first-age-conversion"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 633509,
+      "endMilliseconds": 636000,
+      "kind": "correction",
+      "text": "The per-year multiplier beyond the interval is 2 rather than 3, correcting the value stated a moment earlier.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 633509,
+          "endMilliseconds": 636000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-first-age-conversion"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 636000,
+      "endMilliseconds": 656240,
+      "kind": "explanation",
+      "text": "For the above-interval case the result is 23 plus the interval length times 2, so ages 3 through 7 contribute five years times 2 as extra human years.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 636000,
+          "endMilliseconds": 656240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-first-age-conversion"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 643240,
+      "endMilliseconds": 652079,
+      "kind": "fact",
+      "text": "Длина интервала считается как количество лет от трёх до семи включительно, то есть 3, 4, 5, 6 и 7 — это задаёт единицу измерения ответа.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 643240,
+          "endMilliseconds": 652079
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-first-age-conversion"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 652079,
+      "endMilliseconds": 671016,
+      "kind": "explanation",
+      "text": "Возраст в семь лет умножают на три года в год, получают 21, и это произведение затем умножают на два, поэтому проверочное значение получается 44.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 652079,
+          "endMilliseconds": 671016
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-first-age-conversion"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 671016,
+      "endMilliseconds": 686770,
+      "kind": "fact",
+      "text": "Ожидаемый результат 44 можно посчитать в уме, и функция, которая выдаёт это значение, служит базой для дальнейшей работы.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 671016,
+          "endMilliseconds": 686770
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-first-age-conversion"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 686770,
+      "endMilliseconds": 700790,
+      "kind": "scope_boundary",
+      "text": "Дальше работа сводится к тому, чтобы зафиксировать эту верную функцию как базу и перейти к написанию тестов для неё.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 686770,
+          "endMilliseconds": 700790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-first-age-conversion"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 700790,
+      "endMilliseconds": 719069,
+      "kind": "explanation",
+      "text": "Функция может давать правильный ответ, но работать внутри не так, как мы хотели бы, поэтому её структуру имеет смысл обобщить.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 700790,
+          "endMilliseconds": 719069
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-tests-as-a-behavior-reference"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 719069,
+      "endMilliseconds": 742440,
+      "kind": "reason",
+      "text": "Цель состоит в том, чтобы из функции с правильным ответом получить функцию, которая не только правильно считает, но и устроена так, как мы задумали.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 719069,
+          "endMilliseconds": 742440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-tests-as-a-behavior-reference"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 728959,
+      "endMilliseconds": 742440,
+      "kind": "reason",
+      "text": "Из найденной правильной функции мы хотим сделать новую, которая даёт тот же правильный ответ, но устроена лучше.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 728959,
+          "endMilliseconds": 742440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-tests-as-a-behavior-reference"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 742440,
+      "endMilliseconds": 767710,
+      "kind": "explanation",
+      "text": "Новая функция будет правильной сразу по двум критериям: она даёт верный результат и при этом реализована так, как задумано.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 742440,
+          "endMilliseconds": 767710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-tests-as-a-behavior-reference"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 767710,
+      "endMilliseconds": 812790,
+      "kind": "reason",
+      "text": "Тест позволяет свободно переписать реализацию функции, потому что правильный ответ сохранится, а сохранить его иначе не получилось бы.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 767710,
+          "endMilliseconds": 812790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-tests-as-a-behavior-reference"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 811040,
+      "endMilliseconds": 837030,
+      "kind": "explanation",
+      "text": "Главное назначение тестирования — проверка, что изменение кода не ломает уже известное поведение программы.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 811040,
+          "endMilliseconds": 837030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-tests-as-a-behavior-reference"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 812790,
+      "endMilliseconds": 821480,
+      "kind": "explanation",
+      "text": "Тест выступает эталоном: по ранее заданной правильной функции он проверяет, что и новая функция даёт правильный ответ.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 812790,
+          "endMilliseconds": 821480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-tests-as-a-behavior-reference"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 837030,
+      "endMilliseconds": 846069,
+      "kind": "reason",
+      "text": "Второе назначение — изолировать конкретный баг: достаточно построить тест ровно на тех входных данных, на которых этот баг проявляется.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 837030,
+          "endMilliseconds": 846069
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-tests-as-a-behavior-reference"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 846069,
+      "endMilliseconds": 861280,
+      "kind": "fact",
+      "text": "Тест для функции пишется так, чтобы он проходил, вызывая её с заранее известными значениями и сверяя результат с ожидаемым.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 846069,
+          "endMilliseconds": 861280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-tests-as-a-behavior-reference"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 861280,
+      "endMilliseconds": 890360,
+      "kind": "reason",
+      "text": "Проверять все возможные случаи не нужно: достаточно подмножества известных случаев, и по нему мы предполагаем корректность и для остальных.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 861280,
+          "endMilliseconds": 890360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-tests-as-a-behavior-reference"
+      }
+    },
+    {
+      "id": "TP-068",
+      "startMilliseconds": 890360,
+      "endMilliseconds": 899079,
+      "kind": "explanation",
+      "text": "Подмножество входных данных сокращает проверку с бесконечного множества вариантов до небольшого набора выбранных примеров.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 890360,
+          "endMilliseconds": 899079
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-tests-as-a-behavior-reference"
+      }
+    },
+    {
+      "id": "TP-069",
+      "startMilliseconds": 890360,
+      "endMilliseconds": 902150,
+      "kind": "reason",
+      "text": "Лучший способ выбрать количество проверяемых случаев — взять крайние значения диапазона, на которых чаще всего ломается логика.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 890360,
+          "endMilliseconds": 902150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-tests-as-a-behavior-reference"
+      }
+    },
+    {
+      "id": "TP-070",
+      "startMilliseconds": 902150,
+      "endMilliseconds": 925110,
+      "kind": "edge_case",
+      "text": "В текущем коде есть баг: отрицательное число попадает в последнюю ветку, хотя должно приводить к ошибке.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 902150,
+          "endMilliseconds": 925110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-boundary-cases"
+      }
+    },
+    {
+      "id": "TP-071",
+      "startMilliseconds": 925110,
+      "endMilliseconds": 941870,
+      "kind": "explanation",
+      "text": "Поскольку входные данные заранее не ограничены, функцию нужно проверить на всех возможных интервалах: ноль, один, два, начало, конец и середина интервала.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 925110,
+          "endMilliseconds": 941870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-boundary-cases"
+      }
+    },
+    {
+      "id": "TP-072",
+      "startMilliseconds": 941870,
+      "endMilliseconds": 959110,
+      "kind": "reason",
+      "text": "Частая ошибка — неверно указать конец интервала, поэтому стоит проверить и значение на единицу до и на единицу после него.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 941870,
+          "endMilliseconds": 959110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-boundary-cases"
+      }
+    },
+    {
+      "id": "TP-073",
+      "startMilliseconds": 959110,
+      "endMilliseconds": 968190,
+      "kind": "edge_case",
+      "text": "Значение сразу за верхней границей внешнего интервала, например после семёрки, добавляется отдельно, чтобы проверить последнюю ветку условия.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 959110,
+          "endMilliseconds": 968190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-boundary-cases"
+      }
+    },
+    {
+      "id": "TP-074",
+      "startMilliseconds": 968120,
+      "endMilliseconds": 971550,
+      "kind": "fact",
+      "text": "To check the last branch the lesson adds tests, which in normal practice means pulling in a testing library.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 968120,
+          "endMilliseconds": 971550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-boundary-cases"
+      }
+    },
+    {
+      "id": "TP-075",
+      "startMilliseconds": 968190,
+      "endMilliseconds": 978199,
+      "kind": "fact",
+      "text": "Для написания тестов предполагается библиотека тестирования, хотя тест можно реализовать и без неё.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 968190,
+          "endMilliseconds": 978199
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-boundary-cases"
+      }
+    },
+    {
+      "id": "TP-076",
+      "startMilliseconds": 971550,
+      "endMilliseconds": 987550,
+      "kind": "scope_boundary",
+      "text": "The library is deliberately left out for now so the checks can be written by hand with a lighter load, and the library is only connected afterwards.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 971550,
+          "endMilliseconds": 987550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-boundary-cases"
+      }
+    },
+    {
+      "id": "TP-077",
+      "startMilliseconds": 989110,
+      "endMilliseconds": 1002590,
+      "kind": "reason",
+      "text": "The hand-written check calls the existing GetHumanAge helper on a known input, expecting zero in for zero out, which reuses trusted logic instead of hardcoding a number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 989110,
+          "endMilliseconds": 1002590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#generate-expectations-by-hand"
+      }
+    },
+    {
+      "id": "TP-078",
+      "startMilliseconds": 1006710,
+      "endMilliseconds": 1017230,
+      "kind": "reason",
+      "text": "The test is expected to blow up with an error when the branch is wrong, so a failure itself becomes the evidence that this case is handled incorrectly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1006710,
+          "endMilliseconds": 1017230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#generate-expectations-by-hand"
+      }
+    },
+    {
+      "id": "TP-079",
+      "startMilliseconds": 1019470,
+      "endMilliseconds": 1036350,
+      "kind": "reason",
+      "text": "Simple cases such as input two are cheap to state by hand, but inputs like three and seven would otherwise force manual computation of the expected answer.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1019470,
+          "endMilliseconds": 1036350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#generate-expectations-by-hand"
+      }
+    },
+    {
+      "id": "TP-080",
+      "startMilliseconds": 1036350,
+      "endMilliseconds": 1052870,
+      "kind": "reason",
+      "text": "The manual effort disappears if the cases are generated in a loop that reuses the same function which already produces the correct answers.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1036350,
+          "endMilliseconds": 1052870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#generate-expectations-by-hand"
+      }
+    },
+    {
+      "id": "TP-081",
+      "startMilliseconds": 1045280,
+      "endMilliseconds": 1052870,
+      "kind": "reason",
+      "text": "Because a function already returns the correct values, it can be called to build the expected value for each test case instead of hardcoding expectations.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1045280,
+          "endMilliseconds": 1052870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#generate-expectations-by-hand"
+      }
+    },
+    {
+      "id": "TP-082",
+      "startMilliseconds": 1052870,
+      "endMilliseconds": 1057320,
+      "kind": "explanation",
+      "text": "Concretely the plan is a loop over the chosen inputs that fills in each expected value from the helper, so the test data is derived rather than typed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1052870,
+          "endMilliseconds": 1057320
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#generate-expectations-by-hand"
+      }
+    },
+    {
+      "id": "TP-083",
+      "startMilliseconds": 1052870,
+      "endMilliseconds": 1069270,
+      "kind": "explanation",
+      "text": "The loop iterates over inputs 0 through 4 because they form adjacent ranges, which keeps the generated expectations consistent with the branch structure.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1052870,
+          "endMilliseconds": 1069270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#generate-expectations-by-hand"
+      }
+    },
+    {
+      "id": "TP-084",
+      "startMilliseconds": 1069270,
+      "endMilliseconds": 1081670,
+      "kind": "edge_case",
+      "text": "Five is left out because it is the only value between the chosen runs that does not belong to them, so the loop covers just 0-4.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1069270,
+          "endMilliseconds": 1081670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#generate-expectations-by-hand"
+      }
+    },
+    {
+      "id": "TP-085",
+      "startMilliseconds": 1081670,
+      "endMilliseconds": 1090630,
+      "kind": "fact",
+      "text": "The test inputs continue with 6, 7, 8 and 15, adding a sample from the outer interval on top of the early-year runs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1081670,
+          "endMilliseconds": 1090630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#generate-expectations-by-hand"
+      }
+    },
+    {
+      "id": "TP-086",
+      "startMilliseconds": 1090630,
+      "endMilliseconds": 1101430,
+      "kind": "code_change",
+      "text": "A small print loop emits the input together with the answer the function returns, producing the constants to be used as test expectations.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1090630,
+          "endMilliseconds": 1101430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#generate-expectations-by-hand"
+      }
+    },
+    {
+      "id": "TP-087",
+      "startMilliseconds": 1101430,
+      "endMilliseconds": 1126950,
+      "kind": "code_change",
+      "text": "Running that program prints back the full list of input-answer pairs, which is exactly the set of tests needed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1101430,
+          "endMilliseconds": 1126950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#generate-expectations-by-hand"
+      }
+    },
+    {
+      "id": "TP-088",
+      "startMilliseconds": 1126950,
+      "endMilliseconds": 1147590,
+      "kind": "explanation",
+      "text": "The printed values are trustworthy as expected answers only because the function was originally assumed to be correct, so these tests first protect that assumption.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1126950,
+          "endMilliseconds": 1147590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#generate-expectations-by-hand"
+      }
+    },
+    {
+      "id": "TP-089",
+      "startMilliseconds": 1141480,
+      "endMilliseconds": 1152230,
+      "kind": "explanation",
+      "text": "If the hand-written equality condition does not hold, the program crashes with an error, so a wrong expectation is reported as a crash rather than as a formatted test failure.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1141480,
+          "endMilliseconds": 1152230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-a-manual-check-fail"
+      }
+    },
+    {
+      "id": "TP-090",
+      "startMilliseconds": 1152230,
+      "endMilliseconds": 1165790,
+      "kind": "code_change",
+      "text": "The expected value is deliberately changed from 23 to 24 so the run can demonstrate that the check actually detects a wrong result.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1152230,
+          "endMilliseconds": 1165790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-a-manual-check-fail"
+      }
+    },
+    {
+      "id": "TP-091",
+      "startMilliseconds": 1165790,
+      "endMilliseconds": 1177390,
+      "kind": "test_result",
+      "text": "Running the hand-written version reports the wrong answer for input two and then stops, so only the first failing case is visible because the checks run one after another.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1165790,
+          "endMilliseconds": 1177390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-a-manual-check-fail"
+      }
+    },
+    {
+      "id": "TP-092",
+      "startMilliseconds": 1177390,
+      "endMilliseconds": 1184830,
+      "kind": "explanation",
+      "text": "A testing library would report every failing case instead of aborting at the first one, which is the main reason to connect the library.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1177390,
+          "endMilliseconds": 1184830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-a-manual-check-fail"
+      }
+    },
+    {
+      "id": "TP-093",
+      "startMilliseconds": 1184830,
+      "endMilliseconds": 1189950,
+      "kind": "test_result",
+      "text": "The run stops at line five where the expectation is 23 but the value is 24, and it does not print the value that actually disagreed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1184830,
+          "endMilliseconds": 1189950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-a-manual-check-fail"
+      }
+    },
+    {
+      "id": "TP-094",
+      "startMilliseconds": 1189950,
+      "endMilliseconds": 1202020,
+      "kind": "explanation",
+      "text": "A library-style assertion call would immediately show the actual value next to the expected one, removing the need to count lines to find the mismatch.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1189950,
+          "endMilliseconds": 1202020
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-a-manual-check-fail"
+      }
+    },
+    {
+      "id": "TP-095",
+      "startMilliseconds": 1202020,
+      "endMilliseconds": 1222960,
+      "kind": "explanation",
+      "text": "An alternative to a bare assertion is building one message string that names the input and the expected answer and feeds it to the library's test for readable failures.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1202020,
+          "endMilliseconds": 1222960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-a-manual-check-fail"
+      }
+    },
+    {
+      "id": "TP-096",
+      "startMilliseconds": 1226660,
+      "endMilliseconds": 1232110,
+      "kind": "code_change",
+      "text": "The test data is turned into a single string in which every field is named, so each generated case can be read on its own.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1226660,
+          "endMilliseconds": 1232110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-a-manual-check-fail"
+      }
+    },
+    {
+      "id": "TP-097",
+      "startMilliseconds": 1232110,
+      "endMilliseconds": 1242900,
+      "kind": "explanation",
+      "text": "Naming the input value and the expected output makes the failure output informative, because a bare result value tells you nothing about which case produced it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1232110,
+          "endMilliseconds": 1242900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-a-manual-check-fail"
+      }
+    },
+    {
+      "id": "TP-098",
+      "startMilliseconds": 1242900,
+      "endMilliseconds": 1250550,
+      "kind": "explanation",
+      "text": "There are several ways to organize the cases, including a lookup table that is prepared in advance from a loop.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1242900,
+          "endMilliseconds": 1250550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-a-manual-check-fail"
+      }
+    },
+    {
+      "id": "TP-099",
+      "startMilliseconds": 1250550,
+      "endMilliseconds": 1256590,
+      "kind": "fact",
+      "text": "The chosen variant encodes the data as ranges rather than as a lookup table, which is the structure actually implemented here.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1250550,
+          "endMilliseconds": 1256590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-a-manual-check-fail"
+      }
+    },
+    {
+      "id": "TP-100",
+      "startMilliseconds": 1256590,
+      "endMilliseconds": 1273990,
+      "kind": "edge_case",
+      "text": "A range from zero to zero inclusively contributes nothing while the range from one to one counts fifteen, so a degenerate empty range is a real boundary to handle.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1256590,
+          "endMilliseconds": 1273990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-101",
+      "startMilliseconds": 1276790,
+      "endMilliseconds": 1287140,
+      "kind": "fact",
+      "text": "After the one-to-one range that yields fifteen, the next range from two to two is the one still being resolved.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1276790,
+          "endMilliseconds": 1287140
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-102",
+      "startMilliseconds": 1287140,
+      "endMilliseconds": 1297190,
+      "kind": "correction",
+      "text": "The range from two to two inclusively counts eight, not seven, because the second year of life is already valued as eight.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1287140,
+          "endMilliseconds": 1297190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-103",
+      "startMilliseconds": 1299159,
+      "endMilliseconds": 1304470,
+      "kind": "fact",
+      "text": "The second year of life is counted as 8 and the value accumulated in the first year is added on top, which is why the computation starts from an explicit running total rather than from raw years.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1299159,
+          "endMilliseconds": 1304470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-104",
+      "startMilliseconds": 1304480,
+      "endMilliseconds": 1316950,
+      "kind": "fact",
+      "text": "Each year in the range from 3 to 7 contributes a coefficient of 3 and every year from 8 onward contributes a coefficient of 2, so these blocks can be handled as whole intervals instead of year by year.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1304480,
+          "endMilliseconds": 1316950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-105",
+      "startMilliseconds": 1338520,
+      "endMilliseconds": 1347500,
+      "kind": "explanation",
+      "text": "The whole calculation is built around an accumulator variable that starts at zero and is increased once per covered interval, which makes each interval independent of the others.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1338520,
+          "endMilliseconds": 1347500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-106",
+      "startMilliseconds": 1351039,
+      "endMilliseconds": 1357750,
+      "kind": "fact",
+      "text": "When more than eight years are covered the code adds two for each year of the last interval, which covers the unbounded tail of the piecewise rule.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1351039,
+          "endMilliseconds": 1357750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-107",
+      "startMilliseconds": 1357960,
+      "endMilliseconds": 1362800,
+      "kind": "scope_boundary",
+      "text": "The interval handling is written out without a loop even though a loop would work, keeping the branch for each interval explicit.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1357960,
+          "endMilliseconds": 1362800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-108",
+      "startMilliseconds": 1362800,
+      "endMilliseconds": 1377350,
+      "kind": "fact",
+      "text": "At least one lived year adds the one-year interval value and at least two lived years add the second block value, so partial coverage of an interval contributes proportionally instead of the whole interval.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1362800,
+          "endMilliseconds": 1377350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-109",
+      "startMilliseconds": 1377350,
+      "endMilliseconds": 1390039,
+      "kind": "explanation",
+      "text": "Once three or more years are covered the third interval must be truncated at its upper bound, which requires finding the maximum within that interval rather than adding it whole.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1377350,
+          "endMilliseconds": 1390039
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-110",
+      "startMilliseconds": 1379360,
+      "endMilliseconds": 1385100,
+      "kind": "explanation",
+      "text": "For three or more lived years the maximum for the third interval must be found before adding it, since the interval ends at seven years.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1379360,
+          "endMilliseconds": 1385100
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-111",
+      "startMilliseconds": 1392679,
+      "endMilliseconds": 1401300,
+      "kind": "reason",
+      "text": "The depth inside the interval is measured starting from 3 because the year value 3 is itself counted as plus one relative to the previous interval.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1392679,
+          "endMilliseconds": 1401300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-112",
+      "startMilliseconds": 1401300,
+      "endMilliseconds": 1410230,
+      "kind": "fact",
+      "text": "The number of years actually lived inside the interval equals the depth reached within that interval's range.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1401300,
+          "endMilliseconds": 1410230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-113",
+      "startMilliseconds": 1410440,
+      "endMilliseconds": 1422190,
+      "kind": "fact",
+      "text": "The length of the interval is 3, 4, 5, 6, 7, i.e. 5 years, so the maximum that can be accumulated from that block is five.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1410440,
+          "endMilliseconds": 1422190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-114",
+      "startMilliseconds": 1422200,
+      "endMilliseconds": 1430230,
+      "kind": "edge_case",
+      "text": "If the lived years go beyond the interval, the maximum must be capped at seven so the block cannot contribute more than its full length.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1422200,
+          "endMilliseconds": 1430230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-115",
+      "startMilliseconds": 1430240,
+      "endMilliseconds": 1442190,
+      "kind": "correction",
+      "text": "The contribution uses the minimum, not the maximum, of the interval length and the reached depth, which is what correctly truncates a partially covered interval.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1430240,
+          "endMilliseconds": 1442190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-116",
+      "startMilliseconds": 1442190,
+      "endMilliseconds": 1448399,
+      "kind": "fact",
+      "text": "The capped depth is multiplied by the interval coefficient, which is 3 for the three-to-seven block.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1442190,
+          "endMilliseconds": 1448399
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-117",
+      "startMilliseconds": 1448400,
+      "endMilliseconds": 1468559,
+      "kind": "explanation",
+      "text": "The same capped-depth-times-coefficient pattern is applied to the remaining interval, where the upper bound is simply the length of that interval.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1448400,
+          "endMilliseconds": 1468559
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-118",
+      "startMilliseconds": 1458080,
+      "endMilliseconds": 1462300,
+      "kind": "explanation",
+      "text": "Because the last interval has no upper limit, the code simply finds the depth into it and adds that depth times the interval coefficient.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1458080,
+          "endMilliseconds": 1462300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-119",
+      "startMilliseconds": 1478279,
+      "endMilliseconds": 1485500,
+      "kind": "fact",
+      "text": "The depth into the unbounded interval is computed as the lived years starting from 8 plus one, giving seven for the minimal covered case, exactly mirroring the logic used above.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1478279,
+          "endMilliseconds": 1485500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-120",
+      "startMilliseconds": 1485500,
+      "endMilliseconds": 1489750,
+      "kind": "fact",
+      "text": "Since no maximum exists for that interval, the depth is added multiplied by the coefficient of that interval.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1485500,
+          "endMilliseconds": 1489750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#rewrite-the-sum-as-interval-contributions"
+      }
+    },
+    {
+      "id": "TP-121",
+      "startMilliseconds": 1490520,
+      "endMilliseconds": 1501190,
+      "kind": "code_change",
+      "text": "The implementation was fully replaced while remaining theoretically equivalent, which can be confirmed by running the existing tests.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1490520,
+          "endMilliseconds": 1501190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-the-rewritten-implementation"
+      }
+    },
+    {
+      "id": "TP-122",
+      "startMilliseconds": 1502790,
+      "endMilliseconds": 1513960,
+      "kind": "reason",
+      "text": "Tests would immediately expose a construction mistake such as forgetting the plus one, so the test suite is the safety net for the rewrite.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1502790,
+          "endMilliseconds": 1513960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-the-rewritten-implementation"
+      }
+    },
+    {
+      "id": "TP-123",
+      "startMilliseconds": 1513960,
+      "endMilliseconds": 1524630,
+      "kind": "test_result",
+      "text": "A failing expectation led to a bug in the branch for eight years, which was located and fixed in that branch.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1513960,
+          "endMilliseconds": 1524630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-the-rewritten-implementation"
+      }
+    },
+    {
+      "id": "TP-124",
+      "startMilliseconds": 1524630,
+      "endMilliseconds": 1546919,
+      "kind": "explanation",
+      "text": "Another testing approach keeps the old implementation and compares its result with the new one, whose advantage is maintainability rather than coverage.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1524630,
+          "endMilliseconds": 1546919
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-the-rewritten-implementation"
+      }
+    },
+    {
+      "id": "TP-125",
+      "startMilliseconds": 1537480,
+      "endMilliseconds": 1546919,
+      "kind": "explanation",
+      "text": "Comparing the old and new results keeps the advantage of maintainability, because the previous implementation can be reused as the reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1537480,
+          "endMilliseconds": 1546919
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-the-rewritten-implementation"
+      }
+    },
+    {
+      "id": "TP-126",
+      "startMilliseconds": 1546920,
+      "endMilliseconds": 1554910,
+      "kind": "reason",
+      "text": "The previous implementation is a poor approach precisely because of the magic constants it relies on.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1546920,
+          "endMilliseconds": 1554910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-the-meaning-of-magic-constants"
+      }
+    },
+    {
+      "id": "TP-127",
+      "startMilliseconds": 1554910,
+      "endMilliseconds": 1569280,
+      "kind": "explanation",
+      "text": "The constants 23, 23 and 38 are really 15 plus 8, and 15 plus 8 plus the previous interval length times its coefficient, so each constant secretly encodes several rule components.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1554910,
+          "endMilliseconds": 1569280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-the-meaning-of-magic-constants"
+      }
+    },
+    {
+      "id": "TP-128",
+      "startMilliseconds": 1569280,
+      "endMilliseconds": 1578370,
+      "kind": "reason",
+      "text": "The drawback of the old version is maintainability, not memory use, which is not even a concern in this context.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1569280,
+          "endMilliseconds": 1578370
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-the-meaning-of-magic-constants"
+      }
+    },
+    {
+      "id": "TP-129",
+      "startMilliseconds": 1578370,
+      "endMilliseconds": 1590630,
+      "kind": "reason",
+      "text": "Changing the first year's value from 15 to 16 in the old code would require editing the constants everywhere, which makes rule changes error-prone.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1578370,
+          "endMilliseconds": 1590630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-the-meaning-of-magic-constants"
+      }
+    },
+    {
+      "id": "TP-130",
+      "startMilliseconds": 1590630,
+      "endMilliseconds": 1602000,
+      "kind": "explanation",
+      "text": "In the rewritten code the literal 16 unambiguously belongs to the first component because the sum is split into separate components.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1590630,
+          "endMilliseconds": 1602000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-the-meaning-of-magic-constants"
+      }
+    },
+    {
+      "id": "TP-131",
+      "startMilliseconds": 1602000,
+      "endMilliseconds": 1624559,
+      "kind": "explanation",
+      "text": "Splitting the sum into distinct components keeps each rule change local to one place, which is the whole point of the rewrite.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1602000,
+          "endMilliseconds": 1624559
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-the-meaning-of-magic-constants"
+      }
+    },
+    {
+      "id": "TP-132",
+      "startMilliseconds": 1616960,
+      "endMilliseconds": 1635870,
+      "kind": "reason",
+      "text": "Splitting the total sum into per-year components makes each part self-explanatory, because an unexplained value like 23 hides the fact that it is 15 from the second year plus 8 from another component.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1616960,
+          "endMilliseconds": 1635870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-the-meaning-of-magic-constants"
+      }
+    },
+    {
+      "id": "TP-133",
+      "startMilliseconds": 1645240,
+      "endMilliseconds": 1657419,
+      "kind": "explanation",
+      "text": "An alternative is to extract named constants such as a first-stage coefficient with value 15 and reuse that coefficient where the raw number appeared.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1645240,
+          "endMilliseconds": 1657419
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-the-meaning-of-magic-constants"
+      }
+    },
+    {
+      "id": "TP-134",
+      "startMilliseconds": 1657419,
+      "endMilliseconds": 1682830,
+      "kind": "code_change",
+      "text": "Introducing such constants for the first, second and interval parts does not change how the function behaves, it only replaces magic numbers with readable names.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1657419,
+          "endMilliseconds": 1682830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-the-meaning-of-magic-constants"
+      }
+    },
+    {
+      "id": "TP-135",
+      "startMilliseconds": 1682830,
+      "endMilliseconds": 1699780,
+      "kind": "code_change",
+      "text": "The interval part is expressed as its length computed as end minus start plus one, which makes the added term self-describing.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1682830,
+          "endMilliseconds": 1699780
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-the-meaning-of-magic-constants"
+      }
+    },
+    {
+      "id": "TP-136",
+      "startMilliseconds": 1705470,
+      "endMilliseconds": 1715760,
+      "kind": "code_change",
+      "text": "Next he extends the piecewise expression with another interval running from the end of the previous one up to ten.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1705470,
+          "endMilliseconds": 1715760
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1706799,
+          "endMilliseconds": 1715760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-an-interval-and-see-the-duplication"
+      }
+    },
+    {
+      "id": "TP-137",
+      "startMilliseconds": 1715760,
+      "endMilliseconds": 1728280,
+      "kind": "explanation",
+      "text": "Because a default case applies after the last interval, each new interval requires its own constants and sums to be listed explicitly in every following branch.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1715760,
+          "endMilliseconds": 1728280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-an-interval-and-see-the-duplication"
+      }
+    },
+    {
+      "id": "TP-138",
+      "startMilliseconds": 1728280,
+      "endMilliseconds": 1744230,
+      "kind": "code_change",
+      "text": "For the case H greater or equal to ten and K less or equal to ten he copies all previous interval contributions and adds the new one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1728280,
+          "endMilliseconds": 1744230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-an-interval-and-see-the-duplication"
+      }
+    },
+    {
+      "id": "TP-139",
+      "startMilliseconds": 1744230,
+      "endMilliseconds": 1757909,
+      "kind": "code_change",
+      "text": "The new branch contribution is written as the interval start minus one plus its coefficient.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1744230,
+          "endMilliseconds": 1757909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-an-interval-and-see-the-duplication"
+      }
+    },
+    {
+      "id": "TP-140",
+      "startMilliseconds": 1757909,
+      "endMilliseconds": 1776960,
+      "kind": "reason",
+      "text": "The existence of a default branch forces every earlier interval to be duplicated again, so adding one interval causes exponential-looking repetition in the code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1757909,
+          "endMilliseconds": 1776960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-an-interval-and-see-the-duplication"
+      }
+    },
+    {
+      "id": "TP-141",
+      "startMilliseconds": 1776960,
+      "endMilliseconds": 1792679,
+      "kind": "code_change",
+      "text": "He therefore switches to an interval-based approach that walks the intervals and decides case by case whether the year has passed an interval start or the whole interval.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1776960,
+          "endMilliseconds": 1792679
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1784640,
+          "endMilliseconds": 1792679
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-an-interval-and-see-the-duplication"
+      }
+    },
+    {
+      "id": "TP-142",
+      "startMilliseconds": 1792679,
+      "endMilliseconds": 1806580,
+      "kind": "explanation",
+      "text": "Once an interval start has been passed, the portion of that interval the year has entered is added to the final sum, which is why the first interval contributes its own start value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1792679,
+          "endMilliseconds": 1806580
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-an-interval-and-see-the-duplication"
+      }
+    },
+    {
+      "id": "TP-143",
+      "startMilliseconds": 1806580,
+      "endMilliseconds": 1821170,
+      "kind": "reason",
+      "text": "Because each interval is handled once, every constant is referenced only one time in the code and the branch explosion disappears.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1806580,
+          "endMilliseconds": 1821170
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-an-interval-and-see-the-duplication"
+      }
+    },
+    {
+      "id": "TP-144",
+      "startMilliseconds": 1821170,
+      "endMilliseconds": 1842280,
+      "kind": "code_change",
+      "text": "Instead of storing the interval length separately, he simply overwrites the start value by increasing it by the length, which removes the extra length constant.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1821170,
+          "endMilliseconds": 1842280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-an-interval-and-see-the-duplication"
+      }
+    },
+    {
+      "id": "TP-145",
+      "startMilliseconds": 1842280,
+      "endMilliseconds": 1846080,
+      "kind": "reason",
+      "text": "Constants that never repeat need not be extracted at all, so the naming effort can be skipped.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1842280,
+          "endMilliseconds": 1846080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-an-interval-and-see-the-duplication"
+      }
+    },
+    {
+      "id": "TP-146",
+      "startMilliseconds": 1846080,
+      "endMilliseconds": 1863490,
+      "kind": "explanation",
+      "text": "The structure can be improved further by keeping the intervals in an array with their start and length and iterating over it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1846080,
+          "endMilliseconds": 1863490
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-abstraction-according-to-expected-change"
+      }
+    },
+    {
+      "id": "TP-147",
+      "startMilliseconds": 1861960,
+      "endMilliseconds": 1869120,
+      "kind": "scope_boundary",
+      "text": "Since this function is not expected to change, the remaining implementation detail can simply be generated by an AI coding tool and forgotten about.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1861960,
+          "endMilliseconds": 1866470
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1863490,
+          "endMilliseconds": 1869120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-abstraction-according-to-expected-change"
+      }
+    },
+    {
+      "id": "TP-148",
+      "startMilliseconds": 1869120,
+      "endMilliseconds": 1885960,
+      "kind": "reason",
+      "text": "The best code is the one that takes the least time to write, because readable abstractions only pay off when the code will actually be modified.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1869120,
+          "endMilliseconds": 1885960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-abstraction-according-to-expected-change"
+      }
+    },
+    {
+      "id": "TP-149",
+      "startMilliseconds": 1885960,
+      "endMilliseconds": 1897600,
+      "kind": "explanation",
+      "text": "In this example the coefficient function will most likely never be modified, so the simple explicit version is sufficient.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1885960,
+          "endMilliseconds": 1897600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-abstraction-according-to-expected-change"
+      }
+    },
+    {
+      "id": "TP-150",
+      "startMilliseconds": 1897600,
+      "endMilliseconds": 1910590,
+      "kind": "fact",
+      "text": "A typical case where such a function is modified often is enemy characteristics where health or attack changes per level over ranges like four levels at one value and three at another.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1897600,
+          "endMilliseconds": 1910590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-abstraction-according-to-expected-change"
+      }
+    },
+    {
+      "id": "TP-151",
+      "startMilliseconds": 1910590,
+      "endMilliseconds": 1920850,
+      "kind": "reason",
+      "text": "Code that will be edited frequently benefits from named constants and the interval-based approach, since the named parts point to where values must change.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1910590,
+          "endMilliseconds": 1920850
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-abstraction-according-to-expected-change"
+      }
+    },
+    {
+      "id": "TP-152",
+      "startMilliseconds": 1920850,
+      "endMilliseconds": 1934010,
+      "kind": "scope_boundary",
+      "text": "If users are to supply the intervals and coefficients through a configuration file, the code should be generalized to iterate over an array instead of hardcoding branches.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1920850,
+          "endMilliseconds": 1934010
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-abstraction-according-to-expected-change"
+      }
+    },
+    {
+      "id": "TP-153",
+      "startMilliseconds": 1934010,
+      "endMilliseconds": 1940720,
+      "kind": "fact",
+      "text": "When the code will not change, the most primitive and least abstract implementation is the right choice.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1934010,
+          "endMilliseconds": 1940720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-abstraction-according-to-expected-change"
+      }
+    },
+    {
+      "id": "TP-154",
+      "startMilliseconds": 1934159,
+      "endMilliseconds": 1946600,
+      "kind": "reason",
+      "text": "Generalizing the code into a loop over an array only pays off when the set of rules may change; if the rules never change the simplest hardcoded approach is preferable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1934159,
+          "endMilliseconds": 1946600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-abstraction-according-to-expected-change"
+      }
+    },
+    {
+      "id": "TP-155",
+      "startMilliseconds": 1946600,
+      "endMilliseconds": 1959890,
+      "kind": "reason",
+      "text": "If the rules may change or the user will supply them from a config file, it is worth adding more abstraction inside the function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1946600,
+          "endMilliseconds": 1959890
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-abstraction-according-to-expected-change"
+      }
+    },
+    {
+      "id": "TP-156",
+      "startMilliseconds": 1960600,
+      "endMilliseconds": 1968490,
+      "kind": "code_change",
+      "text": "An Interval type is introduced (struct or class, either works) so each rule becomes data instead of hardcoded code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1960600,
+          "endMilliseconds": 1968490
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-the-rules-as-data"
+      }
+    },
+    {
+      "id": "TP-157",
+      "startMilliseconds": 1968560,
+      "endMilliseconds": 1974040,
+      "kind": "explanation",
+      "text": "Each interval carries a length and a coefficient, and the whole configuration becomes an array of such intervals.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1968560,
+          "endMilliseconds": 1974040
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-the-rules-as-data"
+      }
+    },
+    {
+      "id": "TP-158",
+      "startMilliseconds": 1974320,
+      "endMilliseconds": 1983149,
+      "kind": "explanation",
+      "text": "The calculating function now receives both the value to compute and the array of intervals, so the rules travel as parameters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1974320,
+          "endMilliseconds": 1983149
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-the-rules-as-data"
+      }
+    },
+    {
+      "id": "TP-159",
+      "startMilliseconds": 1983210,
+      "endMilliseconds": 1990500,
+      "kind": "explanation",
+      "text": "Inside the loop the start of the next interval is compared with the current position to decide where the current run ends.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1983210,
+          "endMilliseconds": 1990500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-the-rules-as-data"
+      }
+    },
+    {
+      "id": "TP-160",
+      "startMilliseconds": 1990560,
+      "endMilliseconds": 2020480,
+      "kind": "explanation",
+      "text": "Each interval supplies the start and the end of a run, and the end is taken from the following interval, which is why the computation is naturally a loop over the intervals.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1990560,
+          "endMilliseconds": 2020480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-the-rules-as-data"
+      }
+    },
+    {
+      "id": "TP-161",
+      "startMilliseconds": 2012200,
+      "endMilliseconds": 2020789,
+      "kind": "explanation",
+      "text": "The end of a run is taken from the following interval, which is why the whole computation is written as a loop over the configured intervals.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2012200,
+          "endMilliseconds": 2020789
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-the-rules-as-data"
+      }
+    },
+    {
+      "id": "TP-162",
+      "startMilliseconds": 2020789,
+      "endMilliseconds": 2033149,
+      "kind": "explanation",
+      "text": "Within an interval the end of a run is the current position plus the length of that interval.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2020789,
+          "endMilliseconds": 2033149
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-the-rules-as-data"
+      }
+    },
+    {
+      "id": "TP-163",
+      "startMilliseconds": 2033159,
+      "endMilliseconds": 2044350,
+      "kind": "edge_case",
+      "text": "If that computed end runs past the start of the next interval, the run is cut short at that boundary instead of using the full length.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2033159,
+          "endMilliseconds": 2044350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-the-rules-as-data"
+      }
+    },
+    {
+      "id": "TP-164",
+      "startMilliseconds": 2044360,
+      "endMilliseconds": 2062630,
+      "kind": "code_change",
+      "text": "In the shortened case the value is computed as current minus the interval start plus one plus the interval length.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2044360,
+          "endMilliseconds": 2062630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-the-rules-as-data"
+      }
+    },
+    {
+      "id": "TP-165",
+      "startMilliseconds": 2062639,
+      "endMilliseconds": 2074950,
+      "kind": "code_change",
+      "text": "The shortened result is multiplied by the interval coefficient and then the start is updated to the computed end, which closes the loop iteration.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2062639,
+          "endMilliseconds": 2074950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-the-rules-as-data"
+      }
+    },
+    {
+      "id": "TP-166",
+      "startMilliseconds": 2076990,
+      "endMilliseconds": 2090150,
+      "kind": "explanation",
+      "text": "Callers must build the configuration themselves, so the lesson introduces a function that creates it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2076990,
+          "endMilliseconds": 2090150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-and-pass-the-configuration"
+      }
+    },
+    {
+      "id": "TP-167",
+      "startMilliseconds": 2090269,
+      "endMilliseconds": 2105240,
+      "kind": "code_change",
+      "text": "The first configuration interval is defined to start at 1 with length 1, covering the first year.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2090269,
+          "endMilliseconds": 2105240
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2095399,
+          "endMilliseconds": 2101270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-and-pass-the-configuration"
+      }
+    },
+    {
+      "id": "TP-168",
+      "startMilliseconds": 2105240,
+      "endMilliseconds": 2114630,
+      "kind": "fact",
+      "text": "The configuration lists one interval per year group, and the second group also has length 1 but starts at 8.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2105240,
+          "endMilliseconds": 2114630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-and-pass-the-configuration"
+      }
+    },
+    {
+      "id": "TP-169",
+      "startMilliseconds": 2114640,
+      "endMilliseconds": 2123430,
+      "kind": "fact",
+      "text": "The third group is the interval from 3 to 7 and carries its own coefficient, because different groups can scale their values differently.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2114640,
+          "endMilliseconds": 2123430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-and-pass-the-configuration"
+      }
+    },
+    {
+      "id": "TP-170",
+      "startMilliseconds": 2123430,
+      "endMilliseconds": 2133710,
+      "kind": "edge_case",
+      "text": "The remaining years are meant to be unbounded, but since this system has no unbounded option they receive an interval of length 2 instead.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2123430,
+          "endMilliseconds": 2133710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-and-pass-the-configuration"
+      }
+    },
+    {
+      "id": "TP-171",
+      "startMilliseconds": 2133720,
+      "endMilliseconds": 2147510,
+      "kind": "code_change",
+      "text": "The configuration function is created, called with new, and its result is passed into the calculating function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2133720,
+          "endMilliseconds": 2147510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-and-pass-the-configuration"
+      }
+    },
+    {
+      "id": "TP-172",
+      "startMilliseconds": 2147520,
+      "endMilliseconds": 2153829,
+      "kind": "scope_boundary",
+      "text": "The fact that the configuration object is recreated on every call is deliberately left as a minor detail for this example.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2147520,
+          "endMilliseconds": 2153829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-and-pass-the-configuration"
+      }
+    },
+    {
+      "id": "TP-173",
+      "startMilliseconds": 2153830,
+      "endMilliseconds": 2173550,
+      "kind": "correction",
+      "text": "The output is wrong: zero produces 15 because the implementation starts the ranges at 0 instead of 1, so the start must be moved to 1.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2153830,
+          "endMilliseconds": 2173550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fix-the-interval-counting-origin"
+      }
+    },
+    {
+      "id": "TP-174",
+      "startMilliseconds": 2173560,
+      "endMilliseconds": 2178560,
+      "kind": "test_result",
+      "text": "After starting from 1 the function returns correct results and the code reads clearly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2173560,
+          "endMilliseconds": 2178560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fix-the-interval-counting-origin"
+      }
+    },
+    {
+      "id": "TP-175",
+      "startMilliseconds": 2175880,
+      "endMilliseconds": 2186200,
+      "kind": "code_change",
+      "text": "The start initialization can be written in another form to avoid the off-by-one mistake, and in this example it makes sense to start counting from 1.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2175880,
+          "endMilliseconds": 2186200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fix-the-interval-counting-origin"
+      }
+    },
+    {
+      "id": "TP-176",
+      "startMilliseconds": 2178560,
+      "endMilliseconds": 2186200,
+      "kind": "code_change",
+      "text": "The start initialization could be written in another form to avoid the off-by-one mistake seen above.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2178560,
+          "endMilliseconds": 2186200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fix-the-interval-counting-origin"
+      }
+    },
+    {
+      "id": "TP-177",
+      "startMilliseconds": 2186200,
+      "endMilliseconds": 2192490,
+      "kind": "explanation",
+      "text": "Either the loop starts counting from 1 or the interval start is set to 0, so the 1 has to live in exactly one of those two places.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2186200,
+          "endMilliseconds": 2192490
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fix-the-interval-counting-origin"
+      }
+    },
+    {
+      "id": "TP-178",
+      "startMilliseconds": 2192470,
+      "endMilliseconds": 2200390,
+      "kind": "explanation",
+      "text": "With the zero placed in the interval start the condition end-greater-than-start still holds, so at first glance both variants look equivalent.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2192470,
+          "endMilliseconds": 2200390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fix-the-interval-counting-origin"
+      }
+    },
+    {
+      "id": "TP-179",
+      "startMilliseconds": 2200400,
+      "endMilliseconds": 2205310,
+      "kind": "correction",
+      "text": "On closer inspection the two variants are not equivalent here, so the version that starts from 1 is kept as the correct one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2200400,
+          "endMilliseconds": 2205310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fix-the-interval-counting-origin"
+      }
+    },
+    {
+      "id": "TP-180",
+      "startMilliseconds": 2205320,
+      "endMilliseconds": 2223500,
+      "kind": "reason",
+      "text": "An existing test that checks whether the function computes correct values makes it safe to rewrite the implementation freely, since the tests verify the result.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2205320,
+          "endMilliseconds": 2223500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fix-the-interval-counting-origin"
+      }
+    },
+    {
+      "id": "TP-181",
+      "startMilliseconds": 2233200,
+      "endMilliseconds": 2244189,
+      "kind": "fact",
+      "text": "xUnit and NUnit are the most popular .NET test libraries, and the lesson connects xUnit for this example.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2233200,
+          "endMilliseconds": 2244189
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#connect-xunit"
+      }
+    },
+    {
+      "id": "TP-182",
+      "startMilliseconds": 2244190,
+      "endMilliseconds": 2259800,
+      "kind": "explanation",
+      "text": "xUnit is injected automatically into every project under a folder via Directory.Build.targets, which is how the instructor had wired tests before, so no per-project package reference is needed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2244190,
+          "endMilliseconds": 2259800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#connect-xunit"
+      }
+    },
+    {
+      "id": "TP-183",
+      "startMilliseconds": 2252119,
+      "endMilliseconds": 2259859,
+      "kind": "fact",
+      "text": "A project file placed in a folder next to the solution is picked up by the IDE automatically, so no package-add command is needed just to make the project visible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2252119,
+          "endMilliseconds": 2259859
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#connect-xunit"
+      }
+    },
+    {
+      "id": "TP-184",
+      "startMilliseconds": 2259859,
+      "endMilliseconds": 2265229,
+      "kind": "fact",
+      "text": "Packages can be installed from the console with dotnet add package, which is preferable because it edits the project file directly instead of relying on implicit discovery.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2259859,
+          "endMilliseconds": 2265229
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#connect-xunit"
+      }
+    },
+    {
+      "id": "TP-185",
+      "startMilliseconds": 2265229,
+      "endMilliseconds": 2269450,
+      "kind": "explanation",
+      "text": "Most package entries in a generated test project file are optional and can be deleted without breaking the build because they are not required for compilation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2265229,
+          "endMilliseconds": 2269450
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#connect-xunit"
+      }
+    },
+    {
+      "id": "TP-186",
+      "startMilliseconds": 2269550,
+      "endMilliseconds": 2273980,
+      "kind": "code_change",
+      "text": "The test project's output type must be switched to a library, because a project with tests must not be an executable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2269550,
+          "endMilliseconds": 2273980
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#connect-xunit"
+      }
+    },
+    {
+      "id": "TP-187",
+      "startMilliseconds": 2274080,
+      "endMilliseconds": 2276269,
+      "kind": "fact",
+      "text": "The Xunit package entry exists so the Xunit namespace is imported automatically in every file, removing the need to write using Xunit by hand.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2274080,
+          "endMilliseconds": 2276269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#connect-xunit"
+      }
+    },
+    {
+      "id": "TP-188",
+      "startMilliseconds": 2276269,
+      "endMilliseconds": 2282699,
+      "kind": "scope_boundary",
+      "text": "The Xunit package entry is optional like the rest, since the using directive can be written explicitly instead.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2276269,
+          "endMilliseconds": 2282699
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#connect-xunit"
+      }
+    },
+    {
+      "id": "TP-189",
+      "startMilliseconds": 2282699,
+      "endMilliseconds": 2288780,
+      "kind": "reason",
+      "text": "The package imports are the most important part of the project file, and they currently cause a compile error because the test method that would use them does not exist yet.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2282699,
+          "endMilliseconds": 2288780
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#connect-xunit"
+      }
+    },
+    {
+      "id": "TP-190",
+      "startMilliseconds": 2328640,
+      "endMilliseconds": 2336880,
+      "kind": "explanation",
+      "text": "The instructor starts demonstrating how tests are written themselves while the IDE is still importing packages.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2328640,
+          "endMilliseconds": 2336880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#connect-xunit"
+      }
+    },
+    {
+      "id": "TP-191",
+      "startMilliseconds": 2336880,
+      "endMilliseconds": 2345470,
+      "kind": "fact",
+      "text": "A test file needs the Xunit namespace imported and any class declared, with no other structure required.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2336880,
+          "endMilliseconds": 2345470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#discover-and-run-a-fact"
+      }
+    },
+    {
+      "id": "TP-192",
+      "startMilliseconds": 2345470,
+      "endMilliseconds": 2350000,
+      "kind": "explanation",
+      "text": "Any method created inside the class can become a test once it is marked with an attribute, which is how xUnit discovers tests.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2345470,
+          "endMilliseconds": 2350000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#discover-and-run-a-fact"
+      }
+    },
+    {
+      "id": "TP-193",
+      "startMilliseconds": 2350000,
+      "endMilliseconds": 2355310,
+      "kind": "fact",
+      "text": "The Fact attribute declares the method to be a test, so its body is treated as test code by the runner.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2350000,
+          "endMilliseconds": 2355310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#discover-and-run-a-fact"
+      }
+    },
+    {
+      "id": "TP-194",
+      "startMilliseconds": 2360420,
+      "endMilliseconds": 2371860,
+      "kind": "fact",
+      "text": "The IDE test explorer lists the discovered test and allows running a single test from the right-click context menu, which speeds up iteration.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2360420,
+          "endMilliseconds": 2371860
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#discover-and-run-a-fact"
+      }
+    },
+    {
+      "id": "TP-195",
+      "startMilliseconds": 2371860,
+      "endMilliseconds": 2380880,
+      "kind": "test_result",
+      "text": "Running the single test from the explorer confirms the test executes, a behavior the instructor has already observed in his own projects.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2371860,
+          "endMilliseconds": 2380880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#discover-and-run-a-fact"
+      }
+    },
+    {
+      "id": "TP-196",
+      "startMilliseconds": 2408480,
+      "endMilliseconds": 2412050,
+      "kind": "test_result",
+      "text": "The test run completes successfully, confirming the hand-written test executes as expected.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2408480,
+          "endMilliseconds": 2412050
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#discover-and-run-a-fact"
+      }
+    },
+    {
+      "id": "TP-197",
+      "startMilliseconds": 2412050,
+      "endMilliseconds": 2423080,
+      "kind": "edge_case",
+      "text": "With newer package versions the IDE may not discover the test at all, so learners should try versions themselves rather than rely on one fixed setup.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2412050,
+          "endMilliseconds": 2423080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#discover-and-run-a-fact"
+      }
+    },
+    {
+      "id": "TP-198",
+      "startMilliseconds": 2423080,
+      "endMilliseconds": 2435200,
+      "kind": "explanation",
+      "text": "When the same logic must run against many data sets you would otherwise duplicate the body into Test1, Test2, Test3 and so on for every case.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2423080,
+          "endMilliseconds": 2435200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-duplication-with-a-theory"
+      }
+    },
+    {
+      "id": "TP-199",
+      "startMilliseconds": 2435200,
+      "endMilliseconds": 2446810,
+      "kind": "fact",
+      "text": "InlineData replaces the Fact attribute on a parameterized test so one method body can be reused with many input sets.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2435200,
+          "endMilliseconds": 2446810
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-duplication-with-a-theory"
+      }
+    },
+    {
+      "id": "TP-200",
+      "startMilliseconds": 2446810,
+      "endMilliseconds": 2459410,
+      "kind": "explanation",
+      "text": "The arguments written inside InlineData are the test's input data, taking the shape of an input value and its expected result.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2446810,
+          "endMilliseconds": 2459410
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-duplication-with-a-theory"
+      }
+    },
+    {
+      "id": "TP-201",
+      "startMilliseconds": 2484599,
+      "endMilliseconds": 2494520,
+      "kind": "explanation",
+      "text": "The values written inside InlineData are the input data of the parameterized test, taking the shape of an input value and an expected result.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2484599,
+          "endMilliseconds": 2494520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-duplication-with-a-theory"
+      }
+    },
+    {
+      "id": "TP-202",
+      "startMilliseconds": 2494520,
+      "endMilliseconds": 2503600,
+      "kind": "explanation",
+      "text": "xUnit offers dedicated assertion helpers, where Assert checks that a function's result or a condition holds true.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2494520,
+          "endMilliseconds": 2503600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-duplication-with-a-theory"
+      }
+    },
+    {
+      "id": "TP-203",
+      "startMilliseconds": 2503600,
+      "endMilliseconds": 2510290,
+      "kind": "fact",
+      "text": "In tests you use Assert.Equal taking expected and actual values, which reports a failure when they differ instead of merely running the check.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2503600,
+          "endMilliseconds": 2510290
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-duplication-with-a-theory"
+      }
+    },
+    {
+      "id": "TP-204",
+      "startMilliseconds": 2510290,
+      "endMilliseconds": 2515520,
+      "kind": "scope_boundary",
+      "text": "The original test becomes unnecessary and can be deleted because the parameterized version covers the same cases.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2510290,
+          "endMilliseconds": 2515520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-duplication-with-a-theory"
+      }
+    },
+    {
+      "id": "TP-205",
+      "startMilliseconds": 2515520,
+      "endMilliseconds": 2521520,
+      "kind": "code_change",
+      "text": "The leftover using directives that are no longer needed after switching to the parameterized test are removed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2515520,
+          "endMilliseconds": 2521520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-duplication-with-a-theory"
+      }
+    },
+    {
+      "id": "TP-206",
+      "startMilliseconds": 2521520,
+      "endMilliseconds": 2530190,
+      "kind": "code_change",
+      "text": "Every possible input is listed inside InlineData, covering zero, one, fifteen and all the other values in the table.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2521520,
+          "endMilliseconds": 2530190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inspect-the-nine-data-cases"
+      }
+    },
+    {
+      "id": "TP-207",
+      "startMilliseconds": 2530190,
+      "endMilliseconds": 2542630,
+      "kind": "explanation",
+      "text": "After the project builds, the test explorer shows each InlineData entry as a separate test case, so one method yields many visible tests.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2530190,
+          "endMilliseconds": 2542630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inspect-the-nine-data-cases"
+      }
+    },
+    {
+      "id": "TP-208",
+      "startMilliseconds": 2542630,
+      "endMilliseconds": 2567640,
+      "kind": "explanation",
+      "text": "Seeing nine separate tests confirms that a single parameterized method expands into one discovered test per input set.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2542630,
+          "endMilliseconds": 2567640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inspect-the-nine-data-cases"
+      }
+    },
+    {
+      "id": "TP-209",
+      "startMilliseconds": 2565359,
+      "endMilliseconds": 2572510,
+      "kind": "fact",
+      "text": "The test data lists inputs together with their expected outputs, such as input 0 expecting 0 and input 40 expecting 40, so each case states its own expected result.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2565359,
+          "endMilliseconds": 2572510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inspect-the-nine-data-cases"
+      }
+    },
+    {
+      "id": "TP-210",
+      "startMilliseconds": 2572520,
+      "endMilliseconds": 2581630,
+      "kind": "reason",
+      "text": "Sorting numbers alphabetically is illogical because string order does not match numeric order, so such an ordering can only be accepted by mistake.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2572520,
+          "endMilliseconds": 2581630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inspect-the-nine-data-cases"
+      }
+    },
+    {
+      "id": "TP-211",
+      "startMilliseconds": 2581630,
+      "endMilliseconds": 2590820,
+      "kind": "test_result",
+      "text": "After changing one coefficient in the implementation the test run fails, which shows that the test really checks the behavior under test and is not vacuously passing.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2581630,
+          "endMilliseconds": 2590820
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#change-a-coefficient-to-prove-the-tests-fail"
+      }
+    },
+    {
+      "id": "TP-212",
+      "startMilliseconds": 2612119,
+      "endMilliseconds": 2624150,
+      "kind": "test_result",
+      "text": "Changing only the last coefficient to 8 makes exactly one expectation fail, so you can localize the breakage to the specific input that depends on it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2612119,
+          "endMilliseconds": 2624150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#change-a-coefficient-to-prove-the-tests-fail"
+      }
+    },
+    {
+      "id": "TP-213",
+      "startMilliseconds": 2627590,
+      "endMilliseconds": 2634570,
+      "kind": "explanation",
+      "text": "An integration test is not one isolated function but several systems working together inside a larger component.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2627590,
+          "endMilliseconds": 2634570
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-several-components-together"
+      }
+    },
+    {
+      "id": "TP-214",
+      "startMilliseconds": 2635570,
+      "endMilliseconds": 2642710,
+      "kind": "explanation",
+      "text": "A concrete integration test reads a serialized schedule from a file, rebuilds the schedule object from the parsed representation, converts it back to JSON, and compares the two JSON documents for equivalence.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2635570,
+          "endMilliseconds": 2642710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-several-components-together"
+      }
+    },
+    {
+      "id": "TP-215",
+      "startMilliseconds": 2644030,
+      "endMilliseconds": 2644920,
+      "kind": "scope_boundary",
+      "text": "Integration testing is not limited to checking the interaction results only: you can also test that a whole system made of several components works.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2644030,
+          "endMilliseconds": 2644920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-several-components-together"
+      }
+    },
+    {
+      "id": "TP-216",
+      "startMilliseconds": 2662710,
+      "endMilliseconds": 2670890,
+      "kind": "explanation",
+      "text": "Earlier the expected values for these inputs were produced by running the function by hand, and snapshot testing automates exactly that manual comparison.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2662710,
+          "endMilliseconds": 2670890
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#automate-expected-output-with-snapshots"
+      }
+    },
+    {
+      "id": "TP-217",
+      "startMilliseconds": 2672690,
+      "endMilliseconds": 2680430,
+      "kind": "fact",
+      "text": "With a snapshot test you only provide the input data; on the first run the framework itself produces the output and saves it into a separate file.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2672690,
+          "endMilliseconds": 2680430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#automate-expected-output-with-snapshots"
+      }
+    },
+    {
+      "id": "TP-218",
+      "startMilliseconds": 2681630,
+      "endMilliseconds": 2687620,
+      "kind": "explanation",
+      "text": "The instructor considers snapshot tests the most valuable testing tool available and uses them throughout the project.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2681630,
+          "endMilliseconds": 2687620
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#automate-expected-output-with-snapshots"
+      }
+    },
+    {
+      "id": "TP-219",
+      "startMilliseconds": 2700400,
+      "endMilliseconds": 2718520,
+      "kind": "fact",
+      "text": "Another example is a test for the online journal that checks whether the code correctly parses the HTML it receives.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2700400,
+          "endMilliseconds": 2709680
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2709680,
+          "endMilliseconds": 2718519
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2709680,
+          "endMilliseconds": 2718520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#automate-expected-output-with-snapshots"
+      }
+    },
+    {
+      "id": "TP-220",
+      "startMilliseconds": 2718520,
+      "endMilliseconds": 2729100,
+      "kind": "explanation",
+      "text": "The repository does not contain the expected HTML example: it is created during the first run, and you then inspect whether the produced output looks adequate.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2718520,
+          "endMilliseconds": 2729100
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#automate-expected-output-with-snapshots"
+      }
+    },
+    {
+      "id": "TP-221",
+      "startMilliseconds": 2731119,
+      "endMilliseconds": 2743040,
+      "kind": "fact",
+      "text": "One test loads a lesson page, runs the function that extracts the data, inserts the extracted data into a form, and takes a snapshot of the result.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2731119,
+          "endMilliseconds": 2743040
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#automate-expected-output-with-snapshots"
+      }
+    },
+    {
+      "id": "TP-222",
+      "startMilliseconds": 2746960,
+      "endMilliseconds": 2752840,
+      "kind": "edge_case",
+      "text": "The snapshot file is serialized roughly like JSON but not in a strict JSON form, which keeps it readable while still serving as comparison data.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2746960,
+          "endMilliseconds": 2752840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#automate-expected-output-with-snapshots"
+      }
+    },
+    {
+      "id": "TP-223",
+      "startMilliseconds": 2760470,
+      "endMilliseconds": 2769200,
+      "kind": "explanation",
+      "text": "If what is stored in the snapshot differs from what the code actually produces, running the test reports the difference instead of silently passing.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2760470,
+          "endMilliseconds": 2769200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#review-a-snapshot-difference"
+      }
+    },
+    {
+      "id": "TP-224",
+      "startMilliseconds": 2783240,
+      "endMilliseconds": 2793800,
+      "kind": "test_result",
+      "text": "Running the test opens a window that shows the snapshot mismatch so you can see the concrete difference in the compared lines.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2783240,
+          "endMilliseconds": 2791690
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2783240,
+          "endMilliseconds": 2793800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#review-a-snapshot-difference"
+      }
+    },
+    {
+      "id": "TP-225",
+      "startMilliseconds": 2793790,
+      "endMilliseconds": 2800470,
+      "kind": "test_result",
+      "text": "In the demonstration the code produced 3 while the stored snapshot contained 6, making the regression immediately visible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2793790,
+          "endMilliseconds": 2800470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#review-a-snapshot-difference"
+      }
+    },
+    {
+      "id": "TP-226",
+      "startMilliseconds": 2800670,
+      "endMilliseconds": 2812870,
+      "kind": "explanation",
+      "text": "When snapshots disagree you choose either to accept the new output line as the correct version or to declare the stored snapshot right.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2800670,
+          "endMilliseconds": 2812870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#review-a-snapshot-difference"
+      }
+    },
+    {
+      "id": "TP-227",
+      "startMilliseconds": 2814670,
+      "endMilliseconds": 2822350,
+      "kind": "reason",
+      "text": "If you keep the stored snapshot as correct, you must change the code so it stops producing the wrong result, while if the new output is right you simply re-confirm the snapshot.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2814670,
+          "endMilliseconds": 2822350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#review-a-snapshot-difference"
+      }
+    },
+    {
+      "id": "TP-228",
+      "startMilliseconds": 2823750,
+      "endMilliseconds": 2830780,
+      "kind": "test_result",
+      "text": "After the snapshot is confirmed, the next run of the same test passes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2823750,
+          "endMilliseconds": 2830780
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#review-a-snapshot-difference"
+      }
+    },
+    {
+      "id": "TP-229",
+      "startMilliseconds": 2832070,
+      "endMilliseconds": 2845230,
+      "kind": "fact",
+      "text": "If no snapshot exists at all, the first run reports that there is no such file and creates it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2832070,
+          "endMilliseconds": 2845230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#approve-the-first-snapshot-and-repeat-the-test"
+      }
+    },
+    {
+      "id": "TP-230",
+      "startMilliseconds": 2845630,
+      "endMilliseconds": 2853300,
+      "kind": "fact",
+      "text": "On that first run you review the created snapshot for correctness and confirm it, which becomes the reference for later runs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2845630,
+          "endMilliseconds": 2853300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#approve-the-first-snapshot-and-repeat-the-test"
+      }
+    },
+    {
+      "id": "TP-231",
+      "startMilliseconds": 2853760,
+      "endMilliseconds": 2867319,
+      "kind": "fact",
+      "text": "Every subsequent run compares the current output with the stored snapshot, so identical output passes the test automatically.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2853760,
+          "endMilliseconds": 2867319
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#approve-the-first-snapshot-and-repeat-the-test"
+      }
+    },
+    {
+      "id": "TP-232",
+      "startMilliseconds": 2858319,
+      "endMilliseconds": 2868900,
+      "kind": "test_result",
+      "text": "Repeating a test with unchanged input data and unchanged code produces exactly the same output, which is why approval tests pass and stay stable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2858319,
+          "endMilliseconds": 2868900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#approve-the-first-snapshot-and-repeat-the-test"
+      }
+    },
+    {
+      "id": "TP-233",
+      "startMilliseconds": 2871560,
+      "endMilliseconds": 2884700,
+      "kind": "test_result",
+      "text": "After modifying the input data the re-run test does not show a new variant because the expected value is tied to the input data, so the change must be reflected in the test expectation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2871560,
+          "endMilliseconds": 2884700
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#approve-the-first-snapshot-and-repeat-the-test"
+      }
+    },
+    {
+      "id": "TP-234",
+      "startMilliseconds": 2885460,
+      "endMilliseconds": 2917599,
+      "kind": "explanation",
+      "text": "The same inspection method used on a passing test can be applied to a test whose input data you have changed, letting you see the actual result next to the stored one in the snapshot.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2885460,
+          "endMilliseconds": 2917599
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#approve-the-first-snapshot-and-repeat-the-test"
+      }
+    }
+  ]
+}

@@ -1,0 +1,3373 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "z51K0UhriOk",
+  "uploadId": "z51K0UhriOk",
+  "transcriptSha256": "6e3e94e8323d198c1f569673363347e6295ead5bf27364b3f2132eeca714bf1a",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 280,
+      "endMilliseconds": 23200,
+      "kind": "fact",
+      "text": "In a typical game we hold a player's X/Y coordinates and an enemy's X/Y coordinates, for example the player at (5, 6) and the enemy at (3, 2), and we want to act on them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 280,
+          "endMilliseconds": 23200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#counting-horizontal-and-vertical-steps"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 25190,
+      "endMilliseconds": 30300,
+      "kind": "explanation",
+      "text": "A common use of these coordinates is computing how many grid cells the enemy must traverse to reach the player.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 25190,
+          "endMilliseconds": 30300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#counting-horizontal-and-vertical-steps"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 30470,
+      "endMilliseconds": 46000,
+      "kind": "explanation",
+      "text": "On a grid where the enemy is below-right of the player, the enemy must move two cells up and one cell right, so the answer decomposes into a vertical part and a horizontal part.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 30470,
+          "endMilliseconds": 46000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#counting-horizontal-and-vertical-steps"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 46000,
+      "endMilliseconds": 61000,
+      "kind": "reason",
+      "text": "The total number of cells equals the number of cells along the X axis plus the number of cells along the Y axis, because the path length is the sum of the two axis steps.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 46000,
+          "endMilliseconds": 61000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#counting-horizontal-and-vertical-steps"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 61040,
+      "endMilliseconds": 83800,
+      "kind": "fact",
+      "text": "Coordinates are conventionally written X first and Y second, so in the example the player is at (3, 1) and the enemy at (2, 3).",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 61040,
+          "endMilliseconds": 83800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#counting-horizontal-and-vertical-steps"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 83800,
+      "endMilliseconds": 97240,
+      "kind": "explanation",
+      "text": "To get the X-axis distance we subtract the enemy X from the player X, which here gives 2 - 3 = -1, revealing that a plain subtraction can produce a negative result.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 83800,
+          "endMilliseconds": 97240
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 83840,
+          "endMilliseconds": 97240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#making-each-axis-distance-nonnegative"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 97240,
+      "endMilliseconds": 118830,
+      "kind": "reason",
+      "text": "Because the distance is the same whether the player is left or right of the enemy, the sign of the subtraction must be discarded, so +1 and -1 are equivalent for distance.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 97240,
+          "endMilliseconds": 118830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#making-each-axis-distance-nonnegative"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 118830,
+      "endMilliseconds": 142290,
+      "kind": "fact",
+      "text": "The absolute value operation Math.Abs drops the sign, giving the distance regardless of whether the movement is forward, backward, left, or right.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 118830,
+          "endMilliseconds": 142290
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#making-each-axis-distance-nonnegative"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 142290,
+      "endMilliseconds": 161159,
+      "kind": "explanation",
+      "text": "The full cell distance is computed by taking the X distance in either direction with the sign removed and adding the analogous Y distance, since the enemy may be above or below the player.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 142290,
+          "endMilliseconds": 161159
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#making-each-axis-distance-nonnegative"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 161159,
+      "endMilliseconds": 170040,
+      "kind": "explanation",
+      "text": "The full distance therefore requires finding the X distance and the Y distance separately, and the X distance can be held in its own variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 161159,
+          "endMilliseconds": 165000
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 161159,
+          "endMilliseconds": 170040
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#saving-the-two-distances-and-testing-the-sum"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 165000,
+      "endMilliseconds": 170040,
+      "kind": "code_change",
+      "text": "A separate variable is created for the X distance so the computed value can be stored and reused.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 165000,
+          "endMilliseconds": 170040
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 170040,
+          "endMilliseconds": 170040
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#saving-the-two-distances-and-testing-the-sum"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 170040,
+      "endMilliseconds": 191000,
+      "kind": "code_change",
+      "text": "The example sets the player's X and Y to 1 and the enemy's coordinates to 2 and 3 so the debugger run demonstrates the calculation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 170040,
+          "endMilliseconds": 191000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#saving-the-two-distances-and-testing-the-sum"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 191000,
+      "endMilliseconds": 217000,
+      "kind": "test_result",
+      "text": "With the player at (1, 1) and the enemy at (2, 3), running the program must print a total distance of 1 2 3.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 191000,
+          "endMilliseconds": 217000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#saving-the-two-distances-and-testing-the-sum"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 217000,
+      "endMilliseconds": 240500,
+      "kind": "explanation",
+      "text": "Because execution goes top down, the debugger allocates memory cells in order: xPlayer, then yPlayer, then xEnemy and yEnemy, and finally one temporary cell for the intermediate value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 217000,
+          "endMilliseconds": 240500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluating-an-expression-before-storing-its-value"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 240500,
+      "endMilliseconds": 263320,
+      "kind": "fact",
+      "text": "A mathematical expression is a piece of code that has a value, and a value is what can actually be written into a memory cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 240500,
+          "endMilliseconds": 263320
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 256359,
+          "endMilliseconds": 263320
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluating-an-expression-before-storing-its-value"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 263320,
+      "endMilliseconds": 283000,
+      "kind": "explanation",
+      "text": "After substituting the variables and doing the subtraction, the expression collapses to a concrete number, and that number is the value which can be stored in the memory cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 263320,
+          "endMilliseconds": 283000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluating-an-expression-before-storing-its-value"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 283000,
+      "endMilliseconds": 311000,
+      "kind": "explanation",
+      "text": "The computer cannot call the absolute value function immediately here; it first evaluates the inner subtraction, because a variable name means a lookup in the corresponding memory cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 283000,
+          "endMilliseconds": 311000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluating-an-expression-before-storing-its-value"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 311000,
+      "endMilliseconds": 339240,
+      "kind": "explanation",
+      "text": "Looking up the stored values substitutes them into the expression, so 2 minus 1 replaces the variables and the subtraction is computed on the numbers themselves.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 311000,
+          "endMilliseconds": 339240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluating-an-expression-before-storing-its-value"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 330400,
+      "endMilliseconds": 339230,
+      "kind": "explanation",
+      "text": "The subtraction of 2 minus 1 collapses the two operand cells into a single value of 1, which the interpreter writes into the result cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 330400,
+          "endMilliseconds": 339230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluating-an-expression-before-storing-its-value"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 339240,
+      "endMilliseconds": 350919,
+      "kind": "explanation",
+      "text": "Passing the intermediate -1 through the absolute-value function turns it back into 0, so the subtraction cell finally holds 1.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 339240,
+          "endMilliseconds": 350919
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluating-an-expression-before-storing-its-value"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 350920,
+      "endMilliseconds": 359710,
+      "kind": "explanation",
+      "text": "Because the function returns 0, the same result of 1 is what gets written into the x_dist cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 350920,
+          "endMilliseconds": 359710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluating-an-expression-before-storing-its-value"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 359720,
+      "endMilliseconds": 385790,
+      "kind": "explanation",
+      "text": "The next line allocates a fresh y_dist cell, calls the distance function with the two coordinates and stores its return value 2 into that cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 359720,
+          "endMilliseconds": 385790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluating-an-expression-before-storing-its-value"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 385800,
+      "endMilliseconds": 404230,
+      "kind": "explanation",
+      "text": "Adding x_dist and y_dist gives 3 in the new z cell, and that value is what the program finally prints.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 385800,
+          "endMilliseconds": 404230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluating-an-expression-before-storing-its-value"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 406960,
+      "endMilliseconds": 424479,
+      "kind": "explanation",
+      "text": "With only one enemy in the game the distance computation is written once, but adding a second unit such as a tree forces the same computation to be reproduced for the new pair of coordinates.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 406960,
+          "endMilliseconds": 424479
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#duplicating-the-calculation-for-a-tree"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 413599,
+      "endMilliseconds": 428990,
+      "kind": "code_change",
+      "text": "To support a second pair of coordinates the existing distance code is duplicated, pasted, and its variable names such as x_dist are renamed to x3.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 413599,
+          "endMilliseconds": 428990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#duplicating-the-calculation-for-a-tree"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 429000,
+      "endMilliseconds": 437990,
+      "kind": "fact",
+      "text": "Duplicating the code forces the temporary variables of the two copies to receive different names, because both copies live in the same scope.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 429000,
+          "endMilliseconds": 437990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#duplicating-the-calculation-for-a-tree"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 438000,
+      "endMilliseconds": 452309,
+      "kind": "explanation",
+      "text": "Wrapping each copy in its own block or scope limits visibility, so variables declared inside curly braces can only be used inside those braces.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 438000,
+          "endMilliseconds": 452309
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#giving-each-copy-a-separate-block"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 452319,
+      "endMilliseconds": 472240,
+      "kind": "reason",
+      "text": "Since the second copy's variables are hidden inside its own scope, the same names such as x_dist and y_dist can be reused again without collisions.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 452319,
+          "endMilliseconds": 472240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#giving-each-copy-a-separate-block"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 472250,
+      "endMilliseconds": 475790,
+      "kind": "fact",
+      "text": "The curly braces are what make those variables exist only within the enclosed block.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 472250,
+          "endMilliseconds": 475790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#giving-each-copy-a-separate-block"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 475800,
+      "endMilliseconds": 505919,
+      "kind": "fact",
+      "text": "The speaker will keep drawing the in-scope variables in the step-by-step memory trace even though they are no longer written into the stack diagram.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 475800,
+          "endMilliseconds": 505919
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#giving-each-copy-a-separate-block"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 498000,
+      "endMilliseconds": 512469,
+      "kind": "explanation",
+      "text": "Variables declared inside curly braces exist only until the closing brace of the scope in which they were created.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 498000,
+          "endMilliseconds": 512469
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#block-lifetime-and-reusable-storage"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 512470,
+      "endMilliseconds": 532469,
+      "kind": "explanation",
+      "text": "Opening a brace creates the inner variables as memory cells holding the values assigned at that point, and later code such as the y_dist assignment writes into those cells.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 512470,
+          "endMilliseconds": 532469
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#block-lifetime-and-reusable-storage"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 532470,
+      "endMilliseconds": 554350,
+      "kind": "reason",
+      "text": "When the closing brace is reached the scope's variables stop existing, so the next opening brace has to create brand new variables and new memory cells.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 532470,
+          "endMilliseconds": 554350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#block-lifetime-and-reusable-storage"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 554350,
+      "endMilliseconds": 574000,
+      "kind": "explanation",
+      "text": "Because the previous cells were released, the runtime can hand out the same stack memory again to the new variables, and changing the variable name changes nothing about where the cell is allocated.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 554350,
+          "endMilliseconds": 574000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#block-lifetime-and-reusable-storage"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 574000,
+      "endMilliseconds": 598310,
+      "kind": "explanation",
+      "text": "The cell only looks like it is in the same place because all locals of the function share memory that is allocated once when the function starts, though the compiler may place it anywhere in memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 574000,
+          "endMilliseconds": 598310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#block-lifetime-and-reusable-storage"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 586240,
+      "endMilliseconds": 598310,
+      "kind": "explanation",
+      "text": "Memory for all local variables of a function is allocated once at function start, so every local cell lives in that same preallocated frame.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 586240,
+          "endMilliseconds": 598310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#block-lifetime-and-reusable-storage"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 598320,
+      "endMilliseconds": 616949,
+      "kind": "reason",
+      "text": "A variable declared inside braces cannot be used outside them because it stopped existing when the block ended, so printing x_dist after the block fails.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 598320,
+          "endMilliseconds": 616949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keeping-the-result-outside-the-block"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 616959,
+      "endMilliseconds": 634310,
+      "kind": "explanation",
+      "text": "Declaring the variable before the block and assigning the computed value inside it keeps the variable alive, making it visible after the closing brace as well.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 616959,
+          "endMilliseconds": 634310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keeping-the-result-outside-the-block"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 634320,
+      "endMilliseconds": 644949,
+      "kind": "fact",
+      "text": "Writing int dist; without an initializer creates an uninitialized cell, since the assignment inside the block is what actually gives it a value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 634320,
+          "endMilliseconds": 644949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keeping-the-result-outside-the-block"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 644949,
+      "endMilliseconds": 659870,
+      "kind": "explanation",
+      "text": "The temporary y_dist is computed inside the block from the coordinates and dist receives 3, and because dist was declared outside, it is not deleted when the brace closes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 644949,
+          "endMilliseconds": 659870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keeping-the-result-outside-the-block"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 659870,
+      "endMilliseconds": 672920,
+      "kind": "fact",
+      "text": "A variable declared outside the braces is visible after them while the temporary variables used to compute the distance stay invisible outside the block.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 659870,
+          "endMilliseconds": 672920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keeping-the-result-outside-the-block"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 665279,
+      "endMilliseconds": 676000,
+      "kind": "code_change",
+      "text": "The temporary variables that held the computed coordinates are moved out of the local scope so the block no longer depends on values declared inside it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 665279,
+          "endMilliseconds": 676000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keeping-the-result-outside-the-block"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 677629,
+      "endMilliseconds": 690550,
+      "kind": "code_change",
+      "text": "The variables are renamed to more specific names such as distance-to-enemy, and the same renaming is applied to the tree version, because generic names hide which entity a distance belongs to.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 677629,
+          "endMilliseconds": 690550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keeping-the-result-outside-the-block"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 690560,
+      "endMilliseconds": 699389,
+      "kind": "fact",
+      "text": "After moving the variables outward, running the same code produces the same behaviour, so the refactor is behaviour-preserving.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 690560,
+          "endMilliseconds": 699389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keeping-the-result-outside-the-block"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 699399,
+      "endMilliseconds": 711790,
+      "kind": "explanation",
+      "text": "Declaring the same variable names twice in one scope is impossible, and the fix used earlier in the lesson was to wrap the repeated block in its own scope.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 699399,
+          "endMilliseconds": 711790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finding-the-common-operation-and-correcting-the-inputs"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 711800,
+      "endMilliseconds": 721470,
+      "kind": "explanation",
+      "text": "The next problem in the file is that the very same block of distance code is written out more than once.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 711800,
+          "endMilliseconds": 721470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finding-the-common-operation-and-correcting-the-inputs"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 721470,
+      "endMilliseconds": 731600,
+      "kind": "reason",
+      "text": "The duplicated copies differ only in the variable names they assign to and in the parameters they use, which is what makes them candidates for one shared function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 721470,
+          "endMilliseconds": 731600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finding-the-common-operation-and-correcting-the-inputs"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 731600,
+      "endMilliseconds": 740990,
+      "kind": "explanation",
+      "text": "One copy works with the player and enemy positions while the other works with the tree and player positions, so the only real difference is which pair of objects is measured.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 731600,
+          "endMilliseconds": 740990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finding-the-common-operation-and-correcting-the-inputs"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 740990,
+      "endMilliseconds": 761000,
+      "kind": "correction",
+      "text": "The tree-to-enemy distance must be computed from the enemy X and Y coordinates rather than the player ones, so the earlier assumption about which position is used is corrected here.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 740990,
+          "endMilliseconds": 761000
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 750000,
+          "endMilliseconds": 761000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finding-the-common-operation-and-correcting-the-inputs"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 759710,
+      "endMilliseconds": 781430,
+      "kind": "explanation",
+      "text": "The repeated blocks are now to be replaced by a function whose parameters change on every call, which is how one piece of code can serve several different measurements.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 759710,
+          "endMilliseconds": 781430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finding-the-common-operation-and-correcting-the-inputs"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 761000,
+      "endMilliseconds": 767350,
+      "kind": "explanation",
+      "text": "Concretely the arguments are the enemy X position and the tree position, not the player Y position, which pins down which coordinate belongs to which object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 761000,
+          "endMilliseconds": 767350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finding-the-common-operation-and-correcting-the-inputs"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 782430,
+      "endMilliseconds": 799590,
+      "kind": "explanation",
+      "text": "A function can be given the player position and the enemy position, or the player position and the tree position, or the tree and enemy positions, and whichever position is passed becomes the one that varies per call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 782430,
+          "endMilliseconds": 799590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finding-the-common-operation-and-correcting-the-inputs"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 799600,
+      "endMilliseconds": 813590,
+      "kind": "fact",
+      "text": "Besides parameters a function also has a return value, so it can be used as an expression that holds a value after the function has run.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 799600,
+          "endMilliseconds": 813590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#defining-inputs-and-a-returned-result"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 813600,
+      "endMilliseconds": 840509,
+      "kind": "explanation",
+      "text": "The result of a function call can be assigned to a variable, so calling the distance function with information about which positions to measure returns the distance value to the caller.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 813600,
+          "endMilliseconds": 840509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#defining-inputs-and-a-returned-result"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 838040,
+      "endMilliseconds": 854880,
+      "kind": "explanation",
+      "text": "The keyword static is written before the return type so that the function cannot see the local variables created before it and depends only on its own parameters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 838040,
+          "endMilliseconds": 854880
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 849079,
+          "endMilliseconds": 854880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#defining-inputs-and-a-returned-result"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 854880,
+      "endMilliseconds": 866430,
+      "kind": "reason",
+      "text": "Adding static to every method is a cheap habit that can shield the code from errors caused by accidentally touching surrounding local variables.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 854880,
+          "endMilliseconds": 866430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#defining-inputs-and-a-returned-result"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 864430,
+      "endMilliseconds": 879350,
+      "kind": "fact",
+      "text": "The return type declares the type of the result the function hands back once its instructions have run.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 864430,
+          "endMilliseconds": 879350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#defining-inputs-and-a-returned-result"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 879360,
+      "endMilliseconds": 891069,
+      "kind": "reason",
+      "text": "int is chosen as the return type here because the value the distance function gives back is a plain distance number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 879360,
+          "endMilliseconds": 891069
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#defining-inputs-and-a-returned-result"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 891069,
+      "endMilliseconds": 903710,
+      "kind": "explanation",
+      "text": "After the return type comes the function name, written the same way as before, followed by the parameter list in parentheses.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 891069,
+          "endMilliseconds": 903710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#defining-inputs-and-a-returned-result"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 903720,
+      "endMilliseconds": 918509,
+      "kind": "fact",
+      "text": "The distance function takes four parameters: the X and Y position of the first object and the X and Y position of the second object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 903720,
+          "endMilliseconds": 918509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#defining-inputs-and-a-returned-result"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 918509,
+      "endMilliseconds": 924150,
+      "kind": "explanation",
+      "text": "These four coordinates are the complete set of inputs the distance function depends on, which is why they must all appear as parameters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 918509,
+          "endMilliseconds": 924150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#defining-inputs-and-a-returned-result"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 920949,
+      "endMilliseconds": 936560,
+      "kind": "code_change",
+      "text": "The previously duplicated distance code can now be moved inside the single distance function, replacing the inline arithmetic with a shared implementation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 920949,
+          "endMilliseconds": 936560
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 924160,
+          "endMilliseconds": 936560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replacing-both-blocks-with-calls"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 931519,
+      "endMilliseconds": 940309,
+      "kind": "code_change",
+      "text": "Inside the function the distance is assembled from an X-distance term computed as the difference of the two objects X coordinates and a Y-distance term from their Y coordinates.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 931519,
+          "endMilliseconds": 940309
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replacing-both-blocks-with-calls"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 940319,
+      "endMilliseconds": 948389,
+      "kind": "fact",
+      "text": "The return keyword marks the expression written after it as the value the function produces for its caller.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 940319,
+          "endMilliseconds": 948389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replacing-both-blocks-with-calls"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 948389,
+      "endMilliseconds": 951710,
+      "kind": "explanation",
+      "text": "A later use of the same return keyword should be understandable by analogy with this first one, which is why the instructor announces it instead of re-explaining it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 948389,
+          "endMilliseconds": 951710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replacing-both-blocks-with-calls"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 951720,
+      "endMilliseconds": 965949,
+      "kind": "code_change",
+      "text": "To measure the distance between the enemy and the player the enemy is declared the first entity, so the enemy X position is passed as the first parameter and its Y as the second.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 951720,
+          "endMilliseconds": 965949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replacing-both-blocks-with-calls"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 965959,
+      "endMilliseconds": 980279,
+      "kind": "code_change",
+      "text": "The third parameter carries the X position of the second object and the fourth carries its Y position, completing the four coordinates the function needs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 965959,
+          "endMilliseconds": 980279
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replacing-both-blocks-with-calls"
+      }
+    },
+    {
+      "id": "TP-068",
+      "startMilliseconds": 978000,
+      "endMilliseconds": 993269,
+      "kind": "explanation",
+      "text": "After the move the function call is equivalent to the earlier inline block, so behaviour is preserved while the duplication is gone.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 978000,
+          "endMilliseconds": 993269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replacing-both-blocks-with-calls"
+      }
+    },
+    {
+      "id": "TP-069",
+      "startMilliseconds": 993279,
+      "endMilliseconds": 1003150,
+      "kind": "code_change",
+      "text": "The same function can now be reused to measure the distance from the enemy to the tree, simply by passing the tree coordinates where the player coordinates used to go.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 993279,
+          "endMilliseconds": 1003150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replacing-both-blocks-with-calls"
+      }
+    },
+    {
+      "id": "TP-070",
+      "startMilliseconds": 1003160,
+      "endMilliseconds": 1020800,
+      "kind": "explanation",
+      "text": "In this example again no dynamic memory is used, because static methods are not allowed to access non-static members.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1003160,
+          "endMilliseconds": 1020800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#building-a-function-call-frame"
+      }
+    },
+    {
+      "id": "TP-071",
+      "startMilliseconds": 1016079,
+      "endMilliseconds": 1019590,
+      "kind": "fact",
+      "text": "In this example no dynamic (heap) memory is used at all, only the temporary stack memory holds the working data.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1016079,
+          "endMilliseconds": 1019590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#building-a-function-call-frame"
+      }
+    },
+    {
+      "id": "TP-072",
+      "startMilliseconds": 1020300,
+      "endMilliseconds": 1024540,
+      "kind": "explanation",
+      "text": "The local variables are only highlighted for illustration and are deliberately left unused, keeping the trace focused on the function call mechanics.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1020300,
+          "endMilliseconds": 1024540
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#building-a-function-call-frame"
+      }
+    },
+    {
+      "id": "TP-073",
+      "startMilliseconds": 1025500,
+      "endMilliseconds": 1027940,
+      "kind": "explanation",
+      "text": "When the first instruction executes, a cell for the local variable is allocated and default-initialized, so the cell exists even before the value is assigned.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1025500,
+          "endMilliseconds": 1027940
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#building-a-function-call-frame"
+      }
+    },
+    {
+      "id": "TP-074",
+      "startMilliseconds": 1027940,
+      "endMilliseconds": 1038540,
+      "kind": "reason",
+      "text": "Before control enters the callee function, cells must already be created in the temporary memory for that function's parameters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1027940,
+          "endMilliseconds": 1038540
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#building-a-function-call-frame"
+      }
+    },
+    {
+      "id": "TP-075",
+      "startMilliseconds": 1038540,
+      "endMilliseconds": 1047470,
+      "kind": "explanation",
+      "text": "The actual arguments given at the call site are copied by position into those parameter cells, turning the parameters into ordinary local variables of the new stack frame.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1038540,
+          "endMilliseconds": 1047470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#building-a-function-call-frame"
+      }
+    },
+    {
+      "id": "TP-076",
+      "startMilliseconds": 1047470,
+      "endMilliseconds": 1055680,
+      "kind": "explanation",
+      "text": "The first argument is read from x1 and stored in the first parameter cell, and the second argument is stored in the second parameter cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1047470,
+          "endMilliseconds": 1055680
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#building-a-function-call-frame"
+      }
+    },
+    {
+      "id": "TP-077",
+      "startMilliseconds": 1056800,
+      "endMilliseconds": 1098480,
+      "kind": "fact",
+      "text": "The third parameter of the called function receives the value 1 passed from the call site, so both frames show the same one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1056800,
+          "endMilliseconds": 1098480
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1087880,
+          "endMilliseconds": 1098480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#building-a-function-call-frame"
+      }
+    },
+    {
+      "id": "TP-078",
+      "startMilliseconds": 1098480,
+      "endMilliseconds": 1103230,
+      "kind": "explanation",
+      "text": "Once the parameters are bound, execution continues with the first instruction of the called function's body.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1098480,
+          "endMilliseconds": 1103230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#building-a-function-call-frame"
+      }
+    },
+    {
+      "id": "TP-079",
+      "startMilliseconds": 1103230,
+      "endMilliseconds": 1112030,
+      "kind": "explanation",
+      "text": "The call allocates a cell for the local variable dist and computes it as the absolute difference of the first two parameters, |2 - 1| = 1.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1103230,
+          "endMilliseconds": 1112030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#building-a-function-call-frame"
+      }
+    },
+    {
+      "id": "TP-080",
+      "startMilliseconds": 1112030,
+      "endMilliseconds": 1123180,
+      "kind": "explanation",
+      "text": "The value 1 is written into the dist cell, and a new cell for yd is computed as |3 - 1| = 2 from the second pair of parameters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1112030,
+          "endMilliseconds": 1123180
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#building-a-function-call-frame"
+      }
+    },
+    {
+      "id": "TP-081",
+      "startMilliseconds": 1123180,
+      "endMilliseconds": 1132870,
+      "kind": "explanation",
+      "text": "A further cell with no meaningful name is allocated to hold the sum, showing that intermediate results also occupy temporary memory cells.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1123180,
+          "endMilliseconds": 1132870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#building-a-function-call-frame"
+      }
+    },
+    {
+      "id": "TP-082",
+      "startMilliseconds": 1132870,
+      "endMilliseconds": 1144770,
+      "kind": "explanation",
+      "text": "Tracing the instructions strictly top to bottom makes it clear which cells the function created before it finishes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1132870,
+          "endMilliseconds": 1144770
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#building-a-function-call-frame"
+      }
+    },
+    {
+      "id": "TP-083",
+      "startMilliseconds": 1146900,
+      "endMilliseconds": 1166679,
+      "kind": "explanation",
+      "text": "Return stops the function's execution, so subsequent program execution resumes back at the place where the function was called.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1146900,
+          "endMilliseconds": 1166679
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#returning-a-value-to-the-caller"
+      }
+    },
+    {
+      "id": "TP-084",
+      "startMilliseconds": 1173120,
+      "endMilliseconds": 1186070,
+      "kind": "explanation",
+      "text": "After a function returns, program execution continues with the instruction following the call, as with a parameterless call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1173120,
+          "endMilliseconds": 1186070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#returning-a-value-to-the-caller"
+      }
+    },
+    {
+      "id": "TP-085",
+      "startMilliseconds": 1187690,
+      "endMilliseconds": 1199590,
+      "kind": "fact",
+      "text": "An assignment copies the value from the right-hand side into the variable named on the left.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1187690,
+          "endMilliseconds": 1199590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#returning-a-value-to-the-caller"
+      }
+    },
+    {
+      "id": "TP-086",
+      "startMilliseconds": 1199590,
+      "endMilliseconds": 1208750,
+      "kind": "explanation",
+      "text": "The returned expression reads the value3 out of the dist cell, so that is what the call expression produces.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1199590,
+          "endMilliseconds": 1208750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#returning-a-value-to-the-caller"
+      }
+    },
+    {
+      "id": "TP-087",
+      "startMilliseconds": 1208750,
+      "endMilliseconds": 1216310,
+      "kind": "explanation",
+      "text": "Because the value is produced at the call site, it lands in the cell of the variable where the call was made.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1208750,
+          "endMilliseconds": 1216310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#returning-a-value-to-the-caller"
+      }
+    },
+    {
+      "id": "TP-088",
+      "startMilliseconds": 1225000,
+      "endMilliseconds": 1232470,
+      "kind": "explanation",
+      "text": "Return can be read as the whole function call carrying a value, which is copied back into the calling local variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1225000,
+          "endMilliseconds": 1232470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#returning-a-value-to-the-caller"
+      }
+    },
+    {
+      "id": "TP-089",
+      "startMilliseconds": 1244720,
+      "endMilliseconds": 1252310,
+      "kind": "explanation",
+      "text": "Once the function has finished executing, the program continues with the next line after the function body.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1244720,
+          "endMilliseconds": 1252310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#returning-a-value-to-the-caller"
+      }
+    },
+    {
+      "id": "TP-090",
+      "startMilliseconds": 1252310,
+      "endMilliseconds": 1266120,
+      "kind": "fact",
+      "text": "When the function ends, all of its local variables and parameters cease to exist along with their stack frame.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1252310,
+          "endMilliseconds": 1266120
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1258880,
+          "endMilliseconds": 1266120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#returning-a-value-to-the-caller"
+      }
+    },
+    {
+      "id": "TP-091",
+      "startMilliseconds": 1263120,
+      "endMilliseconds": 1267920,
+      "kind": "explanation",
+      "text": "Parameter and local cells created only for that call disappear, so no access to them is possible after the call returns.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1263120,
+          "endMilliseconds": 1267920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#returning-a-value-to-the-caller"
+      }
+    },
+    {
+      "id": "TP-092",
+      "startMilliseconds": 1267920,
+      "endMilliseconds": 1274070,
+      "kind": "edge_case",
+      "text": "Variables from the calling scope such as x1 and y1 remain accessible because they existed before the call, unlike the callee's temporary data.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1267920,
+          "endMilliseconds": 1274070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#returning-a-value-to-the-caller"
+      }
+    },
+    {
+      "id": "TP-093",
+      "startMilliseconds": 1274070,
+      "endMilliseconds": 1279640,
+      "kind": "explanation",
+      "text": "Execution proceeds to the next line, which prints the value now stored in the result variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1274070,
+          "endMilliseconds": 1279640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#returning-a-value-to-the-caller"
+      }
+    },
+    {
+      "id": "TP-094",
+      "startMilliseconds": 1279640,
+      "endMilliseconds": 1284640,
+      "kind": "fact",
+      "text": "A newly declared variable first gets an uninitialized memory cell: the cell exists before any value is copied in.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1279640,
+          "endMilliseconds": 1284640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calling-again-and-checking-both-outputs"
+      }
+    },
+    {
+      "id": "TP-095",
+      "startMilliseconds": 1284640,
+      "endMilliseconds": 1294830,
+      "kind": "explanation",
+      "text": "The value is then copied from the old cells into the new local variable's cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1284640,
+          "endMilliseconds": 1294830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calling-again-and-checking-both-outputs"
+      }
+    },
+    {
+      "id": "TP-096",
+      "startMilliseconds": 1294830,
+      "endMilliseconds": 1302560,
+      "kind": "explanation",
+      "text": "The copied values are xd = 2, yd = 3 and id = 1, one for each parameter cell of the new call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1294830,
+          "endMilliseconds": 1302560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calling-again-and-checking-both-outputs"
+      }
+    },
+    {
+      "id": "TP-097",
+      "startMilliseconds": 1302560,
+      "endMilliseconds": 1339679,
+      "kind": "explanation",
+      "text": "Finally the value from the dist cell is written into the target variable at the call site, completing the return transfer.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1302560,
+          "endMilliseconds": 1339679
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calling-again-and-checking-both-outputs"
+      }
+    },
+    {
+      "id": "TP-098",
+      "startMilliseconds": 1326360,
+      "endMilliseconds": 1345000,
+      "kind": "explanation",
+      "text": "The function writes its computed distance into the out parameter it was given, so the caller receives the result through that variable rather than a return value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1326360,
+          "endMilliseconds": 1345000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calling-again-and-checking-both-outputs"
+      }
+    },
+    {
+      "id": "TP-099",
+      "startMilliseconds": 1345000,
+      "endMilliseconds": 1352000,
+      "kind": "reason",
+      "text": "Once the function finishes, all of its local variables are forgotten, so only the value assigned to the out parameter survives for the caller.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1345000,
+          "endMilliseconds": 1352000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calling-again-and-checking-both-outputs"
+      }
+    },
+    {
+      "id": "TP-100",
+      "startMilliseconds": 1352000,
+      "endMilliseconds": 1369900,
+      "kind": "test_result",
+      "text": "Running the program after the distance is assigned prints both X and Y values, 3 and 5, confirming the out parameter received the computed value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1352000,
+          "endMilliseconds": 1369900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calling-again-and-checking-both-outputs"
+      }
+    },
+    {
+      "id": "TP-101",
+      "startMilliseconds": 1369900,
+      "endMilliseconds": 1402000,
+      "kind": "reason",
+      "text": "Because the call site must pass the X and Y of the same object next to each other, accidentally swapping or misordering the arguments silently produces a wrong result because the parameter order is not self-evident.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1369900,
+          "endMilliseconds": 1402000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-four-integers-invite-mistakes"
+      }
+    },
+    {
+      "id": "TP-102",
+      "startMilliseconds": 1402000,
+      "endMilliseconds": 1414000,
+      "kind": "reason",
+      "text": "Grouping the two coordinates into a single value is the safer design because it removes the chance of passing them in the wrong order.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1402000,
+          "endMilliseconds": 1414000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-four-integers-invite-mistakes"
+      }
+    },
+    {
+      "id": "TP-103",
+      "startMilliseconds": 1404240,
+      "endMilliseconds": 1425000,
+      "kind": "explanation",
+      "text": "To carry X and Y of each object as one unit, a small position structure is needed, and how it is defined will be explained next.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1404240,
+          "endMilliseconds": 1425000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-four-integers-invite-mistakes"
+      }
+    },
+    {
+      "id": "TP-104",
+      "startMilliseconds": 1425000,
+      "endMilliseconds": 1448000,
+      "kind": "fact",
+      "text": "A struct is a value type, so its contents live directly in the memory of the variable instead of on the dynamic heap.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1425000,
+          "endMilliseconds": 1448000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#creating-a-position-value-with-fields"
+      }
+    },
+    {
+      "id": "TP-105",
+      "startMilliseconds": 1448000,
+      "endMilliseconds": 1465000,
+      "kind": "explanation",
+      "text": "The Position struct is used as the variable type in place of a bare int, so it combines two separate coordinates into a single value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1448000,
+          "endMilliseconds": 1465000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#creating-a-position-value-with-fields"
+      }
+    },
+    {
+      "id": "TP-106",
+      "startMilliseconds": 1465000,
+      "endMilliseconds": 1480000,
+      "kind": "fact",
+      "text": "The struct declaration must sit at the end of the file because the project currently compiles a single file and finds no type defined elsewhere.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1465000,
+          "endMilliseconds": 1480000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#creating-a-position-value-with-fields"
+      }
+    },
+    {
+      "id": "TP-107",
+      "startMilliseconds": 1480000,
+      "endMilliseconds": 1502159,
+      "kind": "code_change",
+      "text": "A variable of the new type is created with new Position { X = 2, Y = 3 }, which initializes both coordinates in one statement.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1480000,
+          "endMilliseconds": 1502159
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1488039,
+          "endMilliseconds": 1502159
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#creating-a-position-value-with-fields"
+      }
+    },
+    {
+      "id": "TP-108",
+      "startMilliseconds": 1502159,
+      "endMilliseconds": 1527000,
+      "kind": "explanation",
+      "text": "Declaring a variable of a multi-field struct type allocates one larger cell for the whole value, inside which two smaller cells sit for the individual coordinates.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1502159,
+          "endMilliseconds": 1527000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#creating-a-position-value-with-fields"
+      }
+    },
+    {
+      "id": "TP-109",
+      "startMilliseconds": 1527000,
+      "endMilliseconds": 1555000,
+      "kind": "fact",
+      "text": "The names of the inner variables of a struct are called fields, and the whole memory block is reached through the variable name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1527000,
+          "endMilliseconds": 1555000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#creating-a-position-value-with-fields"
+      }
+    },
+    {
+      "id": "TP-110",
+      "startMilliseconds": 1555000,
+      "endMilliseconds": 1575000,
+      "kind": "fact",
+      "text": "Individual fields are addressed with the dot operator after the variable name, so player.X refers to the X field of the player variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1555000,
+          "endMilliseconds": 1575000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#creating-a-position-value-with-fields"
+      }
+    },
+    {
+      "id": "TP-111",
+      "startMilliseconds": 1575000,
+      "endMilliseconds": 1603000,
+      "kind": "code_change",
+      "text": "Assigning a new variable from the player's Y field copies the stored value out of the struct into a separate cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1575000,
+          "endMilliseconds": 1593399
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1582640,
+          "endMilliseconds": 1603000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-changing-and-separating-position-fields"
+      }
+    },
+    {
+      "id": "TP-112",
+      "startMilliseconds": 1603000,
+      "endMilliseconds": 1621000,
+      "kind": "fact",
+      "text": "Struct fields can be overwritten after creation, so writing player.Y = 7 replaces the previously stored Y value in place.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1603000,
+          "endMilliseconds": 1621000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-changing-and-separating-position-fields"
+      }
+    },
+    {
+      "id": "TP-113",
+      "startMilliseconds": 1621000,
+      "endMilliseconds": 1635000,
+      "kind": "explanation",
+      "text": "The Position type can be used repeatedly, so a second independent position such as enemy is created with its own X and Y initialization.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1621000,
+          "endMilliseconds": 1635000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-changing-and-separating-position-fields"
+      }
+    },
+    {
+      "id": "TP-114",
+      "startMilliseconds": 1635000,
+      "endMilliseconds": 1652000,
+      "kind": "explanation",
+      "text": "Two variables declared with the Position type allocate two cells for each one, four cells in total, because struct allocation works exactly like allocating its base field types.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1635000,
+          "endMilliseconds": 1652000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-changing-and-separating-position-fields"
+      }
+    },
+    {
+      "id": "TP-115",
+      "startMilliseconds": 1652000,
+      "endMilliseconds": 1678440,
+      "kind": "explanation",
+      "text": "Each struct variable occupies its own separate memory location, so the two position values live in different places and can be changed independently.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1652000,
+          "endMilliseconds": 1678440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-changing-and-separating-position-fields"
+      }
+    },
+    {
+      "id": "TP-116",
+      "startMilliseconds": 1665440,
+      "endMilliseconds": 1668920,
+      "kind": "explanation",
+      "text": "Wrapping x and y in one Position type means their memory becomes one single block instead of two separate cells.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1665440,
+          "endMilliseconds": 1668920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-changing-and-separating-position-fields"
+      }
+    },
+    {
+      "id": "TP-117",
+      "startMilliseconds": 1670640,
+      "endMilliseconds": 1674520,
+      "kind": "fact",
+      "text": "Inside that block each field is named as the variable name, a dot, and the field name, so the values appear as position.X and position.Y in memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1670640,
+          "endMilliseconds": 1674520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-changing-and-separating-position-fields"
+      }
+    },
+    {
+      "id": "TP-118",
+      "startMilliseconds": 1690320,
+      "endMilliseconds": 1694180,
+      "kind": "scope_boundary",
+      "text": "At this stage only the fields are grouped; the function parameters are still passed as separate x and y arguments.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1690320,
+          "endMilliseconds": 1694180
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-changing-and-separating-position-fields"
+      }
+    },
+    {
+      "id": "TP-119",
+      "startMilliseconds": 1694640,
+      "endMilliseconds": 1697980,
+      "kind": "code_change",
+      "text": "The next step is to group the parameters too by replacing the int type with the new Position type in the signature.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1694640,
+          "endMilliseconds": 1697980
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "d5af1fb372be56a453e3b139990013c28e50198c",
+          "path": "examples/property_dict/Subclassing.cs"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#grouping-the-parameters-too"
+      }
+    },
+    {
+      "id": "TP-120",
+      "startMilliseconds": 1698180,
+      "endMilliseconds": 1701390,
+      "kind": "explanation",
+      "text": "Because the parameter is now one Position object, it is a single value that contains both the X and the Y field instead of a lone int.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1698180,
+          "endMilliseconds": 1701390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#grouping-the-parameters-too"
+      }
+    },
+    {
+      "id": "TP-121",
+      "startMilliseconds": 1704820,
+      "endMilliseconds": 1709990,
+      "kind": "explanation",
+      "text": "Now the caller passes one whole Position object as the argument instead of sending x and y one by one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1704820,
+          "endMilliseconds": 1709990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#grouping-the-parameters-too"
+      }
+    },
+    {
+      "id": "TP-122",
+      "startMilliseconds": 1769360,
+      "endMilliseconds": 1774600,
+      "kind": "explanation",
+      "text": "Passing a parameter allocates a memory cell for it, which is why each argument previously received its own cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1769360,
+          "endMilliseconds": 1774600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-whole-position-into-a-parameter"
+      }
+    },
+    {
+      "id": "TP-123",
+      "startMilliseconds": 1774600,
+      "endMilliseconds": 1781509,
+      "kind": "edge_case",
+      "text": "A single parameter that is a Position needs two cells because it stores both the X and the Y coordinate.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1774600,
+          "endMilliseconds": 1781509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-whole-position-into-a-parameter"
+      }
+    },
+    {
+      "id": "TP-124",
+      "startMilliseconds": 1781509,
+      "endMilliseconds": 1786609,
+      "kind": "explanation",
+      "text": "The runtime allocates one larger cell for the whole object, and the coordinates live inside it as sub-cells.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1781509,
+          "endMilliseconds": 1786609
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-whole-position-into-a-parameter"
+      }
+    },
+    {
+      "id": "TP-125",
+      "startMilliseconds": 1786609,
+      "endMilliseconds": 1792990,
+      "kind": "fact",
+      "text": "The sub-cells get composite names such as a.X and a.Y, and the same naming happens for parameter b.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1786609,
+          "endMilliseconds": 1792990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-whole-position-into-a-parameter"
+      }
+    },
+    {
+      "id": "TP-126",
+      "startMilliseconds": 1792990,
+      "endMilliseconds": 1799550,
+      "kind": "fact",
+      "text": "An int parameter occupies exactly one cell, so the extra space is not caused by the parameter list but by the object type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1792990,
+          "endMilliseconds": 1799550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-whole-position-into-a-parameter"
+      }
+    },
+    {
+      "id": "TP-127",
+      "startMilliseconds": 1799550,
+      "endMilliseconds": 1806630,
+      "kind": "explanation",
+      "text": "A Position occupies two cells because every position has an X and a Y, with the first cell holding X and the second holding Y.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1799550,
+          "endMilliseconds": 1806630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-whole-position-into-a-parameter"
+      }
+    },
+    {
+      "id": "TP-128",
+      "startMilliseconds": 1806630,
+      "endMilliseconds": 1813120,
+      "kind": "code_change",
+      "text": "The new object parameter is initialized with X equal to 2 and Y equal to 3.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1806630,
+          "endMilliseconds": 1813120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-whole-position-into-a-parameter"
+      }
+    },
+    {
+      "id": "TP-129",
+      "startMilliseconds": 1813120,
+      "endMilliseconds": 1821110,
+      "kind": "fact",
+      "text": "The player argument is still a plain int and remains initialized to 1, so it keeps its single-cell layout.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1813120,
+          "endMilliseconds": 1821110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-whole-position-into-a-parameter"
+      }
+    },
+    {
+      "id": "TP-130",
+      "startMilliseconds": 1827120,
+      "endMilliseconds": 1833550,
+      "kind": "reason",
+      "text": "The int cells are single because their type is not Position, unlike the coordinate parameters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1827120,
+          "endMilliseconds": 1833550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-whole-position-into-a-parameter"
+      }
+    },
+    {
+      "id": "TP-131",
+      "startMilliseconds": 1833550,
+      "endMilliseconds": 1845440,
+      "kind": "reason",
+      "text": "The coordinate parameters take two cells each because their declared type is Position, and if the type were int only one cell would be allocated.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1833550,
+          "endMilliseconds": 1845440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-whole-position-into-a-parameter"
+      }
+    },
+    {
+      "id": "TP-132",
+      "startMilliseconds": 1845440,
+      "endMilliseconds": 1849750,
+      "kind": "reason",
+      "text": "The first cell is left uninitialized first and only then the two cells for the position are filled.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1845440,
+          "endMilliseconds": 1849750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-whole-position-into-a-parameter"
+      }
+    },
+    {
+      "id": "TP-133",
+      "startMilliseconds": 1849750,
+      "endMilliseconds": 1858320,
+      "kind": "explanation",
+      "text": "Two cells are allocated per position parameter, one for a.X and one for a.Y, and the caller's values are copied into them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1849750,
+          "endMilliseconds": 1858320
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-whole-position-into-a-parameter"
+      }
+    },
+    {
+      "id": "TP-134",
+      "startMilliseconds": 1858320,
+      "endMilliseconds": 1865310,
+      "kind": "fact",
+      "text": "When a matches the argument, a.X equals the caller's X and a.Y equals the caller's Y, because the fields received their values.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1858320,
+          "endMilliseconds": 1865310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-whole-position-into-a-parameter"
+      }
+    },
+    {
+      "id": "TP-135",
+      "startMilliseconds": 1865310,
+      "endMilliseconds": 1881880,
+      "kind": "explanation",
+      "text": "The entire memory block of the object is copied as a single whole into the parameter's memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1865310,
+          "endMilliseconds": 1881880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-whole-position-into-a-parameter"
+      }
+    },
+    {
+      "id": "TP-136",
+      "startMilliseconds": 1881880,
+      "endMilliseconds": 1890390,
+      "kind": "explanation",
+      "text": "Copying the whole block means every field is copied separately into the next cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1881880,
+          "endMilliseconds": 1890390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-whole-position-into-a-parameter"
+      }
+    },
+    {
+      "id": "TP-137",
+      "startMilliseconds": 1890390,
+      "endMilliseconds": 1897590,
+      "kind": "fact",
+      "text": "The next cell, the player one, receives the value 1 because the player's cell is copied the same way.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1890390,
+          "endMilliseconds": 1897590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-whole-position-into-a-parameter"
+      }
+    },
+    {
+      "id": "TP-138",
+      "startMilliseconds": 1897590,
+      "endMilliseconds": 1903550,
+      "kind": "explanation",
+      "text": "A temporary variable for the X distance is allocated and assigned the mathematical expression a.X minus b.X.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1897590,
+          "endMilliseconds": 1903550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#computing-and-returning-the-grouped-distance"
+      }
+    },
+    {
+      "id": "TP-139",
+      "startMilliseconds": 1903550,
+      "endMilliseconds": 1911100,
+      "kind": "fact",
+      "text": "With a.X equal to 2 and b.X equal to 1, the X difference evaluates to 1.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1903550,
+          "endMilliseconds": 1911100
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#computing-and-returning-the-grouped-distance"
+      }
+    },
+    {
+      "id": "TP-140",
+      "startMilliseconds": 1911100,
+      "endMilliseconds": 1918300,
+      "kind": "fact",
+      "text": "With a.Y equal to 3 and b.Y equal to 3, the Y difference evaluates to 2.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1911100,
+          "endMilliseconds": 1918300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#computing-and-returning-the-grouped-distance"
+      }
+    },
+    {
+      "id": "TP-141",
+      "startMilliseconds": 1923070,
+      "endMilliseconds": 1930140,
+      "kind": "explanation",
+      "text": "A new variable receives the sum of the two computed differences, so 1 plus 2 produces 3.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1923070,
+          "endMilliseconds": 1930140
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#computing-and-returning-the-grouped-distance"
+      }
+    },
+    {
+      "id": "TP-142",
+      "startMilliseconds": 1930140,
+      "endMilliseconds": 1934990,
+      "kind": "fact",
+      "text": "The result is written into the caller's variable and all the temporary cells are deleted, leaving only the value 3.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1930140,
+          "endMilliseconds": 1934990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#computing-and-returning-the-grouped-distance"
+      }
+    },
+    {
+      "id": "TP-143",
+      "startMilliseconds": 1934600,
+      "endMilliseconds": 1939370,
+      "kind": "fact",
+      "text": "Only the returned distance remains in the local variable that was declared for the result.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1934600,
+          "endMilliseconds": 1939370
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#computing-and-returning-the-grouped-distance"
+      }
+    },
+    {
+      "id": "TP-144",
+      "startMilliseconds": 1934990,
+      "endMilliseconds": 1941159,
+      "kind": "explanation",
+      "text": "After the call returns, only the distance value remains in the local variable that was used for the result.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1934990,
+          "endMilliseconds": 1941159
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#computing-and-returning-the-grouped-distance"
+      }
+    },
+    {
+      "id": "TP-145",
+      "startMilliseconds": 1939370,
+      "endMilliseconds": 1945650,
+      "kind": "explanation",
+      "text": "Program execution resumes on the line after the function call, using the returned value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1939370,
+          "endMilliseconds": 1945650
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#computing-and-returning-the-grouped-distance"
+      }
+    },
+    {
+      "id": "TP-146",
+      "startMilliseconds": 1949510,
+      "endMilliseconds": 1953500,
+      "kind": "explanation",
+      "text": "To answer whether assigning a.X equal to 5 affects the caller, the lesson walks through memory step by step again.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1949510,
+          "endMilliseconds": 1953500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#changing-a-struct-parameter-changes-its-copy"
+      }
+    },
+    {
+      "id": "TP-147",
+      "startMilliseconds": 1953500,
+      "endMilliseconds": 1959590,
+      "kind": "explanation",
+      "text": "A fresh cell for a is allocated inside the function and the caller's X and Y are copied into it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1953500,
+          "endMilliseconds": 1959590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#changing-a-struct-parameter-changes-its-copy"
+      }
+    },
+    {
+      "id": "TP-148",
+      "startMilliseconds": 1959590,
+      "endMilliseconds": 1962490,
+      "kind": "explanation",
+      "text": "A fresh cell for b is allocated as well and its X and Y are copied in the same way.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1959590,
+          "endMilliseconds": 1962490
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#changing-a-struct-parameter-changes-its-copy"
+      }
+    },
+    {
+      "id": "TP-149",
+      "startMilliseconds": 1962490,
+      "endMilliseconds": 1972550,
+      "kind": "fact",
+      "text": "The expression a.X equal to 5 refers to the local parameter copy in memory, not to the caller's original variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1962490,
+          "endMilliseconds": 1972550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#changing-a-struct-parameter-changes-its-copy"
+      }
+    },
+    {
+      "id": "TP-150",
+      "startMilliseconds": 1972550,
+      "endMilliseconds": 1983640,
+      "kind": "reason",
+      "text": "The parameter cell keeps its own separate memory even when its contents are overwritten, because it was only a copy.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1972550,
+          "endMilliseconds": 1983640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#changing-a-struct-parameter-changes-its-copy"
+      }
+    },
+    {
+      "id": "TP-151",
+      "startMilliseconds": 1983640,
+      "endMilliseconds": 1996630,
+      "kind": "reason",
+      "text": "Changing a and b inside the function does not touch the initial vector at the call site, so no side effect leaks out.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1983640,
+          "endMilliseconds": 1996630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#changing-a-struct-parameter-changes-its-copy"
+      }
+    },
+    {
+      "id": "TP-152",
+      "startMilliseconds": 1996630,
+      "endMilliseconds": 2001230,
+      "kind": "fact",
+      "text": "There is no influence on the outside world because arguments in this language are passed by value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1996630,
+          "endMilliseconds": 2001230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#changing-a-struct-parameter-changes-its-copy"
+      }
+    },
+    {
+      "id": "TP-153",
+      "startMilliseconds": 2001230,
+      "endMilliseconds": 2007190,
+      "kind": "fact",
+      "text": "Pass by value means the arguments are copied into the parameter cells on every call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2001230,
+          "endMilliseconds": 2007190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#changing-a-struct-parameter-changes-its-copy"
+      }
+    },
+    {
+      "id": "TP-154",
+      "startMilliseconds": 2007190,
+      "endMilliseconds": 2013790,
+      "kind": "scope_boundary",
+      "text": "A related feature is shown only as an idea and is most likely not needed in the lab work.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2007190,
+          "endMilliseconds": 2013790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#using-ref-as-an-alias"
+      }
+    },
+    {
+      "id": "TP-155",
+      "startMilliseconds": 2013790,
+      "endMilliseconds": 2028240,
+      "kind": "fact",
+      "text": "Value types can also be passed by reference by adding the ref keyword to the parameter, which changes the copying behaviour.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2013790,
+          "endMilliseconds": 2028240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#using-ref-as-an-alias"
+      }
+    },
+    {
+      "id": "TP-156",
+      "startMilliseconds": 2017159,
+      "endMilliseconds": 2037830,
+      "kind": "explanation",
+      "text": "Marking a value-type parameter and its call site with ref makes the parameter an alias for the caller's variable, so writing through it can overwrite the caller's memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2017159,
+          "endMilliseconds": 2037830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#using-ref-as-an-alias"
+      }
+    },
+    {
+      "id": "TP-157",
+      "startMilliseconds": 2037840,
+      "endMilliseconds": 2048350,
+      "kind": "reason",
+      "text": "Because a ref parameter writes into the original variable's storage, the caller's value is affected, which is the whole point of using ref.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2037840,
+          "endMilliseconds": 2048350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#using-ref-as-an-alias"
+      }
+    },
+    {
+      "id": "TP-158",
+      "startMilliseconds": 2048350,
+      "endMilliseconds": 2055150,
+      "kind": "fact",
+      "text": "A ref variable holds the memory address of the cell rather than the value itself, so it behaves like a pointer to that cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2048350,
+          "endMilliseconds": 2055150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#using-ref-as-an-alias"
+      }
+    },
+    {
+      "id": "TP-159",
+      "startMilliseconds": 2055150,
+      "endMilliseconds": 2069270,
+      "kind": "explanation",
+      "text": "With ref the parameter is not passed as a copy of the x and y values but carries a reference to the same memory cell, so both names denote one storage location.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2055150,
+          "endMilliseconds": 2069270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#using-ref-as-an-alias"
+      }
+    },
+    {
+      "id": "TP-160",
+      "startMilliseconds": 2069280,
+      "endMilliseconds": 2074590,
+      "kind": "explanation",
+      "text": "Writing ref on a variable name means asking for the address of that variable, so the callee can reach and modify the original storage.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2069280,
+          "endMilliseconds": 2074590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#using-ref-as-an-alias"
+      }
+    },
+    {
+      "id": "TP-161",
+      "startMilliseconds": 2074610,
+      "endMilliseconds": 2080760,
+      "kind": "scope_boundary",
+      "text": "ref is an advanced feature that the student is not expected to use yet, since the course moves on to classes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2074610,
+          "endMilliseconds": 2080760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#using-ref-as-an-alias"
+      }
+    },
+    {
+      "id": "TP-162",
+      "startMilliseconds": 2080770,
+      "endMilliseconds": 2106870,
+      "kind": "explanation",
+      "text": "The upcoming classes will use dynamic memory, so although the code of a Position class does not change, its representation in memory will.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2080770,
+          "endMilliseconds": 2106870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#changing-position-from-a-struct-to-a-class"
+      }
+    },
+    {
+      "id": "TP-163",
+      "startMilliseconds": 2106880,
+      "endMilliseconds": 2109280,
+      "kind": "fact",
+      "text": "In the class-based version dynamic memory is already involved, which is why the in-memory picture changes even though the code does not.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2106880,
+          "endMilliseconds": 2109280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#changing-position-from-a-struct-to-a-class"
+      }
+    },
+    {
+      "id": "TP-164",
+      "startMilliseconds": 2106880,
+      "endMilliseconds": 2115760,
+      "kind": "fact",
+      "text": "From the class-based version onward, dynamic memory is what the data structures actually occupy.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2106880,
+          "endMilliseconds": 2115760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#changing-position-from-a-struct-to-a-class"
+      }
+    },
+    {
+      "id": "TP-165",
+      "startMilliseconds": 2115160,
+      "endMilliseconds": 2121230,
+      "kind": "fact",
+      "text": "A class instance is a reference type, so a variable of that type behaves differently from a simple value-typed coordinate pair.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2115160,
+          "endMilliseconds": 2121230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#changing-position-from-a-struct-to-a-class"
+      }
+    },
+    {
+      "id": "TP-166",
+      "startMilliseconds": 2121230,
+      "endMilliseconds": 2130790,
+      "kind": "explanation",
+      "text": "For a reference type the cell allocated in the temporary memory holds not the data itself but a link to the data.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2121230,
+          "endMilliseconds": 2130790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#changing-position-from-a-struct-to-a-class"
+      }
+    },
+    {
+      "id": "TP-167",
+      "startMilliseconds": 2130800,
+      "endMilliseconds": 2141470,
+      "kind": "fact",
+      "text": "So the variable declared as a class type initially stores a reference to an object instead of x and y values directly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2130800,
+          "endMilliseconds": 2141470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#changing-position-from-a-struct-to-a-class"
+      }
+    },
+    {
+      "id": "TP-168",
+      "startMilliseconds": 2141480,
+      "endMilliseconds": 2158910,
+      "kind": "explanation",
+      "text": "That object contains the fields x and y, and both fields start out equal to 1 because the class defines those defaults.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2141480,
+          "endMilliseconds": 2158910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#changing-position-from-a-struct-to-a-class"
+      }
+    },
+    {
+      "id": "TP-169",
+      "startMilliseconds": 2159870,
+      "endMilliseconds": 2164070,
+      "kind": "fact",
+      "text": "The address of this object is what gets stored in the temporary-memory variable holding the reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2159870,
+          "endMilliseconds": 2164070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#changing-position-from-a-struct-to-a-class"
+      }
+    },
+    {
+      "id": "TP-170",
+      "startMilliseconds": 2164070,
+      "endMilliseconds": 2181390,
+      "kind": "explanation",
+      "text": "A second object is created for the player at a different address, with its own x and y fields that also start at 1.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2164070,
+          "endMilliseconds": 2181390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#changing-position-from-a-struct-to-a-class"
+      }
+    },
+    {
+      "id": "TP-171",
+      "startMilliseconds": 2181400,
+      "endMilliseconds": 2188430,
+      "kind": "fact",
+      "text": "The player's temporary variable therefore holds a reference to that separately allocated object's memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2181400,
+          "endMilliseconds": 2188430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#changing-position-from-a-struct-to-a-class"
+      }
+    },
+    {
+      "id": "TP-172",
+      "startMilliseconds": 2188440,
+      "endMilliseconds": 2202390,
+      "kind": "explanation",
+      "text": "The same cell and the same address pattern are created for the tree, showing that each class instance gets its own object in memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2188440,
+          "endMilliseconds": 2202390
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2192359,
+          "endMilliseconds": 2202390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#changing-position-from-a-struct-to-a-class"
+      }
+    },
+    {
+      "id": "TP-173",
+      "startMilliseconds": 2205600,
+      "endMilliseconds": 2212880,
+      "kind": "fact",
+      "text": "On entering the function, memory is allocated for the local variables and for the parameters, so the frame's cells come from the temporary stack area.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2205600,
+          "endMilliseconds": 2212880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+      }
+    },
+    {
+      "id": "TP-174",
+      "startMilliseconds": 2212880,
+      "endMilliseconds": 2231520,
+      "kind": "reason",
+      "text": "Because the parameter is of a class (reference) type, the parameter cell stores an address rather than the values, which is what allows the caller's object to be reached.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2212880,
+          "endMilliseconds": 2231520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+      }
+    },
+    {
+      "id": "TP-175",
+      "startMilliseconds": 2231520,
+      "endMilliseconds": 2248310,
+      "kind": "explanation",
+      "text": "Having an address means the function can follow it into dynamic memory and overwrite values stored there.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2231520,
+          "endMilliseconds": 2248310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+      }
+    },
+    {
+      "id": "TP-176",
+      "startMilliseconds": 2252720,
+      "endMilliseconds": 2261000,
+      "kind": "fact",
+      "text": "Once ref is applied, the parameter a refers no longer to the whole node but to the x field that lives in dynamic memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2252720,
+          "endMilliseconds": 2261000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+      }
+    },
+    {
+      "id": "TP-177",
+      "startMilliseconds": 2261000,
+      "endMilliseconds": 2278510,
+      "kind": "explanation",
+      "text": "The write goes to the object's x field at address 64, so the node's stored coordinates are modified in place.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2261000,
+          "endMilliseconds": 2278510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+      }
+    },
+    {
+      "id": "TP-178",
+      "startMilliseconds": 2278510,
+      "endMilliseconds": 2291960,
+      "kind": "fact",
+      "text": "Only the address is copied and not the field values, so the caller's x also changes because both variables point to the same object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2278510,
+          "endMilliseconds": 2291960
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2281599,
+          "endMilliseconds": 2291960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+      }
+    },
+    {
+      "id": "TP-179",
+      "startMilliseconds": 2291960,
+      "endMilliseconds": 2302810,
+      "kind": "explanation",
+      "text": "After the change both variables reference the same object in dynamic memory, so a write through one is immediately visible through the other.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2291960,
+          "endMilliseconds": 2302810
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+      }
+    },
+    {
+      "id": "TP-180",
+      "startMilliseconds": 2302810,
+      "endMilliseconds": 2331590,
+      "kind": "reason",
+      "text": "If the class were a value type instead, the parameter would receive a copy of the fields, so the mutation would affect only that copy and not the caller's object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2302810,
+          "endMilliseconds": 2331590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+      }
+    },
+    {
+      "id": "TP-181",
+      "startMilliseconds": 2331600,
+      "endMilliseconds": 2346830,
+      "kind": "explanation",
+      "text": "Understanding how memory and references work makes the rest of the language's abstractions easier to reason about.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2331600,
+          "endMilliseconds": 2346830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+      }
+    },
+    {
+      "id": "TP-182",
+      "startMilliseconds": 2346840,
+      "endMilliseconds": 2356350,
+      "kind": "fact",
+      "text": "C# always passes by value, so what is copied is whatever the variable holds: for a reference type that is the reference itself.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2346840,
+          "endMilliseconds": 2356350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+      }
+    },
+    {
+      "id": "TP-183",
+      "startMilliseconds": 2356350,
+      "endMilliseconds": 2373800,
+      "kind": "fact",
+      "text": "In pass-by-value a value-type variable holds the value directly while a reference-type variable holds only a link to the object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2356350,
+          "endMilliseconds": 2373800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+      }
+    }
+  ]
+}
