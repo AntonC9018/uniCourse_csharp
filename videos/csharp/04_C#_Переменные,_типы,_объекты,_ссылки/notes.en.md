@@ -347,14 +347,7 @@ B would receive 607, because assignment reads the source's value at the moment t
 
 **Accuracy clarification, beyond the demonstrated mechanism:** **boxing** converts a value-type value into an object containing a copy, as documented in [C# boxing](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/types/boxing-and-unboxing). However, an **overload** is a function version accepting specific parameter types, and [`Console.WriteLine` has an integer overload](https://learn.microsoft.com/en-us/dotnet/api/system.console.writeline#system-console-writeline(system-int32)). A plain integer argument can use it directly.
 
-The inspected [framework implementation at b0f34d51](https://github.com/dotnet/dotnet/blob/b0f34d51fccc69fd334253924abd8d6853fad7aa/src/runtime/src/libraries/System.Console/src/System/Console.cs) is related evidence for this clarification, not the exact runtime revision used in the recording. Here, `Out` names the console's output-writing service. A short simplified excerpt is:
 
-```csharp
-public static void WriteLine(int value)
-{
-    Out.WriteLine(value);
-}
-```
 
 [00:12:53](https://www.youtube.com/watch?v=wjsV9CvZfGI&t=773s) The observable rule remains straightforward: print the value currently stored in `B`. In the explicit integer reconstruction, that is `204`.
 
