@@ -394,11 +394,11 @@ int middleLength = middleEnd - middleStart + 1;
 The [retained committed branch function](https://github.com/AntonC9018/uniCourse_csharp/blob/b333fe75bfe90c7d2c965c1a57f477497887e5e2/examples/tests_example/code/Helper.cs) is a **related experimental state** with an age-8–10 branch and coefficient 4. Its shortened branch demonstrates the repetition:
 
 ```csharp
-const int length = thirdIntervalEnd - thirdIntervalStart + 1;
+const int intLen = thirdIntervalEnd - thirdIntervalStart + 1;
 if (catAge >= 8 && catAge <= 10)
 {
     return firstAgeCoef + secondAgeCoef
-        + length * _3to7intervalCoef
+        + intLen * _3to7intervalCoef
         + (catAge - 8 + 1) * 4;
 }
 ```
