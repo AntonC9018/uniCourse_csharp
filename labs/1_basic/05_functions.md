@@ -6,6 +6,9 @@ slug: ru/labs/basic/functions
 <!-- course-site-backlink:end -->
 # Функции с параметрами
 
+- [Видео про базовые техники (до структур, но можно и дальше)](https://www.youtube.com/watch?v=z51K0UhriOk&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=5)
+- [Видео по повторению функий (до статических локальных функций)](https://www.youtube.com/watch?v=L62Og-Y4poE&list=PL4sUOB8DjVlVVw9Yx_tUO7fRPDYeaACXD&index=16)
+
 ## Концепты
 
 - Функция
