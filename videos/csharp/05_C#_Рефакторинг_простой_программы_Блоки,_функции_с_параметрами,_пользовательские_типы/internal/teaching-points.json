@@ -19,7 +19,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#counting-horizontal-and-vertical-steps"
+        "anchor": "#coordinates-become-a-count-of-grid-steps"
       }
     },
     {
@@ -37,7 +37,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#counting-horizontal-and-vertical-steps"
+        "anchor": "#coordinates-become-a-count-of-grid-steps"
       }
     },
     {
@@ -55,7 +55,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#counting-horizontal-and-vertical-steps"
+        "anchor": "#coordinates-become-a-count-of-grid-steps"
       }
     },
     {
@@ -73,7 +73,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#counting-horizontal-and-vertical-steps"
+        "anchor": "#coordinates-become-a-count-of-grid-steps"
       }
     },
     {
@@ -91,7 +91,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#counting-horizontal-and-vertical-steps"
+        "anchor": "#coordinates-become-a-count-of-grid-steps"
       }
     },
     {
@@ -114,7 +114,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#making-each-axis-distance-nonnegative"
+        "anchor": "#discard-direction-with-absolute-value"
       }
     },
     {
@@ -132,7 +132,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#making-each-axis-distance-nonnegative"
+        "anchor": "#discard-direction-with-absolute-value"
       }
     },
     {
@@ -150,7 +150,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#making-each-axis-distance-nonnegative"
+        "anchor": "#discard-direction-with-absolute-value"
       }
     },
     {
@@ -168,7 +168,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#making-each-axis-distance-nonnegative"
+        "anchor": "#discard-direction-with-absolute-value"
       }
     },
     {
@@ -191,7 +191,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#saving-the-two-distances-and-testing-the-sum"
+        "anchor": "#separate-the-axis-results-and-run-the-first-test"
       }
     },
     {
@@ -214,7 +214,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#saving-the-two-distances-and-testing-the-sum"
+        "anchor": "#separate-the-axis-results-and-run-the-first-test"
       }
     },
     {
@@ -232,7 +232,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#saving-the-two-distances-and-testing-the-sum"
+        "anchor": "#separate-the-axis-results-and-run-the-first-test"
       }
     },
     {
@@ -250,7 +250,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#saving-the-two-distances-and-testing-the-sum"
+        "anchor": "#separate-the-axis-results-and-run-the-first-test"
       }
     },
     {
@@ -268,7 +268,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#evaluating-an-expression-before-storing-its-value"
+        "anchor": "#evaluate-the-expression-before-storing-its-value"
       }
     },
     {
@@ -291,7 +291,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#evaluating-an-expression-before-storing-its-value"
+        "anchor": "#evaluate-the-expression-before-storing-its-value"
       }
     },
     {
@@ -309,7 +309,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#evaluating-an-expression-before-storing-its-value"
+        "anchor": "#evaluate-the-expression-before-storing-its-value"
       }
     },
     {
@@ -327,7 +327,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#evaluating-an-expression-before-storing-its-value"
+        "anchor": "#evaluate-the-expression-before-storing-its-value"
       }
     },
     {
@@ -345,7 +345,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#evaluating-an-expression-before-storing-its-value"
+        "anchor": "#evaluate-the-expression-before-storing-its-value"
       }
     },
     {
@@ -363,7 +363,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#evaluating-an-expression-before-storing-its-value"
+        "anchor": "#evaluate-the-expression-before-storing-its-value"
       }
     },
     {
@@ -381,7 +381,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#evaluating-an-expression-before-storing-its-value"
+        "anchor": "#evaluate-the-expression-before-storing-its-value"
       }
     },
     {
@@ -399,7 +399,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#evaluating-an-expression-before-storing-its-value"
+        "anchor": "#evaluate-the-expression-before-storing-its-value"
       }
     },
     {
@@ -417,7 +417,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#evaluating-an-expression-before-storing-its-value"
+        "anchor": "#evaluate-the-expression-before-storing-its-value"
       }
     },
     {
@@ -435,7 +435,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#evaluating-an-expression-before-storing-its-value"
+        "anchor": "#evaluate-the-expression-before-storing-its-value"
       }
     },
     {
@@ -453,7 +453,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#duplicating-the-calculation-for-a-tree"
+        "anchor": "#a-second-measurement-exposes-duplication"
       }
     },
     {
@@ -471,7 +471,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#duplicating-the-calculation-for-a-tree"
+        "anchor": "#a-second-measurement-exposes-duplication"
       }
     },
     {
@@ -489,7 +489,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#duplicating-the-calculation-for-a-tree"
+        "anchor": "#a-second-measurement-exposes-duplication"
       }
     },
     {
@@ -507,7 +507,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#giving-each-copy-a-separate-block"
+        "anchor": "#use-sibling-blocks-to-reuse-temporary-names"
       }
     },
     {
@@ -525,7 +525,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#giving-each-copy-a-separate-block"
+        "anchor": "#use-sibling-blocks-to-reuse-temporary-names"
       }
     },
     {
@@ -543,7 +543,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#giving-each-copy-a-separate-block"
+        "anchor": "#use-sibling-blocks-to-reuse-temporary-names"
       }
     },
     {
@@ -561,7 +561,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#giving-each-copy-a-separate-block"
+        "anchor": "#use-sibling-blocks-to-reuse-temporary-names"
       }
     },
     {
@@ -579,7 +579,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#block-lifetime-and-reusable-storage"
+        "anchor": "#follow-block-lifetime-without-assuming-exact-addresses"
       }
     },
     {
@@ -597,7 +597,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#block-lifetime-and-reusable-storage"
+        "anchor": "#follow-block-lifetime-without-assuming-exact-addresses"
       }
     },
     {
@@ -615,7 +615,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#block-lifetime-and-reusable-storage"
+        "anchor": "#follow-block-lifetime-without-assuming-exact-addresses"
       }
     },
     {
@@ -633,7 +633,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#block-lifetime-and-reusable-storage"
+        "anchor": "#follow-block-lifetime-without-assuming-exact-addresses"
       }
     },
     {
@@ -651,7 +651,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#block-lifetime-and-reusable-storage"
+        "anchor": "#follow-block-lifetime-without-assuming-exact-addresses"
       }
     },
     {
@@ -669,7 +669,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#block-lifetime-and-reusable-storage"
+        "anchor": "#follow-block-lifetime-without-assuming-exact-addresses"
       }
     },
     {
@@ -687,7 +687,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#keeping-the-result-outside-the-block"
+        "anchor": "#keep-the-result-in-the-surrounding-scope"
       }
     },
     {
@@ -705,7 +705,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#keeping-the-result-outside-the-block"
+        "anchor": "#keep-the-result-in-the-surrounding-scope"
       }
     },
     {
@@ -723,7 +723,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#keeping-the-result-outside-the-block"
+        "anchor": "#keep-the-result-in-the-surrounding-scope"
       }
     },
     {
@@ -741,7 +741,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#keeping-the-result-outside-the-block"
+        "anchor": "#keep-the-result-in-the-surrounding-scope"
       }
     },
     {
@@ -759,7 +759,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#keeping-the-result-outside-the-block"
+        "anchor": "#keep-the-result-in-the-surrounding-scope"
       }
     },
     {
@@ -777,7 +777,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#keeping-the-result-outside-the-block"
+        "anchor": "#keep-the-result-in-the-surrounding-scope"
       }
     },
     {
@@ -795,7 +795,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#keeping-the-result-outside-the-block"
+        "anchor": "#keep-the-result-in-the-surrounding-scope"
       }
     },
     {
@@ -813,7 +813,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#keeping-the-result-outside-the-block"
+        "anchor": "#keep-the-result-in-the-surrounding-scope"
       }
     },
     {
@@ -831,7 +831,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#finding-the-common-operation-and-correcting-the-inputs"
+        "anchor": "#identify-the-common-calculation-and-repair-its-inputs"
       }
     },
     {
@@ -849,7 +849,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#finding-the-common-operation-and-correcting-the-inputs"
+        "anchor": "#identify-the-common-calculation-and-repair-its-inputs"
       }
     },
     {
@@ -867,7 +867,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#finding-the-common-operation-and-correcting-the-inputs"
+        "anchor": "#identify-the-common-calculation-and-repair-its-inputs"
       }
     },
     {
@@ -885,7 +885,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#finding-the-common-operation-and-correcting-the-inputs"
+        "anchor": "#identify-the-common-calculation-and-repair-its-inputs"
       }
     },
     {
@@ -908,7 +908,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#finding-the-common-operation-and-correcting-the-inputs"
+        "anchor": "#identify-the-common-calculation-and-repair-its-inputs"
       }
     },
     {
@@ -926,7 +926,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#finding-the-common-operation-and-correcting-the-inputs"
+        "anchor": "#identify-the-common-calculation-and-repair-its-inputs"
       }
     },
     {
@@ -944,7 +944,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#finding-the-common-operation-and-correcting-the-inputs"
+        "anchor": "#identify-the-common-calculation-and-repair-its-inputs"
       }
     },
     {
@@ -962,7 +962,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#finding-the-common-operation-and-correcting-the-inputs"
+        "anchor": "#describe-a-function-with-inputs-and-a-result"
       }
     },
     {
@@ -980,7 +980,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#defining-inputs-and-a-returned-result"
+        "anchor": "#describe-a-function-with-inputs-and-a-result"
       }
     },
     {
@@ -998,7 +998,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#defining-inputs-and-a-returned-result"
+        "anchor": "#describe-a-function-with-inputs-and-a-result"
       }
     },
     {
@@ -1021,7 +1021,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#defining-inputs-and-a-returned-result"
+        "anchor": "#describe-a-function-with-inputs-and-a-result"
       }
     },
     {
@@ -1039,7 +1039,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#defining-inputs-and-a-returned-result"
+        "anchor": "#describe-a-function-with-inputs-and-a-result"
       }
     },
     {
@@ -1057,7 +1057,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#defining-inputs-and-a-returned-result"
+        "anchor": "#describe-a-function-with-inputs-and-a-result"
       }
     },
     {
@@ -1075,7 +1075,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#defining-inputs-and-a-returned-result"
+        "anchor": "#describe-a-function-with-inputs-and-a-result"
       }
     },
     {
@@ -1093,7 +1093,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#defining-inputs-and-a-returned-result"
+        "anchor": "#describe-a-function-with-inputs-and-a-result"
       }
     },
     {
@@ -1111,7 +1111,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#defining-inputs-and-a-returned-result"
+        "anchor": "#describe-a-function-with-inputs-and-a-result"
       }
     },
     {
@@ -1129,7 +1129,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#defining-inputs-and-a-returned-result"
+        "anchor": "#describe-a-function-with-inputs-and-a-result"
       }
     },
     {
@@ -1152,7 +1152,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#replacing-both-blocks-with-calls"
+        "anchor": "#extract-the-arithmetic-and-replace-the-two-blocks"
       }
     },
     {
@@ -1170,7 +1170,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#replacing-both-blocks-with-calls"
+        "anchor": "#extract-the-arithmetic-and-replace-the-two-blocks"
       }
     },
     {
@@ -1188,7 +1188,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#replacing-both-blocks-with-calls"
+        "anchor": "#extract-the-arithmetic-and-replace-the-two-blocks"
       }
     },
     {
@@ -1206,7 +1206,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#replacing-both-blocks-with-calls"
+        "anchor": "#extract-the-arithmetic-and-replace-the-two-blocks"
       }
     },
     {
@@ -1224,7 +1224,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#replacing-both-blocks-with-calls"
+        "anchor": "#extract-the-arithmetic-and-replace-the-two-blocks"
       }
     },
     {
@@ -1242,7 +1242,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#replacing-both-blocks-with-calls"
+        "anchor": "#extract-the-arithmetic-and-replace-the-two-blocks"
       }
     },
     {
@@ -1260,7 +1260,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#replacing-both-blocks-with-calls"
+        "anchor": "#extract-the-arithmetic-and-replace-the-two-blocks"
       }
     },
     {
@@ -1278,7 +1278,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#replacing-both-blocks-with-calls"
+        "anchor": "#extract-the-arithmetic-and-replace-the-two-blocks"
       }
     },
     {
@@ -1296,7 +1296,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#building-a-function-call-frame"
+        "anchor": "#enter-a-call-with-fresh-parameter-storage"
       }
     },
     {
@@ -1314,7 +1314,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#building-a-function-call-frame"
+        "anchor": "#enter-a-call-with-fresh-parameter-storage"
       }
     },
     {
@@ -1332,7 +1332,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#building-a-function-call-frame"
+        "anchor": "#enter-a-call-with-fresh-parameter-storage"
       }
     },
     {
@@ -1350,7 +1350,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#building-a-function-call-frame"
+        "anchor": "#enter-a-call-with-fresh-parameter-storage"
       }
     },
     {
@@ -1368,7 +1368,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#building-a-function-call-frame"
+        "anchor": "#enter-a-call-with-fresh-parameter-storage"
       }
     },
     {
@@ -1386,7 +1386,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#building-a-function-call-frame"
+        "anchor": "#enter-a-call-with-fresh-parameter-storage"
       }
     },
     {
@@ -1404,7 +1404,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#building-a-function-call-frame"
+        "anchor": "#enter-a-call-with-fresh-parameter-storage"
       }
     },
     {
@@ -1427,7 +1427,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#building-a-function-call-frame"
+        "anchor": "#enter-a-call-with-fresh-parameter-storage"
       }
     },
     {
@@ -1445,7 +1445,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#building-a-function-call-frame"
+        "anchor": "#enter-a-call-with-fresh-parameter-storage"
       }
     },
     {
@@ -1463,7 +1463,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#building-a-function-call-frame"
+        "anchor": "#calculate-inside-the-new-call-frame"
       }
     },
     {
@@ -1481,7 +1481,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#building-a-function-call-frame"
+        "anchor": "#calculate-inside-the-new-call-frame"
       }
     },
     {
@@ -1499,7 +1499,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#building-a-function-call-frame"
+        "anchor": "#calculate-inside-the-new-call-frame"
       }
     },
     {
@@ -1517,7 +1517,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#building-a-function-call-frame"
+        "anchor": "#calculate-inside-the-new-call-frame"
       }
     },
     {
@@ -1535,7 +1535,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#returning-a-value-to-the-caller"
+        "anchor": "#return-a-value-and-resume-the-caller"
       }
     },
     {
@@ -1553,7 +1553,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#returning-a-value-to-the-caller"
+        "anchor": "#return-a-value-and-resume-the-caller"
       }
     },
     {
@@ -1571,7 +1571,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#returning-a-value-to-the-caller"
+        "anchor": "#return-a-value-and-resume-the-caller"
       }
     },
     {
@@ -1589,7 +1589,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#returning-a-value-to-the-caller"
+        "anchor": "#return-a-value-and-resume-the-caller"
       }
     },
     {
@@ -1607,7 +1607,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#returning-a-value-to-the-caller"
+        "anchor": "#return-a-value-and-resume-the-caller"
       }
     },
     {
@@ -1625,7 +1625,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#returning-a-value-to-the-caller"
+        "anchor": "#return-a-value-and-resume-the-caller"
       }
     },
     {
@@ -1643,7 +1643,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#returning-a-value-to-the-caller"
+        "anchor": "#return-a-value-and-resume-the-caller"
       }
     },
     {
@@ -1666,7 +1666,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#returning-a-value-to-the-caller"
+        "anchor": "#return-a-value-and-resume-the-caller"
       }
     },
     {
@@ -1684,7 +1684,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#returning-a-value-to-the-caller"
+        "anchor": "#return-a-value-and-resume-the-caller"
       }
     },
     {
@@ -1702,7 +1702,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#returning-a-value-to-the-caller"
+        "anchor": "#return-a-value-and-resume-the-caller"
       }
     },
     {
@@ -1720,7 +1720,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#returning-a-value-to-the-caller"
+        "anchor": "#return-a-value-and-resume-the-caller"
       }
     },
     {
@@ -1738,7 +1738,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#calling-again-and-checking-both-outputs"
+        "anchor": "#trace-the-second-call-and-verify-both-outputs"
       }
     },
     {
@@ -1756,7 +1756,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#calling-again-and-checking-both-outputs"
+        "anchor": "#trace-the-second-call-and-verify-both-outputs"
       }
     },
     {
@@ -1764,7 +1764,7 @@
       "startMilliseconds": 1294830,
       "endMilliseconds": 1302560,
       "kind": "explanation",
-      "text": "The copied values are xd = 2, yd = 3 and id = 1, one for each parameter cell of the new call.",
+      "text": "The copied arguments initialize fresh parameter cells for the second call. Enemy X = 2 and Y = 3 are recoverable from the trace; the fragmented numeral captions do not reliably establish the complete coordinate values of the other entity.",
       "evidence": [
         {
           "type": "transcript_range",
@@ -1774,7 +1774,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#calling-again-and-checking-both-outputs"
+        "anchor": "#trace-the-second-call-and-verify-both-outputs"
       }
     },
     {
@@ -1792,7 +1792,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#calling-again-and-checking-both-outputs"
+        "anchor": "#trace-the-second-call-and-verify-both-outputs"
       }
     },
     {
@@ -1800,7 +1800,7 @@
       "startMilliseconds": 1326360,
       "endMilliseconds": 1345000,
       "kind": "explanation",
-      "text": "The function writes its computed distance into the out parameter it was given, so the caller receives the result through that variable rather than a return value.",
+      "text": "The computed local distance value is transferred to the caller variable receiving the function result. This passage does not establish a new out parameter or out argument.",
       "evidence": [
         {
           "type": "transcript_range",
@@ -1810,7 +1810,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#calling-again-and-checking-both-outputs"
+        "anchor": "#trace-the-second-call-and-verify-both-outputs"
       }
     },
     {
@@ -1818,7 +1818,7 @@
       "startMilliseconds": 1345000,
       "endMilliseconds": 1352000,
       "kind": "reason",
-      "text": "Once the function finishes, all of its local variables are forgotten, so only the value assigned to the out parameter survives for the caller.",
+      "text": "When the second function call finishes, its local variables end, while the returned result stored in the caller variable remains available.",
       "evidence": [
         {
           "type": "transcript_range",
@@ -1828,7 +1828,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#calling-again-and-checking-both-outputs"
+        "anchor": "#trace-the-second-call-and-verify-both-outputs"
       }
     },
     {
@@ -1836,7 +1836,7 @@
       "startMilliseconds": 1352000,
       "endMilliseconds": 1369900,
       "kind": "test_result",
-      "text": "Running the program after the distance is assigned prints both X and Y values, 3 and 5, confirming the out parameter received the computed value.",
+      "text": "The program prints 3 and 5 as the results of the two distance calculations; these outputs are not asserted to be X and Y coordinates.",
       "evidence": [
         {
           "type": "transcript_range",
@@ -1846,7 +1846,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#calling-again-and-checking-both-outputs"
+        "anchor": "#trace-the-second-call-and-verify-both-outputs"
       }
     },
     {
@@ -1864,7 +1864,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#why-four-integers-invite-mistakes"
+        "anchor": "#make-a-position-a-single-typed-value"
       }
     },
     {
@@ -1882,7 +1882,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#why-four-integers-invite-mistakes"
+        "anchor": "#make-a-position-a-single-typed-value"
       }
     },
     {
@@ -1900,7 +1900,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#why-four-integers-invite-mistakes"
+        "anchor": "#make-a-position-a-single-typed-value"
       }
     },
     {
@@ -1918,7 +1918,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#creating-a-position-value-with-fields"
+        "anchor": "#make-a-position-a-single-typed-value"
       }
     },
     {
@@ -1936,7 +1936,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#creating-a-position-value-with-fields"
+        "anchor": "#make-a-position-a-single-typed-value"
       }
     },
     {
@@ -1954,7 +1954,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#creating-a-position-value-with-fields"
+        "anchor": "#make-a-position-a-single-typed-value"
       }
     },
     {
@@ -1977,7 +1977,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#creating-a-position-value-with-fields"
+        "anchor": "#construct-a-position-and-name-its-fields"
       }
     },
     {
@@ -1995,7 +1995,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#creating-a-position-value-with-fields"
+        "anchor": "#construct-a-position-and-name-its-fields"
       }
     },
     {
@@ -2013,7 +2013,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#creating-a-position-value-with-fields"
+        "anchor": "#construct-a-position-and-name-its-fields"
       }
     },
     {
@@ -2031,7 +2031,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#creating-a-position-value-with-fields"
+        "anchor": "#construct-a-position-and-name-its-fields"
       }
     },
     {
@@ -2054,7 +2054,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#reading-changing-and-separating-position-fields"
+        "anchor": "#read-and-change-fields-in-independent-positions"
       }
     },
     {
@@ -2072,7 +2072,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#reading-changing-and-separating-position-fields"
+        "anchor": "#read-and-change-fields-in-independent-positions"
       }
     },
     {
@@ -2090,7 +2090,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#reading-changing-and-separating-position-fields"
+        "anchor": "#read-and-change-fields-in-independent-positions"
       }
     },
     {
@@ -2108,7 +2108,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#reading-changing-and-separating-position-fields"
+        "anchor": "#read-and-change-fields-in-independent-positions"
       }
     },
     {
@@ -2126,7 +2126,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#reading-changing-and-separating-position-fields"
+        "anchor": "#read-and-change-fields-in-independent-positions"
       }
     },
     {
@@ -2144,7 +2144,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#reading-changing-and-separating-position-fields"
+        "anchor": "#read-and-change-fields-in-independent-positions"
       }
     },
     {
@@ -2162,7 +2162,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#reading-changing-and-separating-position-fields"
+        "anchor": "#read-and-change-fields-in-independent-positions"
       }
     },
     {
@@ -2180,7 +2180,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#reading-changing-and-separating-position-fields"
+        "anchor": "#change-the-interface-after-grouping-the-data"
       }
     },
     {
@@ -2194,17 +2194,11 @@
           "type": "transcript_range",
           "startMilliseconds": 1694640,
           "endMilliseconds": 1697980
-        },
-        {
-          "type": "repository_blob",
-          "repository": "uniCourse_csharp",
-          "commit": "d5af1fb372be56a453e3b139990013c28e50198c",
-          "path": "examples/property_dict/Subclassing.cs"
         }
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#grouping-the-parameters-too"
+        "anchor": "#change-the-interface-after-grouping-the-data"
       }
     },
     {
@@ -2222,7 +2216,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#grouping-the-parameters-too"
+        "anchor": "#change-the-interface-after-grouping-the-data"
       }
     },
     {
@@ -2240,7 +2234,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#grouping-the-parameters-too"
+        "anchor": "#change-the-interface-after-grouping-the-data"
       }
     },
     {
@@ -2258,7 +2252,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-whole-position-into-a-parameter"
+        "anchor": "#let-the-parameter-type-determine-its-storage"
       }
     },
     {
@@ -2276,7 +2270,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-whole-position-into-a-parameter"
+        "anchor": "#let-the-parameter-type-determine-its-storage"
       }
     },
     {
@@ -2294,7 +2288,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-whole-position-into-a-parameter"
+        "anchor": "#let-the-parameter-type-determine-its-storage"
       }
     },
     {
@@ -2312,7 +2306,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-whole-position-into-a-parameter"
+        "anchor": "#let-the-parameter-type-determine-its-storage"
       }
     },
     {
@@ -2330,7 +2324,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-whole-position-into-a-parameter"
+        "anchor": "#let-the-parameter-type-determine-its-storage"
       }
     },
     {
@@ -2348,7 +2342,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-whole-position-into-a-parameter"
+        "anchor": "#let-the-parameter-type-determine-its-storage"
       }
     },
     {
@@ -2366,7 +2360,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-whole-position-into-a-parameter"
+        "anchor": "#let-the-parameter-type-determine-its-storage"
       }
     },
     {
@@ -2384,7 +2378,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-whole-position-into-a-parameter"
+        "anchor": "#let-the-parameter-type-determine-its-storage"
       }
     },
     {
@@ -2402,7 +2396,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-whole-position-into-a-parameter"
+        "anchor": "#let-the-parameter-type-determine-its-storage"
       }
     },
     {
@@ -2420,7 +2414,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-whole-position-into-a-parameter"
+        "anchor": "#let-the-parameter-type-determine-its-storage"
       }
     },
     {
@@ -2438,7 +2432,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-whole-position-into-a-parameter"
+        "anchor": "#let-the-parameter-type-determine-its-storage"
       }
     },
     {
@@ -2456,7 +2450,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-whole-position-into-a-parameter"
+        "anchor": "#copy-the-complete-position-into-each-parameter"
       }
     },
     {
@@ -2474,7 +2468,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-whole-position-into-a-parameter"
+        "anchor": "#copy-the-complete-position-into-each-parameter"
       }
     },
     {
@@ -2492,7 +2486,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-whole-position-into-a-parameter"
+        "anchor": "#copy-the-complete-position-into-each-parameter"
       }
     },
     {
@@ -2510,7 +2504,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-whole-position-into-a-parameter"
+        "anchor": "#copy-the-complete-position-into-each-parameter"
       }
     },
     {
@@ -2528,7 +2522,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-whole-position-into-a-parameter"
+        "anchor": "#copy-the-complete-position-into-each-parameter"
       }
     },
     {
@@ -2546,7 +2540,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#computing-and-returning-the-grouped-distance"
+        "anchor": "#calculate-through-fields-and-keep-the-returned-sum"
       }
     },
     {
@@ -2564,7 +2558,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#computing-and-returning-the-grouped-distance"
+        "anchor": "#calculate-through-fields-and-keep-the-returned-sum"
       }
     },
     {
@@ -2582,7 +2576,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#computing-and-returning-the-grouped-distance"
+        "anchor": "#calculate-through-fields-and-keep-the-returned-sum"
       }
     },
     {
@@ -2600,7 +2594,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#computing-and-returning-the-grouped-distance"
+        "anchor": "#calculate-through-fields-and-keep-the-returned-sum"
       }
     },
     {
@@ -2618,7 +2612,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#computing-and-returning-the-grouped-distance"
+        "anchor": "#calculate-through-fields-and-keep-the-returned-sum"
       }
     },
     {
@@ -2636,7 +2630,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#computing-and-returning-the-grouped-distance"
+        "anchor": "#calculate-through-fields-and-keep-the-returned-sum"
       }
     },
     {
@@ -2654,7 +2648,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#computing-and-returning-the-grouped-distance"
+        "anchor": "#calculate-through-fields-and-keep-the-returned-sum"
       }
     },
     {
@@ -2672,7 +2666,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#computing-and-returning-the-grouped-distance"
+        "anchor": "#calculate-through-fields-and-keep-the-returned-sum"
       }
     },
     {
@@ -2690,7 +2684,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#changing-a-struct-parameter-changes-its-copy"
+        "anchor": "#predict-what-changing-a-struct-parameter-can-affect"
       }
     },
     {
@@ -2708,7 +2702,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#changing-a-struct-parameter-changes-its-copy"
+        "anchor": "#predict-what-changing-a-struct-parameter-can-affect"
       }
     },
     {
@@ -2726,7 +2720,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#changing-a-struct-parameter-changes-its-copy"
+        "anchor": "#predict-what-changing-a-struct-parameter-can-affect"
       }
     },
     {
@@ -2744,7 +2738,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#changing-a-struct-parameter-changes-its-copy"
+        "anchor": "#predict-what-changing-a-struct-parameter-can-affect"
       }
     },
     {
@@ -2762,7 +2756,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#changing-a-struct-parameter-changes-its-copy"
+        "anchor": "#predict-what-changing-a-struct-parameter-can-affect"
       }
     },
     {
@@ -2780,7 +2774,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#changing-a-struct-parameter-changes-its-copy"
+        "anchor": "#predict-what-changing-a-struct-parameter-can-affect"
       }
     },
     {
@@ -2798,7 +2792,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#changing-a-struct-parameter-changes-its-copy"
+        "anchor": "#predict-what-changing-a-struct-parameter-can-affect"
       }
     },
     {
@@ -2816,7 +2810,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#changing-a-struct-parameter-changes-its-copy"
+        "anchor": "#predict-what-changing-a-struct-parameter-can-affect"
       }
     },
     {
@@ -2834,7 +2828,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#using-ref-as-an-alias"
+        "anchor": "#use-ref-to-alias-the-callers-variable"
       }
     },
     {
@@ -2852,7 +2846,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#using-ref-as-an-alias"
+        "anchor": "#use-ref-to-alias-the-callers-variable"
       }
     },
     {
@@ -2870,7 +2864,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#using-ref-as-an-alias"
+        "anchor": "#use-ref-to-alias-the-callers-variable"
       }
     },
     {
@@ -2888,7 +2882,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#using-ref-as-an-alias"
+        "anchor": "#use-ref-to-alias-the-callers-variable"
       }
     },
     {
@@ -2906,7 +2900,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#using-ref-as-an-alias"
+        "anchor": "#use-ref-to-alias-the-callers-variable"
       }
     },
     {
@@ -2924,7 +2918,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#using-ref-as-an-alias"
+        "anchor": "#use-ref-to-alias-the-callers-variable"
       }
     },
     {
@@ -2942,7 +2936,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#using-ref-as-an-alias"
+        "anchor": "#use-ref-to-alias-the-callers-variable"
       }
     },
     {
@@ -2960,7 +2954,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#using-ref-as-an-alias"
+        "anchor": "#use-ref-to-alias-the-callers-variable"
       }
     },
     {
@@ -2978,7 +2972,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#changing-position-from-a-struct-to-a-class"
+        "anchor": "#change-the-representation-by-choosing-a-class"
       }
     },
     {
@@ -2996,7 +2990,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#changing-position-from-a-struct-to-a-class"
+        "anchor": "#change-the-representation-by-choosing-a-class"
       }
     },
     {
@@ -3014,7 +3008,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#changing-position-from-a-struct-to-a-class"
+        "anchor": "#change-the-representation-by-choosing-a-class"
       }
     },
     {
@@ -3032,7 +3026,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#changing-position-from-a-struct-to-a-class"
+        "anchor": "#change-the-representation-by-choosing-a-class"
       }
     },
     {
@@ -3050,7 +3044,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#changing-position-from-a-struct-to-a-class"
+        "anchor": "#change-the-representation-by-choosing-a-class"
       }
     },
     {
@@ -3068,7 +3062,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#changing-position-from-a-struct-to-a-class"
+        "anchor": "#change-the-representation-by-choosing-a-class"
       }
     },
     {
@@ -3086,7 +3080,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#changing-position-from-a-struct-to-a-class"
+        "anchor": "#change-the-representation-by-choosing-a-class"
       }
     },
     {
@@ -3104,7 +3098,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#changing-position-from-a-struct-to-a-class"
+        "anchor": "#change-the-representation-by-choosing-a-class"
       }
     },
     {
@@ -3122,7 +3116,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#changing-position-from-a-struct-to-a-class"
+        "anchor": "#change-the-representation-by-choosing-a-class"
       }
     },
     {
@@ -3140,7 +3134,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#changing-position-from-a-struct-to-a-class"
+        "anchor": "#change-the-representation-by-choosing-a-class"
       }
     },
     {
@@ -3163,7 +3157,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#changing-position-from-a-struct-to-a-class"
+        "anchor": "#change-the-representation-by-choosing-a-class"
       }
     },
     {
@@ -3181,7 +3175,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+        "anchor": "#copy-a-reference-and-write-to-the-shared-object"
       }
     },
     {
@@ -3199,7 +3193,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+        "anchor": "#copy-a-reference-and-write-to-the-shared-object"
       }
     },
     {
@@ -3217,7 +3211,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+        "anchor": "#copy-a-reference-and-write-to-the-shared-object"
       }
     },
     {
@@ -3235,7 +3229,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+        "anchor": "#copy-a-reference-and-write-to-the-shared-object"
       }
     },
     {
@@ -3253,7 +3247,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+        "anchor": "#copy-a-reference-and-write-to-the-shared-object"
       }
     },
     {
@@ -3276,7 +3270,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+        "anchor": "#copy-a-reference-and-write-to-the-shared-object"
       }
     },
     {
@@ -3294,7 +3288,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+        "anchor": "#copy-a-reference-and-write-to-the-shared-object"
       }
     },
     {
@@ -3312,7 +3306,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+        "anchor": "#compare-the-same-field-write-across-the-two-types"
       }
     },
     {
@@ -3330,7 +3324,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+        "anchor": "#compare-the-same-field-write-across-the-two-types"
       }
     },
     {
@@ -3348,7 +3342,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+        "anchor": "#state-precisely-what-pass-by-value-copies"
       }
     },
     {
@@ -3366,7 +3360,7 @@
       ],
       "englishCoverage": {
         "status": "covered",
-        "anchor": "#copying-a-reference-and-reaching-the-same-object"
+        "anchor": "#state-precisely-what-pass-by-value-copies"
       }
     }
   ]
