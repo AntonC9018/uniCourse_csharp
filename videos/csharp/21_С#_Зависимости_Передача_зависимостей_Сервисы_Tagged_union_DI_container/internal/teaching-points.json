@@ -1,0 +1,5095 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "z5CUTiubzwU",
+  "uploadId": "z5CUTiubzwU",
+  "transcriptSha256": "87a67fc8fb13a12f0f97a2977b828d7e8e6e447fea66bc336be4f7b20c0d023d",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 960,
+      "endMilliseconds": 10500,
+      "kind": "fact",
+      "text": "The lesson starts from a template with two projects, one with the main code and one with tests, which is available on GitHub via a link in the video description.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 960,
+          "endMilliseconds": 10500
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "5253379090ffec2086654d0a6d1957e0dbd81637",
+          "path": "examples/dependencies_simplified/tests/Tests.cs"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#start-with-a-code-project-and-a-test-project"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 10500,
+      "endMilliseconds": 20750,
+      "kind": "fact",
+      "text": "The test project has empty classes and imports both a testing package and a snapshot-testing package, so the tooling for assertions and snapshots is already configured.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 10500,
+          "endMilliseconds": 20750
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "5253379090ffec2086654d0a6d1957e0dbd81637",
+          "path": "examples/dependencies_simplified/tests/tests.csproj"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#start-with-a-code-project-and-a-test-project"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 26430,
+      "endMilliseconds": 38000,
+      "kind": "scope_boundary",
+      "text": "This video illustrates the concept of dependencies on the simplest possible example, while a separate later video covers a somewhat harder and more realistic scenario.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 26430,
+          "endMilliseconds": 38000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#purpose-and-terms"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 38000,
+      "endMilliseconds": 58000,
+      "kind": "explanation",
+      "text": "The running example is an item type with some properties and a function that applies a given action to each item in a list, which sets up the code whose dependencies will be studied.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 38000,
+          "endMilliseconds": 58000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-inline-transformation"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 58000,
+      "endMilliseconds": 69100,
+      "kind": "explanation",
+      "text": "The example function also needs to return an answer, so it builds a list of results and returns it as the answer.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 58000,
+          "endMilliseconds": 69100
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-inline-transformation"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 69100,
+      "endMilliseconds": 76880,
+      "kind": "edge_case",
+      "text": "The example ignores items whose price is less than four, and does nothing at all for them, which illustrates the boundary conditions the function must handle.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 69100,
+          "endMilliseconds": 76880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-inline-transformation"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 76880,
+      "endMilliseconds": 87100,
+      "kind": "edge_case",
+      "text": "An item whose price is too large is also left out of the answer, so the function filters on both a lower and an upper price bound.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 76880,
+          "endMilliseconds": 87100
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-inline-transformation"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 87100,
+      "endMilliseconds": 100000,
+      "kind": "code_change",
+      "text": "The item's minimum price is stored on the item itself so the threshold check has data to compare against.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 87100,
+          "endMilliseconds": 100000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-inline-transformation"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 100000,
+      "endMilliseconds": 113500,
+      "kind": "code_change",
+      "text": "When the item name equals a special value the function marks the item, and the other items are made uppercase before the result is added to the answer.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 100000,
+          "endMilliseconds": 113500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-inline-transformation"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 115500,
+      "endMilliseconds": 130990,
+      "kind": "reason",
+      "text": "The minimum and maximum thresholds should be configurable from outside, so a parameter is created for each of them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 115500,
+          "endMilliseconds": 130990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#let-callers-choose-the-rules"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 130990,
+      "endMilliseconds": 139830,
+      "kind": "code_change",
+      "text": "The configuration is passed as a dictionary that maps names to the transformation they trigger, which makes the rules data rather than hardcoded logic.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 130990,
+          "endMilliseconds": 139830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#let-callers-choose-the-rules"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 139830,
+      "endMilliseconds": 143870,
+      "kind": "code_change",
+      "text": "A named lookup entry is added for the minimum price and another for the maximum price, so the transformation dictionary holds the price bounds too.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 139830,
+          "endMilliseconds": 143870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#let-callers-choose-the-rules"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 143870,
+      "endMilliseconds": 152560,
+      "kind": "explanation",
+      "text": "The code looks up the name of the current item in the configuration dictionary so the name selects which transformation applies.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 143870,
+          "endMilliseconds": 152560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#let-callers-choose-the-rules"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 152560,
+      "endMilliseconds": 162120,
+      "kind": "explanation",
+      "text": "When the dictionary has no entry for the item name, the default value is the name itself, so an unconfigured name is still usable as before.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 152560,
+          "endMilliseconds": 162120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#let-callers-choose-the-rules"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 159200,
+      "endMilliseconds": 178910,
+      "kind": "code_change",
+      "text": "A test list of items is created with one cheap item that will be dropped, one unchanged item, and one item priced too high to pass all the rules, so every branch is exercised.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 159200,
+          "endMilliseconds": 178910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#record-the-result-with-verify"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 178910,
+      "endMilliseconds": 189120,
+      "kind": "code_change",
+      "text": "An extra item whose name is entirely lowercase is added to confirm it is converted to the uppercase form.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 178910,
+          "endMilliseconds": 189120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#record-the-result-with-verify"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 189120,
+      "endMilliseconds": 203080,
+      "kind": "code_change",
+      "text": "The function is called with an explicit configuration dictionary where the name is mapped to a mark, so the test controls the rules instead of relying on defaults.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 189120,
+          "endMilliseconds": 203080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#record-the-result-with-verify"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 203080,
+      "endMilliseconds": 210190,
+      "kind": "explanation",
+      "text": "The resulting answer is checked with the Verify library, which is the assertion helper that reports pass or failure for the test.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 203080,
+          "endMilliseconds": 210190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#record-the-result-with-verify"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 210190,
+      "endMilliseconds": 217950,
+      "kind": "test_result",
+      "text": "On the first run the test produces a snapshot file with the results, because the expected output has not been recorded yet.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 210190,
+          "endMilliseconds": 217950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#record-the-result-with-verify"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 217950,
+      "endMilliseconds": 226510,
+      "kind": "test_result",
+      "text": "The generated snapshot shows the configured name turned into the mark, the untouched name left as is, and the lowercase name uppercased, so the behaviour matches what was intended.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 217950,
+          "endMilliseconds": 226510
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "2e88085eed097ef2a1e1345951fa37665caf0756",
+          "path": "examples/dependencies_simplified/tests/Tests.Test1.verified.txt"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#record-the-result-with-verify"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 226510,
+      "endMilliseconds": 233550,
+      "kind": "explanation",
+      "text": "Because the snapshot was saved, rerunning the test now succeeds instead of asking for a new snapshot.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 226510,
+          "endMilliseconds": 233550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#record-the-result-with-verify"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 233550,
+      "endMilliseconds": 241480,
+      "kind": "explanation",
+      "text": "If either the input data or the implementation changes, the snapshot test fails and shows exactly what changed, which makes unintended behaviour easy to spot.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 233550,
+          "endMilliseconds": 241480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#record-the-result-with-verify"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 239640,
+      "endMilliseconds": 251470,
+      "kind": "explanation",
+      "text": "If the input data or the implementation is changed, the snapshot test fails and shows what changed, which is how regressions get caught.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 239640,
+          "endMilliseconds": 251470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#record-the-result-with-verify"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 241480,
+      "endMilliseconds": 251480,
+      "kind": "explanation",
+      "text": "The visible part of the same point: changing inputs or the implementation makes the test fail and display the difference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 241480,
+          "endMilliseconds": 251480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#record-the-result-with-verify"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 251480,
+      "endMilliseconds": 262910,
+      "kind": "fact",
+      "text": "The single responsibility principle says each function should do only one thing, which keeps functions easier to understand and test.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 251480,
+          "endMilliseconds": 262910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-one-item-transformation"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 262910,
+      "endMilliseconds": 278590,
+      "kind": "explanation",
+      "text": "The example function violates single responsibility because it creates the result list, iterates over the input list, and performs the transformation, so it does more than two things.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 262910,
+          "endMilliseconds": 278590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-one-item-transformation"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 278590,
+      "endMilliseconds": 295510,
+      "kind": "code_change",
+      "text": "The iteration over the list is split into a function of its own, separate from the transformation function, to satisfy single responsibility.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 278590,
+          "endMilliseconds": 295510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-one-item-transformation"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 295510,
+      "endMilliseconds": 300670,
+      "kind": "reason",
+      "text": "Splitting requires deciding what the extracted piece of code does and what its interface is, because the extraction is only clean if the boundary is explicit.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 295510,
+          "endMilliseconds": 300670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-one-item-transformation"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 300670,
+      "endMilliseconds": 316280,
+      "kind": "explanation",
+      "text": "The extracted transformation receives the current item as input and may return a new item, so its interface is a single-item in, optional-item out mapping.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 300670,
+          "endMilliseconds": 316280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-one-item-transformation"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 313759,
+      "endMilliseconds": 333120,
+      "kind": "code_change",
+      "text": "The item-producing method returns null to signal that no new item came out, and is otherwise invoked as items.Item with the current item to obtain the new item, which is then saved.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 313759,
+          "endMilliseconds": 333120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-one-item-transformation"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 316280,
+      "endMilliseconds": 321639,
+      "kind": "edge_case",
+      "text": "When no new item is produced the function returns null, and a new item is returned only when the transformation actually yields one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 316280,
+          "endMilliseconds": 321639
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-one-item-transformation"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 333120,
+      "endMilliseconds": 342629,
+      "kind": "code_change",
+      "text": "The new item is added to the answer list only when it is not null, so at least the item-producing method now takes that item as input.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 333120,
+          "endMilliseconds": 342629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-one-item-transformation"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 342629,
+      "endMilliseconds": 359749,
+      "kind": "explanation",
+      "text": "A value the item-producing method directly needs is a dependency, and because that method can be called many times or from different places, the dependency is passed in as a parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 342629,
+          "endMilliseconds": 359749
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#declare-the-direct-input"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 359749,
+      "endMilliseconds": 371120,
+      "kind": "fact",
+      "text": "In the author's classification the item is a parameter dependency, one of the dependency kinds the lesson distinguishes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 359749,
+          "endMilliseconds": 371120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#declare-the-direct-input"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 371120,
+      "endMilliseconds": 376550,
+      "kind": "scope_boundary",
+      "text": "Two more kinds of dependencies exist besides the parameter one, and the lesson explicitly defers them to a later point.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 371120,
+          "endMilliseconds": 376550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#declare-the-direct-input"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 376550,
+      "endMilliseconds": 392360,
+      "kind": "explanation",
+      "text": "The base interface under discussion is an item arriving and possibly a new item leaving, so the arriving item has to be declared as a parameter of the method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 376550,
+          "endMilliseconds": 392360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#declare-the-direct-input"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 383759,
+      "endMilliseconds": 406950,
+      "kind": "code_change",
+      "text": "Because the incoming item is a parameter and a new item may or may not be produced, the method is written to return a nullable item and returns null in the no-new-item case, though the code does not compile at this moment.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 383759,
+          "endMilliseconds": 406950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#declare-the-direct-input"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 406950,
+      "endMilliseconds": 428749,
+      "kind": "explanation",
+      "text": "Besides the direct parameter dependency there is also a configuration dependency, so the four unknown values are configuration data that must also reach the item-producing function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 406950,
+          "endMilliseconds": 428749
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#pass-configuration-explicitly"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 428749,
+      "endMilliseconds": 450350,
+      "kind": "reason",
+      "text": "The configuration must not be made global because the values can differ and the method can be invoked from different places, arriving by different paths from different sources.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 428749,
+          "endMilliseconds": 450350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#pass-configuration-explicitly"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 450350,
+      "endMilliseconds": 464440,
+      "kind": "explanation",
+      "text": "The three context values are available in the outer function that calls the inner one, so they should be declared as parameters and passed directly into it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 450350,
+          "endMilliseconds": 464440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#pass-configuration-explicitly"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 457800,
+      "endMilliseconds": 473309,
+      "kind": "explanation",
+      "text": "The three context values are declared as parameters and passed directly, making this a direct dependency, and the configuration is such a direct dependency that will necessarily be expressed as a parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 457800,
+          "endMilliseconds": 473309
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#pass-configuration-explicitly"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 473309,
+      "endMilliseconds": 496230,
+      "kind": "reason",
+      "text": "This configuration is dedicated to that piece of code because the three parameters were originally passed in only to execute the instructions inside the inner function correctly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 473309,
+          "endMilliseconds": 496230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#pass-configuration-explicitly"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 496230,
+      "endMilliseconds": 517709,
+      "kind": "edge_case",
+      "text": "If the inner logic also had to skip items whose name is ignored, a list of ignored names would have to be added as a parameter as well.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 496230,
+          "endMilliseconds": 517709
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-ignored-names-and-follow-the-argument-outward"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 517709,
+      "endMilliseconds": 545790,
+      "kind": "explanation",
+      "text": "Once a parameter is added to a function that needs it, it must be passed at every call where the outer function invokes that inner function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 517709,
+          "endMilliseconds": 542399
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 534000,
+          "endMilliseconds": 545790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-ignored-names-and-follow-the-argument-outward"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 545790,
+      "endMilliseconds": 563910,
+      "kind": "explanation",
+      "text": "A drawback of passing dependencies as parameters is that the configuration must be threaded through every method through which the method needing it is used.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 545790,
+          "endMilliseconds": 563910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-ignored-names-and-follow-the-argument-outward"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 563910,
+      "endMilliseconds": 577269,
+      "kind": "code_change",
+      "text": "The test is updated so that the call site passes the list of ignored names into the method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 563910,
+          "endMilliseconds": 577269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-ignored-names-and-follow-the-argument-outward"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 577269,
+      "endMilliseconds": 601990,
+      "kind": "test_result",
+      "text": "A second ignored name is added to the input while the expected answer stays the same, showing the ignoring logic works.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 577269,
+          "endMilliseconds": 601990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-ignored-names-and-follow-the-argument-outward"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 601990,
+      "endMilliseconds": 612000,
+      "kind": "code_change",
+      "text": "Adding the new parameter forced the same parameter to be declared and passed in the calling function too, which demonstrates how the plumbing spreads outward.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 601990,
+          "endMilliseconds": 612000
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "407acfc8643e7a38c4031696e2eaa858541a46e4",
+          "path": "examples/dependencies_simplified/code/Code.cs"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-ignored-names-and-follow-the-argument-outward"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 610959,
+      "endMilliseconds": 620750,
+      "kind": "fact",
+      "text": "To give the nested method everything it needs, you create a structure or a class - the choice between the two does not matter here.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 610959,
+          "endMilliseconds": 620750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bundle-the-settings"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 612000,
+      "endMilliseconds": 620760,
+      "kind": "explanation",
+      "text": "Instead of forwarding each parameter separately, the parameters could be grouped into a single structure or class so they arrive as one bundle for the nested method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 612000,
+          "endMilliseconds": 620760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bundle-the-settings"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 620760,
+      "endMilliseconds": 632710,
+      "kind": "reason",
+      "text": "The new type is named ProcessItemConfig because the bundled value carries configuration only, not all of the dependencies.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 620760,
+          "endMilliseconds": 632710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bundle-the-settings"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 632720,
+      "endMilliseconds": 637710,
+      "kind": "explanation",
+      "text": "Direct dependencies are deliberately kept out of the config structure and passed as a separate parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 632720,
+          "endMilliseconds": 637710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bundle-the-settings"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 637720,
+      "endMilliseconds": 655550,
+      "kind": "code_change",
+      "text": "All previously separate values are moved into the config structure, and the method now accepts that structure and forwards it as one parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 637720,
+          "endMilliseconds": 655550
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "9968dcccb5b84a1622eb0e2f93b4b2b3de182146",
+          "path": "examples/dependencies_simplified/code/Code.cs"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bundle-the-settings"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 655560,
+      "endMilliseconds": 662629,
+      "kind": "fact",
+      "text": "The new method parameter is called processItemConfig, naming it after the abstraction it receives.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 655560,
+          "endMilliseconds": 662629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bundle-the-settings"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 662639,
+      "endMilliseconds": 692550,
+      "kind": "explanation",
+      "text": "The config abstraction lets all the parameters be passed as one value, so tests must build the config first and pass its values at construction before handing it to the method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 662639,
+          "endMilliseconds": 692550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bundle-the-settings"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 691000,
+      "endMilliseconds": 698560,
+      "kind": "explanation",
+      "text": "The config values travel as one batch into the nested ProcessItems method, which then pulls the individual values it needs out of that batch.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 691000,
+          "endMilliseconds": 698560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bundle-the-settings"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 692550,
+      "endMilliseconds": 698560,
+      "kind": "explanation",
+      "text": "The config then travels as a whole batch of values onward, so callers no longer pass a long list of separate arguments.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 692550,
+          "endMilliseconds": 698560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bundle-the-settings"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 702560,
+      "endMilliseconds": 712150,
+      "kind": "fact",
+      "text": "Services are the other kind of dependency besides configuration objects, so the course now turns to what they mean and how they are implemented.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 702560,
+          "endMilliseconds": 712150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-an-operation-its-own-context"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 712470,
+      "endMilliseconds": 722030,
+      "kind": "fact",
+      "text": "The RemapName operation currently works purely by looking names up in a dictionary, which illustrates what a service is built around.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 712470,
+          "endMilliseconds": 722030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-an-operation-its-own-context"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 722040,
+      "endMilliseconds": 742550,
+      "kind": "explanation",
+      "text": "A remap implementation need not consult a dictionary at all: it could apply rules such as substituting a value when a name starts with a given prefix or returning a slice when it ends with a given string.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 722040,
+          "endMilliseconds": 742550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-an-operation-its-own-context"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 742590,
+      "endMilliseconds": 754590,
+      "kind": "explanation",
+      "text": "More specific remap logic can be added beyond dictionary lookups, which is what makes the operation worth its own abstraction.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 742590,
+          "endMilliseconds": 754590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-an-operation-its-own-context"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 754629,
+      "endMilliseconds": 766240,
+      "kind": "reason",
+      "text": "Pulling the remapping rules into a separate function is motivated by the single responsibility principle, since it separates what the remap does from the fact that the function applies several different rules.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 754629,
+          "endMilliseconds": 766240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-an-operation-its-own-context"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 766240,
+      "endMilliseconds": 774600,
+      "kind": "fact",
+      "text": "If the remap rules are extracted into their own function, that new function has to be given the data it needs along with its dependency.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 766240,
+          "endMilliseconds": 774600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-an-operation-its-own-context"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 774600,
+      "endMilliseconds": 782190,
+      "kind": "reason",
+      "text": "The extracted function must receive its dependencies explicitly because the config it works with depends on the name dictionary.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 774600,
+          "endMilliseconds": 782190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-an-operation-its-own-context"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 782199,
+      "endMilliseconds": 793829,
+      "kind": "explanation",
+      "text": "A service groups a transformation together with the data that transformation requires, so both travel as one unit.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 782199,
+          "endMilliseconds": 793829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-an-operation-its-own-context"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 793839,
+      "endMilliseconds": 806760,
+      "kind": "reason",
+      "text": "For a service the abstraction must live at class level rather than function level, because a function would otherwise need every dependency passed as an extra parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 793839,
+          "endMilliseconds": 806760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-an-operation-its-own-context"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 806760,
+      "endMilliseconds": 813000,
+      "kind": "fact",
+      "text": "In the current code the config abstraction was built at function level, which the lesson contrasts with how services are done.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 806760,
+          "endMilliseconds": 813000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-an-operation-its-own-context"
+      }
+    },
+    {
+      "id": "TP-068",
+      "startMilliseconds": 813000,
+      "endMilliseconds": 820470,
+      "kind": "fact",
+      "text": "A service is simply an abstraction placed at class level instead of at function level.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 813000,
+          "endMilliseconds": 820470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-an-operation-its-own-context"
+      }
+    },
+    {
+      "id": "TP-069",
+      "startMilliseconds": 820480,
+      "endMilliseconds": 837230,
+      "kind": "explanation",
+      "text": "The class-level split keeps direct dependencies as method parameters while configuration is kept in a field of the class, separating the two kinds of input.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 820480,
+          "endMilliseconds": 837230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-an-operation-its-own-context"
+      }
+    },
+    {
+      "id": "TP-070",
+      "startMilliseconds": 837240,
+      "endMilliseconds": 841509,
+      "kind": "fact",
+      "text": "You create a class for the service, and classes are usually named after the way they will be used.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 837240,
+          "endMilliseconds": 841509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#construct-a-name-remapping-service"
+      }
+    },
+    {
+      "id": "TP-071",
+      "startMilliseconds": 841519,
+      "endMilliseconds": 851639,
+      "kind": "fact",
+      "text": "A class whose primary action is RemapName is named after that action, following the convention of naming a class by how it is used.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 841519,
+          "endMilliseconds": 851639
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 844440,
+          "endMilliseconds": 851639
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#construct-a-name-remapping-service"
+      }
+    },
+    {
+      "id": "TP-072",
+      "startMilliseconds": 851639,
+      "endMilliseconds": 856350,
+      "kind": "fact",
+      "text": "A service class with RemapName as its main action is named RemapNameService.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 851639,
+          "endMilliseconds": 856350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#construct-a-name-remapping-service"
+      }
+    },
+    {
+      "id": "TP-073",
+      "startMilliseconds": 856360,
+      "endMilliseconds": 865670,
+      "kind": "code_change",
+      "text": "The configuration dependency is stored in a field of the service class, and by rule that field is private so the rest of the code cannot reach into it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 856360,
+          "endMilliseconds": 865670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#construct-a-name-remapping-service"
+      }
+    },
+    {
+      "id": "TP-074",
+      "startMilliseconds": 869839,
+      "endMilliseconds": 872310,
+      "kind": "scope_boundary",
+      "text": "The lesson notes the config field could in principle be non-private, but that question is deliberately left for later.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 869839,
+          "endMilliseconds": 872310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#construct-a-name-remapping-service"
+      }
+    },
+    {
+      "id": "TP-075",
+      "startMilliseconds": 872310,
+      "endMilliseconds": 879990,
+      "kind": "code_change",
+      "text": "The configuration field is initialised from the constructor, so every instance gets its data at creation time.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 872310,
+          "endMilliseconds": 879990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#construct-a-name-remapping-service"
+      }
+    },
+    {
+      "id": "TP-076",
+      "startMilliseconds": 879990,
+      "endMilliseconds": 890310,
+      "kind": "code_change",
+      "text": "The service exposes a single public method that carries out the operation the class is named for.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 879990,
+          "endMilliseconds": 890310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#construct-a-name-remapping-service"
+      }
+    },
+    {
+      "id": "TP-077",
+      "startMilliseconds": 890310,
+      "endMilliseconds": 893829,
+      "kind": "fact",
+      "text": "That public method takes only the direct dependencies as parameters, since the configuration is already held in a field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 890310,
+          "endMilliseconds": 893829
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "94f768be6e21ab0eb6f9121df54161d291f040cc",
+          "path": "examples/dependencies_simplified/code/Code.cs"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#construct-a-name-remapping-service"
+      }
+    },
+    {
+      "id": "TP-078",
+      "startMilliseconds": 893829,
+      "endMilliseconds": 900310,
+      "kind": "reason",
+      "text": "The method reads the configuration from the field, which is why the caller no longer passes that data to it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 893829,
+          "endMilliseconds": 900310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#construct-a-name-remapping-service"
+      }
+    },
+    {
+      "id": "TP-079",
+      "startMilliseconds": 900310,
+      "endMilliseconds": 910230,
+      "kind": "explanation",
+      "text": "Callers now pass the service itself instead of the dictionary, which lets the service hold whatever data it needs rather than being tied to one fixed input.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 900310,
+          "endMilliseconds": 910230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#construct-a-name-remapping-service"
+      }
+    },
+    {
+      "id": "TP-080",
+      "startMilliseconds": 910230,
+      "endMilliseconds": 922590,
+      "kind": "reason",
+      "text": "Which data the service accepts is encapsulated inside the service, so callers no longer depend on that choice.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 910230,
+          "endMilliseconds": 922590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#construct-a-name-remapping-service"
+      }
+    },
+    {
+      "id": "TP-081",
+      "startMilliseconds": 922590,
+      "endMilliseconds": 932600,
+      "kind": "explanation",
+      "text": "A service follows the same shape as a config object except that an operation is attached to it, and that whole bundle can be passed as a single parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 922590,
+          "endMilliseconds": 932600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#construct-a-name-remapping-service"
+      }
+    },
+    {
+      "id": "TP-082",
+      "startMilliseconds": 923360,
+      "endMilliseconds": 946870,
+      "kind": "reason",
+      "text": "Binding the operation to a single configuration parameter is acceptable because that configuration is used only inside one service, so nothing else needs to know its shape.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 923360,
+          "endMilliseconds": 946870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#construct-a-name-remapping-service"
+      }
+    },
+    {
+      "id": "TP-083",
+      "startMilliseconds": 946870,
+      "endMilliseconds": 968230,
+      "kind": "scope_boundary",
+      "text": "The single minPriceCutOff value is still passed as a plain number for now, and turning it into its own private service is explicitly left for a later step.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 946870,
+          "endMilliseconds": 968230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#construct-a-name-remapping-service"
+      }
+    },
+    {
+      "id": "TP-084",
+      "startMilliseconds": 968230,
+      "endMilliseconds": 986670,
+      "kind": "code_change",
+      "text": "The configuration entry named name is now read out of the config object so that only the plain name value is passed onward.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 968230,
+          "endMilliseconds": 986670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-representations-and-extract-the-price-rule"
+      }
+    },
+    {
+      "id": "TP-085",
+      "startMilliseconds": 986670,
+      "endMilliseconds": 1010440,
+      "kind": "explanation",
+      "text": "Wrapping the settings dictionary in a class hides the fact that the function works off a dictionary, which is the point of introducing the abstraction.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1001600,
+          "endMilliseconds": 1010440
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 986670,
+          "endMilliseconds": 1010440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-representations-and-extract-the-price-rule"
+      }
+    },
+    {
+      "id": "TP-086",
+      "startMilliseconds": 1010440,
+      "endMilliseconds": 1015530,
+      "kind": "reason",
+      "text": "Encapsulating the dependency means call sites of the function no longer have to mention its configuration at all.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1010440,
+          "endMilliseconds": 1015530
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-representations-and-extract-the-price-rule"
+      }
+    },
+    {
+      "id": "TP-087",
+      "startMilliseconds": 1015530,
+      "endMilliseconds": 1029000,
+      "kind": "explanation",
+      "text": "The same service pattern can be applied to the other two items, giving each of them its own private service.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1015530,
+          "endMilliseconds": 1029000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-representations-and-extract-the-price-rule"
+      }
+    },
+    {
+      "id": "TP-088",
+      "startMilliseconds": 1029000,
+      "endMilliseconds": 1032400,
+      "kind": "fact",
+      "text": "The price service depends on exactly two values, the minimum and the maximum allowed price.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1029000,
+          "endMilliseconds": 1032400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-representations-and-extract-the-price-rule"
+      }
+    },
+    {
+      "id": "TP-089",
+      "startMilliseconds": 1032400,
+      "endMilliseconds": 1054590,
+      "kind": "fact",
+      "text": "The method is named AllowsPrice because asking whether a price is allowed reads better, and a service name need not match its method names.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1032400,
+          "endMilliseconds": 1054590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-representations-and-extract-the-price-rule"
+      }
+    },
+    {
+      "id": "TP-090",
+      "startMilliseconds": 1054590,
+      "endMilliseconds": 1075990,
+      "kind": "code_change",
+      "text": "The second price check is now performed by calling AllowsPrice on the injected service with the item's price.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1054590,
+          "endMilliseconds": 1075990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-representations-and-extract-the-price-rule"
+      }
+    },
+    {
+      "id": "TP-091",
+      "startMilliseconds": 1079590,
+      "endMilliseconds": 1094039,
+      "kind": "explanation",
+      "text": "The minimum and maximum price checks are now encapsulated inside the service method instead of being inlined in the caller.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1079590,
+          "endMilliseconds": 1094039
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1083520,
+          "endMilliseconds": 1094039
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-representations-and-extract-the-price-rule"
+      }
+    },
+    {
+      "id": "TP-092",
+      "startMilliseconds": 1094039,
+      "endMilliseconds": 1102000,
+      "kind": "reason",
+      "text": "A function that calls the method no longer needs to know which values the method depends on, because the class carries them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1094039,
+          "endMilliseconds": 1102000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-representations-and-extract-the-price-rule"
+      }
+    },
+    {
+      "id": "TP-093",
+      "startMilliseconds": 1102000,
+      "endMilliseconds": 1108380,
+      "kind": "code_change",
+      "text": "The code structure changes because the settings no longer fit into a single config object and must be split into separate services.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1102000,
+          "endMilliseconds": 1108380
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-representations-and-extract-the-price-rule"
+      }
+    },
+    {
+      "id": "TP-094",
+      "startMilliseconds": 1108380,
+      "endMilliseconds": 1119000,
+      "kind": "code_change",
+      "text": "The price service is created explicitly and configured by handing it the settings dictionary.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1108380,
+          "endMilliseconds": 1119000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-representations-and-extract-the-price-rule"
+      }
+    },
+    {
+      "id": "TP-095",
+      "startMilliseconds": 1119000,
+      "endMilliseconds": 1128250,
+      "kind": "code_change",
+      "text": "The method receives the price service as its first parameter and the item as its second, replacing the raw config.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1119000,
+          "endMilliseconds": 1128250
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-representations-and-extract-the-price-rule"
+      }
+    },
+    {
+      "id": "TP-096",
+      "startMilliseconds": 1128250,
+      "endMilliseconds": 1139500,
+      "kind": "explanation",
+      "text": "Having two services plus a shared configuration service side by side is normal and does not require every value to live in its own service.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1128250,
+          "endMilliseconds": 1139500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-representations-and-extract-the-price-rule"
+      }
+    },
+    {
+      "id": "TP-097",
+      "startMilliseconds": 1139500,
+      "endMilliseconds": 1165840,
+      "kind": "reason",
+      "text": "Splitting values into their own services is optional, but it is what lets the method's dependencies and the operations it performs stay encapsulated behind an abstraction.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1139500,
+          "endMilliseconds": 1165840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-representations-and-extract-the-price-rule"
+      }
+    },
+    {
+      "id": "TP-098",
+      "startMilliseconds": 1159480,
+      "endMilliseconds": 1181750,
+      "kind": "reason",
+      "text": "Putting values in their own services is desirable when you want to both encapsulate the method's dependencies and the operations performed, leaving users only the abstraction.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1159480,
+          "endMilliseconds": 1181750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-representations-and-extract-the-price-rule"
+      }
+    },
+    {
+      "id": "TP-099",
+      "startMilliseconds": 1181750,
+      "endMilliseconds": 1198530,
+      "kind": "explanation",
+      "text": "PriceSite is the next function worth turning into a service because it takes a direct configuration dependency.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1181750,
+          "endMilliseconds": 1198530
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-the-item-processor-a-service"
+      }
+    },
+    {
+      "id": "TP-100",
+      "startMilliseconds": 1198530,
+      "endMilliseconds": 1216290,
+      "kind": "code_change",
+      "text": "The configuration is handed to the new PriceSite service, whose main method calls everything that used to happen inline.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1198530,
+          "endMilliseconds": 1216290
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-the-item-processor-a-service"
+      }
+    },
+    {
+      "id": "TP-101",
+      "startMilliseconds": 1216290,
+      "endMilliseconds": 1222870,
+      "kind": "fact",
+      "text": "Prefixing the config type name with an underscore is only a naming convention and is not required for correctness.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1216290,
+          "endMilliseconds": 1222870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-the-item-processor-a-service"
+      }
+    },
+    {
+      "id": "TP-102",
+      "startMilliseconds": 1222870,
+      "endMilliseconds": 1229980,
+      "kind": "code_change",
+      "text": "The old config-taking method is no longer needed and may be removed, since callers now pass the service instead.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1222870,
+          "endMilliseconds": 1229980
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-the-item-processor-a-service"
+      }
+    },
+    {
+      "id": "TP-103",
+      "startMilliseconds": 1229980,
+      "endMilliseconds": 1236679,
+      "kind": "code_change",
+      "text": "Callers now pass the PriceSite service in place of the configuration object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1229980,
+          "endMilliseconds": 1236679
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-the-item-processor-a-service"
+      }
+    },
+    {
+      "id": "TP-104",
+      "startMilliseconds": 1230000,
+      "endMilliseconds": 1236500,
+      "kind": "code_change",
+      "text": "Instead of passing the configuration object into the consumer, you now pass the service instance itself, because the service owns its own configuration.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1230000,
+          "endMilliseconds": 1236500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-the-item-processor-a-service"
+      }
+    },
+    {
+      "id": "TP-105",
+      "startMilliseconds": 1238900,
+      "endMilliseconds": 1244240,
+      "kind": "reason",
+      "text": "The configuration no longer has to be handed to the service because the service already knows what it depends on, which removes duplicated wiring at the call site.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1238900,
+          "endMilliseconds": 1244240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-the-item-processor-a-service"
+      }
+    },
+    {
+      "id": "TP-106",
+      "startMilliseconds": 1244240,
+      "endMilliseconds": 1253270,
+      "kind": "fact",
+      "text": "A direct dependency always has to be supplied to its direct consumer, so the consumer's parameter list must still name what it actually uses.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1244240,
+          "endMilliseconds": 1253270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-the-item-processor-a-service"
+      }
+    },
+    {
+      "id": "TP-107",
+      "startMilliseconds": 1253270,
+      "endMilliseconds": 1260710,
+      "kind": "code_change",
+      "text": "In this refactoring the configuration parameter is replaced by creating the service and passing the service.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1253270,
+          "endMilliseconds": 1260710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-the-item-processor-a-service"
+      }
+    },
+    {
+      "id": "TP-108",
+      "startMilliseconds": 1260720,
+      "endMilliseconds": 1271789,
+      "kind": "explanation",
+      "text": "The same move can be applied to the remaining helper logic by extracting it into a service, making the helper a dependency of that service, and passing the delegate-produced function in its place.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1260720,
+          "endMilliseconds": 1271789
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-the-item-processor-a-service"
+      }
+    },
+    {
+      "id": "TP-109",
+      "startMilliseconds": 1271789,
+      "endMilliseconds": 1283149,
+      "kind": "scope_boundary",
+      "text": "This extraction only makes sense for helpers that already do a single thing, because multi-purpose helpers cannot be turned into a single-responsibility service.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1271789,
+          "endMilliseconds": 1283149
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-the-item-processor-a-service"
+      }
+    },
+    {
+      "id": "TP-110",
+      "startMilliseconds": 1283149,
+      "endMilliseconds": 1293149,
+      "kind": "scope_boundary",
+      "text": "To follow the single responsibility principle completely you would go further and convert all such methods into usage of a service.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1283149,
+          "endMilliseconds": 1293149
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-the-item-processor-a-service"
+      }
+    },
+    {
+      "id": "TP-111",
+      "startMilliseconds": 1293149,
+      "endMilliseconds": 1297949,
+      "kind": "fact",
+      "text": "Beyond passing a service there are alternative ways to pass the function's context, and in C# one of them is a delegate.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1293149,
+          "endMilliseconds": 1297949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#pass-behaviour-through-a-delegate"
+      }
+    },
+    {
+      "id": "TP-112",
+      "startMilliseconds": 1297679,
+      "endMilliseconds": 1311279,
+      "kind": "explanation",
+      "text": "Where a service object was being passed you can instead pass a delegate, which works like a C# lambda expression.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1297679,
+          "endMilliseconds": 1311279
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#pass-behaviour-through-a-delegate"
+      }
+    },
+    {
+      "id": "TP-113",
+      "startMilliseconds": 1305520,
+      "endMilliseconds": 1311269,
+      "kind": "explanation",
+      "text": "Where the service was passed you can pass a delegate instead, which is the C# equivalent of a lambda expression.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1305520,
+          "endMilliseconds": 1311269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#pass-behaviour-through-a-delegate"
+      }
+    },
+    {
+      "id": "TP-114",
+      "startMilliseconds": 1315269,
+      "endMilliseconds": 1321000,
+      "kind": "fact",
+      "text": "A delegate is declared by writing the function prototype, which tells the compiler what the delegate points at and what it returns.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1315269,
+          "endMilliseconds": 1321000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#pass-behaviour-through-a-delegate"
+      }
+    },
+    {
+      "id": "TP-115",
+      "startMilliseconds": 1321000,
+      "endMilliseconds": 1338390,
+      "kind": "fact",
+      "text": "A delegate named ProcessItem that takes an item and returns an item is declared as the delegate type ProcessItemDelegate.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1321000,
+          "endMilliseconds": 1338390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#pass-behaviour-through-a-delegate"
+      }
+    },
+    {
+      "id": "TP-116",
+      "startMilliseconds": 1338390,
+      "endMilliseconds": 1341559,
+      "kind": "explanation",
+      "text": "The delegate type is an interface for behaviour rather than a class of its own, so the consumer depends on a signature instead of an implementation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1338390,
+          "endMilliseconds": 1341559
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#pass-behaviour-through-a-delegate"
+      }
+    },
+    {
+      "id": "TP-117",
+      "startMilliseconds": 1341559,
+      "endMilliseconds": 1352570,
+      "kind": "code_change",
+      "text": "In place of the service class instance you pass the delegate and call it, which removes the dependency on the concrete class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1341559,
+          "endMilliseconds": 1352570
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#pass-behaviour-through-a-delegate"
+      }
+    },
+    {
+      "id": "TP-118",
+      "startMilliseconds": 1351990,
+      "endMilliseconds": 1361140,
+      "kind": "code_change",
+      "text": "The delegate declaration can even live in its own separate file to keep it clearly separated from the consuming code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1351990,
+          "endMilliseconds": 1361140
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#pass-behaviour-through-a-delegate"
+      }
+    },
+    {
+      "id": "TP-119",
+      "startMilliseconds": 1361140,
+      "endMilliseconds": 1372590,
+      "kind": "code_change",
+      "text": "The delegate can be supplied either as a named method group or written inline as a lambda expression.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1361140,
+          "endMilliseconds": 1372590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#pass-behaviour-through-a-delegate"
+      }
+    },
+    {
+      "id": "TP-120",
+      "startMilliseconds": 1372590,
+      "endMilliseconds": 1382559,
+      "kind": "code_change",
+      "text": "If Helper.ProcessItem is static you can pass Helper.ProcessItem together with the item and the configuration, using an existing helper instead of a service class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1372590,
+          "endMilliseconds": 1382559
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#pass-behaviour-through-a-delegate"
+      }
+    },
+    {
+      "id": "TP-121",
+      "startMilliseconds": 1382559,
+      "endMilliseconds": 1401559,
+      "kind": "explanation",
+      "text": "The delegate-based approach is equivalent to the service-based one and here it avoids creating a class that lists its dependencies and receives them through the constructor.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1382559,
+          "endMilliseconds": 1401559
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#pass-behaviour-through-a-delegate"
+      }
+    },
+    {
+      "id": "TP-122",
+      "startMilliseconds": 1394760,
+      "endMilliseconds": 1401570,
+      "kind": "reason",
+      "text": "This construction is equivalent to the service version, and it saves writing a class that enumerates its dependencies and takes them from the constructor.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1394760,
+          "endMilliseconds": 1401570
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#pass-behaviour-through-a-delegate"
+      }
+    },
+    {
+      "id": "TP-123",
+      "startMilliseconds": 1401559,
+      "endMilliseconds": 1415460,
+      "kind": "fact",
+      "text": "The function passed here is anonymous and depends on the local variable in the surrounding method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1401559,
+          "endMilliseconds": 1415460
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#pass-behaviour-through-a-delegate"
+      }
+    },
+    {
+      "id": "TP-124",
+      "startMilliseconds": 1415460,
+      "endMilliseconds": 1426960,
+      "kind": "reason",
+      "text": "Going the classical route and building a service from that logic would force the local variable to be passed as a constructor parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1415460,
+          "endMilliseconds": 1426960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#pass-behaviour-through-a-delegate"
+      }
+    },
+    {
+      "id": "TP-125",
+      "startMilliseconds": 1426960,
+      "endMilliseconds": 1439570,
+      "kind": "reason",
+      "text": "A lambda avoids that constructor plumbing because it automatically gets access to local variables through a compiler-generated capture.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1426960,
+          "endMilliseconds": 1439570
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#pass-behaviour-through-a-delegate"
+      }
+    },
+    {
+      "id": "TP-126",
+      "startMilliseconds": 1439570,
+      "endMilliseconds": 1447000,
+      "kind": "fact",
+      "text": "The question of varying behaviour arises when several implementations are possible, as in the earlier NameMap example where the current implementation is simply a dictionary.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1439570,
+          "endMilliseconds": 1447000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-different-remapping-implementation"
+      }
+    },
+    {
+      "id": "TP-127",
+      "startMilliseconds": 1447000,
+      "endMilliseconds": 1457100,
+      "kind": "fact",
+      "text": "An alternative implementation of that class would look up the name in the dictionary and otherwise apply a different strategy such as removing a prefix.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1447000,
+          "endMilliseconds": 1457100
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-different-remapping-implementation"
+      }
+    },
+    {
+      "id": "TP-128",
+      "startMilliseconds": 1457100,
+      "endMilliseconds": 1475720,
+      "kind": "code_change",
+      "text": "That alternative implementation checks whether the name starts with the prefix and, if it does, returns the item name with the prefix stripped, otherwise returning the item name unchanged.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1457100,
+          "endMilliseconds": 1475720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-different-remapping-implementation"
+      }
+    },
+    {
+      "id": "TP-129",
+      "startMilliseconds": 1468120,
+      "endMilliseconds": 1484490,
+      "kind": "code_change",
+      "text": "The prefix-removing implementation checks StartsWith for the prefix and then returns the item name without it, otherwise returning the item name as is, so the class should be named after that behaviour.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1468120,
+          "endMilliseconds": 1484490
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-different-remapping-implementation"
+      }
+    },
+    {
+      "id": "TP-130",
+      "startMilliseconds": 1484490,
+      "endMilliseconds": 1501559,
+      "kind": "fact",
+      "text": "To support more than one behaviour you would want to give the helper service a configuration other than the single concrete dictionary-based class it is currently fixed to.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1484490,
+          "endMilliseconds": 1501559
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-different-remapping-implementation"
+      }
+    },
+    {
+      "id": "TP-131",
+      "startMilliseconds": 1501559,
+      "endMilliseconds": 1515469,
+      "kind": "fact",
+      "text": "The second candidate configuration is an alternative implementation whose job is to remove prefixes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1501559,
+          "endMilliseconds": 1515469
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-different-remapping-implementation"
+      }
+    },
+    {
+      "id": "TP-132",
+      "startMilliseconds": 1515469,
+      "endMilliseconds": 1525200,
+      "kind": "fact",
+      "text": "Passing this other implementation directly into the helper service does not compile as written.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1515469,
+          "endMilliseconds": 1525200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-different-remapping-implementation"
+      }
+    },
+    {
+      "id": "TP-133",
+      "startMilliseconds": 1525200,
+      "endMilliseconds": 1532269,
+      "kind": "reason",
+      "text": "It does not compile because the two types are incompatible even though they could otherwise be used interchangeably.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1525200,
+          "endMilliseconds": 1532269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-different-remapping-implementation"
+      }
+    },
+    {
+      "id": "TP-134",
+      "startMilliseconds": 1532269,
+      "endMilliseconds": 1549230,
+      "kind": "explanation",
+      "text": "The two implementations both expose the same method that the consumer actually calls, so either one could serve the call site in principle.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1532269,
+          "endMilliseconds": 1549230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-different-remapping-implementation"
+      }
+    },
+    {
+      "id": "TP-135",
+      "startMilliseconds": 1545240,
+      "endMilliseconds": 1600710,
+      "kind": "fact",
+      "text": "The service is currently bound to one concrete implementation class even though it only uses that class's public interface method RemapName, so it could in theory depend on any class exposing that same method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1545240,
+          "endMilliseconds": 1600710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-different-remapping-implementation"
+      }
+    },
+    {
+      "id": "TP-136",
+      "startMilliseconds": 1549230,
+      "endMilliseconds": 1554960,
+      "kind": "scope_boundary",
+      "text": "As the code stands right now, the helper service is bound to one specific concrete configuration type, so the alternatives cannot yet be swapped in.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1549230,
+          "endMilliseconds": 1554960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-different-remapping-implementation"
+      }
+    },
+    {
+      "id": "TP-137",
+      "startMilliseconds": 1603600,
+      "endMilliseconds": 1618600,
+      "kind": "reason",
+      "text": "Because the service ignores the rest of the concrete class, substituting another implementation requires polymorphism, otherwise the hard dependency on this one class cannot be removed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1603600,
+          "endMilliseconds": 1618600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-an-interface-for-strategy"
+      }
+    },
+    {
+      "id": "TP-138",
+      "startMilliseconds": 1617240,
+      "endMilliseconds": 1624799,
+      "kind": "explanation",
+      "text": "The service can be written so that it does not care what the passed object actually does inside, meaning any input would work and the service's own behaviour would not change.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1617240,
+          "endMilliseconds": 1624799
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-an-interface-for-strategy"
+      }
+    },
+    {
+      "id": "TP-139",
+      "startMilliseconds": 1618600,
+      "endMilliseconds": 1624799,
+      "kind": "explanation",
+      "text": "As written the service can even assume the exact action of this class will run, while in principle it could be written to not depend on the logic at all, so the same code would work with anything passed in.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1618600,
+          "endMilliseconds": 1624799
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-an-interface-for-strategy"
+      }
+    },
+    {
+      "id": "TP-140",
+      "startMilliseconds": 1624800,
+      "endMilliseconds": 1642000,
+      "kind": "reason",
+      "text": "Since another implementation will be used later, the function should be able to call not only this one implementation but any other one, which is exactly what the lesson calls polymorphism.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1624800,
+          "endMilliseconds": 1642000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-an-interface-for-strategy"
+      }
+    },
+    {
+      "id": "TP-141",
+      "startMilliseconds": 1642000,
+      "endMilliseconds": 1667400,
+      "kind": "explanation",
+      "text": "Polymorphism means a function call is not bound to one specific implementation and may go to a different one, and in C# it is realized here with an interface, with a tagged union offered as the other option.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1642000,
+          "endMilliseconds": 1667400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-an-interface-for-strategy"
+      }
+    },
+    {
+      "id": "TP-142",
+      "startMilliseconds": 1667400,
+      "endMilliseconds": 1695960,
+      "kind": "code_change",
+      "text": "To get that polymorphism, declare an interface for the service that contains only the signature of the function and then implement that interface in the classes allowed to be passed in.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1667400,
+          "endMilliseconds": 1695960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-an-interface-for-strategy"
+      }
+    },
+    {
+      "id": "TP-143",
+      "startMilliseconds": 1685840,
+      "endMilliseconds": 1695960,
+      "kind": "code_change",
+      "text": "The new interface holds just the function signature with no body, and each class intended to be usable as an implementation must implement that interface.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1685840,
+          "endMilliseconds": 1695960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-an-interface-for-strategy"
+      }
+    },
+    {
+      "id": "TP-144",
+      "startMilliseconds": 1698159,
+      "endMilliseconds": 1708870,
+      "kind": "code_change",
+      "text": "The only remaining edit is to replace the dependency on the concrete service class with a dependency on the abstract interface.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1698159,
+          "endMilliseconds": 1708870
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "7001d912d07b50d6516b1206d5b36bd03c54d43b",
+          "path": "examples/dependencies_simplified/code/Code.cs"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-an-interface-for-strategy"
+      }
+    },
+    {
+      "id": "TP-145",
+      "startMilliseconds": 1708870,
+      "endMilliseconds": 1725650,
+      "kind": "explanation",
+      "text": "After that change any implementation can be passed, keeping the existing name-mapping one or passing a new one, and at runtime the function that actually runs is the one in the service that was passed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1708870,
+          "endMilliseconds": 1725650
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-an-interface-for-strategy"
+      }
+    },
+    {
+      "id": "TP-146",
+      "startMilliseconds": 1725650,
+      "endMilliseconds": 1749000,
+      "kind": "fact",
+      "text": "This widely used idea is the Strategy pattern, and it covers both passing an implementation as a parameter and storing it in a field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1725650,
+          "endMilliseconds": 1749000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-an-interface-for-strategy"
+      }
+    },
+    {
+      "id": "TP-147",
+      "startMilliseconds": 1749000,
+      "endMilliseconds": 1764000,
+      "kind": "explanation",
+      "text": "In the Strategy pattern you hand the code an implementation of the interface, and that object solely dictates which action gets performed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1749000,
+          "endMilliseconds": 1764000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-an-interface-for-strategy"
+      }
+    },
+    {
+      "id": "TP-148",
+      "startMilliseconds": 1764000,
+      "endMilliseconds": 1773640,
+      "kind": "scope_boundary",
+      "text": "A tagged union is presented as an alternative approach to the interface, and the lesson sets up the comparison by noting the interface-based version has an interface plus its implementations.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1764000,
+          "endMilliseconds": 1773640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-an-open-or-closed-hierarchy"
+      }
+    },
+    {
+      "id": "TP-149",
+      "startMilliseconds": 1765320,
+      "endMilliseconds": 1779790,
+      "kind": "explanation",
+      "text": "Because an interface is used, a consumer of the code can supply their own implementation, either one of the predefined implementations or a brand-new one written in their own code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1765320,
+          "endMilliseconds": 1779790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-an-open-or-closed-hierarchy"
+      }
+    },
+    {
+      "id": "TP-150",
+      "startMilliseconds": 1779790,
+      "endMilliseconds": 1803000,
+      "kind": "edge_case",
+      "text": "A user-created implementation may implement RemapName with arbitrary behaviour, even doing nothing at all, and passing it works without any other rules.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1779790,
+          "endMilliseconds": 1803000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-an-open-or-closed-hierarchy"
+      }
+    },
+    {
+      "id": "TP-151",
+      "startMilliseconds": 1803000,
+      "endMilliseconds": 1823000,
+      "kind": "explanation",
+      "text": "Since the new class implements the same interface, the calling function will invoke that externally supplied implementation even though the original author knew nothing about it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1803000,
+          "endMilliseconds": 1823000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-an-open-or-closed-hierarchy"
+      }
+    },
+    {
+      "id": "TP-152",
+      "startMilliseconds": 1823000,
+      "endMilliseconds": 1848240,
+      "kind": "fact",
+      "text": "For some projects this extension is not allowed and the hierarchy is made closed; here it is still open precisely because consumers may create their own implementation of the interface.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1823000,
+          "endMilliseconds": 1848240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-an-open-or-closed-hierarchy"
+      }
+    },
+    {
+      "id": "TP-153",
+      "startMilliseconds": 1842080,
+      "endMilliseconds": 1848560,
+      "kind": "explanation",
+      "text": "The hierarchy here is open because a user can supply their own implementation of the interface, so the code must work with any variant.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1842080,
+          "endMilliseconds": 1848560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-an-open-or-closed-hierarchy"
+      }
+    },
+    {
+      "id": "TP-154",
+      "startMilliseconds": 1848240,
+      "endMilliseconds": 1856750,
+      "kind": "explanation",
+      "text": "The hierarchy can also be made closed by explicitly enumerating every possible variant instead of relying on an interface.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1848240,
+          "endMilliseconds": 1856750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-an-open-or-closed-hierarchy"
+      }
+    },
+    {
+      "id": "TP-155",
+      "startMilliseconds": 1856750,
+      "endMilliseconds": 1863590,
+      "kind": "reason",
+      "text": "The interface is dropped here because it would no longer be needed once the variants are enumerated explicitly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1856750,
+          "endMilliseconds": 1863590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-an-open-or-closed-hierarchy"
+      }
+    },
+    {
+      "id": "TP-156",
+      "startMilliseconds": 1863590,
+      "endMilliseconds": 1871990,
+      "kind": "code_change",
+      "text": "A union type named RemapNameStringUnion is created to hold all possible implementations.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1863590,
+          "endMilliseconds": 1871990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-and-dispatch-a-tagged-union"
+      }
+    },
+    {
+      "id": "TP-157",
+      "startMilliseconds": 1871990,
+      "endMilliseconds": 1881360,
+      "kind": "explanation",
+      "text": "The most primitive way to build the union is to give it a constructor per variant and store each variant in its own field, e.g. RemapNameService and PrefixedNameService.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1871990,
+          "endMilliseconds": 1881360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-and-dispatch-a-tagged-union"
+      }
+    },
+    {
+      "id": "TP-158",
+      "startMilliseconds": 1881360,
+      "endMilliseconds": 1898629,
+      "kind": "code_change",
+      "text": "A dispatch method is added that checks the runtime type of the union and then calls the method on the matching variant.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1881360,
+          "endMilliseconds": 1898629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-and-dispatch-a-tagged-union"
+      }
+    },
+    {
+      "id": "TP-159",
+      "startMilliseconds": 1898629,
+      "endMilliseconds": 1914789,
+      "kind": "code_change",
+      "text": "For the first variant the dispatch calls StringMap on the implementation once its type matches.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1898629,
+          "endMilliseconds": 1914789
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-and-dispatch-a-tagged-union"
+      }
+    },
+    {
+      "id": "TP-160",
+      "startMilliseconds": 1917029,
+      "endMilliseconds": 1924159,
+      "kind": "code_change",
+      "text": "The dispatch checks the second possible variant type and invokes the method on that second type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1917029,
+          "endMilliseconds": 1924159
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-and-dispatch-a-tagged-union"
+      }
+    },
+    {
+      "id": "TP-161",
+      "startMilliseconds": 1925909,
+      "endMilliseconds": 1938870,
+      "kind": "reason",
+      "text": "The fallback else branch is unreachable because the union was always created from one of its constructors, so an impossible-state error can be thrown there.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1925909,
+          "endMilliseconds": 1938870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-and-dispatch-a-tagged-union"
+      }
+    },
+    {
+      "id": "TP-162",
+      "startMilliseconds": 1942559,
+      "endMilliseconds": 1953789,
+      "kind": "code_change",
+      "text": "The typed checks could instead be replaced with a dynamic call, after which nothing else in the code changes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1942559,
+          "endMilliseconds": 1953789
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-and-dispatch-a-tagged-union"
+      }
+    },
+    {
+      "id": "TP-163",
+      "startMilliseconds": 1953789,
+      "endMilliseconds": 1965000,
+      "kind": "explanation",
+      "text": "The stack union simply carries the possible variants and nothing more, so it adds no behaviour of its own.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1953789,
+          "endMilliseconds": 1965000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-and-dispatch-a-tagged-union"
+      }
+    },
+    {
+      "id": "TP-164",
+      "startMilliseconds": 1965000,
+      "endMilliseconds": 1975120,
+      "kind": "explanation",
+      "text": "If there are no services and only pure functions implement the behaviour, the dependencies could be passed directly instead of through a union.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1965000,
+          "endMilliseconds": 1975120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-raw-dependency-alternatives"
+      }
+    },
+    {
+      "id": "TP-165",
+      "startMilliseconds": 1975120,
+      "endMilliseconds": 2002519,
+      "kind": "explanation",
+      "text": "Although the union treats its implementations as mutually exclusive, ordinary C# code often keeps several fields and passes the dependencies as separate parameters, checking whether each is present.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1975120,
+          "endMilliseconds": 2002519
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-raw-dependency-alternatives"
+      }
+    },
+    {
+      "id": "TP-166",
+      "startMilliseconds": 1993080,
+      "endMilliseconds": 2002519,
+      "kind": "explanation",
+      "text": "A common alternative is to not put all dependencies into one object but pass them as separate parameters and check each for presence.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1993080,
+          "endMilliseconds": 2002519
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-raw-dependency-alternatives"
+      }
+    },
+    {
+      "id": "TP-167",
+      "startMilliseconds": 2002519,
+      "endMilliseconds": 2011789,
+      "kind": "explanation",
+      "text": "Both the single-union and the separate-parameters styles are valid, and the choice does not change the surrounding code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2002519,
+          "endMilliseconds": 2011789
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-raw-dependency-alternatives"
+      }
+    },
+    {
+      "id": "TP-168",
+      "startMilliseconds": 2011789,
+      "endMilliseconds": 2016140,
+      "kind": "fact",
+      "text": "In the union version the object represents exactly one of the dependency variants, never several at once.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2011789,
+          "endMilliseconds": 2016140
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-raw-dependency-alternatives"
+      }
+    },
+    {
+      "id": "TP-169",
+      "startMilliseconds": 2016140,
+      "endMilliseconds": 2034870,
+      "kind": "code_change",
+      "text": "To serve the Prefixed variant the code casts the stored object back to the known Prefixed type, since the prefix was saved in the union constructor.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2016140,
+          "endMilliseconds": 2034870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-raw-dependency-alternatives"
+      }
+    },
+    {
+      "id": "TP-170",
+      "startMilliseconds": 2035140,
+      "endMilliseconds": 2038080,
+      "kind": "code_change",
+      "text": "The same cast-and-dispatch is repeated for the Remap variant.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2035140,
+          "endMilliseconds": 2038080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-raw-dependency-alternatives"
+      }
+    },
+    {
+      "id": "TP-171",
+      "startMilliseconds": 2038080,
+      "endMilliseconds": 2051280,
+      "kind": "fact",
+      "text": "The main drawback of this primitive approach is that the same cast has to be duplicated for every variant.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2038080,
+          "endMilliseconds": 2051280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-raw-dependency-alternatives"
+      }
+    },
+    {
+      "id": "TP-172",
+      "startMilliseconds": 2051280,
+      "endMilliseconds": 2058109,
+      "kind": "reason",
+      "text": "The approach assumes that only one dependency is ever stored, so it does not generalise to a union with several alternatives.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2051280,
+          "endMilliseconds": 2058109
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-raw-dependency-alternatives"
+      }
+    },
+    {
+      "id": "TP-173",
+      "startMilliseconds": 2058109,
+      "endMilliseconds": 2064629,
+      "kind": "reason",
+      "text": "The dependency type has to be named in three separate places, which makes the code brittle when variants change.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2058109,
+          "endMilliseconds": 2064629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-raw-dependency-alternatives"
+      }
+    },
+    {
+      "id": "TP-174",
+      "startMilliseconds": 2064629,
+      "endMilliseconds": 2071990,
+      "kind": "scope_boundary",
+      "text": "The repeated type mention could be extracted into another dependent class, but the lesson states that this would bring little benefit.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2064629,
+          "endMilliseconds": 2071990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-raw-dependency-alternatives"
+      }
+    },
+    {
+      "id": "TP-175",
+      "startMilliseconds": 2071990,
+      "endMilliseconds": 2080399,
+      "kind": "fact",
+      "text": "Besides the missing service abstraction, the primitive union approach also forces the code to work out itself which type was stored.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2071990,
+          "endMilliseconds": 2080399
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-raw-dependency-alternatives"
+      }
+    },
+    {
+      "id": "TP-176",
+      "startMilliseconds": 2071990,
+      "endMilliseconds": 2080399,
+      "kind": "fact",
+      "text": "The code also had to determine on its own which type had actually been stored in the union.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2071990,
+          "endMilliseconds": 2080399
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-raw-dependency-alternatives"
+      }
+    },
+    {
+      "id": "TP-177",
+      "startMilliseconds": 2080399,
+      "endMilliseconds": 2087310,
+      "kind": "reason",
+      "text": "That self-detection requirement is the drawback the lesson attributes to the hand-written union rather than to the absence of service interfaces.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2080399,
+          "endMilliseconds": 2087310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-raw-dependency-alternatives"
+      }
+    },
+    {
+      "id": "TP-178",
+      "startMilliseconds": 2087310,
+      "endMilliseconds": 2099270,
+      "kind": "fact",
+      "text": "A benefit of the union is that it can now be declared as a struct instead of a class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2087310,
+          "endMilliseconds": 2099270
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "9cabfb706383195f1b3b3dade007d2272c62f899",
+          "path": "examples/dependencies_simplified/code/Code.cs"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reason-about-value-types-and-allocations"
+      }
+    },
+    {
+      "id": "TP-179",
+      "startMilliseconds": 2099270,
+      "endMilliseconds": 2112000,
+      "kind": "reason",
+      "text": "Because the union can be a struct, it needs no heap allocation and can even be stored on the stack.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2099270,
+          "endMilliseconds": 2112000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reason-about-value-types-and-allocations"
+      }
+    },
+    {
+      "id": "TP-180",
+      "startMilliseconds": 2112000,
+      "endMilliseconds": 2118390,
+      "kind": "fact",
+      "text": "The only heap data the union still holds is the dependencies stored inside it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2112000,
+          "endMilliseconds": 2118390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reason-about-value-types-and-allocations"
+      }
+    },
+    {
+      "id": "TP-181",
+      "startMilliseconds": 2118390,
+      "endMilliseconds": 2133330,
+      "kind": "reason",
+      "text": "Since those dependencies are reference types, converting the union to object neither boxes nor copies them to the heap, because they already live there.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2118390,
+          "endMilliseconds": 2133330
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reason-about-value-types-and-allocations"
+      }
+    },
+    {
+      "id": "TP-182",
+      "startMilliseconds": 2133330,
+      "endMilliseconds": 2145500,
+      "kind": "edge_case",
+      "text": "If a stored dependency were a value type instead, that value would be boxed when the union is converted to object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2133330,
+          "endMilliseconds": 2145500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reason-about-value-types-and-allocations"
+      }
+    },
+    {
+      "id": "TP-183",
+      "startMilliseconds": 2145680,
+      "endMilliseconds": 2161560,
+      "kind": "code_change",
+      "text": "In that value-type case it would be cleaner to add a separate union for the in-dependencies and pass that object in instead.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2145680,
+          "endMilliseconds": 2161560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reason-about-value-types-and-allocations"
+      }
+    },
+    {
+      "id": "TP-184",
+      "startMilliseconds": 2151800,
+      "endMilliseconds": 2169900,
+      "kind": "code_change",
+      "text": "He builds the dependency union by passing the number of dependencies and an explicit null dependency value into its constructor, so the whole dependency set is described at one place instead of being collected step by step.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2151800,
+          "endMilliseconds": 2169900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reason-about-value-types-and-allocations"
+      }
+    },
+    {
+      "id": "TP-185",
+      "startMilliseconds": 2169900,
+      "endMilliseconds": 2186150,
+      "kind": "reason",
+      "text": "Because the entire dependency context is created in stack memory instead of a new object on the heap, this formulation avoids an extra dynamic-memory allocation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2169900,
+          "endMilliseconds": 2186150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reason-about-value-types-and-allocations"
+      }
+    },
+    {
+      "id": "TP-186",
+      "startMilliseconds": 2186150,
+      "endMilliseconds": 2199680,
+      "kind": "explanation",
+      "text": "A tagged union requires the union itself to know about every possible implementation, which couples it to the full set of variants and is the main drawback of the approach.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2186150,
+          "endMilliseconds": 2199680
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reason-about-value-types-and-allocations"
+      }
+    },
+    {
+      "id": "TP-187",
+      "startMilliseconds": 2199680,
+      "endMilliseconds": 2217000,
+      "kind": "reason",
+      "text": "With a closed hierarchy of a fixed number of implementations that only accepts the dependencies given at construction time, this design can be faster and use less memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2199680,
+          "endMilliseconds": 2217000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reason-about-value-types-and-allocations"
+      }
+    },
+    {
+      "id": "TP-188",
+      "startMilliseconds": 2218570,
+      "endMilliseconds": 2232560,
+      "kind": "code_change",
+      "text": "He reverts the code back to the service-based version, which is easier to understand because the dependencies are encapsulated inside the services.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2218570,
+          "endMilliseconds": 2232560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restore-services-inside-the-closed-choice"
+      }
+    },
+    {
+      "id": "TP-189",
+      "startMilliseconds": 2225760,
+      "endMilliseconds": 2234950,
+      "kind": "explanation",
+      "text": "The service-based variant of the code is easier to understand because each dependency is encapsulated inside its own service rather than listed in a shared union.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2225760,
+          "endMilliseconds": 2234950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restore-services-inside-the-closed-choice"
+      }
+    },
+    {
+      "id": "TP-190",
+      "startMilliseconds": 2234950,
+      "endMilliseconds": 2244829,
+      "kind": "reason",
+      "text": "The union keeps single responsibility because it merely enumerates all possible implementations and holds no behaviour of its own.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2234950,
+          "endMilliseconds": 2244829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restore-services-inside-the-closed-choice"
+      }
+    },
+    {
+      "id": "TP-191",
+      "startMilliseconds": 2247309,
+      "endMilliseconds": 2265520,
+      "kind": "code_change",
+      "text": "Callers no longer pass the individual mappings directly; instead they pass a union value that was initialized with those mappings.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2247309,
+          "endMilliseconds": 2265520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restore-services-inside-the-closed-choice"
+      }
+    },
+    {
+      "id": "TP-192",
+      "startMilliseconds": 2265520,
+      "endMilliseconds": 2269319,
+      "kind": "edge_case",
+      "text": "A custom type of your own cannot be added to an existing tagged union, because a tagged union can only be created from the implementation types it was declared with.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2265520,
+          "endMilliseconds": 2269319
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restore-services-inside-the-closed-choice"
+      }
+    },
+    {
+      "id": "TP-193",
+      "startMilliseconds": 2269319,
+      "endMilliseconds": 2284960,
+      "kind": "fact",
+      "text": "In TypeScript the same idea is expressed by declaring a new type equal to the logical union of the two types, which means the value can be one of them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2269319,
+          "endMilliseconds": 2284960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restore-services-inside-the-closed-choice"
+      }
+    },
+    {
+      "id": "TP-194",
+      "startMilliseconds": 2284960,
+      "endMilliseconds": 2294430,
+      "kind": "scope_boundary",
+      "text": "C# has no built-in union type, so there is no need to imitate this by leaving it as a class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2284960,
+          "endMilliseconds": 2294430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restore-services-inside-the-closed-choice"
+      }
+    },
+    {
+      "id": "TP-195",
+      "startMilliseconds": 2294430,
+      "endMilliseconds": 2300720,
+      "kind": "reason",
+      "text": "The case can be expressed structurally instead, because there is no need to create yet another object for it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2294430,
+          "endMilliseconds": 2300720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restore-services-inside-the-closed-choice"
+      }
+    },
+    {
+      "id": "TP-196",
+      "startMilliseconds": 2294440,
+      "endMilliseconds": 2306790,
+      "kind": "reason",
+      "text": "There is no point wrapping this union in a class, because the union already stores the object on the heap encapsulating the dependencies, so an extra wrapper object would only waste memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2294440,
+          "endMilliseconds": 2306790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restore-services-inside-the-closed-choice"
+      }
+    },
+    {
+      "id": "TP-197",
+      "startMilliseconds": 2306800,
+      "endMilliseconds": 2311600,
+      "kind": "scope_boundary",
+      "text": "He moves on to the next topic, automatic dependency injection, and starts by asking what dependency injection actually is.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2306800,
+          "endMilliseconds": 2311600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-injection-control-and-inversion"
+      }
+    },
+    {
+      "id": "TP-198",
+      "startMilliseconds": 2324270,
+      "endMilliseconds": 2343160,
+      "kind": "code_change",
+      "text": "To make the example simpler he drops the configuration layer from the site service and adds a separate field per argument, so the call passes those values straight to the service.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2324270,
+          "endMilliseconds": 2343160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-injection-control-and-inversion"
+      }
+    },
+    {
+      "id": "TP-199",
+      "startMilliseconds": 2343160,
+      "endMilliseconds": 2359470,
+      "kind": "fact",
+      "text": "Dependency injection means that when an object is created you hand it its dependencies, and this is most often done through the constructor, though other ways are possible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2343160,
+          "endMilliseconds": 2359470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-injection-control-and-inversion"
+      }
+    },
+    {
+      "id": "TP-200",
+      "startMilliseconds": 2359470,
+      "endMilliseconds": 2375800,
+      "kind": "explanation",
+      "text": "Inversion of control means the service does not create what it depends on inside itself, so no repository or client instance is constructed there.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2359470,
+          "endMilliseconds": 2375800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-injection-control-and-inversion"
+      }
+    },
+    {
+      "id": "TP-201",
+      "startMilliseconds": 2367400,
+      "endMilliseconds": 2379829,
+      "kind": "explanation",
+      "text": "Since the service does not create its own repository or name dependency, those objects arrive from outside instead.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2367400,
+          "endMilliseconds": 2379829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-injection-control-and-inversion"
+      }
+    },
+    {
+      "id": "TP-202",
+      "startMilliseconds": 2379829,
+      "endMilliseconds": 2391390,
+      "kind": "fact",
+      "text": "Whoever uses the service is responsible for deciding which configuration and which dependencies actually get passed into it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2379829,
+          "endMilliseconds": 2391390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-injection-control-and-inversion"
+      }
+    },
+    {
+      "id": "TP-203",
+      "startMilliseconds": 2391390,
+      "endMilliseconds": 2404270,
+      "kind": "fact",
+      "text": "Dependency injection is the process of passing those dependencies, and it comes together with inversion of control, where the dependencies come from the outside.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2391390,
+          "endMilliseconds": 2404270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-injection-control-and-inversion"
+      }
+    },
+    {
+      "id": "TP-204",
+      "startMilliseconds": 2404270,
+      "endMilliseconds": 2415349,
+      "kind": "fact",
+      "text": "Dependency inversion means the dependency is declared against an interface rather than against a concrete class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2404270,
+          "endMilliseconds": 2415349
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-injection-control-and-inversion"
+      }
+    },
+    {
+      "id": "TP-205",
+      "startMilliseconds": 2415349,
+      "endMilliseconds": 2433520,
+      "kind": "explanation",
+      "text": "In this codebase the dependency points at a concrete class, so the higher-level service ends up depending on the implementation details of the lower-level service.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2415349,
+          "endMilliseconds": 2433520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-injection-control-and-inversion"
+      }
+    },
+    {
+      "id": "TP-206",
+      "startMilliseconds": 2433520,
+      "endMilliseconds": 2452520,
+      "kind": "reason",
+      "text": "When the dependency is declared on the interface instead, the higher-level service no longer needs to know what the lower-level service actually does, and the lower-level services only have to declare that they implement that interface.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2433520,
+          "endMilliseconds": 2452520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-injection-control-and-inversion"
+      }
+    },
+    {
+      "id": "TP-207",
+      "startMilliseconds": 2445000,
+      "endMilliseconds": 2456100,
+      "kind": "explanation",
+      "text": "Lower-level services depend on the high-level interface, so each of them must implement the interface method to be usable as that service.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2445000,
+          "endMilliseconds": 2456100
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-injection-control-and-inversion"
+      }
+    },
+    {
+      "id": "TP-208",
+      "startMilliseconds": 2459840,
+      "endMilliseconds": 2477000,
+      "kind": "fact",
+      "text": "The IoC container is also called a DI container or Dependency Injection container, so all three names mean the same object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2459840,
+          "endMilliseconds": 2477000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-collection-then-build-a-container"
+      }
+    },
+    {
+      "id": "TP-209",
+      "startMilliseconds": 2477000,
+      "endMilliseconds": 2497550,
+      "kind": "reason",
+      "text": "Creating a service by hand means manually creating all of its dependencies and passing them to its constructor in the right order, which is why a container is useful.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2477000,
+          "endMilliseconds": 2497550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-collection-then-build-a-container"
+      }
+    },
+    {
+      "id": "TP-210",
+      "startMilliseconds": 2497550,
+      "endMilliseconds": 2518830,
+      "kind": "explanation",
+      "text": "A DI container lets you hand over one block of configuration once and then automatically inject every dependency into a service, creating the missing dependencies itself if they are not registered.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2497550,
+          "endMilliseconds": 2518830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-collection-then-build-a-container"
+      }
+    },
+    {
+      "id": "TP-211",
+      "startMilliseconds": 2518830,
+      "endMilliseconds": 2520839,
+      "kind": "scope_boundary",
+      "text": "In C# this behavior is available out of the box, so the first step is simply to import the DI library.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2518830,
+          "endMilliseconds": 2520839
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-collection-then-build-a-container"
+      }
+    },
+    {
+      "id": "TP-212",
+      "startMilliseconds": 2522000,
+      "endMilliseconds": 2530000,
+      "kind": "fact",
+      "text": "The library providing this is Microsoft.Extensions.DependencyInjection, and it must be added to the project before its API can be used.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2522000,
+          "endMilliseconds": 2530000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-collection-then-build-a-container"
+      }
+    },
+    {
+      "id": "TP-213",
+      "startMilliseconds": 2523040,
+      "endMilliseconds": 2525910,
+      "kind": "code_change",
+      "text": "Adding the DI library to the project item group makes the dependency-injection system available in the code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2523040,
+          "endMilliseconds": 2525910
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "53502e1527899ae9acf128bbbf3b0388948ec39a",
+          "path": "examples/dependencies_simplified/tests/tests.csproj"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-collection-then-build-a-container"
+      }
+    },
+    {
+      "id": "TP-214",
+      "startMilliseconds": 2528600,
+      "endMilliseconds": 2537630,
+      "kind": "explanation",
+      "text": "Using the container has two stages: first the container is configured, then it is created, so that the configuration turns into a container you can already use.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2528600,
+          "endMilliseconds": 2537630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-collection-then-build-a-container"
+      }
+    },
+    {
+      "id": "TP-215",
+      "startMilliseconds": 2537630,
+      "endMilliseconds": 2546970,
+      "kind": "explanation",
+      "text": "The configuration is built as a plain list of service definitions, which is why registrations have to be completed before the container is created.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2537630,
+          "endMilliseconds": 2546970
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-collection-then-build-a-container"
+      }
+    },
+    {
+      "id": "TP-216",
+      "startMilliseconds": 2547000,
+      "endMilliseconds": 2556000,
+      "kind": "explanation",
+      "text": "This is the same pattern as a builder: a mutable model (the list of service definitions) is linked to a builder, and the container is the resulting finished model.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2547000,
+          "endMilliseconds": 2556000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-collection-then-build-a-container"
+      }
+    },
+    {
+      "id": "TP-217",
+      "startMilliseconds": 2551900,
+      "endMilliseconds": 2593490,
+      "kind": "explanation",
+      "text": "The list of service definitions is that mutable model, and the container is the finished model built from it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2551900,
+          "endMilliseconds": 2593490
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2589200,
+          "endMilliseconds": 2593490
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-collection-then-build-a-container"
+      }
+    },
+    {
+      "id": "TP-218",
+      "startMilliseconds": 2593520,
+      "endMilliseconds": 2599359,
+      "kind": "fact",
+      "text": "The container is the finished model whose purpose is obtaining services and their dependencies.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2593520,
+          "endMilliseconds": 2599359
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-collection-then-build-a-container"
+      }
+    },
+    {
+      "id": "TP-219",
+      "startMilliseconds": 2595210,
+      "endMilliseconds": 2597500,
+      "kind": "fact",
+      "text": "The container's declared purpose is to give you services together with their dependencies.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2595210,
+          "endMilliseconds": 2597500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-collection-then-build-a-container"
+      }
+    },
+    {
+      "id": "TP-220",
+      "startMilliseconds": 2598400,
+      "endMilliseconds": 2601630,
+      "kind": "fact",
+      "text": "To use the container you first create a service collection, which is the mutable model that holds your registrations.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2598400,
+          "endMilliseconds": 2601630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-collection-then-build-a-container"
+      }
+    },
+    {
+      "id": "TP-221",
+      "startMilliseconds": 2602000,
+      "endMilliseconds": 2611630,
+      "kind": "explanation",
+      "text": "Looking at its implementation, the service collection is just a list of service descriptors, which is why registrations can simply be appended.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2602000,
+          "endMilliseconds": 2611630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-collection-then-build-a-container"
+      }
+    },
+    {
+      "id": "TP-222",
+      "startMilliseconds": 2611640,
+      "endMilliseconds": 2618109,
+      "kind": "fact",
+      "text": "Each element of that list is a service descriptor: a definition of a service containing a function that creates it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2611640,
+          "endMilliseconds": 2618109
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-collection-then-build-a-container"
+      }
+    },
+    {
+      "id": "TP-223",
+      "startMilliseconds": 2621200,
+      "endMilliseconds": 2623560,
+      "kind": "explanation",
+      "text": "The descriptor's factory creates the concrete implementation type rather than the interface, because the container must hand back a real object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2621200,
+          "endMilliseconds": 2623560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-collection-then-build-a-container"
+      }
+    },
+    {
+      "id": "TP-224",
+      "startMilliseconds": 2623560,
+      "endMilliseconds": 2624829,
+      "kind": "fact",
+      "text": "The descriptor also stores the interface against which the concrete implementation is registered.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2623560,
+          "endMilliseconds": 2624829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-collection-then-build-a-container"
+      }
+    },
+    {
+      "id": "TP-225",
+      "startMilliseconds": 2624839,
+      "endMilliseconds": 2631030,
+      "kind": "explanation",
+      "text": "So a descriptor basically states that for a given interface the container should use a given implementation, which is the whole point of the registration.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2624839,
+          "endMilliseconds": 2631030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-collection-then-build-a-container"
+      }
+    },
+    {
+      "id": "TP-226",
+      "startMilliseconds": 2631030,
+      "endMilliseconds": 2675480,
+      "kind": "explanation",
+      "text": "Because the collection stays mutable, new services are added to it in order to register them before the container is built.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2631030,
+          "endMilliseconds": 2675480
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2666400,
+          "endMilliseconds": 2669510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-collection-then-build-a-container"
+      }
+    },
+    {
+      "id": "TP-227",
+      "startMilliseconds": 2679600,
+      "endMilliseconds": 2681000,
+      "kind": "fact",
+      "text": "Registration is done with extension methods such as AddSingleton on the service collection.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2679600,
+          "endMilliseconds": 2681000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-factories-and-instances"
+      }
+    },
+    {
+      "id": "TP-228",
+      "startMilliseconds": 2681000,
+      "endMilliseconds": 2684630,
+      "kind": "scope_boundary",
+      "text": "Besides AddSingleton there is also AddScoped, which is deliberately left for the student to study separately when needed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2681000,
+          "endMilliseconds": 2684630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-factories-and-instances"
+      }
+    },
+    {
+      "id": "TP-229",
+      "startMilliseconds": 2683630,
+      "endMilliseconds": 2689000,
+      "kind": "explanation",
+      "text": "AddSingleton is told which service type is being registered, and here the implementation type is passed directly because this service has no separate interface.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2683630,
+          "endMilliseconds": 2689000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-factories-and-instances"
+      }
+    },
+    {
+      "id": "TP-230",
+      "startMilliseconds": 2691080,
+      "endMilliseconds": 2693340,
+      "kind": "code_change",
+      "text": "The redundant registration is deleted from the creation site so the service is received through the container as its own concrete type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2691080,
+          "endMilliseconds": 2693340
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-factories-and-instances"
+      }
+    },
+    {
+      "id": "TP-231",
+      "startMilliseconds": 2693640,
+      "endMilliseconds": 2699750,
+      "kind": "reason",
+      "text": "Because the service is resolved as its own concrete type, the factory has to pass that type as the generic argument instead of the interface.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2693640,
+          "endMilliseconds": 2699750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-factories-and-instances"
+      }
+    },
+    {
+      "id": "TP-232",
+      "startMilliseconds": 2699750,
+      "endMilliseconds": 2709950,
+      "kind": "fact",
+      "text": "The registration delegate must both return the service instance and initialize it before handing it back to the container.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2699750,
+          "endMilliseconds": 2709950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-factories-and-instances"
+      }
+    },
+    {
+      "id": "TP-233",
+      "startMilliseconds": 2709090,
+      "endMilliseconds": 2715067,
+      "kind": "fact",
+      "text": "If the delegate's return type is the same as the registration's generic argument, you can omit the return statement because it is inferred.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2709090,
+          "endMilliseconds": 2715067
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-factories-and-instances"
+      }
+    },
+    {
+      "id": "TP-234",
+      "startMilliseconds": 2715070,
+      "endMilliseconds": 2720967,
+      "kind": "code_change",
+      "text": "Because of that inference the registration can be shortened to just a lambda that constructs the service, and the shorter form compiles the same way.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2715070,
+          "endMilliseconds": 2720967
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-factories-and-instances"
+      }
+    },
+    {
+      "id": "TP-235",
+      "startMilliseconds": 2752480,
+      "endMilliseconds": 2760480,
+      "kind": "explanation",
+      "text": "The service-provider parameter of the factory method is not needed, so it can simply be discarded instead of being used.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2752480,
+          "endMilliseconds": 2760480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-factories-and-instances"
+      }
+    },
+    {
+      "id": "TP-236",
+      "startMilliseconds": 2767390,
+      "endMilliseconds": 2772910,
+      "kind": "explanation",
+      "text": "The unused service provider is ignored by discarding it, because the factory method does not need the container to build the service.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2767390,
+          "endMilliseconds": 2772910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-factories-and-instances"
+      }
+    },
+    {
+      "id": "TP-237",
+      "startMilliseconds": 2772920,
+      "endMilliseconds": 2784270,
+      "kind": "fact",
+      "text": "Instead of creating the service in the factory body, the lambda is given to the service provider so it can create the service if it is ever needed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2772920,
+          "endMilliseconds": 2784270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-factories-and-instances"
+      }
+    },
+    {
+      "id": "TP-238",
+      "startMilliseconds": 2784280,
+      "endMilliseconds": 2799710,
+      "kind": "explanation",
+      "text": "Passing a creation function is not the only option: the service could be created eagerly and added to the list of already created instances.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2784280,
+          "endMilliseconds": 2799710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-factories-and-instances"
+      }
+    },
+    {
+      "id": "TP-239",
+      "startMilliseconds": 2799720,
+      "endMilliseconds": 2823990,
+      "kind": "fact",
+      "text": "Registration in the service collection such as services.AddSingleton<Interface, Implementation>() makes the implementation resolvable as the interface type by constructors.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2799720,
+          "endMilliseconds": 2823990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-factories-and-instances"
+      }
+    },
+    {
+      "id": "TP-240",
+      "startMilliseconds": 2824000,
+      "endMilliseconds": 2830960,
+      "kind": "fact",
+      "text": "The registration binds the concrete implementation to the service interface type so the value ends up in constructors that ask for that interface.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2824000,
+          "endMilliseconds": 2830960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-factories-and-instances"
+      }
+    },
+    {
+      "id": "TP-241",
+      "startMilliseconds": 2830960,
+      "endMilliseconds": 2841990,
+      "kind": "reason",
+      "text": "Because a constructor looks the dependency up by the interface type, the factory must return an instance registered under that same interface key.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2830960,
+          "endMilliseconds": 2841990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-factories-and-instances"
+      }
+    },
+    {
+      "id": "TP-242",
+      "startMilliseconds": 2841990,
+      "endMilliseconds": 2862870,
+      "kind": "explanation",
+      "text": "The factory lambda is not mandatory: the instance may equally be created in a delegate or via a scope that builds the service before it is used.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2841990,
+          "endMilliseconds": 2862870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-factories-and-instances"
+      }
+    },
+    {
+      "id": "TP-243",
+      "startMilliseconds": 2862880,
+      "endMilliseconds": 2881520,
+      "kind": "reason",
+      "text": "This service depends only on the service dictionary and on nothing else, so it can be created ahead of time and passed in directly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2862880,
+          "endMilliseconds": 2881520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-factories-and-instances"
+      }
+    },
+    {
+      "id": "TP-244",
+      "startMilliseconds": 2883720,
+      "endMilliseconds": 2890349,
+      "kind": "code_change",
+      "text": "The already created service can be passed instead of a factory function, and then the IService collection itself is registered as the next dependency.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2883720,
+          "endMilliseconds": 2890349
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-factories-and-instances"
+      }
+    },
+    {
+      "id": "TP-245",
+      "startMilliseconds": 2890350,
+      "endMilliseconds": 2914079,
+      "kind": "fact",
+      "text": "Once the service's own dependencies are configured, the service itself can be registered as a dependency or created dynamically, and the speaker demonstrates the dynamic creation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2890350,
+          "endMilliseconds": 2914079
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2905880,
+          "endMilliseconds": 2914079
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-provider-and-create-the-target"
+      }
+    },
+    {
+      "id": "TP-246",
+      "startMilliseconds": 2914080,
+      "endMilliseconds": 2931750,
+      "kind": "code_change",
+      "text": "All services the created service depends on are collected into a list, and the only remaining step is building the container itself.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2914080,
+          "endMilliseconds": 2931750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-provider-and-create-the-target"
+      }
+    },
+    {
+      "id": "TP-247",
+      "startMilliseconds": 2931760,
+      "endMilliseconds": 2941750,
+      "kind": "fact",
+      "text": "Calling BuildServiceProvider() on the configured service collection is what creates the container object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2931760,
+          "endMilliseconds": 2941750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-provider-and-create-the-target"
+      }
+    },
+    {
+      "id": "TP-248",
+      "startMilliseconds": 2941760,
+      "endMilliseconds": 2955230,
+      "kind": "fact",
+      "text": "The result of BuildServiceProvider() has type IServiceProvider, which is why the variable is conventionally named serviceProvider and is the same provider that factory methods receive.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2941760,
+          "endMilliseconds": 2955230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-provider-and-create-the-target"
+      }
+    },
+    {
+      "id": "TP-249",
+      "startMilliseconds": 2955240,
+      "endMilliseconds": 2963230,
+      "kind": "explanation",
+      "text": "Because the service provider holds the registrations, one could in principle resolve a service straight out of it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2955240,
+          "endMilliseconds": 2963230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-provider-and-create-the-target"
+      }
+    },
+    {
+      "id": "TP-250",
+      "startMilliseconds": 2963240,
+      "endMilliseconds": 2982990,
+      "kind": "fact",
+      "text": "To construct the type from the service provider the speaker uses ActivatorUtilities.CreateInstance and passes the desired type to it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2963240,
+          "endMilliseconds": 2982990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-provider-and-create-the-target"
+      }
+    },
+    {
+      "id": "TP-251",
+      "startMilliseconds": 2980960,
+      "endMilliseconds": 2989960,
+      "kind": "reason",
+      "text": "GetRequiredService would fail here because this service is not added to the container, which is why CreateInstance is used instead.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2980960,
+          "endMilliseconds": 2989960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-provider-and-create-the-target"
+      }
+    },
+    {
+      "id": "TP-252",
+      "startMilliseconds": 2982990,
+      "endMilliseconds": 2989960,
+      "kind": "reason",
+      "text": "GetRequiredService is not used here because this service was never registered in the container.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2982990,
+          "endMilliseconds": 2989960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-provider-and-create-the-target"
+      }
+    },
+    {
+      "id": "TP-253",
+      "startMilliseconds": 2989960,
+      "endMilliseconds": 3008590,
+      "kind": "reason",
+      "text": "CreateInstance can build services that are absent from the registration list while still taking their dependencies from that list.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2989960,
+          "endMilliseconds": 3008590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-provider-and-create-the-target"
+      }
+    },
+    {
+      "id": "TP-254",
+      "startMilliseconds": 3008590,
+      "endMilliseconds": 3032030,
+      "kind": "explanation",
+      "text": "CreateInstance must be given the service provider as a parameter plus every other constructor argument that is missing from the container, so those are supplied by hand.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3008590,
+          "endMilliseconds": 3032030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-provider-and-create-the-target"
+      }
+    },
+    {
+      "id": "TP-255",
+      "startMilliseconds": 3032040,
+      "endMilliseconds": 3042670,
+      "kind": "code_change",
+      "text": "Since the only missing argument here is the service dictionary, it is created inline and no further parameters need to be passed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3032040,
+          "endMilliseconds": 3042670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-provider-and-create-the-target"
+      }
+    },
+    {
+      "id": "TP-256",
+      "startMilliseconds": 3042760,
+      "endMilliseconds": 3056630,
+      "kind": "edge_case",
+      "text": "Passing the registered collection instance directly also works, but that call site must use the other implementation so the existing test does not break.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3042760,
+          "endMilliseconds": 3056630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-provider-and-create-the-target"
+      }
+    },
+    {
+      "id": "TP-257",
+      "startMilliseconds": 3056640,
+      "endMilliseconds": 3063280,
+      "kind": "explanation",
+      "text": "Registering the dependencies in the container would have been enough, so passing them manually into the factory was unnecessary.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3056640,
+          "endMilliseconds": 3063280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-provider-and-create-the-target"
+      }
+    },
+    {
+      "id": "TP-258",
+      "startMilliseconds": 3056640,
+      "endMilliseconds": 3064990,
+      "kind": "correction",
+      "text": "Исправление: тест на самом деле не сломался — достаточно было только зарегистрировать зависимости, а не передавать их вручную при создании объекта.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3056640,
+          "endMilliseconds": 3064990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-provider-and-create-the-target"
+      }
+    },
+    {
+      "id": "TP-259",
+      "startMilliseconds": 3067119,
+      "endMilliseconds": 3078960,
+      "kind": "explanation",
+      "text": "В простом дереве зависимостей, где один сервис зависит от зависимостей, а те — только от конфигурации, ручная передача зависимостей при создании почти ничего не даёт.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3067119,
+          "endMilliseconds": 3078960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#let-the-container-assemble-the-graph"
+      }
+    },
+    {
+      "id": "TP-260",
+      "startMilliseconds": 3078960,
+      "endMilliseconds": 3089160,
+      "kind": "edge_case",
+      "text": "Если сервис зависит сразу от двух других, а один из них зависит от второго, порядок создания объектов становится непонятным и усложняется.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3078960,
+          "endMilliseconds": 3089160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#let-the-container-assemble-the-graph"
+      }
+    },
+    {
+      "id": "TP-261",
+      "startMilliseconds": 3089160,
+      "endMilliseconds": 3101839,
+      "kind": "reason",
+      "text": "Контейнер внедрения зависимостей упрощает создание объектов в сложных случаях, потому что не нужно явно вызывать конструкторы в объектах, зависящих от многих других.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3089160,
+          "endMilliseconds": 3101839
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#let-the-container-assemble-the-graph"
+      }
+    },
+    {
+      "id": "TP-262",
+      "startMilliseconds": 3109079,
+      "endMilliseconds": 3134200,
+      "kind": "fact",
+      "text": "При использовании AddSingleton зависимости можно инкапсулировать и затем получать из сервис-провайдера, и такой способ должен работать.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3109079,
+          "endMilliseconds": 3134200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#let-the-container-assemble-the-graph"
+      }
+    },
+    {
+      "id": "TP-263",
+      "startMilliseconds": 3137240,
+      "endMilliseconds": 3144480,
+      "kind": "fact",
+      "text": "Следующий разбираемый паттерн — Options.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3137240,
+          "endMilliseconds": 3144480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-an-options-style-configuration"
+      }
+    },
+    {
+      "id": "TP-264",
+      "startMilliseconds": 3144720,
+      "endMilliseconds": 3156430,
+      "kind": "code_change",
+      "text": "Для реализации паттерна Options создаётся отдельный класс, описывающий параметры этих сервисов.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3144720,
+          "endMilliseconds": 3156430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-an-options-style-configuration"
+      }
+    },
+    {
+      "id": "TP-265",
+      "startMilliseconds": 3156430,
+      "endMilliseconds": 3169140,
+      "kind": "code_change",
+      "text": "Поля конфигурации переносятся в этот новый класс и хранятся в его поле, из-за чего способ использования конфигурации меняется.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3156430,
+          "endMilliseconds": 3169140
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "d80428c0f252c626af6927783c16b777dc7f1425",
+          "path": "examples/dependencies_simplified/code/Code.cs"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-an-options-style-configuration"
+      }
+    },
+    {
+      "id": "TP-266",
+      "startMilliseconds": 3169140,
+      "endMilliseconds": 3180150,
+      "kind": "explanation",
+      "text": "После этих изменений сам тип конфигурации можно использовать как сервис, и для этого достаточно лишь создать его экземпляр.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3169140,
+          "endMilliseconds": 3180150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-an-options-style-configuration"
+      }
+    },
+    {
+      "id": "TP-267",
+      "startMilliseconds": 3180150,
+      "endMilliseconds": 3199199,
+      "kind": "explanation",
+      "text": "Код только указывает конфигурацию и то, что будет такой сервис, даже не описывая зависимость сервиса от конфигурации, — она подставляется автоматически, а что с ней делать решает другая часть программы.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3180150,
+          "endMilliseconds": 3199199
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-an-options-style-configuration"
+      }
+    },
+    {
+      "id": "TP-268",
+      "startMilliseconds": 3199199,
+      "endMilliseconds": 3214790,
+      "kind": "fact",
+      "text": "Зарегистрировать конфигурацию и сервис можно даже в другой части кода, и такой вариант тоже сработает.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3199199,
+          "endMilliseconds": 3214790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-an-options-style-configuration"
+      }
+    },
+    {
+      "id": "TP-269",
+      "startMilliseconds": 3214790,
+      "endMilliseconds": 3223550,
+      "kind": "test_result",
+      "text": "Проверка показала, что объект конфигурации был сохранён и затем использован при создании этого сервиса.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3214790,
+          "endMilliseconds": 3223550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-an-options-style-configuration"
+      }
+    },
+    {
+      "id": "TP-270",
+      "startMilliseconds": 3217400,
+      "endMilliseconds": 3223550,
+      "kind": "explanation",
+      "text": "Объект конфигурации был сохранён и затем использован при создании этого сервиса.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3217400,
+          "endMilliseconds": 3223550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-an-options-style-configuration"
+      }
+    },
+    {
+      "id": "TP-271",
+      "startMilliseconds": 3223550,
+      "endMilliseconds": 3231870,
+      "kind": "fact",
+      "text": "В папке Example есть пример использования этих сервисов, показывающий реальное применение паттерна.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3223550,
+          "endMilliseconds": 3231870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#override-options-within-a-pipeline-scope"
+      }
+    },
+    {
+      "id": "TP-272",
+      "startMilliseconds": 3231870,
+      "endMilliseconds": 3244820,
+      "kind": "explanation",
+      "text": "В примере создаётся пайплайн и задаются конфигурации, которые регистрируются как scoped.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3231870,
+          "endMilliseconds": 3244820
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#override-options-within-a-pipeline-scope"
+      }
+    },
+    {
+      "id": "TP-273",
+      "startMilliseconds": 3244820,
+      "endMilliseconds": 3252710,
+      "kind": "fact",
+      "text": "Scoped означает, что конфигурации можно задавать динамически в программе, а не фиксировать один раз на всё время работы.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3244820,
+          "endMilliseconds": 3252710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#override-options-within-a-pipeline-scope"
+      }
+    },
+    {
+      "id": "TP-274",
+      "startMilliseconds": 3252710,
+      "endMilliseconds": 3267070,
+      "kind": "explanation",
+      "text": "IOptionsSnapshot позволяет не сохранять класс конфига напрямую, а получать конфигурируемый объект для конкретной итерации.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3252710,
+          "endMilliseconds": 3267070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#override-options-within-a-pipeline-scope"
+      }
+    },
+    {
+      "id": "TP-275",
+      "startMilliseconds": 3267070,
+      "endMilliseconds": 3280630,
+      "kind": "explanation",
+      "text": "При IOptionsSnapshot конфигурация заново задаётся для каждого конкретного контекста вызова.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3267070,
+          "endMilliseconds": 3280630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#override-options-within-a-pipeline-scope"
+      }
+    },
+    {
+      "id": "TP-276",
+      "startMilliseconds": 3280630,
+      "endMilliseconds": 3295680,
+      "kind": "explanation",
+      "text": "Сторонний код тоже может получить этот объект и задать его значения, что позволяет подменять конфигурацию.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3280630,
+          "endMilliseconds": 3295680
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "7f31c6acd0e759a957c51c40ddb9031b1399d17d",
+          "path": "examples/lab5_example/Orchestration/OrchestrationBuilder.cs"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#override-options-within-a-pipeline-scope"
+      }
+    },
+    {
+      "id": "TP-277",
+      "startMilliseconds": 3304790,
+      "endMilliseconds": 3311880,
+      "kind": "explanation",
+      "text": "При таком подходе вместо текущего значения получается новое, то есть конфигурация переопределяется на лету.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3304790,
+          "endMilliseconds": 3311880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#override-options-within-a-pipeline-scope"
+      }
+    }
+  ]
+}

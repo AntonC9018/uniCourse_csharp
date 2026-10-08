@@ -1,0 +1,1224 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "y1KNWcgUUMU",
+  "uploadId": "y1KNWcgUUMU",
+  "transcriptSha256": "dc96357e8ddf7353724bc62813bd69dad23a8ccb3d5d7623be020295fd9e4ec6",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 160,
+      "endMilliseconds": 14630,
+      "kind": "explanation",
+      "text": "Inheritance determines scoping: a derived object exposes the fields and methods of its base class under the same names.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 160,
+          "endMilliseconds": 14630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inherited-fields-and-methods"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 14630,
+      "endMilliseconds": 28160,
+      "kind": "fact",
+      "text": "A Derived instance can read the field it inherits from Base, which is why inheritance lets you treat a derived object as having base-class state.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 14630,
+          "endMilliseconds": 28160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inherited-fields-and-methods"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 28360,
+      "endMilliseconds": 43670,
+      "kind": "fact",
+      "text": "An instance method declared in either Base or Derived is callable as d.Method or Base.Method, so the call target does not depend on where the method was declared.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 28360,
+          "endMilliseconds": 43670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inherited-fields-and-methods"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 48300,
+      "endMilliseconds": 57350,
+      "kind": "explanation",
+      "text": "Through inheritance the same method is reachable both through the derived class and through the base class, which is the core idea behind inherited scoping.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 48300,
+          "endMilliseconds": 57350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inherited-fields-and-methods"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 57350,
+      "endMilliseconds": 64170,
+      "kind": "fact",
+      "text": "Static methods follow the same inheritance visibility rule as instance methods and can be declared in the base class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 57350,
+          "endMilliseconds": 64170
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inherited-fields-and-methods"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 64170,
+      "endMilliseconds": 79720,
+      "kind": "reason",
+      "text": "Static methods cannot be called through an object with d.Method because there is no instance; the class name must be used instead.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 64170,
+          "endMilliseconds": 79720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inherited-fields-and-methods"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 71920,
+      "endMilliseconds": 79720,
+      "kind": "reason",
+      "text": "A static base-class method must be invoked through a class name, and that name may be either Derived or Base because the static method is inherited by Derived.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 71920,
+          "endMilliseconds": 79720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inherited-fields-and-methods"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 79720,
+      "endMilliseconds": 93450,
+      "kind": "explanation",
+      "text": "When the compiler does not find a method of that name in Derived, it keeps searching the base classes and finds the Base implementation, which is how inherited members stay callable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 79720,
+          "endMilliseconds": 93450
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inherited-fields-and-methods"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 93700,
+      "endMilliseconds": 109900,
+      "kind": "reason",
+      "text": "This base-class lookup happens statically at compile time, not at runtime, so the compiler already knows which method d.BaseMethod refers to and no run-time search occurs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 93700,
+          "endMilliseconds": 109900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inherited-fields-and-methods"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 111800,
+      "endMilliseconds": 135680,
+      "kind": "fact",
+      "text": "If Base already declares a method with the same name as one in Derived, you must add the new modifier in Derived whether or not the methods are static, otherwise the compiler reports an error.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 111800,
+          "endMilliseconds": 135680
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hiding-and-the-static-type"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 135680,
+      "endMilliseconds": 155680,
+      "kind": "explanation",
+      "text": "The new modifier tells the compiler that you know the base class already defines that method and you deliberately define a same-named method in the derived class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 135680,
+          "endMilliseconds": 155680
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hiding-and-the-static-type"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 146519,
+      "endMilliseconds": 155680,
+      "kind": "explanation",
+      "text": "For a call like d.Method the compiler first looks at the static type of d, which is Derived, and resolves the call in the Derived class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 146519,
+          "endMilliseconds": 155680
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hiding-and-the-static-type"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 155680,
+      "endMilliseconds": 169500,
+      "kind": "explanation",
+      "text": "If the name is not found in Derived the compiler continues into the base classes, which is why an inherited method remains callable through the derived reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 155680,
+          "endMilliseconds": 169500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hiding-and-the-static-type"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 169500,
+      "endMilliseconds": 183000,
+      "kind": "reason",
+      "text": "For a call like b.Method the static type of the variable is Base, so the compiler resolves the name inside Base and calls the base implementation even though the object at run time may be a Derived.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 169500,
+          "endMilliseconds": 183000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hiding-and-the-static-type"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 183000,
+      "endMilliseconds": 193000,
+      "kind": "test_result",
+      "text": "Running the snippet shows the first call executing the Derived method and the second executing the Base method, confirming that the compile-time type of the variable picks the version.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 183000,
+          "endMilliseconds": 193000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hiding-and-the-static-type"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 194000,
+      "endMilliseconds": 205000,
+      "kind": "fact",
+      "text": "A name-based call selects the method of the class found via the variable's compile-time type, not the class the object dynamically stores at run time.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 194000,
+          "endMilliseconds": 205000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hiding-and-the-static-type"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 205000,
+      "endMilliseconds": 213000,
+      "kind": "scope_boundary",
+      "text": "The dynamic-dispatch behaviour of name-based calls is described in more detail later in the lesson.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 205000,
+          "endMilliseconds": 213000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hiding-and-the-static-type"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 213000,
+      "endMilliseconds": 243879,
+      "kind": "code_change",
+      "text": "Marking the base method virtual and the derived method override makes the name-based call dispatch to the derived implementation on both calls.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 213000,
+          "endMilliseconds": 232840
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 232840,
+          "endMilliseconds": 236509
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 232840,
+          "endMilliseconds": 243879
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-brief-virtual-dispatch-demonstration"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 241159,
+      "endMilliseconds": 255030,
+      "kind": "fact",
+      "text": "In the worked example the base class Animal carries an age field and a method that prints the age while calling GetType to report the concrete class name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 241159,
+          "endMilliseconds": 255030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-animal-hierarchy"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 255030,
+      "endMilliseconds": 275000,
+      "kind": "fact",
+      "text": "Derived classes such as Penguin and Sparrow only add their own skills, swim for Penguin and fly for Sparrow, while inheriting the age field and base methods from Animal.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 255000,
+          "endMilliseconds": 275000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-animal-hierarchy"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 275000,
+      "endMilliseconds": 292000,
+      "kind": "explanation",
+      "text": "Any Penguin or Sparrow object can be treated as an Animal, so both can be placed into one Animal array and handled uniformly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 275000,
+          "endMilliseconds": 292000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-animal-hierarchy"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 292000,
+      "endMilliseconds": 311000,
+      "kind": "reason",
+      "text": "The compiler permits storing a Penguin reference in an Animal slot because it knows Penguin derives from Animal, so a derived reference is usable wherever the base type is expected.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 292000,
+          "endMilliseconds": 311000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-animal-hierarchy"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 311000,
+      "endMilliseconds": 321520,
+      "kind": "reason",
+      "text": "The same rule applies to Sparrow: since Sparrow inherits from Animal its reference can be interpreted as an Animal reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 311000,
+          "endMilliseconds": 321520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-animal-hierarchy"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 314280,
+      "endMilliseconds": 324029,
+      "kind": "fact",
+      "text": "A variable holding a Sparrow can be used where an Animal is expected because Sparrow inherits from Animal, so its reference is also an Animal reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 314280,
+          "endMilliseconds": 324029
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-animal-hierarchy"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 324039,
+      "endMilliseconds": 337870,
+      "kind": "explanation",
+      "text": "A single static helper called in one loop can increment the shared field of every Animal even though the elements have different concrete types, because the field is declared on the common base type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 324039,
+          "endMilliseconds": 337870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#process-the-shared-state"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 337880,
+      "endMilliseconds": 342629,
+      "kind": "fact",
+      "text": "The same loop over the Animal array can also invoke a common print method, showing that base-type members are available to every element.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 337880,
+          "endMilliseconds": 342629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#process-the-shared-state"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 342639,
+      "endMilliseconds": 352469,
+      "kind": "fact",
+      "text": "When the compiler sees a variable whose static type is a subclass, it lets you call that subclass-specific method directly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 342639,
+          "endMilliseconds": 352469
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#process-the-shared-state"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 352479,
+      "endMilliseconds": 374950,
+      "kind": "reason",
+      "text": "Calling a Penguin-only method on an array element does not compile, because reading an element from an Animal array yields only a statically known Animal reference and the compiler cannot assume a Penguin is really stored there.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 352479,
+          "endMilliseconds": 374950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#process-the-shared-state"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 374960,
+      "endMilliseconds": 384790,
+      "kind": "explanation",
+      "text": "The subclass-specific method may exist only on some subclasses of Animal, so the reference must be converted to the subclass before that method can be called.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 374960,
+          "endMilliseconds": 384790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#narrow-a-reference-before-using-a-specific-skill"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 384800,
+      "endMilliseconds": 393080,
+      "kind": "fact",
+      "text": "The is type check both verifies the runtime type and converts the expression to the target class, giving a usable subclass-typed variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 384800,
+          "endMilliseconds": 393080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#narrow-a-reference-before-using-a-specific-skill"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 393080,
+      "endMilliseconds": 398309,
+      "kind": "explanation",
+      "text": "An is check used as a cast converts the expression to the specific type named in the pattern.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 393080,
+          "endMilliseconds": 398309
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#narrow-a-reference-before-using-a-specific-skill"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 398309,
+      "endMilliseconds": 405270,
+      "kind": "edge_case",
+      "text": "If the runtime type is not compatible with the type given in the is pattern, the code inside the if body simply does not execute.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 398309,
+          "endMilliseconds": 405270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#narrow-a-reference-before-using-a-specific-skill"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 405270,
+      "endMilliseconds": 418309,
+      "kind": "fact",
+      "text": "Code inside the if runs only when the type stored in the object is compatible with the type written in the is pattern, which is the safe way to narrow an Animal reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 405270,
+          "endMilliseconds": 418309
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#narrow-a-reference-before-using-a-specific-skill"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 418309,
+      "endMilliseconds": 429550,
+      "kind": "reason",
+      "text": "After an is check that only tests for Sparrow, the resulting variable is still typed as Animal, not Sparrow, so a Sparrow-specific call must first convert to Sparrow.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 418309,
+          "endMilliseconds": 429550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#narrow-a-reference-before-using-a-specific-skill"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 429560,
+      "endMilliseconds": 438710,
+      "kind": "explanation",
+      "text": "The correct order is to convert the base reference to Sparrow first and only then call the Sparrow-specific method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 429560,
+          "endMilliseconds": 438710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#narrow-a-reference-before-using-a-specific-skill"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 438710,
+      "endMilliseconds": 452749,
+      "kind": "explanation",
+      "text": "A common object-oriented idiom is a loop over base-type objects that performs a concrete-type check and then calls the method of that concrete type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 438710,
+          "endMilliseconds": 452749
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#narrow-a-reference-before-using-a-specific-skill"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 452749,
+      "endMilliseconds": 480000,
+      "kind": "fact",
+      "text": "Inside such a loop the method of the concrete type is invoked only when the current base-typed object is compatible with that specific type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 452749,
+          "endMilliseconds": 480000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#narrow-a-reference-before-using-a-specific-skill"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 472759,
+      "endMilliseconds": 477990,
+      "kind": "fact",
+      "text": "When a base-typed object passes the type check, the concrete type's method is called on it, so only the relevant elements of the array get the specific behaviour.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 472759,
+          "endMilliseconds": 477990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#narrow-a-reference-before-using-a-specific-skill"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 477990,
+      "endMilliseconds": 487110,
+      "kind": "fact",
+      "text": "This lets one iterate an Animal array and act on the objects whose concrete type is the one you need.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 477990,
+          "endMilliseconds": 487110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#narrow-a-reference-before-using-a-specific-skill"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 487110,
+      "endMilliseconds": 492070,
+      "kind": "scope_boundary",
+      "text": "Polymorphism is deliberately left for a separate video and is not covered here.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 487110,
+          "endMilliseconds": 492070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#narrow-a-reference-before-using-a-specific-skill"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 492080,
+      "endMilliseconds": 506669,
+      "kind": "test_result",
+      "text": "Running the program shows the day-passing helper executed separately for every animal, with each animal age increased by one day.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 492080,
+          "endMilliseconds": 506669
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-the-inheritance-example"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 506670,
+      "endMilliseconds": 516829,
+      "kind": "test_result",
+      "text": "After the loop the program calls the Sparrow-specific method directly and then Swim for every penguin in the array.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 506670,
+          "endMilliseconds": 516829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-the-inheritance-example"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 516829,
+      "endMilliseconds": 524310,
+      "kind": "explanation",
+      "text": "Adding one more Penguin to the array makes the swim call run three times, which the speaker walks through as part of the run.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 516829,
+          "endMilliseconds": 524310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-the-inheritance-example"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 524310,
+      "endMilliseconds": 534829,
+      "kind": "fact",
+      "text": "The inheritance example code is presented as an illustration of how inheritance can be used, not as a recommendation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 524310,
+          "endMilliseconds": 534829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-the-hierarchy-with-composition"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 534829,
+      "endMilliseconds": 546760,
+      "kind": "reason",
+      "text": "Inheritance should be used as little as possible, so this animal-capability scenario is better modelled with composition.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 534829,
+          "endMilliseconds": 546760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-the-hierarchy-with-composition"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 539440,
+      "endMilliseconds": 546760,
+      "kind": "fact",
+      "text": "The preferred alternative to inheritance here is composition: build an animal out of modules that each provide one capability.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 539440,
+          "endMilliseconds": 546760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-the-hierarchy-with-composition"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 546760,
+      "endMilliseconds": 563829,
+      "kind": "explanation",
+      "text": "A creature module provides swimming and another provides flying, and these modules are handed to the animal together with the shared Animal data and its name, so name handling can be shared without inheritance.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 546760,
+          "endMilliseconds": 563829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-the-hierarchy-with-composition"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 563829,
+      "endMilliseconds": 575000,
+      "kind": "fact",
+      "text": "With composition the concrete Penguin and Sparrow types disappear, so creation moves into factory functions that assemble an Animal plus whichever modules fit.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 563829,
+          "endMilliseconds": 575000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#assemble-animals-with-factories"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 575000,
+      "endMilliseconds": 590000,
+      "kind": "explanation",
+      "text": "A penguin factory sets the Animal data and gives it only the swim module, and the module type itself can be a base type or depend on data passed into the factory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 575000,
+          "endMilliseconds": 590000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#assemble-animals-with-factories"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 590000,
+      "endMilliseconds": 623949,
+      "kind": "fact",
+      "text": "A second factory creates a sparrow with the correct values and with the fly module instead of the swim module, showing the same construction pattern reused per capability.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 590000,
+          "endMilliseconds": 623949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#assemble-animals-with-factories"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 618720,
+      "endMilliseconds": 639670,
+      "kind": "fact",
+      "text": "A bird such as a sparrow cannot swim but can fly while a duck does both, so abilities do not follow from the bird type and cannot be extracted by checking that type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 618720,
+          "endMilliseconds": 639670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-capabilities-from-fields"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 639670,
+      "endMilliseconds": 659839,
+      "kind": "explanation",
+      "text": "Composition solves this by making the abilities fields of a more general type such as Animal, so the general code has to read fields instead of extracting anything from the bird type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 639670,
+          "endMilliseconds": 659839
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-capabilities-from-fields"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 659839,
+      "endMilliseconds": 679590,
+      "kind": "explanation",
+      "text": "The ability objects may be stored in a single array, but no inheritance is used in this design, so the shared methods simply work as they are on whatever ability type is in the field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 659839,
+          "endMilliseconds": 679590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-capabilities-from-fields"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 679590,
+      "endMilliseconds": 699600,
+      "kind": "code_change",
+      "text": "Because the field may hold nothing, the code first checks whether the ability is present and only then calls the method, either by checking a variable or by testing the field directly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 679590,
+          "endMilliseconds": 699600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-for-a-module-before-calling-it"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 699600,
+      "endMilliseconds": 706120,
+      "kind": "code_change",
+      "text": "The same check is written more briefly with an if and an is pattern that repeats the general type name and binds the field value to a pattern variable used for the call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 699600,
+          "endMilliseconds": 706120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-for-a-module-before-calling-it"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 706120,
+      "endMilliseconds": 714320,
+      "kind": "explanation",
+      "text": "Although the is pattern looks like a type check, it only checks that the field is not null, and when the type is already known from the left-hand side no type check happens at all.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 706120,
+          "endMilliseconds": 714320
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-for-a-module-before-calling-it"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 714320,
+      "endMilliseconds": 731790,
+      "kind": "code_change",
+      "text": "You can write empty braces with an is not null pattern instead, which performs the not-null check and on success puts the address stored in the field into the pattern variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 714320,
+          "endMilliseconds": 731790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-for-a-module-before-calling-it"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 731790,
+      "endMilliseconds": 752830,
+      "kind": "reason",
+      "text": "The advantage of the is not null pattern is that the behaviour no longer depends on any concrete ability type, so the same generic code keeps working as abilities change.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 731790,
+          "endMilliseconds": 752830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-for-a-module-before-calling-it"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 752830,
+      "endMilliseconds": 769510,
+      "kind": "reason",
+      "text": "Abilities such as flying and swimming belong to the separate ability modules rather than to the bird type, which makes the shared code reusable in many places, something inheritance cannot reproduce without repeating the shared code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 752830,
+          "endMilliseconds": 769510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-for-a-module-before-calling-it"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 769510,
+      "endMilliseconds": 777839,
+      "kind": "code_change",
+      "text": "The inheritance alternative is sketched by giving Penguin the ability to swim, adding Sparrow which can fly, and starting to add Duck.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 769510,
+          "endMilliseconds": 777839
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-the-inheritance-alternative-becomes-awkward"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 770040,
+      "endMilliseconds": 781670,
+      "kind": "fact",
+      "text": "In the inheritance sketch Penguin is a non-flying Animal that swims, Sparrow is an Animal that flies, and Duck is an Animal that both flies and swims.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 770040,
+          "endMilliseconds": 781670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-the-inheritance-alternative-becomes-awkward"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 781670,
+      "endMilliseconds": 800230,
+      "kind": "explanation",
+      "text": "Each bird overrides the behaviour it needs, so the overridden function may be empty in the demo but could contain printing or data computation in real code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 781670,
+          "endMilliseconds": 800230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-the-inheritance-alternative-becomes-awkward"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 800230,
+      "endMilliseconds": 814710,
+      "kind": "scope_boundary",
+      "text": "Moving the shared logic into a static function instead of overriding it is possible, but it abandons inheritance and adds methods only to duplicate the common code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 800230,
+          "endMilliseconds": 814710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-the-inheritance-alternative-becomes-awkward"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 814710,
+      "endMilliseconds": 854720,
+      "kind": "reason",
+      "text": "Calling the shared code through a general Animal variable is impossible when the function is defined separately in Penguin and in Duck, so a common base type is needed whose behaviour the birds inherit.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 814710,
+          "endMilliseconds": 854720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-the-inheritance-alternative-becomes-awkward"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 845839,
+      "endMilliseconds": 869150,
+      "kind": "explanation",
+      "text": "With inheritance Penguin takes the swimming function and the other functions from a base class, which raises the question of whether the birds could even inherit from two types at once.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 845839,
+          "endMilliseconds": 869150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-the-inheritance-alternative-becomes-awkward"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 869150,
+      "endMilliseconds": 884360,
+      "kind": "reason",
+      "text": "Trying to model the birds with inheritance produces a pile of similar classes and forces you to duplicate shared code, because a class cannot inherit from two classes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 869150,
+          "endMilliseconds": 884360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-the-inheritance-alternative-becomes-awkward"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 884360,
+      "endMilliseconds": 899519,
+      "kind": "edge_case",
+      "text": "Interfaces can partly solve this, but you still cannot simply inherit the function through them and have to redefine it anyway.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 884360,
+          "endMilliseconds": 899519
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-the-inheritance-alternative-becomes-awkward"
+      }
+    }
+  ]
+}
