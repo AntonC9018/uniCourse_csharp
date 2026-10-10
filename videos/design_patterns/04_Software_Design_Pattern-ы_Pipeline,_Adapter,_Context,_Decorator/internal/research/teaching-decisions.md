@@ -1,0 +1,11 @@
+# Teaching and coverage decisions, with the reason behind each
+
+`english_authoring` runs 475 and 499 (sessions `01a12266-…`, `01a12651-…`). Both runs wrote `internal/teaching-points.json` as a coverage map before writing the note.
+
+- 161 extracted teaching points (`TP-001`…`TP-161`, ids kept in order) are collapsed onto 17 narrative headings; each point id appears exactly once and maps to the heading that explains it. Reason: one anchor per point keeps the ledger checkable while the note stays readable.
+- Heading order follows the refactoring order of the recording — dog/owner model → fixed sequence → local function → reuse → explicit dependencies → context → adapters → step objects → array execution → construction/execution split → list editing → introspection → console configuration → decorator — rather than grouping by pattern name. Reason: each pattern is introduced only once the problem that motivates it exists.
+- Code samples are shortened reconstructions placed beside their immutable citation in the same section, with the link labelled "related". Reason: no commit holds the intermediate editor states, so an "exact" label would be false.
+- Recorded runs in the video are reported as observations of the recording, not as tests executed for the note. Reason: nothing was rebuilt or run by the author.
+- Scope boundaries are stated in the note (sequential in-memory C#; external ordering only after steps become values; console-only introspection) and the lab's generics, cancellation, richer descriptions and structured introspection are called out as further work. Reason: the lab asks for them, the video does not implement them.
+- Six `<details>` prediction blocks are placed at transitions (null-owner history, what belongs in a context, moving a printer before the rename, re-running the same pipeline on the same context, which console command renames the dog, adapter versus decorator). Reason: each block marks a point where the recording's phrasing invites a wrong answer.
+- The C#/Java dispatch clarification is given twice — beside the step-interface section (00:17:05) and again with class inheritance (00:20:43) — because the recording raises the comparison at both moments.
