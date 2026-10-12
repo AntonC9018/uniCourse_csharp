@@ -109,12 +109,13 @@ jobs:
       - name: Install Playwright Chromium
         run: npx --prefix course_maintenance/renderer playwright install chromium
 
-      # CI-1: maintain check + publishing check + compat suite + site build,
-      # in that order, read-only wrt sources. --out lives under runner.temp
+      # Course-owned selection in course-ci.json: document maintenance +
+      # publishing check + site build; shared pipeline tests are disabled.
+      # Read-only wrt sources. --out lives under runner.temp
       # (outside the course repo); dist/ below holds the exact build that
       # the upload step publishes on master pushes.
-      - name: Shared CI validation (maintain + publishing + compat + site)
-        run: python3 course_maintenance/publish.py ci --course-repo . --out ${{ runner.temp }}/site-out
+      - name: Course document validation and site build
+        run: python3 scripts/course-ci.py --out ${{ runner.temp }}/site-out
 
       - name: Configure Pages
         if: github.event_name == 'push'
