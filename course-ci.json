@@ -1,4 +1,0 @@
-{
-  "maintenance_paths": ["labs", "docs", "AGENTS.md", "CONTEXT.md", "README.md"],
-  "run_compatibility_tests": false
-}

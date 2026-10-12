@@ -27,5 +27,82 @@
     "ru": "Программирование на C#"
   },
   "root_lesson": "labs/1_basic/01_install.md",
-  "peer_repositories": []
+  "peer_repositories": [],
+  "ci": {
+    "maintenance_paths": [
+      "labs",
+      "docs",
+      "AGENTS.md",
+      "CONTEXT.md",
+      "README.md"
+    ],
+    "run_compatibility_tests": false,
+    "required_pr_label": "ci-ready"
+  },
+  "deployment": {
+    "branch": "master",
+    "required_status_checks": [
+      "validate"
+    ],
+    "require_pull_requests": false,
+    "enforce_admins": false
+  },
+  "navigation": {
+    "group_labels": {
+      "labs": {
+        "ru": "Лабораторные работы"
+      }
+    },
+    "lab_prefixes": [
+      "labs/basic",
+      "labs/design",
+      "labs/advanced"
+    ]
+  },
+  "slug_overrides": {},
+  "smoke": {
+    "retries": 30,
+    "retry_delay_seconds": 10,
+    "timeout_seconds": 30,
+    "checks": [
+      {
+        "label": "root redirect",
+        "paths": [
+          "/"
+        ],
+        "contains": "{root_route}"
+      },
+      {
+        "label": "Russian install lesson",
+        "paths": [
+          "{root_route}"
+        ],
+        "contains": "Установка .NET"
+      },
+      {
+        "label": "Russian design lesson",
+        "paths": [
+          "/ru/labs/design/field-mask/"
+        ],
+        "contains": "Field Mask"
+      },
+      {
+        "label": "search markup",
+        "paths": [
+          "{root_route}"
+        ],
+        "contains": "pagefind"
+      },
+      {
+        "label": "search index",
+        "paths": [
+          "/pagefind/pagefind.js",
+          "/_pagefind/pagefind.js"
+        ]
+      }
+    ]
+  },
+  "maintenance": {
+    "heading_numbering": "document"
+  }
 }
