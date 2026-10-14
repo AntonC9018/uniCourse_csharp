@@ -1,10 +1,6 @@
 # The lesson's code exists as exactly three coarse commits
 
-Established by `english_authoring` run 355 (Codex session `01a11cb8-550c-7070-aabc-06ecd5a60dab`,
-read `examples/field_masks/Program.cs` history and each blob at revision `e173ad10485c`) and
-re-checked by `factual_verification` run 358 (OpenCode session
-`ses_ee33c4d5bffeBeVWOxKI5l69zk`, each commit re-resolved with
-`git rev-parse --verify --end-of-options '<sha>^{commit}'` and re-read with `git show <sha>:examples/field_masks/Program.cs`).
+Established by Run 355 tool events record `examples/field_masks/Program.cs` at commit `e173ad10485c4a8ef4cdffce1a696eb9e6e82ee4`, Git blob `beed808eeb589e10005317e426d0daf8fb18530c`; its recorded content SHA-256 `2dbdf6c1…` matches `git show` at that revision. Although the commit subject names another video, that tree contains this file, so the pin is valid for the bytes read. Current `git log -- examples/field_masks/Program.cs` independently shows the three source-changing stages below. The run-358 verdict is retained, but no worker tool rows independently evidence its per-file rereads.
 
 - The whole worked example is one file, `examples/field_masks/Program.cs`. Nothing about it has
   ever been split into separate files, so the note cannot cite "the printer file" or "the mask

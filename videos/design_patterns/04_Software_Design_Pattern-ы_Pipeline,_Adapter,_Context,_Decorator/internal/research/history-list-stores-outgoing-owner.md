@@ -10,5 +10,5 @@ Correction the authoring runs drew out of the saved code rather than the narrati
   - starting ownerless, changing to Anton stores nothing;
   - changing Anton → Alex appends Anton;
   - changing Alex → null appends Alex and leaves the current owner null;
-  - the recorded run at 00:17:59–00:20:07 (`transcript.md`, t=1179 / 1199 / 1207) prints previous owners first, then the dog, so "Alex/Lucy" is owner Alex with a dog renamed to Lucy — not a dog named Alex.
+  - the recorded run at 00:17:59 (t=1079)–00:20:07 (t=1207); t=1179/1199/1207 occur inside that interval prints previous owners first, then the dog, so "Alex/Lucy" is owner Alex with a dog renamed to Lucy — not a dog named Alex.
 - The committed default order is `ChangeOwner(Anton)` → `ChangeName(Lucy)` → `ChangeOwner(Alex)` → `PrintOwners` → `PrintDog`, which is why the note says the second owner-change object sits at index 2 of `Pipeline.Steps`.

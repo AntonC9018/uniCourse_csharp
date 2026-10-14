@@ -13,8 +13,7 @@ distance formula differs from the lesson's, so it is labeled related evidence.
   `Math.Abs(xA - xB) + Math.Abs(yA - yB)`. Different formula, different result
   type — the link cannot be presented as the recording's exact code state.
 - It is cited anyway because it demonstrates the lesson's grouped-position
-  idea (a function taking two `Position` values), which is why the ledger
-  attaches it as evidence to TP-119.
+  idea (a function taking two `Position` values), which makes it related source context only; the ledger does not attach a repository-blob evidence item to TP-119.
 - Wording decision (english_authoring run 173, session
   01a0fda3-fe08-73e1-9548-03d5b3ba657d): the code-citation contract requires
   labeling a non-exact commit as related or final, never exact. The note says

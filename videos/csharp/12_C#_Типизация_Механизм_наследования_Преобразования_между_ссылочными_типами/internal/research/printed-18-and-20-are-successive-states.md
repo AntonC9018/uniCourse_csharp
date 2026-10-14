@@ -11,5 +11,5 @@ The note therefore presents `18` and `20` as two states of the *same* example (t
 assigned 18, then the example is re-run with 20), and only the *incompatible* `A`→`B` cast
 (`B b1 = (A)ob;`, cited at 00:25:13) is described as throwing `InvalidCastException`.
 
-Transcript support for the two states: 00:21:39 (value 18) and 00:22:16 (value 20),
+Transcript support for the two states: 00:21:39 (values 18 and 20) and 00:22:16 (the A/B-reference trace),
 trailing code-history entries of `notes.en.md`.

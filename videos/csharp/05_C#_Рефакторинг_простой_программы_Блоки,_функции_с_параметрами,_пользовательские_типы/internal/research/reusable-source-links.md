@@ -15,12 +15,12 @@ verified.
   cited in the final note.
 - Video moment links follow the pattern
   `https://www.youtube.com/watch?v=z51K0UhriOk&t=<seconds>s`; the final note
-  carries 203 of them, all matching their displayed times (readback check in
+  carries 237 timestamp links, all matching their displayed times (readback check in
   english_authoring run 228).
 - Transcript evidence for all 183 ledger points sits in
   `internal/teaching-points.json` as `transcript_range` objects
   (TP-001..TP-183), built from `internal/transcript.md`
-  (sha256 6e3e94e8323d198c1f569673363347e6295ead5bf27364b3f2132eeca714bf1a).
+  (sha256 cd0d9998ae77121753fd103120e8c6564394d7e2e213d22188b8aaa33a3d5dbe).
 - Verified commits produced by this folder's pipeline:
   11dbee37f672ae487955c05fb6d08e47e078bc74 (2026-10-02 generation, verified by
   run 174) and 924eaadd84275c9287747c8f62765cee5cf3a794 (approved note,

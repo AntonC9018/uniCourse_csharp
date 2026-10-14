@@ -1,13 +1,11 @@
 # Scope boundaries the note took, with reasons
 
 One idea: teaching/coverage decisions where the note deliberately states a
-boundary instead of a universal rule.
+boundary for this local-function example.
 
 - `static` local function for the extracted distance helper: chosen so the
   function cannot capture the surrounding locals and therefore must receive its
-  coordinates explicitly. The note frames this as the lesson's practical habit
-  for such helpers, "not a universal requirement that every C# method be
-  static".
+  coordinates explicitly. The note at `notes.en.md:233` explains this use of `static` in the local-function example: it prevents capture of the surrounding locals.
 - `struct Position` declared after the executable statements: this is the
   ordering rule for top-level statements in this single-file program as the
   recording has it. The note explicitly does not generalize it ("it does not

@@ -1,13 +1,10 @@
 # The lab is an extension list, not a second implementation to describe
 
-`english_authoring` run 355 (`01a11cb8-550c-7070-aabc-06ecd5a60dab`) read
-`labs/2_design/01_field_mask.md` (blob `0f49274311ac`) and listed it as a source path of the note;
-`factual_verification` run 358 (`ses_ee33c4d5bffeBeVWOxKI5l69zk`) confirmed that the note's
-`../../../labs/2_design/01_field_mask.md` link resolves from the video folder to that file.
+`labs/2_design/01_field_mask.md` is committed at the current `HEAD` as blob `6abe848bf5cadc30b9ad6288887240567af4e3ad` (checked 2026-10-14). The retained run-355 tool record does not contain a lab-file read event, so attribute the lab content to this current Git check rather than to that worker. The note’s relative lab link resolves from this video folder to the course-root lab.
 
 - The lab is written in Russian and has no English equivalent. The note therefore links it as
   practice material and does not restate its task text in English.
-- The lab's core assignment is five tasks: a domain model with at least five fields including
+- The lab's core assignment is six tasks: a domain model with at least five fields including
   `int, string, float, enum`; a database abstraction; a field-mask class "first as bool"; a
   single-field search method; a static printing function driven by a mask; and testing it. The
   recording implements the mask, the printing function and the difference/any/all queries, but no

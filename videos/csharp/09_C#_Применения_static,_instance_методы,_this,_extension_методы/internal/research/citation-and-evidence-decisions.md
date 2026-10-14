@@ -15,7 +15,7 @@ why the section is named "Code-history trail" but contains only YouTube timestam
 ## Two different citation styles, on purpose
 
 - **Transcript → pinned immutable revision.** The note links
-  `https://github.com/AntonC9018/uniCourse_csharp/blob/4814706ae2fafbc797829239a33afc2eeefa29e8/videos/csharp/09_%23…/internal/transcript.md`
+  `https://github.com/AntonC9018/uniCourse_csharp/blob/4814706ae2fafbc797829239a33afc2eeefa29e8/videos/csharp/09_C%23_%D0%9F%D1%80%D0%B8%D0%BC%D0%B5%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F_static%2C_instance_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B%2C_this%2C_extension_%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B/internal/transcript.md`
   (40-character hash, percent-encoded `#`). Needed because the transcript is an acquired artifact that a
   later `acquisition` order can rewrite; without a pin, the note's 141 per-timestamp anchors could drift
   to different cues.
@@ -38,13 +38,7 @@ Recorded in `worker_tool_events` for run 190:
 | `notes.en.md` (draft) | `d6af2b220041b0ab058b7d42217fdba6f9acd0686c8651845bcd733fb83c4746` |
 | `teaching-points.json` (draft) | `4f44c7d182eacae727d994de723089a4639ec7e81d1ee1217bd4d0cae7becf53` |
 
-The transcript blob the author read is **not** the blob currently in the working tree
-(`f6189ba4200fa7c31600f0aa012abbeb7d803256`), even though `internal/transcript.md` has had exactly one
-commit (`4814706`) since acquisition. This is almost certainly a line-ending / normalisation
-difference between the recorded acquisition hash and the stored object, not a content change. Nobody
-re-verified it, and it is not worth re-litigating — but it means blob hashes in `worker_tool_events`
-should not be compared against `git hash-object` of the current file.
-
+The run-190 `blob_hash` for `internal/transcript.md` is its content SHA-256 (`2958f6fd…`). At `4814706`, Git identifies the transcript blob as `f6189ba4…`; those identifiers use different hash functions and cannot be compared for equality. `git log -- internal/transcript.md` shows one content commit at the checked revision. This establishes the citation state without a line-ending or normalization theory.
 ## External sources the author opened
 
 Only one web access is recorded in `worker_tool_events` for run 190:

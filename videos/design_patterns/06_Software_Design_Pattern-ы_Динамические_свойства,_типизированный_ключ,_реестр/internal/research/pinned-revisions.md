@@ -1,7 +1,7 @@
 # Pinned immutable revisions used by this video's note
 
 Work order kind: `english_authoring`, worker run 486, session `01a124af-39b4-73c3-bf34-02efbd5f1ca9`
-(the run's only recorded `source_opened` event is the Microsoft `in`-modifier page below).
+(run 486 has one `opened_url` event for the Microsoft `in`-modifier page below; the other source URLs are present in the recorded `web__run` arguments).
 Contents of every revision below were independently re-opened and confirmed by work order
 `factual_verification`, run 489, session `ses_edacf1d94ffeQhza95Gx57z9Oh`.
 
@@ -21,10 +21,7 @@ described state.
 ## Why a specific revision was needed rather than a branch
 
 - `8384901b589550f7487d5c29fcbeffda9431425c` (`Fat struct`) was read at run 486 and deliberately **not**
-  cited. `d5af1fb` is the only revision in which `Subclassing.cs` and `PropertyArray.cs` exist at all, and
-  its `FatStruct.cs` is the same sentinel design with the top-level statements wrapped into
-  `static class FatStructExample` — the form that makes the sentinel container independently readable as a
-  citation. Pinning the earlier commit for one file alone would buy nothing.
+  cited. `d5af1fb` is the chosen revision for the particular `FatStruct.cs`, `Subclassing.cs`, and `PropertyArray.cs` shapes cited in the note. `9e0565fa` also contains `Subclassing.cs` and `PropertyArray.cs`; the distinction is which concrete shape each link supports, not file existence.
 - `examples/property_dict/Program.cs` exists in four revisions (`a386c9c8`, `ec66732a`, `8384901b`,
   `9e0565fa`) and takes a different shape in each. Each claim is pinned to the revision that actually
   contains the construct being described, not to the newest one: the `object[]` / tagged-`IntStat` reading

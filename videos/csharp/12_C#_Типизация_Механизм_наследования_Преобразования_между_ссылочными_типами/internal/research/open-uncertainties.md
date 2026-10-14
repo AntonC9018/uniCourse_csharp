@@ -20,5 +20,5 @@
   in the record. Nothing above was reconstructed from those gaps.
 - **Coverage was asserted, then checked.** Run 236 asserted that all 184 anchors map to note
   sections. Re-checked 2026-10-11 against `internal/teaching-points.json` and `notes.en.md` in
-  this checkout: all 184 `englishCoverage.anchor` values resolve to one of 21 headings, 20 of them
+  this checkout: all 184 `englishCoverage.anchor` values resolve to one of 20 headings, 20 of them
   distinct. No missed teaching point.

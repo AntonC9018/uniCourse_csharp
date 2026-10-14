@@ -26,8 +26,8 @@ was raised, ruled on, and folded into the ledger.
   gpt-6.1-sol, session 01a1032d-f616-7bb1-98d1-4ee452610c36) with source author
   wo-f515a884 (the 2026-10-02 authoring order).
 - Supporting record check (2026-10-11, this checkout): `internal/transcript.md`
-  contains no mention of an out parameter (no matches for "out", "аут", or
-  "выходной параметр"), so the corrected reading stands.
+  contains no spoken out-parameter term (zero case-insensitive word-boundary matches for `out`, `аут`, or
+  `выходной параметр`; substring matches come from `youtube.com` URLs), so the corrected reading stands.
 - The final note also adds the definitional boundary: "`out` is the separate
   parameter mode in which the callee supplies an output through a parameter;
   that mode is not being demonstrated here."

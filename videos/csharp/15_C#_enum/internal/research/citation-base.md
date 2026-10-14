@@ -7,7 +7,7 @@ worker run 267 (codex session `01a116fd-bf6a-7f91-be37-aad205ba7215`).
 ## The bomb program has no committed source anywhere in the repository
 
 - At the authoring checkout revision `accd55e6a1d8349548cd48e7a1768ecf4dfaf94f`
-  (the `git_revision` recorded on every tool event of run 267),
+  (recorded on 21 of the run’s 24 tool events; three events have no repository revision),
   `read_file` on `videos/csharp/15_C#_enum/notes.en.md` failed and `git_history`
   for that path returned nothing. The author's words: "The checkout has no
   existing English note or committed history for it."
@@ -53,7 +53,7 @@ worker run 267 (codex session `01a116fd-bf6a-7f91-be37-aad205ba7215`).
 
 ## Commits worth knowing
 
-- `d8775cfafc393b0ac88349bad484cc4bf8f1737c` — the only commit touching this
+- At the authoring-time revision, `d8775cfafc393b0ac88349bad484cc4bf8f1737c` was the only commit touching this
   folder; it adds `internal/transcript.md`, `internal/transcript.vtt`,
   `internal/video.json`, `internal/teaching-points.json` and `notes.en.md`. It is
   the commit the verifier was asked to approve.

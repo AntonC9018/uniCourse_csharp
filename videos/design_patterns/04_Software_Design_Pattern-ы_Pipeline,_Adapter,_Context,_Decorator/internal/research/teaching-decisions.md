@@ -1,6 +1,6 @@
 # Teaching and coverage decisions, with the reason behind each
 
-`english_authoring` runs 475 and 499 (sessions `01a12266-…`, `01a12651-…`). Both runs wrote `internal/teaching-points.json` as a coverage map before writing the note.
+`english_authoring` runs 475 and 499 (sessions `01a12266-…`, `01a12651-…`) were blocked after refused file writes. The current teaching-point ledger is not evidence that either run wrote it; the reports record coverage-map writes as refused. The reusable decision is that the note uses reconstructions for on-screen intermediate states and labels saved code as related evidence.
 
 - 161 extracted teaching points (`TP-001`…`TP-161`, ids kept in order) are collapsed onto 17 narrative headings; each point id appears exactly once and maps to the heading that explains it. Reason: one anchor per point keeps the ledger checkable while the note stays readable.
 - Heading order follows the refactoring order of the recording — dog/owner model → fixed sequence → local function → reuse → explicit dependencies → context → adapters → step objects → array execution → construction/execution split → list editing → introspection → console configuration → decorator — rather than grouping by pattern name. Reason: each pattern is introduced only once the problem that motivates it exists.

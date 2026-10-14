@@ -6,12 +6,10 @@ repository states that back its code claims.
 ## Fixed points
 
 - Verified note commit: `a5cf0acb25721ccb13e61bae10940b93342e9bf5`
-  ("Update course video lIKqnGtzQrA", 2026-10-10). This is the commit the
-  `factual_verification` work order bound its verdict to
-  (`work_orders.wo-c868791b1…`, run 488).
+  ("Update course video lIKqnGtzQrA", 2026-10-10). The verification work-order result embeds a report whose `verifiedCommit` is this SHA
+  (`wo-c868791b14e940a86d06c7f5b2ced6250ca074181a716d00a06e7eb9cd560370`, run 488).
 - Base revision the author read from: `130a82b36ba18c9c3e359087f5d00737e1cf904f`
-  (2026-10-08). Every `worker_tool_events` row for run 476 carries this
-  `git_revision`, so all of the author's citations are relative to it.
+  (2026-10-08). Run 476 tool events carry this `git_revision` for recorded file operations. The verification work-order result embeds the verdict report with this verified commit SHA. The current Git object resolves to the note update commit.
 - Transcript identity: `transcriptSha256 = 1d51c1de678cb1dd798d856c5dfd4372a2f5b39ea6784402bca9d7f4a360b9f1`
   in `internal/teaching-points.json`, matching the `canonical` hash recorded in
   the work-order `observations` for every work order on this folder.

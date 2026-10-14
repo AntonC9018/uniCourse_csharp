@@ -5,8 +5,7 @@ cites video timestamps instead of repository blobs.
 
 - `english_authoring` run 231 (codex, session `01a1032f-3b9e-7cf1-8921-aae71f223b64`) inspected
   git history for this folder's `notes.en.md` and `internal/transcript.md`, and for the candidate
-  example `examples/property_dict/Subclassing.cs` (whose only relevant commit is `d5af1fb` "Clean
-  up examples"). Nothing was adopted as a citation for a taught code state.
+  example `examples/property_dict/Subclassing.cs` (including `d5af1fb` "Clean up examples" and later history containing the same helper files). Nothing was adopted as a citation for a taught code state.
 - It read the transcript at its acquisition commit `8942c62400146e6b483dd17587b0671271527cde`
   ("Acquire course transcripts") via `git_read_file` and recorded that revision as **spoken
   evidence only** — "A transcript-acquisition revision is not substituted for taught code history."

@@ -47,5 +47,4 @@ record and are marked with the check date and source URL; they were **not** work
   sample of points (TP-034, TP-051, TP-054, TP-058, TP-067, TP-072, TP-089, TP-107, TP-117, TP-125,
   TP-131) and found each note anchor inside the ledger's millisecond range.
 - Ledger shape worth reusing: 131 points, kinds {explanation 61, fact 26, reason 18, code_change 15,
-  edge_case 6, test_result 2, scope_boundary 2, correction 1}; 130 backed by `transcript_range`
-  evidence, exactly 1 backed by a `repository_blob`.
+  edge_case 6, test_result 2, scope_boundary 2, correction 1}; all 131 points have a `transcript_range` entry. TP-107 additionally has one `repository_blob` entry.

@@ -23,7 +23,7 @@ carries a contradiction between two ledger entries.
 - Recording, [00:00:00](https://www.youtube.com/watch?v=mj9E9BhOAhU&t=0s) – [00:00:09](https://www.youtube.com/watch?v=mj9E9BhOAhU&t=9s):
   "Flow control, то есть if, while, for." Ledger TP-001 (run 305, `ses_ee50c0c77ffeBpXguGj2G8xGCS`, segment S-001) records the
   lesson scope as "flow control in C# (if, while, for) plus bools", and no ledger point after the opening covers `for`.
-- Decision (`notes.en.md:296`): the note's Scope paragraph states that `for` "is named in the opening" but "does not develop
+- Decision (`notes.en.md:27`): the note's Scope paragraph states that `for` "is named in the opening" but "does not develop
   `for` syntax", and that functions, variables and console input are supporting tools rather than subjects. Without that
   sentence a reader could reasonably expect a `for` section that the recording never delivers.
 

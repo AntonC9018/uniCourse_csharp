@@ -5,7 +5,7 @@ teaching-point ledger, the note's wording, and the transcript lines are the evid
 Ledger ids and video timestamps refer to `internal/teaching-points.json` and
 `internal/transcript.md` in this folder.
 
-- Ledger TP-122 (15:29–15:48) says "an unqualified `data1` inside the constructor body can still
+- Ledger TP-122 (25:29–25:48; 1529030–1548600 ms) says "an unqualified `data1` inside the constructor body can still
   be resolved to the object's field while the parameter `data1` refers to the temporary stack
   variable." The recording itself is looser: at 25:56 it says only that fields and parameters share
   names but "refer to different memory cells" (Data 1 as field vs Data 1 as parameter). The author

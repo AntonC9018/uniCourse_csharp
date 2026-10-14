@@ -1,51 +1,5 @@
-# Ledger entries TP-088 … TP-123 are in Russian
+# Ledger entries TP-088–TP-123 remain in Russian
 
-**Status: unresolved.** The audited English teaching-point ledger committed for
-this folder is not entirely English, and nothing in the recorded pipeline
-flagged it.
+The committed `internal/teaching-points.json` contains 36 consecutive Russian `text` values, TP-088 through TP-123, spanning 1,177,520–1,472,740 ms and mapping to three English note sections. All are marked covered, while `notes.en.md` itself contains no Cyrillic. The note is readable, but the audit ledger is not fully English as its workflow might imply.
 
-## What the ledger contains
-
-- `internal/teaching-points.json` at `a5cf0acb` holds 384 entries, `TP-001` …
-  `TP-384`.
-- 36 consecutive entries, `TP-088` through `TP-123`, carry Russian `text`. They
-  span 1 177 520 ms – 1 472 740 ms of the transcript and land in three note
-  sections: `#consider-a-configuration-delegate`,
-  `#store-configuration-in-mutable-models`,
-  `#keep-data-open-and-put-contracts-on-configuration`.
-- Every one of the 36 is marked `englishCoverage.status = "covered"`.
-- `notes.en.md` itself contains no Cyrillic, so the effect is on the audit
-  artifact, not on the student-facing text.
-
-## Provenance
-
-- Extraction worker run **376**, session `ses_ee33117f3ffeeycfo2V6n4Qx2d`, work
-  order `wo-17f4886…` (`ledger`), emitted segments `S-017`–`S-020` entirely in
-  Russian; those four segments are exactly `TP-088`–`TP-123`.
-- No other extraction run contributed Russian teaching-point text. Runs 373 and
-  383 contain Cyrillic only inside `nonTeaching.detail`, quoting Russian caption
-  fragments such as "Долный Джон", which is correct usage.
-
-## Why nothing caught it
-
-- `english_authoring` run 476 received the ledger, mapped all entries to anchors,
-  and marked all of them covered.
-- `factual_verification` run 488 returned `verdict: approved`, `findings: []`,
-  `fixingRecords: []` with `coverage` listing `TP-001` … `TP-384` inclusive —
-  including the 36 Russian ids.
-- `factual_fixing` then completed with "clean factual verdict needs no fixing".
-
-## Why it matters
-
-- The verifier's coverage claim is a list of ids, not a language check, so an
-  English-only audit trail can be silently mixed. Any later reviewer comparing
-  the note against "the audited English ledger" for this folder will be reading
-  Russian source text for one contiguous five-minute stretch of the lesson
-  (19:37 – 24:32).
-- If a downstream process re-authors or re-verifies from this ledger, it inherits
-  the defect without an error surface.
-
-## Suggested follow-up (not performed)
-
-Re-extract `S-017`–`S-020` in English and re-publish the ledger, or record an
-explicit exemption. Nothing in the current pipeline will surface this on its own.
+This is a source-data limitation for anyone comparing or regenerating coverage from the ledger. Preserve the English note’s section anchors, and do not describe the ledger as an English-language audit record until those entries are translated or explicitly exempted.

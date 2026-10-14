@@ -7,8 +7,8 @@ renders three different spellings, only one of which is literal:
 | transcript moment | ASR text | reading |
 | --- | --- | --- |
 | 00:23:48.919 | "знает что у типа для б будет адрес 88.000" | **88.000** — artifact |
-| 00:25:35.679 | "тип по адресу 8.000" | 8.000 = 8000 |
-| 00:29:32.240 | "проверяем на равенство 8000 ра 8000" | 8000 (plain) |
+| 00:25:38.789 | "тип по адресу 8.000" | 8.000 = 8000 |
+| 00:29:36.990 | "проверяем на равенство 8000 ра 8000" | 8000 (plain) |
 
 Both workers resolved `88.000` as a mis-transcription of `8000`, not the literal 88000:
 

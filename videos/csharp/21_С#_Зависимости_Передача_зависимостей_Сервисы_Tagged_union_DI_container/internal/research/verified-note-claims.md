@@ -13,7 +13,7 @@ checkout (same revisions as https://github.com/AntonC9018/uniCourse_csharp).
   so cutoff values themselves are excluded.
 - Tagged-union fallback: the in-video sample throws, while the saved
   `RemapNameService_TaggedUnion` calls `Debug.Fail("Impossible")` and returns
-  null (Code.cs at 9cabfb70…, lines 55–62). The note's wording distinguishes the
+  null (Code.cs at 9cabfb70…, lines 79–82). The note's wording distinguishes the
   two deliberately.
 - The union is a `readonly struct` whose tag is the runtime type used in type
   patterns (`is RemapNameService a`), with no explicit integer tag; the note

@@ -8,8 +8,7 @@ the author's read alone; see `open-items.md` item 2.
 
 ## Type of the ID constructor
 
-- Recording, 00:48:57–00:49:14: the speaker introduces `HomeId` and says the
-  constructor takes "ID типа long".
+- Caption/transcript, 00:48:57–00:49:14: the speaker introduces `HomeId`; the caption text is garbled as "ID типа валы". The author interpreted the audio as “long”, but that word is not directly established by the transcript.
 - Source, `dcfd622`: `public HomeId(int value) { Value = value; }` — `int`.
 - Note wording: "The recording first discusses a constructor taking a long; the
   inspected later commit uses int and calls the field Value." The note shows the
