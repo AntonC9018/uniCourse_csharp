@@ -1,0 +1,2961 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "X4IDL3CmV-A",
+  "uploadId": "X4IDL3CmV-A",
+  "transcriptSha256": "2dea7fd703c59197708a16b9911c1337b5a3e6b2819fe560d96f8c34941e2922",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 240,
+      "endMilliseconds": 19630,
+      "kind": "explanation",
+      "text": "Design patterns are more abstract than the concrete, field-mask style approach shown earlier, so they need framing before they can be used.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 240,
+          "endMilliseconds": 19630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-fixed-statements-to-configurable-pipelines"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 19630,
+      "endMilliseconds": 42200,
+      "kind": "explanation",
+      "text": "A pattern is more abstract when it fits an entire class of tasks: implementations differ per pattern, yet the components look similar and communicate with each other on a high level.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 19630,
+          "endMilliseconds": 42200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-fixed-statements-to-configurable-pipelines"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 44560,
+      "endMilliseconds": 56350,
+      "kind": "fact",
+      "text": "Pattern families include object creation patterns and object composition patterns, where one object is nested in another and objects are combined.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 44560,
+          "endMilliseconds": 56350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-fixed-statements-to-configurable-pipelines"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 56350,
+      "endMilliseconds": 64760,
+      "kind": "explanation",
+      "text": "Behavioral patterns are the ones that affect the execution of the program, which is the family this lesson demonstrates.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 56350,
+          "endMilliseconds": 64760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-fixed-statements-to-configurable-pipelines"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 64600,
+      "endMilliseconds": 81119,
+      "kind": "explanation",
+      "text": "Program execution steps can be represented as data in an array so the program is written by combining steps in the right order instead of writing plain code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 64600,
+          "endMilliseconds": 81119
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 73240,
+          "endMilliseconds": 78110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-fixed-statements-to-configurable-pipelines"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 83610,
+      "endMilliseconds": 98110,
+      "kind": "fact",
+      "text": "The closest known pattern to this idea is Chain of Responsibility, probably correctly called the pipeline method, where actions are put into an array and executed one after another.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 83610,
+          "endMilliseconds": 98110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-fixed-statements-to-configurable-pipelines"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 98110,
+      "endMilliseconds": 102070,
+      "kind": "explanation",
+      "text": "The context in this program is an object with data that several parts of the code can access.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 98110,
+          "endMilliseconds": 102070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-fixed-statements-to-configurable-pipelines"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 102070,
+      "endMilliseconds": 109790,
+      "kind": "code_change",
+      "text": "A pipeline example starts with a Dog class whose context will be shown a bit later.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 102070,
+          "endMilliseconds": 109790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-the-dog-and-owner-data"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 109790,
+      "endMilliseconds": 112470,
+      "kind": "fact",
+      "text": "The sealed keyword in C# marks a class as non-inheritable, playing the role of Java's final.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 109790,
+          "endMilliseconds": 112470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-the-dog-and-owner-data"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 112470,
+      "endMilliseconds": 124430,
+      "kind": "fact",
+      "text": "The required keyword means the field must be provided when the object is created, right at initialization.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 112470,
+          "endMilliseconds": 124430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-the-dog-and-owner-data"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 124190,
+      "endMilliseconds": 146720,
+      "kind": "code_change",
+      "text": "A second class, Owner, is added, and it holds a list of the dog's owners.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 124190,
+          "endMilliseconds": 146720
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 144190,
+          "endMilliseconds": 146720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-the-dog-and-owner-data"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 146720,
+      "endMilliseconds": 153460,
+      "kind": "explanation",
+      "text": "List of Owner is the C# equivalent of the Java List, a dynamic array, and new creates an empty list instance.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 146720,
+          "endMilliseconds": 153460
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-the-dog-and-owner-data"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 153460,
+      "endMilliseconds": 156550,
+      "kind": "code_change",
+      "text": "The list can also be written in the shorter target-typed form, which likewise produces an empty list.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 153460,
+          "endMilliseconds": 156550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-the-dog-and-owner-data"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 156550,
+      "endMilliseconds": 165990,
+      "kind": "fact",
+      "text": "With such a list you can add and remove Owner elements, including a variable holding an owner reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 156550,
+          "endMilliseconds": 165990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-the-dog-and-owner-data"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 165990,
+      "endMilliseconds": 176710,
+      "kind": "code_change",
+      "text": "A dog instance is created and initialized, and its owner field is meant to be optional.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 165990,
+          "endMilliseconds": 176710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-the-dog-and-owner-data"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 176710,
+      "endMilliseconds": 187110,
+      "kind": "fact",
+      "text": "In C# you can declare a type whose value may be null, a capability Java does not offer.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 176710,
+          "endMilliseconds": 187110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-the-dog-and-owner-data"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 187110,
+      "endMilliseconds": 197100,
+      "kind": "fact",
+      "text": "In Java a user-defined type always holds a real value, while C# requires you to state explicitly whether a type can hold null.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 187110,
+          "endMilliseconds": 197100
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-the-dog-and-owner-data"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 197100,
+      "endMilliseconds": 207630,
+      "kind": "reason",
+      "text": "Because the owner field is nullable by nature, required is left off so the field may be omitted at creation and hold null until an owner is assigned.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 197100,
+          "endMilliseconds": 207630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-the-dog-and-owner-data"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 207630,
+      "endMilliseconds": 214480,
+      "kind": "code_change",
+      "text": "The example sets up a sequence where the dog's owner changes, which motivates the pipeline that follows.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 207630,
+          "endMilliseconds": 214480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#write-the-first-ordered-sequence"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 212270,
+      "endMilliseconds": 218350,
+      "kind": "code_change",
+      "text": "The planned sequence is: the owner changes, then something happens to the dog, then the owner changes again.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 212270,
+          "endMilliseconds": 218350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#write-the-first-ordered-sequence"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 218350,
+      "endMilliseconds": 224760,
+      "kind": "code_change",
+      "text": "Changing the dog's owner is done by assigning dog.Owner = owner.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 218350,
+          "endMilliseconds": 224760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#write-the-first-ordered-sequence"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 224760,
+      "endMilliseconds": 237790,
+      "kind": "code_change",
+      "text": "After the assignment something happens to the dog, for example it gets renamed, and then the owner changes to another owner.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 224760,
+          "endMilliseconds": 237790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#write-the-first-ordered-sequence"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 237790,
+      "endMilliseconds": 247270,
+      "kind": "explanation",
+      "text": "This fixed sequence of owner assignment, dog operation, and owner reassignment is a pipeline of steps.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 237790,
+          "endMilliseconds": 247270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#write-the-first-ordered-sequence"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 247270,
+      "endMilliseconds": 252010,
+      "kind": "scope_boundary",
+      "text": "The owner variable is deliberately used nowhere else; it is only assigned to the dog and stored in the list.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 247270,
+          "endMilliseconds": 252010
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#write-the-first-ordered-sequence"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 252010,
+      "endMilliseconds": 264110,
+      "kind": "code_change",
+      "text": "Every newly created owner must also be added to the list, except for the very first owner, because there is no previous one to replace.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 252010,
+          "endMilliseconds": 264110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#write-the-first-ordered-sequence"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 264110,
+      "endMilliseconds": 275770,
+      "kind": "reason",
+      "text": "The repeated block that assigns the current dog an owner and adds it to the list is duplicated code and should be removed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 264110,
+          "endMilliseconds": 275770
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#write-the-first-ordered-sequence"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 275770,
+      "endMilliseconds": 283800,
+      "kind": "explanation",
+      "text": "Encapsulating that logic means creating a function, and C# offers local functions, one of which is created next.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 275770,
+          "endMilliseconds": 283800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-local-ownership-operation"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 277120,
+      "endMilliseconds": 285760,
+      "kind": "code_change",
+      "text": "To encapsulate the repeated block that adds a dog to the owner list, the instructor extracts it into a new function rather than repeating the same statements at every call site.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 277120,
+          "endMilliseconds": 285760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-local-ownership-operation"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 285760,
+      "endMilliseconds": 293070,
+      "kind": "fact",
+      "text": "A local function in C# can read the enclosing method's local variables, which is why the extracted helper needs no extra parameters for the owner list.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 285760,
+          "endMilliseconds": 293070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-local-ownership-operation"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 293070,
+      "endMilliseconds": 304590,
+      "kind": "explanation",
+      "text": "The extracted changeOwner function accepts the new owner and appends it to the owner list only when it is not null, so the list always reflects the current owner.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 293070,
+          "endMilliseconds": 304590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-local-ownership-operation"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 304590,
+      "endMilliseconds": 315430,
+      "kind": "edge_case",
+      "text": "Passing null to changeOwner means the dog previously had no owner, so it is not counted as the previous owner and the dog becomes homeless again.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 304590,
+          "endMilliseconds": 315430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-local-ownership-operation"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 315430,
+      "endMilliseconds": 326470,
+      "kind": "code_change",
+      "text": "After extraction the code calls the changeOwner function instead of assigning the owner field directly, so the mutation goes through one named abstraction.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 315430,
+          "endMilliseconds": 326470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-local-ownership-operation"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 326470,
+      "endMilliseconds": 346919,
+      "kind": "explanation",
+      "text": "Abstraction means a piece of code is reached by its name, and encapsulation means the concrete actions are written once inside it so callers reuse only that name instead of duplicating the body.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 326470,
+          "endMilliseconds": 346919
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 339560,
+          "endMilliseconds": 346919
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-local-ownership-operation"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 346919,
+      "endMilliseconds": 351510,
+      "kind": "explanation",
+      "text": "Because the block of code has a name, calling it by that name is enough and the statements need not be copied.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 346919,
+          "endMilliseconds": 351510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-local-ownership-operation"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 351510,
+      "endMilliseconds": 373030,
+      "kind": "fact",
+      "text": "The program now consists of roughly three distinct actions - changing the owner, changing the name, and printing - which include printing the previous owner and printing the dog.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 351510,
+          "endMilliseconds": 373030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reuse-the-sequence-and-encounter-duplication"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 373030,
+      "endMilliseconds": 388350,
+      "kind": "fact",
+      "text": "These actions are treated as individually available steps of the program: change owner, change name, then print owner and print dog.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 373030,
+          "endMilliseconds": 388350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reuse-the-sequence-and-encounter-duplication"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 388350,
+      "endMilliseconds": 400230,
+      "kind": "reason",
+      "text": "Running the same steps in a different order would require the user to choose the order, and the current code has no way to express that.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 388350,
+          "endMilliseconds": 400230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reuse-the-sequence-and-encounter-duplication"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 400230,
+      "endMilliseconds": 415479,
+      "kind": "scope_boundary",
+      "text": "At this stage the maximum achievable is not letting the user set the order but making the steps reusable, so the code is put into a function and, for now, a separate class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 400230,
+          "endMilliseconds": 415479
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 407280,
+          "endMilliseconds": 415479
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reuse-the-sequence-and-encounter-duplication"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 415479,
+      "endMilliseconds": 425529,
+      "kind": "code_change",
+      "text": "The steps are moved into a separate function, and the code left at the top of the file runs on its own as the program's main entry point.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 415479,
+          "endMilliseconds": 425529
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reuse-the-sequence-and-encounter-duplication"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 425529,
+      "endMilliseconds": 430309,
+      "kind": "reason",
+      "text": "To run the same steps from a second function the whole function would have to be duplicated, which is the cost that motivates the refactoring.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 425529,
+          "endMilliseconds": 430309
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reuse-the-sequence-and-encounter-duplication"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 430309,
+      "endMilliseconds": 448390,
+      "kind": "edge_case",
+      "text": "A full copy is possible if you are willing to duplicate the function and then tweak the copy by reordering steps, renaming objects, or moving a print before it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 430309,
+          "endMilliseconds": 448390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reuse-the-sequence-and-encounter-duplication"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 448390,
+      "endMilliseconds": 457150,
+      "kind": "reason",
+      "text": "The first concrete problem is that the code of these steps is repeated completely in many places, so any fix has to remove that duplication.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 448390,
+          "endMilliseconds": 457150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reuse-the-sequence-and-encounter-duplication"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 457150,
+      "endMilliseconds": 477869,
+      "kind": "code_change",
+      "text": "As the first refactoring step the common code is extracted into separate functions; the print-the-dog code is extracted and now requires the list of owners to be passed to it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 457150,
+          "endMilliseconds": 477869
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-each-operation-explicit-dependencies"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 477869,
+      "endMilliseconds": 488599,
+      "kind": "scope_boundary",
+      "text": "The adapter pattern is flagged as a good fit for this situation, so changeOwner can be moved too, which requires it to know exactly which data it depends on.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 477869,
+          "endMilliseconds": 488599
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 481960,
+          "endMilliseconds": 488599
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-each-operation-explicit-dependencies"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 488599,
+      "endMilliseconds": 496430,
+      "kind": "explanation",
+      "text": "changeOwner needs an owner, a dog and the previous owners, so all three must be passed in as parameters for the function to work outside its old location.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 488599,
+          "endMilliseconds": 496430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-each-operation-explicit-dependencies"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 496430,
+      "endMilliseconds": 507000,
+      "kind": "code_change",
+      "text": "The owner is now supplied by the caller, and changeOwner reads the dog, the owner list and the new owner from its parameters instead of capturing them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 496430,
+          "endMilliseconds": 507000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-each-operation-explicit-dependencies"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 507000,
+      "endMilliseconds": 516949,
+      "kind": "reason",
+      "text": "Duplicating the creation of the owner is acceptable because the owner is one of the externally supplied parameters, while duplicating the logic itself is not.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 507000,
+          "endMilliseconds": 516949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-each-operation-explicit-dependencies"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 516949,
+      "endMilliseconds": 529310,
+      "kind": "code_change",
+      "text": "Because the function is no longer used twice it can be moved to a different place, and the owner is no longer created locally but taken from the parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 516949,
+          "endMilliseconds": 529310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-each-operation-explicit-dependencies"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 529310,
+      "endMilliseconds": 532730,
+      "kind": "fact",
+      "text": "Only ChangeName remains to be converted in the same way.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 529310,
+          "endMilliseconds": 532730
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-each-operation-explicit-dependencies"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 548430,
+      "endMilliseconds": 565480,
+      "kind": "reason",
+      "text": "There is no problem in the current place, but as soon as this code is reused in another pipeline the need to know which data each function depends on becomes apparent.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 548430,
+          "endMilliseconds": 565480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#identify-the-shared-execution-context"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 559079,
+      "endMilliseconds": 575380,
+      "kind": "fact",
+      "text": "Every pipeline step that works with a dog needs exactly two data pieces: the list of operations and the dog itself.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 559079,
+          "endMilliseconds": 575380
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#identify-the-shared-execution-context"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 578160,
+      "endMilliseconds": 586710,
+      "kind": "explanation",
+      "text": "Those two variables taken together are called the context.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 578160,
+          "endMilliseconds": 586710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#identify-the-shared-execution-context"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 586710,
+      "endMilliseconds": 600030,
+      "kind": "reason",
+      "text": "Because the context is currently built once here and again in another function, the fix is a dedicated class that stores the context pieces as fields so the whole context can be passed as a single parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 586710,
+          "endMilliseconds": 600030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#identify-the-shared-execution-context"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 600030,
+      "endMilliseconds": 602949,
+      "kind": "reason",
+      "text": "Passing two plain parameters instead would not solve the duplication, which leads to the second idea discussed next.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 600030,
+          "endMilliseconds": 602949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#identify-the-shared-execution-context"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 604790,
+      "endMilliseconds": 625310,
+      "kind": "fact",
+      "text": "To run the change-owner step of the pipeline, both parts of the context must currently be passed manually at every call site.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 604790,
+          "endMilliseconds": 625310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#identify-the-shared-execution-context"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 625310,
+      "endMilliseconds": 633760,
+      "kind": "fact",
+      "text": "These step functions use only individual parts of the context, not the context as a whole.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 625310,
+          "endMilliseconds": 633760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#identify-the-shared-execution-context"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 625320,
+      "endMilliseconds": 640550,
+      "kind": "fact",
+      "text": "It does not matter whether a step function depends on one part of the context or on all of it, because today each function works with separate context parts and never receives the whole context.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 625320,
+          "endMilliseconds": 640550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#identify-the-shared-execution-context"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 640550,
+      "endMilliseconds": 648350,
+      "kind": "reason",
+      "text": "Ideally a function should just be handed all the data and extract whatever it needs itself.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 640550,
+          "endMilliseconds": 648350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#identify-the-shared-execution-context"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 648350,
+      "endMilliseconds": 658670,
+      "kind": "explanation",
+      "text": "With a context object holding the data, the code would no longer reference the dog or the operation list directly and would simply pass the context onward.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 648350,
+          "endMilliseconds": 658670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#identify-the-shared-execution-context"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 658670,
+      "endMilliseconds": 674069,
+      "kind": "fact",
+      "text": "The change-owner step would then know what to do with the context, receiving the context plus the new name, while every other step receives only the context.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 658670,
+          "endMilliseconds": 674069
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#identify-the-shared-execution-context"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 674069,
+      "endMilliseconds": 682710,
+      "kind": "reason",
+      "text": "Grouping the variables into a single object lets them be passed to a function or configuration simultaneously, in one argument.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 674069,
+          "endMilliseconds": 682710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#identify-the-shared-execution-context"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 682710,
+      "endMilliseconds": 694360,
+      "kind": "reason",
+      "text": "Grouping the data removes the duplication of constructing the initial state in two places.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 682710,
+          "endMilliseconds": 694360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#identify-the-shared-execution-context"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 694360,
+      "endMilliseconds": 702079,
+      "kind": "reason",
+      "text": "Passing the entire available context at once into each separate step lets the steps adapt to the data they were given.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 694360,
+          "endMilliseconds": 702079
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#identify-the-shared-execution-context"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 702079,
+      "endMilliseconds": 710310,
+      "kind": "fact",
+      "text": "A pipeline is essentially an ordered sequence of operations.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 702079,
+          "endMilliseconds": 710310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#identify-the-shared-execution-context"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 710320,
+      "endMilliseconds": 715629,
+      "kind": "fact",
+      "text": "The context can now be created when the pipeline is executed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 710320,
+          "endMilliseconds": 715629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#identify-the-shared-execution-context"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 715629,
+      "endMilliseconds": 720790,
+      "kind": "code_change",
+      "text": "First a context class must be written, and it contains a list of owners that starts out empty.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 715629,
+          "endMilliseconds": 720790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-context-and-adapt-the-functions"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 720790,
+      "endMilliseconds": 728990,
+      "kind": "fact",
+      "text": "The context also holds a dog field whose value must be supplied from outside.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 720790,
+          "endMilliseconds": 728990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-context-and-adapt-the-functions"
+      }
+    },
+    {
+      "id": "TP-068",
+      "startMilliseconds": 728990,
+      "endMilliseconds": 737150,
+      "kind": "fact",
+      "text": "The code creates the context and passes the dog in so that the second pipeline is the one that runs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 728990,
+          "endMilliseconds": 737150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-context-and-adapt-the-functions"
+      }
+    },
+    {
+      "id": "TP-069",
+      "startMilliseconds": 737150,
+      "endMilliseconds": 750550,
+      "kind": "explanation",
+      "text": "The step functions depend on context data but only take parameters and contain pure logic, so they know nothing about the context's existence.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 737150,
+          "endMilliseconds": 750550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-context-and-adapt-the-functions"
+      }
+    },
+    {
+      "id": "TP-070",
+      "startMilliseconds": 750550,
+      "endMilliseconds": 758310,
+      "kind": "reason",
+      "text": "One option is to rewrite the step functions so they work purely with the context and take their data from it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 750550,
+          "endMilliseconds": 758310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-context-and-adapt-the-functions"
+      }
+    },
+    {
+      "id": "TP-071",
+      "startMilliseconds": 758310,
+      "endMilliseconds": 765000,
+      "kind": "fact",
+      "text": "The alternative is to use an adapter, which is itself one of the software design patterns.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 758310,
+          "endMilliseconds": 762880
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 762880,
+          "endMilliseconds": 765000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-context-and-adapt-the-functions"
+      }
+    },
+    {
+      "id": "TP-072",
+      "startMilliseconds": 771639,
+      "endMilliseconds": 782189,
+      "kind": "explanation",
+      "text": "An adapter means having a changer with the concrete logic plus an identical changer whose interface matches what the list of operations expects, accepting the context and the new owner.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 771639,
+          "endMilliseconds": 782189
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-context-and-adapt-the-functions"
+      }
+    },
+    {
+      "id": "TP-073",
+      "startMilliseconds": 782189,
+      "endMilliseconds": 796790,
+      "kind": "explanation",
+      "text": "All the adapter does is call the inner logic and hand it parameters taken from the shared pile of context.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 782189,
+          "endMilliseconds": 796790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-context-and-adapt-the-functions"
+      }
+    },
+    {
+      "id": "TP-074",
+      "startMilliseconds": 796790,
+      "endMilliseconds": 808790,
+      "kind": "reason",
+      "text": "An adapter is a very simple thing used when data available on some object must be converted or only some of it extracted.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 796790,
+          "endMilliseconds": 808790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-context-and-adapt-the-functions"
+      }
+    },
+    {
+      "id": "TP-075",
+      "startMilliseconds": 808790,
+      "endMilliseconds": 818780,
+      "kind": "reason",
+      "text": "The same adapter approach has to be applied for each of the other pipeline functions.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 808790,
+          "endMilliseconds": 818780
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-context-and-adapt-the-functions"
+      }
+    },
+    {
+      "id": "TP-076",
+      "startMilliseconds": 847030,
+      "endMilliseconds": 857360,
+      "kind": "scope_boundary",
+      "text": "The main remaining idea is to be able to treat the pipeline steps as data so they can be configured from the outside.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 847030,
+          "endMilliseconds": 857360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-future-actions-a-common-interface"
+      }
+    },
+    {
+      "id": "TP-077",
+      "startMilliseconds": 849639,
+      "endMilliseconds": 860679,
+      "kind": "explanation",
+      "text": "The goal of the refactoring is to treat pipeline steps as data that can be supplied from outside instead of hard-coded inside a function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 849639,
+          "endMilliseconds": 860679
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-future-actions-a-common-interface"
+      }
+    },
+    {
+      "id": "TP-078",
+      "startMilliseconds": 860679,
+      "endMilliseconds": 883670,
+      "kind": "explanation",
+      "text": "Before the change, setting the steps from outside required writing a new function that hard-coded the execution order and the external data, plus another function to run them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 860679,
+          "endMilliseconds": 883670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-future-actions-a-common-interface"
+      }
+    },
+    {
+      "id": "TP-079",
+      "startMilliseconds": 883670,
+      "endMilliseconds": 886310,
+      "kind": "reason",
+      "text": "Making the step list passable as data, for example as an array of steps, is what removes the need for a separate hand-written runner function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 883670,
+          "endMilliseconds": 886310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-future-actions-a-common-interface"
+      }
+    },
+    {
+      "id": "TP-080",
+      "startMilliseconds": 886310,
+      "endMilliseconds": 901790,
+      "kind": "explanation",
+      "text": "To understand this, one needs interfaces: the plan is a pipeline step interface whose single method executes the step and receives a context.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 886310,
+          "endMilliseconds": 901790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-future-actions-a-common-interface"
+      }
+    },
+    {
+      "id": "TP-081",
+      "startMilliseconds": 901790,
+      "endMilliseconds": 905550,
+      "kind": "fact",
+      "text": "In C# interfaces are conventionally prefixed with I, whereas in Java such a prefix is usually omitted.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 901790,
+          "endMilliseconds": 905550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-future-actions-a-common-interface"
+      }
+    },
+    {
+      "id": "TP-082",
+      "startMilliseconds": 905550,
+      "endMilliseconds": 908230,
+      "kind": "fact",
+      "text": "The pipeline step interface method always receives the execution context, so every step can read shared data from it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 905550,
+          "endMilliseconds": 908230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-future-actions-a-common-interface"
+      }
+    },
+    {
+      "id": "TP-083",
+      "startMilliseconds": 908230,
+      "endMilliseconds": 917590,
+      "kind": "code_change",
+      "text": "The first step, the owner-change step, is turned into a class named ChangeOwnerPipelineStep.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 908230,
+          "endMilliseconds": 917590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-an-owner-change-as-a-step-object"
+      }
+    },
+    {
+      "id": "TP-084",
+      "startMilliseconds": 917590,
+      "endMilliseconds": 925710,
+      "kind": "fact",
+      "text": "ChangeOwnerPipelineStep carries the new owner as data that must be supplied at construction, so the owner is fixed before the step ever executes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 917590,
+          "endMilliseconds": 925710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-an-owner-change-as-a-step-object"
+      }
+    },
+    {
+      "id": "TP-085",
+      "startMilliseconds": 920199,
+      "endMilliseconds": 929000,
+      "kind": "code_change",
+      "text": "ChangeOwnerPipelineStep implements the pipeline step interface, which lets it be treated like any other step.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 920199,
+          "endMilliseconds": 929000
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 925710,
+          "endMilliseconds": 929000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-an-owner-change-as-a-step-object"
+      }
+    },
+    {
+      "id": "TP-086",
+      "startMilliseconds": 929000,
+      "endMilliseconds": 943350,
+      "kind": "explanation",
+      "text": "The step class may reuse the functions that already existed, so for now this is an adapter from functions to a class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 929000,
+          "endMilliseconds": 943350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-an-owner-change-as-a-step-object"
+      }
+    },
+    {
+      "id": "TP-087",
+      "startMilliseconds": 943350,
+      "endMilliseconds": 963829,
+      "kind": "reason",
+      "text": "Wrapping the step into a class is what makes it possible to keep the step in a variable and create it with an explicitly initialized owner.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 943350,
+          "endMilliseconds": 963829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-an-owner-change-as-a-step-object"
+      }
+    },
+    {
+      "id": "TP-088",
+      "startMilliseconds": 963829,
+      "endMilliseconds": 968790,
+      "kind": "fact",
+      "text": "After the wrapping, the change-owner step is a value in a variable instead of a call to a standalone function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 963829,
+          "endMilliseconds": 968790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-an-owner-change-as-a-step-object"
+      }
+    },
+    {
+      "id": "TP-089",
+      "startMilliseconds": 968790,
+      "endMilliseconds": 990670,
+      "kind": "explanation",
+      "text": "The step has an external context field needed for its work and its Execute method takes the pipeline execution context as a parameter, so the same context is available to every step.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 968790,
+          "endMilliseconds": 990670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-an-owner-change-as-a-step-object"
+      }
+    },
+    {
+      "id": "TP-090",
+      "startMilliseconds": 990670,
+      "endMilliseconds": 1000399,
+      "kind": "reason",
+      "text": "It is an adapter because the function that will run the steps is expected to work with these step objects rather than with the raw functions.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 990670,
+          "endMilliseconds": 1000399
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 992560,
+          "endMilliseconds": 1000399
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-an-owner-change-as-a-step-object"
+      }
+    },
+    {
+      "id": "TP-091",
+      "startMilliseconds": 1000399,
+      "endMilliseconds": 1005500,
+      "kind": "reason",
+      "text": "In the future the runner function will operate on the steps as data and will expect objects of this interface type rather than plain functions.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1000399,
+          "endMilliseconds": 1005500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-an-owner-change-as-a-step-object"
+      }
+    },
+    {
+      "id": "TP-092",
+      "startMilliseconds": 1005500,
+      "endMilliseconds": 1015310,
+      "kind": "explanation",
+      "text": "Because it converts a function into an object implementing the interface, this class counts as an adapter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1005500,
+          "endMilliseconds": 1015310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-an-owner-change-as-a-step-object"
+      }
+    },
+    {
+      "id": "TP-093",
+      "startMilliseconds": 1015310,
+      "endMilliseconds": 1022910,
+      "kind": "fact",
+      "text": "Actions are now represented as objects with a virtual method instead of as plain functions.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1015310,
+          "endMilliseconds": 1022910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-an-owner-change-as-a-step-object"
+      }
+    },
+    {
+      "id": "TP-094",
+      "startMilliseconds": 1022910,
+      "endMilliseconds": 1025500,
+      "kind": "fact",
+      "text": "The interface implementation syntax used here is the same as the one used earlier in Java.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1022910,
+          "endMilliseconds": 1025500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-an-owner-change-as-a-step-object"
+      }
+    },
+    {
+      "id": "TP-095",
+      "startMilliseconds": 1025500,
+      "endMilliseconds": 1036690,
+      "kind": "fact",
+      "text": "No override keyword is written in C#, unlike Java, where such a marker is required on interface implementations.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1025500,
+          "endMilliseconds": 1036690
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-an-owner-change-as-a-step-object"
+      }
+    },
+    {
+      "id": "TP-096",
+      "startMilliseconds": 1036690,
+      "endMilliseconds": 1046790,
+      "kind": "code_change",
+      "text": "The same conversion must be repeated for every step, for example a change-name step class holding a string name and a public void Execute(context) that calls the existing change-name function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1036690,
+          "endMilliseconds": 1046790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#convert-the-other-actions-into-step-objects"
+      }
+    },
+    {
+      "id": "TP-097",
+      "startMilliseconds": 1046790,
+      "endMilliseconds": 1049710,
+      "kind": "code_change",
+      "text": "The wrapper class is named as an adapter of the change-name function so its temporary bridging role is visible in the code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1046790,
+          "endMilliseconds": 1049710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#convert-the-other-actions-into-step-objects"
+      }
+    },
+    {
+      "id": "TP-098",
+      "startMilliseconds": 1049710,
+      "endMilliseconds": 1057120,
+      "kind": "code_change",
+      "text": "Repeating the same pattern for the remaining steps yields one class per pipeline step.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1049710,
+          "endMilliseconds": 1057120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#convert-the-other-actions-into-step-objects"
+      }
+    },
+    {
+      "id": "TP-099",
+      "startMilliseconds": 1069720,
+      "endMilliseconds": 1072110,
+      "kind": "code_change",
+      "text": "Repeating the same pattern for the remaining steps yields one class per pipeline step.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1069720,
+          "endMilliseconds": 1072110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#convert-the-other-actions-into-step-objects"
+      }
+    },
+    {
+      "id": "TP-100",
+      "startMilliseconds": 1072110,
+      "endMilliseconds": 1081549,
+      "kind": "explanation",
+      "text": "Now a step class can simply be created and executed, passing the context to its Execute method when a context exists.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1072110,
+          "endMilliseconds": 1081549
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#convert-the-other-actions-into-step-objects"
+      }
+    },
+    {
+      "id": "TP-101",
+      "startMilliseconds": 1081549,
+      "endMilliseconds": 1115890,
+      "kind": "code_change",
+      "text": "Pipeline 1 can be rewritten by first creating the owner of owners and then building the steps as variables in order: change owner, change name, change owner, and print, instead of calling the steps imperatively.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1081549,
+          "endMilliseconds": 1115890
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#collect-and-execute-the-steps"
+      }
+    },
+    {
+      "id": "TP-102",
+      "startMilliseconds": 1120080,
+      "endMilliseconds": 1146350,
+      "kind": "explanation",
+      "text": "Because every pipeline step implements the same interface, the pipeline can hold the steps in a collection and call the same Execute method with the same parameter on each of them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1120080,
+          "endMilliseconds": 1142711
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1135760,
+          "endMilliseconds": 1146350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#collect-and-execute-the-steps"
+      }
+    },
+    {
+      "id": "TP-103",
+      "startMilliseconds": 1146350,
+      "endMilliseconds": 1152110,
+      "kind": "reason",
+      "text": "The step's Execute method is virtual because the method is declared on the interface, which is what allows storing heterogeneous steps and invoking them uniformly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1146350,
+          "endMilliseconds": 1152110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#collect-and-execute-the-steps"
+      }
+    },
+    {
+      "id": "TP-104",
+      "startMilliseconds": 1152110,
+      "endMilliseconds": 1167950,
+      "kind": "code_change",
+      "text": "The instructor restructures the pipeline to keep an IPipelineStep array so the execution code no longer has to reference each step individually.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1152110,
+          "endMilliseconds": 1167950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#collect-and-execute-the-steps"
+      }
+    },
+    {
+      "id": "TP-105",
+      "startMilliseconds": 1167950,
+      "endMilliseconds": 1173230,
+      "kind": "reason",
+      "text": "A foreach loop over the IPipelineStep array executes all steps in order, which shows that steps can now be treated as plain data.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1167950,
+          "endMilliseconds": 1173230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#collect-and-execute-the-steps"
+      }
+    },
+    {
+      "id": "TP-106",
+      "startMilliseconds": 1173230,
+      "endMilliseconds": 1179710,
+      "kind": "test_result",
+      "text": "The refactored pipeline is run to check that the array-based execution still behaves as before.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1173230,
+          "endMilliseconds": 1179710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#collect-and-execute-the-steps"
+      }
+    },
+    {
+      "id": "TP-107",
+      "startMilliseconds": 1179710,
+      "endMilliseconds": 1199150,
+      "kind": "test_result",
+      "text": "The run output shows the owner changes and previous owners, confirming that each step of the array-based pipeline executed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1179710,
+          "endMilliseconds": 1199150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#collect-and-execute-the-steps"
+      }
+    },
+    {
+      "id": "TP-108",
+      "startMilliseconds": 1199150,
+      "endMilliseconds": 1217720,
+      "kind": "test_result",
+      "text": "The last steps print the second owner's name (Alex and Lucy), demonstrating that the final rename step of the pipeline took effect.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1199150,
+          "endMilliseconds": 1217720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#collect-and-execute-the-steps"
+      }
+    },
+    {
+      "id": "TP-109",
+      "startMilliseconds": 1207960,
+      "endMilliseconds": 1223669,
+      "kind": "test_result",
+      "text": "The fifth pipeline step prints the owner and its name, confirming that the rename step actually changed the second owner's name to Alex and Lucy.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1207960,
+          "endMilliseconds": 1223669
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#collect-and-execute-the-steps"
+      }
+    },
+    {
+      "id": "TP-110",
+      "startMilliseconds": 1223669,
+      "endMilliseconds": 1230950,
+      "kind": "reason",
+      "text": "Because the pipeline is built by a separate method, callers can construct a pipeline from outside the class instead of hardcoding its steps inline.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1223669,
+          "endMilliseconds": 1230950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#return-a-pipeline-from-a-factory"
+      }
+    },
+    {
+      "id": "TP-111",
+      "startMilliseconds": 1230950,
+      "endMilliseconds": 1243430,
+      "kind": "code_change",
+      "text": "The instructor adds a public method that creates the pipeline and returns it, so execution happens on a separate object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1230950,
+          "endMilliseconds": 1243430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#return-a-pipeline-from-a-factory"
+      }
+    },
+    {
+      "id": "TP-112",
+      "startMilliseconds": 1243430,
+      "endMilliseconds": 1252990,
+      "kind": "fact",
+      "text": "C# methods are non-virtual by default, so an overridable Execute method must be marked with the virtual keyword.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1243430,
+          "endMilliseconds": 1252990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#return-a-pipeline-from-a-factory"
+      }
+    },
+    {
+      "id": "TP-113",
+      "startMilliseconds": 1252990,
+      "endMilliseconds": 1267070,
+      "kind": "fact",
+      "text": "Java methods are virtual by default and mark non-virtual methods with final, so the same Execute contract needs opposite annotations in the two languages.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1252990,
+          "endMilliseconds": 1267070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#return-a-pipeline-from-a-factory"
+      }
+    },
+    {
+      "id": "TP-114",
+      "startMilliseconds": 1267070,
+      "endMilliseconds": 1270440,
+      "kind": "explanation",
+      "text": "The execution method iterates over the steps and calls Execute on each one, passing the context along so each step can mutate the same state.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1267070,
+          "endMilliseconds": 1270440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#return-a-pipeline-from-a-factory"
+      }
+    },
+    {
+      "id": "TP-115",
+      "startMilliseconds": 1270440,
+      "endMilliseconds": 1275760,
+      "kind": "code_change",
+      "text": "A separate creation function is introduced that only builds the pipeline, leaving the caller responsible for executing it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1270440,
+          "endMilliseconds": 1275760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#return-a-pipeline-from-a-factory"
+      }
+    },
+    {
+      "id": "TP-116",
+      "startMilliseconds": 1275760,
+      "endMilliseconds": 1281200,
+      "kind": "code_change",
+      "text": "The creation method declares a Pipeline return type and is changed to initialize and return the pipeline object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1275760,
+          "endMilliseconds": 1281200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#return-a-pipeline-from-a-factory"
+      }
+    },
+    {
+      "id": "TP-117",
+      "startMilliseconds": 1287730,
+      "endMilliseconds": 1288470,
+      "kind": "code_change",
+      "text": "The creation function returns the built pipeline object instead of executing it, separating construction from execution.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1287730,
+          "endMilliseconds": 1288470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#return-a-pipeline-from-a-factory"
+      }
+    },
+    {
+      "id": "TP-118",
+      "startMilliseconds": 1303070,
+      "endMilliseconds": 1308830,
+      "kind": "explanation",
+      "text": "A second factory method can build the same pipeline independently, which shows the pipeline definition is reusable rather than tied to one call site.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1303070,
+          "endMilliseconds": 1308830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#return-a-pipeline-from-a-factory"
+      }
+    },
+    {
+      "id": "TP-119",
+      "startMilliseconds": 1308830,
+      "endMilliseconds": 1319430,
+      "kind": "code_change",
+      "text": "Pipeline execution is moved out of the factory so the default pipeline creation stays pure and callers trigger execution themselves.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1308830,
+          "endMilliseconds": 1319430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#return-a-pipeline-from-a-factory"
+      }
+    },
+    {
+      "id": "TP-120",
+      "startMilliseconds": 1319430,
+      "endMilliseconds": 1332400,
+      "kind": "reason",
+      "text": "Since all steps are just data in a list, the same pipeline with the same context can be executed several times without rebuilding it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1319430,
+          "endMilliseconds": 1332400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#edit-a-pipeline-between-runs"
+      }
+    },
+    {
+      "id": "TP-121",
+      "startMilliseconds": 1332400,
+      "endMilliseconds": 1340669,
+      "kind": "reason",
+      "text": "Because the steps are hardcoded in one place, a caller can execute the full pipeline and then modify the resulting step list for later runs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1332400,
+          "endMilliseconds": 1340669
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#edit-a-pipeline-between-runs"
+      }
+    },
+    {
+      "id": "TP-122",
+      "startMilliseconds": 1340669,
+      "endMilliseconds": 1350549,
+      "kind": "code_change",
+      "text": "The caller removes the first step with RemoveAt(0) and appends a different step, editing the pipeline's contents after creation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1340669,
+          "endMilliseconds": 1350549
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#edit-a-pipeline-between-runs"
+      }
+    },
+    {
+      "id": "TP-123",
+      "startMilliseconds": 1350549,
+      "endMilliseconds": 1363080,
+      "kind": "explanation",
+      "text": "Exposing the steps lets external code change the order and composition of actions that run when the instruction list is traversed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1350549,
+          "endMilliseconds": 1363080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#edit-a-pipeline-between-runs"
+      }
+    },
+    {
+      "id": "TP-124",
+      "startMilliseconds": 1363080,
+      "endMilliseconds": 1369360,
+      "kind": "explanation",
+      "text": "Introspection allows walking the pipeline steps and removing the ones the caller no longer wants, which makes the pipeline data self-describing.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1363080,
+          "endMilliseconds": 1369360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#edit-a-pipeline-between-runs"
+      }
+    },
+    {
+      "id": "TP-125",
+      "startMilliseconds": 1363080,
+      "endMilliseconds": 1369360,
+      "kind": "explanation",
+      "text": "Introspection means the code can walk the step list and inspect each step, for example to drop unwanted ones.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1363080,
+          "endMilliseconds": 1369360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#edit-a-pipeline-between-runs"
+      }
+    },
+    {
+      "id": "TP-126",
+      "startMilliseconds": 1369360,
+      "endMilliseconds": 1382990,
+      "kind": "explanation",
+      "text": "The default pipeline from the factory is fetched at runtime so the caller can inspect and edit the concrete steps it contains.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1369360,
+          "endMilliseconds": 1382990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#edit-a-pipeline-between-runs"
+      }
+    },
+    {
+      "id": "TP-127",
+      "startMilliseconds": 1382990,
+      "endMilliseconds": 1388350,
+      "kind": "code_change",
+      "text": "The second stage, the owner change, is removed from the step list, showing the removal targets an arbitrary position rather than the whole pipeline.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1382990,
+          "endMilliseconds": 1388350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#edit-a-pipeline-between-runs"
+      }
+    },
+    {
+      "id": "TP-128",
+      "startMilliseconds": 1388350,
+      "endMilliseconds": 1391710,
+      "kind": "code_change",
+      "text": "A name change step is appended at the end of the list, demonstrating insertion of new behavior into an existing pipeline.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1388350,
+          "endMilliseconds": 1391710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#edit-a-pipeline-between-runs"
+      }
+    },
+    {
+      "id": "TP-129",
+      "startMilliseconds": 1391710,
+      "endMilliseconds": 1401200,
+      "kind": "test_result",
+      "text": "The run confirms the second owner change is gone while the name change now runs last, so the edited pipeline behaves as requested.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1391710,
+          "endMilliseconds": 1401200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#edit-a-pipeline-between-runs"
+      }
+    },
+    {
+      "id": "TP-130",
+      "startMilliseconds": 1401200,
+      "endMilliseconds": 1404230,
+      "kind": "explanation",
+      "text": "Introspection means each step can be examined to see what it does, which is more than simply executing a fixed sequence.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1401200,
+          "endMilliseconds": 1404230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inspect-descriptions-and-filter-by-type"
+      }
+    },
+    {
+      "id": "TP-131",
+      "startMilliseconds": 1404230,
+      "endMilliseconds": 1412870,
+      "kind": "fact",
+      "text": "An introspection run that does not execute the pipeline lists which steps the pipeline contains, but by definition it does not reveal the steps' internal data.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1404230,
+          "endMilliseconds": 1412870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inspect-descriptions-and-filter-by-type"
+      }
+    },
+    {
+      "id": "TP-132",
+      "startMilliseconds": 1412870,
+      "endMilliseconds": 1434440,
+      "kind": "scope_boundary",
+      "text": "Showing step data would require adding an extra introspection method to the IPipelineStep interface, which the lesson defers to later work.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1412870,
+          "endMilliseconds": 1434440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inspect-descriptions-and-filter-by-type"
+      }
+    },
+    {
+      "id": "TP-133",
+      "startMilliseconds": 1427919,
+      "endMilliseconds": 1447149,
+      "kind": "code_change",
+      "text": "The instructor adds an Introspect method to the pipeline step that simply prints the step's own data, so every step can report itself.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1427919,
+          "endMilliseconds": 1447149
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inspect-descriptions-and-filter-by-type"
+      }
+    },
+    {
+      "id": "TP-134",
+      "startMilliseconds": 1451159,
+      "endMilliseconds": 1457870,
+      "kind": "code_change",
+      "text": "The ChangeName step is renamed to PrintOwners and now prints the dog, which gives the pipeline two distinguishable step types to filter on.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1451159,
+          "endMilliseconds": 1457870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inspect-descriptions-and-filter-by-type"
+      }
+    },
+    {
+      "id": "TP-135",
+      "startMilliseconds": 1460630,
+      "endMilliseconds": 1465240,
+      "kind": "fact",
+      "text": "Introspect is declared on the pipeline step interface so any implementation of that interface is forced to expose introspection.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1460630,
+          "endMilliseconds": 1465240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inspect-descriptions-and-filter-by-type"
+      }
+    },
+    {
+      "id": "TP-136",
+      "startMilliseconds": 1470360,
+      "endMilliseconds": 1476630,
+      "kind": "explanation",
+      "text": "A step's introspection prints itself together with the context passed at construction time, which is why the context has to be supplied when the step is created.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1470360,
+          "endMilliseconds": 1476630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inspect-descriptions-and-filter-by-type"
+      }
+    },
+    {
+      "id": "TP-137",
+      "startMilliseconds": 1479830,
+      "endMilliseconds": 1494590,
+      "kind": "explanation",
+      "text": "Because pipeline steps are real types, the pipeline list can be filtered and all steps of a chosen type removed, which is more powerful than working with plain data.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1479830,
+          "endMilliseconds": 1494590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inspect-descriptions-and-filter-by-type"
+      }
+    },
+    {
+      "id": "TP-138",
+      "startMilliseconds": 1497799,
+      "endMilliseconds": 1512950,
+      "kind": "test_result",
+      "text": "After filtering the list by type, no PrintOwners steps remain, because every element that was that type was removed from the collection.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1497799,
+          "endMilliseconds": 1512950
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1506760,
+          "endMilliseconds": 1512950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inspect-descriptions-and-filter-by-type"
+      }
+    },
+    {
+      "id": "TP-139",
+      "startMilliseconds": 1515679,
+      "endMilliseconds": 1530830,
+      "kind": "explanation",
+      "text": "A further use of typed steps is to let the user build a pipeline at run time by creating an empty pipeline and reading step names from console input in an infinite loop.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1515679,
+          "endMilliseconds": 1530830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-steps-through-console-input"
+      }
+    },
+    {
+      "id": "TP-140",
+      "startMilliseconds": 1534440,
+      "endMilliseconds": 1543559,
+      "kind": "code_change",
+      "text": "When the console input equals the ChangeName step name, the program adds that step to the pipeline and takes the new name from a second piece of user input.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1534440,
+          "endMilliseconds": 1543559
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-steps-through-console-input"
+      }
+    },
+    {
+      "id": "TP-141",
+      "startMilliseconds": 1543600,
+      "endMilliseconds": 1550090,
+      "kind": "explanation",
+      "text": "Because the step types are known, user input can configure both which steps exist and the order in which they run.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1543600,
+          "endMilliseconds": 1550090
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-steps-through-console-input"
+      }
+    },
+    {
+      "id": "TP-142",
+      "startMilliseconds": 1563030,
+      "endMilliseconds": 1573390,
+      "kind": "code_change",
+      "text": "An additional console option was added to the interactive pipeline so the user can trigger execution of the steps entered so far.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1563030,
+          "endMilliseconds": 1573390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-steps-through-console-input"
+      }
+    },
+    {
+      "id": "TP-143",
+      "startMilliseconds": 1573360,
+      "endMilliseconds": 1579160,
+      "kind": "code_change",
+      "text": "The interactive pipeline also offers an introspection option, so the user can inspect the built pipeline as well as run it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1573360,
+          "endMilliseconds": 1579160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-steps-through-console-input"
+      }
+    },
+    {
+      "id": "TP-144",
+      "startMilliseconds": 1584110,
+      "endMilliseconds": 1593110,
+      "kind": "test_result",
+      "text": "Running the interactive program prompts for a step, accepts ChangeName first and sets the name to 123, confirming the run-time configuration works.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1584110,
+          "endMilliseconds": 1593110
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1586840,
+          "endMilliseconds": 1593110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-steps-through-console-input"
+      }
+    },
+    {
+      "id": "TP-145",
+      "startMilliseconds": 1593200,
+      "endMilliseconds": 1594600,
+      "kind": "code_change",
+      "text": "More steps are entered at the prompt, namely print dog and print owners, so the pipeline can be inspected and then executed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1593200,
+          "endMilliseconds": 1594600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-steps-through-console-input"
+      }
+    },
+    {
+      "id": "TP-146",
+      "startMilliseconds": 1594800,
+      "endMilliseconds": 1595500,
+      "kind": "test_result",
+      "text": "Choosing the introspection action prints exactly the steps that were configured at the prompts, confirming the pipeline holds what the user entered.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1594800,
+          "endMilliseconds": 1595500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-steps-through-console-input"
+      }
+    },
+    {
+      "id": "TP-147",
+      "startMilliseconds": 1595560,
+      "endMilliseconds": 1597340,
+      "kind": "code_change",
+      "text": "An execute command was added so the program runs all configured steps in the order they were entered.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1595560,
+          "endMilliseconds": 1597340
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-steps-through-console-input"
+      }
+    },
+    {
+      "id": "TP-148",
+      "startMilliseconds": 1600300,
+      "endMilliseconds": 1601800,
+      "kind": "test_result",
+      "text": "Entering the same PrintDog step twice makes the execution print the dog twice, which shows that duplicated steps are kept rather than merged.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1600300,
+          "endMilliseconds": 1601800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-steps-through-console-input"
+      }
+    },
+    {
+      "id": "TP-149",
+      "startMilliseconds": 1603700,
+      "endMilliseconds": 1605100,
+      "kind": "explanation",
+      "text": "Steps can now be decorated so that extra behaviour runs around an individual step instead of only around the whole pipeline.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1603700,
+          "endMilliseconds": 1605100
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-a-decorator-dependency"
+      }
+    },
+    {
+      "id": "TP-150",
+      "startMilliseconds": 1611050,
+      "endMilliseconds": 1616400,
+      "kind": "fact",
+      "text": "A step such as PrintNameAndExecutePipelineStep performs another step's work and additionally prints that step's name, which is the wrapper or decorator design pattern.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1611050,
+          "endMilliseconds": 1616400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-a-decorator-dependency"
+      }
+    },
+    {
+      "id": "TP-151",
+      "startMilliseconds": 1622270,
+      "endMilliseconds": 1625470,
+      "kind": "reason",
+      "text": "A wrapper holds another pipeline step as a dependency and that dependency must be supplied when the wrapper is constructed, which is what makes composition work.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1622270,
+          "endMilliseconds": 1625470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-a-decorator-dependency"
+      }
+    },
+    {
+      "id": "TP-152",
+      "startMilliseconds": 1654720,
+      "endMilliseconds": 1656350,
+      "kind": "reason",
+      "text": "The wrapped step can be supplied either through a constructor or as a field, but the instructor avoids exposing it so the dependency is never mutated from outside.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1654720,
+          "endMilliseconds": 1656350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-a-decorator-dependency"
+      }
+    },
+    {
+      "id": "TP-153",
+      "startMilliseconds": 1657890,
+      "endMilliseconds": 1659270,
+      "kind": "code_change",
+      "text": "Exposing the dependency as a public required getter-only property keeps it settable only once, at construction time.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1657890,
+          "endMilliseconds": 1659270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-a-decorator-dependency"
+      }
+    },
+    {
+      "id": "TP-154",
+      "startMilliseconds": 1659520,
+      "endMilliseconds": 1660960,
+      "kind": "code_change",
+      "text": "In the wrapper's execution method the wrapped step is executed and then the wrapper introspects itself, reusing the same introspection contract as plain steps.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1659520,
+          "endMilliseconds": 1660960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#refine-reporting-around-execution"
+      }
+    },
+    {
+      "id": "TP-155",
+      "startMilliseconds": 1679750,
+      "endMilliseconds": 1704390,
+      "kind": "code_change",
+      "text": "The wrapper also introspects the step it wraps before executing it, so both the wrapped step and the wrapper itself are inspected.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1679750,
+          "endMilliseconds": 1704390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#refine-reporting-around-execution"
+      }
+    },
+    {
+      "id": "TP-156",
+      "startMilliseconds": 1704390,
+      "endMilliseconds": 1725230,
+      "kind": "code_change",
+      "text": "The wrapper instance is created from an ordinary PrintDog step, demonstrating that a plain step can be upgraded into a decorating step without changing it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1704390,
+          "endMilliseconds": 1725230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compose-and-observe-decorated-steps"
+      }
+    },
+    {
+      "id": "TP-157",
+      "startMilliseconds": 1724760,
+      "endMilliseconds": 1740080,
+      "kind": "explanation",
+      "text": "When a runner executes a wrapped step it first prints the step's name and only then runs the step's own action, so the output shows an extra name line before the real behaviour.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1724760,
+          "endMilliseconds": 1740080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compose-and-observe-decorated-steps"
+      }
+    },
+    {
+      "id": "TP-158",
+      "startMilliseconds": 1725230,
+      "endMilliseconds": 1732799,
+      "kind": "test_result",
+      "text": "Executing the pipeline prints the step's name first and only then runs the wrapped step, which is the observable behaviour of the decorator.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1725230,
+          "endMilliseconds": 1732799
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compose-and-observe-decorated-steps"
+      }
+    },
+    {
+      "id": "TP-159",
+      "startMilliseconds": 1740080,
+      "endMilliseconds": 1757600,
+      "kind": "fact",
+      "text": "Such a wrapper can be applied to any step, including a step that receives another step as a parameter and prints that inner step's Name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1740080,
+          "endMilliseconds": 1757600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compose-and-observe-decorated-steps"
+      }
+    },
+    {
+      "id": "TP-160",
+      "startMilliseconds": 1757600,
+      "endMilliseconds": 1775640,
+      "kind": "explanation",
+      "text": "A wrapper around a named step such as ChangeName or PrintDog makes that step print its own name in addition to performing its normal action.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1757600,
+          "endMilliseconds": 1775640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compose-and-observe-decorated-steps"
+      }
+    },
+    {
+      "id": "TP-161",
+      "startMilliseconds": 1775640,
+      "endMilliseconds": 1790000,
+      "kind": "fact",
+      "text": "Introspecting the print step shows it now contains the wrapper code, and calling Execute on it emits the wrapper's own line \"Выполняю этот шаг\".",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1775640,
+          "endMilliseconds": 1790000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compose-and-observe-decorated-steps"
+      }
+    }
+  ]
+}
