@@ -289,7 +289,7 @@
       "startMilliseconds": 176710,
       "endMilliseconds": 187110,
       "kind": "fact",
-      "text": "In C# you can declare a type whose value may be null, a capability Java does not offer.",
+      "text": "In C# you can annotate a type as possibly null (for example, `Owner?`), which communicates intent to the compiler; Java has no such annotation even though its reference types can hold null.",
       "evidence": [
         {
           "type": "transcript_range",
@@ -307,7 +307,7 @@
       "startMilliseconds": 187110,
       "endMilliseconds": 197100,
       "kind": "fact",
-      "text": "In Java a user-defined type always holds a real value, while C# requires you to state explicitly whether a type can hold null.",
+      "text": "In Java a user-defined reference type can always hold null, while C# requires you to state explicitly whether a type can hold null.",
       "evidence": [
         {
           "type": "transcript_range",
@@ -521,8 +521,7 @@
     {
       "id": "TP-029",
       "startMilliseconds": 285760,
-      "endMilliseconds": 293070,
-      "kind": "fact",
+      "endMilliseconds": 293070,"kind": "fact",
       "text": "A local function in C# can read the enclosing method's local variables, which is why the extracted helper needs no extra parameters for the owner list.",
       "evidence": [
         {
@@ -1723,7 +1722,7 @@
       "startMilliseconds": 1022910,
       "endMilliseconds": 1025500,
       "kind": "fact",
-      "text": "The interface implementation syntax used here is the same as the one used earlier in Java.",
+      "text": "Implementing an interface is the same general concept as in Java, but the declaration syntax differs: C# lists the interface after a colon instead of using `implements`.",
       "evidence": [
         {
           "type": "transcript_range",
@@ -1741,7 +1740,7 @@
       "startMilliseconds": 1025500,
       "endMilliseconds": 1036690,
       "kind": "fact",
-      "text": "No override keyword is written in C#, unlike Java, where such a marker is required on interface implementations.",
+      "text": "No `override` or `virtual` keyword is written on the C# implementing method; the recording only guessed that Java requires a marker there, and Java's `@Override` annotation is in fact optional for interface implementations.",
       "evidence": [
         {
           "type": "transcript_range",
@@ -2557,8 +2556,7 @@
       }
     },
     {
-      "id": "TP-140",
-      "startMilliseconds": 1534440,
+      "id": "TP-140","startMilliseconds": 1534440,
       "endMilliseconds": 1543559,
       "kind": "code_change",
       "text": "When the console input equals the ChangeName step name, the program adds that step to the pipeline and takes the new name from a second piece of user input.",
@@ -2800,7 +2798,7 @@
       "startMilliseconds": 1657890,
       "endMilliseconds": 1659270,
       "kind": "code_change",
-      "text": "Exposing the dependency as a public required getter-only property keeps it settable only once, at construction time.",
+      "text": "The final saved decorator takes the dependency in its constructor and stores it in `public readonly IPipelineStep Step;`; the spoken suggestion of a public required getter-only property would not compile, since a required property needs an accessible `set` or `init` accessor.",
       "evidence": [
         {
           "type": "transcript_range",
