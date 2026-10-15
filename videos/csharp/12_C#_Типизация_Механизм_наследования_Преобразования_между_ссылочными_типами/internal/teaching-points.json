@@ -1,0 +1,3380 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "t2T88IiiP48",
+  "uploadId": "t2T88IiiP48",
+  "transcriptSha256": "16f1dc4db05b1d82b52dde853b0d729696ce391aea02b75c5175ea0252eb259d",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 2110,
+      "endMilliseconds": 18570,
+      "kind": "fact",
+      "text": "В C# есть структуры (типы значения) и классы (типы ссылки), и наследование в C# возможно только для классов, потому что структуры не могут наследовать.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2110,
+          "endMilliseconds": 18570
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#purpose-and-vocabulary"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 20900,
+      "endMilliseconds": 23550,
+      "kind": "scope_boundary",
+      "text": "Когда в C# говорят о динамической типизации, имеют в виду в первую очередь классы, а не структуры.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 20900,
+          "endMilliseconds": 23550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#purpose-and-vocabulary"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 23560,
+      "endMilliseconds": 30750,
+      "kind": "reason",
+      "text": "Поля структуры встроены в память самой переменной, а поля классов размещаются в динамической памяти, что объясняет разницу в копировании и мутабельности значений.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 23560,
+          "endMilliseconds": 30750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#purpose-and-vocabulary"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 30760,
+      "endMilliseconds": 41440,
+      "kind": "fact",
+      "text": "Тип в C# — это объект динамической памяти, несущий информацию о вашем пользовательском типе.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 30760,
+          "endMilliseconds": 41440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#purpose-and-vocabulary"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 41440,
+      "endMilliseconds": 47480,
+      "kind": "explanation",
+      "text": "Для ссылочных типов объект типа хранит сведения о типе вместе с полями, поэтому доступ к нему проще, чем в случае структур.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 41440,
+          "endMilliseconds": 47480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#purpose-and-vocabulary"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 47480,
+      "endMilliseconds": 57100,
+      "kind": "explanation",
+      "text": "Структуры сами по себе не хранят информацию о своём типе — тип хранится только в их упакованном (boxed) виде.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 47480,
+          "endMilliseconds": 57100
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#purpose-and-vocabulary"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 57100,
+      "endMilliseconds": 63500,
+      "kind": "scope_boundary",
+      "text": "Подробнее про типы структур и упаковку автор обещает разобрать позже, а сейчас фокус урока — на ссылочных типах.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 57100,
+          "endMilliseconds": 63500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#purpose-and-vocabulary"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 63500,
+      "endMilliseconds": 72759,
+      "kind": "scope_boundary",
+      "text": "Первое, что показывает урок, — как получить доступ к информации о типе пользовательского типа через объект типа Type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 63500,
+          "endMilliseconds": 72759
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#obtain-the-runtime-type"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 72759,
+      "endMilliseconds": 81079,
+      "kind": "fact",
+      "text": "У каждого объекта в C# есть метод GetType, возвращающий информацию о типе этого объекта.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 72759,
+          "endMilliseconds": 81079
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#obtain-the-runtime-type"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 81079,
+      "endMilliseconds": 87950,
+      "kind": "reason",
+      "text": "Информация из объекта Type используется для проверки, является ли объект экземпляром конкретного типа.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 81079,
+          "endMilliseconds": 87950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#obtain-the-runtime-type"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 87960,
+      "endMilliseconds": 95280,
+      "kind": "explanation",
+      "text": "Такая проверка даёт проверку совместимости типов, то есть позволяет понять, является ли объект некоторым базовым типом, а сам разбор базовых типов отложен на более поздний материал.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 87960,
+          "endMilliseconds": 95280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#obtain-the-runtime-type"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 95310,
+      "endMilliseconds": 104670,
+      "kind": "explanation",
+      "text": "Полиморфизм в C# тоже построен на информации о типе, которая хранится в самом объекте.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 95310,
+          "endMilliseconds": 104670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#obtain-the-runtime-type"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 104680,
+      "endMilliseconds": 115310,
+      "kind": "fact",
+      "text": "Из объекта Type можно извлечь другую информацию о пользовательском типе, например имена его полей и имя самого типа.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 104680,
+          "endMilliseconds": 115310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#obtain-the-runtime-type"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 115310,
+      "endMilliseconds": 122740,
+      "kind": "test_result",
+      "text": "Запуск приведённого кода печатает имя класса, что подтверждает: имя типа хранится в объекте типа.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 115310,
+          "endMilliseconds": 122740
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#obtain-the-runtime-type"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 122750,
+      "endMilliseconds": 137910,
+      "kind": "fact",
+      "text": "Каждый объект ссылочного типа в C# содержит помимо полей ещё и дополнительную информацию.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 122750,
+          "endMilliseconds": 137910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#draw-the-instance-and-its-type-link"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 137910,
+      "endMilliseconds": 151800,
+      "kind": "edge_case",
+      "text": "Даже если у типа нет ни одного поля, с его объектом всё равно связана дополнительная информация, то есть объект типа существует независимо от наличия полей.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 137910,
+          "endMilliseconds": 151800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#draw-the-instance-and-its-type-link"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 143640,
+      "endMilliseconds": 152280,
+      "kind": "fact",
+      "text": "Выражение new для типа класс создаёт объект динамической памяти, у которого нет полей, и его адрес сохраняется в переменную c.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 143640,
+          "endMilliseconds": 152280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#draw-the-instance-and-its-type-link"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 151800,
+      "endMilliseconds": 152280,
+      "kind": "fact",
+      "text": "В разбираемом коде создаётся переменная с именем c, в которую помещается результат выражения, создающего объект.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 151800,
+          "endMilliseconds": 152280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#draw-the-instance-and-its-type-link"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 152280,
+      "endMilliseconds": 158790,
+      "kind": "explanation",
+      "text": "Адрес объекта в C# указывает не на начало объекта, а на начало его полей, поэтому при отсутствии полей это фактически адрес конца объекта.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 152280,
+          "endMilliseconds": 158790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#draw-the-instance-and-its-type-link"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 158800,
+      "endMilliseconds": 165070,
+      "kind": "edge_case",
+      "text": "Если у типа есть объявленные поля, то сохранённый адрес указывает именно на начало этих полей.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 158800,
+          "endMilliseconds": 165070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#draw-the-instance-and-its-type-link"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 165070,
+      "endMilliseconds": 172670,
+      "kind": "explanation",
+      "text": "Перед адресом полей в памяти объекта находится область с информацией о типе.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 165070,
+          "endMilliseconds": 172670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#draw-the-instance-and-its-type-link"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 172670,
+      "endMilliseconds": 181010,
+      "kind": "fact",
+      "text": "У каждого объекта есть скрытое поле, определяемое компилятором, которое хранит эту информацию о типе.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 172670,
+          "endMilliseconds": 181010
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#draw-the-instance-and-its-type-link"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 181010,
+      "endMilliseconds": 187950,
+      "kind": "explanation",
+      "text": "В скрытом поле лежит указатель на ещё один объект, который и представляет собой информацию о типе исходного объекта.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 181010,
+          "endMilliseconds": 187950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#draw-the-instance-and-its-type-link"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 187950,
+      "endMilliseconds": 196000,
+      "kind": "fact",
+      "text": "Объект, хранящий информацию о типе, сам является объектом в динамической памяти, и его адрес, как и у любого ссылочного объекта, указывает на начало его полей.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 187950,
+          "endMilliseconds": 196000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#draw-the-instance-and-its-type-link"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 196000,
+      "endMilliseconds": 206000,
+      "kind": "explanation",
+      "text": "Объект типа класса имеет поля, например ссылку на объект строкового типа, то есть информацию о типе хранит самый обычный ссылочный объект.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 196000,
+          "endMilliseconds": 206000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#draw-the-instance-and-its-type-link"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 206000,
+      "endMilliseconds": 225720,
+      "kind": "fact",
+      "text": "Поле строкового типа хранит не саму строку, а ссылку на объект динамической памяти, в котором строковое значение и живёт.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 206000,
+          "endMilliseconds": 225720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#draw-the-instance-and-its-type-link"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 219599,
+      "endMilliseconds": 225720,
+      "kind": "fact",
+      "text": "Строковое значение в поле хранится как объект динамической памяти, и у него самого, как у любого объекта, есть поле с информацией о типе.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 219599,
+          "endMilliseconds": 225720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#draw-the-instance-and-its-type-link"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 225720,
+      "endMilliseconds": 234000,
+      "kind": "explanation",
+      "text": "В поле типа этого строкового объекта хранится ссылка на объект, представляющий собой тип строки.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 225720,
+          "endMilliseconds": 234000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#draw-the-instance-and-its-type-link"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 234010,
+      "endMilliseconds": 243780,
+      "kind": "fact",
+      "text": "Объект типа, помимо ссылки на имя типа, хранит дополнительные сведения, например информацию о том, что объект типа класс не имеет полей, и о наследующих этот тип подклассах.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 234010,
+          "endMilliseconds": 243780
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#draw-the-instance-and-its-type-link"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 243790,
+      "endMilliseconds": 254700,
+      "kind": "reason",
+      "text": "Состав этих данных определяют компилятор и среда выполнения, поэтому программист не может переопределить, что будет храниться в объекте типа.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 243790,
+          "endMilliseconds": 254700
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#draw-the-instance-and-its-type-link"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 254700,
+      "endMilliseconds": 265990,
+      "kind": "explanation",
+      "text": "Скрытое поле объекта ссылается на объект типа, который хранит информацию о типе того объекта, что был создан в первой строке кода.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 254700,
+          "endMilliseconds": 265990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#draw-the-instance-and-its-type-link"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 266000,
+      "endMilliseconds": 281360,
+      "kind": "fact",
+      "text": "У самого объекта типа тоже есть тип, а значит кроме него в динамической памяти существует ещё один объект по другому адресу.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 266000,
+          "endMilliseconds": 281360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-type-descriptions-their-own-type"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 281360,
+      "endMilliseconds": 291960,
+      "kind": "fact",
+      "text": "Одно из полей этого объекта типа хранит имя типа, то есть имя типа объекта лежит в отдельном объекте типа типа String.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 281360,
+          "endMilliseconds": 291960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-type-descriptions-their-own-type"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 283280,
+      "endMilliseconds": 307950,
+      "kind": "explanation",
+      "text": "Besides the object for the user type, the runtime has another object at some other address whose name field holds the type's name, so object5000 is of type Type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 283280,
+          "endMilliseconds": 307950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-type-descriptions-their-own-type"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 307950,
+      "endMilliseconds": 321110,
+      "kind": "fact",
+      "text": "The type object at address 5000 is itself of type Type, because every type object also has its own type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 307950,
+          "endMilliseconds": 321110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-type-descriptions-their-own-type"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 321110,
+      "endMilliseconds": 332749,
+      "kind": "reason",
+      "text": "Objects representing types are created automatically when the program runs, with their extra fields inaccessible to the programmer.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 321110,
+          "endMilliseconds": 332749
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-type-descriptions-their-own-type"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 332749,
+      "endMilliseconds": 346189,
+      "kind": "fact",
+      "text": "The whole type system exists in the program's dynamic memory even if GetType is never called, so type information is always present.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 332749,
+          "endMilliseconds": 346189
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-type-descriptions-their-own-type"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 346189,
+      "endMilliseconds": 364629,
+      "kind": "explanation",
+      "text": "Calling GetType on the object whose reference is in c reads the hidden type field containing 6000, so the expression evaluates to 6000 and t receives that value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 346189,
+          "endMilliseconds": 361360
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 353840,
+          "endMilliseconds": 364629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-a-type-description-from-instance-data"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 364629,
+      "endMilliseconds": 392000,
+      "kind": "explanation",
+      "text": "WriteLine(t) takes the address stored in t, jumps to the type object, reads its name field, and passes that string reference to the print function, which prints the word for the class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 364629,
+          "endMilliseconds": 392000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-a-type-description-from-instance-data"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 392000,
+      "endMilliseconds": 408270,
+      "kind": "edge_case",
+      "text": "If the class had declared an extra field initialized at start-up, the same object structure would exist with that field laid out after the start address and holding 10.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 392000,
+          "endMilliseconds": 408270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-a-type-description-from-instance-data"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 408270,
+      "endMilliseconds": 435990,
+      "kind": "reason",
+      "text": "That extra field is not reachable through t, because t references a Type object rather than a Class object and Type has no such field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 408270,
+          "endMilliseconds": 435990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-a-type-description-from-instance-data"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 432879,
+      "endMilliseconds": 441160,
+      "kind": "scope_boundary",
+      "text": "The lesson moves from inspecting type objects to inheritance, introducing the term base class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 432879,
+          "endMilliseconds": 441160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-base-and-derived-instances"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 435990,
+      "endMilliseconds": 437000,
+      "kind": "fact",
+      "text": "The field exists only on the program's single Class object instance, so only that instance can carry it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 435990,
+          "endMilliseconds": 437000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-a-type-description-from-instance-data"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 441160,
+      "endMilliseconds": 455000,
+      "kind": "fact",
+      "text": "A base class is a class not used directly but inherited from, and the class written after the colon is the derived one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 441160,
+          "endMilliseconds": 455000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-base-and-derived-instances"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 455000,
+      "endMilliseconds": 476000,
+      "kind": "explanation",
+      "text": "The colon-Base syntax means every field of Base becomes available in Derived, and Derived can additionally declare its own field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 455000,
+          "endMilliseconds": 476000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-base-and-derived-instances"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 476000,
+      "endMilliseconds": 496000,
+      "kind": "fact",
+      "text": "Derived instances can be created and their own field set, and a Base instance can be created with its field set as well, and both fields can be read.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 476000,
+          "endMilliseconds": 496000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-base-and-derived-instances"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 496000,
+      "endMilliseconds": 503309,
+      "kind": "fact",
+      "text": "The program therefore contains type objects for both Base and Derived in addition to the objects of those types.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 496000,
+          "endMilliseconds": 503309
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-base-and-derived-instances"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 503309,
+      "endMilliseconds": 512800,
+      "kind": "scope_boundary",
+      "text": "The type objects in turn are of type Type and hold a reference to the Type type object, but the instructor skips drawing that to keep only the important parts.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 503309,
+          "endMilliseconds": 512800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-base-and-derived-instances"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 505479,
+      "endMilliseconds": 517029,
+      "kind": "fact",
+      "text": "The first line of the example declares a reference variable and creates a new Derived object with new.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 505479,
+          "endMilliseconds": 517029
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-base-and-derived-instances"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 517029,
+      "endMilliseconds": 526910,
+      "kind": "explanation",
+      "text": "The colon-Base syntax restated: Derived inherits from Base, so all Base fields are also present on the Derived object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 517029,
+          "endMilliseconds": 526910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-base-and-derived-instances"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 526910,
+      "endMilliseconds": 553870,
+      "kind": "fact",
+      "text": "A Derived object holds a field linking to its type plus basField and derField, and these fields appear in a fixed order with basField first.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 526910,
+          "endMilliseconds": 553870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-base-and-derived-instances"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 553870,
+      "endMilliseconds": 570110,
+      "kind": "explanation",
+      "text": "The next line initializes derField with 10, and then a separate new object of type Base is created.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 553870,
+          "endMilliseconds": 570110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-base-and-derived-instances"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 570110,
+      "endMilliseconds": 584300,
+      "kind": "fact",
+      "text": "A Base object has only two fields, the hidden link to its type and basField, which is set to 11, because Base declares just one field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 570110,
+          "endMilliseconds": 584300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-base-and-derived-instances"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 582040,
+      "endMilliseconds": 597350,
+      "kind": "fact",
+      "text": "Printing b.baseField before the write shows 11, which demonstrates that the field access reads the value currently stored in that object's memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 582040,
+          "endMilliseconds": 597350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#observe-field-writes-and-offsets"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 584300,
+      "endMilliseconds": 590600,
+      "kind": "fact",
+      "text": "After basField is written with 12, printing b.BaseField outputs the value stored in that field of the Base object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 584300,
+          "endMilliseconds": 590600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#observe-field-writes-and-offsets"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 597360,
+      "endMilliseconds": 610790,
+      "kind": "test_result",
+      "text": "After assigning 12 to b.baseField, re-reading the field both through the object and by inspecting the memory cell at its address prints 12, confirming the write landed in that object's field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 597360,
+          "endMilliseconds": 610790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#observe-field-writes-and-offsets"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 610800,
+      "endMilliseconds": 637590,
+      "kind": "explanation",
+      "text": "The compiler resolves a field access without any runtime name lookup because the field's declaration order in the type fixes its offset from the object's base address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 610800,
+          "endMilliseconds": 637590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#observe-field-writes-and-offsets"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 637600,
+      "endMilliseconds": 654590,
+      "kind": "explanation",
+      "text": "A field access is compiled into a fixed offset from the base address of the object, jumping over the memory cells that precede the field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 637600,
+          "endMilliseconds": 654590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#observe-field-writes-and-offsets"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 654600,
+      "endMilliseconds": 669270,
+      "kind": "explanation",
+      "text": "For b.baseField the compiler computes the offset from b's base address at 0x6000, and since that field is declared first its offset is zero.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 654600,
+          "endMilliseconds": 664560
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 658000,
+          "endMilliseconds": 669270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#observe-field-writes-and-offsets"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 669279,
+      "endMilliseconds": 687190,
+      "kind": "explanation",
+      "text": "Using a field means jumping by a fixed offset rather than searching memory by name, and that offset is computed by the compiler from the type definition.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 669279,
+          "endMilliseconds": 687190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#observe-field-writes-and-offsets"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 687200,
+      "endMilliseconds": 704310,
+      "kind": "explanation",
+      "text": "Inheritance allows an address of a derived object to be interpreted as an address of the base type, which is what makes the later field access through a base-typed variable possible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 687200,
+          "endMilliseconds": 704310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-one-reference-into-two-typed-variables"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 701480,
+      "endMilliseconds": 709790,
+      "kind": "fact",
+      "text": "A derived-typed variable can be given a base-typed reference and a base-typed variable can hold a derived object's reference, and both assignments are legal.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 701480,
+          "endMilliseconds": 709790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-one-reference-into-two-typed-variables"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 709800,
+      "endMilliseconds": 713279,
+      "kind": "code_change",
+      "text": "The redundant derived-typed variable assignment is deleted so the example demonstrates only storing a derived object's reference in a base-typed variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 709800,
+          "endMilliseconds": 713279
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-one-reference-into-two-typed-variables"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 713279,
+      "endMilliseconds": 731829,
+      "kind": "reason",
+      "text": "Writing baseField through either variable changes the same memory because d and b hold the identical address, so the two names are two references to one object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 713279,
+          "endMilliseconds": 731829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-one-reference-into-two-typed-variables"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 731839,
+      "endMilliseconds": 737639,
+      "kind": "fact",
+      "text": "There are two variables referring to the same object, and a variable of the derived type is created that keeps that same address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 731839,
+          "endMilliseconds": 737639
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-one-reference-into-two-typed-variables"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 737639,
+      "endMilliseconds": 742310,
+      "kind": "fact",
+      "text": "Writing 10 through the derived-typed variable stores the value in the same object, because its address is the one already used.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 737639,
+          "endMilliseconds": 742310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-one-reference-into-two-typed-variables"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 742320,
+      "endMilliseconds": 751790,
+      "kind": "explanation",
+      "text": "A variable of the base type is created and the address stored in d is copied into it, so both variables now point at the same memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 742320,
+          "endMilliseconds": 751790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-one-reference-into-two-typed-variables"
+      }
+    },
+    {
+      "id": "TP-068",
+      "startMilliseconds": 751790,
+      "endMilliseconds": 769510,
+      "kind": "reason",
+      "text": "Storing a derived object's reference in a base-typed variable works only because the referenced type derives from the base type, so the base-typed variable can hold that same address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 751790,
+          "endMilliseconds": 769510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-one-reference-into-two-typed-variables"
+      }
+    },
+    {
+      "id": "TP-069",
+      "startMilliseconds": 769510,
+      "endMilliseconds": 782949,
+      "kind": "explanation",
+      "text": "When the code works with the derived-typed variable the compiler treats the whole object as accessible, so both the derived field and the inherited base field can be written.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 769510,
+          "endMilliseconds": 782949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-one-reference-into-two-typed-variables"
+      }
+    },
+    {
+      "id": "TP-070",
+      "startMilliseconds": 782949,
+      "endMilliseconds": 802310,
+      "kind": "explanation",
+      "text": "When the same address is treated as the base type the compiler assumes the object has only the base field, so only the base portion of the object is visible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 782949,
+          "endMilliseconds": 802310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-one-reference-into-two-typed-variables"
+      }
+    },
+    {
+      "id": "TP-071",
+      "startMilliseconds": 802310,
+      "endMilliseconds": 812000,
+      "kind": "explanation",
+      "text": "Everything outside that base portion of the object is the part belonging to the derived type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 802310,
+          "endMilliseconds": 812000
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 804839,
+          "endMilliseconds": 812000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-one-reference-into-two-typed-variables"
+      }
+    },
+    {
+      "id": "TP-072",
+      "startMilliseconds": 812000,
+      "endMilliseconds": 825000,
+      "kind": "explanation",
+      "text": "A derived-typed variable allows referring to all fields including derived ones, whereas a base-typed variable allows referring only to the fields declared in the base type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 812000,
+          "endMilliseconds": 825000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-one-reference-into-two-typed-variables"
+      }
+    },
+    {
+      "id": "TP-073",
+      "startMilliseconds": 825000,
+      "endMilliseconds": 846350,
+      "kind": "explanation",
+      "text": "Assigning to baseField through the derived-typed variable takes the object's base address and, because that field is declared first in the derived type, jumps the fixed offset to the field and writes 13 while treating the whole object as derived.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 825000,
+          "endMilliseconds": 846350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-one-reference-into-two-typed-variables"
+      }
+    },
+    {
+      "id": "TP-074",
+      "startMilliseconds": 846350,
+      "endMilliseconds": 869189,
+      "kind": "explanation",
+      "text": "When the same field is assigned through the base-typed variable the compiler again treats it as the first field of the base type and writes 12, and the derived part of the object is invisible through that variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 846350,
+          "endMilliseconds": 869189
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-one-reference-into-two-typed-variables"
+      }
+    },
+    {
+      "id": "TP-075",
+      "startMilliseconds": 869189,
+      "endMilliseconds": 888480,
+      "kind": "reason",
+      "text": "Inherited fields must be placed first in the deriving type so that a reference to a derived object can be used as a reference to its base-type part.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 869189,
+          "endMilliseconds": 888480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-one-reference-into-two-typed-variables"
+      }
+    },
+    {
+      "id": "TP-076",
+      "startMilliseconds": 879639,
+      "endMilliseconds": 890910,
+      "kind": "explanation",
+      "text": "Holding a reference to a derived-typed object lets you treat its inherited base-typed part as an object of the base type, which is what makes upcasting possible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 879639,
+          "endMilliseconds": 890910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-one-reference-into-two-typed-variables"
+      }
+    },
+    {
+      "id": "TP-077",
+      "startMilliseconds": 894920,
+      "endMilliseconds": 907670,
+      "kind": "fact",
+      "text": "Casting the whole derived object to the base type with (Base)d prints 12, because the compiler knows the conversion from the inheritance information it has about the types.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 894920,
+          "endMilliseconds": 907670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-an-inheritance-relationship"
+      }
+    },
+    {
+      "id": "TP-078",
+      "startMilliseconds": 907670,
+      "endMilliseconds": 922660,
+      "kind": "explanation",
+      "text": "A separate class A with exactly the same fields as the derived class is still a different type, so it is not convertible to the base type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 907670,
+          "endMilliseconds": 922660
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-an-inheritance-relationship"
+      }
+    },
+    {
+      "id": "TP-079",
+      "startMilliseconds": 922660,
+      "endMilliseconds": 949920,
+      "kind": "reason",
+      "text": "The compiler refuses to convert an object of type A to either the base or the derived type even though both declare the same fields, because conversion is decided by type, not by matching fields.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 922660,
+          "endMilliseconds": 937350
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 937350,
+          "endMilliseconds": 949920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-an-inheritance-relationship"
+      }
+    },
+    {
+      "id": "TP-080",
+      "startMilliseconds": 949920,
+      "endMilliseconds": 963120,
+      "kind": "reason",
+      "text": "Without a common base type shared with the other class, an object of type A simply cannot be used as that type at all.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 949920,
+          "endMilliseconds": 963120
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 955720,
+          "endMilliseconds": 963120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-an-inheritance-relationship"
+      }
+    },
+    {
+      "id": "TP-081",
+      "startMilliseconds": 963120,
+      "endMilliseconds": 975310,
+      "kind": "edge_case",
+      "text": "Even if class A declared no fields whatsoever, converting it to the base type would still be impossible because A does not inherit from the base type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 963120,
+          "endMilliseconds": 975310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-an-inheritance-relationship"
+      }
+    },
+    {
+      "id": "TP-082",
+      "startMilliseconds": 975310,
+      "endMilliseconds": 984000,
+      "kind": "reason",
+      "text": "During a type conversion the compiler inspects what a class inherits rather than the fields it declares.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 975310,
+          "endMilliseconds": 984000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-an-inheritance-relationship"
+      }
+    },
+    {
+      "id": "TP-083",
+      "startMilliseconds": 984000,
+      "endMilliseconds": 987990,
+      "kind": "explanation",
+      "text": "The earlier conversion to the base type compiles only because inheritance was explicitly added to the class definition.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 984000,
+          "endMilliseconds": 987990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-an-inheritance-relationship"
+      }
+    },
+    {
+      "id": "TP-084",
+      "startMilliseconds": 987990,
+      "endMilliseconds": 999750,
+      "kind": "explanation",
+      "text": "If two classes shared a common base type, then either object could be used anywhere that base type is expected.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 987990,
+          "endMilliseconds": 999750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-an-inheritance-relationship"
+      }
+    },
+    {
+      "id": "TP-085",
+      "startMilliseconds": 999750,
+      "endMilliseconds": 1017390,
+      "kind": "explanation",
+      "text": "With class A holding field a and class B holding field b and no shared base, a single variable that can stand for either object requires the special built-in type object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 999750,
+          "endMilliseconds": 1017390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-086",
+      "startMilliseconds": 1017390,
+      "endMilliseconds": 1034400,
+      "kind": "fact",
+      "text": "Any reference, meaning any object address of any type, can be assigned to an object-typed variable, which is why object works as the common supertype.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1017390,
+          "endMilliseconds": 1034400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-087",
+      "startMilliseconds": 1026839,
+      "endMilliseconds": 1034400,
+      "kind": "explanation",
+      "text": "The example code creates two objects, one of type A and one of type B.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1026839,
+          "endMilliseconds": 1034400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-088",
+      "startMilliseconds": 1034400,
+      "endMilliseconds": 1041480,
+      "kind": "fact",
+      "text": "Each of the two objects carries exactly one field of its own.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1034400,
+          "endMilliseconds": 1041480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-089",
+      "startMilliseconds": 1041480,
+      "endMilliseconds": 1054300,
+      "kind": "fact",
+      "text": "Besides its field, every object also stores its own type information, so each object has a type attached to it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1041480,
+          "endMilliseconds": 1054300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-090",
+      "startMilliseconds": 1054300,
+      "endMilliseconds": 1056780,
+      "kind": "scope_boundary",
+      "text": "An object actually contains further things beyond type and field, which this lesson deliberately postpones.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1054300,
+          "endMilliseconds": 1056780
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-091",
+      "startMilliseconds": 1056780,
+      "endMilliseconds": 1063800,
+      "kind": "fact",
+      "text": "Besides the two user types A and B there is one extra object of the special built-in type object in the memory layout.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1056780,
+          "endMilliseconds": 1063800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-092",
+      "startMilliseconds": 1063800,
+      "endMilliseconds": 1078200,
+      "kind": "fact",
+      "text": "The object type is created automatically in every program and is therefore always available without any declaration.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1063800,
+          "endMilliseconds": 1078200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-093",
+      "startMilliseconds": 1078200,
+      "endMilliseconds": 1093240,
+      "kind": "fact",
+      "text": "The first object stores type A with fieldA equal to zero, and the second stores type B with its field left at the default zero value because it was never overwritten.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1078200,
+          "endMilliseconds": 1093240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-094",
+      "startMilliseconds": 1093240,
+      "endMilliseconds": 1103159,
+      "kind": "explanation",
+      "text": "The variables receive the addresses of the newly created objects, and each address points past the type header to the start of the object's fields.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1093240,
+          "endMilliseconds": 1103159
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-095",
+      "startMilliseconds": 1093520,
+      "endMilliseconds": 1103159,
+      "kind": "explanation",
+      "text": "The first object's field area might sit at address 4000 and the second object's at address 5000, illustrating that distinct objects live at distinct addresses.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1093520,
+          "endMilliseconds": 1103159
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-096",
+      "startMilliseconds": 1103159,
+      "endMilliseconds": 1115110,
+      "kind": "explanation",
+      "text": "The object-typed reference stores the address of the whole object, not just of its fields.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1103159,
+          "endMilliseconds": 1115110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-097",
+      "startMilliseconds": 1115110,
+      "endMilliseconds": 1124690,
+      "kind": "explanation",
+      "text": "Converting an object to the base type of all objects means only the type portion of that memory layout is taken into account.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1115110,
+          "endMilliseconds": 1124690
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-098",
+      "startMilliseconds": 1124690,
+      "endMilliseconds": 1131380,
+      "kind": "fact",
+      "text": "Because of that layout, any object can be referenced through a variable of type object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1124690,
+          "endMilliseconds": 1131380
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-099",
+      "startMilliseconds": 1131380,
+      "endMilliseconds": 1142320,
+      "kind": "explanation",
+      "text": "The object variable itself is placed in temporary memory and stores the very same address, 4000, as the original object reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1131380,
+          "endMilliseconds": 1142320
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-100",
+      "startMilliseconds": 1142320,
+      "endMilliseconds": 1150650,
+      "kind": "reason",
+      "text": "The concrete type recorded in an object variable can differ from the variable's declared type because the whole object occupies more memory than the type header alone.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1142320,
+          "endMilliseconds": 1150650
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-101",
+      "startMilliseconds": 1150650,
+      "endMilliseconds": 1161690,
+      "kind": "explanation",
+      "text": "An object of type A may hold extra fields, so the larger memory chunk behind the object can come from a different type than the one visible in the reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1150650,
+          "endMilliseconds": 1161690
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-102",
+      "startMilliseconds": 1161690,
+      "endMilliseconds": 1179390,
+      "kind": "correction",
+      "text": "The object variable can therefore hold not only address 10000 but, in this example, address 99000 of another type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1161690,
+          "endMilliseconds": 1179390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-103",
+      "startMilliseconds": 1172400,
+      "endMilliseconds": 1192640,
+      "kind": "fact",
+      "text": "A variable declared as object stores only the memory address of an object, while the object's own type is kept inside the object at that address, so the variable's declared type and the referenced object's type are independent.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1172400,
+          "endMilliseconds": 1192640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-104",
+      "startMilliseconds": 1179390,
+      "endMilliseconds": 1180600,
+      "kind": "fact",
+      "text": "In this case the address 99000 is what actually gets stored in the object variable named ob.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1179390,
+          "endMilliseconds": 1180600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-105",
+      "startMilliseconds": 1192640,
+      "endMilliseconds": 1198799,
+      "kind": "code_change",
+      "text": "Reassigning the object-typed variable replaces the saved address with the address of the second object, so the variable now references a different object of a different type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1192640,
+          "endMilliseconds": 1198799
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-106",
+      "startMilliseconds": 1198799,
+      "endMilliseconds": 1208000,
+      "kind": "explanation",
+      "text": "Because the variable carries only an address, the same reference can be interpreted either as an object of type B or as a plain object without B's extra field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1198799,
+          "endMilliseconds": 1208000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-unrelated-instances-in-object"
+      }
+    },
+    {
+      "id": "TP-107",
+      "startMilliseconds": 1223000,
+      "endMilliseconds": 1231400,
+      "kind": "fact",
+      "text": "C# has dedicated syntax for converting a value or expression to another type, which is the mechanism used to work with references stored in object-typed variables.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1223000,
+          "endMilliseconds": 1231400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#recover-a-b-reference-with-a-cast"
+      }
+    },
+    {
+      "id": "TP-108",
+      "startMilliseconds": 1231400,
+      "endMilliseconds": 1243720,
+      "kind": "explanation",
+      "text": "To read a B-specific field such as FieldB from a variable typed as object you must first state that the variable holds a reference to an object of type B.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1231400,
+          "endMilliseconds": 1243720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#recover-a-b-reference-with-a-cast"
+      }
+    },
+    {
+      "id": "TP-109",
+      "startMilliseconds": 1243720,
+      "endMilliseconds": 1254280,
+      "kind": "explanation",
+      "text": "Getting FieldB from an object-typed variable requires an explicit type check and conversion, after which b1 holds a reference to the B object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1243720,
+          "endMilliseconds": 1254280
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1246400,
+          "endMilliseconds": 1254280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#recover-a-b-reference-with-a-cast"
+      }
+    },
+    {
+      "id": "TP-110",
+      "startMilliseconds": 1254280,
+      "endMilliseconds": 1259039,
+      "kind": "reason",
+      "text": "The conversion also verifies at run time that the reference really points to a B object, which is why b1 can safely be treated as a reference to B.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1254280,
+          "endMilliseconds": 1259039
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#recover-a-b-reference-with-a-cast"
+      }
+    },
+    {
+      "id": "TP-111",
+      "startMilliseconds": 1259039,
+      "endMilliseconds": 1271000,
+      "kind": "reason",
+      "text": "A variable typed as object only promises a reference to some object and not to a concrete type, so its content cannot be read without first checking the actual type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1259039,
+          "endMilliseconds": 1271000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#recover-a-b-reference-with-a-cast"
+      }
+    },
+    {
+      "id": "TP-112",
+      "startMilliseconds": 1271000,
+      "endMilliseconds": 1287320,
+      "kind": "explanation",
+      "text": "An object created inside a block would not be accessible outside it, so in this example only the object-typed variable ob is available while the B-typed variable is out of scope.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1271000,
+          "endMilliseconds": 1287320
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retain-the-object-after-local-names-leave-scope"
+      }
+    },
+    {
+      "id": "TP-113",
+      "startMilliseconds": 1287320,
+      "endMilliseconds": 1299400,
+      "kind": "explanation",
+      "text": "The code reads the address out of ob, treats it as an address of a B object after the check, and then reads FieldB through the B reference stored in B1.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1287320,
+          "endMilliseconds": 1299400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retain-the-object-after-local-names-leave-scope"
+      }
+    },
+    {
+      "id": "TP-114",
+      "startMilliseconds": 1299400,
+      "endMilliseconds": 1307200,
+      "kind": "test_result",
+      "text": "Printing the field shows 18 for the first referenced object and 20 for the second, confirming that the checked reference exposes the right field value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1299400,
+          "endMilliseconds": 1307200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retain-the-object-after-local-names-leave-scope"
+      }
+    },
+    {
+      "id": "TP-115",
+      "startMilliseconds": 1307200,
+      "endMilliseconds": 1317520,
+      "kind": "explanation",
+      "text": "The first line creates an uninitialized object-typed variable and then an object of type A whose fields receive default values, so the field holds zero.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1307200,
+          "endMilliseconds": 1317520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retain-the-object-after-local-names-leave-scope"
+      }
+    },
+    {
+      "id": "TP-116",
+      "startMilliseconds": 1317520,
+      "endMilliseconds": 1332240,
+      "kind": "explanation",
+      "text": "The type stored in the object is always the type of the created object, and afterwards a second object is created and references to the objects are kept.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1317520,
+          "endMilliseconds": 1326840
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1320240,
+          "endMilliseconds": 1332240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retain-the-object-after-local-names-leave-scope"
+      }
+    },
+    {
+      "id": "TP-117",
+      "startMilliseconds": 1332240,
+      "endMilliseconds": 1333240,
+      "kind": "explanation",
+      "text": "References to the created objects are saved into local variables named a and b, which exist only inside the block.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1332240,
+          "endMilliseconds": 1333240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retain-the-object-after-local-names-leave-scope"
+      }
+    },
+    {
+      "id": "TP-118",
+      "startMilliseconds": 1333240,
+      "endMilliseconds": 1336840,
+      "kind": "explanation",
+      "text": "The same references are then copied into the fields holding 18 and 20, so the objects stay reachable through the object-typed variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1333240,
+          "endMilliseconds": 1336840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retain-the-object-after-local-names-leave-scope"
+      }
+    },
+    {
+      "id": "TP-119",
+      "startMilliseconds": 1336840,
+      "endMilliseconds": 1342400,
+      "kind": "code_change",
+      "text": "The object-typed variable is initialized with the reference from a and then overwritten with the reference from b.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1336840,
+          "endMilliseconds": 1342400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retain-the-object-after-local-names-leave-scope"
+      }
+    },
+    {
+      "id": "TP-120",
+      "startMilliseconds": 1342400,
+      "endMilliseconds": 1351400,
+      "kind": "edge_case",
+      "text": "When the block ends the objects in dynamic memory do not disappear but the local variables do, so the object-typed variable is left holding an address whose value the program no longer knows.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1342400,
+          "endMilliseconds": 1351400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retain-the-object-after-local-names-leave-scope"
+      }
+    },
+    {
+      "id": "TP-121",
+      "startMilliseconds": 1351400,
+      "endMilliseconds": 1361720,
+      "kind": "reason",
+      "text": "Because the compiler cannot know which address the object-typed variable contains, it cannot perform the type check statically and defers it to run time.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1351400,
+          "endMilliseconds": 1361720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retain-the-object-after-local-names-leave-scope"
+      }
+    },
+    {
+      "id": "TP-122",
+      "startMilliseconds": 1361720,
+      "endMilliseconds": 1365919,
+      "kind": "fact",
+      "text": "The type check and conversion create a new variable of type B, which is why the following field access is allowed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1361720,
+          "endMilliseconds": 1365919
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retain-the-object-after-local-names-leave-scope"
+      }
+    },
+    {
+      "id": "TP-123",
+      "startMilliseconds": 1365919,
+      "endMilliseconds": 1375120,
+      "kind": "fact",
+      "text": "The cast is written as the target type name in parentheses followed by the expression to convert, so it reads as an ordinary C# conversion.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1365919,
+          "endMilliseconds": 1375120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retain-the-object-after-local-names-leave-scope"
+      }
+    },
+    {
+      "id": "TP-124",
+      "startMilliseconds": 1375120,
+      "endMilliseconds": 1388000,
+      "kind": "explanation",
+      "text": "The cast together with the following expression forms a single new expression of type B, and parentheses drawn explicitly around parts of it do not change the result.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1375120,
+          "endMilliseconds": 1388000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retain-the-object-after-local-names-leave-scope"
+      }
+    },
+    {
+      "id": "TP-125",
+      "startMilliseconds": 1388000,
+      "endMilliseconds": 1396480,
+      "kind": "explanation",
+      "text": "At run time the address stored in the object-typed variable is read first and then the runtime moves to that address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1388000,
+          "endMilliseconds": 1396480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-the-runtime-compatibility-check"
+      }
+    },
+    {
+      "id": "TP-126",
+      "startMilliseconds": 1396480,
+      "endMilliseconds": 1411679,
+      "kind": "explanation",
+      "text": "Having arrived at the object the runtime inspects which type is stored in it and accepts either the expected type or a type derived from it, which is why converting to a base type also accepts a derived object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1396480,
+          "endMilliseconds": 1411679
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-the-runtime-compatibility-check"
+      }
+    },
+    {
+      "id": "TP-127",
+      "startMilliseconds": 1411679,
+      "endMilliseconds": 1419360,
+      "kind": "explanation",
+      "text": "The runtime determines the type by looking at the type cell inside the object and following the address stored there.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1411679,
+          "endMilliseconds": 1419360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-the-runtime-compatibility-check"
+      }
+    },
+    {
+      "id": "TP-128",
+      "startMilliseconds": 1419360,
+      "endMilliseconds": 1435400,
+      "kind": "explanation",
+      "text": "It then compares the object's type address with the address of the expected type, which the compiler knows, so a matching address means no error is raised.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1419360,
+          "endMilliseconds": 1435400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-the-runtime-compatibility-check"
+      }
+    },
+    {
+      "id": "TP-129",
+      "startMilliseconds": 1435400,
+      "endMilliseconds": 1446960,
+      "kind": "edge_case",
+      "text": "If the object's type address does not match the expected type the runtime raises an error and the program crashes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1435400,
+          "endMilliseconds": 1446960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-the-runtime-compatibility-check"
+      }
+    },
+    {
+      "id": "TP-130",
+      "startMilliseconds": 1446960,
+      "endMilliseconds": 1466000,
+      "kind": "edge_case",
+      "text": "If the target type is not exactly equal to the object's type the conversion can still succeed, and then the object's address is simply copied into the B1 variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1446960,
+          "endMilliseconds": 1466000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-the-runtime-compatibility-check"
+      }
+    },
+    {
+      "id": "TP-131",
+      "startMilliseconds": 1466000,
+      "endMilliseconds": 1473919,
+      "kind": "reason",
+      "text": "The cast therefore only checks type compatibility: on a compatible type the address lands in the resulting variable, otherwise the program crashes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1466000,
+          "endMilliseconds": 1473919
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-the-runtime-compatibility-check"
+      }
+    },
+    {
+      "id": "TP-132",
+      "startMilliseconds": 1466000,
+      "endMilliseconds": 1476000,
+      "kind": "explanation",
+      "text": "An explicit cast is compiled into a runtime check that the source and target types are compatible, so a program with an incompatible cast crashes instead of silently continuing.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1466000,
+          "endMilliseconds": 1476000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-the-runtime-compatibility-check"
+      }
+    },
+    {
+      "id": "TP-133",
+      "startMilliseconds": 1476000,
+      "endMilliseconds": 1488000,
+      "kind": "reason",
+      "text": "When the types are compatible the object address is placed into the target variable and execution continues, which is why only incompatible casts abort the program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1476000,
+          "endMilliseconds": 1488000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-the-runtime-compatibility-check"
+      }
+    },
+    {
+      "id": "TP-134",
+      "startMilliseconds": 1488000,
+      "endMilliseconds": 1506000,
+      "kind": "explanation",
+      "text": "Because the compiler statically knows that B1 already holds a reference to an object of type B, it can compute the field offset from the base address and read Field directly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1488000,
+          "endMilliseconds": 1506000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-the-runtime-compatibility-check"
+      }
+    },
+    {
+      "id": "TP-135",
+      "startMilliseconds": 1506000,
+      "endMilliseconds": 1513000,
+      "kind": "fact",
+      "text": "The value read through that statically computed field offset is then printed to the console.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1506000,
+          "endMilliseconds": 1513000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-the-runtime-compatibility-check"
+      }
+    },
+    {
+      "id": "TP-136",
+      "startMilliseconds": 1513000,
+      "endMilliseconds": 1522000,
+      "kind": "fact",
+      "text": "The compiler does not flag a manual re-cast to type A as a compile-time error, since it cannot prove the operation invalid.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1513000,
+          "endMilliseconds": 1522000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#run-the-incompatible-cast"
+      }
+    },
+    {
+      "id": "TP-137",
+      "startMilliseconds": 1522000,
+      "endMilliseconds": 1532000,
+      "kind": "test_result",
+      "text": "Running the project after that manual cast produces an error, confirming the incompatibility is only detected at runtime.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1522000,
+          "endMilliseconds": 1532000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#run-the-incompatible-cast"
+      }
+    },
+    {
+      "id": "TP-138",
+      "startMilliseconds": 1532000,
+      "endMilliseconds": 1550799,
+      "kind": "explanation",
+      "text": "At runtime the cast takes the stored address, resolves the real type behind it, and compares it against the expected target type A, which is the step that fails here.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1532000,
+          "endMilliseconds": 1550799
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#run-the-incompatible-cast"
+      }
+    },
+    {
+      "id": "TP-139",
+      "startMilliseconds": 1542120,
+      "endMilliseconds": 1562000,
+      "kind": "explanation",
+      "text": "The runtime check asks for the expected target type, compares it with the type stored in the object, and treats them as compatible when they are directly compatible in terms of inheritance rather than fields.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1542120,
+          "endMilliseconds": 1562000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#run-the-incompatible-cast"
+      }
+    },
+    {
+      "id": "TP-140",
+      "startMilliseconds": 1562000,
+      "endMilliseconds": 1572000,
+      "kind": "reason",
+      "text": "Since the real object type B is not compatible with the expected type, the compatibility check fails and the cast throws an error.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1562000,
+          "endMilliseconds": 1572000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#run-the-incompatible-cast"
+      }
+    },
+    {
+      "id": "TP-141",
+      "startMilliseconds": 1572000,
+      "endMilliseconds": 1584000,
+      "kind": "explanation",
+      "text": "A second example introduces a base class Base with two derived classes, so casts can target either the concrete sibling type or the common base.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1572000,
+          "endMilliseconds": 1584000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#distinguish-siblings-from-their-common-base"
+      }
+    },
+    {
+      "id": "TP-142",
+      "startMilliseconds": 1584000,
+      "endMilliseconds": 1595000,
+      "kind": "fact",
+      "text": "After that code an object exists at one address and a reference variable of type A named B1 is created and cast, setting up the next compatibility check.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1584000,
+          "endMilliseconds": 1595000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#distinguish-siblings-from-their-common-base"
+      }
+    },
+    {
+      "id": "TP-143",
+      "startMilliseconds": 1595000,
+      "endMilliseconds": 1611000,
+      "kind": "reason",
+      "text": "Casting to the sibling type A fails because the object at the address holds type Derived, which is not compatible with A.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1595000,
+          "endMilliseconds": 1611000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#distinguish-siblings-from-their-common-base"
+      }
+    },
+    {
+      "id": "TP-144",
+      "startMilliseconds": 1611000,
+      "endMilliseconds": 1628720,
+      "kind": "edge_case",
+      "text": "Casting to the base type Base is the case where the type stored in the object is not directly equal to the expected type, so the compiler must convince itself at runtime that the two types are compatible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1611000,
+          "endMilliseconds": 1628720
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1620399,
+          "endMilliseconds": 1628720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#distinguish-siblings-from-their-common-base"
+      }
+    },
+    {
+      "id": "TP-145",
+      "startMilliseconds": 1628720,
+      "endMilliseconds": 1640000,
+      "kind": "explanation",
+      "text": "Each runtime type stores not only its own reference but also a list of the types it is compatible with, so a type that is compatible with Base keeps the address of the Base type object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1628720,
+          "endMilliseconds": 1640000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#distinguish-siblings-from-their-common-base"
+      }
+    },
+    {
+      "id": "TP-146",
+      "startMilliseconds": 1640000,
+      "endMilliseconds": 1654000,
+      "kind": "fact",
+      "text": "Working with the type information of an object lets you obtain its base type directly, without any explicit cast in the source code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1640000,
+          "endMilliseconds": 1654000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#distinguish-siblings-from-their-common-base"
+      }
+    },
+    {
+      "id": "TP-147",
+      "startMilliseconds": 1654000,
+      "endMilliseconds": 1660000,
+      "kind": "reason",
+      "text": "That type information is what the runtime consults to confirm a conversion to the target type is actually possible before performing it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1654000,
+          "endMilliseconds": 1660000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#distinguish-siblings-from-their-common-base"
+      }
+    },
+    {
+      "id": "TP-148",
+      "startMilliseconds": 1660000,
+      "endMilliseconds": 1674000,
+      "kind": "fact",
+      "text": "Any type object can also be requested directly by name, for example with typeof, and the result stored in a variable so the two references can be compared for equality.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1660000,
+          "endMilliseconds": 1674000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reach-the-same-base-type-by-two-routes"
+      }
+    },
+    {
+      "id": "TP-149",
+      "startMilliseconds": 1674000,
+      "endMilliseconds": 1684000,
+      "kind": "fact",
+      "text": "Comparing the references shows the base type name obtained from type information equals the reference obtained directly, so a cast to the base yields the very same reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1674000,
+          "endMilliseconds": 1684000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reach-the-same-base-type-by-two-routes"
+      }
+    },
+    {
+      "id": "TP-150",
+      "startMilliseconds": 1684000,
+      "endMilliseconds": 1702679,
+      "kind": "explanation",
+      "text": "This situation arises because going to the type-information object of the reference and finding the base type returns exactly the compatible type listed for it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1684000,
+          "endMilliseconds": 1702679
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reach-the-same-base-type-by-two-routes"
+      }
+    },
+    {
+      "id": "TP-151",
+      "startMilliseconds": 1693480,
+      "endMilliseconds": 1700000,
+      "kind": "fact",
+      "text": "Obtaining a reference directly to the base type gives the same reference that you get when it is obtained through another type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1693480,
+          "endMilliseconds": 1700000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reach-the-same-base-type-by-two-routes"
+      }
+    },
+    {
+      "id": "TP-152",
+      "startMilliseconds": 1702679,
+      "endMilliseconds": 1709000,
+      "kind": "explanation",
+      "text": "The variable ends up equal to the type of the object because the expression moves to the type-information object and finds the base type there.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1702679,
+          "endMilliseconds": 1709000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reach-the-same-base-type-by-two-routes"
+      }
+    },
+    {
+      "id": "TP-153",
+      "startMilliseconds": 1709000,
+      "endMilliseconds": 1718000,
+      "kind": "code_change",
+      "text": "The result of that lookup, declared as the compatible type, is stored into a new variable whose name ends with an exclamation mark.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1709000,
+          "endMilliseconds": 1718000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#apply-basetype-and-typeof"
+      }
+    },
+    {
+      "id": "TP-154",
+      "startMilliseconds": 1718000,
+      "endMilliseconds": 1728000,
+      "kind": "explanation",
+      "text": "The trailing exclamation mark is the null-forgiving operator that tells the compiler the type will not be null, so the expression is guaranteed to yield a non-null address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1718000,
+          "endMilliseconds": 1728000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#apply-basetype-and-typeof"
+      }
+    },
+    {
+      "id": "TP-155",
+      "startMilliseconds": 1728000,
+      "endMilliseconds": 1740000,
+      "kind": "fact",
+      "text": "Printing the name then follows the reference to the type object, where the name is kept as a string that is passed to Console.WriteLine by reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1728000,
+          "endMilliseconds": 1740000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#apply-basetype-and-typeof"
+      }
+    },
+    {
+      "id": "TP-156",
+      "startMilliseconds": 1740000,
+      "endMilliseconds": 1757000,
+      "kind": "explanation",
+      "text": "The next line stores a direct reference in another Type variable using typeof Base, which asks for the address of the type object created for that type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1740000,
+          "endMilliseconds": 1757000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#apply-basetype-and-typeof"
+      }
+    },
+    {
+      "id": "TP-157",
+      "startMilliseconds": 1757000,
+      "endMilliseconds": 1765000,
+      "kind": "fact",
+      "text": "At runtime it is therefore possible to obtain the addresses of type objects and compare them, which is how the cast to the base type is verified.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1757000,
+          "endMilliseconds": 1765000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#apply-basetype-and-typeof"
+      }
+    },
+    {
+      "id": "TP-158",
+      "startMilliseconds": 1765000,
+      "endMilliseconds": 1780880,
+      "kind": "test_result",
+      "text": "Because the two type addresses are equal, the equality check returns true and that result is printed to the console.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1765000,
+          "endMilliseconds": 1780880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#apply-basetype-and-typeof"
+      }
+    },
+    {
+      "id": "TP-159",
+      "startMilliseconds": 1768640,
+      "endMilliseconds": 1780870,
+      "kind": "fact",
+      "text": "After the values are fetched back, comparing 8000 to 8000 returns true, which confirms the round trip through the addresses works as expected.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1768640,
+          "endMilliseconds": 1780870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#apply-basetype-and-typeof"
+      }
+    },
+    {
+      "id": "TP-160",
+      "startMilliseconds": 1780880,
+      "endMilliseconds": 1783760,
+      "kind": "fact",
+      "text": "The comparison result is returned and printed to the console, and after that the lesson moves on to demonstrate inheritance.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1780880,
+          "endMilliseconds": 1783760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#apply-basetype-and-typeof"
+      }
+    },
+    {
+      "id": "TP-161",
+      "startMilliseconds": 1783760,
+      "endMilliseconds": 1798590,
+      "kind": "fact",
+      "text": "The example declares a first base class Base1 and a second base class Base2, and states that inheriting from two types at once is impossible in C#.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1783760,
+          "endMilliseconds": 1798590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#attempt-two-class-bases"
+      }
+    },
+    {
+      "id": "TP-162",
+      "startMilliseconds": 1798600,
+      "endMilliseconds": 1820000,
+      "kind": "explanation",
+      "text": "A Derived object would have to be cast as Base1 to set its fields while simultaneously being interpreted as Base2, which is exactly the contradictory requirement that makes multiple inheritance impossible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1798600,
+          "endMilliseconds": 1820000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#attempt-two-class-bases"
+      }
+    },
+    {
+      "id": "TP-163",
+      "startMilliseconds": 1820000,
+      "endMilliseconds": 1834039,
+      "kind": "explanation",
+      "text": "The program creates a variable that holds the address of a new object whose memory is laid out as a field from the first base type, then a field from the second base type, then the derived type's own field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1820000,
+          "endMilliseconds": 1834039
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#attempt-two-class-bases"
+      }
+    },
+    {
+      "id": "TP-164",
+      "startMilliseconds": 1834039,
+      "endMilliseconds": 1845350,
+      "kind": "fact",
+      "text": "All three fields of the freshly created object start out as zeros before anything is written.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1834039,
+          "endMilliseconds": 1845350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#attempt-two-class-bases"
+      }
+    },
+    {
+      "id": "TP-165",
+      "startMilliseconds": 1845350,
+      "endMilliseconds": 1859590,
+      "kind": "explanation",
+      "text": "Converting the object's address to Base1 is allowed by the compiler because Derived inherits Base1, so a Base1 variable is created that receives that address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1845350,
+          "endMilliseconds": 1859590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#attempt-two-class-bases"
+      }
+    },
+    {
+      "id": "TP-166",
+      "startMilliseconds": 1859600,
+      "endMilliseconds": 1868880,
+      "kind": "explanation",
+      "text": "The Base1 variable therefore refers to the same region of the object at the very same address that the Derived-typed variable holds.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1859600,
+          "endMilliseconds": 1868870
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1859600,
+          "endMilliseconds": 1868880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#attempt-two-class-bases"
+      }
+    },
+    {
+      "id": "TP-167",
+      "startMilliseconds": 1868880,
+      "endMilliseconds": 1874230,
+      "kind": "fact",
+      "text": "Writing a value into Field1 through the Base1 view succeeds, so at this stage everything looks fine.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1868880,
+          "endMilliseconds": 1874230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#attempt-two-class-bases"
+      }
+    },
+    {
+      "id": "TP-168",
+      "startMilliseconds": 1874240,
+      "endMilliseconds": 1888630,
+      "kind": "explanation",
+      "text": "Because Derived also inherits Base2, a reference typed as Derived can reuse the same address and be reinterpreted as a pointer to one of its base types.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1874240,
+          "endMilliseconds": 1888630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#attempt-two-class-bases"
+      }
+    },
+    {
+      "id": "TP-169",
+      "startMilliseconds": 1888630,
+      "endMilliseconds": 1891430,
+      "kind": "fact",
+      "text": "Reinterpreting the reference as Base2 yields the very same address value 5000 rather than a new one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1888630,
+          "endMilliseconds": 1891430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#attempt-two-class-bases"
+      }
+    },
+    {
+      "id": "TP-170",
+      "startMilliseconds": 1891440,
+      "endMilliseconds": 1906629,
+      "kind": "explanation",
+      "text": "The Base2 part of the object cannot be treated as one continuous block of memory because there is a hole in the middle of the object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1891440,
+          "endMilliseconds": 1906629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-the-second-base-view"
+      }
+    },
+    {
+      "id": "TP-171",
+      "startMilliseconds": 1906629,
+      "endMilliseconds": 1918230,
+      "kind": "explanation",
+      "text": "The whole point of inheritance is that a derived object can be used as one of its base types, which is why the hole in the middle is tolerable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1906629,
+          "endMilliseconds": 1918230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-the-second-base-view"
+      }
+    },
+    {
+      "id": "TP-172",
+      "startMilliseconds": 1918240,
+      "endMilliseconds": 1930909,
+      "kind": "explanation",
+      "text": "A Base2 value on its own expects the type marker to be immediately followed by its field with no hole, meaning its reference points into the middle of the object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1918240,
+          "endMilliseconds": 1930909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-the-second-base-view"
+      }
+    },
+    {
+      "id": "TP-173",
+      "startMilliseconds": 1930919,
+      "endMilliseconds": 1936590,
+      "kind": "fact",
+      "text": "In this derived object the Base2 field instead starts after an offset, and C# provides no mechanism to record that offset.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1930919,
+          "endMilliseconds": 1936590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-the-second-base-view"
+      }
+    },
+    {
+      "id": "TP-174",
+      "startMilliseconds": 1936600,
+      "endMilliseconds": 1948760,
+      "kind": "reason",
+      "text": "If the compiler emitted the address of the Base2 part, the Base2 variable would hold 5 instead of 5000, so the lesson raises the question of why that address is not used.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1936600,
+          "endMilliseconds": 1948760
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1939440,
+          "endMilliseconds": 1948760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-the-second-base-view"
+      }
+    },
+    {
+      "id": "TP-175",
+      "startMilliseconds": 1948760,
+      "endMilliseconds": 1956909,
+      "kind": "edge_case",
+      "text": "If that Base2-part address were stored in a variable, the program could no longer convert it back, because the conversion relies on information stored just before the reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1948760,
+          "endMilliseconds": 1956909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-the-second-base-view"
+      }
+    },
+    {
+      "id": "TP-176",
+      "startMilliseconds": 1959600,
+      "endMilliseconds": 1970830,
+      "kind": "reason",
+      "text": "The address cannot be used directly because the type information is no longer located immediately before it but one slot further back, separated by the other base type's data.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1959600,
+          "endMilliseconds": 1970830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-the-second-base-view"
+      }
+    },
+    {
+      "id": "TP-177",
+      "startMilliseconds": 1970840,
+      "endMilliseconds": 1981789,
+      "kind": "reason",
+      "text": "Allowing such conversions would force language designers to duplicate a type marker for every base object in memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1970840,
+          "endMilliseconds": 1981789
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-the-second-base-view"
+      }
+    },
+    {
+      "id": "TP-178",
+      "startMilliseconds": 1981799,
+      "endMilliseconds": 1991509,
+      "kind": "explanation",
+      "text": "Treating that middle chunk as a standalone Base2 object would break the invariant that the fields of an object follow one another directly in memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1981799,
+          "endMilliseconds": 1991509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-the-second-base-view"
+      }
+    },
+    {
+      "id": "TP-179",
+      "startMilliseconds": 1991519,
+      "endMilliseconds": 2005389,
+      "kind": "explanation",
+      "text": "Moving from one field to the next would then have to skip the base object's type cell, so the type written into that cell would be Derived rather than Base2.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1991519,
+          "endMilliseconds": 2005389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-the-second-base-view"
+      }
+    },
+    {
+      "id": "TP-180",
+      "startMilliseconds": 2005399,
+      "endMilliseconds": 2017230,
+      "kind": "reason",
+      "text": "With Derived stored there, a variable typed Base2 could no longer navigate back to the whole object, because the runtime would believe that address is the start of the object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2005399,
+          "endMilliseconds": 2017230
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2014559,
+          "endMilliseconds": 2017230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-the-second-base-view"
+      }
+    },
+    {
+      "id": "TP-181",
+      "startMilliseconds": 2017240,
+      "endMilliseconds": 2041960,
+      "kind": "explanation",
+      "text": "The lesson concludes that language designers saw too many open questions and too many possible approaches, so they chose to simply forbid this construct.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2017240,
+          "endMilliseconds": 2022000
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2017240,
+          "endMilliseconds": 2041960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#observe-the-compilation-boundary"
+      }
+    },
+    {
+      "id": "TP-182",
+      "startMilliseconds": 2041960,
+      "endMilliseconds": 2043639,
+      "kind": "fact",
+      "text": "A class that inherits from two base types simply does not compile in C#.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2041960,
+          "endMilliseconds": 2043639
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#observe-the-compilation-boundary"
+      }
+    },
+    {
+      "id": "TP-183",
+      "startMilliseconds": 2043639,
+      "endMilliseconds": 2052760,
+      "kind": "reason",
+      "text": "The compiler rejects it because it does not know in which order to place the fields, and no ordering could keep the whole reference system working.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2043639,
+          "endMilliseconds": 2052760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#observe-the-compilation-boundary"
+      }
+    },
+    {
+      "id": "TP-184",
+      "startMilliseconds": 2052760,
+      "endMilliseconds": 2060560,
+      "kind": "explanation",
+      "text": "The lesson summarizes that inheriting from two types is impossible in C# and that the reason is the unknown base field ordering behind the reference system.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2052760,
+          "endMilliseconds": 2060560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#observe-the-compilation-boundary"
+      }
+    }
+  ]
+}

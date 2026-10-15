@@ -1,0 +1,3690 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "zeuNRQBdwuY",
+  "uploadId": "zeuNRQBdwuY",
+  "transcriptSha256": "b670e915df3db6f5b83d522d1793240d581e23e6cc82a0f209eac6a1355ab3ba",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 0,
+      "endMilliseconds": 13180,
+      "kind": "fact",
+      "text": "An array is created with new type[3], where the value is the variable name and 3 fixes the array size, so the object exists in dynamic memory with a length chosen by the programmer.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 0,
+          "endMilliseconds": 13180
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#arrays-and-the-first-combat-round"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 13180,
+      "endMilliseconds": 19870,
+      "kind": "fact",
+      "text": "Arrays are not limited to int and can hold other element types, which is what makes them usable for game data such as health and attack values.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 13180,
+          "endMilliseconds": 19870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#arrays-and-the-first-combat-round"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 19870,
+      "endMilliseconds": 42950,
+      "kind": "explanation",
+      "text": "One player has health and attack values, and each enemy needs its own separate health and attack pair, which is the motivation for storing many such values in an array instead of separate variables.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 19870,
+          "endMilliseconds": 42950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#arrays-and-the-first-combat-round"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 42950,
+      "endMilliseconds": 61230,
+      "kind": "code_change",
+      "text": "Each enemy attack is written by the same code applied to a different array element, for example playerHealth -= enemyAttack repeated per enemy index.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 42950,
+          "endMilliseconds": 61230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#arrays-and-the-first-combat-round"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 61230,
+      "endMilliseconds": 83240,
+      "kind": "code_change",
+      "text": "Each enemy retaliates with damage equal to the player's attack, so the health values of every enemy and the player are printed to check the result.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 61230,
+          "endMilliseconds": 83240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#arrays-and-the-first-combat-round"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 73360,
+      "endMilliseconds": 83160,
+      "kind": "reason",
+      "text": "When an enemy attacks the player the enemy also takes damage equal to the player's attack, which is why both sides lose health each round.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 73360,
+          "endMilliseconds": 83160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#arrays-and-the-first-combat-round"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 83160,
+      "endMilliseconds": 99300,
+      "kind": "test_result",
+      "text": "After running the project the player is left with seven health and each enemy with five, confirming the duplicated per-enemy attack code works.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 83160,
+          "endMilliseconds": 99300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#arrays-and-the-first-combat-round"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 99300,
+      "endMilliseconds": 115950,
+      "kind": "edge_case",
+      "text": "There is a bug: if the player's health reaches zero after the first enemy's attack, the remaining enemies must not attack, because they would damage opponents of an already dead player who cannot retaliate.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 99300,
+          "endMilliseconds": 115950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#stop-later-attacks-when-the-player-dies"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 115950,
+      "endMilliseconds": 135000,
+      "kind": "edge_case",
+      "text": "Health can become negative because damage keeps being subtracted after death, so with health 6 the second enemy would leave the player at minus 2 and the death test must allow health below zero.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 115950,
+          "endMilliseconds": 135000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#stop-later-attacks-when-the-player-dies"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 135000,
+      "endMilliseconds": 152680,
+      "kind": "code_change",
+      "text": "After applying an attack a check on whether the player is dead (health not greater than zero) must be added so the following enemy code is skipped while the player is alive.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 135000,
+          "endMilliseconds": 152680
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#stop-later-attacks-when-the-player-dies"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 147720,
+      "endMilliseconds": 155900,
+      "kind": "code_change",
+      "text": "The same liveness check must be repeated after each enemy's retaliation code, so the check is duplicated per enemy rather than written once.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 147720,
+          "endMilliseconds": 155900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#stop-later-attacks-when-the-player-dies"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 155900,
+      "endMilliseconds": 167510,
+      "kind": "test_result",
+      "text": "With the checks in place the first enemy attacks, the second kills the player, and the third enemy does not attack, leaving the player with minus 2 health.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 155900,
+          "endMilliseconds": 167510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#stop-later-attacks-when-the-player-dies"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 167510,
+      "endMilliseconds": 187510,
+      "kind": "explanation",
+      "text": "Adding one more enemy means storing one more health and attack pair and duplicating the attack block, changing the index to the new enemy's values everywhere.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 167510,
+          "endMilliseconds": 187510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#stop-later-attacks-when-the-player-dies"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 187510,
+      "endMilliseconds": 204110,
+      "kind": "reason",
+      "text": "Ideally adding an enemy should require only registering its stats, so the growing pile of duplicated per-enemy blocks is unscalable and calls for refactoring.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 187510,
+          "endMilliseconds": 204110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#stop-later-attacks-when-the-player-dies"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 204110,
+      "endMilliseconds": 229879,
+      "kind": "explanation",
+      "text": "A good starting move when lost is to group all data belonging to one game entity into a single variable by creating a class or struct with those fields made public.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 204110,
+          "endMilliseconds": 229879
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-health-and-attack-into-stats"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 221120,
+      "endMilliseconds": 229879,
+      "kind": "code_change",
+      "text": "The entity's health and attack values are moved into public fields of a class or struct so related data is declared once instead of as loose variables.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 221120,
+          "endMilliseconds": 229879
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-health-and-attack-into-stats"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 229879,
+      "endMilliseconds": 245670,
+      "kind": "reason",
+      "text": "Grouping fields into a class breaks the existing code, so you must declare a variable of that type and access all former variables through it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 229879,
+          "endMilliseconds": 245670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-health-and-attack-into-stats"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 245670,
+      "endMilliseconds": 256620,
+      "kind": "explanation",
+      "text": "Every place that used the separate variables now reads the values from the single entity variable, which keeps the data's origin visible in the code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 245670,
+          "endMilliseconds": 256620
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-health-and-attack-into-stats"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 256620,
+      "endMilliseconds": 274990,
+      "kind": "reason",
+      "text": "Since the player and every enemy share the same health and attack data, they can all use one common class rather than separate types.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 256620,
+          "endMilliseconds": 274990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-health-and-attack-into-stats"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 274990,
+      "endMilliseconds": 299750,
+      "kind": "code_change",
+      "text": "The player's health and attack are replaced by one variable of the shared class initialized with the same values, and the same is done for the enemies at class level.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 274990,
+          "endMilliseconds": 299750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-health-and-attack-into-stats"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 299750,
+      "endMilliseconds": 310560,
+      "kind": "fact",
+      "text": "Initialization can also be done in the main function instead of at class level, which is an equivalent alternative worth knowing.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 299750,
+          "endMilliseconds": 310560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-health-and-attack-into-stats"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 302639,
+      "endMilliseconds": 320309,
+      "kind": "explanation",
+      "text": "The player field can also be initialized at the main-function level, e.g. by creating it separately and assigning it right where the Game object is constructed, which keeps field creation close to the object that uses it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 302639,
+          "endMilliseconds": 320309
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-health-and-attack-into-stats"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 320319,
+      "endMilliseconds": 337950,
+      "kind": "fact",
+      "text": "Writing the name of a type instead of the full new Type(...) call is fully equivalent, because the compiler infers the type from the field it is being assigned to.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 320319,
+          "endMilliseconds": 337950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-health-and-attack-into-stats"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 339919,
+      "endMilliseconds": 354510,
+      "kind": "explanation",
+      "text": "Tracing memory for the first line of code shows it creates a variable named State in temporary (stack) memory and uses the new operator for the self-written type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 339919,
+          "endMilliseconds": 354510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-references-and-default-fields"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 354510,
+      "endMilliseconds": 361150,
+      "kind": "reason",
+      "text": "The custom type is a reference type because it is declared as a class rather than a struct, which determines how it is stored in memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 354510,
+          "endMilliseconds": 361150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-references-and-default-fields"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 361150,
+      "endMilliseconds": 373390,
+      "kind": "explanation",
+      "text": "A reference-type variable does not hold all the field values itself; it holds a reference to an object in dynamic memory that carries those fields.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 361150,
+          "endMilliseconds": 373390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-references-and-default-fields"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 373390,
+      "endMilliseconds": 390160,
+      "kind": "explanation",
+      "text": "The new operator creates the object in dynamic memory at some address, and that address is what gets stored in the variable, so the variable ends up pointing at the object rather than embedding it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 373390,
+          "endMilliseconds": 390160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-references-and-default-fields"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 378880,
+      "endMilliseconds": 390160,
+      "kind": "explanation",
+      "text": "The heap object the variable points to has memory cells reserved for each of its fields, each cell holding a value of that field's declared type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 378880,
+          "endMilliseconds": 390160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-references-and-default-fields"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 390160,
+      "endMilliseconds": 396070,
+      "kind": "fact",
+      "text": "The field's type is the custom Stats type, which is again a class and therefore also stored as a reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 390160,
+          "endMilliseconds": 396070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-references-and-default-fields"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 396070,
+      "endMilliseconds": 407160,
+      "kind": "reason",
+      "text": "Because Stats is a class, each of those field cells stores a reference to a Stats object rather than the object's data inline.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 396070,
+          "endMilliseconds": 407160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-references-and-default-fields"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 407160,
+      "endMilliseconds": 418270,
+      "kind": "fact",
+      "text": "Since those Stats references were never initialized, they hold zero, and zero means there is no pointer at all because no such object exists yet.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 407160,
+          "endMilliseconds": 418270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-references-and-default-fields"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 418270,
+      "endMilliseconds": 425749,
+      "kind": "explanation",
+      "text": "Zero is the default value C# puts into reference-typed fields on creation and it is a special value signalling that no pointer exists, i.e. the field is not initialized.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 418270,
+          "endMilliseconds": 425749
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-references-and-default-fields"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 425749,
+      "endMilliseconds": 437110,
+      "kind": "reason",
+      "text": "In C# a variable whose type is written as a plain class name must always hold a real, non-zero address of an existing object, which is why the default null state conflicts with the declared type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 425749,
+          "endMilliseconds": 437110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enable-nullable-analysis-and-express-intent"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 439469,
+      "endMilliseconds": 448629,
+      "kind": "fact",
+      "text": "By default a Stats-typed variable can be assigned the address of an existing Stats object, but not null, because the plain type name disallows a zero address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 439469,
+          "endMilliseconds": 448629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enable-nullable-analysis-and-express-intent"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 448629,
+      "endMilliseconds": 454670,
+      "kind": "explanation",
+      "text": "Zero is also spelled null in C#, so the compiler's refusal to keep a null in a Stats-typed variable is what forces an object to be created or assigned.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 448629,
+          "endMilliseconds": 454670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enable-nullable-analysis-and-express-intent"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 454670,
+      "endMilliseconds": 467520,
+      "kind": "explanation",
+      "text": "C# adds a modifier that can be added to a class type name so that the zero value becomes a legal state for that field, which is the only way to let it hold no address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 454670,
+          "endMilliseconds": 467520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enable-nullable-analysis-and-express-intent"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 459879,
+      "endMilliseconds": 467520,
+      "kind": "reason",
+      "text": "Using a class type name without modifiers means zero cannot be assigned, so the nullable behavior is only available once the extra modifier is written.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 459879,
+          "endMilliseconds": 467520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enable-nullable-analysis-and-express-intent"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 467520,
+      "endMilliseconds": 478430,
+      "kind": "explanation",
+      "text": "Because a bare class type name forbids zero, the compiler surfaces this situation as a diagnostic pointing at the field that is affected.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 467520,
+          "endMilliseconds": 478430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enable-nullable-analysis-and-express-intent"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 480240,
+      "endMilliseconds": 496070,
+      "kind": "fact",
+      "text": "With the nullable modifier enabled a Stats-typed field may hold either the address of an existing object or no pointer (zero/null), so the two states become distinguishable in code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 480240,
+          "endMilliseconds": 496070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enable-nullable-analysis-and-express-intent"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 496070,
+      "endMilliseconds": 507510,
+      "kind": "test_result",
+      "text": "Once the nullable modifier is enabled the compiler reports an error saying the field may be uninitialized after object creation, matching the fact that the field really has no address yet.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 496070,
+          "endMilliseconds": 507510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enable-nullable-analysis-and-express-intent"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 508239,
+      "endMilliseconds": 521070,
+      "kind": "explanation",
+      "text": "Ideally the plain class type name guarantees a non-zero address, but in this case the address is actually absent, which is exactly why the compiler raises the diagnostic.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 508239,
+          "endMilliseconds": 521070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enable-nullable-analysis-and-express-intent"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 521070,
+      "endMilliseconds": 531070,
+      "kind": "explanation",
+      "text": "The warning is resolved by declaring that the variable may hold a zero address, which in C# is expressed by appending a question mark to the field's type name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 521070,
+          "endMilliseconds": 531070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enable-nullable-analysis-and-express-intent"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 536070,
+      "endMilliseconds": 546560,
+      "kind": "explanation",
+      "text": "With the question mark the field is created holding zero and the compiler no longer complains, because the declared type now permits a null value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 536070,
+          "endMilliseconds": 546560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enable-nullable-analysis-and-express-intent"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 538440,
+      "endMilliseconds": 551800,
+      "kind": "reason",
+      "text": "Zero is only acceptable for a type that admits null, so marking the field nullable makes the zero value legal and removes the compiler error.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 538440,
+          "endMilliseconds": 551800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enable-nullable-analysis-and-express-intent"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 555800,
+      "endMilliseconds": 574190,
+      "kind": "edge_case",
+      "text": "Allowing null for this player field is the wrong solution because the code always expects the player to exist, so a nullable annotation misrepresents the intent.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 555800,
+          "endMilliseconds": 574190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-player-must-exist-before-it-is-used"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 564829,
+      "endMilliseconds": 593550,
+      "kind": "edge_case",
+      "text": "Explicitly assigning null to a non-nullable player field is not treated as an error by the compiler, but writing through that field dereferences a non-existent address and crashes the program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 564829,
+          "endMilliseconds": 593550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-player-must-exist-before-it-is-used"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 574190,
+      "endMilliseconds": 583550,
+      "kind": "explanation",
+      "text": "After the State variable is created its fields hold zero even though the type has no question mark, so the compiler's non-null guarantee has effectively been broken.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 574190,
+          "endMilliseconds": 583550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-player-must-exist-before-it-is-used"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 606120,
+      "endMilliseconds": 620000,
+      "kind": "explanation",
+      "text": "The failure happens at the moment code follows the stored address: the variable holds zero, so the access lands on an invalid address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 606120,
+          "endMilliseconds": 620000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-player-must-exist-before-it-is-used"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 611519,
+      "endMilliseconds": 619990,
+      "kind": "fact",
+      "text": "A freshly created reference field holds address zero, because a reference variable is assigned the invalid address until something is stored there.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 611519,
+          "endMilliseconds": 619990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-player-must-exist-before-it-is-used"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 619990,
+      "endMilliseconds": 627069,
+      "kind": "explanation",
+      "text": "Address zero means null, so reading a field through such a reference is exactly what produces a null-reference failure at runtime.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 619990,
+          "endMilliseconds": 627069
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-player-must-exist-before-it-is-used"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 627069,
+      "endMilliseconds": 644069,
+      "kind": "reason",
+      "text": "Using the field directly makes the compiler force you to check whether the player reference is initialized, because it can hold address zero.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 627069,
+          "endMilliseconds": 644069
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-player-must-exist-before-it-is-used"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 644069,
+      "endMilliseconds": 659550,
+      "kind": "explanation",
+      "text": "For a class-typed field the compiler knows it can still be null, so it requires an explicit initialized check rather than assuming a valid address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 644069,
+          "endMilliseconds": 659550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-player-must-exist-before-it-is-used"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 659550,
+      "endMilliseconds": 671710,
+      "kind": "explanation",
+      "text": "You cannot write an explicit comparison of an object reference with zero; a special keyword must be used to test for null.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 659550,
+          "endMilliseconds": 671710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-player-must-exist-before-it-is-used"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 671710,
+      "endMilliseconds": 683760,
+      "kind": "reason",
+      "text": "Since the game logic assumes the player always exists, the null check should be removed and the existence of the player must instead be guaranteed some other way.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 671710,
+          "endMilliseconds": 683760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-player-must-exist-before-it-is-used"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 683760,
+      "endMilliseconds": 690880,
+      "kind": "edge_case",
+      "text": "You may promise that the player will always be present and initialize it right after creation, but that promise is not yet enough to be safe.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 683760,
+          "endMilliseconds": 690880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-player-must-exist-before-it-is-used"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 690880,
+      "endMilliseconds": 700110,
+      "kind": "reason",
+      "text": "If you read a field of the player before the initialization statement runs, you get a runtime error, so the order of statements matters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 690880,
+          "endMilliseconds": 700110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-player-must-exist-before-it-is-used"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 700110,
+      "endMilliseconds": 708350,
+      "kind": "scope_boundary",
+      "text": "This situation is avoided with the required keyword, which the lesson deliberately postpones to a later part.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 700110,
+          "endMilliseconds": 708350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-player-must-exist-before-it-is-used"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 708350,
+      "endMilliseconds": 724110,
+      "kind": "explanation",
+      "text": "On the first line the assignment writes into the object held by the variable state, recording the address produced by the right-hand side.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 708350,
+          "endMilliseconds": 724110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#sequential-initialization-can-read-too-early"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 724110,
+      "endMilliseconds": 734710,
+      "kind": "explanation",
+      "text": "Reading the field reads the address stored in state, follows it into dynamic memory, and takes the field named player from there.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 724110,
+          "endMilliseconds": 734710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#sequential-initialization-can-read-too-early"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 734710,
+      "endMilliseconds": 743030,
+      "kind": "explanation",
+      "text": "That address is produced by an initializer expression that constructs the object, so the right-hand side runs first.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 734710,
+          "endMilliseconds": 743030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#sequential-initialization-can-read-too-early"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 743030,
+      "endMilliseconds": 756530,
+      "kind": "fact",
+      "text": "The expression creates an object of type State, and because State is a class rather than a struct the object lives in dynamic memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 743030,
+          "endMilliseconds": 756530
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#sequential-initialization-can-read-too-early"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 756530,
+      "endMilliseconds": 767040,
+      "kind": "fact",
+      "text": "Memory is allocated for the object at some address with two fields, player.Attack and player.Health, whose values are then written during initialization.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 756530,
+          "endMilliseconds": 767040
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#sequential-initialization-can-read-too-early"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 758600,
+      "endMilliseconds": 760949,
+      "kind": "fact",
+      "text": "During initialization the attack value is written into the player.Attack field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 758600,
+          "endMilliseconds": 760949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#sequential-initialization-can-read-too-early"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 760949,
+      "endMilliseconds": 772520,
+      "kind": "explanation",
+      "text": "The value of the whole expression is the address of the newly created object, and that address is what gets stored in the variable on the left of the assignment.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 760949,
+          "endMilliseconds": 772520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#sequential-initialization-can-read-too-early"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 772520,
+      "endMilliseconds": 790320,
+      "kind": "explanation",
+      "text": "The same sequence repeats for every enemy: objects are created in dynamic memory with their attack values, and those addresses are stored in the corresponding fields.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 772520,
+          "endMilliseconds": 790320
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#sequential-initialization-can-read-too-early"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 790320,
+      "endMilliseconds": 803470,
+      "kind": "edge_case",
+      "text": "Because the enemy objects are created one after another, at any given moment one of these fields may still hold an uninitialized null reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 790320,
+          "endMilliseconds": 803470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#sequential-initialization-can-read-too-early"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 803470,
+      "endMilliseconds": 820000,
+      "kind": "explanation",
+      "text": "You could additionally give the enemy a health value and the compiler would stay silent, since at that point the field already holds an existing non-null address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 803470,
+          "endMilliseconds": 820000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#sequential-initialization-can-read-too-early"
+      }
+    },
+    {
+      "id": "TP-068",
+      "startMilliseconds": 820000,
+      "endMilliseconds": 827350,
+      "kind": "reason",
+      "text": "Statements execute sequentially, so reading a later field during the same initialization still fails because that object is only created afterwards.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 820000,
+          "endMilliseconds": 827350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#sequential-initialization-can-read-too-early"
+      }
+    },
+    {
+      "id": "TP-069",
+      "startMilliseconds": 827350,
+      "endMilliseconds": 837000,
+      "kind": "test_result",
+      "text": "Running the code shows the failure on exactly that statement, confirming that the read happens before the object exists.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 827350,
+          "endMilliseconds": 837000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#sequential-initialization-can-read-too-early"
+      }
+    },
+    {
+      "id": "TP-070",
+      "startMilliseconds": 837000,
+      "endMilliseconds": 848749,
+      "kind": "explanation",
+      "text": "The whole object-creation expression counts as a single statement, which is why the read of the not-yet-created object is attributed to one line.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 837000,
+          "endMilliseconds": 848749
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#sequential-initialization-can-read-too-early"
+      }
+    },
+    {
+      "id": "TP-071",
+      "startMilliseconds": 853000,
+      "endMilliseconds": 862910,
+      "kind": "reason",
+      "text": "To stop the initialization operations from depending on each other, the fields are initialized together in one object initializer expression.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 853000,
+          "endMilliseconds": 862910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-state-with-one-object-initializer"
+      }
+    },
+    {
+      "id": "TP-072",
+      "startMilliseconds": 862910,
+      "endMilliseconds": 879030,
+      "kind": "code_change",
+      "text": "Instead of initializing each field separately, all of them are initialized at once by assigning a new State with an object initializer.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 862910,
+          "endMilliseconds": 879030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-state-with-one-object-initializer"
+      }
+    },
+    {
+      "id": "TP-073",
+      "startMilliseconds": 879030,
+      "endMilliseconds": 899030,
+      "kind": "explanation",
+      "text": "Until that statement completes, the variable state does not yet exist, so any attempt to read from it or read a field by name is a compile-time error.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 879030,
+          "endMilliseconds": 899030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-state-with-one-object-initializer"
+      }
+    },
+    {
+      "id": "TP-074",
+      "startMilliseconds": 899030,
+      "endMilliseconds": 906310,
+      "kind": "explanation",
+      "text": "With the object initializer the variable may be used freely once that single statement has finished.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 899030,
+          "endMilliseconds": 906310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-state-with-one-object-initializer"
+      }
+    },
+    {
+      "id": "TP-075",
+      "startMilliseconds": 910680,
+      "endMilliseconds": 923990,
+      "kind": "edge_case",
+      "text": "If you forget to create one of the nested variables the compiler reports no error, even though at that moment that third variable has not been initialized.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 910680,
+          "endMilliseconds": 923990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-state-with-one-object-initializer"
+      }
+    },
+    {
+      "id": "TP-076",
+      "startMilliseconds": 920360,
+      "endMilliseconds": 932629,
+      "kind": "fact",
+      "text": "The C# compiler does not warn about a reference-type field that was never manually initialized, because it guarantees the field holds some address rather than none.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 920360,
+          "endMilliseconds": 932629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-state-with-one-object-initializer"
+      }
+    },
+    {
+      "id": "TP-077",
+      "startMilliseconds": 923990,
+      "endMilliseconds": 929079,
+      "kind": "edge_case",
+      "text": "The missing manual initialization therefore leaves the last nested variable without a value until it is created explicitly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 923990,
+          "endMilliseconds": 929079
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-state-with-one-object-initializer"
+      }
+    },
+    {
+      "id": "TP-078",
+      "startMilliseconds": 932629,
+      "endMilliseconds": 947079,
+      "kind": "edge_case",
+      "text": "An uninitialized reference field actually contains a null (zero) address at runtime, so dereferencing it such as calling a method on it compiles cleanly but crashes the program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 932629,
+          "endMilliseconds": 947079
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-state-with-one-object-initializer"
+      }
+    },
+    {
+      "id": "TP-079",
+      "startMilliseconds": 949360,
+      "endMilliseconds": 952230,
+      "kind": "test_result",
+      "text": "Increasing Enemy3.Attack on an object built without initializers compiles without errors and then fails at runtime with an unhandled NullReferenceException, proving the compiler check is missing.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 949360,
+          "endMilliseconds": 952230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-state-with-one-object-initializer"
+      }
+    },
+    {
+      "id": "TP-080",
+      "startMilliseconds": 952230,
+      "endMilliseconds": 963230,
+      "kind": "test_result",
+      "text": "Running the program surfaces an unhandled NullReferenceException on line 27, which is how the null reference field becomes visible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 952230,
+          "endMilliseconds": 963230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-state-with-one-object-initializer"
+      }
+    },
+    {
+      "id": "TP-081",
+      "startMilliseconds": 963240,
+      "endMilliseconds": 976470,
+      "kind": "code_change",
+      "text": "Marking such fields as required in the declaration forces the compiler to demand an explicit value at construction time instead of silently defaulting them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 963240,
+          "endMilliseconds": 976470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-explicit-values-or-choose-defaults"
+      }
+    },
+    {
+      "id": "TP-082",
+      "startMilliseconds": 976480,
+      "endMilliseconds": 988199,
+      "kind": "code_change",
+      "text": "Applying the required modifier to the still-missing third field makes the omission a compile-time error rather than a runtime crash.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 976480,
+          "endMilliseconds": 988199
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-explicit-values-or-choose-defaults"
+      }
+    },
+    {
+      "id": "TP-083",
+      "startMilliseconds": 988199,
+      "endMilliseconds": 1017079,
+      "kind": "reason",
+      "text": "Without a default value or a required marker, health would silently become zero, so a required field is what turns that silent zero into an explicit error the caller must satisfy.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 988199,
+          "endMilliseconds": 1017079
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-explicit-values-or-choose-defaults"
+      }
+    },
+    {
+      "id": "TP-084",
+      "startMilliseconds": 1011120,
+      "endMilliseconds": 1017089,
+      "kind": "reason",
+      "text": "Marking health as required forces it to be supplied from outside so the field cannot silently default to zero.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1011120,
+          "endMilliseconds": 1017089
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-explicit-values-or-choose-defaults"
+      }
+    },
+    {
+      "id": "TP-085",
+      "startMilliseconds": 1017079,
+      "endMilliseconds": 1026899,
+      "kind": "explanation",
+      "text": "Alternatively you can give health a default value such as 10, so that when the caller does not set it the field is initialized to 10 instead of zero.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1017079,
+          "endMilliseconds": 1026899
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-explicit-values-or-choose-defaults"
+      }
+    },
+    {
+      "id": "TP-086",
+      "startMilliseconds": 1026030,
+      "endMilliseconds": 1028899,
+      "kind": "reason",
+      "text": "If no value is written manually at object creation, the field initializer supplies the default, which is what makes omitting the argument safe.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1026030,
+          "endMilliseconds": 1028899
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-explicit-values-or-choose-defaults"
+      }
+    },
+    {
+      "id": "TP-087",
+      "startMilliseconds": 1028920,
+      "endMilliseconds": 1034589,
+      "kind": "scope_boundary",
+      "text": "The instructor sets the required/initialization questions aside here and moves on to the remaining code problems in the file.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1028920,
+          "endMilliseconds": 1034589
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-explicit-values-or-choose-defaults"
+      }
+    },
+    {
+      "id": "TP-088",
+      "startMilliseconds": 1034589,
+      "endMilliseconds": 1045789,
+      "kind": "explanation",
+      "text": "Remaining code must name the owning object, such as Player for the player and Enemy for the enemy, when reading a field, and the same pattern is needed wherever such access occurs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1034589,
+          "endMilliseconds": 1045789
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-repeated-actions-into-functions"
+      }
+    },
+    {
+      "id": "TP-089",
+      "startMilliseconds": 1045800,
+      "endMilliseconds": 1062269,
+      "kind": "reason",
+      "text": "Seeing a block of code repeated identically except for a few parameters is a signal to extract it into a function instead of maintaining copies.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1045800,
+          "endMilliseconds": 1062269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-repeated-actions-into-functions"
+      }
+    },
+    {
+      "id": "TP-090",
+      "startMilliseconds": 1062269,
+      "endMilliseconds": 1075559,
+      "kind": "explanation",
+      "text": "In the duplicated blocks only the inspected object (Player versus Enemy) and the printed label change, so those are the values that should become parameters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1062269,
+          "endMilliseconds": 1075559
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-repeated-actions-into-functions"
+      }
+    },
+    {
+      "id": "TP-091",
+      "startMilliseconds": 1075660,
+      "endMilliseconds": 1090240,
+      "kind": "code_change",
+      "text": "The repeated code is moved into a function with a void return type, starting the extraction that will replace the duplicated blocks.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1075660,
+          "endMilliseconds": 1090240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-repeated-actions-into-functions"
+      }
+    },
+    {
+      "id": "TP-092",
+      "startMilliseconds": 1079360,
+      "endMilliseconds": 1096390,
+      "kind": "code_change",
+      "text": "The extracted function is declared with a void return type because it only performs actions and does not produce a result.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1079360,
+          "endMilliseconds": 1096390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-repeated-actions-into-functions"
+      }
+    },
+    {
+      "id": "TP-093",
+      "startMilliseconds": 1096390,
+      "endMilliseconds": 1100039,
+      "kind": "reason",
+      "text": "A void method exists to perform its instructions rather than to hand back a computed result, which is why no return value is specified.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1096390,
+          "endMilliseconds": 1100039
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-repeated-actions-into-functions"
+      }
+    },
+    {
+      "id": "TP-094",
+      "startMilliseconds": 1100039,
+      "endMilliseconds": 1102630,
+      "kind": "explanation",
+      "text": "A function's parameters are exactly the values it depends on, so listing them reveals what the body must stop hard-coding.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1100039,
+          "endMilliseconds": 1102630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-repeated-actions-into-functions"
+      }
+    },
+    {
+      "id": "TP-095",
+      "startMilliseconds": 1102630,
+      "endMilliseconds": 1109330,
+      "kind": "code_change",
+      "text": "The function is given the player's type, the enemy stats it attacks, and the enemy's name, matching every varying input the body uses.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1102630,
+          "endMilliseconds": 1109330
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-repeated-actions-into-functions"
+      }
+    },
+    {
+      "id": "TP-096",
+      "startMilliseconds": 1109330,
+      "endMilliseconds": 1119570,
+      "kind": "code_change",
+      "text": "Each hard-coded reference inside the body is replaced by the corresponding parameter, so the function no longer depends on a single specific object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1109330,
+          "endMilliseconds": 1119570
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-repeated-actions-into-functions"
+      }
+    },
+    {
+      "id": "TP-097",
+      "startMilliseconds": 1119590,
+      "endMilliseconds": 1131269,
+      "kind": "reason",
+      "text": "Calling the function with Player, enemy and enemy name removes the duplicated block, which is the payoff of the parameter extraction.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1119590,
+          "endMilliseconds": 1131269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-repeated-actions-into-functions"
+      }
+    },
+    {
+      "id": "TP-098",
+      "startMilliseconds": 1131159,
+      "endMilliseconds": 1137209,
+      "kind": "explanation",
+      "text": "The extracted call is made once per enemy inside the branch where the player is still alive, since the action only applies while the player lives.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1131159,
+          "endMilliseconds": 1137209
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-repeated-actions-into-functions"
+      }
+    },
+    {
+      "id": "TP-099",
+      "startMilliseconds": 1136840,
+      "endMilliseconds": 1144039,
+      "kind": "explanation",
+      "text": "The same extraction pattern applies to the block that prints each enemy's name, reusing the identical rule for the second duplicated piece.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1136840,
+          "endMilliseconds": 1144039
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-repeated-actions-into-functions"
+      }
+    },
+    {
+      "id": "TP-100",
+      "startMilliseconds": 1161600,
+      "endMilliseconds": 1165399,
+      "kind": "explanation",
+      "text": "The enemy's printed name is written as a local string passed into the extracted function, so the shared logic no longer hard-codes the label.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1161600,
+          "endMilliseconds": 1165399
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-repeated-actions-into-functions"
+      }
+    },
+    {
+      "id": "TP-101",
+      "startMilliseconds": 1165740,
+      "endMilliseconds": 1175640,
+      "kind": "reason",
+      "text": "Passing only the name into the function keeps the label in one place, so each call site supplies what changes and the function owns the shared behavior.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1165740,
+          "endMilliseconds": 1175640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-repeated-actions-into-functions"
+      }
+    },
+    {
+      "id": "TP-102",
+      "startMilliseconds": 1175990,
+      "endMilliseconds": 1180789,
+      "kind": "explanation",
+      "text": "The enemy's attack action is performed inside the same loop that prints its name, so the per-enemy body runs once for each enemy in turn.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1175990,
+          "endMilliseconds": 1180789
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-repeated-actions-into-functions"
+      }
+    },
+    {
+      "id": "TP-103",
+      "startMilliseconds": 1180799,
+      "endMilliseconds": 1198630,
+      "kind": "reason",
+      "text": "Because enemies are handled by a loop, adding one more enemy later requires only creating and initializing its field, writing the same attack-and-print code once, instead of copying code per enemy.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1180799,
+          "endMilliseconds": 1198630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-repeated-actions-into-functions"
+      }
+    },
+    {
+      "id": "TP-104",
+      "startMilliseconds": 1198570,
+      "endMilliseconds": 1204290,
+      "kind": "test_result",
+      "text": "Running the program shows the first two enemies attacking and then the player dying, which stops the remaining enemies from acting.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1198570,
+          "endMilliseconds": 1204290
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-repeated-actions-into-functions"
+      }
+    },
+    {
+      "id": "TP-105",
+      "startMilliseconds": 1204000,
+      "endMilliseconds": 1211230,
+      "kind": "edge_case",
+      "text": "Giving the player more health means it survives to the end and damages every enemy, confirming the earlier stoppage was caused by the player's death.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1204000,
+          "endMilliseconds": 1211230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-repeated-actions-into-functions"
+      }
+    },
+    {
+      "id": "TP-106",
+      "startMilliseconds": 1211600,
+      "endMilliseconds": 1263840,
+      "kind": "reason",
+      "text": "When the same list of enemies keeps growing, the right tool is an array plus loops over that data, so adding an enemy is data entry rather than new hand-written code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1211600,
+          "endMilliseconds": 1263840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-one-enemy-record-and-one-array"
+      }
+    },
+    {
+      "id": "TP-107",
+      "startMilliseconds": 1256120,
+      "endMilliseconds": 1261000,
+      "kind": "reason",
+      "text": "Because the same damage value has to be applied to every enemy, the code needs arrays and loops instead of repeated single statements.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1256120,
+          "endMilliseconds": 1261000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-one-enemy-record-and-one-array"
+      }
+    },
+    {
+      "id": "TP-108",
+      "startMilliseconds": 1260559,
+      "endMilliseconds": 1273170,
+      "kind": "explanation",
+      "text": "To find the loop body, first name the action that repeats and then name the check that runs after it, so the loop contents are clear.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1260559,
+          "endMilliseconds": 1273170
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-one-enemy-record-and-one-array"
+      }
+    },
+    {
+      "id": "TP-109",
+      "startMilliseconds": 1273170,
+      "endMilliseconds": 1298569,
+      "kind": "reason",
+      "text": "Since the changing data each iteration is the current enemy's stats and name, those two values must be grouped into one list of all enemies so the loop can read them together.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1273170,
+          "endMilliseconds": 1298569
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-one-enemy-record-and-one-array"
+      }
+    },
+    {
+      "id": "TP-110",
+      "startMilliseconds": 1298569,
+      "endMilliseconds": 1312150,
+      "kind": "fact",
+      "text": "Because the loop only uses the name and the stats today, any further per-enemy data the program needs later can simply be added to the same enemy record.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1298569,
+          "endMilliseconds": 1312150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-one-enemy-record-and-one-array"
+      }
+    },
+    {
+      "id": "TP-111",
+      "startMilliseconds": 1312150,
+      "endMilliseconds": 1320799,
+      "kind": "reason",
+      "text": "Grouping an enemy's name with its stats into a single entity is the logical design, because the two values always describe the same enemy and are always used together.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1312150,
+          "endMilliseconds": 1320799
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-one-enemy-record-and-one-array"
+      }
+    },
+    {
+      "id": "TP-112",
+      "startMilliseconds": 1320799,
+      "endMilliseconds": 1333830,
+      "kind": "code_change",
+      "text": "Create an Enemy class that holds the information about one enemy, with a Stats field for its stats and a Name field for its name, because a per-enemy record is the unit the loop iterates over.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1320799,
+          "endMilliseconds": 1333830
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1328559,
+          "endMilliseconds": 1333830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-one-enemy-record-and-one-array"
+      }
+    },
+    {
+      "id": "TP-113",
+      "startMilliseconds": 1333830,
+      "endMilliseconds": 1337520,
+      "kind": "code_change",
+      "text": "After creating the Enemy class, all enemies must be collected into a single array, because the loop needs one list holding every enemy record.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1333830,
+          "endMilliseconds": 1337520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-one-enemy-record-and-one-array"
+      }
+    },
+    {
+      "id": "TP-114",
+      "startMilliseconds": 1337520,
+      "endMilliseconds": 1351330,
+      "kind": "fact",
+      "text": "The declared type Enemy[] enemies holds several Enemy objects, each carrying its own stats and name, so the array is the structure that ties every enemy together.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1337520,
+          "endMilliseconds": 1351330
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-one-enemy-record-and-one-array"
+      }
+    },
+    {
+      "id": "TP-115",
+      "startMilliseconds": 1351330,
+      "endMilliseconds": 1366470,
+      "kind": "code_change",
+      "text": "The array must be initialized by writing equals and then the element count five, because an array needs a fixed number of cells created up front.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1351330,
+          "endMilliseconds": 1366470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-one-enemy-record-and-one-array"
+      }
+    },
+    {
+      "id": "TP-116",
+      "startMilliseconds": 1366470,
+      "endMilliseconds": 1372470,
+      "kind": "code_change",
+      "text": "Each cell of the array is then filled with a new Enemy carrying its own stats and name, with the last entry being a Goblin, because uninitialized cells would hold nothing usable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1366470,
+          "endMilliseconds": 1372470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-one-enemy-record-and-one-array"
+      }
+    },
+    {
+      "id": "TP-117",
+      "startMilliseconds": 1372470,
+      "endMilliseconds": 1376690,
+      "kind": "scope_boundary",
+      "text": "How arrays of a class type work has not been explained yet, so the class-array initialization is set aside and shown separately to make it clear.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1372470,
+          "endMilliseconds": 1376690
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-one-enemy-record-and-one-array"
+      }
+    },
+    {
+      "id": "TP-118",
+      "startMilliseconds": 1376690,
+      "endMilliseconds": 1419640,
+      "kind": "explanation",
+      "text": "To make that mechanism explicit, a temporary variable is introduced; until the right-hand side is evaluated the variable holds nothing but will store the address of the array object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1376690,
+          "endMilliseconds": 1419640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-an-array-of-nested-objects"
+      }
+    },
+    {
+      "id": "TP-119",
+      "startMilliseconds": 1409000,
+      "endMilliseconds": 1419600,
+      "kind": "explanation",
+      "text": "The temporary variable is created in memory under its own name and, while the array object is not yet initialized, it holds the address of that array object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1409000,
+          "endMilliseconds": 1419600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-an-array-of-nested-objects"
+      }
+    },
+    {
+      "id": "TP-120",
+      "startMilliseconds": 1419600,
+      "endMilliseconds": 1425400,
+      "kind": "explanation",
+      "text": "The right-hand side of the assignment is evaluated first, creating an object of type Enemy[] with five cells, because the value must exist before it can be stored.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1419600,
+          "endMilliseconds": 1425400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-an-array-of-nested-objects"
+      }
+    },
+    {
+      "id": "TP-121",
+      "startMilliseconds": 1425400,
+      "endMilliseconds": 1445620,
+      "kind": "explanation",
+      "text": "The created array object also stores its length, and that length tells how many cells the array has, which is what lets later code iterate over exactly that many enemies.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1425400,
+          "endMilliseconds": 1445620
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-an-array-of-nested-objects"
+      }
+    },
+    {
+      "id": "TP-122",
+      "startMilliseconds": 1445620,
+      "endMilliseconds": 1452470,
+      "kind": "explanation",
+      "text": "At creation time the cells are initialized right away, and the first cell receives the result of the new Enemy() expression, because element initializers run as part of creating the array.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1445620,
+          "endMilliseconds": 1452470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-an-array-of-nested-objects"
+      }
+    },
+    {
+      "id": "TP-123",
+      "startMilliseconds": 1452470,
+      "endMilliseconds": 1463520,
+      "kind": "explanation",
+      "text": "Because Enemy is a class, new allocates it in dynamic memory and the cell keeps that object's address together with all of its fields, which is how a class-typed variable refers to its object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1452470,
+          "endMilliseconds": 1463520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-an-array-of-nested-objects"
+      }
+    },
+    {
+      "id": "TP-124",
+      "startMilliseconds": 1463520,
+      "endMilliseconds": 1477620,
+      "kind": "explanation",
+      "text": "new Enemy allocates dynamic memory for each of the enemy's two fields, stats and name, and those fields are then initialized one by one, because a class object is built from its field data.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1463520,
+          "endMilliseconds": 1477620
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-an-array-of-nested-objects"
+      }
+    },
+    {
+      "id": "TP-125",
+      "startMilliseconds": 1477620,
+      "endMilliseconds": 1501480,
+      "kind": "explanation",
+      "text": "Stats is itself a class, so a new Stats object is created and its address from dynamic memory is stored in the stats cell, meaning a field of class type holds a reference rather than the data itself.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1477620,
+          "endMilliseconds": 1501480
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1491679,
+          "endMilliseconds": 1501480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-an-array-of-nested-objects"
+      }
+    },
+    {
+      "id": "TP-126",
+      "startMilliseconds": 1501480,
+      "endMilliseconds": 1512950,
+      "kind": "explanation",
+      "text": "This initializer expression creates an object of type Stat, because the stats field needs a Stats instance to point at.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1501480,
+          "endMilliseconds": 1512950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-an-array-of-nested-objects"
+      }
+    },
+    {
+      "id": "TP-127",
+      "startMilliseconds": 1512950,
+      "endMilliseconds": 1524490,
+      "kind": "explanation",
+      "text": "The Stat type is taken from the declared type of the field being assigned, so writing new Stat() beside a Stats field produces an object of the type that field requires.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1512950,
+          "endMilliseconds": 1524490
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-an-array-of-nested-objects"
+      }
+    },
+    {
+      "id": "TP-128",
+      "startMilliseconds": 1524490,
+      "endMilliseconds": 1541010,
+      "kind": "explanation",
+      "text": "Once the Stats object exists in dynamic memory, literal values are written straight into its fields, such as attack 6 and hp 10, because the object starts empty and the numbers are the field values.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1524490,
+          "endMilliseconds": 1541010
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-an-array-of-nested-objects"
+      }
+    },
+    {
+      "id": "TP-129",
+      "startMilliseconds": 1541010,
+      "endMilliseconds": 1551100,
+      "kind": "explanation",
+      "text": "The new Stats object lives at some address chosen at creation, and that address is what gets stored, because a class-typed field can only refer to its object indirectly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1541010,
+          "endMilliseconds": 1551100
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-an-array-of-nested-objects"
+      }
+    },
+    {
+      "id": "TP-130",
+      "startMilliseconds": 1551100,
+      "endMilliseconds": 1575060,
+      "kind": "explanation",
+      "text": "A string literal also creates a string object at some memory address, and that address is saved in the name field, because string is a reference type and a string field likewise stores an address rather than the characters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1551100,
+          "endMilliseconds": 1575060
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-an-array-of-nested-objects"
+      }
+    },
+    {
+      "id": "TP-131",
+      "startMilliseconds": 1575060,
+      "endMilliseconds": 1588640,
+      "kind": "explanation",
+      "text": "The result of the whole initializer expression, which is the address of the created object, is what the first array cell receives, for example an address such as 88000, because a class-typed cell stores a reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1575060,
+          "endMilliseconds": 1588640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-an-array-of-nested-objects"
+      }
+    },
+    {
+      "id": "TP-132",
+      "startMilliseconds": 1581320,
+      "endMilliseconds": 1613909,
+      "kind": "explanation",
+      "text": "In an array of objects, each array cell stores only the memory address of the object it created, so the array keeps references rather than the objects themselves.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1581320,
+          "endMilliseconds": 1613909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-an-array-of-nested-objects"
+      }
+    },
+    {
+      "id": "TP-133",
+      "startMilliseconds": 1613909,
+      "endMilliseconds": 1623000,
+      "kind": "explanation",
+      "text": "The array initialization expression creates the objects and then evaluates to the address of the created object, which is what gets stored in the variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1613909,
+          "endMilliseconds": 1623000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-an-array-of-nested-objects"
+      }
+    },
+    {
+      "id": "TP-134",
+      "startMilliseconds": 1623000,
+      "endMilliseconds": 1661679,
+      "kind": "explanation",
+      "text": "Arrays differ only by element type: int arrays store numbers, reference-type arrays store links to objects, and struct arrays store each struct split into its field sub-cells.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1623000,
+          "endMilliseconds": 1661679
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#element-types-and-local-type-inference"
+      }
+    },
+    {
+      "id": "TP-135",
+      "startMilliseconds": 1652000,
+      "endMilliseconds": 1661679,
+      "kind": "fact",
+      "text": "The var keyword tells the compiler to infer the variable's type from the assigned value, so the explicit type name need not be written.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1652000,
+          "endMilliseconds": 1661679
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#element-types-and-local-type-inference"
+      }
+    },
+    {
+      "id": "TP-136",
+      "startMilliseconds": 1654520,
+      "endMilliseconds": 1661679,
+      "kind": "fact",
+      "text": "Because var receives a GameState value, the compiler infers the variable's type as GameState, so the type name itself can be omitted.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1654520,
+          "endMilliseconds": 1661679
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#element-types-and-local-type-inference"
+      }
+    },
+    {
+      "id": "TP-137",
+      "startMilliseconds": 1656900,
+      "endMilliseconds": 1672509,
+      "kind": "explanation",
+      "text": "A for-each loop iterates over all array elements and runs the same body once per enemy, which is how a single block of code replaces repeated per-enemy copies.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1656900,
+          "endMilliseconds": 1672509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-per-enemy-copies-with-foreach"
+      }
+    },
+    {
+      "id": "TP-138",
+      "startMilliseconds": 1672509,
+      "endMilliseconds": 1683500,
+      "kind": "explanation",
+      "text": "The loop body compiles because the same fields and methods exist both on the element variable and on the GameState type, so the code was written against data the type already provides.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1672509,
+          "endMilliseconds": 1683500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-per-enemy-copies-with-foreach"
+      }
+    },
+    {
+      "id": "TP-139",
+      "startMilliseconds": 1683500,
+      "endMilliseconds": 1710510,
+      "kind": "reason",
+      "text": "The loop must check that the player is still alive before moving to the next enemy, otherwise a dead player would keep taking enemy turns.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1683500,
+          "endMilliseconds": 1710510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-per-enemy-copies-with-foreach"
+      }
+    },
+    {
+      "id": "TP-140",
+      "startMilliseconds": 1704000,
+      "endMilliseconds": 1710510,
+      "kind": "fact",
+      "text": "The break statement exits the loop immediately instead of continuing to the next iteration, so no further enemies act.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1704000,
+          "endMilliseconds": 1710510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-per-enemy-copies-with-foreach"
+      }
+    },
+    {
+      "id": "TP-141",
+      "startMilliseconds": 1710510,
+      "endMilliseconds": 1742279,
+      "kind": "edge_case",
+      "text": "The alive check is not strictly required for every enemy, because the check already performed for the first enemy covers the case where the player dies on that first hit.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1710510,
+          "endMilliseconds": 1742279
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-per-enemy-copies-with-foreach"
+      }
+    },
+    {
+      "id": "TP-142",
+      "startMilliseconds": 1733000,
+      "endMilliseconds": 1750750,
+      "kind": "edge_case",
+      "text": "The alive check is made for every enemy in the loop, and it can be limited to only after the player takes damage since death can only occur there.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1733000,
+          "endMilliseconds": 1750750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-per-enemy-copies-with-foreach"
+      }
+    },
+    {
+      "id": "TP-143",
+      "startMilliseconds": 1750750,
+      "endMilliseconds": 1763750,
+      "kind": "code_change",
+      "text": "The redundant alive check is removed and the code that is needed for each enemy is moved into the loop body instead of being written once per enemy.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1750750,
+          "endMilliseconds": 1763750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-per-enemy-copies-with-foreach"
+      }
+    },
+    {
+      "id": "TP-144",
+      "startMilliseconds": 1763760,
+      "endMilliseconds": 1784630,
+      "kind": "fact",
+      "text": "Using var in a for-each loop is equivalent to writing the array's element type, because the compiler infers the loop variable's type from the array.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1763760,
+          "endMilliseconds": 1784630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-per-enemy-copies-with-foreach"
+      }
+    },
+    {
+      "id": "TP-145",
+      "startMilliseconds": 1784640,
+      "endMilliseconds": 1793120,
+      "kind": "fact",
+      "text": "Declaring the array with var before the loop lets the loop reference enemies directly, so the run stays equivalent to the earlier explicit declaration.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1784640,
+          "endMilliseconds": 1793120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-per-enemy-copies-with-foreach"
+      }
+    },
+    {
+      "id": "TP-146",
+      "startMilliseconds": 1793120,
+      "endMilliseconds": 1820120,
+      "kind": "reason",
+      "text": "The temporary enemies variable is only meant for initialization, so the loop must iterate over the enemies held in GameState rather than that temporary variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1793120,
+          "endMilliseconds": 1820120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-initialization-inside-a-factory-function"
+      }
+    },
+    {
+      "id": "TP-147",
+      "startMilliseconds": 1814600,
+      "endMilliseconds": 1827899,
+      "kind": "reason",
+      "text": "After GameState creation the enemies must be read from the state, not from the temporary initialization variable, so reading from that temporary variable is what must be prevented.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1814600,
+          "endMilliseconds": 1827899
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-initialization-inside-a-factory-function"
+      }
+    },
+    {
+      "id": "TP-148",
+      "startMilliseconds": 1824799,
+      "endMilliseconds": 1841930,
+      "kind": "explanation",
+      "text": "A block scope is used to group the declaration so the temporary variable becomes local to the block and does not exist outside it, which makes any outside read a compile error.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1824799,
+          "endMilliseconds": 1841930
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-initialization-inside-a-factory-function"
+      }
+    },
+    {
+      "id": "TP-149",
+      "startMilliseconds": 1842130,
+      "endMilliseconds": 1862750,
+      "kind": "code_change",
+      "text": "The declaration is moved above the block so the variable is visible both inside and outside it, fixing the compile error caused by the block-local scope.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1842130,
+          "endMilliseconds": 1862750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-initialization-inside-a-factory-function"
+      }
+    },
+    {
+      "id": "TP-150",
+      "startMilliseconds": 1862760,
+      "endMilliseconds": 1876510,
+      "kind": "reason",
+      "text": "Variables declared with var are only visible after their declaration point, so the enemies variable has to be moved up to where GameState is created.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1862760,
+          "endMilliseconds": 1876510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-initialization-inside-a-factory-function"
+      }
+    },
+    {
+      "id": "TP-151",
+      "startMilliseconds": 1876510,
+      "endMilliseconds": 1895890,
+      "kind": "code_change",
+      "text": "The initialization code is extracted into a separate function that returns the created GameState, so the enemies variable stays out of the calling scope and the code reads more clearly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1876510,
+          "endMilliseconds": 1895890
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-initialization-inside-a-factory-function"
+      }
+    },
+    {
+      "id": "TP-152",
+      "startMilliseconds": 1895159,
+      "endMilliseconds": 1908509,
+      "kind": "fact",
+      "text": "The state is created by a factory function so callers never have to pass through the whole initialization block.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1895159,
+          "endMilliseconds": 1908509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-initialization-inside-a-factory-function"
+      }
+    },
+    {
+      "id": "TP-153",
+      "startMilliseconds": 1895890,
+      "endMilliseconds": 1905799,
+      "kind": "explanation",
+      "text": "Declaring GameState through a function call makes clear that the enemies variable belongs to the function's own scope and needs no external access.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1895890,
+          "endMilliseconds": 1905799
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-initialization-inside-a-factory-function"
+      }
+    },
+    {
+      "id": "TP-154",
+      "startMilliseconds": 1908510,
+      "endMilliseconds": 1922750,
+      "kind": "explanation",
+      "text": "To repeat the combat code until the player dies or all enemies die, wrap it in a loop.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1908510,
+          "endMilliseconds": 1922750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#repeat-rounds-and-skip-dead-enemies"
+      }
+    },
+    {
+      "id": "TP-155",
+      "startMilliseconds": 1922751,
+      "endMilliseconds": 1934489,
+      "kind": "reason",
+      "text": "Inside the loop the enemy health is checked first and a dead enemy makes the iteration skip the remaining code so the loop moves to the next enemy.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1922751,
+          "endMilliseconds": 1934489
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#repeat-rounds-and-skip-dead-enemies"
+      }
+    },
+    {
+      "id": "TP-156",
+      "startMilliseconds": 1934490,
+      "endMilliseconds": 1944889,
+      "kind": "reason",
+      "text": "Checking the enemy health cannot change player health, so the player's own health check inside the loop can be omitted as redundant.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1934490,
+          "endMilliseconds": 1944889
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#repeat-rounds-and-skip-dead-enemies"
+      }
+    },
+    {
+      "id": "TP-157",
+      "startMilliseconds": 1944890,
+      "endMilliseconds": 1949889,
+      "kind": "code_change",
+      "text": "The loop prints the health of all enemies after it completes so each round is visible in the output.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1944890,
+          "endMilliseconds": 1949889
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#repeat-rounds-and-skip-dead-enemies"
+      }
+    },
+    {
+      "id": "TP-158",
+      "startMilliseconds": 1949890,
+      "endMilliseconds": 1978639,
+      "kind": "explanation",
+      "text": "The loop condition re-runs the round only while the player is alive and at least one enemy still lives, so the program stops as soon as one side is wiped out.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1949890,
+          "endMilliseconds": 1978639
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#ask-whether-any-enemy-is-still-alive"
+      }
+    },
+    {
+      "id": "TP-159",
+      "startMilliseconds": 1970080,
+      "endMilliseconds": 1981599,
+      "kind": "explanation",
+      "text": "Both stopping conditions of the combat loop are defined up front: the player dies when health is less than or equal to zero, and the run also stops when every enemy is dead.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1970080,
+          "endMilliseconds": 1981599
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#ask-whether-any-enemy-is-still-alive"
+      }
+    },
+    {
+      "id": "TP-160",
+      "startMilliseconds": 1981600,
+      "endMilliseconds": 1990310,
+      "kind": "explanation",
+      "text": "Detecting that all enemies died requires looping over all enemies and tracking whether at least one is still alive.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1981600,
+          "endMilliseconds": 1990310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#ask-whether-any-enemy-is-still-alive"
+      }
+    },
+    {
+      "id": "TP-161",
+      "startMilliseconds": 1990311,
+      "endMilliseconds": 1996789,
+      "kind": "reason",
+      "text": "The alive-enemy information is passed out through a dedicated helper function rather than a flag, because a function is the simpler and cleaner abstraction.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1990311,
+          "endMilliseconds": 1996789
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#ask-whether-any-enemy-is-still-alive"
+      }
+    },
+    {
+      "id": "TP-162",
+      "startMilliseconds": 1996790,
+      "endMilliseconds": 2006229,
+      "kind": "code_change",
+      "text": "The helper function takes the enemies as a parameter and returns true when at least one enemy has not died, checking each enemy's health in turn.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1996790,
+          "endMilliseconds": 2006229
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#ask-whether-any-enemy-is-still-alive"
+      }
+    },
+    {
+      "id": "TP-163",
+      "startMilliseconds": 2006230,
+      "endMilliseconds": 2010559,
+      "kind": "reason",
+      "text": "If at least one enemy survived, not all enemies are dead, which is the negation of the loop exit condition being checked.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2006230,
+          "endMilliseconds": 2010559
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#ask-whether-any-enemy-is-still-alive"
+      }
+    },
+    {
+      "id": "TP-164",
+      "startMilliseconds": 2010560,
+      "endMilliseconds": 2020529,
+      "kind": "explanation",
+      "text": "With that function the caller can trivially reuse it as the loop guard and exit the program when all enemies have died.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2010560,
+          "endMilliseconds": 2020529
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#ask-whether-any-enemy-is-still-alive"
+      }
+    },
+    {
+      "id": "TP-165",
+      "startMilliseconds": 2020530,
+      "endMilliseconds": 2066839,
+      "kind": "explanation",
+      "text": "When not all enemies are dead the loop must restart the round, so control returns to the beginning of the combat flow.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2020530,
+          "endMilliseconds": 2066839
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-the-repeated-combat-an-explicit-loop"
+      }
+    },
+    {
+      "id": "TP-166",
+      "startMilliseconds": 2054760,
+      "endMilliseconds": 2062880,
+      "kind": "explanation",
+      "text": "Restarting the round is done by returning to the start of the combat logic rather than duplicating it, so control flows back to the beginning.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2054760,
+          "endMilliseconds": 2062880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-the-repeated-combat-an-explicit-loop"
+      }
+    },
+    {
+      "id": "TP-167",
+      "startMilliseconds": 2062881,
+      "endMilliseconds": 2070000,
+      "kind": "correction",
+      "text": "Jumping back with a bare return is possible but discouraged; the idiomatic way is an infinite loop that owns the exit conditions.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2062881,
+          "endMilliseconds": 2070000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-the-repeated-combat-an-explicit-loop"
+      }
+    },
+    {
+      "id": "TP-168",
+      "startMilliseconds": 2070001,
+      "endMilliseconds": 2080439,
+      "kind": "code_change",
+      "text": "Instead of a bare return, a break statement can be added to the loop as the explicit exit from it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2070001,
+          "endMilliseconds": 2080439
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-the-repeated-combat-an-explicit-loop"
+      }
+    },
+    {
+      "id": "TP-169",
+      "startMilliseconds": 2080440,
+      "endMilliseconds": 2093440,
+      "kind": "fact",
+      "text": "With the break-based infinite loop the player now attacks enemies repeatedly until either all enemies die or the player dies.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2080440,
+          "endMilliseconds": 2093440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-the-repeated-combat-an-explicit-loop"
+      }
+    },
+    {
+      "id": "TP-170",
+      "startMilliseconds": 2093441,
+      "endMilliseconds": 2102630,
+      "kind": "test_result",
+      "text": "The run shows all enemies being attacked, health values printed after the first round, two enemies hitting the player, and the player dying while surviving enemies are left with reduced health.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2093441,
+          "endMilliseconds": 2102630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-the-repeated-combat-an-explicit-loop"
+      }
+    },
+    {
+      "id": "TP-171",
+      "startMilliseconds": 2102631,
+      "endMilliseconds": 2112239,
+      "kind": "reason",
+      "text": "Giving the player 50 health demonstrates that in the second loop round he defeats all enemies, proving the loop continues until a side is wiped out.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2102631,
+          "endMilliseconds": 2112239
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-the-repeated-combat-an-explicit-loop"
+      }
+    },
+    {
+      "id": "TP-172",
+      "startMilliseconds": 2112240,
+      "endMilliseconds": 2150440,
+      "kind": "scope_boundary",
+      "text": "The next open question, deferred here, is how to spawn a new enemy after every loop round.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2112240,
+          "endMilliseconds": 2150440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-fixed-array-cannot-grow"
+      }
+    },
+    {
+      "id": "TP-173",
+      "startMilliseconds": 2142680,
+      "endMilliseconds": 2155990,
+      "kind": "explanation",
+      "text": "The open design question is adding a new enemy with one attack and one health after each loop round, which requires the enemy container to grow.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2142680,
+          "endMilliseconds": 2155990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-fixed-array-cannot-grow"
+      }
+    },
+    {
+      "id": "TP-174",
+      "startMilliseconds": 2156000,
+      "endMilliseconds": 2169559,
+      "kind": "fact",
+      "text": "Appending a new enemy to an ordinary fixed-size array is impossible because its length cannot change after creation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2156000,
+          "endMilliseconds": 2169559
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-fixed-array-cannot-grow"
+      }
+    },
+    {
+      "id": "TP-175",
+      "startMilliseconds": 2169560,
+      "endMilliseconds": 2177999,
+      "kind": "explanation",
+      "text": "A manual workaround would be building a new array one element longer and copying old references plus the new one into it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2169560,
+          "endMilliseconds": 2177999
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-fixed-array-cannot-grow"
+      }
+    },
+    {
+      "id": "TP-176",
+      "startMilliseconds": 2178000,
+      "endMilliseconds": 2188090,
+      "kind": "fact",
+      "text": "The .NET library offers a better option: dynamic arrays such as List, whose size can grow.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2178000,
+          "endMilliseconds": 2188090
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-fixed-array-cannot-grow"
+      }
+    },
+    {
+      "id": "TP-177",
+      "startMilliseconds": 2188091,
+      "endMilliseconds": 2198069,
+      "kind": "explanation",
+      "text": "A dynamic array watches its backing storage and allocates a larger array when it runs out of cells, which is what makes growing the enemy list safe.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2188091,
+          "endMilliseconds": 2198069
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-fixed-array-cannot-grow"
+      }
+    },
+    {
+      "id": "TP-178",
+      "startMilliseconds": 2198070,
+      "endMilliseconds": 2237880,
+      "kind": "code_change",
+      "text": "To use a dynamic array for the enemies, the variable's declared type changes from an array to List with the enemy type in angle brackets.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2198070,
+          "endMilliseconds": 2237880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#change-the-enemy-container-to-list"
+      }
+    },
+    {
+      "id": "TP-179",
+      "startMilliseconds": 2227839,
+      "endMilliseconds": 2237870,
+      "kind": "code_change",
+      "text": "The enemies collection is retyped from a plain array to List<Enemy> so new enemies can be added during the game.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2227839,
+          "endMilliseconds": 2237870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#change-the-enemy-container-to-list"
+      }
+    },
+    {
+      "id": "TP-180",
+      "startMilliseconds": 2237870,
+      "endMilliseconds": 2241200,
+      "kind": "reason",
+      "text": "The generic argument must be Enemy and not the previous element type because the collection now stores Enemy objects.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2237870,
+          "endMilliseconds": 2241200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#change-the-enemy-container-to-list"
+      }
+    },
+    {
+      "id": "TP-181",
+      "startMilliseconds": 2241200,
+      "endMilliseconds": 2249560,
+      "kind": "explanation",
+      "text": "A List<T> is initialized like an array using square brackets, so the existing initialization syntax still works.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2241200,
+          "endMilliseconds": 2249560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#change-the-enemy-container-to-list"
+      }
+    },
+    {
+      "id": "TP-182",
+      "startMilliseconds": 2251680,
+      "endMilliseconds": 2257910,
+      "kind": "code_change",
+      "text": "The variable that holds the enemies must also be retyped, because it now stores a list rather than an array.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2251680,
+          "endMilliseconds": 2257910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#change-the-enemy-container-to-list"
+      }
+    },
+    {
+      "id": "TP-183",
+      "startMilliseconds": 2261349,
+      "endMilliseconds": 2264720,
+      "kind": "code_change",
+      "text": "At the end of each game-loop iteration a new enemy can now be appended to the list, which an array would not allow.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2261349,
+          "endMilliseconds": 2264720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#spawn-and-announce-an-enemy-through-one-method"
+      }
+    },
+    {
+      "id": "TP-184",
+      "startMilliseconds": 2271560,
+      "endMilliseconds": 2288319,
+      "kind": "test_result",
+      "text": "Running the program shows that each cycle now prints both the player's damage and health and the rat's damage and health, confirming the list keeps the extra enemy.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2271560,
+          "endMilliseconds": 2288319
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#spawn-and-announce-an-enemy-through-one-method"
+      }
+    },
+    {
+      "id": "TP-185",
+      "startMilliseconds": 2288319,
+      "endMilliseconds": 2300309,
+      "kind": "explanation",
+      "text": "Because the rat is now an object inside a list, its name can be printed at the moment it is added.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2288319,
+          "endMilliseconds": 2300309
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#spawn-and-announce-an-enemy-through-one-method"
+      }
+    },
+    {
+      "id": "TP-186",
+      "startMilliseconds": 2300309,
+      "endMilliseconds": 2316390,
+      "kind": "reason",
+      "text": "The add-and-announce rat code is being moved into a method because adding this rat or any other enemy is needed from several places in the program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2300309,
+          "endMilliseconds": 2316390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#spawn-and-announce-an-enemy-through-one-method"
+      }
+    },
+    {
+      "id": "TP-187",
+      "startMilliseconds": 2316390,
+      "endMilliseconds": 2330119,
+      "kind": "explanation",
+      "text": "The extracted method should take an Enemy parameter so the higher level of the program can work with it through the state rather than hard-coding one enemy type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2316390,
+          "endMilliseconds": 2330119
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#spawn-and-announce-an-enemy-through-one-method"
+      }
+    },
+    {
+      "id": "TP-188",
+      "startMilliseconds": 2319280,
+      "endMilliseconds": 2337990,
+      "kind": "explanation",
+      "text": "The new method takes an Enemy parameter, adds that enemy to the list and prints its name, so any enemy type can be spawned through one call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2319280,
+          "endMilliseconds": 2337990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#spawn-and-announce-an-enemy-through-one-method"
+      }
+    },
+    {
+      "id": "TP-189",
+      "startMilliseconds": 2341670,
+      "endMilliseconds": 2352800,
+      "kind": "code_change",
+      "text": "The rats are now created by calling that method, and the demo rat's attack is lowered while its health is raised to 100 so its death can be observed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2341670,
+          "endMilliseconds": 2352800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#spawn-and-announce-an-enemy-through-one-method"
+      }
+    },
+    {
+      "id": "TP-190",
+      "startMilliseconds": 2352800,
+      "endMilliseconds": 2365160,
+      "kind": "test_result",
+      "text": "The run shows player and enemy health, the report that a new enemy was added, and the rat taking damage, which verifies the refactored spawn call works.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2352800,
+          "endMilliseconds": 2365160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#spawn-and-announce-an-enemy-through-one-method"
+      }
+    },
+    {
+      "id": "TP-191",
+      "startMilliseconds": 2365160,
+      "endMilliseconds": 2374480,
+      "kind": "reason",
+      "text": "Two surplus rats appear in the output because each loop iteration adds one, so the game ran one extra turn.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2365160,
+          "endMilliseconds": 2374480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#spawn-and-announce-an-enemy-through-one-method"
+      }
+    },
+    {
+      "id": "TP-192",
+      "startMilliseconds": 2377440,
+      "endMilliseconds": 2404599,
+      "kind": "code_change",
+      "text": "To make dead enemies disappear, use the list's high-level removal API that filters the list by a condition instead of manually compacting it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2377440,
+          "endMilliseconds": 2404599
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#remove-dead-enemies-by-a-condition"
+      }
+    },
+    {
+      "id": "TP-193",
+      "startMilliseconds": 2402230,
+      "endMilliseconds": 2404599,
+      "kind": "explanation",
+      "text": "The removal call has unusual syntax: first the parameter name Enemy, then the criterion the list is filtered by.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2402230,
+          "endMilliseconds": 2404599
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#remove-dead-enemies-by-a-condition"
+      }
+    },
+    {
+      "id": "TP-194",
+      "startMilliseconds": 2404599,
+      "endMilliseconds": 2413680,
+      "kind": "code_change",
+      "text": "The filter criterion is Enemy.Stats.Health less than or equal to zero, which removes every dead enemy from the enemy list.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2404599,
+          "endMilliseconds": 2413680
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#remove-dead-enemies-by-a-condition"
+      }
+    },
+    {
+      "id": "TP-195",
+      "startMilliseconds": 2413680,
+      "endMilliseconds": 2423200,
+      "kind": "reason",
+      "text": "The explicit death check inside the loop can be dropped once dead enemies are removed, because enemies in the list can no longer be dead at the start of a loop iteration.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2413680,
+          "endMilliseconds": 2423200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#remove-dead-enemies-by-a-condition"
+      }
+    },
+    {
+      "id": "TP-196",
+      "startMilliseconds": 2423200,
+      "endMilliseconds": 2436760,
+      "kind": "test_result",
+      "text": "The run confirms the killed rat disappears and only the next rat appears, so the first rat is never processed a second time.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2423200,
+          "endMilliseconds": 2436760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#remove-dead-enemies-by-a-condition"
+      }
+    },
+    {
+      "id": "TP-197",
+      "startMilliseconds": 2436760,
+      "endMilliseconds": 2451119,
+      "kind": "test_result",
+      "text": "Giving one enemy extra health shows that only that enemy is left at the end and no new rats are added, because the loop then ends after the surviving enemy dies.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2436760,
+          "endMilliseconds": 2451119
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#remove-dead-enemies-by-a-condition"
+      }
+    },
+    {
+      "id": "TP-198",
+      "startMilliseconds": 2451119,
+      "endMilliseconds": 2463309,
+      "kind": "explanation",
+      "text": "With dead enemies filtered out, the next iteration makes the player fight only the enemies present in the list without any extra death checks.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2451119,
+          "endMilliseconds": 2463309
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#remove-dead-enemies-by-a-condition"
+      }
+    },
+    {
+      "id": "TP-199",
+      "startMilliseconds": 2463309,
+      "endMilliseconds": 2478480,
+      "kind": "scope_boundary",
+      "text": "The other overloads of this method are delegates and belong to polymorphism, so their exact mechanics are deliberately left for later.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2463309,
+          "endMilliseconds": 2478480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#remove-dead-enemies-by-a-condition"
+      }
+    },
+    {
+      "id": "TP-200",
+      "startMilliseconds": 2478480,
+      "endMilliseconds": 2491160,
+      "kind": "explanation",
+      "text": "Even without knowing the mechanics, the shape of the call shows roughly that an operation is performed on an element while some condition holds.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2478480,
+          "endMilliseconds": 2491160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#remove-dead-enemies-by-a-condition"
+      }
+    },
+    {
+      "id": "TP-201",
+      "startMilliseconds": 2484880,
+      "endMilliseconds": 2495440,
+      "kind": "explanation",
+      "text": "By the shape of the filter call one can roughly infer that an operation is performed on each element while some condition holds.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2484880,
+          "endMilliseconds": 2495440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#remove-dead-enemies-by-a-condition"
+      }
+    },
+    {
+      "id": "TP-202",
+      "startMilliseconds": 2491160,
+      "endMilliseconds": 2499710,
+      "kind": "fact",
+      "text": "List<T> is a reference type, so a variable declared with that type holds a pointer to the list object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2491160,
+          "endMilliseconds": 2499710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-list-is-another-reference-object"
+      }
+    },
+    {
+      "id": "TP-203",
+      "startMilliseconds": 2499710,
+      "endMilliseconds": 2506440,
+      "kind": "fact",
+      "text": "The list object itself in turn keeps a pointer to the array it currently tracks, adding a level of indirection.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2499710,
+          "endMilliseconds": 2506440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-list-is-another-reference-object"
+      }
+    },
+    {
+      "id": "TP-204",
+      "startMilliseconds": 2506440,
+      "endMilliseconds": 2513800,
+      "kind": "scope_boundary",
+      "text": "This deeper reference-level detail is not essential right now, so the topic is skipped.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2506440,
+          "endMilliseconds": 2513800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-list-is-another-reference-object"
+      }
+    }
+  ]
+}

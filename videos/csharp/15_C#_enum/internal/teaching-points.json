@@ -1,0 +1,2334 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "LLfU1a7pTxg",
+  "uploadId": "LLfU1a7pTxg",
+  "transcriptSha256": "142d74bc3763ca6ebd5f21a9bb2ad34e75d334b98a1bf3f3f9da9ec8baf37dad",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 120,
+      "endMilliseconds": 18150,
+      "kind": "explanation",
+      "text": "The assignment is a bomb-defusal game where one player reads the manual and the other follows those instructions to inspect the bomb and decide which wire to cut.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 120,
+          "endMilliseconds": 18150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#purpose-and-vocabulary"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 18150,
+      "endMilliseconds": 28150,
+      "kind": "fact",
+      "text": "The bomb exposes discrete parameters - one of three portraits (Lenin, George Washington, Hitler), a wire color, a toggle state and a dial value - and the correct wire is determined from them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 18150,
+          "endMilliseconds": 28150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#purpose-and-vocabulary"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 28150,
+      "endMilliseconds": 47220,
+      "kind": "explanation",
+      "text": "The simplest first step is to store which portrait is currently on the bomb as a string value such as \"Ленин\" in the program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 28150,
+          "endMilliseconds": 47220
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#start-with-a-string"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 47220,
+      "endMilliseconds": 57400,
+      "kind": "explanation",
+      "text": "A single string variable always holds exactly one of the three portrait names, so its current content tells the player which portrait is displayed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 47220,
+          "endMilliseconds": 57400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#start-with-a-string"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 57400,
+      "endMilliseconds": 71210,
+      "kind": "explanation",
+      "text": "To verify which portrait is loaded, the program can use that stored string in a check, typing the expected portrait name again.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 57400,
+          "endMilliseconds": 71210
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#start-with-a-string"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 71210,
+      "endMilliseconds": 82520,
+      "kind": "explanation",
+      "text": "Statements execute in the order they are written, so running the code as written prints the earlier value first.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 71210,
+          "endMilliseconds": 82520
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 72119,
+          "endMilliseconds": 82520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-execution-order"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 82520,
+      "endMilliseconds": 92700,
+      "kind": "reason",
+      "text": "Because the portrait variable is overwritten later in the program, a check placed after that assignment never sees the value it expects and therefore does not run.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 82520,
+          "endMilliseconds": 92700
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-execution-order"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 92700,
+      "endMilliseconds": 96500,
+      "kind": "explanation",
+      "text": "Placing the check before the later assignment makes it run, because the variable still holds the portrait value the check expects.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 92700,
+          "endMilliseconds": 96500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-execution-order"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 96500,
+      "endMilliseconds": 108000,
+      "kind": "explanation",
+      "text": "String equality in C# compares the two values character by character in order, position by position.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 96500,
+          "endMilliseconds": 108000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-strings-are-fragile-identifiers"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 108000,
+      "endMilliseconds": 122400,
+      "kind": "edge_case",
+      "text": "If the expected portrait name is mistyped, the comparison block does not run because the two strings are not fully equal.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 108000,
+          "endMilliseconds": 122400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-strings-are-fragile-identifiers"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 122400,
+      "endMilliseconds": 134440,
+      "kind": "edge_case",
+      "text": "Appending extra characters to a mistyped name still fails the check, since string equality requires both the same length and the same characters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 122400,
+          "endMilliseconds": 134440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-strings-are-fragile-identifiers"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 134440,
+      "endMilliseconds": 152750,
+      "kind": "reason",
+      "text": "A typo in the expected string is not a compile error, because any string is still a valid string.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 134440,
+          "endMilliseconds": 146080
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 139160,
+          "endMilliseconds": 152750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-strings-are-fragile-identifiers"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 152750,
+      "endMilliseconds": 156830,
+      "kind": "edge_case",
+      "text": "A mistyped expected string is also not a runtime error: the program just produces the wrong result and does not crash.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 152750,
+          "endMilliseconds": 156830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-strings-are-fragile-identifiers"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 156830,
+      "endMilliseconds": 182070,
+      "kind": "reason",
+      "text": "Comparing two strings costs far more operations than comparing two numbers, because the runtime must check the lengths and then walk every character.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 156830,
+          "endMilliseconds": 182070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-strings-are-fragile-identifiers"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 182070,
+      "endMilliseconds": 199350,
+      "kind": "reason",
+      "text": "The only strong reason to keep the portrait as a string is that the program may need to print which portrait is present as readable text.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 182070,
+          "endMilliseconds": 199350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-strings-are-fragile-identifiers"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 199350,
+      "endMilliseconds": 216950,
+      "kind": "explanation",
+      "text": "The only real need for the string type here is printing the current portrait as readable text.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 199350,
+          "endMilliseconds": 212000
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 204640,
+          "endMilliseconds": 216950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-strings-are-fragile-identifiers"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 216950,
+      "endMilliseconds": 226870,
+      "kind": "edge_case",
+      "text": "Storing the portrait as a string risks silently typing the wrong name, and the program gives no visible signal that the string is wrong.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 216950,
+          "endMilliseconds": 226870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-strings-are-fragile-identifiers"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 226870,
+      "endMilliseconds": 246590,
+      "kind": "code_change",
+      "text": "Instead of strings, the portraits can be encoded as integers - Lenin as 0, George Washington as 1 and Hitler as 2 - so the variable becomes a plain int.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 226870,
+          "endMilliseconds": 246590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-names-with-integer-codes"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 246590,
+      "endMilliseconds": 261700,
+      "kind": "fact",
+      "text": "With the numeric encoding, whole portraits are represented by single numbers, which removes the possibility of a misspelled name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 246590,
+          "endMilliseconds": 261700
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-names-with-integer-codes"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 261700,
+      "endMilliseconds": 272190,
+      "kind": "edge_case",
+      "text": "Printing the variable now shows the number instead of a name, so a value like 2 does not by itself tell the player it means Hitler.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 261700,
+          "endMilliseconds": 272190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-names-with-integer-codes"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 272190,
+      "endMilliseconds": 279720,
+      "kind": "scope_boundary",
+      "text": "To keep the human-readable output the program will need a way to convert a number back into text, which is deliberately postponed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 272190,
+          "endMilliseconds": 279720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-names-with-integer-codes"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 274000,
+      "endMilliseconds": 290000,
+      "kind": "reason",
+      "text": "A numeric portrait value must be convertible into its matching text so it can be printed as a string.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 274000,
+          "endMilliseconds": 290000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-number-to-text-function"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 290000,
+      "endMilliseconds": 308500,
+      "kind": "fact",
+      "text": "The portrait codes are mapped to names by branching on the value: 0 means Lenin and 1 means Washington.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 290000,
+          "endMilliseconds": 308500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-number-to-text-function"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 308500,
+      "endMilliseconds": 315500,
+      "kind": "explanation",
+      "text": "Writing a bare name like Hitler alone is invalid syntax, so the produced text has to occupy the place where the portrait value was passed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 308500,
+          "endMilliseconds": 315500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-number-to-text-function"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 315500,
+      "endMilliseconds": 325500,
+      "kind": "fact",
+      "text": "Calling portrait.ToString() returns a string and takes the portrait number as its argument.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 315500,
+          "endMilliseconds": 325500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-number-to-text-function"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 325500,
+      "endMilliseconds": 336500,
+      "kind": "explanation",
+      "text": "The ToString parameter name is independent of the variable name portrait, so any identifier can be used there.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 325500,
+          "endMilliseconds": 336500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-number-to-text-function"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 336500,
+      "endMilliseconds": 346360,
+      "kind": "code_change",
+      "text": "At the print site portrait is replaced by a call that converts it to a string.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 336500,
+          "endMilliseconds": 346360
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 339000,
+          "endMilliseconds": 346000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-number-to-text-function"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 346000,
+      "endMilliseconds": 353500,
+      "kind": "explanation",
+      "text": "An equivalent alternative is to store the converted text in a separate variable and print it in a second step.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 346000,
+          "endMilliseconds": 353500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-number-to-text-function"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 353500,
+      "endMilliseconds": 364500,
+      "kind": "explanation",
+      "text": "The conversion call receives portrait as its argument and evaluates to a string once the argument is computed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 353500,
+          "endMilliseconds": 364500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-a-call-and-return-its-result"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 364500,
+      "endMilliseconds": 376500,
+      "kind": "explanation",
+      "text": "Assigning the conversion result to a variable creates that variable in memory holding the computed string.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 364500,
+          "endMilliseconds": 376500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-a-call-and-return-its-result"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 376500,
+      "endMilliseconds": 397000,
+      "kind": "explanation",
+      "text": "Assignment first evaluates the right-hand expression and then puts its result into the variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 376500,
+          "endMilliseconds": 397000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-a-call-and-return-its-result"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 397000,
+      "endMilliseconds": 412000,
+      "kind": "explanation",
+      "text": "Evaluating the expression makes the code enter the function and pick the matching string, which effectively replaces the call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 397000,
+          "endMilliseconds": 412000
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 403479,
+          "endMilliseconds": 412000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-a-call-and-return-its-result"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 412000,
+      "endMilliseconds": 420000,
+      "kind": "fact",
+      "text": "Substituting a concrete string for a function call is expression evaluation, which happens when the program runs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 412000,
+          "endMilliseconds": 420000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-a-call-and-return-its-result"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 420000,
+      "endMilliseconds": 433000,
+      "kind": "reason",
+      "text": "A return statement is needed to declare which string the function expression yields.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 420000,
+          "endMilliseconds": 433000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-a-call-and-return-its-result"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 433000,
+      "endMilliseconds": 441000,
+      "kind": "fact",
+      "text": "Return must be wrapped in curly braces, otherwise the code fails to compile.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 433000,
+          "endMilliseconds": 441000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-a-call-and-return-its-result"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 441000,
+      "endMilliseconds": 448000,
+      "kind": "explanation",
+      "text": "Once return executes, the remaining instructions do not run, so trailing else branches can be left out.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 441000,
+          "endMilliseconds": 448000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-a-call-and-return-its-result"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 448000,
+      "endMilliseconds": 464000,
+      "kind": "edge_case",
+      "text": "If the portrait value is neither 0, 1 nor 2 the function would end without producing a value, so either an error must be raised or a default string such as an empty one returned.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 448000,
+          "endMilliseconds": 464000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-unexpected-values-visible"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 464000,
+      "endMilliseconds": 477199,
+      "kind": "reason",
+      "text": "Returning a default empty string is acceptable, but surfacing the error is better so it can be detected during program execution instead of being swallowed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 464000,
+          "endMilliseconds": 477199
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-unexpected-values-visible"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 469000,
+      "endMilliseconds": 482000,
+      "kind": "reason",
+      "text": "It is better to let an unexpected value crash the program so the problem is detected immediately during execution rather than disappearing.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 469000,
+          "endMilliseconds": 482000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-unexpected-values-visible"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 482000,
+      "endMilliseconds": 494000,
+      "kind": "fact",
+      "text": "Debug.Fail can be used to flag the crash, but the compiler does not recognize it as a crash, so an explicit crash is preferable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 482000,
+          "endMilliseconds": 494000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-unexpected-values-visible"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 494000,
+      "endMilliseconds": 508000,
+      "kind": "reason",
+      "text": "A finished program is expected never to hit this situation, and any such problem should be fixed while developing.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 494000,
+          "endMilliseconds": 508000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-unexpected-values-visible"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 508000,
+      "endMilliseconds": 522000,
+      "kind": "fact",
+      "text": "The portrait value is expected a priori to be only one of the allowed values handled by the program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 508000,
+          "endMilliseconds": 522000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-unexpected-values-visible"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 522000,
+      "endMilliseconds": 536000,
+      "kind": "explanation",
+      "text": "A well-defined program knows only the three values it handles, so a fourth unexpected value is exactly the case that must be treated as an error.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 522000,
+          "endMilliseconds": 536000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-unexpected-values-visible"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 534959,
+      "endMilliseconds": 556379,
+      "kind": "reason",
+      "text": "The lookup function crashes deliberately on any value outside the three portraits it knows, because such a value must never reach it and a debug assertion surfaces the mistake early during development.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 534959,
+          "endMilliseconds": 556379
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-unexpected-values-visible"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 536000,
+      "endMilliseconds": 541120,
+      "kind": "explanation",
+      "text": "If the program knows only about the three values, then any other value must be reported as an error.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 536000,
+          "endMilliseconds": 541120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-unexpected-values-visible"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 556379,
+      "endMilliseconds": 579230,
+      "kind": "explanation",
+      "text": "Debug.Assert with an explanatory message followed by an empty return runs only in a development build and is stripped out of the final optimized build, so it costs nothing in production.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 556379,
+          "endMilliseconds": 579230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-unexpected-values-visible"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 579230,
+      "endMilliseconds": 596790,
+      "kind": "explanation",
+      "text": "Running the code shows the value 2 resolving to Hitler, which reveals that the raw integers are magic numbers with no semantic link to the portraits they stand for.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 579230,
+          "endMilliseconds": 596790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-magic-numbers-names"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 602160,
+      "endMilliseconds": 610040,
+      "kind": "explanation",
+      "text": "The comment that says 2 means Hitler is only a convention in the source text and has no semantic tie to the program itself.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 602160,
+          "endMilliseconds": 610040
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-magic-numbers-names"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 610040,
+      "endMilliseconds": 628949,
+      "kind": "code_change",
+      "text": "Introducing constants named for Lenin, George Washington and Hitler replaces the raw numbers so the code states what each value means.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 610040,
+          "endMilliseconds": 628949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-magic-numbers-names"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 628949,
+      "endMilliseconds": 635670,
+      "kind": "code_change",
+      "text": "Every place that previously wrote 0, 1 or 2 is rewritten to the corresponding portrait constant, which removes the magic numbers from the logic.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 628949,
+          "endMilliseconds": 635670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-magic-numbers-names"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 639910,
+      "endMilliseconds": 655069,
+      "kind": "explanation",
+      "text": "The lesson offers two follow-up improvements: converting the chain of comparisons into a switch, or introducing a separate dedicated type with its own enumeration for the values.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 639910,
+          "endMilliseconds": 655069
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-comparisons-with-switch"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 655069,
+      "endMilliseconds": 669160,
+      "kind": "reason",
+      "text": "A sequence of ifs that repeatedly compares one value against several constants is exactly the shape a switch expression is meant to replace, as with the earlier if-else chain.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 655069,
+          "endMilliseconds": 669160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-comparisons-with-switch"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 666360,
+      "endMilliseconds": 674839,
+      "kind": "reason",
+      "text": "Curly braces should be written after each switch case label so that every case forms its own separate block.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 666360,
+          "endMilliseconds": 669160
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 669160,
+          "endMilliseconds": 674839
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-comparisons-with-switch"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 669160,
+      "endMilliseconds": 693949,
+      "kind": "reason",
+      "text": "Without those braces a variable declared in one case would be in scope for the whole switch body, so the braces are what prevent that confusion.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 669160,
+          "endMilliseconds": 693949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-comparisons-with-switch"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 693949,
+      "endMilliseconds": 711710,
+      "kind": "explanation",
+      "text": "A switch whose cases only contain single statements is equivalent to the original chain of ifs, which shows switch is just another spelling of the same branching.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 693949,
+          "endMilliseconds": 711710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-comparisons-with-switch"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 711710,
+      "endMilliseconds": 717110,
+      "kind": "scope_boundary",
+      "text": "Returning a value from inside switch cases needs a slightly more involved syntax that the lesson defers to a later topic.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 711710,
+          "endMilliseconds": 717110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-comparisons-with-switch"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 717110,
+      "endMilliseconds": 719389,
+      "kind": "fact",
+      "text": "Returning from every case is the most common and most useful way to use switch in real programs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 717110,
+          "endMilliseconds": 719389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-comparisons-with-switch"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 719389,
+      "endMilliseconds": 729800,
+      "kind": "fact",
+      "text": "The assignment defines both portraits and a separate set of lamp colors such as Color.Blue, Color.White, Color.Red and Color.Green.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 719389,
+          "endMilliseconds": 729800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-portraits-and-colors-with-enums"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 729800,
+      "endMilliseconds": 744600,
+      "kind": "reason",
+      "text": "Passing a color where a portrait is expected is meaningless, so the two families of values need distinct types that make such a mix-up impossible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 729800,
+          "endMilliseconds": 744600
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 736639,
+          "endMilliseconds": 744600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-portraits-and-colors-with-enums"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 744600,
+      "endMilliseconds": 753509,
+      "kind": "explanation",
+      "text": "Each family gets its own specific type, and because an enumeration stores the int values internally, these constants can be defined as enums.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 744600,
+          "endMilliseconds": 753509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-portraits-and-colors-with-enums"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 753509,
+      "endMilliseconds": 766000,
+      "kind": "code_change",
+      "text": "Portrait is declared as an enumeration of int constants, which removes the need to write const int and the type in each field separately.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 753509,
+          "endMilliseconds": 766000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-portraits-and-colors-with-enums"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 766000,
+      "endMilliseconds": 775629,
+      "kind": "fact",
+      "text": "Enumeration members are separated by commas rather than semicolons and the type name is written only once at the start of the declaration.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 766000,
+          "endMilliseconds": 775629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-portraits-and-colors-with-enums"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 775629,
+      "endMilliseconds": 796750,
+      "kind": "code_change",
+      "text": "Members of the enumeration are now referenced with the type name and a dot, like Portrait.Hitler, exactly as with static class fields, and parameter types become Portrait.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 775629,
+          "endMilliseconds": 796750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-portraits-and-colors-with-enums"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 796750,
+      "endMilliseconds": 809790,
+      "kind": "code_change",
+      "text": "The same enumeration treatment is applied to the lamp colors, which makes both value families equally self-describing.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 796750,
+          "endMilliseconds": 809790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-portraits-and-colors-with-enums"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 806120,
+      "endMilliseconds": 816000,
+      "kind": "code_change",
+      "text": "Applying the same switch-based conversion to colors makes the pattern easier to see than the portrait example alone.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 806120,
+          "endMilliseconds": 816000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-portraits-and-colors-with-enums"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 809790,
+      "endMilliseconds": 816000,
+      "kind": "test_result",
+      "text": "Passing Color.White where a Portrait is expected now fails to compile, confirming that the two types are no longer interchangeable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 809790,
+          "endMilliseconds": 816000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-portraits-and-colors-with-enums"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 816000,
+      "endMilliseconds": 821310,
+      "kind": "fact",
+      "text": "With colors wrapped in a dedicated enum type, assigning the bare name Color.White now fails to compile because only values coming from the enum iteration are accepted.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 816000,
+          "endMilliseconds": 821310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-portraits-and-colors-with-enums"
+      }
+    },
+    {
+      "id": "TP-068",
+      "startMilliseconds": 823430,
+      "endMilliseconds": 838749,
+      "kind": "reason",
+      "text": "The enum type adds an abstraction layer that hides the numeric backing values, so readers reason about element names instead of magic numbers such as 0, 1, 2.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 823430,
+          "endMilliseconds": 838749
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-portraits-and-colors-with-enums"
+      }
+    },
+    {
+      "id": "TP-069",
+      "startMilliseconds": 842990,
+      "endMilliseconds": 855269,
+      "kind": "code_change",
+      "text": "The function signature is changed to take the Portrait parameter type instead of a plain int, because portrait is no longer an int in the code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 842990,
+          "endMilliseconds": 855269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-portraits-and-colors-with-enums"
+      }
+    },
+    {
+      "id": "TP-070",
+      "startMilliseconds": 855269,
+      "endMilliseconds": 871470,
+      "kind": "reason",
+      "text": "Using the dedicated type in the signature communicates to callers that only the listed portrait values are admissible, which documents the contract in the type itself.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 855269,
+          "endMilliseconds": 871470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-portraits-and-colors-with-enums"
+      }
+    },
+    {
+      "id": "TP-071",
+      "startMilliseconds": 873839,
+      "endMilliseconds": 881600,
+      "kind": "reason",
+      "text": "The switch keeps its structure but its default case must stay, because a caller may pass a portrait value that has no explicit case.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 873839,
+          "endMilliseconds": 881600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-the-default-branch"
+      }
+    },
+    {
+      "id": "TP-072",
+      "startMilliseconds": 887749,
+      "endMilliseconds": 897749,
+      "kind": "edge_case",
+      "text": "Adding a new enum constant creates a value with no matching switch case, so the code can become incomplete just by extending the enum.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 887749,
+          "endMilliseconds": 897749
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-the-default-branch"
+      }
+    },
+    {
+      "id": "TP-073",
+      "startMilliseconds": 903199,
+      "endMilliseconds": 907430,
+      "kind": "fact",
+      "text": "Once a constant is added to the enum, user code can pass that new portrait value through the function parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 903199,
+          "endMilliseconds": 907430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-the-default-branch"
+      }
+    },
+    {
+      "id": "TP-074",
+      "startMilliseconds": 909240,
+      "endMilliseconds": 924550,
+      "kind": "reason",
+      "text": "Because the check for the new value is absent, forgetting to add the case crashes the program at run time, and a crash during development points directly at the function and the missing case.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 909240,
+          "endMilliseconds": 924550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-the-default-branch"
+      }
+    },
+    {
+      "id": "TP-075",
+      "startMilliseconds": 934199,
+      "endMilliseconds": 955710,
+      "kind": "fact",
+      "text": "Printing an enum value that has no explicit mapping prints the string constant name rather than the underlying number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 934199,
+          "endMilliseconds": 955710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-member-names-from-display-text"
+      }
+    },
+    {
+      "id": "TP-076",
+      "startMilliseconds": 955720,
+      "endMilliseconds": 963160,
+      "kind": "explanation",
+      "text": "When the enum contains a named constant for the value, the runtime output resolves that value to the constant's name and prints it as a string.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 955720,
+          "endMilliseconds": 963160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-member-names-from-display-text"
+      }
+    },
+    {
+      "id": "TP-077",
+      "startMilliseconds": 958839,
+      "endMilliseconds": 970509,
+      "kind": "explanation",
+      "text": "For a value written into the enum, the printed output is the constant name as a string, so a portrait constant prints its name instead of a number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 958839,
+          "endMilliseconds": 970509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-member-names-from-display-text"
+      }
+    },
+    {
+      "id": "TP-078",
+      "startMilliseconds": 970509,
+      "endMilliseconds": 989710,
+      "kind": "reason",
+      "text": "The auto-printed constant name is an implementation-specific artifact, since it can be Cyrillic or contain spaces, so production code should not depend on it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 970509,
+          "endMilliseconds": 989710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-member-names-from-display-text"
+      }
+    },
+    {
+      "id": "TP-079",
+      "startMilliseconds": 992040,
+      "endMilliseconds": 1017330,
+      "kind": "reason",
+      "text": "Even though an enum can be printed as a constant name, it is often better to define an explicit conversion function, because its text is intended for the user while the implicit name belongs to the program internals.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 992040,
+          "endMilliseconds": 1017330
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-member-names-from-display-text"
+      }
+    },
+    {
+      "id": "TP-080",
+      "startMilliseconds": 1018490,
+      "endMilliseconds": 1031219,
+      "kind": "fact",
+      "text": "Because an explicit conversion function returns a Russian label, passing the Lenin portrait prints it in Russian even though the constant itself is spelled with Latin letters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1018490,
+          "endMilliseconds": 1031219
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-member-names-from-display-text"
+      }
+    },
+    {
+      "id": "TP-081",
+      "startMilliseconds": 1040490,
+      "endMilliseconds": 1052560,
+      "kind": "fact",
+      "text": "Even though the portrait is declared as a constant, the compiler substitutes the constant with its numeric backing value 2.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1040490,
+          "endMilliseconds": 1052560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-numeric-storage-and-runtime-types"
+      }
+    },
+    {
+      "id": "TP-082",
+      "startMilliseconds": 1052560,
+      "endMilliseconds": 1060160,
+      "kind": "explanation",
+      "text": "At run time the enum type does not exist and the variable simply stores a plain number, so the enum is purely a compile-time concept in this program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1052560,
+          "endMilliseconds": 1060160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-numeric-storage-and-runtime-types"
+      }
+    },
+    {
+      "id": "TP-083",
+      "startMilliseconds": 1060160,
+      "endMilliseconds": 1065150,
+      "kind": "fact",
+      "text": "The enum information exists only at compile time, which is why the compiler can choose to print the constant name rather than the number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1060160,
+          "endMilliseconds": 1065150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-numeric-storage-and-runtime-types"
+      }
+    },
+    {
+      "id": "TP-084",
+      "startMilliseconds": 1064790,
+      "endMilliseconds": 1071359,
+      "kind": "explanation",
+      "text": "When printing, the compiler picks the constant name from the variable's static type rather than from the stored number, so the same stored value can print differently.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1064790,
+          "endMilliseconds": 1071359
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-numeric-storage-and-runtime-types"
+      }
+    },
+    {
+      "id": "TP-085",
+      "startMilliseconds": 1075159,
+      "endMilliseconds": 1084830,
+      "kind": "explanation",
+      "text": "The compiler inserts a numeric comparison for the print operation and performs no string conversion, which is one reason enum values are cheap to work with as numbers.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1075159,
+          "endMilliseconds": 1084830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-numeric-storage-and-runtime-types"
+      }
+    },
+    {
+      "id": "TP-086",
+      "startMilliseconds": 1102340,
+      "endMilliseconds": 1103480,
+      "kind": "reason",
+      "text": "Enums are used instead of bare numbers because enum members are numbers with meaningful names, so the values stay self-documenting.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1102340,
+          "endMilliseconds": 1103480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-numeric-storage-and-runtime-types"
+      }
+    },
+    {
+      "id": "TP-087",
+      "startMilliseconds": 1103480,
+      "endMilliseconds": 1104270,
+      "kind": "explanation",
+      "text": "The compiler substitutes a constant enum value at compile time, while at runtime the variable's memory cell simply holds that number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1103480,
+          "endMilliseconds": 1104270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-numeric-storage-and-runtime-types"
+      }
+    },
+    {
+      "id": "TP-088",
+      "startMilliseconds": 1104270,
+      "endMilliseconds": 1106880,
+      "kind": "explanation",
+      "text": "Because the comparison evaluates to true, the guarded block of code executes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1104270,
+          "endMilliseconds": 1106880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-numeric-storage-and-runtime-types"
+      }
+    },
+    {
+      "id": "TP-089",
+      "startMilliseconds": 1107039,
+      "endMilliseconds": 1110530,
+      "kind": "fact",
+      "text": "A number that is not one of the enum's declared members can still be turned into that enum type with an explicit cast.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1107039,
+          "endMilliseconds": 1110530
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#cast-without-assuming-validation"
+      }
+    },
+    {
+      "id": "TP-090",
+      "startMilliseconds": 1110530,
+      "endMilliseconds": 1113630,
+      "kind": "explanation",
+      "text": "In the example the value 2 is a compile-time constant, so the cast produces the same enum value that was assigned and the equality check succeeds.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1110530,
+          "endMilliseconds": 1113630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#cast-without-assuming-validation"
+      }
+    },
+    {
+      "id": "TP-091",
+      "startMilliseconds": 1113630,
+      "endMilliseconds": 1115230,
+      "kind": "fact",
+      "text": "The cast can be applied directly to a literal or expression, so converting the number 2 requires no intermediate variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1113630,
+          "endMilliseconds": 1115230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#cast-without-assuming-validation"
+      }
+    },
+    {
+      "id": "TP-092",
+      "startMilliseconds": 1115230,
+      "endMilliseconds": 1117490,
+      "kind": "reason",
+      "text": "An explicit cast performs no validation at all; it simply reinterprets the number as the enum type and stores it in the variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1115230,
+          "endMilliseconds": 1117490
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#cast-without-assuming-validation"
+      }
+    },
+    {
+      "id": "TP-093",
+      "startMilliseconds": 1117490,
+      "endMilliseconds": 1180200,
+      "kind": "fact",
+      "text": "A value that is not among the enum's declared constants can still be produced by the cast.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1117490,
+          "endMilliseconds": 1180200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#cast-without-assuming-validation"
+      }
+    },
+    {
+      "id": "TP-094",
+      "startMilliseconds": 1172080,
+      "endMilliseconds": 1180400,
+      "kind": "fact",
+      "text": "A number absent from the enum's list of constants passes through the cast without any compile-time complaint.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1172080,
+          "endMilliseconds": 1180400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#cast-without-assuming-validation"
+      }
+    },
+    {
+      "id": "TP-095",
+      "startMilliseconds": 1180400,
+      "endMilliseconds": 1181540,
+      "kind": "test_result",
+      "text": "When the program is run, the assignment line executes normally and the program then crashes at the later equality check.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1180400,
+          "endMilliseconds": 1181540
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#cast-without-assuming-validation"
+      }
+    },
+    {
+      "id": "TP-096",
+      "startMilliseconds": 1181540,
+      "endMilliseconds": 1185160,
+      "kind": "explanation",
+      "text": "Despite listing only named members, an enum is essentially an ordinary int, which is why a cast can store any integer value in it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1181540,
+          "endMilliseconds": 1185160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#cast-without-assuming-validation"
+      }
+    },
+    {
+      "id": "TP-097",
+      "startMilliseconds": 1185160,
+      "endMilliseconds": 1191590,
+      "kind": "fact",
+      "text": "The conversion also works in reverse: casting an enum value to int yields its underlying numeric value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1185160,
+          "endMilliseconds": 1191590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#cast-without-assuming-validation"
+      }
+    },
+    {
+      "id": "TP-098",
+      "startMilliseconds": 1191590,
+      "endMilliseconds": 1201390,
+      "kind": "code_change",
+      "text": "The example casts the enum to int, prints the resulting number, and then multiplies it by another cast expression.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1191590,
+          "endMilliseconds": 1201390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arithmetic-through-integer-conversions"
+      }
+    },
+    {
+      "id": "TP-099",
+      "startMilliseconds": 1201390,
+      "endMilliseconds": 1209880,
+      "kind": "explanation",
+      "text": "Predicting the printed result requires working out which subexpression converts to which type and in what order the multiplication is evaluated.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1201390,
+          "endMilliseconds": 1209880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arithmetic-through-integer-conversions"
+      }
+    },
+    {
+      "id": "TP-100",
+      "startMilliseconds": 1209880,
+      "endMilliseconds": 1255200,
+      "kind": "explanation",
+      "text": "The multiplication can only be evaluated once the value of each of the two operand expressions is known.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1209880,
+          "endMilliseconds": 1255200
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1248840,
+          "endMilliseconds": 1255190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arithmetic-through-integer-conversions"
+      }
+    },
+    {
+      "id": "TP-101",
+      "startMilliseconds": 1255200,
+      "endMilliseconds": 1257789,
+      "kind": "test_result",
+      "text": "The printed result of the multiplication is zero.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1255200,
+          "endMilliseconds": 1257789
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arithmetic-through-integer-conversions"
+      }
+    },
+    {
+      "id": "TP-102",
+      "startMilliseconds": 1257789,
+      "endMilliseconds": 1265400,
+      "kind": "fact",
+      "text": "The first operand evaluates to zero because the enum member used there has the underlying value zero.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1257789,
+          "endMilliseconds": 1265400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arithmetic-through-integer-conversions"
+      }
+    },
+    {
+      "id": "TP-103",
+      "startMilliseconds": 1265400,
+      "endMilliseconds": 1271550,
+      "kind": "explanation",
+      "text": "Casting an enum to int returns the numeric value stored for that constant, so the first operand becomes 0.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1265400,
+          "endMilliseconds": 1271550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arithmetic-through-integer-conversions"
+      }
+    },
+    {
+      "id": "TP-104",
+      "startMilliseconds": 1271550,
+      "endMilliseconds": 1272630,
+      "kind": "explanation",
+      "text": "The second operand's enum constant has the underlying value one, so after casting it contributes 1.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1271550,
+          "endMilliseconds": 1272630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arithmetic-through-integer-conversions"
+      }
+    },
+    {
+      "id": "TP-105",
+      "startMilliseconds": 1272630,
+      "endMilliseconds": 1281830,
+      "kind": "test_result",
+      "text": "With both operands evaluated, zero times one produces the printed zero.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1272630,
+          "endMilliseconds": 1281830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arithmetic-through-integer-conversions"
+      }
+    },
+    {
+      "id": "TP-106",
+      "startMilliseconds": 1281830,
+      "endMilliseconds": 1283120,
+      "kind": "explanation",
+      "text": "For an expression of enum type the numeric value is extracted implicitly, which for that constant is 2.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1281830,
+          "endMilliseconds": 1283120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arithmetic-through-integer-conversions"
+      }
+    },
+    {
+      "id": "TP-107",
+      "startMilliseconds": 1283120,
+      "endMilliseconds": 1289820,
+      "kind": "fact",
+      "text": "After computing such a numeric expression, the result can be cast back to the enum type if an enum value is needed again.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1283120,
+          "endMilliseconds": 1289820
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arithmetic-through-integer-conversions"
+      }
+    },
+    {
+      "id": "TP-108",
+      "startMilliseconds": 1289820,
+      "endMilliseconds": 1297710,
+      "kind": "scope_boundary",
+      "text": "A broader example of enums in modular arithmetic is deliberately skipped; only the int-conversion trick is required for this video.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1289820,
+          "endMilliseconds": 1297710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arithmetic-through-integer-conversions"
+      }
+    },
+    {
+      "id": "TP-109",
+      "startMilliseconds": 1297710,
+      "endMilliseconds": 1305830,
+      "kind": "fact",
+      "text": "The key takeaway is that an enum is just a number, so any manipulation available for plain integers also works on enums.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1297710,
+          "endMilliseconds": 1305830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arithmetic-through-integer-conversions"
+      }
+    },
+    {
+      "id": "TP-110",
+      "startMilliseconds": 1316039,
+      "endMilliseconds": 1323120,
+      "kind": "fact",
+      "text": "Enums are plain numbers underneath, so every operation that works on ordinary integers works on them too.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1316039,
+          "endMilliseconds": 1323120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arithmetic-through-integer-conversions"
+      }
+    },
+    {
+      "id": "TP-111",
+      "startMilliseconds": 1323120,
+      "endMilliseconds": 1329830,
+      "kind": "fact",
+      "text": "If the first enum member is given the value 0 and later members are left unassigned, each automatically becomes the previous explicitly assigned value plus one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1323120,
+          "endMilliseconds": 1329830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#let-omitted-values-follow-the-previous-member"
+      }
+    },
+    {
+      "id": "TP-112",
+      "startMilliseconds": 1330710,
+      "endMilliseconds": 1337130,
+      "kind": "explanation",
+      "text": "With members assigned 0, 1 and 2 in order, the implicit rule reproduces exactly that sequence without repeating the numbers.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1330710,
+          "endMilliseconds": 1337130
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#let-omitted-values-follow-the-previous-member"
+      }
+    },
+    {
+      "id": "TP-113",
+      "startMilliseconds": 1337130,
+      "endMilliseconds": 1342250,
+      "kind": "fact",
+      "text": "When only the first member is set to zero, the following members automatically receive 1 and 2 through the previous-plus-one rule.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1337130,
+          "endMilliseconds": 1342250
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#let-omitted-values-follow-the-previous-member"
+      }
+    },
+    {
+      "id": "TP-114",
+      "startMilliseconds": 1342250,
+      "endMilliseconds": 1344170,
+      "kind": "fact",
+      "text": "If the very first enum member is given no value at all, it implicitly becomes zero.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1342250,
+          "endMilliseconds": 1344170
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#let-omitted-values-follow-the-previous-member"
+      }
+    },
+    {
+      "id": "TP-115",
+      "startMilliseconds": 1344170,
+      "endMilliseconds": 1352010,
+      "kind": "fact",
+      "text": "If the first member has no value and the second is explicitly given 5, the second still evaluates to 6 because the implicit value is the previous constant plus one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1344170,
+          "endMilliseconds": 1352010
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#let-omitted-values-follow-the-previous-member"
+      }
+    },
+    {
+      "id": "TP-116",
+      "startMilliseconds": 1352010,
+      "endMilliseconds": 1360740,
+      "kind": "reason",
+      "text": "The compiler derives each omitted value from the last explicitly assigned constant, which is why the result is 6 rather than 5.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1352010,
+          "endMilliseconds": 1360740
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#let-omitted-values-follow-the-previous-member"
+      }
+    },
+    {
+      "id": "TP-117",
+      "startMilliseconds": 1360740,
+      "endMilliseconds": 1371260,
+      "kind": "fact",
+      "text": "A later enum member can omit its value entirely and still get one more than the previous member, so a count-like member written last takes the number of earlier members.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1360740,
+          "endMilliseconds": 1371260
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-a-count-sentinel-to-size-an-array"
+      }
+    },
+    {
+      "id": "TP-118",
+      "startMilliseconds": 1371260,
+      "endMilliseconds": 1378100,
+      "kind": "test_result",
+      "text": "In the example the count member automatically evaluates to 3, matching the three colors declared above it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1371260,
+          "endMilliseconds": 1378100
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-a-count-sentinel-to-size-an-array"
+      }
+    },
+    {
+      "id": "TP-119",
+      "startMilliseconds": 1381440,
+      "endMilliseconds": 1383549,
+      "kind": "fact",
+      "text": "The count constant automatically evaluates to three because three colors were declared above it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1381440,
+          "endMilliseconds": 1383549
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-a-count-sentinel-to-size-an-array"
+      }
+    },
+    {
+      "id": "TP-120",
+      "startMilliseconds": 1383549,
+      "endMilliseconds": 1389840,
+      "kind": "explanation",
+      "text": "Count is derived from the declared constants rather than typed in, so adding another color constant updates it automatically.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1383549,
+          "endMilliseconds": 1389840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-a-count-sentinel-to-size-an-array"
+      }
+    },
+    {
+      "id": "TP-121",
+      "startMilliseconds": 1389840,
+      "endMilliseconds": 1399360,
+      "kind": "code_change",
+      "text": "Adding one new color constant is enough to make count become four instead of three.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1389840,
+          "endMilliseconds": 1399360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-a-count-sentinel-to-size-an-array"
+      }
+    },
+    {
+      "id": "TP-122",
+      "startMilliseconds": 1399360,
+      "endMilliseconds": 1401240,
+      "kind": "reason",
+      "text": "Count works because each constant is defined from the previous constant's value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1399360,
+          "endMilliseconds": 1401240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-a-count-sentinel-to-size-an-array"
+      }
+    },
+    {
+      "id": "TP-123",
+      "startMilliseconds": 1401240,
+      "endMilliseconds": 1411600,
+      "kind": "explanation",
+      "text": "Count does not read the number of array elements; it only takes the last constant's value, which equals the element count because the constants are declared consecutively, each one greater than the previous.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1401240,
+          "endMilliseconds": 1411600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-a-count-sentinel-to-size-an-array"
+      }
+    },
+    {
+      "id": "TP-124",
+      "startMilliseconds": 1411600,
+      "endMilliseconds": 1418360,
+      "kind": "code_change",
+      "text": "In the code the literal three is replaced by the count constant so the array size no longer depends on a hardcoded number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1411600,
+          "endMilliseconds": 1418360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-a-count-sentinel-to-size-an-array"
+      }
+    },
+    {
+      "id": "TP-125",
+      "startMilliseconds": 1418360,
+      "endMilliseconds": 1435760,
+      "kind": "reason",
+      "text": "Using the constant means adding an enum member such as Yellow only requires one added line, because the consuming code never has to be edited.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1418360,
+          "endMilliseconds": 1435760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-a-count-sentinel-to-size-an-array"
+      }
+    },
+    {
+      "id": "TP-126",
+      "startMilliseconds": 1435760,
+      "endMilliseconds": 1443520,
+      "kind": "explanation",
+      "text": "The pattern is worth using often because it is common to need an array with one element per enum value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1435760,
+          "endMilliseconds": 1443520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-a-count-sentinel-to-size-an-array"
+      }
+    },
+    {
+      "id": "TP-127",
+      "startMilliseconds": 1443520,
+      "endMilliseconds": 1451279,
+      "kind": "code_change",
+      "text": "The count constant is passed to the array constructor to create an array of exactly that size, one entry per color.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1443520,
+          "endMilliseconds": 1451279
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-a-count-sentinel-to-size-an-array"
+      }
+    }
+  ]
+}

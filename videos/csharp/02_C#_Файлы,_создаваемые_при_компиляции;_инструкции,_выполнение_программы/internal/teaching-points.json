@@ -1,0 +1,868 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "jLWY_id6nXU",
+  "uploadId": "jLWY_id6nXU",
+  "transcriptSha256": "29ef99d74171ee38821cc256ecfe76fe31e21379aac9627789a7fd63e981c272",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 2480,
+      "endMilliseconds": 10510,
+      "kind": "fact",
+      "text": "The .NET compiler picks up all .cs files in the project automatically, so the file list does not have to be declared anywhere.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2480,
+          "endMilliseconds": 10510
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "c79a3523fbee1e5fc4916628888cf269c26a0f67",
+          "path": "examples/builder/pipeline.csproj"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#source-and-project-files"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 10510,
+      "endMilliseconds": 29690,
+      "kind": "explanation",
+      "text": "The project starts as a single .cs source file whose lines are the program's top-level statements, which the compiler transforms into a class and an entry method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 10510,
+          "endMilliseconds": 29690
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#source-and-project-files"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 29690,
+      "endMilliseconds": 45510,
+      "kind": "reason",
+      "text": "Because all .cs files are picked up automatically, you can put them in the root folder or in nested folders and both will compile and run.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 29690,
+          "endMilliseconds": 45510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#source-and-project-files"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 45510,
+      "endMilliseconds": 54000,
+      "kind": "fact",
+      "text": "The bin folder is created automatically and stores the compiled output (DLL or executable) of the project.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 45510,
+          "endMilliseconds": 54000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-output-and-separate-launches"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 54000,
+      "endMilliseconds": 67800,
+      "kind": "fact",
+      "text": "The obj folder is created automatically and caches the intermediate compilation data produced during builds.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 54000,
+          "endMilliseconds": 67800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-output-and-separate-launches"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 67800,
+      "endMilliseconds": 74000,
+      "kind": "explanation",
+      "text": "dotnet run performs both compilation and launch, producing a file you can execute yourself.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 67800,
+          "endMilliseconds": 74000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-output-and-separate-launches"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 74000,
+      "endMilliseconds": 88920,
+      "kind": "fact",
+      "text": "The file created by the build can be run manually by typing its full path in the terminal, which confirms it is a self-contained compiled program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 74000,
+          "endMilliseconds": 88920
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 83159,
+          "endMilliseconds": 88920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-output-and-separate-launches"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 88920,
+      "endMilliseconds": 96380,
+      "kind": "explanation",
+      "text": "The compiled binary is runnable on its own through the dotnet runtime, since dotnet run only bundles compilation and launch in one command.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 88920,
+          "endMilliseconds": 96380
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-output-and-separate-launches"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 96380,
+      "endMilliseconds": 101680,
+      "kind": "fact",
+      "text": "dotnet build performs only compilation without launching the program, which is useful when the binary is created separately.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 96380,
+          "endMilliseconds": 101680
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-output-and-separate-launches"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 101680,
+      "endMilliseconds": 109620,
+      "kind": "explanation",
+      "text": "The executable produced by dotnet build lands in the bin/debug folder, so that is where you look for the build output.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 101680,
+          "endMilliseconds": 109620
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-output-and-separate-launches"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 109620,
+      "endMilliseconds": 136550,
+      "kind": "explanation",
+      "text": "A second generated folder, obj, holds compilation artifacts such as used packages and dependencies, all of which the compiler caches there.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 109620,
+          "endMilliseconds": 136550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#disposable-build-artifacts"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 136550,
+      "endMilliseconds": 151830,
+      "kind": "reason",
+      "text": "Both bin and obj can be deleted at any time and recreated by the build command with the same contents, so they act as a disposable cache.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 136550,
+          "endMilliseconds": 151830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#disposable-build-artifacts"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 151830,
+      "endMilliseconds": 178830,
+      "kind": "reason",
+      "text": "Generated folders must be listed in .gitignore so build output does not enter the git repository, because those files are reproducible from configuration and sources.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 151830,
+          "endMilliseconds": 169640
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 163000,
+          "endMilliseconds": 178830
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "c70666b5a2c1f3be23798f9a90d2952249a938a4",
+          "path": ".gitignore"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#ignoring-reproducible-files"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 178830,
+      "endMilliseconds": 194470,
+      "kind": "scope_boundary",
+      "text": "The lesson works only with the main source file, the one holding the program code that runs on start, and leaves the generated class and method for later.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 178830,
+          "endMilliseconds": 194470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#startup-code-and-the-lessons-scope"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 197190,
+      "endMilliseconds": 208050,
+      "kind": "explanation",
+      "text": "In English each line of code is called a statement, which refers to a single line and therefore names the code executed on program start.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 197190,
+          "endMilliseconds": 208050
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#statements-execute-in-source-order"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 208050,
+      "endMilliseconds": 227070,
+      "kind": "explanation",
+      "text": "When the program is launched, its statements execute one after another in the order they were written.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 208050,
+          "endMilliseconds": 227070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#statements-execute-in-source-order"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 227070,
+      "endMilliseconds": 248079,
+      "kind": "fact",
+      "text": "Each line of code is therefore referred to as an instruction (statement), which is the term used throughout the course.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 227070,
+          "endMilliseconds": 248079
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#statements-execute-in-source-order"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 241200,
+      "endMilliseconds": 242150,
+      "kind": "explanation",
+      "text": "Each instruction is responsible for some action, and on program start all instructions execute one after another from top to bottom.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 241200,
+          "endMilliseconds": 242150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#statements-execute-in-source-order"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 242150,
+      "endMilliseconds": 256550,
+      "kind": "explanation",
+      "text": "The processor completes one instruction fully before starting the next, which is why the outputs appear in source order.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 242150,
+          "endMilliseconds": 256550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#statements-execute-in-source-order"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 256550,
+      "endMilliseconds": 280830,
+      "kind": "explanation",
+      "text": "Each instruction executes to completion and only then does the processor move on to the next, so a long operation delays everything that follows.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 256550,
+          "endMilliseconds": 280830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#statements-execute-in-source-order"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 284070,
+      "endMilliseconds": 302240,
+      "kind": "explanation",
+      "text": "Thread.Sleep(1000) pauses execution for one second, and after the delay the instruction counts as done so the processor continues with the next one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 284070,
+          "endMilliseconds": 302240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#making-a-delay-visible"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 302240,
+      "endMilliseconds": 311630,
+      "kind": "fact",
+      "text": "A function (method) is a list of several instructions that performs a named unit of work.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 302240,
+          "endMilliseconds": 311630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#defining-a-named-sequence"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 311630,
+      "endMilliseconds": 330080,
+      "kind": "scope_boundary",
+      "text": "The exact syntax for declaring a function, including the meaning of void, is postponed so learners are not distracted at this stage.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 311630,
+          "endMilliseconds": 330080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#defining-a-named-sequence"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 320800,
+      "endMilliseconds": 330800,
+      "kind": "fact",
+      "text": "The void keyword before a name declares a list of instructions, also called a function, whose body is written between the curly braces.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 320800,
+          "endMilliseconds": 330800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#defining-a-named-sequence"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 337240,
+      "endMilliseconds": 347470,
+      "kind": "explanation",
+      "text": "Giving the instruction list a name lets you run all of its instructions later by referring to that name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 337240,
+          "endMilliseconds": 347470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#defining-a-named-sequence"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 346440,
+      "endMilliseconds": 364390,
+      "kind": "fact",
+      "text": "After moving several statements into the list and printing Anton, all of those statements execute one after another in the order written, which is how a function runs its body.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 346440,
+          "endMilliseconds": 364390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#entering-a-function-and-coming-back"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 364160,
+      "endMilliseconds": 407160,
+      "kind": "reason",
+      "text": "When the program reaches a call of that list, execution does not move to the next line but jumps to the first instruction inside the function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 364160,
+          "endMilliseconds": 407160
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 400080,
+          "endMilliseconds": 407160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#entering-a-function-and-coming-back"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 407160,
+      "endMilliseconds": 416270,
+      "kind": "explanation",
+      "text": "A function body executes exactly like the top-to-bottom statement sequence of the program itself.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 407160,
+          "endMilliseconds": 416270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#entering-a-function-and-coming-back"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 416270,
+      "endMilliseconds": 443150,
+      "kind": "reason",
+      "text": "Once the function runs out of instructions the program jumps back to the line where the function was called and continues with the next statement after it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 416270,
+          "endMilliseconds": 443150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#entering-a-function-and-coming-back"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 443150,
+      "endMilliseconds": 466830,
+      "kind": "reason",
+      "text": "Calling the same function again makes execution jump once more to its first instruction and run the body from the top.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 443150,
+          "endMilliseconds": 466830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#running-the-same-body-again"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 466830,
+      "endMilliseconds": 475350,
+      "kind": "explanation",
+      "text": "When the last instruction of a function has run, the function is finished and the program jumps back to its caller.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 466830,
+          "endMilliseconds": 475350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#running-the-same-body-again"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 475350,
+      "endMilliseconds": 483350,
+      "kind": "explanation",
+      "text": "If no statements remain after the jump-back, the program has nothing left to run and terminates.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 475350,
+          "endMilliseconds": 483350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#running-the-same-body-again"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 478520,
+      "endMilliseconds": 489840,
+      "kind": "fact",
+      "text": "A function definition is not itself an instruction: it only exists in the program and is not executed as code where it is written.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 478520,
+          "endMilliseconds": 489840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#definitions-and-names"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 489840,
+      "endMilliseconds": 506629,
+      "kind": "fact",
+      "text": "You can give the instruction list any name, such as Hello instead of void, and the function behaves identically because only the name changes, not its instructions.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 489840,
+          "endMilliseconds": 506629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#definitions-and-names"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 506629,
+      "endMilliseconds": 522609,
+      "kind": "fact",
+      "text": "You may define several such instruction lists in one program, and each one can do something different.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 506629,
+          "endMilliseconds": 522609
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#definitions-and-names"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 522609,
+      "endMilliseconds": 554269,
+      "kind": "reason",
+      "text": "A function that is defined but never called anywhere in the main program has no effect on execution and its output is never printed at startup.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 522609,
+          "endMilliseconds": 554269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#unused-functions-and-explicit-calls"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 554269,
+      "endMilliseconds": 579560,
+      "kind": "explanation",
+      "text": "To make a function actually run you must call it in the code, and after its instructions finish execution continues from the first statement following the call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 554269,
+          "endMilliseconds": 579560
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 564320,
+          "endMilliseconds": 579560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#unused-functions-and-explicit-calls"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 579560,
+      "endMilliseconds": 602230,
+      "kind": "explanation",
+      "text": "A function body may itself contain a call to another function, so reaching that call sends execution into the named function instead of along the current list.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 579560,
+          "endMilliseconds": 602230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calls-inside-function-bodies"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 602230,
+      "endMilliseconds": 618470,
+      "kind": "reason",
+      "text": "While the nested call runs, execution goes to the first instruction of Hello, prints the three of its instructions in order, and then returns to the statement that made the call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 602230,
+          "endMilliseconds": 618470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calls-inside-function-bodies"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 618470,
+      "endMilliseconds": 629959,
+      "kind": "reason",
+      "text": "Because the call was the last instruction in that list, finishing it ends the list and the program itself.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 618470,
+          "endMilliseconds": 629959
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calls-inside-function-bodies"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 629959,
+      "endMilliseconds": 638590,
+      "kind": "explanation",
+      "text": "Even so, the trace shows execution returning to the place where that instruction list was last used.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 629959,
+          "endMilliseconds": 638590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calls-inside-function-bodies"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 641320,
+      "endMilliseconds": 661000,
+      "kind": "explanation",
+      "text": "After the statement that calls a function finishes, control returns to the code and execution continues with the following statement.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 641320,
+          "endMilliseconds": 661000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#following-the-whole-execution-path"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 661000,
+      "endMilliseconds": 668000,
+      "kind": "explanation",
+      "text": "When execution reaches a call to a function, it jumps to the first statement inside that function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 661000,
+          "endMilliseconds": 668000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#following-the-whole-execution-path"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 668000,
+      "endMilliseconds": 676000,
+      "kind": "explanation",
+      "text": "Inside the called function statements execute in order from top to bottom, one statement after another.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 668000,
+          "endMilliseconds": 676000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#following-the-whole-execution-path"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 676000,
+      "endMilliseconds": 685000,
+      "kind": "explanation",
+      "text": "When the last statement of a function is reached, the function finishes and execution returns to the line with its call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 676000,
+          "endMilliseconds": 685000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#following-the-whole-execution-path"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 685000,
+      "endMilliseconds": 689120,
+      "kind": "fact",
+      "text": "A function does nothing on its own just by existing; it must be called somewhere in the program to be used.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 685000,
+          "endMilliseconds": 689120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#following-the-whole-execution-path"
+      }
+    }
+  ]
+}

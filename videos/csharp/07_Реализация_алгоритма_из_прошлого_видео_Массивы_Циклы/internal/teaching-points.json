@@ -1,0 +1,1828 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "VhA2OupAYRc",
+  "uploadId": "VhA2OupAYRc",
+  "transcriptSha256": "78a1506d1b633ffe339442497b340eb5ab7bb727e629148aff4732593240ee37",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 320,
+      "endMilliseconds": 9200,
+      "kind": "scope_boundary",
+      "text": "The task is to implement a number-summing function by modifying the existing basic program rather than writing it from scratch.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 320,
+          "endMilliseconds": 9200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#purpose-and-vocabulary"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 11320,
+      "endMilliseconds": 17400,
+      "kind": "explanation",
+      "text": "A function needs both inputs and outputs, so the lesson first restates them for the summing algorithm.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 11320,
+          "endMilliseconds": 17400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#purpose-and-vocabulary"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 17870,
+      "endMilliseconds": 26300,
+      "kind": "fact",
+      "text": "The summing algorithm takes an array of numbers as its input, which is why arrays have to be explained before writing the code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 17870,
+          "endMilliseconds": 26300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#purpose-and-vocabulary"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 26400,
+      "endMilliseconds": 43000,
+      "kind": "explanation",
+      "text": "The output of the summing algorithm is a single number, whose type becomes the type of the list of numbers it consumes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 26400,
+          "endMilliseconds": 43000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#purpose-and-vocabulary"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 43100,
+      "endMilliseconds": 56000,
+      "kind": "explanation",
+      "text": "A list is a more abstract concept that can be realized as an array, for example numbers written on paper connected by arrows.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 43100,
+          "endMilliseconds": 56000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-list-becomes-a-contiguous-array"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 56300,
+      "endMilliseconds": 79400,
+      "kind": "explanation",
+      "text": "An array is a concrete list whose elements are placed in memory one after another with no gaps or jumps, so element addresses are consecutive.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 56300,
+          "endMilliseconds": 79400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-list-becomes-a-contiguous-array"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 71200,
+      "endMilliseconds": 81900,
+      "kind": "explanation",
+      "text": "Because array elements are laid out consecutively, an element address can be computed from the array start address plus an index and simple arithmetic.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 71200,
+          "endMilliseconds": 81900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-list-becomes-a-contiguous-array"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 81900,
+      "endMilliseconds": 102000,
+      "kind": "explanation",
+      "text": "To reach the fifth element of an array whose first element is at address 700, you add four to the first address, and this is essentially how C# indexing works.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 81900,
+          "endMilliseconds": 102000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-list-becomes-a-contiguous-array"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 102000,
+      "endMilliseconds": 115500,
+      "kind": "fact",
+      "text": "The int[] type only describes that the array holds integers and says nothing about how many elements the array will contain.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 102000,
+          "endMilliseconds": 115500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#array-type-length-and-reference"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 115500,
+      "endMilliseconds": 126500,
+      "kind": "fact",
+      "text": "The number of occupied cells is stored separately from the type, in the Length property that C# calls the array length.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 115500,
+          "endMilliseconds": 126500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#array-type-length-and-reference"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 126500,
+      "endMilliseconds": 147120,
+      "kind": "explanation",
+      "text": "C# arrays are dynamic objects living in dynamic memory, so a variable holding an array does not store the elements themselves.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 126500,
+          "endMilliseconds": 147120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#array-type-length-and-reference"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 140440,
+      "endMilliseconds": 150400,
+      "kind": "explanation",
+      "text": "Assigning an array to a variable stores the address of the array object in that variable, which is a reference rather than the elements themselves.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 140440,
+          "endMilliseconds": 150400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#array-type-length-and-reference"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 150400,
+      "endMilliseconds": 164600,
+      "kind": "fact",
+      "text": "You must specify the array length at creation time in C# because the array object has a fixed number of cells.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 150400,
+          "endMilliseconds": 164600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#array-type-length-and-reference"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 164600,
+      "endMilliseconds": 181000,
+      "kind": "edge_case",
+      "text": "You cannot change the number of cells of an existing array object; you must create a new array and copy the elements into it, though you can change how many elements a slice view covers.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 164600,
+          "endMilliseconds": 181000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#array-type-length-and-reference"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 181000,
+      "endMilliseconds": 194600,
+      "kind": "fact",
+      "text": "Array creation syntax is new ElementType[count], e.g. new int[5] for five elements.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 181000,
+          "endMilliseconds": 194600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-an-array-and-inspect-its-zeroes"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 196000,
+      "endMilliseconds": 210000,
+      "kind": "explanation",
+      "text": "The new expression allocates the array object in dynamic memory and writes its address into the variable, with the cell count given at the call site.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 196000,
+          "endMilliseconds": 210000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-an-array-and-inspect-its-zeroes"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 209280,
+      "endMilliseconds": 218900,
+      "kind": "fact",
+      "text": "Because new creates the object in dynamic memory, arrays created this way are allocated on the heap rather than in the variable's own storage.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 209280,
+          "endMilliseconds": 218900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-an-array-and-inspect-its-zeroes"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 210000,
+      "endMilliseconds": 217239,
+      "kind": "fact",
+      "text": "new is the C# keyword that means 'create an object' and applies to both classes and arrays.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 210000,
+          "endMilliseconds": 217239
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-an-array-and-inspect-its-zeroes"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 219000,
+      "endMilliseconds": 230500,
+      "kind": "fact",
+      "text": "All cells of a freshly created array are filled with zeroes, which you can verify by printing the first cells.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 219000,
+          "endMilliseconds": 230500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#create-an-array-and-inspect-its-zeroes"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 232000,
+      "endMilliseconds": 241400,
+      "kind": "code_change",
+      "text": "To write into a cell you name the variable holding the reference, put the cell index in square brackets and assign a value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 232000,
+          "endMilliseconds": 241400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#write-and-read-indexed-cells"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 241400,
+      "endMilliseconds": 250400,
+      "kind": "explanation",
+      "text": "Index 0 addresses the first cell because indexing counts offsets from the start of memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 241400,
+          "endMilliseconds": 250400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#write-and-read-indexed-cells"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 252000,
+      "endMilliseconds": 261700,
+      "kind": "explanation",
+      "text": "Evaluation of a[i] first dereferences the variable to reach the array object and only then applies the indexing operation to it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 252000,
+          "endMilliseconds": 261700
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#write-and-read-indexed-cells"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 261700,
+      "endMilliseconds": 298390,
+      "kind": "explanation",
+      "text": "Array indexing means computing an element position starting from the beginning of the array's memory block, so index 0 stays at the first cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 261700,
+          "endMilliseconds": 294800
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 284320,
+          "endMilliseconds": 298390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#write-and-read-indexed-cells"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 298390,
+      "endMilliseconds": 318749,
+      "kind": "explanation",
+      "text": "Cells of an array sit next to each other in memory, so one cell carries a link to the next cell and this is why indexing is a jump over zero elements.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 298390,
+          "endMilliseconds": 318749
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#write-and-read-indexed-cells"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 318749,
+      "endMilliseconds": 348749,
+      "kind": "fact",
+      "text": "The assignment syntax a[0] = 6 writes the value 6 from the right-hand side into the memory cell that index 0 designates.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 318749,
+          "endMilliseconds": 348749
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#write-and-read-indexed-cells"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 348749,
+      "endMilliseconds": 365880,
+      "kind": "explanation",
+      "text": "Reading an array element evaluates as: read the array object's address from the variable, then apply the indexing operation with the given index relative to the start of the array's memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 348749,
+          "endMilliseconds": 365880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#write-and-read-indexed-cells"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 348749,
+      "endMilliseconds": 365880,
+      "kind": "reason",
+      "text": "Indexing jumps over zero elements and reads up to the next cell, which is why the read value is used temporarily and then replaced by whatever that cell holds.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 348749,
+          "endMilliseconds": 365880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#write-and-read-indexed-cells"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 356160,
+      "endMilliseconds": 376350,
+      "kind": "explanation",
+      "text": "Writing to index 1 means jumping one element from the start of the array and writing the value 8 into that position.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 356160,
+          "endMilliseconds": 376350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#write-and-read-indexed-cells"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 376350,
+      "endMilliseconds": 397990,
+      "kind": "explanation",
+      "text": "Writing to index 2 means jumping two positions from the start of the array, so the target cell no longer holds zero after the write.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 376350,
+          "endMilliseconds": 397990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#write-and-read-indexed-cells"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 395990,
+      "endMilliseconds": 415589,
+      "kind": "fact",
+      "text": "Elements of an array can be initialized either by writing each index individually or by listing the values one after another inside curly braces.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 395990,
+          "endMilliseconds": 415589
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#initialize-values-and-shorten-the-syntax"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 415589,
+      "endMilliseconds": 432749,
+      "kind": "explanation",
+      "text": "Initializer values may be written on separate lines, and the number of values inside the curly braces must match the declared array length.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 415589,
+          "endMilliseconds": 432749
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#initialize-values-and-shorten-the-syntax"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 427280,
+      "endMilliseconds": 443070,
+      "kind": "fact",
+      "text": "If you omit the explicit length in the array initializer the compiler infers it from the number of values you supplied.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 427280,
+          "endMilliseconds": 443070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#initialize-values-and-shorten-the-syntax"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 431070,
+      "endMilliseconds": 443070,
+      "kind": "explanation",
+      "text": "With an inferred length, querying the array's length reports three for three supplied values, and that length is stored in the length field just as with the explicit form.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 431070,
+          "endMilliseconds": 443070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#initialize-values-and-shorten-the-syntax"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 432469,
+      "endMilliseconds": 434520,
+      "kind": "fact",
+      "text": "If the initializer supplies an extra element the compiler reports an error, because the value count no longer matches the declared length.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 432469,
+          "endMilliseconds": 434520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#initialize-values-and-shorten-the-syntax"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 443070,
+      "endMilliseconds": 455909,
+      "kind": "explanation",
+      "text": "The length stored in the field fixes the size of the allocated buffer, so the inferred-length and explicit-length forms behave the same way.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 443070,
+          "endMilliseconds": 455909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#initialize-values-and-shorten-the-syntax"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 455909,
+      "endMilliseconds": 474550,
+      "kind": "fact",
+      "text": "The IDE suggests the target-typed new form because the compiler can already infer the element type from the given values.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 455909,
+          "endMilliseconds": 474550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#initialize-values-and-shorten-the-syntax"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 474550,
+      "endMilliseconds": 486589,
+      "kind": "fact",
+      "text": "In newer C# versions you can write the square-bracket array creation directly without new, and it is equivalent to the previous syntax.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 474550,
+          "endMilliseconds": 486589
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#initialize-values-and-shorten-the-syntax"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 486589,
+      "endMilliseconds": 497310,
+      "kind": "fact",
+      "text": "A local function declaration lists its return type, then static, then the name, where the name states what the function does.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 486589,
+          "endMilliseconds": 497310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#declare-the-summing-function-interface"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 497310,
+      "endMilliseconds": 503950,
+      "kind": "scope_boundary",
+      "text": "The meaning of the static modifier is deferred to a later explanation, so here only the declaration shape is introduced.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 497310,
+          "endMilliseconds": 503950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#declare-the-summing-function-interface"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 502560,
+      "endMilliseconds": 508990,
+      "kind": "explanation",
+      "text": "The function name states what the function will do, which here means it sums the numbers.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 502560,
+          "endMilliseconds": 508990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#declare-the-summing-function-interface"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 508990,
+      "endMilliseconds": 520790,
+      "kind": "fact",
+      "text": "The parameters in round brackets are the function's input data, and a single parameter behaves like an ordinary variable inside the body.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 508990,
+          "endMilliseconds": 520790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#declare-the-summing-function-interface"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 525839,
+      "endMilliseconds": 533029,
+      "kind": "fact",
+      "text": "When there are several input parameters you separate them with commas inside the round brackets.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 525839,
+          "endMilliseconds": 533029
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#declare-the-summing-function-interface"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 528000,
+      "endMilliseconds": 535509,
+      "kind": "explanation",
+      "text": "The round brackets and parameter list form the interface of the function, while the curly braces hold the implementation, the actual algorithm.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 528000,
+          "endMilliseconds": 535509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#declare-the-summing-function-interface"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 535509,
+      "endMilliseconds": 544350,
+      "kind": "explanation",
+      "text": "The implementation in the curly braces can be rewritten after the fact, so the interface stays fixed while the body changes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 535509,
+          "endMilliseconds": 544350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#declare-the-summing-function-interface"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 544350,
+      "endMilliseconds": 551110,
+      "kind": "fact",
+      "text": "Declaring a variable of array type without an initializer creates an uninitialized array reference, so it must be assigned before use.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 544350,
+          "endMilliseconds": 551110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#declare-the-summing-function-interface"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 551110,
+      "endMilliseconds": 563630,
+      "kind": "fact",
+      "text": "To read an array's length you must name the Length property on the array variable instead of relying on the variable name alone.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 551110,
+          "endMilliseconds": 563630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#declare-the-summing-function-interface"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 563630,
+      "endMilliseconds": 569670,
+      "kind": "scope_boundary",
+      "text": "C# has goto and the course only shows its basic form now, intending to get rid of goto as quickly as possible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 563630,
+          "endMilliseconds": 569670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-algorithm-into-a-goto-body"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 569670,
+      "endMilliseconds": 581870,
+      "kind": "fact",
+      "text": "goto transfers control to the statement carrying the given label, which can be used to jump forward to a marked place in the code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 569670,
+          "endMilliseconds": 581870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-algorithm-into-a-goto-body"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 577440,
+      "endMilliseconds": 584030,
+      "kind": "code_change",
+      "text": "To use the finished function, the student declares a variable, assigns the function call to it, and calls the function with their numbers, which is how the returned result is captured.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 577440,
+          "endMilliseconds": 584030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-algorithm-into-a-goto-body"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 584030,
+      "endMilliseconds": 597430,
+      "kind": "explanation",
+      "text": "Stepping through the first line shows the array with three elements being passed into the function, which is used to demonstrate how parameters are actually transferred.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 584030,
+          "endMilliseconds": 597430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-the-call-and-its-returned-result"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 597430,
+      "endMilliseconds": 609870,
+      "kind": "fact",
+      "text": "The first line declares an array of three elements filled with 6, 8, and 5, so the example has three cells rather than nine.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 597430,
+          "endMilliseconds": 609870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-the-call-and-its-returned-result"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 609870,
+      "endMilliseconds": 617069,
+      "kind": "fact",
+      "text": "The address of the newly created array object is stored in the variable r, so r holds a reference to the array rather than its contents.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 609870,
+          "endMilliseconds": 617069
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-the-call-and-its-returned-result"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 617069,
+      "endMilliseconds": 632630,
+      "kind": "explanation",
+      "text": "A variable declared as int may hold references or addresses of int arrays, which is why r can be used to pass the array into the function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 617069,
+          "endMilliseconds": 632630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-the-call-and-its-returned-result"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 632630,
+      "endMilliseconds": 641200,
+      "kind": "fact",
+      "text": "A variable declared as var may only hold numbers, and it is not initialized until an explicit call assigns a value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 632630,
+          "endMilliseconds": 641200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-the-call-and-its-returned-result"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 641200,
+      "endMilliseconds": 652240,
+      "kind": "fact",
+      "text": "Calling the SumNumbers function turns every parameter listed in its signature into a temporary variable inside that function's body.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 641200,
+          "endMilliseconds": 652240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-the-call-and-its-returned-result"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 652240,
+      "endMilliseconds": 663590,
+      "kind": "explanation",
+      "text": "The r created inside SumNumbers is a different variable from the r in the calling method, because parameter-passing creates a fresh local variable for that call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 652240,
+          "endMilliseconds": 663590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-the-call-and-its-returned-result"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 660470,
+      "endMilliseconds": 678030,
+      "kind": "explanation",
+      "text": "When r is passed as an argument, its contents are substituted at the call site, so the parameter receives the value stored in r, namely the array's address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 660470,
+          "endMilliseconds": 678030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-the-call-and-its-returned-result"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 678030,
+      "endMilliseconds": 697590,
+      "kind": "explanation",
+      "text": "A variable is created for the parameter and it receives a copy of the first element of the source array, because the parameter in the first position corresponds to the first element.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 678030,
+          "endMilliseconds": 697590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-the-call-and-its-returned-result"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 697590,
+      "endMilliseconds": 708470,
+      "kind": "explanation",
+      "text": "After the values are passed, the instructions inside SumNumbers execute and may create additional variables of their own.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 697590,
+          "endMilliseconds": 708470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-the-call-and-its-returned-result"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 708470,
+      "endMilliseconds": 724160,
+      "kind": "explanation",
+      "text": "When SumNumbers finishes, the function call in the calling code is temporarily replaced by the returned value, the sum of the numbers, which is 19.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 708470,
+          "endMilliseconds": 724160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-the-call-and-its-returned-result"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 717000,
+      "endMilliseconds": 726910,
+      "kind": "explanation",
+      "text": "The call expression is temporarily replaced by the returned value 19, and the variables that corresponded to the parameters are then deleted.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 717000,
+          "endMilliseconds": 726910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-the-call-and-its-returned-result"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 726910,
+      "endMilliseconds": 734470,
+      "kind": "fact",
+      "text": "Besides the parameter variables, the temporary variables that the function used internally are also removed once the call completes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 726910,
+          "endMilliseconds": 734470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-the-call-and-its-returned-result"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 737830,
+      "endMilliseconds": 747830,
+      "kind": "fact",
+      "text": "After the cleanup, the caller's variable holds19, the returned value that was saved at assignment time.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 737830,
+          "endMilliseconds": 747830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-the-call-and-its-returned-result"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 757000,
+      "endMilliseconds": 769870,
+      "kind": "fact",
+      "text": "A variable declaration and its assignment can be written as a single combined statement with the initial value inline, which is the usual way this code is written.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 757000,
+          "endMilliseconds": 769870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#combine-declaration-and-initialization"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 769870,
+      "endMilliseconds": 791590,
+      "kind": "code_change",
+      "text": "A goto label at the end of a method forms an infinite loop that can be rewritten as while(true) with the label's code placed inside the braces and the goto plus label removed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 769870,
+          "endMilliseconds": 791590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-backward-goto-with-while"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 791590,
+      "endMilliseconds": 814069,
+      "kind": "explanation",
+      "text": "In an infinite loop, after the last instruction of the body finishes, control returns to the first instruction of the block instead of continuing with the instruction after the loop.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 791590,
+          "endMilliseconds": 802560
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 795839,
+          "endMilliseconds": 814069
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-backward-goto-with-while"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 814069,
+      "endMilliseconds": 832630,
+      "kind": "explanation",
+      "text": "Because control always returns to the start, the statements inside the block repeat forever and nothing after the loop runs, which is what makes the loop infinite.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 814069,
+          "endMilliseconds": 832630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-backward-goto-with-while"
+      }
+    },
+    {
+      "id": "TP-068",
+      "startMilliseconds": 832630,
+      "endMilliseconds": 841230,
+      "kind": "reason",
+      "text": "A while(true) loop is the preferred replacement for this goto-and-label pattern, so the goto instruction should normally be avoided.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 832630,
+          "endMilliseconds": 841230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-backward-goto-with-while"
+      }
+    },
+    {
+      "id": "TP-069",
+      "startMilliseconds": 841230,
+      "endMilliseconds": 858430,
+      "kind": "fact",
+      "text": "The IDE greys out a goto that follows a return because the compiler knows the code is unreachable once the method's execution has fully finished.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 841230,
+          "endMilliseconds": 858430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-backward-goto-with-while"
+      }
+    },
+    {
+      "id": "TP-070",
+      "startMilliseconds": 858430,
+      "endMilliseconds": 864430,
+      "kind": "explanation",
+      "text": "Instructions placed after a return never execute, and the method ends there and returns control to the point of the call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 858430,
+          "endMilliseconds": 864430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-backward-goto-with-while"
+      }
+    },
+    {
+      "id": "TP-071",
+      "startMilliseconds": 864430,
+      "endMilliseconds": 873160,
+      "kind": "fact",
+      "text": "A while condition can also be negated, so a loop written as while(condition) is equivalent to the same loop written with the inverted condition.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 864430,
+          "endMilliseconds": 873160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-the-correct-loop-boundary"
+      }
+    },
+    {
+      "id": "TP-072",
+      "startMilliseconds": 867310,
+      "endMilliseconds": 891920,
+      "kind": "explanation",
+      "text": "Negating the loop condition i < length gives the equivalent form i >= length - 1, which is the natural way to express when the loop must stop.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 867310,
+          "endMilliseconds": 891920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-the-correct-loop-boundary"
+      }
+    },
+    {
+      "id": "TP-073",
+      "startMilliseconds": 894510,
+      "endMilliseconds": 909670,
+      "kind": "reason",
+      "text": "A condition of i >= length means the index has run past the last element, because an index points at the start of an element and the last valid one is length - 1.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 894510,
+          "endMilliseconds": 909670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-the-correct-loop-boundary"
+      }
+    },
+    {
+      "id": "TP-074",
+      "startMilliseconds": 910000,
+      "endMilliseconds": 925550,
+      "kind": "edge_case",
+      "text": "Writing i > length - 1 is equivalent to i >= length because an integer index can never take a fractional value between the two bounds.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 910000,
+          "endMilliseconds": 925550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-the-correct-loop-boundary"
+      }
+    },
+    {
+      "id": "TP-075",
+      "startMilliseconds": 925550,
+      "endMilliseconds": 951920,
+      "kind": "fact",
+      "text": "The opposite side of the loop guard is i < length, meaning the index is strictly left of the last position and the last position itself is excluded.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 925550,
+          "endMilliseconds": 951920
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 944600,
+          "endMilliseconds": 951920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-the-correct-loop-boundary"
+      }
+    },
+    {
+      "id": "TP-076",
+      "startMilliseconds": 951920,
+      "endMilliseconds": 960150,
+      "kind": "code_change",
+      "text": "You can drop the break and instead put the inverted condition i >= length as the first statement inside an infinite loop, which produces the same control flow.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 951920,
+          "endMilliseconds": 960150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-the-correct-loop-boundary"
+      }
+    },
+    {
+      "id": "TP-077",
+      "startMilliseconds": 960150,
+      "endMilliseconds": 982470,
+      "kind": "reason",
+      "text": "Because the inverted check is the first instruction in the loop body, the loop simply will not execute its work whenever i is already greater than or equal to length.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 960150,
+          "endMilliseconds": 982470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-the-correct-loop-boundary"
+      }
+    },
+    {
+      "id": "TP-078",
+      "startMilliseconds": 982470,
+      "endMilliseconds": 1019560,
+      "kind": "fact",
+      "text": "Even in the clearer 'continue while i < length' phrasing, that check runs before the loop body on the first entry and again on every return to the loop head.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 982470,
+          "endMilliseconds": 1019560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-the-correct-loop-boundary"
+      }
+    },
+    {
+      "id": "TP-079",
+      "startMilliseconds": 1019560,
+      "endMilliseconds": 1027760,
+      "kind": "explanation",
+      "text": "A temporary index variable declared outside the loop but used only to walk the array makes the guard and the body appear equivalent to the broken-out form.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1019560,
+          "endMilliseconds": 1027760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#collect-loop-state-in-a-for-header"
+      }
+    },
+    {
+      "id": "TP-080",
+      "startMilliseconds": 1020199,
+      "endMilliseconds": 1033760,
+      "kind": "explanation",
+      "text": "The temporary index used only for walking the array is exactly what the loop uses both to test and to advance, which is why the two forms look equivalent.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1020199,
+          "endMilliseconds": 1033760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#collect-loop-state-in-a-for-header"
+      }
+    },
+    {
+      "id": "TP-081",
+      "startMilliseconds": 1033760,
+      "endMilliseconds": 1044600,
+      "kind": "fact",
+      "text": "Any loop has four structural parts: a start condition, an end condition, a state change, and a transition to the next iteration's state.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1033760,
+          "endMilliseconds": 1044600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#collect-loop-state-in-a-for-header"
+      }
+    },
+    {
+      "id": "TP-082",
+      "startMilliseconds": 1044600,
+      "endMilliseconds": 1055250,
+      "kind": "edge_case",
+      "text": "The advanced state need not be a single index; it can be several values whose updates depend on their current values.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1044600,
+          "endMilliseconds": 1055250
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#collect-loop-state-in-a-for-header"
+      }
+    },
+    {
+      "id": "TP-083",
+      "startMilliseconds": 1055250,
+      "endMilliseconds": 1077430,
+      "kind": "fact",
+      "text": "Written out, any such loop is: initial state A, guard B, state change C when the end is reached, and the body inside braces, which is the shape of a for loop.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1055250,
+          "endMilliseconds": 1077430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#collect-loop-state-in-a-for-header"
+      }
+    },
+    {
+      "id": "TP-084",
+      "startMilliseconds": 1077430,
+      "endMilliseconds": 1101600,
+      "kind": "reason",
+      "text": "The for form is used more often than the plain while because the initial state, the guard, and the state change sit next to each other in one line.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1077430,
+          "endMilliseconds": 1101600
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1093960,
+          "endMilliseconds": 1101600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#collect-loop-state-in-a-for-header"
+      }
+    },
+    {
+      "id": "TP-085",
+      "startMilliseconds": 1101600,
+      "endMilliseconds": 1126830,
+      "kind": "code_change",
+      "text": "Converting the loop to a for is mechanical: put the initial state A, then the guard B, then the state change C in the header and the body inside the braces.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1101600,
+          "endMilliseconds": 1126830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#collect-loop-state-in-a-for-header"
+      }
+    },
+    {
+      "id": "TP-086",
+      "startMilliseconds": 1126830,
+      "endMilliseconds": 1145640,
+      "kind": "reason",
+      "text": "The converted code yields the same result because the loop variable declared in the for header exists only inside that for, so the earlier break style was only superficially similar.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1126830,
+          "endMilliseconds": 1145640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#match-variable-scope-as-well-as-behavior"
+      }
+    },
+    {
+      "id": "TP-087",
+      "startMilliseconds": 1145640,
+      "endMilliseconds": 1156700,
+      "kind": "fact",
+      "text": "The for loop variable is readable in both the header condition and the loop body, but not outside the block, so printing it afterwards is a compile error.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1145640,
+          "endMilliseconds": 1156700
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#match-variable-scope-as-well-as-behavior"
+      }
+    },
+    {
+      "id": "TP-088",
+      "startMilliseconds": 1156700,
+      "endMilliseconds": 1185559,
+      "kind": "correction",
+      "text": "With a while loop the index variable still exists after the loop, so the two loops are not 100% equivalent unless the while version wraps the index in its own block.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1156700,
+          "endMilliseconds": 1185559
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#match-variable-scope-as-well-as-behavior"
+      }
+    },
+    {
+      "id": "TP-089",
+      "startMilliseconds": 1175679,
+      "endMilliseconds": 1182830,
+      "kind": "explanation",
+      "text": "A while loop written with the same initialisation, condition and increment is 100% equivalent to the for loop, because the compiler treats the for header exactly as that loop body would run those steps.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1175679,
+          "endMilliseconds": 1182830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#match-variable-scope-as-well-as-behavior"
+      }
+    },
+    {
+      "id": "TP-090",
+      "startMilliseconds": 1182840,
+      "endMilliseconds": 1200590,
+      "kind": "reason",
+      "text": "Variables declared inside a block are not visible outside it, which is why the loop body wrapped in its own block is fully equivalent to the unwrapped one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1182840,
+          "endMilliseconds": 1200590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#match-variable-scope-as-well-as-behavior"
+      }
+    },
+    {
+      "id": "TP-091",
+      "startMilliseconds": 1200690,
+      "endMilliseconds": 1218990,
+      "kind": "explanation",
+      "text": "C# offers a higher-level iteration form that needs no index variable to be declared and no loop condition or initial/final index values to be written by hand.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1200690,
+          "endMilliseconds": 1218990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#visit-values-directly-with-foreach"
+      }
+    },
+    {
+      "id": "TP-092",
+      "startMilliseconds": 1223640,
+      "endMilliseconds": 1234789,
+      "kind": "explanation",
+      "text": "When iterating over the elements directly the compiler generates the index variable itself, so the programmer never writes the index declaration or its update.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1223640,
+          "endMilliseconds": 1234789
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#visit-values-directly-with-foreach"
+      }
+    },
+    {
+      "id": "TP-093",
+      "startMilliseconds": 1234799,
+      "endMilliseconds": 1254990,
+      "kind": "code_change",
+      "text": "In a foreach loop you declare a variable for the current element instead of an index and then write the in keyword followed by the array name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1234799,
+          "endMilliseconds": 1254990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#visit-values-directly-with-foreach"
+      }
+    },
+    {
+      "id": "TP-094",
+      "startMilliseconds": 1255000,
+      "endMilliseconds": 1273120,
+      "kind": "explanation",
+      "text": "Inside a foreach loop the loop variable already holds the element value, so you can work with the element directly instead of indexing the array.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1255000,
+          "endMilliseconds": 1273110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#visit-values-directly-with-foreach"
+      }
+    },
+    {
+      "id": "TP-095",
+      "startMilliseconds": 1261600,
+      "endMilliseconds": 1273110,
+      "kind": "explanation",
+      "text": "The foreach element variable behaves exactly like a local variable you declare separately and then use, which is why you may omit that explicit declaration.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1261600,
+          "endMilliseconds": 1273110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#visit-values-directly-with-foreach"
+      }
+    },
+    {
+      "id": "TP-096",
+      "startMilliseconds": 1273120,
+      "endMilliseconds": 1281549,
+      "kind": "explanation",
+      "text": "Declaring the loop variable with var lets you use the element value directly, removing the separate local-variable declaration entirely without changing behaviour.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1273120,
+          "endMilliseconds": 1281549
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#visit-values-directly-with-foreach"
+      }
+    },
+    {
+      "id": "TP-097",
+      "startMilliseconds": 1287520,
+      "endMilliseconds": 1296240,
+      "kind": "explanation",
+      "text": "An if statement evaluates the boolean condition written in its parentheses; in this example it checks whether the current index is greater than or equal to the array length.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1287520,
+          "endMilliseconds": 1296240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-an-if-and-recognize-unreachable-code"
+      }
+    },
+    {
+      "id": "TP-098",
+      "startMilliseconds": 1299919,
+      "endMilliseconds": 1309269,
+      "kind": "reason",
+      "text": "The block attached to the if runs only when the condition holds, and is skipped entirely when the condition is false, which is what guards the access beyond the array bounds.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1299919,
+          "endMilliseconds": 1309269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-an-if-and-recognize-unreachable-code"
+      }
+    },
+    {
+      "id": "TP-099",
+      "startMilliseconds": 1311070,
+      "endMilliseconds": 1320679,
+      "kind": "explanation",
+      "text": "After the if block finishes, execution simply continues with the code that follows it in order.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1311070,
+          "endMilliseconds": 1320679
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-an-if-and-recognize-unreachable-code"
+      }
+    },
+    {
+      "id": "TP-100",
+      "startMilliseconds": 1320679,
+      "endMilliseconds": 1330200,
+      "kind": "edge_case",
+      "text": "When a return follows the check, the code placed after that return never executes, so that trailing code is effectively unreachable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1320679,
+          "endMilliseconds": 1330200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-an-if-and-recognize-unreachable-code"
+      }
+    }
+  ]
+}
