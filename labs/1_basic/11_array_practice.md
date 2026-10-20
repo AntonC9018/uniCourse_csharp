@@ -35,6 +35,8 @@ books[1].title = "Словарь";
 Не используйте циклы.
 Если в условии не сказано иное, считайте, что переданные индексы допустимы, а имеющихся количеств достаточно.
 Все позиции заданы; искать нужные переменные не нужно.
+У первых трёх задач есть возможные решения.
+Остальные задачи решите самостоятельно.
 
 ### 1. Число из спичек
 
@@ -45,6 +47,51 @@ books[1].title = "Словарь";
 Сколько спичек останется неиспользованными?
 Напишите функцию, которая считает, сколько спичек нужно для любых трёх заданных цифр.
 
+<details>
+<summary>Возможное решение</summary>
+
+Модель:
+
+```csharp
+class DigitConfig
+{
+    public int[] matchsticksPerDigit;
+}
+
+class DigitDisplay
+{
+    public int[] digits;
+}
+```
+
+Программа:
+
+```csharp
+DigitConfig config = new()
+{
+    matchsticksPerDigit = new int[] { 6, 2, 5, 5, 4, 5, 6, 3, 7, 6 },
+};
+DigitDisplay original = new() { digits = new int[] { 2, 0, 8 } };
+DigitDisplay replacement = new() { digits = new int[] { 7, 3, 1 } };
+int available = CountMatchsticks(config, original);
+int needed = CountMatchsticks(config, replacement);
+Console.WriteLine(available - needed);
+
+static int CountMatchsticks(DigitConfig config, DigitDisplay display)
+{
+    return config.matchsticksPerDigit[display.digits[0]]
+        + config.matchsticksPerDigit[display.digits[1]]
+        + config.matchsticksPerDigit[display.digits[2]];
+}
+```
+
+Печатает `8`.
+Для цифр числа 208 нужно `5 + 6 + 7 = 18` спичек, а для цифр числа 731 — `3 + 5 + 2 = 10`.
+Каждая цифра выбирает нужное количество спичек из таблицы.
+Для исходного числа `display.digits[0]` даёт `2`, а `config.matchsticksPerDigit[2]` даёт `5`.
+
+</details>
+
 ### 2. Компиляция исходного кода
 
 У исходного кода есть число строк, а у машинного кода — число инструкций.
@@ -53,12 +100,124 @@ books[1].title = "Словарь";
 В этой упрощённой модели для MSVC коэффициенты равны 2.5, 1.5 и 1.25, а для GCC — 3, 1.75 и 1.
 Скомпилируйте 101 строку обоими компиляторами с полной оптимизацией, оставляя только целые инструкции.
 
+<details>
+<summary>Возможное решение</summary>
+
+Модель:
+
+```csharp
+enum OptimizationLevel
+{
+    None,
+    Basic,
+    Full,
+}
+
+class SourceCode
+{
+    public int lineCount;
+}
+
+class MachineCode
+{
+    public int instructionCount;
+}
+
+class Compiler
+{
+    public double[] instructionsPerLine;
+}
+```
+
+Программа:
+
+```csharp
+Compiler msvc = new() { instructionsPerLine = new double[] { 2.5, 1.5, 1.25 } };
+Compiler gcc = new() { instructionsPerLine = new double[] { 3.0, 1.75, 1.0 } };
+SourceCode source = new() { lineCount = 101 };
+MachineCode msvcResult = Compile(msvc, source, OptimizationLevel.Full);
+MachineCode gccResult = Compile(gcc, source, OptimizationLevel.Full);
+Console.WriteLine(msvcResult.instructionCount);
+Console.WriteLine(gccResult.instructionCount);
+
+static MachineCode Compile(Compiler compiler, SourceCode source, OptimizationLevel level)
+{
+    double coefficient = compiler.instructionsPerLine[(int)level];
+    double estimate = source.lineCount * coefficient;
+    return new MachineCode { instructionCount = (int)estimate };
+}
+```
+
+Программа выводит `126` и `101`.
+Для MSVC уровень `Full` выбирает коэффициент `1.25`; умножение даёт `126.25`.
+Преобразование в `int` отбрасывает дробную часть.
+Для GCC тот же уровень выбирает `1`, поэтому получается `101` инструкция.
+Приведение перечисления к `int` даёт индекс коэффициента.
+В выражении `source.lineCount * coefficient` число строк неявно превращается в `double`,
+но само поле `source.lineCount` остаётся `int`.
+
+</details>
+
 ### 3. Отсеки холодильника
 
 В холодильнике три ячейки, в каждой стоит одна бутылка молока.
 В бутылках 100 мл, 300 мл и 200 мл.
 Налейте 120 мл из второй бутылки в пустую чашку.
 Сообщите остаток в этой бутылке, содержимое чашки и количество молока в первой бутылке.
+
+<details>
+<summary>Возможное решение</summary>
+
+Модель:
+
+```csharp
+class MilkBottle
+{
+    public int milkMl;
+}
+
+class Fridge
+{
+    public MilkBottle[] slots;
+}
+
+class Cup
+{
+    public int milkMl;
+}
+```
+
+Программа:
+
+```csharp
+Fridge fridge = new()
+{
+    slots = new MilkBottle[]
+    {
+        new MilkBottle { milkMl = 100 },
+        new MilkBottle { milkMl = 300 },
+        new MilkBottle { milkMl = 200 },
+    },
+};
+Cup cup = new();
+PourMilk(fridge, 1, cup, 120);
+Console.WriteLine(fridge.slots[1].milkMl);
+Console.WriteLine(cup.milkMl);
+Console.WriteLine(fridge.slots[0].milkMl);
+
+static void PourMilk(Fridge fridge, int slotIndex, Cup cup, int amountMl)
+{
+    fridge.slots[slotIndex].milkMl -= amountMl;
+    cup.milkMl += amountMl;
+}
+```
+
+Программа выводит `180`, `120` и `100`.
+`Fridge` и `Cup` — классы, поэтому функция меняет именно переданные объекты:
+класс при передаче параметром не копируется.
+Остальные бутылки не меняются.
+
+</details>
 
 ### 4. Редактирование файла
 
