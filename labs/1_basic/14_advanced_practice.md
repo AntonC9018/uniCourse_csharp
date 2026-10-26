@@ -111,9 +111,18 @@ slug: ru/labs/basic/advanced-practice
 
   ```csharp
   Bookshelf shelf = new();
-  shelf.slots[0] = new Book { title = "Справочник" };
-  shelf.slots[3] = new Book { title = "Словарь" };
-  ShelveBook(shelf, 2, new Book { title = "Атлас" });
+  shelf.slots[0] = new Book
+  {
+      title = "Справочник",
+  };
+  shelf.slots[3] = new Book
+  {
+      title = "Словарь",
+  };
+  ShelveBook(shelf, 2, new Book
+  {
+      title = "Атлас",
+  });
   TakeBook(shelf, 0);
   int free = EmptyCount(shelf);
   ```
@@ -187,7 +196,10 @@ slug: ru/labs/basic/advanced-practice
 
   ```csharp
   Fridge fridge = new();
-  fridge.shelves[1] = new Food { name = "pizza" };
+  fridge.shelves[1] = new Food
+  {
+      name = "pizza",
+  };
   Freezer freezer = new();
   bool moved = MoveFood(fridge, 1, freezer, 0);
   ```
@@ -275,7 +287,11 @@ slug: ru/labs/basic/advanced-practice
 
   ```csharp
   Microwave mw = new();
-  PutMeal(mw, new Meal { name = "soup", warmth = Warmth.Cold });
+  PutMeal(mw, new Meal
+  {
+      name = "soup",
+      warmth = Warmth.Cold,
+  });
   HeatMeal(mw);
   Meal? lunch = TakeMeal(mw);
   ```
@@ -342,8 +358,15 @@ slug: ru/labs/basic/advanced-practice
   Использование в основной функции:
 
   ```csharp
-  Hero hero = new() { health = 50, shield = 0 };
-  DrinkPotion(hero, new Potion { kind = PotionKind.Red });
+  Hero hero = new()
+  {
+      health = 50,
+      shield = 0,
+  };
+  DrinkPotion(hero, new Potion
+  {
+      kind = PotionKind.Red,
+  });
   ```
   </details>
 
@@ -382,7 +405,7 @@ slug: ru/labs/basic/advanced-practice
 
   class Laundry
   {
-      public Basket[] baskets = { new Basket(), new Basket() };
+      public Basket[] baskets = [new Basket(), new Basket()];
   }
   ```
 
@@ -439,9 +462,21 @@ slug: ru/labs/basic/advanced-practice
 
   ```csharp
   Laundry laundry = new();
-  laundry.baskets[0].slots[0] = new Cloth { label = "shirt", state = ClothState.Dirty };
-  laundry.baskets[0].slots[1] = new Cloth { label = "shirt", state = ClothState.Dirty };
-  laundry.baskets[0].slots[2] = new Cloth { label = "shirt", state = ClothState.Clean };
+  laundry.baskets[0].slots[0] = new Cloth
+  {
+      label = "shirt",
+      state = ClothState.Dirty,
+  };
+  laundry.baskets[0].slots[1] = new Cloth
+  {
+      label = "shirt",
+      state = ClothState.Dirty,
+  };
+  laundry.baskets[0].slots[2] = new Cloth
+  {
+      label = "shirt",
+      state = ClothState.Clean,
+  };
   int taken = TakeCleanShirts(laundry.baskets[0]);
   int soaked = SoakBasket(laundry.baskets[0]);
   ```
@@ -552,9 +587,16 @@ slug: ru/labs/basic/advanced-practice
 
   ```csharp
   Fridge fridge = new();
-  fridge.shelves[1] = new Food { name = "pizza" };
+  fridge.shelves[1] = new Food
+  {
+      name = "pizza",
+  };
   Freezer freezer = new();
-  bool moved = MoveFood(fridge, freezer, new FoodMove { name = "pizza", toIndex = 1 });
+  bool moved = MoveFood(fridge, freezer, new FoodMove
+  {
+      name = "pizza",
+      toIndex = 1,
+  });
   ```
   </details>
 
@@ -616,7 +658,7 @@ slug: ru/labs/basic/advanced-practice
   class Shop
   {
       public Client?[] queue = new Client?[4];
-      public Worker[] workers = { new Worker(), new Worker() };
+      public Worker[] workers = [new Worker(), new Worker()];
   }
   ```
 
@@ -785,8 +827,22 @@ slug: ru/labs/basic/advanced-practice
   Клиенты должны существовать дольше салона, потому что салон их никогда не копирует:
 
   ```csharp
-  Client alice = new() { label = "alice", hairCompletion = new() { value = 2 } };
-  Client bob = new() { label = "bob", hairCompletion = new() { value = 3 } };
+  Client alice = new()
+  {
+      label = "alice",
+      hairCompletion = new()
+      {
+          value = 2,
+      },
+  };
+  Client bob = new()
+  {
+      label = "bob",
+      hairCompletion = new()
+      {
+          value = 3,
+      },
+  };
 
   Shop shop = new();
   AddClient(shop, alice);
@@ -902,7 +958,12 @@ slug: ru/labs/basic/advanced-practice
               tripHours -= hours;
               driver.restLeft = driver.restPerDriveHour * hours;
 
-              events[count] = new Event { kind = EventKind.Drive, driver = driver.name, hours = hours };
+              events[count] = new Event
+              {
+                  kind = EventKind.Drive,
+                  driver = driver.name,
+                  hours = hours,
+              };
               count++;
               continue;
           }
@@ -921,7 +982,12 @@ slug: ru/labs/basic/advanced-practice
               drivers[i].restLeft -= idleHours;
           }
 
-          events[count] = new Event { kind = EventKind.Idle, driver = null, hours = idleHours };
+          events[count] = new Event
+          {
+              kind = EventKind.Idle,
+              driver = null,
+              hours = idleHours,
+          };
           count++;
       }
       return count;
@@ -948,12 +1014,27 @@ slug: ru/labs/basic/advanced-practice
   Использование в основной функции:
 
   ```csharp
-  Driver[] drivers = new Driver[]
-  {
-      new Driver { name = "alice", maxDriveHours = 4.0, restPerDriveHour = 0.5 },
-      new Driver { name = "bob", maxDriveHours = 3.0, restPerDriveHour = 1.0 },
-      new Driver { name = "cid", maxDriveHours = 2.0, restPerDriveHour = 2.0 },
-  };
+  Driver[] drivers =
+  [
+      new Driver
+      {
+          name = "alice",
+          maxDriveHours = 4.0,
+          restPerDriveHour = 0.5,
+      },
+      new Driver
+      {
+          name = "bob",
+          maxDriveHours = 3.0,
+          restPerDriveHour = 1.0,
+      },
+      new Driver
+      {
+          name = "cid",
+          maxDriveHours = 2.0,
+          restPerDriveHour = 2.0,
+      },
+  ];
 
   Event[] events = new Event[32];
   int count = GenerateEvents(drivers, 12.0, events);
