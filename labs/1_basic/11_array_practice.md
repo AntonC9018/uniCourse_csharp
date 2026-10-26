@@ -24,7 +24,10 @@ int first = counts[0];
 
 ```csharp
 Book[] books = new Book[3];
-books[1] = new Book { title = "Атлас" };
+books[1] = new Book
+{
+    title = "Атлас",
+};
 books[1].title = "Словарь";
 ```
 
@@ -69,10 +72,16 @@ class DigitDisplay
 ```csharp
 DigitConfig config = new()
 {
-    matchsticksPerDigit = new int[] { 6, 2, 5, 5, 4, 5, 6, 3, 7, 6 },
+    matchsticksPerDigit = [6, 2, 5, 5, 4, 5, 6, 3, 7, 6],
 };
-DigitDisplay original = new() { digits = new int[] { 2, 0, 8 } };
-DigitDisplay replacement = new() { digits = new int[] { 7, 3, 1 } };
+DigitDisplay original = new()
+{
+    digits = [2, 0, 8],
+};
+DigitDisplay replacement = new()
+{
+    digits = [7, 3, 1],
+};
 int available = CountMatchsticks(config, original);
 int needed = CountMatchsticks(config, replacement);
 Console.WriteLine(available - needed);
@@ -132,9 +141,18 @@ class Compiler
 Программа:
 
 ```csharp
-Compiler msvc = new() { instructionsPerLine = new double[] { 2.5, 1.5, 1.25 } };
-Compiler gcc = new() { instructionsPerLine = new double[] { 3.0, 1.75, 1.0 } };
-SourceCode source = new() { lineCount = 101 };
+Compiler msvc = new()
+{
+    instructionsPerLine = [2.5, 1.5, 1.25],
+};
+Compiler gcc = new()
+{
+    instructionsPerLine = [3.0, 1.75, 1.0],
+};
+SourceCode source = new()
+{
+    lineCount = 101,
+};
 MachineCode msvcResult = Compile(msvc, source, OptimizationLevel.Full);
 MachineCode gccResult = Compile(gcc, source, OptimizationLevel.Full);
 Console.WriteLine(msvcResult.instructionCount);
@@ -144,7 +162,10 @@ static MachineCode Compile(Compiler compiler, SourceCode source, OptimizationLev
 {
     double coefficient = compiler.instructionsPerLine[(int)level];
     double estimate = source.lineCount * coefficient;
-    return new MachineCode { instructionCount = (int)estimate };
+    return new MachineCode
+    {
+        instructionCount = (int)estimate,
+    };
 }
 ```
 
@@ -192,12 +213,21 @@ class Cup
 ```csharp
 Fridge fridge = new()
 {
-    slots = new MilkBottle[]
-    {
-        new MilkBottle { milkMl = 100 },
-        new MilkBottle { milkMl = 300 },
-        new MilkBottle { milkMl = 200 },
-    },
+    slots =
+    [
+        new MilkBottle
+        {
+            milkMl = 100,
+        },
+        new MilkBottle
+        {
+            milkMl = 300,
+        },
+        new MilkBottle
+        {
+            milkMl = 200,
+        },
+    ],
 };
 Cup cup = new();
 PourMilk(fridge, 1, cup, 120);
