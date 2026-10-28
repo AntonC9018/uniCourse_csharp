@@ -280,18 +280,20 @@ Returning “to the call” describes resuming its continuation. It does not mea
 
 [00:07:23](https://www.youtube.com/watch?v=jLWY_id6nXU&t=443s) Add another call after the following outside statement. Every call starts the same body at its first instruction; the second call does not resume halfway through the first run:
 
-```csharp
-Console.WriteLine("Anton");
-Example();
-Console.WriteLine("Anton");
-Example();
+The `+` line highlights the added second call; the other lines provide context.
 
-void Example()
-{
-    Console.WriteLine(1);
-    Console.WriteLine(2);
-    Console.WriteLine(3);
-}
+```diff
+ Console.WriteLine("Anton");
+ Example();
+ Console.WriteLine("Anton");
++Example();
+ 
+ void Example()
+ {
+     Console.WriteLine(1);
+     Console.WriteLine(2);
+     Console.WriteLine(3);
+ }
 ```
 
 [00:07:31](https://www.youtube.com/watch?v=jLWY_id6nXU&t=451s) The trace enters the body again and repeats all three actions. The result for this shortened startup sequence is:
