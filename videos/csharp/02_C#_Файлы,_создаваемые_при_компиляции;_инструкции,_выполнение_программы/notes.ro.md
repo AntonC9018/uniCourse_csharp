@@ -281,20 +281,18 @@ Revenirea „la apel” descrie reluarea continuării sale. Nu înseamnă că ac
 
 [00:07:23](https://www.youtube.com/watch?v=jLWY_id6nXU&t=443s) Adaugă un alt apel după instrucțiunea următoare din exterior. Fiecare apel pornește același corp de la prima sa instrucțiune; al doilea apel nu reia de la mijlocul primei rulări:
 
-Linia cu `+` evidențiază al doilea apel adăugat; celelalte linii oferă context.
+```csharp
+Console.WriteLine("Anton");
+Example();
+Console.WriteLine("Anton");
+Example();
 
-```diff
- Console.WriteLine("Anton");
- Example();
- Console.WriteLine("Anton");
-+Example();
- 
- void Example()
- {
-     Console.WriteLine(1);
-     Console.WriteLine(2);
-     Console.WriteLine(3);
- }
+void Example()
+{
+    Console.WriteLine(1);
+    Console.WriteLine(2);
+    Console.WriteLine(3);
+}
 ```
 
 [00:07:31](https://www.youtube.com/watch?v=jLWY_id6nXU&t=451s) Traseul intră din nou în corp și repetă toate cele trei acțiuni. Rezultatul pentru această secvență de pornire scurtată este:

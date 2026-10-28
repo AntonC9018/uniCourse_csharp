@@ -281,20 +281,18 @@ Anton
 
 [00:07:23](https://www.youtube.com/watch?v=jLWY_id6nXU&t=443s) Добавьте ещё один вызов после следующей внешней инструкции. Каждый вызов начинает то же тело с его первой инструкции; второй вызов не продолжает первый запуск с середины:
 
-Строка с `+` выделяет добавленный второй вызов; остальные строки дают контекст.
+```csharp
+Console.WriteLine("Anton");
+Example();
+Console.WriteLine("Anton");
+Example();
 
-```diff
- Console.WriteLine("Anton");
- Example();
- Console.WriteLine("Anton");
-+Example();
- 
- void Example()
- {
-     Console.WriteLine(1);
-     Console.WriteLine(2);
-     Console.WriteLine(3);
- }
+void Example()
+{
+    Console.WriteLine(1);
+    Console.WriteLine(2);
+    Console.WriteLine(3);
+}
 ```
 
 [00:07:31](https://www.youtube.com/watch?v=jLWY_id6nXU&t=451s) Разбор снова входит в тело и повторяет все три действия. Результат для этой сокращённой стартовой последовательности:
