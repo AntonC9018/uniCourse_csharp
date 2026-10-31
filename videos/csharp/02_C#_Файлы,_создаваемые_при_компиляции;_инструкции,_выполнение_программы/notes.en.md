@@ -189,6 +189,10 @@ Hello world!
 
 [00:04:22](https://www.youtube.com/watch?v=jLWY_id6nXU&t=262s) Once the greeting statement finishes, execution proceeds to the following statement, then to the next. [00:04:36](https://www.youtube.com/watch?v=jLWY_id6nXU&t=276s) If an action takes a long time, the following actions wait for it. This description concerns the sequential program in the lesson; it is not a claim about all concurrent programs.
 
+<!-- <course-animation id="sequential-execution" source="internal/scenes/sequential_execution.py"> -->
+https://github.com/user-attachments/assets/9da79a27-081d-45fa-9b17-ea05653ebf37
+<!-- </course-animation> -->
+
 <details>
 <summary>Predict the output if the statement printing 3 moves above the one printing 1.</summary>
 
@@ -212,6 +216,9 @@ Console.WriteLine(3);
 [00:04:55](https://www.youtube.com/watch?v=jLWY_id6nXU&t=295s) The recorded run shows output arriving with one-second gaps. [00:04:57](https://www.youtube.com/watch?v=jLWY_id6nXU&t=297s) While a sleep call is unfinished, the next printing statement has not begun. [00:05:04](https://www.youtube.com/watch?v=jLWY_id6nXU&t=304s) When the delay ends, that call counts as completed, and execution continues.
 
 The order stays the same; the added pauses expose the time spent waiting. Later samples omit the delays to keep the call paths readable. The same completion-before-continuation rule applies if delays remain in a function body.
+
+<!-- <course-animation id="sleep-delay" source="internal/scenes/sleep_delay.py"> -->
+<!-- </course-animation> -->
 
 ## Defining a named sequence
 
@@ -275,6 +282,9 @@ Anton
 ```
 
 Returning “to the call” describes resuming its continuation. It does not mean executing the same call again automatically. The call is completed only after its body finishes.
+
+<!-- <course-animation id="function-call-return" source="internal/scenes/function_call_return.py"> -->
+<!-- </course-animation> -->
 
 ## Running the same body again
 
@@ -408,6 +418,10 @@ Follow each transfer rather than just reading down the entire file:
 5. [00:10:18](https://www.youtube.com/watch?v=jLWY_id6nXU&t=618s) Execution returns to the call site inside `Hello`.
 6. [00:10:25](https://www.youtube.com/watch?v=jLWY_id6nXU&t=625s) Because that was `Hello`'s final instruction, `Hello` also finishes.
 7. [00:10:33](https://www.youtube.com/watch?v=jLWY_id6nXU&t=633s) Execution returns again, this time to the startup call. With nothing after it, the program ends.
+
+<!-- <course-animation id="nested-calls" source="internal/scenes/nested_calls.py"> -->
+https://github.com/user-attachments/assets/60c20ca2-7bb4-43cc-b28c-38698c7d4a16
+<!-- </course-animation> -->
 
 The shorter description “a function calls Hello” works the same way: reverse which body contains the call, and the call enters `Hello` first, prints its three actions in order, and returns to that caller. What matters is the call site and its continuation, not which name is the outer one.
 
