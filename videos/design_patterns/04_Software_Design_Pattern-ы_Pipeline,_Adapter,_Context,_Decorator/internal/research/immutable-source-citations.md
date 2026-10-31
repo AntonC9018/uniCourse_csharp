@@ -1,0 +1,13 @@
+# Immutable sources this note cites, and why each was needed
+
+Established by the `english_authoring` runs (`wo-427c267e…`, run 475, session `01a12266-6f7c-73e1-8629-6ad63314377c`; `wo-5767d299…`, run 499, session `01a12651-6745-7d93-a2d7-f85c4fc7f563`).
+
+- `examples/pipeline/Program.cs` @ `d6e14fd023172f33faba0c4e0be4e8ea62b0ec82` (commit "example", 2025-09-11 16:11:02 +0300, blob `4d4d084a5e93479d2faddb1dda07b7ea6b9207ca`).
+  Holds the whole saved design: `Context`, `IPipelineStep` (`Execute` + `Introspect`), `ChangeOwnerPipelineStep`, `ChangeNamePipelineStep`, `PrintOwnersPipelineStep`, `PrintDogPipelineStep`, the `Pipeline` runner, the `Functions` adapters, and `CreatePipeline()` with its five-step default.
+- `examples/pipeline/Program.cs` @ `df46c75bc2516786091ed07ebc48fe9c47b461c7` (commit "steps", blob `3622df3080f64027848d7273ec0764043c3fd7fb`), direct child of `d6e14fd`.
+  The diff is exactly +35 lines adding `PrintStep_AndExecute_PipelineStep`, so this commit is the evidence for the decorator lesson and the "final inspected state" of the recording.
+- Two commits, not one, because the decorator does not exist in the earlier saved state; the earlier commit cannot prove the wrapper and the later one cannot prove the plain design. Both links appear in the note, and in the note's "Code history trail" section.
+- Every earlier editor state of the video has no commit of its own, so its code links are labelled **related**, never **exact** — both authoring runs applied this rule explicitly. The note says so in its opening scope and again in the code-history trail.
+- Transcript provenance for the note: `internal/transcript.md` sha256 `cd1bff3edef78044ac7db60ef29622e83324cbbc0d0fc2079ae48fd087d134ad`, canonical `internal/transcript.vtt` sha256 `2dea7fd703c59197708a16b9911c1337b5a3e6b2819fe560d96f8c34941e2922`, caption etag `92qEIGiqM5ESOcW7G3_bzT2BWds`, video etag `G6ancGIYLumxXL5aaVm8PakO_cM` (all from `internal/video.json` and the acquisition record). Timestamp links in the note use upload id `X4IDL3CmV-A`.
+- Exercise source: `labs/2_design/02_pipeline.md` (linked relatively as `../../../labs/2_design/02_pipeline.md`). The lab itself points to <https://github.com/AntonC9018/uniCourse_csharp/pull/3> as the step-by-step code from the video — the likely origin of the two commits above. The note cites the lab file but not the pull request; the PR link is worth reusing when provenance of the example is needed.
+- Current checkout state (2026-10-14): the research dossier is tracked by commit `5f519dc`. Treat earlier “untracked” observations as point-in-time status only; the note and course artifacts remain separate from this research commit.

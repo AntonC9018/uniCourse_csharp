@@ -1,0 +1,2630 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "SSTFFX5heuY",
+  "uploadId": "SSTFFX5heuY",
+  "transcriptSha256": "60df8c3a2e1fe50d04d6c334d21b364790aa9f37c451a71ef86535c34a9f55bc",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 240,
+      "endMilliseconds": 46000,
+      "kind": "scope_boundary",
+      "text": "The lesson covers console input via the Console method family, its parameters, how to check and print messages about returned values, and error numbers as constants, exceptions and returning several errors.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 240,
+          "endMilliseconds": 46000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#purpose-and-terms"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 46000,
+      "endMilliseconds": 54349,
+      "kind": "fact",
+      "text": "Console.ReadLine is the console input method introduced here, and instructions in a program execute one after another from top to bottom.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 46000,
+          "endMilliseconds": 54349
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#readline-pauses-sequential-execution"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 59110,
+      "endMilliseconds": 65080,
+      "kind": "fact",
+      "text": "ReadLine exists to read the line the user entered in the console, which is why calling it affects what the program does next.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 59110,
+          "endMilliseconds": 65080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#readline-pauses-sequential-execution"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 65080,
+      "endMilliseconds": 71770,
+      "kind": "test_result",
+      "text": "Running the sample program shows only the first line executing, confirming that code runs top to bottom.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 65080,
+          "endMilliseconds": 71770
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#readline-pauses-sequential-execution"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 71770,
+      "endMilliseconds": 85840,
+      "kind": "test_result",
+      "text": "After the first line the program appears to hang on the input line because it is waiting for the user to type something.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 71770,
+          "endMilliseconds": 85840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#readline-pauses-sequential-execution"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 77560,
+      "endMilliseconds": 85840,
+      "kind": "test_result",
+      "text": "The program stays on the input line until the user enters something, so nothing after the read is executed in the meantime.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 77560,
+          "endMilliseconds": 85840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#readline-pauses-sequential-execution"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 85840,
+      "endMilliseconds": 96389,
+      "kind": "explanation",
+      "text": "Once the user enters a value the read operation finishes, the program receives that string, and only then does execution move to the next line.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 85840,
+          "endMilliseconds": 96389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#readline-pauses-sequential-execution"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 96389,
+      "endMilliseconds": 103550,
+      "kind": "explanation",
+      "text": "A line on which the program hangs is waiting for user input and performs no further actions until something is entered.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 96389,
+          "endMilliseconds": 103550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#readline-pauses-sequential-execution"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 103550,
+      "endMilliseconds": 113710,
+      "kind": "edge_case",
+      "text": "Waiting is not limited to console input: a database response or reading a file can block a line in the same way.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 103550,
+          "endMilliseconds": 113710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#readline-pauses-sequential-execution"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 113710,
+      "endMilliseconds": 118470,
+      "kind": "fact",
+      "text": "A program that does nothing but sit and wait is said to be blocked on that instruction.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 113710,
+          "endMilliseconds": 118470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#readline-pauses-sequential-execution"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 118470,
+      "endMilliseconds": 131710,
+      "kind": "explanation",
+      "text": "While the program is blocked no unblocking event happens, so it will not proceed to the next line until the user enters a string.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 118470,
+          "endMilliseconds": 131710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#readline-pauses-sequential-execution"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 131710,
+      "endMilliseconds": 144780,
+      "kind": "explanation",
+      "text": "After the blocking ends the program runs normally again, one instruction at a time from top to bottom, so ReadLine itself can be used to block execution.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 131710,
+          "endMilliseconds": 144780
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#readline-pauses-sequential-execution"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 144780,
+      "endMilliseconds": 155000,
+      "kind": "fact",
+      "text": "ReadLine returns a nullable string, and the question mark shown in its definition was explained in an earlier video.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 144780,
+          "endMilliseconds": 154920
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 147120,
+          "endMilliseconds": 155000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#capture-nullable-input"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 155000,
+      "endMilliseconds": 161500,
+      "kind": "reason",
+      "text": "The function is declared as possibly returning null because the input may come from a source other than the console.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 155000,
+          "endMilliseconds": 161500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#capture-nullable-input"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 161500,
+      "endMilliseconds": 170110,
+      "kind": "fact",
+      "text": "The result of ReadLine can be assigned to a string variable, which then holds whatever the user typed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 161500,
+          "endMilliseconds": 170110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#capture-nullable-input"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 170110,
+      "endMilliseconds": 186430,
+      "kind": "edge_case",
+      "text": "If input is redirected from a file that has no more lines, ReadLine yields null instead of an empty string, which is why the variable type carries the question mark.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 170110,
+          "endMilliseconds": 186430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#capture-nullable-input"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 186430,
+      "endMilliseconds": 197390,
+      "kind": "edge_case",
+      "text": "When a program is guaranteed to read only from the console the question mark could be dropped, but the compiler would then warn about possible nulls.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 186430,
+          "endMilliseconds": 197390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#capture-nullable-input"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 197390,
+      "endMilliseconds": 210000,
+      "kind": "code_change",
+      "text": "Appending an exclamation mark after the expression suppresses that nullable warning by telling the compiler the value will not be null.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 197390,
+          "endMilliseconds": 210000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#capture-nullable-input"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 210000,
+      "endMilliseconds": 222920,
+      "kind": "fact",
+      "text": "This suppressor operator is called the null-forgiving operator, and other ways of handling it are left for later.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 210000,
+          "endMilliseconds": 222920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#capture-nullable-input"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 213840,
+      "endMilliseconds": 229670,
+      "kind": "explanation",
+      "text": "The null-forgiving operator is placed after the expression and tells the compiler the expression will not be null.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 213840,
+          "endMilliseconds": 229670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#capture-nullable-input"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 229670,
+      "endMilliseconds": 250990,
+      "kind": "test_result",
+      "text": "With the input stored in a string variable, running the program prints World, waits for input, and then prints back exactly what the user entered.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 229670,
+          "endMilliseconds": 250990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#echo-the-entered-text"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 250990,
+      "endMilliseconds": 264430,
+      "kind": "fact",
+      "text": "Even when the user types a number, ReadLine stores it as a sequence of characters and not as a numeric value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 250990,
+          "endMilliseconds": 264430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#echo-the-entered-text"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 264430,
+      "endMilliseconds": 283720,
+      "kind": "explanation",
+      "text": "To get a numeric variable the input must be converted, which a calculator that asks for two numbers would need in order to add them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 264430,
+          "endMilliseconds": 283720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-calculator-from-strings"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 283720,
+      "endMilliseconds": 289390,
+      "kind": "edge_case",
+      "text": "Omitting the line break in the prompt makes the user type the input on the same line as the printed text.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 283720,
+          "endMilliseconds": 289390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-calculator-from-strings"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 289390,
+      "endMilliseconds": 300440,
+      "kind": "explanation",
+      "text": "Applying the plus operator to the two read values concatenates the strings instead of adding numbers, because both sides are strings.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 289390,
+          "endMilliseconds": 300440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-calculator-from-strings"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 291639,
+      "endMilliseconds": 300430,
+      "kind": "explanation",
+      "text": "Writing a + b between two strings concatenates them instead of adding numbers, because the plus operator binds to string types.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 291639,
+          "endMilliseconds": 300430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-calculator-from-strings"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 300430,
+      "endMilliseconds": 310270,
+      "kind": "code_change",
+      "text": "To add the two entered values, the sum must be computed as a + b explicitly, which requires both inputs to be numbers.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 300430,
+          "endMilliseconds": 310270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-calculator-from-strings"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 310270,
+      "endMilliseconds": 314870,
+      "kind": "reason",
+      "text": "Because Console input is always a string, both values read from the console must be converted to int before arithmetic.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 310270,
+          "endMilliseconds": 314870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-calculator-from-strings"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 314870,
+      "endMilliseconds": 323950,
+      "kind": "explanation",
+      "text": "The read values are declared as string a and string b, so they hold text rather than numbers.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 314870,
+          "endMilliseconds": 323950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-calculator-from-strings"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 323950,
+      "endMilliseconds": 330390,
+      "kind": "fact",
+      "text": "To obtain the numeric value, the string must be converted using a function belonging to the int type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 323950,
+          "endMilliseconds": 330390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#parse-both-operands-and-observe-failures"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 330390,
+      "endMilliseconds": 340310,
+      "kind": "fact",
+      "text": "The function to use is int.Parse, since the int type exposes methods that can be called like this.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 330390,
+          "endMilliseconds": 340310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#parse-both-operands-and-observe-failures"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 340310,
+      "endMilliseconds": 358550,
+      "kind": "explanation",
+      "text": "int.Parse takes a string and returns that text as a number when the string is a valid decimal representation of a number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 340310,
+          "endMilliseconds": 358550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#parse-both-operands-and-observe-failures"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 358550,
+      "endMilliseconds": 367469,
+      "kind": "edge_case",
+      "text": "If the string passed to int.Parse is not a number, for example \"hjkl\", the runtime throws an unhandled exception and the program crashes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 358550,
+          "endMilliseconds": 367469
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#parse-both-operands-and-observe-failures"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 367479,
+      "endMilliseconds": 376520,
+      "kind": "code_change",
+      "text": "The same int.Parse conversion is applied to b so that both operands are numeric before summing.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 367479,
+          "endMilliseconds": 376520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#parse-both-operands-and-observe-failures"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 376520,
+      "endMilliseconds": 390629,
+      "kind": "fact",
+      "text": "With the conversions in place, running the program reads both numbers from the console and prints their sum.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 376520,
+          "endMilliseconds": 390629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#parse-both-operands-and-observe-failures"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 390629,
+      "endMilliseconds": 398790,
+      "kind": "test_result",
+      "text": "Entering a number for a produces the printed sum, but entering a non-numeric value instead raises an exception.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 390629,
+          "endMilliseconds": 398790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#parse-both-operands-and-observe-failures"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 398790,
+      "endMilliseconds": 407350,
+      "kind": "edge_case",
+      "text": "Even when a is entered correctly, a wrong b still triggers the same exception and the program crashes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 398790,
+          "endMilliseconds": 407350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#parse-both-operands-and-observe-failures"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 407350,
+      "endMilliseconds": 425360,
+      "kind": "reason",
+      "text": "Requesting several numbers means a mistake on the second one forces the user to retype the first number, which is inconvenient.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 407350,
+          "endMilliseconds": 425360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#parse-both-operands-and-observe-failures"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 425360,
+      "endMilliseconds": 441950,
+      "kind": "scope_boundary",
+      "text": "Ideally the program should keep asking for the number until the user enters a string that can be parsed as a number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 425360,
+          "endMilliseconds": 441950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#parse-both-operands-and-observe-failures"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 441950,
+      "endMilliseconds": 449840,
+      "kind": "code_change",
+      "text": "To achieve that, int.Parse is replaced by another function, and out parameters are introduced so the function can report success or failure.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 441950,
+          "endMilliseconds": 449840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-out-parameter-writes-into-the-caller"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 443120,
+      "endMilliseconds": 449840,
+      "kind": "code_change",
+      "text": "To validate input, the function is changed to one that uses out parameters, which are explained before use.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 443120,
+          "endMilliseconds": 449840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-out-parameter-writes-into-the-caller"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 449840,
+      "endMilliseconds": 461950,
+      "kind": "explanation",
+      "text": "The demo shows that running the example leaves p holding a value, motivating the question of how the out parameter is wired up.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 449840,
+          "endMilliseconds": 461950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-out-parameter-writes-into-the-caller"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 461950,
+      "endMilliseconds": 470270,
+      "kind": "explanation",
+      "text": "The example relies only on temporary stack memory that holds local variables and parameters, so the author draws the memory instead.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 461950,
+          "endMilliseconds": 470270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-out-parameter-writes-into-the-caller"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 470270,
+      "endMilliseconds": 481230,
+      "kind": "explanation",
+      "text": "The first instruction creates a local variable named p capable of holding whole numbers, initially uninitialized.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 470270,
+          "endMilliseconds": 481230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-out-parameter-writes-into-the-caller"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 481230,
+      "endMilliseconds": 493590,
+      "kind": "fact",
+      "text": "Calling OutExample creates a local variable for each of its parameters, so a local named output appears.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 481230,
+          "endMilliseconds": 493590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-out-parameter-writes-into-the-caller"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 493590,
+      "endMilliseconds": 502270,
+      "kind": "fact",
+      "text": "The out parameter named output stores an address: plain int means a number, while out int means the address of a number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 493590,
+          "endMilliseconds": 502270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-out-parameter-writes-into-the-caller"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 502270,
+      "endMilliseconds": 512710,
+      "kind": "reason",
+      "text": "An address matters because in managed memory every object, and every local variable, sits at some memory address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 502270,
+          "endMilliseconds": 512710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-out-parameter-writes-into-the-caller"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 512880,
+      "endMilliseconds": 520519,
+      "kind": "fact",
+      "text": "Local variables also occupy an address in the same way, so the out parameter can refer back to the caller variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 512880,
+          "endMilliseconds": 520519
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-out-parameter-writes-into-the-caller"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 520519,
+      "endMilliseconds": 534829,
+      "kind": "explanation",
+      "text": "Local variables are laid out one after another, for example at address 10000 and then 10008, because each occupies its own memory cells.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 520519,
+          "endMilliseconds": 534829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-out-parameter-writes-into-the-caller"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 534829,
+      "endMilliseconds": 545150,
+      "kind": "explanation",
+      "text": "The address of the next variable grows by as many cells as were allocated for the previous variable, and the direction is an implementation detail.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 534829,
+          "endMilliseconds": 545150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-out-parameter-writes-into-the-caller"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 545150,
+      "endMilliseconds": 556470,
+      "kind": "fact",
+      "text": "Passing a as an out parameter writes a's address into the local variable output, which is what links the two scopes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 545150,
+          "endMilliseconds": 556470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-out-parameter-writes-into-the-caller"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 556470,
+      "endMilliseconds": 568550,
+      "kind": "explanation",
+      "text": "Using output = 5 does not reference the address itself but the memory cell located at that address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 556470,
+          "endMilliseconds": 568550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-out-parameter-writes-into-the-caller"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 568550,
+      "endMilliseconds": 581120,
+      "kind": "explanation",
+      "text": "When the compiler sees output = 5 it checks the declared type of output and finds it is linked to a parameter marked out.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 568550,
+          "endMilliseconds": 581120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-out-parameter-writes-into-the-caller"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 581120,
+      "endMilliseconds": 594839,
+      "kind": "explanation",
+      "text": "Because out marks the local as holding an address, the compiler resolves output to that address and writes the value into the referenced cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 581120,
+          "endMilliseconds": 594839
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-out-parameter-writes-into-the-caller"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 586160,
+      "endMilliseconds": 605750,
+      "kind": "explanation",
+      "text": "An out parameter inside the function is a local variable that stores the address of the caller's variable, so writing through it puts the right-hand-side value into that caller's variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 586160,
+          "endMilliseconds": 605750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-out-parameter-writes-into-the-caller"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 605750,
+      "endMilliseconds": 625310,
+      "kind": "fact",
+      "text": "When a function runs out of instructions it finishes and control returns to the point of its call, where the locals used during the call are removed and the next statement prints the 5 that the function wrote.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 605750,
+          "endMilliseconds": 625310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-out-parameter-writes-into-the-caller"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 625310,
+      "endMilliseconds": 645270,
+      "kind": "code_change",
+      "text": "A more complex example has the function return a bool that is saved into another variable and printed, and running it shows True while a still holds 5.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 625310,
+          "endMilliseconds": 645270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-call-can-produce-two-results"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 645270,
+      "endMilliseconds": 659590,
+      "kind": "explanation",
+      "text": "Step by step, variable a is created first and already owns some memory address although it is not yet initialized, which sets up the trace of address passing.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 645270,
+          "endMilliseconds": 659590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-call-can-produce-two-results"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 659590,
+      "endMilliseconds": 665480,
+      "kind": "explanation",
+      "text": "The next statement creates variable b, whose memory cell is allocated at address 10.4 and is still uninitialized at that moment.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 659590,
+          "endMilliseconds": 665480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-call-can-produce-two-results"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 665480,
+      "endMilliseconds": 679470,
+      "kind": "explanation",
+      "text": "Assigning the call result to b means the whole call expression must be evaluated first, which requires calling function a and, for each of its parameters, creating a stack local that holds the address of the caller's variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 665480,
+          "endMilliseconds": 679470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-call-can-produce-two-results"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 679470,
+      "endMilliseconds": 703990,
+      "kind": "explanation",
+      "text": "Inside the function the first instruction writes 5 through the passed address, then return true replaces the whole call expression with True, so on return that True is what gets stored into b.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 679470,
+          "endMilliseconds": 703990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-call-can-produce-two-results"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 703990,
+      "endMilliseconds": 723110,
+      "kind": "fact",
+      "text": "After the function ends its locals created for the call are removed again, and execution continues on the next line printing b as True along with a and 5.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 703990,
+          "endMilliseconds": 723110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-call-can-produce-two-results"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 723110,
+      "endMilliseconds": 733160,
+      "kind": "explanation",
+      "text": "In other words the out modifier means that after the function body runs it writes its output into the variable that was passed in.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 723110,
+          "endMilliseconds": 733160
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 725279,
+          "endMilliseconds": 733160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-call-can-produce-two-results"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 733160,
+      "endMilliseconds": 764350,
+      "kind": "fact",
+      "text": "Besides the value written through an out parameter, the call expression itself can still have its own value, so a function can return a second result that becomes the result of the call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 733160,
+          "endMilliseconds": 764350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-call-can-produce-two-results"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 764350,
+      "endMilliseconds": 778990,
+      "kind": "reason",
+      "text": "If an out parameter is never assigned inside the function the compiler reports an error, because the local would otherwise stay uninitialized at exit, so something must always be written to it before leaving.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 764350,
+          "endMilliseconds": 778990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-call-can-produce-two-results"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 778990,
+      "endMilliseconds": 802230,
+      "kind": "fact",
+      "text": "int.TryParse takes a string representation of a number from the console, stores the numeric value in its out parameter b, and returns true when the string is a number or false when it is not.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 778990,
+          "endMilliseconds": 802230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#tryparse-separates-success-from-the-number"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 795480,
+      "endMilliseconds": 806040,
+      "kind": "test_result",
+      "text": "Running the example with the input 1234 parsed as an integer makes b true and puts the parsed result into a.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 795480,
+          "endMilliseconds": 806040
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 802230,
+          "endMilliseconds": 806040
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#tryparse-separates-success-from-the-number"
+      }
+    },
+    {
+      "id": "TP-068",
+      "startMilliseconds": 806040,
+      "endMilliseconds": 832590,
+      "kind": "edge_case",
+      "text": "If the input is not a number then b is false and a receives its default value, zero, because an out variable cannot remain uninitialized after the call since a reference to it was passed as the parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 806040,
+          "endMilliseconds": 832590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#tryparse-separates-success-from-the-number"
+      }
+    },
+    {
+      "id": "TP-069",
+      "startMilliseconds": 832590,
+      "endMilliseconds": 855630,
+      "kind": "explanation",
+      "text": "out also allows declaring the variable right at the call site, as in out int a, which creates the variable there and then passes its reference into the function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 832590,
+          "endMilliseconds": 855630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#tryparse-separates-success-from-the-number"
+      }
+    },
+    {
+      "id": "TP-070",
+      "startMilliseconds": 855630,
+      "endMilliseconds": 883240,
+      "kind": "code_change",
+      "text": "The code is rewritten with int.TryParse so that a non-numeric input causes the program to ask for the number again, passing a reference to a into the call and branching on the returned bool to decide whether parsing succeeded.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 855630,
+          "endMilliseconds": 883240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-retry-loop"
+      }
+    },
+    {
+      "id": "TP-071",
+      "startMilliseconds": 873040,
+      "endMilliseconds": 883230,
+      "kind": "explanation",
+      "text": "int.TryParse fills the variable by reference and returns a bool saying whether parsing succeeded, which lets the program branch on invalid input.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 873040,
+          "endMilliseconds": 883230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-retry-loop"
+      }
+    },
+    {
+      "id": "TP-072",
+      "startMilliseconds": 884240,
+      "endMilliseconds": 892310,
+      "kind": "reason",
+      "text": "After a failed parse the program must return to the point where input is read again, which is simplest to express with an infinite loop plus goto to a label.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 884240,
+          "endMilliseconds": 892310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-retry-loop"
+      }
+    },
+    {
+      "id": "TP-073",
+      "startMilliseconds": 892320,
+      "endMilliseconds": 902269,
+      "kind": "explanation",
+      "text": "The goto jumps up to the input label when parsing did not succeed, and the code after the label is what handles the successful-parse case that exits the loop.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 892320,
+          "endMilliseconds": 902269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-retry-loop"
+      }
+    },
+    {
+      "id": "TP-074",
+      "startMilliseconds": 902279,
+      "endMilliseconds": 908949,
+      "kind": "code_change",
+      "text": "The label must be placed exactly at the start of the cycle so the jump lands on the input request.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 902279,
+          "endMilliseconds": 908949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-retry-loop"
+      }
+    },
+    {
+      "id": "TP-075",
+      "startMilliseconds": 908959,
+      "endMilliseconds": 919189,
+      "kind": "reason",
+      "text": "When parsing fails the jump skips the rest of the body and returns to the loop start, so the exit branch is only reached in the parsed case.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 908959,
+          "endMilliseconds": 919189
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-retry-loop"
+      }
+    },
+    {
+      "id": "TP-076",
+      "startMilliseconds": 919199,
+      "endMilliseconds": 928189,
+      "kind": "explanation",
+      "text": "On a failed parse the code after the goto is not executed and control returns to the beginning of the cycle.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 919199,
+          "endMilliseconds": 928189
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-retry-loop"
+      }
+    },
+    {
+      "id": "TP-077",
+      "startMilliseconds": 929199,
+      "endMilliseconds": 941269,
+      "kind": "reason",
+      "text": "A variable declared inside the loop body is not visible outside that block, so its declaration must be moved out to where the later code can see it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 929199,
+          "endMilliseconds": 941269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-retry-loop"
+      }
+    },
+    {
+      "id": "TP-078",
+      "startMilliseconds": 941279,
+      "endMilliseconds": 949670,
+      "kind": "scope_boundary",
+      "text": "Beyond mere parseability the program additionally requires that the input value be positive.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 941279,
+          "endMilliseconds": 949670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-a-positive-integer"
+      }
+    },
+    {
+      "id": "TP-079",
+      "startMilliseconds": 949680,
+      "endMilliseconds": 966240,
+      "kind": "explanation",
+      "text": "Rewriting the retry as continue is the clean form: continue means go to the next iteration, skipping the code that follows it and returning to the top of the loop.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 949680,
+          "endMilliseconds": 966240
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 959600,
+          "endMilliseconds": 966230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-a-positive-integer"
+      }
+    },
+    {
+      "id": "TP-080",
+      "startMilliseconds": 966240,
+      "endMilliseconds": 975470,
+      "kind": "code_change",
+      "text": "Add a check that when parsing succeeded the value is greater than or equal to zero, otherwise the value is unusable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 966240,
+          "endMilliseconds": 975470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-a-positive-integer"
+      }
+    },
+    {
+      "id": "TP-081",
+      "startMilliseconds": 975480,
+      "endMilliseconds": 987470,
+      "kind": "code_change",
+      "text": "When the value is less than or equal to zero the program should print an error like Number must be ... and redo the whole input cycle.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 975480,
+          "endMilliseconds": 987470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-a-positive-integer"
+      }
+    },
+    {
+      "id": "TP-082",
+      "startMilliseconds": 987480,
+      "endMilliseconds": 994430,
+      "kind": "explanation",
+      "text": "The same continue statement is reused for this second failure case to jump back to the top of the loop.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 987480,
+          "endMilliseconds": 994430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-a-positive-integer"
+      }
+    },
+    {
+      "id": "TP-083",
+      "startMilliseconds": 994440,
+      "endMilliseconds": 1000949,
+      "kind": "code_change",
+      "text": "When parsing succeeded and the value is greater than zero, the loop can be exited because the input is finally valid.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 994440,
+          "endMilliseconds": 1000949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-a-positive-integer"
+      }
+    },
+    {
+      "id": "TP-084",
+      "startMilliseconds": 1000949,
+      "endMilliseconds": 1015160,
+      "kind": "test_result",
+      "text": "Running the program with a letter instead of a number produces the error saying the value must be positive and asks for input again.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1000949,
+          "endMilliseconds": 1015160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-a-positive-integer"
+      }
+    },
+    {
+      "id": "TP-085",
+      "startMilliseconds": 1015240,
+      "endMilliseconds": 1017820,
+      "kind": "test_result",
+      "text": "Entering a positive number lets the program proceed to reading the second value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1015240,
+          "endMilliseconds": 1017820
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-a-positive-integer"
+      }
+    },
+    {
+      "id": "TP-086",
+      "startMilliseconds": 1017860,
+      "endMilliseconds": 1025570,
+      "kind": "reason",
+      "text": "The next problem is that the second input needs exactly the same validation logic as the first one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1017860,
+          "endMilliseconds": 1025570
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-inputint-helper"
+      }
+    },
+    {
+      "id": "TP-087",
+      "startMilliseconds": 1025600,
+      "endMilliseconds": 1033169,
+      "kind": "code_change",
+      "text": "The duplicated block must be rewritten for the second variable: prompt for B, parse into B and print B.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1025600,
+          "endMilliseconds": 1033169
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-inputint-helper"
+      }
+    },
+    {
+      "id": "TP-088",
+      "startMilliseconds": 1038679,
+      "endMilliseconds": 1045480,
+      "kind": "reason",
+      "text": "The identical validation code is now duplicated for two variables, and the standard fix when you see duplicated code is to extract it into a function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1038679,
+          "endMilliseconds": 1043330
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1040520,
+          "endMilliseconds": 1045480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-inputint-helper"
+      }
+    },
+    {
+      "id": "TP-089",
+      "startMilliseconds": 1045480,
+      "endMilliseconds": 1054130,
+      "kind": "code_change",
+      "text": "The extracted helper is given one name such as InputInt and it is called for whichever variable still needs to be read.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1045480,
+          "endMilliseconds": 1054130
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-inputint-helper"
+      }
+    },
+    {
+      "id": "TP-090",
+      "startMilliseconds": 1054320,
+      "endMilliseconds": 1060090,
+      "kind": "explanation",
+      "text": "What varies between the two copies is only the variable name and where the result is written, so the helper depends on exactly those things.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1054320,
+          "endMilliseconds": 1060090
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-inputint-helper"
+      }
+    },
+    {
+      "id": "TP-091",
+      "startMilliseconds": 1061000,
+      "endMilliseconds": 1068169,
+      "kind": "code_change",
+      "text": "The helper is declared to return int, since a validated positive number is what the caller needs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1061000,
+          "endMilliseconds": 1068169
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-inputint-helper"
+      }
+    },
+    {
+      "id": "TP-092",
+      "startMilliseconds": 1068200,
+      "endMilliseconds": 1075590,
+      "kind": "explanation",
+      "text": "The differing variable name becomes a parameter of the helper, which lets the same body serve both variables.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1068200,
+          "endMilliseconds": 1075590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-inputint-helper"
+      }
+    },
+    {
+      "id": "TP-093",
+      "startMilliseconds": 1075590,
+      "endMilliseconds": 1082800,
+      "kind": "reason",
+      "text": "Once the code moves into the helper the caller variable no longer exists there, so the helper must create its own variable for the parsed value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1075590,
+          "endMilliseconds": 1082800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-inputint-helper"
+      }
+    },
+    {
+      "id": "TP-094",
+      "startMilliseconds": 1082830,
+      "endMilliseconds": 1085350,
+      "kind": "edge_case",
+      "text": "That internal variable may even be declared inside the helper's own retry loop, because it only needs to be visible for the rest of the helper.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1082830,
+          "endMilliseconds": 1085350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-inputint-helper"
+      }
+    },
+    {
+      "id": "TP-095",
+      "startMilliseconds": 1094880,
+      "endMilliseconds": 1100950,
+      "kind": "explanation",
+      "text": "Instead of break, the helper uses return to leave the retry loop, which exits the entire function and hands the validated value to the caller.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1094880,
+          "endMilliseconds": 1100950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-inputint-helper"
+      }
+    },
+    {
+      "id": "TP-096",
+      "startMilliseconds": 1100950,
+      "endMilliseconds": 1123880,
+      "kind": "explanation",
+      "text": "The out modifier can be combined with the variable declaration at the call site, so the caller's variable receives the parsed result directly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1100950,
+          "endMilliseconds": 1123880
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1115640,
+          "endMilliseconds": 1118610
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-inputint-helper"
+      }
+    },
+    {
+      "id": "TP-097",
+      "startMilliseconds": 1122910,
+      "endMilliseconds": 1132910,
+      "kind": "code_change",
+      "text": "With the helper in place both retry loops disappear from the caller, which now just calls the helper once for each variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1122910,
+          "endMilliseconds": 1132910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-the-inputint-helper"
+      }
+    },
+    {
+      "id": "TP-098",
+      "startMilliseconds": 1145230,
+      "endMilliseconds": 1156300,
+      "kind": "reason",
+      "text": "The same behavior could be written with a do-while whose condition contains the parse-and-check logic, but that is a bad idea.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1145230,
+          "endMilliseconds": 1156300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-reading-and-checks-in-separate-steps"
+      }
+    },
+    {
+      "id": "TP-099",
+      "startMilliseconds": 1156320,
+      "endMilliseconds": 1163200,
+      "kind": "explanation",
+      "text": "That approach would force the program to read the input string, parse it and test the result inside the while condition, which muddles input handling with loop control.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1156320,
+          "endMilliseconds": 1163200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-reading-and-checks-in-separate-steps"
+      }
+    },
+    {
+      "id": "TP-100",
+      "startMilliseconds": 1163200,
+      "endMilliseconds": 1170490,
+      "kind": "fact",
+      "text": "A while loop evaluates its condition first, so a read-and-parse condition would fail before any input was read.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1163200,
+          "endMilliseconds": 1170490
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-reading-and-checks-in-separate-steps"
+      }
+    },
+    {
+      "id": "TP-101",
+      "startMilliseconds": 1170490,
+      "endMilliseconds": 1184650,
+      "kind": "fact",
+      "text": "A do-while executes its body once unconditionally and only then tests the condition, repeating the body while the condition holds.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1170490,
+          "endMilliseconds": 1184650
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-reading-and-checks-in-separate-steps"
+      }
+    },
+    {
+      "id": "TP-102",
+      "startMilliseconds": 1184660,
+      "endMilliseconds": 1192550,
+      "kind": "scope_boundary",
+      "text": "Only the input request itself could be moved into a do-while; the validation logic stays outside the loop.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1184660,
+          "endMilliseconds": 1192550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-reading-and-checks-in-separate-steps"
+      }
+    },
+    {
+      "id": "TP-103",
+      "startMilliseconds": 1195310,
+      "endMilliseconds": 1200990,
+      "kind": "reason",
+      "text": "Console.ReadLine cannot be moved inside the do block, because its result is needed as part of the condition.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1195310,
+          "endMilliseconds": 1200990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-reading-and-checks-in-separate-steps"
+      }
+    },
+    {
+      "id": "TP-104",
+      "startMilliseconds": 1200990,
+      "endMilliseconds": 1208590,
+      "kind": "reason",
+      "text": "The string returned by ReadLine exists only inside the do body, so the condition outside cannot see it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1200990,
+          "endMilliseconds": 1208590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-reading-and-checks-in-separate-steps"
+      }
+    },
+    {
+      "id": "TP-105",
+      "startMilliseconds": 1208559,
+      "endMilliseconds": 1211980,
+      "kind": "scope_boundary",
+      "text": "The value returned by parsing input exists only inside the current iteration of the loop, so the result of parsing must be handled right there inside the console-reading loop.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1208559,
+          "endMilliseconds": 1211980
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-reading-and-checks-in-separate-steps"
+      }
+    },
+    {
+      "id": "TP-106",
+      "startMilliseconds": 1208590,
+      "endMilliseconds": 1220000,
+      "kind": "explanation",
+      "text": "The correct shape is to read the console line before the loop and parse it into a separate result variable that the condition can inspect.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1208590,
+          "endMilliseconds": 1220000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-reading-and-checks-in-separate-steps"
+      }
+    },
+    {
+      "id": "TP-107",
+      "startMilliseconds": 1212000,
+      "endMilliseconds": 1215950,
+      "kind": "code_change",
+      "text": "Save the parse result into a separate result variable so the parsing outcome can be checked afterwards.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1212000,
+          "endMilliseconds": 1215950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-reading-and-checks-in-separate-steps"
+      }
+    },
+    {
+      "id": "TP-108",
+      "startMilliseconds": 1215990,
+      "endMilliseconds": 1222850,
+      "kind": "reason",
+      "text": "Because parsing can silently fail, the code must check whether the input was actually parsed and repeat the loop when it was not.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1215990,
+          "endMilliseconds": 1222850
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-reading-and-checks-in-separate-steps"
+      }
+    },
+    {
+      "id": "TP-109",
+      "startMilliseconds": 1228280,
+      "endMilliseconds": 1231510,
+      "kind": "edge_case",
+      "text": "Even a successfully parsed value is unusable if it is zero or negative, so a parsed result of <= 0 must also trigger another loop iteration.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1228280,
+          "endMilliseconds": 1231510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-reading-and-checks-in-separate-steps"
+      }
+    },
+    {
+      "id": "TP-110",
+      "startMilliseconds": 1231520,
+      "endMilliseconds": 1238029,
+      "kind": "reason",
+      "text": "Cramping parsing, checking and error printing into one statement makes it impossible to add specific error output for each failure case.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1231520,
+          "endMilliseconds": 1238029
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-reading-and-checks-in-separate-steps"
+      }
+    },
+    {
+      "id": "TP-111",
+      "startMilliseconds": 1242200,
+      "endMilliseconds": 1250990,
+      "kind": "correction",
+      "text": "Compressing several operations into a single line is the wrong approach and should never be used, because each step then becomes impossible to extend or debug.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1242200,
+          "endMilliseconds": 1250990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-reading-and-checks-in-separate-steps"
+      }
+    },
+    {
+      "id": "TP-112",
+      "startMilliseconds": 1249350,
+      "endMilliseconds": 1254000,
+      "kind": "code_change",
+      "text": "Instead, use an infinite loop and exit from it manually once the input is valid, which keeps control over every exit condition.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1249350,
+          "endMilliseconds": 1254000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-reading-and-checks-in-separate-steps"
+      }
+    },
+    {
+      "id": "TP-113",
+      "startMilliseconds": 1254000,
+      "endMilliseconds": 1265890,
+      "kind": "reason",
+      "text": "Putting one operation per line lets you append extra logic after each step and makes the code easy to modify, so this style is much better than chained one-liners.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1254000,
+          "endMilliseconds": 1265890
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-reading-and-checks-in-separate-steps"
+      }
+    },
+    {
+      "id": "TP-114",
+      "startMilliseconds": 1266000,
+      "endMilliseconds": 1272130,
+      "kind": "fact",
+      "text": "Exit and repeat conditions do not have to live on a single line; you may place the exit condition and the continue-loop condition one after another.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1266000,
+          "endMilliseconds": 1272130
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-reading-and-checks-in-separate-steps"
+      }
+    },
+    {
+      "id": "TP-115",
+      "startMilliseconds": 1272220,
+      "endMilliseconds": 1276030,
+      "kind": "reason",
+      "text": "Splitting each operation onto its own line also makes the code much easier to debug.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1272220,
+          "endMilliseconds": 1276030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-reading-and-checks-in-separate-steps"
+      }
+    },
+    {
+      "id": "TP-116",
+      "startMilliseconds": 1276040,
+      "endMilliseconds": 1280510,
+      "kind": "scope_boundary",
+      "text": "The lesson moves on from reading numbers to discussing validation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1276040,
+          "endMilliseconds": 1280510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#validate-the-values-together"
+      }
+    },
+    {
+      "id": "TP-117",
+      "startMilliseconds": 1281039,
+      "endMilliseconds": 1295120,
+      "kind": "explanation",
+      "text": "For the validation example two values A and B are read into the fields of a class, and the goal becomes making sure both of those values are valid.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1281039,
+          "endMilliseconds": 1295120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#validate-the-values-together"
+      }
+    },
+    {
+      "id": "TP-118",
+      "startMilliseconds": 1286039,
+      "endMilliseconds": 1297489,
+      "kind": "explanation",
+      "text": "A value is valid when it is correct and allowable, so after reading A and B we want to be sure both satisfy the program's rules.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1286039,
+          "endMilliseconds": 1297489
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#validate-the-values-together"
+      }
+    },
+    {
+      "id": "TP-119",
+      "startMilliseconds": 1297489,
+      "endMilliseconds": 1300789,
+      "kind": "fact",
+      "text": "The example program imposes the rule that B must be at least twice A, which gives a concrete condition to validate.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1295489,
+          "endMilliseconds": 1300789
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#validate-the-values-together"
+      }
+    },
+    {
+      "id": "TP-120",
+      "startMilliseconds": 1300799,
+      "endMilliseconds": 1305540,
+      "kind": "explanation",
+      "text": "To be sure the rule holds you can write a dedicated validation method that encodes the rule as an explicit check.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1300799,
+          "endMilliseconds": 1305540
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#validate-the-values-together"
+      }
+    },
+    {
+      "id": "TP-121",
+      "startMilliseconds": 1305900,
+      "endMilliseconds": 1310300,
+      "kind": "code_change",
+      "text": "Inside the validation method, return false when B is less than 2 * A, which marks the object as invalid.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1305900,
+          "endMilliseconds": 1310300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#validate-the-values-together"
+      }
+    },
+    {
+      "id": "TP-122",
+      "startMilliseconds": 1310390,
+      "endMilliseconds": 1313450,
+      "kind": "code_change",
+      "text": "If B is greater than or equal to 2 * A the validation method returns true and the object counts as valid.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1310390,
+          "endMilliseconds": 1313450
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#validate-the-values-together"
+      }
+    },
+    {
+      "id": "TP-123",
+      "startMilliseconds": 1313269,
+      "endMilliseconds": 1323130,
+      "kind": "explanation",
+      "text": "Further rules such as C > A + B can be added as extra conditions in the same validation method, so one function can check many rules at once.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1313269,
+          "endMilliseconds": 1323130
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#validate-the-values-together"
+      }
+    },
+    {
+      "id": "TP-124",
+      "startMilliseconds": 1323070,
+      "endMilliseconds": 1339750,
+      "kind": "reason",
+      "text": "A good pattern is to call the validation method right after reading the values, store its result in a variable, and re-request the data when the result is not valid.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1323070,
+          "endMilliseconds": 1339750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#validate-the-values-together"
+      }
+    },
+    {
+      "id": "TP-125",
+      "startMilliseconds": 1348740,
+      "endMilliseconds": 1362870,
+      "kind": "code_change",
+      "text": "You can wrap the input step in a loop so that invalid data is requested again and the input loop ends only when the entered data is correct.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1348740,
+          "endMilliseconds": 1362870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retry-invalid-objects"
+      }
+    },
+    {
+      "id": "TP-126",
+      "startMilliseconds": 1382960,
+      "endMilliseconds": 1389789,
+      "kind": "explanation",
+      "text": "When run, the program keeps asking for input until valid data is entered, so the validation result directly drives the input loop.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1382960,
+          "endMilliseconds": 1389789
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retry-invalid-objects"
+      }
+    },
+    {
+      "id": "TP-127",
+      "startMilliseconds": 1398080,
+      "endMilliseconds": 1406470,
+      "kind": "correction",
+      "text": "The first drawback of this approach is that the user is never told why the entered input was considered invalid.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1398080,
+          "endMilliseconds": 1406470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retry-invalid-objects"
+      }
+    },
+    {
+      "id": "TP-128",
+      "startMilliseconds": 1406480,
+      "endMilliseconds": 1416830,
+      "kind": "correction",
+      "text": "Another drawback is that these validation rules are independent of one another, so they can be checked separately instead of only in mixed order.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1406480,
+          "endMilliseconds": 1416830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retry-invalid-objects"
+      }
+    },
+    {
+      "id": "TP-129",
+      "startMilliseconds": 1416840,
+      "endMilliseconds": 1447390,
+      "kind": "scope_boundary",
+      "text": "Because the rules are independent, the checks could in principle be moved into the reading function and performed there immediately, but the lesson deliberately does not do that here.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1416840,
+          "endMilliseconds": 1447390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retry-invalid-objects"
+      }
+    },
+    {
+      "id": "TP-130",
+      "startMilliseconds": 1447400,
+      "endMilliseconds": 1452590,
+      "kind": "explanation",
+      "text": "The alternative idea is to notify the user about exactly which error occurred, for example stating specifically that B is less than 2 * A.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1447400,
+          "endMilliseconds": 1452590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#explain-the-first-violated-rule"
+      }
+    },
+    {
+      "id": "TP-131",
+      "startMilliseconds": 1457390,
+      "endMilliseconds": 1462470,
+      "kind": "explanation",
+      "text": "With this approach the program announces which specific rule was violated instead of only reporting generic invalidity.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1457390,
+          "endMilliseconds": 1462470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#explain-the-first-violated-rule"
+      }
+    },
+    {
+      "id": "TP-132",
+      "startMilliseconds": 1462480,
+      "endMilliseconds": 1473530,
+      "kind": "edge_case",
+      "text": "When both rules are broken the program reports only the first one, because it exits right after announcing that first violation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1462480,
+          "endMilliseconds": 1473530
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#explain-the-first-violated-rule"
+      }
+    },
+    {
+      "id": "TP-133",
+      "startMilliseconds": 1474370,
+      "endMilliseconds": 1479540,
+      "kind": "explanation",
+      "text": "The validation function terminates and never examines the remaining rules, so to see every broken rule it must keep checking after the first failure.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1474370,
+          "endMilliseconds": 1479540
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#explain-the-first-violated-rule"
+      }
+    },
+    {
+      "id": "TP-134",
+      "startMilliseconds": 1479550,
+      "endMilliseconds": 1484830,
+      "kind": "code_change",
+      "text": "To continue checking all rules before returning, introduce an isValid flag initialized to false at the start of the validation function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1479550,
+          "endMilliseconds": 1484830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#report-every-violated-rule"
+      }
+    },
+    {
+      "id": "TP-135",
+      "startMilliseconds": 1484850,
+      "endMilliseconds": 1490250,
+      "kind": "code_change",
+      "text": "Inside each broken-rule branch set the isValid flag instead of returning from the function immediately.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1484850,
+          "endMilliseconds": 1490250
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#report-every-violated-rule"
+      }
+    },
+    {
+      "id": "TP-136",
+      "startMilliseconds": 1490290,
+      "endMilliseconds": 1502540,
+      "kind": "reason",
+      "text": "Since entering any broken-rule branch sets isValid to false, the function can still return the flag as its verdict that the object is invalid.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1490290,
+          "endMilliseconds": 1502540
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#report-every-violated-rule"
+      }
+    },
+    {
+      "id": "TP-137",
+      "startMilliseconds": 1502640,
+      "endMilliseconds": 1509669,
+      "kind": "explanation",
+      "text": "If at least one condition is not satisfied the program announces that specific condition, so every violated rule reaches the user.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1502640,
+          "endMilliseconds": 1509669
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#report-every-violated-rule"
+      }
+    },
+    {
+      "id": "TP-138",
+      "startMilliseconds": 1526600,
+      "endMilliseconds": 1532310,
+      "kind": "fact",
+      "text": "A contract is violated as soon as at least one postcondition argument evaluates to false, so violating one clause invalidates the whole call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1526600,
+          "endMilliseconds": 1532310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#interpret-the-validation-tests-and-limits"
+      }
+    },
+    {
+      "id": "TP-139",
+      "startMilliseconds": 1532310,
+      "endMilliseconds": 1539430,
+      "kind": "test_result",
+      "text": "Passing the arguments 2, 3 and 1 satisfies two of the three postconditions, which shows the contract tracks each clause separately rather than all-or-nothing.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1532310,
+          "endMilliseconds": 1539430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#interpret-the-validation-tests-and-limits"
+      }
+    },
+    {
+      "id": "TP-140",
+      "startMilliseconds": 1539430,
+      "endMilliseconds": 1545470,
+      "kind": "test_result",
+      "text": "Passing 2, 5 and 4 satisfies only one postcondition, so a single satisfied clause is enough to report that no contract was violated for that call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1539430,
+          "endMilliseconds": 1545470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#interpret-the-validation-tests-and-limits"
+      }
+    },
+    {
+      "id": "TP-141",
+      "startMilliseconds": 1545470,
+      "endMilliseconds": 1552039,
+      "kind": "edge_case",
+      "text": "When all arguments are valid every postcondition holds, so no exception is thrown and execution simply continues.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1545470,
+          "endMilliseconds": 1552039
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#interpret-the-validation-tests-and-limits"
+      }
+    },
+    {
+      "id": "TP-142",
+      "startMilliseconds": 1552039,
+      "endMilliseconds": 1560110,
+      "kind": "explanation",
+      "text": "Because the violated postcondition ends the method, the program terminates with a break and never reaches the code that would follow.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1552039,
+          "endMilliseconds": 1560110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#interpret-the-validation-tests-and-limits"
+      }
+    },
+    {
+      "id": "TP-143",
+      "startMilliseconds": 1560110,
+      "endMilliseconds": 1563800,
+      "kind": "scope_boundary",
+      "text": "Reporting only that an object is invalid is enough when the caller merely needs a yes-or-no validity signal, which is the strength of this approach.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1560110,
+          "endMilliseconds": 1563800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#interpret-the-validation-tests-and-limits"
+      }
+    },
+    {
+      "id": "TP-144",
+      "startMilliseconds": 1563800,
+      "endMilliseconds": 1586640,
+      "kind": "scope_boundary",
+      "text": "Knowing exactly which contract rule an object broke requires more advanced techniques that this lesson deliberately defers to a later part of the course.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1563800,
+          "endMilliseconds": 1586640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#interpret-the-validation-tests-and-limits"
+      }
+    }
+  ]
+}

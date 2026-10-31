@@ -1,0 +1,6 @@
+# Open uncertainties and gaps in the record (marked unresolved)
+
+- The literal strings "NullReferenceException" and "line 27" do not appear anywhere in the transcript text pinned at `4814706a` (checked 2026-10-10, full-file search). The note's claim "The recorded result is an unhandled NullReferenceException, reported on line 27" rests on the recording's on-screen failure output — i.e. the recorded run in the video, not the transcript. The transcript only supports the compile/runtime setup at `&t=949`s. If a future verifier needs transcript-range evidence for the exact exception text, a captured frame is the missing evidence type.
+- Anchor tolerance, not a citation: the note's timestamps sometimes sit seconds before the spoken moment within the same paragraph — "Allocate five cells" anchored `00:22:31` (`&t=1351`s) vs "пять" at `&t=1364`s; Goblin anchored `00:22:46` (`&t=1366`s) vs `&t=1383`s; address 88000 anchored `00:26:15` (`&t=1575`s) vs `&t=1584`s. The verifier accepted these as supported content with slightly imprecise anchors; the exact spoken seconds above are the corrected reference points if a tighter anchor is ever required.
+
+- The Microsoft `return` keyword reference page fetch failed with an internal error during run 187; the author fell back to the jump-statements page. Treat `…/keywords/return` as an unreliable reference in this context.

@@ -1,0 +1,2347 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "mj771Sd298c",
+  "uploadId": "mj771Sd298c",
+  "transcriptSha256": "7c1f88a11edac7af34f0775220a0a15eb0ca8c0c0c349b382a5187c6e0611b09",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 120,
+      "endMilliseconds": 26870,
+      "kind": "scope_boundary",
+      "text": "The advanced lab assumes prior knowledge of [redacted] plus architectural ideas such as abstraction, coupling, invariants and interfaces, so the lesson builds on them rather than restating them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 120,
+          "endMilliseconds": 26870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#purpose-and-vocabulary"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 26870,
+      "endMilliseconds": 36300,
+      "kind": "fact",
+      "text": "The example function Between takes three parameters, which is the starting point for examining how a function's interface is read.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 26870,
+          "endMilliseconds": 36300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-the-initial-between-interface"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 36300,
+      "endMilliseconds": 50550,
+      "kind": "explanation",
+      "text": "From the function definition the reader can infer that the first parameter is the value being checked and the second and third parameters are the interval's start and end.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 36300,
+          "endMilliseconds": 50550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-the-initial-between-interface"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 50550,
+      "endMilliseconds": 58509,
+      "kind": "fact",
+      "text": "The function returns true when the checked value lies inside the interval it was given, which is its whole observable behaviour.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 50550,
+          "endMilliseconds": 58509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-the-initial-between-interface"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 58509,
+      "endMilliseconds": 63709,
+      "kind": "test_result",
+      "text": "In the shown calls Between(15, 10, 20) returns true while Between(5, 10, 20) and Between(25, 10, 20) return false because those values fall outside the interval.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 58509,
+          "endMilliseconds": 63709
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-the-initial-between-interface"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 63709,
+      "endMilliseconds": 80159,
+      "kind": "explanation",
+      "text": "Looking only at the call site, the roles of the arguments are clear because the first one is the value while the second and third are the interval start and end.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 63709,
+          "endMilliseconds": 80159
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-the-initial-between-interface"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 73320,
+      "endMilliseconds": 78440,
+      "kind": "explanation",
+      "text": "The argument roles are readable at the call site because the first argument is the value and the second and third are the interval start and end.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 73320,
+          "endMilliseconds": 78440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-the-initial-between-interface"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 78440,
+      "endMilliseconds": 85310,
+      "kind": "reason",
+      "text": "Reading the call site alone works only because the function's own definition and prototype are visible nearby, so the reader can check parameter roles.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 78440,
+          "endMilliseconds": 85310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-the-initial-between-interface"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 85310,
+      "endMilliseconds": 92350,
+      "kind": "edge_case",
+      "text": "Even with the definition in view it remains unspecified whether the interval bounds are inclusive, which leaves the exact contract of the function ambiguous.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 85310,
+          "endMilliseconds": 92350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-the-initial-between-interface"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 92350,
+      "endMilliseconds": 102830,
+      "kind": "edge_case",
+      "text": "For the value 10 passed as the lower bound the next slide suggests the last included element is 11, so the reader cannot be sure whether 10 itself belongs to the interval.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 92350,
+          "endMilliseconds": 102830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-the-initial-between-interface"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 102830,
+      "endMilliseconds": 119709,
+      "kind": "fact",
+      "text": "An interface is what a user of a function knows: its name, its return type and the names and types of its parameters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 102830,
+          "endMilliseconds": 119709
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-the-initial-between-interface"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 119709,
+      "endMilliseconds": 131869,
+      "kind": "reason",
+      "text": "Because the interface exposes only names and types, a caller cannot tell whether the lower and upper bounds are included in the interval.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 119709,
+          "endMilliseconds": 131869
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-the-initial-between-interface"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 131869,
+      "endMilliseconds": 147720,
+      "kind": "edge_case",
+      "text": "Without documentation the caller's argument order is ambiguous: the numbers might be lower bound, upper bound, and value in some other arrangement.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 131869,
+          "endMilliseconds": 147720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-the-initial-between-interface"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 140599,
+      "endMilliseconds": 147710,
+      "kind": "edge_case",
+      "text": "The argument order of the call is not evident even with the definition in view: the three numbers could be lower bound, upper bound and value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 140599,
+          "endMilliseconds": 147710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-the-initial-between-interface"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 147710,
+      "endMilliseconds": 166720,
+      "kind": "fact",
+      "text": "Named arguments in C# fix the ambiguity because each parameter is passed with its declared name, making it clear that 10 is the value, the minimum and the maximum.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 147710,
+          "endMilliseconds": 166720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-argument-roles-visible"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 166720,
+      "endMilliseconds": 174110,
+      "kind": "fact",
+      "text": "Named constants can be introduced for the same values and passed instead, so the meaning of each argument is visible at the call site.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 166720,
+          "endMilliseconds": 174110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-argument-roles-visible"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 174110,
+      "endMilliseconds": 185110,
+      "kind": "fact",
+      "text": "Magic constants are literal numbers written directly in code without any explanation of their context, which hides their meaning.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 174110,
+          "endMilliseconds": 185110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-argument-roles-visible"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 185110,
+      "endMilliseconds": 198509,
+      "kind": "explanation",
+      "text": "In the example it is clear that 10 relates to the minimum and 20 to the maximum because surrounding context supplies the missing meaning.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 185110,
+          "endMilliseconds": 198509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-argument-roles-visible"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 198509,
+      "endMilliseconds": 222670,
+      "kind": "fact",
+      "text": "An interface is what a user knows about a function without reading its instructions, while the implementation is the set of instructions the function actually executes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 198509,
+          "endMilliseconds": 220360
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 209200,
+          "endMilliseconds": 222670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#state-the-input-and-output-contract"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 222670,
+      "endMilliseconds": 235070,
+      "kind": "fact",
+      "text": "A contract is everything a caller may rely on when invoking a function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 222670,
+          "endMilliseconds": 235070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#state-the-input-and-output-contract"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 235070,
+      "endMilliseconds": 247590,
+      "kind": "reason",
+      "text": "In the example nothing visible at the call site tells the user whether the minimum and maximum bounds are inclusive, so the contract is unclear.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 235070,
+          "endMilliseconds": 247590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#state-the-input-and-output-contract"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 247590,
+      "endMilliseconds": 258840,
+      "kind": "fact",
+      "text": "Making the contract concrete means choosing a different function name and different parameter names so the boundary semantics become evident.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 247590,
+          "endMilliseconds": 258840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#state-the-input-and-output-contract"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 258840,
+      "endMilliseconds": 272830,
+      "kind": "fact",
+      "text": "A contract covers not only what a caller may rely on but also what the function requires of its arguments.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 258840,
+          "endMilliseconds": 272830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#state-the-input-and-output-contract"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 272830,
+      "endMilliseconds": 289800,
+      "kind": "fact",
+      "text": "Here the contract requires the lower bound to be smaller than the upper bound, otherwise the call is meaningless.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 272830,
+          "endMilliseconds": 289800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#state-the-input-and-output-contract"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 287600,
+      "endMilliseconds": 294230,
+      "kind": "fact",
+      "text": "The function is named and parameterized so that the caller can rely on both the lower and the upper bound being inclusive, which makes the containment semantics readable from the signature alone.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 287600,
+          "endMilliseconds": 294230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#state-the-input-and-output-contract"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 296680,
+      "endMilliseconds": 309350,
+      "kind": "explanation",
+      "text": "The caller may rely on the output contract: the function actually determines whether the value lies inside the interval and returns that containment verdict as a boolean.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 296680,
+          "endMilliseconds": 309350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#state-the-input-and-output-contract"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 309360,
+      "endMilliseconds": 326469,
+      "kind": "explanation",
+      "text": "The output contract also promises that the function does not change external state, meaning it prints nothing to the console and does not touch data it is not supposed to influence.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 309360,
+          "endMilliseconds": 326469
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#state-the-input-and-output-contract"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 326479,
+      "endMilliseconds": 334029,
+      "kind": "explanation",
+      "text": "A contract splits into an input part, which is what the function assumes from the caller, and an output part, which is what the caller may assume from the function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 326479,
+          "endMilliseconds": 334029
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#state-the-input-and-output-contract"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 334029,
+      "endMilliseconds": 336870,
+      "kind": "fact",
+      "text": "For this interval function the input contract is that the minimum is less than the maximum, and violating it would be a caller error.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 334029,
+          "endMilliseconds": 336870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#state-the-input-and-output-contract"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 336880,
+      "endMilliseconds": 353710,
+      "kind": "explanation",
+      "text": "The output contract promises three things: the function performs the correct containment check, it does not change external state, and it treats both bounds as inclusive.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 336880,
+          "endMilliseconds": 353710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#state-the-input-and-output-contract"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 353720,
+      "endMilliseconds": 362070,
+      "kind": "fact",
+      "text": "The input contract is normally checked either with asserts or with a plain check placed as the first statement of the function body.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 353720,
+          "endMilliseconds": 362070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#guard-the-contract"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 362070,
+      "endMilliseconds": 369790,
+      "kind": "explanation",
+      "text": "A concrete example of contract validation is asserting that the minimum is necessarily greater than the maximum before doing any work.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 362070,
+          "endMilliseconds": 369790
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "7e53c72e223132cbd1278019f2b05d3654e658f5",
+          "path": "presentations/source-notes.md"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#guard-the-contract"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 369790,
+      "endMilliseconds": 376350,
+      "kind": "fact",
+      "text": "Such precondition checks are known as guards or protectors of the contract, and Debug.Assert is a way of expressing them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 369790,
+          "endMilliseconds": 376350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#guard-the-contract"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 376360,
+      "endMilliseconds": 393510,
+      "kind": "explanation",
+      "text": "Debug.Assert treats the given function call as erroneous and reports it as an error only while the program is still being developed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 376360,
+          "endMilliseconds": 393510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#guard-the-contract"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 393520,
+      "endMilliseconds": 405790,
+      "kind": "explanation",
+      "text": "Once the program is written and the tests pass, the compiler does not include the assert line in the compiled program at all, so Debug.Assert performs the check purely during development.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 393520,
+          "endMilliseconds": 405790
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "7e53c72e223132cbd1278019f2b05d3654e658f5",
+          "path": "presentations/source-notes.md"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#guard-the-contract"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 405800,
+      "endMilliseconds": 415670,
+      "kind": "reason",
+      "text": "That development-only nature of Debug.Assert is exactly why a different mechanism is needed when the contract becomes public.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 405800,
+          "endMilliseconds": 415670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#guard-the-contract"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 415680,
+      "endMilliseconds": 422430,
+      "kind": "scope_boundary",
+      "text": "If you want the contract to be public, for example by shipping a library that other people use, the development-only check is no longer sufficient.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 415680,
+          "endMilliseconds": 422430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#guard-the-contract"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 415680,
+      "endMilliseconds": 432430,
+      "kind": "explanation",
+      "text": "A public contract means shipping a library whose users download the package and call your functions, so their misuse of the API is no longer under your control.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 415680,
+          "endMilliseconds": 432430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#guard-the-contract"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 434150,
+      "endMilliseconds": 443460,
+      "kind": "reason",
+      "text": "Debug.Assert is inappropriate for a public contract, especially for NuGet packages, because distributed packages are built optimized and the debug assertion is stripped from them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 434150,
+          "endMilliseconds": 443460
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "7e53c72e223132cbd1278019f2b05d3654e658f5",
+          "path": "presentations/source-notes.md"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#guard-the-contract"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 443470,
+      "endMilliseconds": 463430,
+      "kind": "reason",
+      "text": "For public library contracts an argument exception is the better choice because it survives the release build and turns the user's mistake into a clear error instead of a confusing failure somewhere later.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 443470,
+          "endMilliseconds": 463430
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "7e53c72e223132cbd1278019f2b05d3654e658f5",
+          "path": "presentations/source-notes.md"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#guard-the-contract"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 463500,
+      "endMilliseconds": 472990,
+      "kind": "explanation",
+      "text": "An abstraction is a function with a meaningful name that performs the needed action, hiding the internal mechanism from everyone who calls it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 463500,
+          "endMilliseconds": 472990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-duplicate-removal-behind-a-contract"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 472990,
+      "endMilliseconds": 487950,
+      "kind": "fact",
+      "text": "The RemoveDuplicates function takes an array of names and returns a new array without duplicates, keeping the original order of first appearance.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 472990,
+          "endMilliseconds": 487950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-duplicate-removal-behind-a-contract"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 485000,
+      "endMilliseconds": 487950,
+      "kind": "fact",
+      "text": "The visible part of RemoveDuplicates' contract is that it returns the names without duplicates in the same order as they appeared in the original array.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 485000,
+          "endMilliseconds": 487950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-duplicate-removal-behind-a-contract"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 487960,
+      "endMilliseconds": 491710,
+      "kind": "explanation",
+      "text": "The value of that abstraction is that the user of the function does not have to reason about how duplicates are removed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 487960,
+          "endMilliseconds": 491710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-duplicate-removal-behind-a-contract"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 487960,
+      "endMilliseconds": 499310,
+      "kind": "reason",
+      "text": "Because of that abstraction the caller relies only on the function's contract and never on the concrete way duplicates are eliminated.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 487960,
+          "endMilliseconds": 499310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-duplicate-removal-behind-a-contract"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 499319,
+      "endMilliseconds": 509830,
+      "kind": "fact",
+      "text": "The input contract of RemoveDuplicates assumes the caller passes real string objects and not empty references.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 499319,
+          "endMilliseconds": 509830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-duplicate-removal-behind-a-contract"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 509909,
+      "endMilliseconds": 529750,
+      "kind": "fact",
+      "text": "The output contract promises that the duplicates are removed, that a new array is returned, and that the names appear in the same order as in the original array.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 509909,
+          "endMilliseconds": 529750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-duplicate-removal-behind-a-contract"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 529760,
+      "endMilliseconds": 543710,
+      "kind": "reason",
+      "text": "This useful abstraction lets the caller skip implementing the whole duplicate detection and removal process and simply use the function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 529760,
+          "endMilliseconds": 543710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-duplicate-removal-behind-a-contract"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 543720,
+      "endMilliseconds": 559350,
+      "kind": "explanation",
+      "text": "This function sits at a high level of abstraction because one simple name encapsulates the lower-level details of how the work is actually done.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 543720,
+          "endMilliseconds": 559350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-duplicate-removal-behind-a-contract"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 553560,
+      "endMilliseconds": 567190,
+      "kind": "explanation",
+      "text": "A clearly named method hides the lower-level details of how it actually works, so the name tells the reader what matters without exposing the mechanism.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 553560,
+          "endMilliseconds": 567190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-duplicate-removal-behind-a-contract"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 567190,
+      "endMilliseconds": 588360,
+      "kind": "reason",
+      "text": "There is no primitive 'filter' operation, so a method that returns a filtered array must be implemented from lower-level operations.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 567190,
+          "endMilliseconds": 588360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#hide-duplicate-removal-behind-a-contract"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 588360,
+      "endMilliseconds": 606310,
+      "kind": "fact",
+      "text": "The implementation tracks already-seen elements in a HashSet while filling a result list that is returned at the end of the function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 588360,
+          "endMilliseconds": 606310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#implement-duplicate-removal"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 606310,
+      "endMilliseconds": 630720,
+      "kind": "fact",
+      "text": "HashSet.Add returns true only when the element was not present before, which lets the loop guard skip already-added names.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 606310,
+          "endMilliseconds": 630720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#implement-duplicate-removal"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 630720,
+      "endMilliseconds": 637150,
+      "kind": "fact",
+      "text": "When a duplicate name is added a second time Add returns false, so the guarded line does not execute and the name is not added to the result again.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 630720,
+          "endMilliseconds": 637150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#implement-duplicate-removal"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 637150,
+      "endMilliseconds": 655390,
+      "kind": "fact",
+      "text": "Using StringComparer.Ordinal compares names character by character, so values differing only in letter case are not treated as duplicates.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 637150,
+          "endMilliseconds": 655390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#implement-duplicate-removal"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 655390,
+      "endMilliseconds": 662000,
+      "kind": "fact",
+      "text": "OrdinalIgnoreCase is the comparer variant to use when case differences should be ignored in comparisons.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 655390,
+          "endMilliseconds": 662000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#implement-duplicate-removal"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 662000,
+      "endMilliseconds": 674669,
+      "kind": "fact",
+      "text": "The RemoveDuplicates contract also uses ordinal comparison, so strings that differ only in capitalization count as different.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 662000,
+          "endMilliseconds": 674669
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#implement-duplicate-removal"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 674669,
+      "endMilliseconds": 692559,
+      "kind": "explanation",
+      "text": "A higher-level operation is implemented as lower-level steps that interact with the data structure required for the logic.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 674669,
+          "endMilliseconds": 692559
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#implement-duplicate-removal"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 692559,
+      "endMilliseconds": 711959,
+      "kind": "explanation",
+      "text": "The semantic-naming concept means giving variables a meaningful name instead of a vague indicator, which makes the code's intent readable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 692559,
+          "endMilliseconds": 711959
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-values-for-their-meaning"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 705000,
+      "endMilliseconds": 719949,
+      "kind": "reason",
+      "text": "A vague indicator name is only justified when the program's meaning for it is genuinely unknown and the value is only passed along; otherwise semantic names pay off.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 705000,
+          "endMilliseconds": 719949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-values-for-their-meaning"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 719949,
+      "endMilliseconds": 724389,
+      "kind": "fact",
+      "text": "Naming a variable for its meaning instead of calling it a generic indicator makes it clear what it represents.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 719949,
+          "endMilliseconds": 724389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-values-for-their-meaning"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 724389,
+      "endMilliseconds": 734389,
+      "kind": "explanation",
+      "text": "A name like temperatureWithinIntervalIndicator states both the measured value and the check performed, unlike a vague indicator name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 724389,
+          "endMilliseconds": 734389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-values-for-their-meaning"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 734389,
+      "endMilliseconds": 743389,
+      "kind": "explanation",
+      "text": "A more specific name such as rightSensorTemperature identifies which device the value comes from, leaving no ambiguity about its source.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 734389,
+          "endMilliseconds": 743389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-values-for-their-meaning"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 743389,
+      "endMilliseconds": 750870,
+      "kind": "scope_boundary",
+      "text": "Creating a dedicated type for the sensor data is possible but is deliberately deferred to a later part of the lesson.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 743389,
+          "endMilliseconds": 750870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-values-for-their-meaning"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 750870,
+      "endMilliseconds": 778639,
+      "kind": "explanation",
+      "text": "Instead of passing start and end as two independent parameters to the range check, an interval abstraction can carry the minimum and maximum together.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 750870,
+          "endMilliseconds": 778639
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-and-normalize-integer-intervals"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 771199,
+      "endMilliseconds": 785230,
+      "kind": "explanation",
+      "text": "The interval groups two independent parameters into one structure, so the code reads as an interval rather than as separate start and end arguments.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 771199,
+          "endMilliseconds": 785230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-and-normalize-integer-intervals"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 785230,
+      "endMilliseconds": 799990,
+      "kind": "reason",
+      "text": "Because the interval can be stored and reused, the caller no longer needs to pass two separate parameters to perform the same check again.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 785230,
+          "endMilliseconds": 799990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-and-normalize-integer-intervals"
+      }
+    },
+    {
+      "id": "TP-068",
+      "startMilliseconds": 799990,
+      "endMilliseconds": 821030,
+      "kind": "reason",
+      "text": "The user of the interval abstraction need not know how it is stored, whether that is four fields, two normalized fields, or two array elements.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 799990,
+          "endMilliseconds": 821030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-and-normalize-integer-intervals"
+      }
+    },
+    {
+      "id": "TP-069",
+      "startMilliseconds": 821030,
+      "endMilliseconds": 845920,
+      "kind": "fact",
+      "text": "The interval's internal data can also be normalized into a different representation without affecting the abstraction's users.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 821030,
+          "endMilliseconds": 845920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-and-normalize-integer-intervals"
+      }
+    },
+    {
+      "id": "TP-070",
+      "startMilliseconds": 837040,
+      "endMilliseconds": 843990,
+      "kind": "fact",
+      "text": "The interval implementation normalizes all incoming data so that the lower bound is always inclusive and the upper bound always exclusive.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 837040,
+          "endMilliseconds": 843990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-and-normalize-integer-intervals"
+      }
+    },
+    {
+      "id": "TP-071",
+      "startMilliseconds": 844000,
+      "endMilliseconds": 874910,
+      "kind": "explanation",
+      "text": "Because of that normalization a user-supplied inclusive upper bound of 19 is converted by the Create factory into the exclusive bound 20, which describes the same set of integers.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 844000,
+          "endMilliseconds": 874910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-and-normalize-integer-intervals"
+      }
+    },
+    {
+      "id": "TP-072",
+      "startMilliseconds": 875000,
+      "endMilliseconds": 877069,
+      "kind": "edge_case",
+      "text": "The inclusive-to-exclusive conversion is only equivalent for integer bounds, since for floats there is no successor value at which the interval ends.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 875000,
+          "endMilliseconds": 877069
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "7e53c72e223132cbd1278019f2b05d3654e658f5",
+          "path": "presentations/source-notes.md"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-and-normalize-integer-intervals"
+      }
+    },
+    {
+      "id": "TP-073",
+      "startMilliseconds": 877040,
+      "endMilliseconds": 897749,
+      "kind": "explanation",
+      "text": "An invariant is a rule of the class that all of its methods must preserve, so no public method is allowed to break it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 877040,
+          "endMilliseconds": 897749
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#establish-and-preserve-the-invariant"
+      }
+    },
+    {
+      "id": "TP-074",
+      "startMilliseconds": 900480,
+      "endMilliseconds": 916000,
+      "kind": "fact",
+      "text": "A concrete invariant of the interval is that the inclusive start bound is less than or equal to the exclusive end bound.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 900480,
+          "endMilliseconds": 916000
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 906279,
+          "endMilliseconds": 916000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#establish-and-preserve-the-invariant"
+      }
+    },
+    {
+      "id": "TP-075",
+      "startMilliseconds": 916000,
+      "endMilliseconds": 932069,
+      "kind": "explanation",
+      "text": "The constructor is private and the Create factory verifies that what the user asked for really is a valid interval, then normalizes the bounds.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 916000,
+          "endMilliseconds": 932069
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#establish-and-preserve-the-invariant"
+      }
+    },
+    {
+      "id": "TP-076",
+      "startMilliseconds": 934199,
+      "endMilliseconds": 948550,
+      "kind": "code_change",
+      "text": "Normalization turns an inclusive upper bound into an exclusive one and converts the lower bound the same way.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 934199,
+          "endMilliseconds": 948550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#establish-and-preserve-the-invariant"
+      }
+    },
+    {
+      "id": "TP-077",
+      "startMilliseconds": 948550,
+      "endMilliseconds": 953069,
+      "kind": "reason",
+      "text": "After normalization the factory checks the invariant and refuses to create the object if it would be violated.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 948550,
+          "endMilliseconds": 953069
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#establish-and-preserve-the-invariant"
+      }
+    },
+    {
+      "id": "TP-078",
+      "startMilliseconds": 953069,
+      "endMilliseconds": 955909,
+      "kind": "scope_boundary",
+      "text": "How the factory reacts to a violated invariant is left open and should be chosen according to the requirements of the specific project.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 953069,
+          "endMilliseconds": 955909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#establish-and-preserve-the-invariant"
+      }
+    },
+    {
+      "id": "TP-079",
+      "startMilliseconds": 955910,
+      "endMilliseconds": 968670,
+      "kind": "reason",
+      "text": "Once the factory returns, start and end are known to be valid relative to each other and cannot be modified later, because the fields are only exposed with getters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 955910,
+          "endMilliseconds": 968670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#establish-and-preserve-the-invariant"
+      }
+    },
+    {
+      "id": "TP-080",
+      "startMilliseconds": 968670,
+      "endMilliseconds": 982240,
+      "kind": "reason",
+      "text": "Since the bounds never change and start always stays less than or equal to end, the invariant is guaranteed to hold for the lifetime of the object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 968670,
+          "endMilliseconds": 982240
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 975199,
+          "endMilliseconds": 982240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#establish-and-preserve-the-invariant"
+      }
+    },
+    {
+      "id": "TP-081",
+      "startMilliseconds": 982240,
+      "endMilliseconds": 992629,
+      "kind": "explanation",
+      "text": "Encapsulation means that concrete operations and fields are not visible from outside, while the ones exposed for reading remain read-only for users.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 982240,
+          "endMilliseconds": 992629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#encapsulate-operations-for-local-reasoning"
+      }
+    },
+    {
+      "id": "TP-082",
+      "startMilliseconds": 994000,
+      "endMilliseconds": 1009829,
+      "kind": "fact",
+      "text": "A user cannot call the constructor directly and must go through Create so that validation runs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 994000,
+          "endMilliseconds": 1009829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#encapsulate-operations-for-local-reasoning"
+      }
+    },
+    {
+      "id": "TP-083",
+      "startMilliseconds": 1012200,
+      "endMilliseconds": 1029239,
+      "kind": "explanation",
+      "text": "The Contains operation is encapsulated too: the caller does not need to know which boundaries are compared, only whether the value is inside.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1012200,
+          "endMilliseconds": 1029239
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#encapsulate-operations-for-local-reasoning"
+      }
+    },
+    {
+      "id": "TP-084",
+      "startMilliseconds": 1030380,
+      "endMilliseconds": 1033679,
+      "kind": "reason",
+      "text": "In this simple example the containment check is obvious, but it would stop being obvious if start and end were stored in a different way, which could require different operations.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1030380,
+          "endMilliseconds": 1033679
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#encapsulate-operations-for-local-reasoning"
+      }
+    },
+    {
+      "id": "TP-085",
+      "startMilliseconds": 1039670,
+      "endMilliseconds": 1050600,
+      "kind": "reason",
+      "text": "A caller of the interval abstraction does not need to think about which checks of which bounds happen inside, because only the containment result matters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1039670,
+          "endMilliseconds": 1050600
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1043439,
+          "endMilliseconds": 1050600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#encapsulate-operations-for-local-reasoning"
+      }
+    },
+    {
+      "id": "TP-086",
+      "startMilliseconds": 1050600,
+      "endMilliseconds": 1051590,
+      "kind": "scope_boundary",
+      "text": "Here the lesson deliberately keeps the reasoning local: given a function's definition you do not need to know the larger system built around it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1050600,
+          "endMilliseconds": 1051590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#encapsulate-operations-for-local-reasoning"
+      }
+    },
+    {
+      "id": "TP-087",
+      "startMilliseconds": 1054590,
+      "endMilliseconds": 1061789,
+      "kind": "reason",
+      "text": "The example illustrates the idea because each line of the function is understandable in isolation, including the deduplication of names and the printing of the result.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1054590,
+          "endMilliseconds": 1061789
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#encapsulate-operations-for-local-reasoning"
+      }
+    },
+    {
+      "id": "TP-088",
+      "startMilliseconds": 1081000,
+      "endMilliseconds": 1089210,
+      "kind": "reason",
+      "text": "In the sensor-checking example every function re-lists all sensor fields, so adding one new sensor forces every such function to be edited.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1081000,
+          "endMilliseconds": 1089210
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#centralize-the-all-sensors-check"
+      }
+    },
+    {
+      "id": "TP-089",
+      "startMilliseconds": 1089440,
+      "endMilliseconds": 1127720,
+      "kind": "reason",
+      "text": "The second problem is that a reader cannot tell whether the listed fields are all the fields or only a deliberately chosen subset.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1089440,
+          "endMilliseconds": 1127720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#centralize-the-all-sensors-check"
+      }
+    },
+    {
+      "id": "TP-090",
+      "startMilliseconds": 1119440,
+      "endMilliseconds": 1137390,
+      "kind": "explanation",
+      "text": "Inlining explicit field enumerations inside the function makes it unclear whether every field is covered or only the ones that happened to be listed, which is the second problem with this code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1119440,
+          "endMilliseconds": 1137390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#centralize-the-all-sensors-check"
+      }
+    },
+    {
+      "id": "TP-091",
+      "startMilliseconds": 1137390,
+      "endMilliseconds": 1147149,
+      "kind": "reason",
+      "text": "Embedding the field enumerations in the middle of the function's higher-level logic is a wrong abstraction level and makes the code harder to understand.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1137390,
+          "endMilliseconds": 1147149
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#centralize-the-all-sensors-check"
+      }
+    },
+    {
+      "id": "TP-092",
+      "startMilliseconds": 1147149,
+      "endMilliseconds": 1163000,
+      "kind": "code_change",
+      "text": "A better variant is to extract a small abstraction that encapsulates iterating over the fields and performing the checks, and use it instead of the inline checks.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1147149,
+          "endMilliseconds": 1163000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#centralize-the-all-sensors-check"
+      }
+    },
+    {
+      "id": "TP-093",
+      "startMilliseconds": 1163000,
+      "endMilliseconds": 1184000,
+      "kind": "reason",
+      "text": "After the extraction the reader no longer needs to think about which fields exist, only that all of them are validated, because both the iteration and the checks now sit on roughly the same abstraction level.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1163000,
+          "endMilliseconds": 1184000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#centralize-the-all-sensors-check"
+      }
+    },
+    {
+      "id": "TP-094",
+      "startMilliseconds": 1184000,
+      "endMilliseconds": 1195520,
+      "kind": "code_change",
+      "text": "The input contract checks could be moved into a separate CheckArguments function that receives all the parameters, giving the code a clearly named primitive for validation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1184000,
+          "endMilliseconds": 1195520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#weigh-the-cost-of-indirection"
+      }
+    },
+    {
+      "id": "TP-095",
+      "startMilliseconds": 1186679,
+      "endMilliseconds": 1200510,
+      "kind": "code_change",
+      "text": "The input contract can be extracted into a separate CheckArguments function that takes all the parameters and raises the exception inside itself, keeping the validation tied to the main function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1186679,
+          "endMilliseconds": 1200510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#weigh-the-cost-of-indirection"
+      }
+    },
+    {
+      "id": "TP-096",
+      "startMilliseconds": 1200510,
+      "endMilliseconds": 1222620,
+      "kind": "explanation",
+      "text": "For the starting Between function this refactoring may or may not be useful, because the argument checks were the only action there and extracting them can put those actions on one abstraction level with the rest of the logic.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1200510,
+          "endMilliseconds": 1222620
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#weigh-the-cost-of-indirection"
+      }
+    },
+    {
+      "id": "TP-097",
+      "startMilliseconds": 1222620,
+      "endMilliseconds": 1236450,
+      "kind": "reason",
+      "text": "Here the extraction is essentially useless because only a single action happens, so it adds an abstraction level that a reader must jump over before understanding the code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1222620,
+          "endMilliseconds": 1236450
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#weigh-the-cost-of-indirection"
+      }
+    },
+    {
+      "id": "TP-098",
+      "startMilliseconds": 1236450,
+      "endMilliseconds": 1245480,
+      "kind": "fact",
+      "text": "An abstraction can help or hurt, because every abstraction adds a new level that the reader has to jump through.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1236450,
+          "endMilliseconds": 1245480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#weigh-the-cost-of-indirection"
+      }
+    },
+    {
+      "id": "TP-099",
+      "startMilliseconds": 1245480,
+      "endMilliseconds": 1264440,
+      "kind": "reason",
+      "text": "In the example shown, the operations used to sit inline and after extraction the reader must jump through the new level to learn which operations actually run.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1245480,
+          "endMilliseconds": 1264440
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1258360,
+          "endMilliseconds": 1264430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#weigh-the-cost-of-indirection"
+      }
+    },
+    {
+      "id": "TP-100",
+      "startMilliseconds": 1264430,
+      "endMilliseconds": 1286450,
+      "kind": "explanation",
+      "text": "Making something happen through something else rather than directly is called indirection, and the introduced indirection may make the code harder to understand because of the extra level to jump through.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1264430,
+          "endMilliseconds": 1286450
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#weigh-the-cost-of-indirection"
+      }
+    },
+    {
+      "id": "TP-101",
+      "startMilliseconds": 1286450,
+      "endMilliseconds": 1289310,
+      "kind": "edge_case",
+      "text": "In this case the extra level probably brings no benefit at all, but whether that holds is a judgement call for the reader.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1286450,
+          "endMilliseconds": 1289310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#weigh-the-cost-of-indirection"
+      }
+    },
+    {
+      "id": "TP-102",
+      "startMilliseconds": 1289310,
+      "endMilliseconds": 1310590,
+      "kind": "explanation",
+      "text": "The example code mixes abstraction levels: reading names, then working with data structures and the deduplication algorithm, then printing.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1289310,
+          "endMilliseconds": 1310590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-the-workflow-at-one-abstraction-level"
+      }
+    },
+    {
+      "id": "TP-103",
+      "startMilliseconds": 1310590,
+      "endMilliseconds": 1336679,
+      "kind": "reason",
+      "text": "The printing actions were extracted into a separate RemoveDuplicates function, which is simpler to understand because the low-level details that do not matter for the block's principle are hidden behind a name on the same abstraction level.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1310590,
+          "endMilliseconds": 1336679
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "7e53c72e223132cbd1278019f2b05d3654e658f5",
+          "path": "presentations/source-notes.md"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-the-workflow-at-one-abstraction-level"
+      }
+    },
+    {
+      "id": "TP-104",
+      "startMilliseconds": 1328400,
+      "endMilliseconds": 1336679,
+      "kind": "explanation",
+      "text": "The concrete deduplication actions are now hidden behind the RemoveDuplicates name, so that level of abstraction sits below the surrounding high-level code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1328400,
+          "endMilliseconds": 1336679
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-the-workflow-at-one-abstraction-level"
+      }
+    },
+    {
+      "id": "TP-105",
+      "startMilliseconds": 1336679,
+      "endMilliseconds": 1353559,
+      "kind": "fact",
+      "text": "One code block mixes high, low and again high abstraction levels while the other keeps purely high-level code, and whether a level counts as high depends on how many layers sit under the operation and how many other concepts it depends on.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1336679,
+          "endMilliseconds": 1353559
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-the-workflow-at-one-abstraction-level"
+      }
+    },
+    {
+      "id": "TP-106",
+      "startMilliseconds": 1353559,
+      "endMilliseconds": 1361360,
+      "kind": "explanation",
+      "text": "Input data can be hidden behind an abstraction level, for example configuration data read inside the function is a hidden dependency.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1353559,
+          "endMilliseconds": 1361360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-configuration-dependencies-explicit"
+      }
+    },
+    {
+      "id": "TP-107",
+      "startMilliseconds": 1361360,
+      "endMilliseconds": 1370149,
+      "kind": "code_change",
+      "text": "Where the configuration is available it is better to pass it in explicitly rather than let the function reach for it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1361360,
+          "endMilliseconds": 1370149
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-configuration-dependencies-explicit"
+      }
+    },
+    {
+      "id": "TP-108",
+      "startMilliseconds": 1370149,
+      "endMilliseconds": 1386990,
+      "kind": "code_change",
+      "text": "The suggested variant is to build an abstraction over the settings type and add an IsValid method there that performs the checks itself, encapsulating both the check logic and the fact that it depends on settings.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1370149,
+          "endMilliseconds": 1386990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-configuration-dependencies-explicit"
+      }
+    },
+    {
+      "id": "TP-109",
+      "startMilliseconds": 1386990,
+      "endMilliseconds": 1407200,
+      "kind": "reason",
+      "text": "Moving the check into the settings type means the reader can no longer tell from the function's definition which settings it depends on, while the global configuration it reads remains global data.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1386990,
+          "endMilliseconds": 1407200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-configuration-dependencies-explicit"
+      }
+    },
+    {
+      "id": "TP-110",
+      "startMilliseconds": 1402480,
+      "endMilliseconds": 1411990,
+      "kind": "fact",
+      "text": "Instead of reading global configuration data, a self-contained function receives that configuration as a parameter, which keeps its dependencies visible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1402480,
+          "endMilliseconds": 1411990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-configuration-dependencies-explicit"
+      }
+    },
+    {
+      "id": "TP-111",
+      "startMilliseconds": 1411990,
+      "endMilliseconds": 1431160,
+      "kind": "reason",
+      "text": "Passing everything a function needs through its parameters respects local reasoning, whereas reading global state forces the reader to understand the caller's whole environment.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1411990,
+          "endMilliseconds": 1431160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-configuration-dependencies-explicit"
+      }
+    },
+    {
+      "id": "TP-112",
+      "startMilliseconds": 1431160,
+      "endMilliseconds": 1443520,
+      "kind": "reason",
+      "text": "Even when global state is not passed explicitly, an abstraction over settings with all settings accepted as parameters is the better design because it makes the dependency enforceable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1431160,
+          "endMilliseconds": 1443520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-configuration-dependencies-explicit"
+      }
+    },
+    {
+      "id": "TP-113",
+      "startMilliseconds": 1443520,
+      "endMilliseconds": 1456400,
+      "kind": "explanation",
+      "text": "The data type used in the signature lets you encode expectations in the contract, for example that the input data will not be modified.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1443520,
+          "endMilliseconds": 1456400
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "7e53c72e223132cbd1278019f2b05d3654e658f5",
+          "path": "presentations/source-notes.md"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#express-mutation-and-observe-shared-data"
+      }
+    },
+    {
+      "id": "TP-114",
+      "startMilliseconds": 1456400,
+      "endMilliseconds": 1478590,
+      "kind": "edge_case",
+      "text": "When a function promises not to modify its input, a list passed in with duplicates keeps those duplicates; the duplicates disappear only in the new list the function returns.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1456400,
+          "endMilliseconds": 1478590
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1475200,
+          "endMilliseconds": 1478590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#express-mutation-and-observe-shared-data"
+      }
+    },
+    {
+      "id": "TP-115",
+      "startMilliseconds": 1481240,
+      "endMilliseconds": 1493160,
+      "kind": "fact",
+      "text": "SortInPlace takes a mutable list rather than a read-only span because it sorts by rewriting the list's own memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1481240,
+          "endMilliseconds": 1493160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#express-mutation-and-observe-shared-data"
+      }
+    },
+    {
+      "id": "TP-116",
+      "startMilliseconds": 1493160,
+      "endMilliseconds": 1511600,
+      "kind": "reason",
+      "text": "From the declaration alone a caller has to assume the input data may be mutated, which is exactly the uncertainty the signature should remove.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1493160,
+          "endMilliseconds": 1511600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#express-mutation-and-observe-shared-data"
+      }
+    },
+    {
+      "id": "TP-117",
+      "startMilliseconds": 1511600,
+      "endMilliseconds": 1515400,
+      "kind": "explanation",
+      "text": "When the function returns a value and takes a mutable list, the declared contract lets the caller assume the list itself was not changed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1511600,
+          "endMilliseconds": 1515400
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "7e53c72e223132cbd1278019f2b05d3654e658f5",
+          "path": "presentations/source-notes.md"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#express-mutation-and-observe-shared-data"
+      }
+    },
+    {
+      "id": "TP-118",
+      "startMilliseconds": 1518600,
+      "endMilliseconds": 1537360,
+      "kind": "fact",
+      "text": "The list is passed by reference so no copy is made, and a second reference to the original array observes the sorted data, which is why printing through the original reference shows the updated element.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1518600,
+          "endMilliseconds": 1537360
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "7e53c72e223132cbd1278019f2b05d3654e658f5",
+          "path": "presentations/source-notes.md"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#express-mutation-and-observe-shared-data"
+      }
+    },
+    {
+      "id": "TP-119",
+      "startMilliseconds": 1547560,
+      "endMilliseconds": 1554150,
+      "kind": "explanation",
+      "text": "An abstraction over the data hides its concrete fields so the caller does not need to reason about them at all.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1547560,
+          "endMilliseconds": 1552640
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1552640,
+          "endMilliseconds": 1554150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#decide-which-abstractions-earn-their-place"
+      }
+    },
+    {
+      "id": "TP-120",
+      "startMilliseconds": 1554150,
+      "endMilliseconds": 1561960,
+      "kind": "fact",
+      "text": "The contract of an all-fields abstraction promises that every field is taken into account, so the caller stays correct even as fields change.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1554150,
+          "endMilliseconds": 1561960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#decide-which-abstractions-earn-their-place"
+      }
+    },
+    {
+      "id": "TP-121",
+      "startMilliseconds": 1566390,
+      "endMilliseconds": 1579990,
+      "kind": "reason",
+      "text": "Without such an abstraction, adding a fourth sensor forces edits in every place where the fields are enumerated.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1566390,
+          "endMilliseconds": 1579990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#decide-which-abstractions-earn-their-place"
+      }
+    },
+    {
+      "id": "TP-122",
+      "startMilliseconds": 1579990,
+      "endMilliseconds": 1584440,
+      "kind": "reason",
+      "text": "With the abstraction, only the single function that centralizes iteration over the fields needs to change, which is what makes the abstraction worth having.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1579990,
+          "endMilliseconds": 1584440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#decide-which-abstractions-earn-their-place"
+      }
+    },
+    {
+      "id": "TP-123",
+      "startMilliseconds": 1584440,
+      "endMilliseconds": 1595840,
+      "kind": "reason",
+      "text": "Adding another wrapper around SetIndicator is pointless because such a wrapper only renames the existing function without changing behavior.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1584440,
+          "endMilliseconds": 1595840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#decide-which-abstractions-earn-their-place"
+      }
+    },
+    {
+      "id": "TP-124",
+      "startMilliseconds": 1598480,
+      "endMilliseconds": 1609680,
+      "kind": "fact",
+      "text": "When the indicator has real domain meaning, it is worth exposing a semantically named function such as SetMaxSetTemperatureIndicatorValue that delegates to SetIndicator.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1598480,
+          "endMilliseconds": 1609680
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#decide-which-abstractions-earn-their-place"
+      }
+    },
+    {
+      "id": "TP-125",
+      "startMilliseconds": 1609680,
+      "endMilliseconds": 1626840,
+      "kind": "reason",
+      "text": "A semantic wrapper is justified only when it encodes domain intent in code; otherwise it just renames the target function and has little value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1609680,
+          "endMilliseconds": 1626840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#decide-which-abstractions-earn-their-place"
+      }
+    }
+  ]
+}

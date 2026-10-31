@@ -1,0 +1,2392 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "IESVXL16OBA",
+  "uploadId": "IESVXL16OBA",
+  "transcriptSha256": "514250ad7f99819bc29e4c5f2df89305f471d944799b378cc520310429ff9a5e",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 5000,
+      "endMilliseconds": 18400,
+      "kind": "code_change",
+      "text": "The previously extracted Take method is moved back inside the class so that encapsulation can be explained on a real example.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 5000,
+          "endMilliseconds": 18400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#prepare-the-class-for-controlled-health-changes"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 23360,
+      "endMilliseconds": 50100,
+      "kind": "code_change",
+      "text": "The print logic is extracted into a method that receives the attacked player's name as a parameter, replacing the previously hardcoded name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 23360,
+          "endMilliseconds": 50100
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#prepare-the-class-for-controlled-health-changes"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 50750,
+      "endMilliseconds": 57600,
+      "kind": "reason",
+      "text": "PrintHealthOfEnemy is moved closer to the Health field so that code touching a field stays near its declaration.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 50750,
+          "endMilliseconds": 57600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#prepare-the-class-for-controlled-health-changes"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 60310,
+      "endMilliseconds": 77800,
+      "kind": "code_change",
+      "text": "A new damage method is declared after the existing methods, takes the target as its first parameter, is given a more abstract name, and replaces the previous function call everywhere it was checked.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 60310,
+          "endMilliseconds": 77800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-and-rename-the-damage-operation"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 92320,
+      "endMilliseconds": 105880,
+      "kind": "fact",
+      "text": "The same extracted method can also be used for the player, because the player's logic is slightly different and benefits from the same abstraction.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 92320,
+          "endMilliseconds": 105880
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 92920,
+          "endMilliseconds": 95920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-and-rename-the-damage-operation"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 105880,
+      "endMilliseconds": 122000,
+      "kind": "correction",
+      "text": "The new method is renamed to a name meaning damage is dealt, while noting that changing code by itself is not necessarily an improvement.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 105880,
+          "endMilliseconds": 122000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-and-rename-the-damage-operation"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 122000,
+      "endMilliseconds": 145900,
+      "kind": "fact",
+      "text": "At this stage the only place the player can take damage is this function, which immediately checks whether the player died and prints a message.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 122000,
+          "endMilliseconds": 145900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#find-the-living-player-assumption"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 145900,
+      "endMilliseconds": 166100,
+      "kind": "explanation",
+      "text": "If death were checked by health equalling zero outside this function, the player would die without ever receiving damage and the death message would never be printed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 145900,
+          "endMilliseconds": 166100
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#find-the-living-player-assumption"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 166100,
+      "endMilliseconds": 186080,
+      "kind": "explanation",
+      "text": "The attack function assumes the player is still alive, so at this stage a dead player would still exchange attacks with the enemy and the program would behave slightly wrong.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 166100,
+          "endMilliseconds": 186080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#find-the-living-player-assumption"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 178159,
+      "endMilliseconds": 186080,
+      "kind": "explanation",
+      "text": "A check for whether the player has died could be added, because the attack function assumes the player is still alive.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 178159,
+          "endMilliseconds": 186080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#find-the-living-player-assumption"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 186080,
+      "endMilliseconds": 204000,
+      "kind": "code_change",
+      "text": "A Debug.Assert at the start of the function verifies that the player has really not died, turning a wrong assumption into an immediate failure.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 186080,
+          "endMilliseconds": 204000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-the-invalid-state-with-an-assertion"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 204000,
+      "endMilliseconds": 222990,
+      "kind": "fact",
+      "text": "Debug.Assert runs only when you test your program, that is when you use debug mode.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 204000,
+          "endMilliseconds": 222990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-the-invalid-state-with-an-assertion"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 222990,
+      "endMilliseconds": 251149,
+      "kind": "explanation",
+      "text": "Debug.Assert is meant to catch errors you assume cannot exist in the finished program, so they surface during development and do not slow the full release build.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 222990,
+          "endMilliseconds": 251149
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-the-invalid-state-with-an-assertion"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 250200,
+      "endMilliseconds": 268430,
+      "kind": "explanation",
+      "text": "The assertion fires because health is zero; without it the program would continue past code that expects a living player.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 250200,
+          "endMilliseconds": 268430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-the-invalid-state-with-an-assertion"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 251149,
+      "endMilliseconds": 260919,
+      "kind": "test_result",
+      "text": "Running the program with health equal to zero makes the assertion fire and crash the program, demonstrating the error at the moment the player is dead.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 251149,
+          "endMilliseconds": 260919
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-the-invalid-state-with-an-assertion"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 268430,
+      "endMilliseconds": 285000,
+      "kind": "explanation",
+      "text": "Continuing with wrong data is even worse than crashing, which raises the question of how to forbid setting the Health field from outside.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 268430,
+          "endMilliseconds": 285000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-the-invalid-state-with-an-assertion"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 285000,
+      "endMilliseconds": 309469,
+      "kind": "fact",
+      "text": "The solution is the private access modifier, written in place of public, which restricts the field to its own class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 285000,
+          "endMilliseconds": 309469
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restrict-the-field-with-private"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 309469,
+      "endMilliseconds": 325430,
+      "kind": "fact",
+      "text": "A private field can be read and written only inside methods of the same class that declares it, so a factory method of the same type may use Health.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 309469,
+          "endMilliseconds": 325430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restrict-the-field-with-private"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 325430,
+      "endMilliseconds": 337350,
+      "kind": "explanation",
+      "text": "Methods in the Stat class can also touch the field because the field is declared in that same type, which keeps every change of Health inside one class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 325430,
+          "endMilliseconds": 337350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restrict-the-field-with-private"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 337350,
+      "endMilliseconds": 346600,
+      "kind": "fact",
+      "text": "After the change to private, code outside the class cannot even read the field, so Health can change only through the methods of its own class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 337350,
+          "endMilliseconds": 346600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restrict-the-field-with-private"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 337360,
+      "endMilliseconds": 349479,
+      "kind": "code_change",
+      "text": "After the field was changed to private, external code can no longer even type its name, so it cannot be written or read from outside the class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 337360,
+          "endMilliseconds": 349479
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restrict-the-field-with-private"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 349479,
+      "endMilliseconds": 355110,
+      "kind": "scope_boundary",
+      "text": "Reading from the private field is deliberately postponed to a later part of the lesson, so only the write restriction is examined here.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 349479,
+          "endMilliseconds": 355110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restrict-the-field-with-private"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 355110,
+      "endMilliseconds": 360590,
+      "kind": "reason",
+      "text": "Keeping direct writes forbidden is exactly the intent of making the field private.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 355110,
+          "endMilliseconds": 360590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restrict-the-field-with-private"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 360590,
+      "endMilliseconds": 372400,
+      "kind": "explanation",
+      "text": "The existing function still works after the change because it modifies the field indirectly through a method that can see private fields.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 360590,
+          "endMilliseconds": 372400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restrict-the-field-with-private"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 372400,
+      "endMilliseconds": 396670,
+      "kind": "reason",
+      "text": "Private data is reachable from outside only through methods of the class that declares it, so the method serves as the controlled entry point.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 372400,
+          "endMilliseconds": 396670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restrict-the-field-with-private"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 396670,
+      "endMilliseconds": 414189,
+      "kind": "explanation",
+      "text": "Health exposes three operations — print it, decrease it, and check whether the character died — which together cover all interaction with that field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 396670,
+          "endMilliseconds": 414189
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#define-encapsulation-through-operations"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 414189,
+      "endMilliseconds": 433720,
+      "kind": "explanation",
+      "text": "Encapsulation means the data itself is hidden while it stays manipulable through the class's methods rather than directly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 414189,
+          "endMilliseconds": 433720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#define-encapsulation-through-operations"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 423120,
+      "endMilliseconds": 433710,
+      "kind": "explanation",
+      "text": "Encapsulation keeps the data hidden but still lets you interact with it using methods instead of touching it directly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 423120,
+          "endMilliseconds": 433710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#define-encapsulation-through-operations"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 433710,
+      "endMilliseconds": 445430,
+      "kind": "reason",
+      "text": "Methods let you act on the data in a granular, controlled way rather than overwriting it blindly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 433710,
+          "endMilliseconds": 445430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#define-encapsulation-through-operations"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 445430,
+      "endMilliseconds": 465430,
+      "kind": "reason",
+      "text": "Granular access prevents an accidental external write that would set the data to an invalid value for the current state.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 445430,
+          "endMilliseconds": 465430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#define-encapsulation-through-operations"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 465430,
+      "endMilliseconds": 471790,
+      "kind": "fact",
+      "text": "The editor now shows errors at places that used the health field directly, because private fields are not allowed there.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 465430,
+          "endMilliseconds": 471790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#repair-creation-with-an-internal-factory"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 471790,
+      "endMilliseconds": 489830,
+      "kind": "edge_case",
+      "text": "Private fields cannot be initialized in the object initializer at creation time, so they must be assigned another way.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 471790,
+          "endMilliseconds": 489830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#repair-creation-with-an-internal-factory"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 489830,
+      "endMilliseconds": 498270,
+      "kind": "explanation",
+      "text": "A constructor is the mechanism for initializing those private fields, and it behaves like a factory function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 489830,
+          "endMilliseconds": 498270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#repair-creation-with-an-internal-factory"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 498270,
+      "endMilliseconds": 504830,
+      "kind": "edge_case",
+      "text": "Removing the required modifier is not an option because required cannot be applied to private fields.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 498270,
+          "endMilliseconds": 504830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#repair-creation-with-an-internal-factory"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 502560,
+      "endMilliseconds": 510319,
+      "kind": "code_change",
+      "text": "A more general factory function could create the type by taking one parameter per private field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 502560,
+          "endMilliseconds": 510319
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 504830,
+          "endMilliseconds": 510319
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#repair-creation-with-an-internal-factory"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 510319,
+      "endMilliseconds": 522550,
+      "kind": "reason",
+      "text": "Using that factory when creating an enemy avoids initializing the type directly, which is what the compiler forbids.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 510319,
+          "endMilliseconds": 522550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#repair-creation-with-an-internal-factory"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 522550,
+      "endMilliseconds": 529750,
+      "kind": "explanation",
+      "text": "Reading the factory call positionally is ambiguous: whether 7 and 20 mean attack or health depends only on which argument position they occupy.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 522550,
+          "endMilliseconds": 529750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-factory-arguments-readable"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 529750,
+      "endMilliseconds": 541190,
+      "kind": "reason",
+      "text": "To remove that dependence on argument position, the factory parameters should be passed by name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 529750,
+          "endMilliseconds": 541190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-factory-arguments-readable"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 541190,
+      "endMilliseconds": 546430,
+      "kind": "code_change",
+      "text": "Passing a named argument such as attack: 20 labels the value, so argument order no longer carries the meaning.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 541190,
+          "endMilliseconds": 546430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-factory-arguments-readable"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 546430,
+      "endMilliseconds": 564870,
+      "kind": "test_result",
+      "text": "With named arguments the values may be written in any order and the call still works as before.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 546430,
+          "endMilliseconds": 564870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-factory-arguments-readable"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 564870,
+      "endMilliseconds": 576440,
+      "kind": "explanation",
+      "text": "The remaining problem is shown by building the enemy through the factory function, which behaves the same as the earlier direct construction.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 564870,
+          "endMilliseconds": 576440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-factory-arguments-readable"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 576440,
+      "endMilliseconds": 583920,
+      "kind": "explanation",
+      "text": "A constructor works like a factory function, which is the idiomatic alternative to generic factory functions in this language.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 576440,
+          "endMilliseconds": 583920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-the-factory-with-a-constructor"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 576440,
+      "endMilliseconds": 583920,
+      "kind": "explanation",
+      "text": "This language lets you write constructors instead of generic factory functions, and a constructor works like a factory function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 576440,
+          "endMilliseconds": 583920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-the-factory-with-a-constructor"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 583920,
+      "endMilliseconds": 589870,
+      "kind": "fact",
+      "text": "A constructor has no name of its own and is invoked automatically right after an object of that type is created.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 583920,
+          "endMilliseconds": 589870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-the-factory-with-a-constructor"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 589870,
+      "endMilliseconds": 602230,
+      "kind": "code_change",
+      "text": "Because it has no name, the constructor is written by repeating the class name followed by parentheses containing its parameters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 589870,
+          "endMilliseconds": 602230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-the-factory-with-a-constructor"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 602230,
+      "endMilliseconds": 620710,
+      "kind": "explanation",
+      "text": "Fields first receive their default values, zeros in this example, and only after that does the constructor run for the new object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 602230,
+          "endMilliseconds": 620710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-the-factory-with-a-constructor"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 620710,
+      "endMilliseconds": 634710,
+      "kind": "explanation",
+      "text": "A constructor behaves like a method whose first, hidden parameter is the address of the new object, and through it you set attack and health.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 620710,
+          "endMilliseconds": 634710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-the-factory-with-a-constructor"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 634710,
+      "endMilliseconds": 660110,
+      "kind": "code_change",
+      "text": "Instead of calling the factory function you can create the object of the type directly and pass attack and health into the constructor.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 634710,
+          "endMilliseconds": 660110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-the-factory-with-a-constructor"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 656240,
+      "endMilliseconds": 660110,
+      "kind": "fact",
+      "text": "Attack and Health are now supplied through the type's constructor, so callers no longer set them via object-initializer syntax.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 656240,
+          "endMilliseconds": 660110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-the-factory-with-a-constructor"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 660110,
+      "endMilliseconds": 665440,
+      "kind": "edge_case",
+      "text": "The compiler still requires the attack field to be set, which is why the construction call keeps its arguments.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 660110,
+          "endMilliseconds": 665440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-the-factory-with-a-constructor"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 660110,
+      "endMilliseconds": 676470,
+      "kind": "reason",
+      "text": "Because Attack is now assigned in the constructor, the required modifier must be removed from that field so the compiler stops demanding an initializer value that can never be supplied.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 660110,
+          "endMilliseconds": 676470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-the-factory-with-a-constructor"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 676470,
+      "endMilliseconds": 689700,
+      "kind": "code_change",
+      "text": "The example is refactored to use a constructor both at the creation site and inside the main file, so all initialization goes through one place.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 676470,
+          "endMilliseconds": 689700
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-the-factory-with-a-constructor"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 689700,
+      "endMilliseconds": 696510,
+      "kind": "explanation",
+      "text": "One advantage of constructors is that readonly fields can be assigned, because they may only be initialized inside a constructor.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 689700,
+          "endMilliseconds": 696510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-constructors-without-losing-the-access-boundary"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 696510,
+      "endMilliseconds": 712590,
+      "kind": "explanation",
+      "text": "A second advantage is target-typed construction: the created type is inferred from the variable's declared type, so you call new with arguments and omit the type name that the compiler infers.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 696510,
+          "endMilliseconds": 712590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-constructors-without-losing-the-access-boundary"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 723920,
+      "endMilliseconds": 738430,
+      "kind": "explanation",
+      "text": "When a field is private, it must be initialized either by a constructor or by factory methods declared inside that same type, because only code inside the type can write to the private field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 723920,
+          "endMilliseconds": 738430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-constructors-without-losing-the-access-boundary"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 733839,
+      "endMilliseconds": 738949,
+      "kind": "explanation",
+      "text": "Factory functions placed inside the type can write to its private field, which is why they are created as members of the same class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 733839,
+          "endMilliseconds": 738949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-constructors-without-losing-the-access-boundary"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 740949,
+      "endMilliseconds": 747790,
+      "kind": "reason",
+      "text": "The drawback of that approach is that a private field still cannot be initialized from outside the type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 740949,
+          "endMilliseconds": 747790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-constructors-without-losing-the-access-boundary"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 747790,
+      "endMilliseconds": 757629,
+      "kind": "edge_case",
+      "text": "If encapsulation is not used, you can skip constructors entirely and declare all fields public, supplying their values at initialization and losing nothing in convenience.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 747790,
+          "endMilliseconds": 757629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-constructors-without-losing-the-access-boundary"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 760629,
+      "endMilliseconds": 772509,
+      "kind": "fact",
+      "text": "Constructors can be overloaded, for example with a parameterless overload that assigns every field its default zero value so those defaults can be overwritten later.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 760629,
+          "endMilliseconds": 772509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-constructor-overloads-and-named-factories"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 776880,
+      "endMilliseconds": 793150,
+      "kind": "explanation",
+      "text": "The compiler's implicit parameterless constructor is equivalent to calling a CreateDefault factory method, so using the more specific parameterless constructor avoids a vague factory name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 776880,
+          "endMilliseconds": 793150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-constructor-overloads-and-named-factories"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 793150,
+      "endMilliseconds": 800590,
+      "kind": "code_change",
+      "text": "The CreateDefault factory method is removed and replaced by an explicit parameterless constructor so the example uses the more specific C# construct.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 793150,
+          "endMilliseconds": 800590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-constructor-overloads-and-named-factories"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 800590,
+      "endMilliseconds": 816120,
+      "kind": "explanation",
+      "text": "Overload resolution picks the constructor by argument count: passing two arguments makes the compiler choose the two-parameter constructor, while passing none makes it choose the parameterless one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 800590,
+          "endMilliseconds": 816120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-constructor-overloads-and-named-factories"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 808760,
+      "endMilliseconds": 825949,
+      "kind": "explanation",
+      "text": "With no arguments at the creation site the compiler selects the parameterless constructor to initialize the object, which shows that constructor overloads resolve purely from the arguments given.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 808760,
+          "endMilliseconds": 825949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-constructor-overloads-and-named-factories"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 825949,
+      "endMilliseconds": 839509,
+      "kind": "reason",
+      "text": "The same naming freedom is impossible for constructors because a constructor cannot be given any name other than its type name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 825949,
+          "endMilliseconds": 839509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-constructor-overloads-and-named-factories"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 839509,
+      "endMilliseconds": 846069,
+      "kind": "reason",
+      "text": "Because constructors cannot express named creation variants, such situations require a factory function instead.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 839509,
+          "endMilliseconds": 846069
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-constructor-overloads-and-named-factories"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 846069,
+      "endMilliseconds": 864870,
+      "kind": "explanation",
+      "text": "A copy constructor takes a single parameter of the same type and its whole job is to assign this object's fields from the values of the other object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 846069,
+          "endMilliseconds": 864870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-an-object-in-three-equivalent-ways"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 864870,
+      "endMilliseconds": 882829,
+      "kind": "fact",
+      "text": "A factory function such as Create(stats) that accepts the source stats and builds a new object from them is an equally valid alternative to a copy constructor.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 864870,
+          "endMilliseconds": 882829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-an-object-in-three-equivalent-ways"
+      }
+    },
+    {
+      "id": "TP-068",
+      "startMilliseconds": 882829,
+      "endMilliseconds": 894600,
+      "kind": "fact",
+      "text": "A copy method achieves the same result by creating a new object and passing that source object's attack and health into the constructor.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 882829,
+          "endMilliseconds": 894600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-an-object-in-three-equivalent-ways"
+      }
+    },
+    {
+      "id": "TP-069",
+      "startMilliseconds": 882839,
+      "endMilliseconds": 894600,
+      "kind": "fact",
+      "text": "The copy method creates a new object and hands the source object's attack and health to its constructor, producing an independent duplicate.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 882839,
+          "endMilliseconds": 894600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-an-object-in-three-equivalent-ways"
+      }
+    },
+    {
+      "id": "TP-070",
+      "startMilliseconds": 894600,
+      "endMilliseconds": 909030,
+      "kind": "explanation",
+      "text": "As a usage example, creating a copy of a player afterwards can be done with the copy constructor, with a factory function, or with the copy method just introduced.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 894600,
+          "endMilliseconds": 909030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-an-object-in-three-equivalent-ways"
+      }
+    },
+    {
+      "id": "TP-071",
+      "startMilliseconds": 909030,
+      "endMilliseconds": 916790,
+      "kind": "explanation",
+      "text": "These three variants are interchangeable options for producing a duplicate of an existing object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 909030,
+          "endMilliseconds": 916790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-an-object-in-three-equivalent-ways"
+      }
+    },
+    {
+      "id": "TP-072",
+      "startMilliseconds": 916790,
+      "endMilliseconds": 936150,
+      "kind": "fact",
+      "text": "The IDE completion list shows all three forms side by side - copy constructor, factory function, and copy method - so the equivalent options are easy to discover.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 916790,
+          "endMilliseconds": 936150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-an-object-in-three-equivalent-ways"
+      }
+    },
+    {
+      "id": "TP-073",
+      "startMilliseconds": 936150,
+      "endMilliseconds": 945390,
+      "kind": "explanation",
+      "text": "Another common need is read access to a field without any way to write to it, which is what printing a value for debugging inside a loop would require.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 936150,
+          "endMilliseconds": 945390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restore-reading-with-a-getter"
+      }
+    },
+    {
+      "id": "TP-074",
+      "startMilliseconds": 945390,
+      "endMilliseconds": 961759,
+      "kind": "fact",
+      "text": "Printing the player's current health for debugging inside a loop is a concrete case of needing read-only access to a field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 945390,
+          "endMilliseconds": 961759
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restore-reading-with-a-getter"
+      }
+    },
+    {
+      "id": "TP-075",
+      "startMilliseconds": 961759,
+      "endMilliseconds": 972470,
+      "kind": "reason",
+      "text": "Such debug printing cannot be done right now because Health is a private field and is therefore unreachable from outside the type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 961759,
+          "endMilliseconds": 972470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restore-reading-with-a-getter"
+      }
+    },
+    {
+      "id": "TP-076",
+      "startMilliseconds": 972470,
+      "endMilliseconds": 985880,
+      "kind": "explanation",
+      "text": "The fix is to declare a method that reads the field and let callers read the value through that method instead of the field name, which preserves encapsulation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 972470,
+          "endMilliseconds": 985880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restore-reading-with-a-getter"
+      }
+    },
+    {
+      "id": "TP-077",
+      "startMilliseconds": 978639,
+      "endMilliseconds": 989199,
+      "kind": "explanation",
+      "text": "The hidden field's value is now read through a GetHealth method instead of the field name, so callers no longer depend on the field itself.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 978639,
+          "endMilliseconds": 989199
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restore-reading-with-a-getter"
+      }
+    },
+    {
+      "id": "TP-078",
+      "startMilliseconds": 989199,
+      "endMilliseconds": 999389,
+      "kind": "reason",
+      "text": "The field stays encapsulated because there is no way to write into it, while reading through the method keeps the access controlled.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 989199,
+          "endMilliseconds": 999389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restore-reading-with-a-getter"
+      }
+    },
+    {
+      "id": "TP-079",
+      "startMilliseconds": 999389,
+      "endMilliseconds": 1016510,
+      "kind": "explanation",
+      "text": "This read-only design lets you later add a writing method while keeping the field private.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 999389,
+          "endMilliseconds": 1016510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#restore-reading-with-a-getter"
+      }
+    },
+    {
+      "id": "TP-080",
+      "startMilliseconds": 1016510,
+      "endMilliseconds": 1023120,
+      "kind": "fact",
+      "text": "The writing method is conventionally called a setter and is written as SetHealth, storing the passed value into the field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1016510,
+          "endMilliseconds": 1023120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#control-writes-with-a-setter"
+      }
+    },
+    {
+      "id": "TP-081",
+      "startMilliseconds": 1023120,
+      "endMilliseconds": 1035840,
+      "kind": "explanation",
+      "text": "A setter is the right place for extra logic such as checking that health is positive or zero, catching bad values before they corrupt state.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1023120,
+          "endMilliseconds": 1035840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#control-writes-with-a-setter"
+      }
+    },
+    {
+      "id": "TP-082",
+      "startMilliseconds": 1035840,
+      "endMilliseconds": 1044250,
+      "kind": "reason",
+      "text": "Because writes go through the setter instead of directly into the field, added checks run on every write and surface errors during debugging.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1035840,
+          "endMilliseconds": 1044250
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#control-writes-with-a-setter"
+      }
+    },
+    {
+      "id": "TP-083",
+      "startMilliseconds": 1044250,
+      "endMilliseconds": 1054880,
+      "kind": "explanation",
+      "text": "Access modifiers of the getter and setter can also be changed, for example making SetHealth private so it is unusable from outside.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1044250,
+          "endMilliseconds": 1054880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#control-writes-with-a-setter"
+      }
+    },
+    {
+      "id": "TP-084",
+      "startMilliseconds": 1048120,
+      "endMilliseconds": 1061849,
+      "kind": "explanation",
+      "text": "A private setter can still be called from other methods inside the same class, so encapsulation restricts outside use rather than all use.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1048120,
+          "endMilliseconds": 1061849
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#control-writes-with-a-setter"
+      }
+    },
+    {
+      "id": "TP-085",
+      "startMilliseconds": 1061849,
+      "endMilliseconds": 1085290,
+      "kind": "reason",
+      "text": "Calling SetHealth with the new value instead of writing into the field directly guarantees that the setter's validation runs on every health change.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1061849,
+          "endMilliseconds": 1085290
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#control-writes-with-a-setter"
+      }
+    },
+    {
+      "id": "TP-086",
+      "startMilliseconds": 1082660,
+      "endMilliseconds": 1095600,
+      "kind": "edge_case",
+      "text": "Without such validation a single method call can set health negative and crash the program, which is the failure the checks exist to prevent.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1082660,
+          "endMilliseconds": 1095600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#control-writes-with-a-setter"
+      }
+    },
+    {
+      "id": "TP-087",
+      "startMilliseconds": 1095600,
+      "endMilliseconds": 1109230,
+      "kind": "explanation",
+      "text": "Instead of rejecting invalid values the setter could clamp a negative health to zero and then write the parameter into the field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1095600,
+          "endMilliseconds": 1109230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#control-writes-with-a-setter"
+      }
+    },
+    {
+      "id": "TP-088",
+      "startMilliseconds": 1109230,
+      "endMilliseconds": 1123470,
+      "kind": "fact",
+      "text": "C# has extra syntax for a method that returns a value and a method that sets a value, and such read/write pairs are called properties.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1109230,
+          "endMilliseconds": 1123470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bind-reading-and-writing-into-a-property"
+      }
+    },
+    {
+      "id": "TP-089",
+      "startMilliseconds": 1123470,
+      "endMilliseconds": 1133720,
+      "kind": "fact",
+      "text": "Properties are used very often in C#, and their special syntax puts the allowed operations in curly braces after the field declaration.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1123470,
+          "endMilliseconds": 1133720
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1124840,
+          "endMilliseconds": 1133720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bind-reading-and-writing-into-a-property"
+      }
+    },
+    {
+      "id": "TP-090",
+      "startMilliseconds": 1133720,
+      "endMilliseconds": 1161990,
+      "kind": "explanation",
+      "text": "Inside the curly braces you attach the operations you want, here a read that must be visible outside the class and a write restricted to the class context.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1133720,
+          "endMilliseconds": 1161990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bind-reading-and-writing-into-a-property"
+      }
+    },
+    {
+      "id": "TP-091",
+      "startMilliseconds": 1144470,
+      "endMilliseconds": 1152920,
+      "kind": "code_change",
+      "text": "The getter's access modifier is changed to public so the field value can be read from outside the class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1144470,
+          "endMilliseconds": 1152920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bind-reading-and-writing-into-a-property"
+      }
+    },
+    {
+      "id": "TP-092",
+      "startMilliseconds": 1152920,
+      "endMilliseconds": 1161990,
+      "kind": "fact",
+      "text": "After the change the property can be read from outside while it can be written only from inside the class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1152920,
+          "endMilliseconds": 1161990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bind-reading-and-writing-into-a-property"
+      }
+    },
+    {
+      "id": "TP-093",
+      "startMilliseconds": 1161990,
+      "endMilliseconds": 1169630,
+      "kind": "explanation",
+      "text": "The compiler treats the get and set parts as full methods, and you may even give them explicit bodies.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1161990,
+          "endMilliseconds": 1169630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bind-reading-and-writing-into-a-property"
+      }
+    },
+    {
+      "id": "TP-094",
+      "startMilliseconds": 1169630,
+      "endMilliseconds": 1177200,
+      "kind": "fact",
+      "text": "Methods are named in PascalCase while fields start with a lowercase letter with an underscore, a convention that keeps the two roles distinguishable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1169630,
+          "endMilliseconds": 1177200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bind-reading-and-writing-into-a-property"
+      }
+    },
+    {
+      "id": "TP-095",
+      "startMilliseconds": 1181790,
+      "endMilliseconds": 1198440,
+      "kind": "code_change",
+      "text": "The rewritten code no longer writes into the field directly, because the set part without a body assigns straight to the field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1181790,
+          "endMilliseconds": 1198440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-what-an-auto-property-generates"
+      }
+    },
+    {
+      "id": "TP-096",
+      "startMilliseconds": 1198440,
+      "endMilliseconds": 1213360,
+      "kind": "explanation",
+      "text": "The compiler generates the equivalent direct field assignment with no validation for a body-less set part, which is why the earlier checks disappear.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1198440,
+          "endMilliseconds": 1213360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-what-an-auto-property-generates"
+      }
+    },
+    {
+      "id": "TP-097",
+      "startMilliseconds": 1204000,
+      "endMilliseconds": 1213360,
+      "kind": "explanation",
+      "text": "For a set part without a body the compiler generates direct field assignment with no validation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1204000,
+          "endMilliseconds": 1213360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-what-an-auto-property-generates"
+      }
+    },
+    {
+      "id": "TP-098",
+      "startMilliseconds": 1213360,
+      "endMilliseconds": 1217390,
+      "kind": "fact",
+      "text": "The generated set part is private because the property's set was declared private.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1213360,
+          "endMilliseconds": 1217390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-what-an-auto-property-generates"
+      }
+    },
+    {
+      "id": "TP-099",
+      "startMilliseconds": 1217390,
+      "endMilliseconds": 1232700,
+      "kind": "explanation",
+      "text": "The compiler-generated getter is not called GetHealth, so reading the value externally uses the property name Health instead of the method name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1217390,
+          "endMilliseconds": 1232700
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-what-an-auto-property-generates"
+      }
+    },
+    {
+      "id": "TP-100",
+      "startMilliseconds": 1242030,
+      "endMilliseconds": 1253070,
+      "kind": "fact",
+      "text": "The access modifier written on the property is taken by the compiler and applied to the generated methods it wraps.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1242030,
+          "endMilliseconds": 1253070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-what-an-auto-property-generates"
+      }
+    },
+    {
+      "id": "TP-101",
+      "startMilliseconds": 1253070,
+      "endMilliseconds": 1264830,
+      "kind": "fact",
+      "text": "The backing field is created automatically by the compiler under a hidden name that you cannot reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1253070,
+          "endMilliseconds": 1264830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-what-an-auto-property-generates"
+      }
+    },
+    {
+      "id": "TP-102",
+      "startMilliseconds": 1264830,
+      "endMilliseconds": 1280760,
+      "kind": "explanation",
+      "text": "You may instead declare the field yourself and spell out the get and set methods, because if they are not spelled out the compiler creates a similar field on its own.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1264830,
+          "endMilliseconds": 1280760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expand-accessors-to-restore-validation"
+      }
+    },
+    {
+      "id": "TP-103",
+      "startMilliseconds": 1278799,
+      "endMilliseconds": 1285500,
+      "kind": "code_change",
+      "text": "Expanding a property means writing its accessors in curly braces: get returns the backing field value and set assigns to that field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1278799,
+          "endMilliseconds": 1285500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expand-accessors-to-restore-validation"
+      }
+    },
+    {
+      "id": "TP-104",
+      "startMilliseconds": 1280760,
+      "endMilliseconds": 1286799,
+      "kind": "code_change",
+      "text": "To make the property use your own field, the get part is written out with a body in curly braces that returns the field value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1280760,
+          "endMilliseconds": 1286799
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expand-accessors-to-restore-validation"
+      }
+    },
+    {
+      "id": "TP-105",
+      "startMilliseconds": 1285500,
+      "endMilliseconds": 1293400,
+      "kind": "explanation",
+      "text": "In the generated accessor the parameter is called value rather than the human-readable property name, so 'health = value' assigns the passed argument to the field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1285500,
+          "endMilliseconds": 1293400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expand-accessors-to-restore-validation"
+      }
+    },
+    {
+      "id": "TP-106",
+      "startMilliseconds": 1293400,
+      "endMilliseconds": 1302669,
+      "kind": "explanation",
+      "text": "An expression like health = health - damage first reads the property through get and then writes it back through set, so the accessors run as ordinary method calls.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1293400,
+          "endMilliseconds": 1302669
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expand-accessors-to-restore-validation"
+      }
+    },
+    {
+      "id": "TP-107",
+      "startMilliseconds": 1302669,
+      "endMilliseconds": 1310990,
+      "kind": "explanation",
+      "text": "Validation logic belongs in the set accessor, where it must be written against the value parameter because that is the name visible inside the generated accessor.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1302669,
+          "endMilliseconds": 1310990
+        },
+        {
+          "type": "repository_blob",
+          "repository": "uniCourse_csharp",
+          "commit": "19d6c57ba17ef64ef9c65d22808e2c3f682768c2",
+          "path": "labs/1_basic/17_encapsulation.md"
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expand-accessors-to-restore-validation"
+      }
+    },
+    {
+      "id": "TP-108",
+      "startMilliseconds": 1310990,
+      "endMilliseconds": 1322270,
+      "kind": "explanation",
+      "text": "Properties exist to encapsulate field access, and in C# they are preferred over standalone get and set methods because the two accessors are bound together by a single property name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1310990,
+          "endMilliseconds": 1322270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expand-accessors-to-restore-validation"
+      }
+    },
+    {
+      "id": "TP-109",
+      "startMilliseconds": 1322270,
+      "endMilliseconds": 1366400,
+      "kind": "reason",
+      "text": "Private fields are conventionally named with a leading underscore so that a reader can immediately tell a field apart from a similarly named method parameter, which is why the underscore matters when the same code is read elsewhere.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1322270,
+          "endMilliseconds": 1366400
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1359320,
+          "endMilliseconds": 1366400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#distinguish-fields-parameters-and-properties"
+      }
+    },
+    {
+      "id": "TP-110",
+      "startMilliseconds": 1366400,
+      "endMilliseconds": 1373790,
+      "kind": "explanation",
+      "text": "Naming carries meaning in C#: a lowercase identifier such as value signals a parameter while a PascalCase name such as Health signals a field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1366400,
+          "endMilliseconds": 1373790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#distinguish-fields-parameters-and-properties"
+      }
+    },
+    {
+      "id": "TP-111",
+      "startMilliseconds": 1373790,
+      "endMilliseconds": 1387690,
+      "kind": "reason",
+      "text": "C# discourages public fields, especially in classes where encapsulation is used, yet merely turning such a field into a PascalCase property adds nothing on its own so either choice is acceptable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1373790,
+          "endMilliseconds": 1387690
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-usage-syntax-while-adding-abstraction"
+      }
+    },
+    {
+      "id": "TP-112",
+      "startMilliseconds": 1387690,
+      "endMilliseconds": 1407070,
+      "kind": "explanation",
+      "text": "A public field can later be refactored into a property with added getter and setter logic without changing any usage syntax, because the member keeps the same name and callers still only assign or read its value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1387690,
+          "endMilliseconds": 1407070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-usage-syntax-while-adding-abstraction"
+      }
+    },
+    {
+      "id": "TP-113",
+      "startMilliseconds": 1407070,
+      "endMilliseconds": 1435480,
+      "kind": "explanation",
+      "text": "Both public fields and properties have their own advantages, which the instructor postpones to a later discussion.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1407070,
+          "endMilliseconds": 1435480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-usage-syntax-while-adding-abstraction"
+      }
+    },
+    {
+      "id": "TP-114",
+      "startMilliseconds": 1428120,
+      "endMilliseconds": 1446200,
+      "kind": "scope_boundary",
+      "text": "The instructor explicitly defers comparing the concrete advantages of public fields and properties, saying it is too early to speak about them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1428120,
+          "endMilliseconds": 1446200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-usage-syntax-while-adding-abstraction"
+      }
+    },
+    {
+      "id": "TP-115",
+      "startMilliseconds": 1446200,
+      "endMilliseconds": 1462000,
+      "kind": "reason",
+      "text": "When a public field is exposed as a property the code adds a level of abstraction, because callers read the value through a get method rather than touching the field directly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1446200,
+          "endMilliseconds": 1462000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-usage-syntax-while-adding-abstraction"
+      }
+    },
+    {
+      "id": "TP-116",
+      "startMilliseconds": 1462000,
+      "endMilliseconds": 1475470,
+      "kind": "explanation",
+      "text": "This added abstraction does not change the syntax at the call site, so a user cannot tell from the calling code whether a field or a property was used.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1462000,
+          "endMilliseconds": 1475470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-usage-syntax-while-adding-abstraction"
+      }
+    },
+    {
+      "id": "TP-117",
+      "startMilliseconds": 1475470,
+      "endMilliseconds": 1508080,
+      "kind": "explanation",
+      "text": "To illustrate constructors the instructor walks a creation line step by step: the declaration creates an uninitialized variable t and then an object is allocated in dynamic memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1475470,
+          "endMilliseconds": 1508080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-allocation-and-constructor-arguments"
+      }
+    },
+    {
+      "id": "TP-118",
+      "startMilliseconds": 1499720,
+      "endMilliseconds": 1508400,
+      "kind": "explanation",
+      "text": "When the object is allocated in dynamic memory it occupies some address and contains the fields declared by the class, each initialized to a default value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1499720,
+          "endMilliseconds": 1508400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-allocation-and-constructor-arguments"
+      }
+    },
+    {
+      "id": "TP-119",
+      "startMilliseconds": 1508400,
+      "endMilliseconds": 1509400,
+      "kind": "explanation",
+      "text": "After the object is allocated the next execution step is the call to the constructor.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1508400,
+          "endMilliseconds": 1509400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-allocation-and-constructor-arguments"
+      }
+    },
+    {
+      "id": "TP-120",
+      "startMilliseconds": 1509400,
+      "endMilliseconds": 1518000,
+      "kind": "fact",
+      "text": "A constructor declared with three parameters actually receives three arguments because the compiler adds a hidden first parameter named this.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1509400,
+          "endMilliseconds": 1518000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-allocation-and-constructor-arguments"
+      }
+    },
+    {
+      "id": "TP-121",
+      "startMilliseconds": 1518000,
+      "endMilliseconds": 1529030,
+      "kind": "explanation",
+      "text": "Calling the constructor creates three stack memory cells: one for the hidden this parameter and one for each of the data parameters, which are parameters and not fields even though their names match the fields.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1518000,
+          "endMilliseconds": 1529030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-allocation-and-constructor-arguments"
+      }
+    },
+    {
+      "id": "TP-122",
+      "startMilliseconds": 1529030,
+      "endMilliseconds": 1548600,
+      "kind": "explanation",
+      "text": "Because fields and parameters share names but occupy different memory cells, an unqualified data1 inside the constructor body can still be resolved to the object's field while the parameter data1 refers to the temporary stack variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1529030,
+          "endMilliseconds": 1548600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-allocation-and-constructor-arguments"
+      }
+    },
+    {
+      "id": "TP-123",
+      "startMilliseconds": 1548600,
+      "endMilliseconds": 1593080,
+      "kind": "explanation",
+      "text": "The hidden this argument receives the address of the object being created, so the call site passes the object reference first and the constructor parameter values afterwards before the constructor body runs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1548600,
+          "endMilliseconds": 1593080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-allocation-and-constructor-arguments"
+      }
+    },
+    {
+      "id": "TP-124",
+      "startMilliseconds": 1584080,
+      "endMilliseconds": 1593549,
+      "kind": "explanation",
+      "text": "The arguments passed at the new call site become the constructor's parameters, so the first constructor instruction can use them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1584080,
+          "endMilliseconds": 1593549
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-allocation-and-constructor-arguments"
+      }
+    },
+    {
+      "id": "TP-125",
+      "startMilliseconds": 1593559,
+      "endMilliseconds": 1594436,
+      "kind": "fact",
+      "text": "The first instruction of the constructor reads the address held in the implicit this variable, illustrated as address 8000.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1593559,
+          "endMilliseconds": 1594436
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finish-construction-and-retain-the-object-reference"
+      }
+    },
+    {
+      "id": "TP-126",
+      "startMilliseconds": 1594436,
+      "endMilliseconds": 1594669,
+      "kind": "explanation",
+      "text": "Following that this address, the constructor writes what is in parameter data1 into the field named data1, so field and parameter names distinguish where the value ends up.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1594436,
+          "endMilliseconds": 1594669
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finish-construction-and-retain-the-object-reference"
+      }
+    },
+    {
+      "id": "TP-127",
+      "startMilliseconds": 1594669,
+      "endMilliseconds": 1597074,
+      "kind": "explanation",
+      "text": "Stepping through the same object address 8000, the constructor writes parameter data2 into the field named data2 of that object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1594669,
+          "endMilliseconds": 1597074
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finish-construction-and-retain-the-object-reference"
+      }
+    },
+    {
+      "id": "TP-128",
+      "startMilliseconds": 1597074,
+      "endMilliseconds": 1598760,
+      "kind": "explanation",
+      "text": "After all this the whole constructor call is replaced in the code by the address of the newly created object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1597074,
+          "endMilliseconds": 1598760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finish-construction-and-retain-the-object-reference"
+      }
+    },
+    {
+      "id": "TP-129",
+      "startMilliseconds": 1598760,
+      "endMilliseconds": 1602929,
+      "kind": "edge_case",
+      "text": "Even if you try to return something from a constructor, that value does not replace the result of the new expression, which is always the new object's address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1598760,
+          "endMilliseconds": 1602929
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finish-construction-and-retain-the-object-reference"
+      }
+    },
+    {
+      "id": "TP-130",
+      "startMilliseconds": 1602929,
+      "endMilliseconds": 1605890,
+      "kind": "fact",
+      "text": "The address of the new object is what gets stored in the local variable, shown here as the value 88000.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1602929,
+          "endMilliseconds": 1605890
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finish-construction-and-retain-the-object-reference"
+      }
+    },
+    {
+      "id": "TP-131",
+      "startMilliseconds": 1605890,
+      "endMilliseconds": 1665039,
+      "kind": "explanation",
+      "text": "Once the constructor call finishes, the parameter data it used is erased, because those variables were only temporary storage for the object's initialization.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1605890,
+          "endMilliseconds": 1665039
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finish-construction-and-retain-the-object-reference"
+      }
+    }
+  ]
+}

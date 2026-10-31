@@ -1,0 +1,2486 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "fcxFAW1EE_A",
+  "uploadId": "fcxFAW1EE_A",
+  "transcriptSha256": "98006796030ac647377b4cd28b7a10a19fea80c481ecd70fd2fc3911364c3003",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 6399,
+      "endMilliseconds": 14789,
+      "kind": "fact",
+      "text": "Консоль Windows можно открыть через поиск в меню Windows, чтобы выполнять команды проверки Git.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 6399,
+          "endMilliseconds": 14789
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-whether-windows-can-run-git"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 14799,
+      "endMilliseconds": 20670,
+      "kind": "fact",
+      "text": "Удерживание Ctrl и прокрутка колеса мыши меняют размер шрифта в показанной консоли, облегчая чтение команд и результатов.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 14799,
+          "endMilliseconds": 20670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-whether-windows-can-run-git"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 20680,
+      "endMilliseconds": 29470,
+      "kind": "fact",
+      "text": "Запуск git без аргументов позволяет проверить, доступна ли программа для выполнения в консоли.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 20680,
+          "endMilliseconds": 29470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-whether-windows-can-run-git"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 29480,
+      "endMilliseconds": 44150,
+      "kind": "explanation",
+      "text": "Команда where в Windows ищет расположение программы по имени и представлена как аналог which в Linux, позволяя проверить доступность Git другим способом.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 29480,
+          "endMilliseconds": 44150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-whether-windows-can-run-git"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 44160,
+      "endMilliseconds": 52750,
+      "kind": "test_result",
+      "text": "В демонстрации поиск не находит Git, поэтому преподаватель переходит к его установке.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 44160,
+          "endMilliseconds": 52750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-whether-windows-can-run-git"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 61359,
+      "endMilliseconds": 63110,
+      "kind": "fact",
+      "text": "В показанной установке Git преподаватель сохраняет настройки по умолчанию, чтобы продолжить базовую настройку без выбора дополнительных параметров.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 61359,
+          "endMilliseconds": 63110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#install-git-and-find-command-documentation"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 72920,
+      "endMilliseconds": 84469,
+      "kind": "test_result",
+      "text": "После установки Git запуск в новой консоли работает, поэтому при недоступности команды в прежнем окне стоит открыть новое.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 72920,
+          "endMilliseconds": 84469
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 78479,
+          "endMilliseconds": 84469
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#install-git-and-find-command-documentation"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 84479,
+      "endMilliseconds": 90149,
+      "kind": "fact",
+      "text": "Запуск git без аргументов выводит справку, позволяя увидеть доступные команды.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 84479,
+          "endMilliseconds": 87479
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 84479,
+          "endMilliseconds": 90149
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#install-git-and-find-command-documentation"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 90159,
+      "endMilliseconds": 95710,
+      "kind": "fact",
+      "text": "Общую справку Git можно также запросить параметром --help, чтобы явно обратиться к помощи программы.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 90159,
+          "endMilliseconds": 95710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#install-git-and-find-command-documentation"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 95720,
+      "endMilliseconds": 116550,
+      "kind": "fact",
+      "text": "Команда git clone --help запрашивает документацию отдельной команды и в показанной настройке открывает её как HTML-страницу.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 95720,
+          "endMilliseconds": 116550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#install-git-and-find-command-documentation"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 116560,
+      "endMilliseconds": 140630,
+      "kind": "explanation",
+      "text": "GitHub использует Git для хранения репозиториев, но Git можно инициализировать и использовать полностью локально без GitHub.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 116560,
+          "endMilliseconds": 140630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-what-stays-local"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 140640,
+      "endMilliseconds": 156990,
+      "kind": "fact",
+      "text": "Git можно связать с другим провайдером, поддерживающим его протокол, поэтому удалённое хранение не ограничивается GitHub.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 140640,
+          "endMilliseconds": 156990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-what-stays-local"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 153599,
+      "endMilliseconds": 163470,
+      "kind": "scope_boundary",
+      "text": "Работа с GitHub отложена до изучения локального Git, чтобы сначала освоить операции в папке проекта.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 153599,
+          "endMilliseconds": 163470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-what-stays-local"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 168280,
+      "endMilliseconds": 184710,
+      "kind": "reason",
+      "text": "Инициализацию Git нужно выполнять из папки проекта, чтобы репозиторий создавался для нужного расположения файлов.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 168280,
+          "endMilliseconds": 184710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-the-project-folder-a-repository"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 184720,
+      "endMilliseconds": 189710,
+      "kind": "test_result",
+      "text": "После инициализации в папке проекта появляется скрытая папка .git, показывающая наличие локального репозитория.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 184720,
+          "endMilliseconds": 189710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-the-project-folder-a-repository"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 189720,
+      "endMilliseconds": 198190,
+      "kind": "fact",
+      "text": "Показ скрытых файлов в настройках проводника позволяет увидеть папку .git и проверить её наличие.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 189720,
+          "endMilliseconds": 198190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-the-project-folder-a-repository"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 198200,
+      "endMilliseconds": 215270,
+      "kind": "explanation",
+      "text": "В папке .git хранится история состояний файлов на моменты комитов, поэтому репозиторий содержит сведения о предыдущих версиях.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 198200,
+          "endMilliseconds": 215270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-the-project-folder-a-repository"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 215280,
+      "endMilliseconds": 228070,
+      "kind": "explanation",
+      "text": "Комит фиксирует единицу изменений с добавленными или изменёнными файлами, сохраняя их состояние в истории Git.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 215280,
+          "endMilliseconds": 228070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-the-project-folder-a-repository"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 234079,
+      "endMilliseconds": 244470,
+      "kind": "fact",
+      "text": "Команда git status используется для проверки текущего состояния репозитория, чтобы увидеть сведения перед дальнейшими изменениями.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 234079,
+          "endMilliseconds": 241360
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 234079,
+          "endMilliseconds": 244470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#prepare-a-source-file-for-its-first-commit"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 244480,
+      "endMilliseconds": 251910,
+      "kind": "test_result",
+      "text": "Первый вывод git status сообщает об отсутствии комитов и наличии неотслеживаемого файла, показывая, что исходный файл ещё не сохранён в истории.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 244480,
+          "endMilliseconds": 251910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#prepare-a-source-file-for-its-first-commit"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 251920,
+      "endMilliseconds": 259710,
+      "kind": "explanation",
+      "text": "Неотслеживаемый файл существует в файловой системе, но Git ещё не следит за его изменениями, поэтому одного наличия файла в папке недостаточно.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 251920,
+          "endMilliseconds": 259710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#prepare-a-source-file-for-its-first-commit"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 259720,
+      "endMilliseconds": 268110,
+      "kind": "fact",
+      "text": "Команда git add с именем файла начинает его отслеживание и подготавливает файл к включению в комит.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 259720,
+          "endMilliseconds": 268110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#prepare-a-source-file-for-its-first-commit"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 268120,
+      "endMilliseconds": 287070,
+      "kind": "test_result",
+      "text": "После git add вывод git status показывает новый файл среди изменений для комита, хотя самих комитов ещё нет.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 268120,
+          "endMilliseconds": 287070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#prepare-a-source-file-for-its-first-commit"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 287080,
+      "endMilliseconds": 307909,
+      "kind": "reason",
+      "text": "Подготовка файла через git add ещё не создаёт отдельную запись истории, поэтому для сохранения изменений с возможностью последующего возврата нужен git commit.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 287080,
+          "endMilliseconds": 307909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#prepare-a-source-file-for-its-first-commit"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 307919,
+      "endMilliseconds": 317280,
+      "kind": "fact",
+      "text": "Параметр -m команды git commit задаёт сообщение в кавычках, чтобы описать изменения данного комита.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 307919,
+          "endMilliseconds": 317270
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 307919,
+          "endMilliseconds": 317280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#resolve-the-missing-author-and-record-the-file"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 317280,
+      "endMilliseconds": 335390,
+      "kind": "explanation",
+      "text": "Сообщение комита служит документацией и сохраняется вместе с комитом, поэтому его текст помогает понять назначение изменений.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 317280,
+          "endMilliseconds": 335390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#resolve-the-missing-author-and-record-the-file"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 340199,
+      "endMilliseconds": 361469,
+      "kind": "test_result",
+      "text": "Попытка первого комита завершается ошибкой из-за ненастроенных данных автора, поэтому перед повторением нужно выполнить предложенную Git настройку.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 340199,
+          "endMilliseconds": 361469
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#resolve-the-missing-author-and-record-the-file"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 361479,
+      "endMilliseconds": 372670,
+      "kind": "fact",
+      "text": "Email автора в локальном Git не обязан совпадать с email аккаунта GitHub, поэтому эти настройки не следует считать входом в GitHub.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 361479,
+          "endMilliseconds": 372670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#resolve-the-missing-author-and-record-the-file"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 372680,
+      "endMilliseconds": 392070,
+      "kind": "explanation",
+      "text": "По объяснению преподавателя, email автора комита задаётся без проверки принадлежности адреса, поэтому указанное авторство само по себе не подтверждает личность.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 372680,
+          "endMilliseconds": 392070
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 388400,
+          "endMilliseconds": 392070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#resolve-the-missing-author-and-record-the-file"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 392080,
+      "endMilliseconds": 411870,
+      "kind": "explanation",
+      "text": "Флаг --global расширяет область настройки Git за пределы текущего репозитория, позволяя применять данные автора в других репозиториях.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 392080,
+          "endMilliseconds": 397400
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 392080,
+          "endMilliseconds": 411870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#resolve-the-missing-author-and-record-the-file"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 411880,
+      "endMilliseconds": 417550,
+      "kind": "fact",
+      "text": "Настройка email без --global сохраняется для текущего репозитория, позволяя ограничить данные автора одной папкой проекта.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 411880,
+          "endMilliseconds": 417550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#resolve-the-missing-author-and-record-the-file"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 435080,
+      "endMilliseconds": 439029,
+      "kind": "test_result",
+      "text": "В демонстрации имя и email настроены локально для выбранной папки, поэтому последующий комит использует данные этого репозитория.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 435080,
+          "endMilliseconds": 439029
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#resolve-the-missing-author-and-record-the-file"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 445520,
+      "endMilliseconds": 457070,
+      "kind": "test_result",
+      "text": "После настройки данных автора повторная команда git commit успешно создаёт комит, подтверждая устранение предыдущей ошибки.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 445520,
+          "endMilliseconds": 457070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#resolve-the-missing-author-and-record-the-file"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 457080,
+      "endMilliseconds": 470070,
+      "kind": "fact",
+      "text": "Созданный комит пока существует только в локальном репозитории .git, поэтому его создание ещё не означает публикацию в интернете.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 457080,
+          "endMilliseconds": 470070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#resolve-the-missing-author-and-record-the-file"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 474199,
+      "endMilliseconds": 486510,
+      "kind": "explanation",
+      "text": "Комит сохраняет состояние исходного файла на момент фиксации, позволяя связать конкретную версию с записью истории.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 474199,
+          "endMilliseconds": 482560
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 474199,
+          "endMilliseconds": 486510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-the-first-history-entry"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 486520,
+      "endMilliseconds": 494749,
+      "kind": "fact",
+      "text": "Сохранённое состояние файла связано с идентификатором и сообщением комита, позволяя различать записи истории.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 486520,
+          "endMilliseconds": 494749
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-the-first-history-entry"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 494759,
+      "endMilliseconds": 520909,
+      "kind": "fact",
+      "text": "Команда git log показывает историю комитов с идентификаторами, автором, email, датой и сообщением, помогая найти нужную запись изменений.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 494759,
+          "endMilliseconds": 520909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-the-first-history-entry"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 520919,
+      "endMilliseconds": 544350,
+      "kind": "fact",
+      "text": "Компилятор g++ используется для получения исполняемого файла из исходного файла C++, чтобы программу можно было запустить.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 520919,
+          "endMilliseconds": 544350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-an-executable-from-the-recorded-source"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 544360,
+      "endMilliseconds": 555750,
+      "kind": "fact",
+      "text": "Выбор имени выходного файла при компиляции задаёт имя создаваемой программы, позволяя назвать результат сборки.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 544360,
+          "endMilliseconds": 555750
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 550200,
+          "endMilliseconds": 555750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-an-executable-from-the-recorded-source"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 555760,
+      "endMilliseconds": 566590,
+      "kind": "fact",
+      "text": "Полученный после компиляции исполняемый файл можно запускать, чтобы выполнить собранную программу.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 555760,
+          "endMilliseconds": 561190
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 555760,
+          "endMilliseconds": 566590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-an-executable-from-the-recorded-source"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 566600,
+      "endMilliseconds": 577590,
+      "kind": "reason",
+      "text": "Исполняемые файлы обычно не сохраняют в Git, поскольку их можно повторно получить из исходного кода.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 566600,
+          "endMilliseconds": 577590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-an-executable-from-the-recorded-source"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 577600,
+      "endMilliseconds": 587910,
+      "kind": "reason",
+      "text": "Хранение исходного кода позволяет пользователю собрать исполняемый файл для архитектуры собственного компьютера.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 577600,
+          "endMilliseconds": 587910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-an-executable-from-the-recorded-source"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 587920,
+      "endMilliseconds": 606310,
+      "kind": "reason",
+      "text": "Git позволяет сравнивать строки текстовых файлов, тогда как показанный исполняемый файл содержит бинарный машинный код, что делает исходный текст удобнее для просмотра изменений.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 587920,
+          "endMilliseconds": 606310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-an-executable-from-the-recorded-source"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 606320,
+      "endMilliseconds": 621310,
+      "kind": "reason",
+      "text": "В примере исходный файл занимает 104 байта, а исполняемый около 60 КБ, поэтому исключение результата сборки уменьшает объём сохраняемых файлов.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 606320,
+          "endMilliseconds": 621310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-an-executable-from-the-recorded-source"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 621320,
+      "endMilliseconds": 633069,
+      "kind": "explanation",
+      "text": "В показанном примере больший размер исполняемого файла объясняется включением используемых библиотечных функций, поэтому размер программы отличается от размера исходного текста.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 621320,
+          "endMilliseconds": 633069
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-an-executable-from-the-recorded-source"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 633079,
+      "endMilliseconds": 640240,
+      "kind": "test_result",
+      "text": "После компиляции git status показывает исполняемый файл как ещё не добавленный, подтверждая, что сборка сама не включает его в Git.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 633079,
+          "endMilliseconds": 640230
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 633079,
+          "endMilliseconds": 640240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-an-executable-from-the-recorded-source"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 640240,
+      "endMilliseconds": 670710,
+      "kind": "reason",
+      "text": "Имена исполняемых файлов записывают в .gitignore, чтобы исключить их из обычного добавления в Git и избежать случайного включения результатов сборки.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 640240,
+          "endMilliseconds": 670710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#develop-and-save-ignore-rules"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 670720,
+      "endMilliseconds": 677590,
+      "kind": "test_result",
+      "text": "После внесения имени исполняемого файла в .gitignore вывод git status показывает только новый .gitignore, подтверждая применение правила игнорирования.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 670720,
+          "endMilliseconds": 677590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#develop-and-save-ignore-rules"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 677600,
+      "endMilliseconds": 689069,
+      "kind": "explanation",
+      "text": "Git автоматически интерпретирует специальный файл .gitignore, поэтому перечисленные в нём имена становятся правилами игнорирования.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 677600,
+          "endMilliseconds": 689069
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#develop-and-save-ignore-rules"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 689079,
+      "endMilliseconds": 704629,
+      "kind": "edge_case",
+      "text": "Новый исполняемый файл с другим именем не попадает под правило для первого имени, поэтому отдельные имена приходится добавлять отдельно.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 689079,
+          "endMilliseconds": 704629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#develop-and-save-ignore-rules"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 704639,
+      "endMilliseconds": 715590,
+      "kind": "fact",
+      "text": "Отдельные имена файлов в .gitignore записываются на отдельных строках, позволяя задать несколько правил игнорирования.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 704639,
+          "endMilliseconds": 715590
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 713480,
+          "endMilliseconds": 715590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#develop-and-save-ignore-rules"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 715600,
+      "endMilliseconds": 723829,
+      "kind": "test_result",
+      "text": "После добавления второго имени в .gitignore этот исполняемый файл перестаёт отображаться в git status, подтверждая действие нового правила.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 715600,
+          "endMilliseconds": 720920
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 715600,
+          "endMilliseconds": 723829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#develop-and-save-ignore-rules"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 723839,
+      "endMilliseconds": 744949,
+      "kind": "fact",
+      "text": "Шаблон со звёздочкой и расширением позволяет одной строкой .gitignore игнорировать оба исполняемых файла вместо перечисления их имён.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 723839,
+          "endMilliseconds": 744949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#develop-and-save-ignore-rules"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 744959,
+      "endMilliseconds": 768990,
+      "kind": "fact",
+      "text": "Сам файл .gitignore нужно добавить в Git и сохранить комитом, чтобы правила игнорирования стали частью истории проекта.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 744959,
+          "endMilliseconds": 768990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#develop-and-save-ignore-rules"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 769000,
+      "endMilliseconds": 777710,
+      "kind": "test_result",
+      "text": "Вывод git log показывает отдельные комиты добавления исходных файлов и настройки игнорирования, позволяя различить эти этапы работы.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 769000,
+          "endMilliseconds": 777710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#develop-and-save-ignore-rules"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 787839,
+      "endMilliseconds": 797790,
+      "kind": "code_change",
+      "text": "Из исходного файла удаляются строки, оставлявшие консоль открытой, чтобы изменить поведение программы после выполнения.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 787839,
+          "endMilliseconds": 797790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#review-a-source-edit-before-recording-it"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 797800,
+      "endMilliseconds": 803590,
+      "kind": "test_result",
+      "text": "После редактирования исходного файла git status отмечает его как изменённый, позволяя обнаружить отличие от сохранённого состояния.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 797800,
+          "endMilliseconds": 803590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#review-a-source-edit-before-recording-it"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 805440,
+      "endMilliseconds": 821910,
+      "kind": "explanation",
+      "text": "В показанном состоянии git diff сравнивает текущий файл с сохранённым состоянием, позволяя просмотреть изменения перед комитом.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 805440,
+          "endMilliseconds": 821910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#review-a-source-edit-before-recording-it"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 830440,
+      "endMilliseconds": 836590,
+      "kind": "test_result",
+      "text": "Вывод git diff показывает две удалённые строки, подтверждая конкретные изменения исходного файла.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 830440,
+          "endMilliseconds": 836590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#review-a-source-edit-before-recording-it"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 852360,
+      "endMilliseconds": 868269,
+      "kind": "fact",
+      "text": "Изменённый отслеживаемый файл можно подготовить через git add и сохранить новым комитом, чтобы его новая версия вошла в историю Git.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 852360,
+          "endMilliseconds": 868269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#review-a-source-edit-before-recording-it"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 913040,
+      "endMilliseconds": 923590,
+      "kind": "test_result",
+      "text": "В показанном выводе новые файлы внутри папки представлены одной записью папки, поэтому список не обязательно сразу перечисляет каждый файл отдельно.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 913040,
+          "endMilliseconds": 923590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#save-several-files-and-recover-an-unstaged-deletion"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 936800,
+      "endMilliseconds": 941749,
+      "kind": "test_result",
+      "text": "После размещения файлов B и C в основной папке вывод состояния перечисляет их отдельно, помогая увидеть новые файлы перед добавлением.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 936800,
+          "endMilliseconds": 941749
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#save-several-files-and-recover-an-unstaged-deletion"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 941759,
+      "endMilliseconds": 967790,
+      "kind": "fact",
+      "text": "В команде git add . точка обозначает текущую папку, позволяя разом подготовить её новые и изменённые файлы к следующему комиту.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 941759,
+          "endMilliseconds": 967790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#save-several-files-and-recover-an-unstaged-deletion"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 967800,
+      "endMilliseconds": 993749,
+      "kind": "fact",
+      "text": "После подготовки нескольких файлов команда git commit сохраняет их совместно, позволяя оформить добавление как одну единицу изменений.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 967800,
+          "endMilliseconds": 976120
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 967800,
+          "endMilliseconds": 993749
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#save-several-files-and-recover-an-unstaged-deletion"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 993759,
+      "endMilliseconds": 1006870,
+      "kind": "explanation",
+      "text": "Удаление закомиченных файлов из рабочей папки не уничтожает сохранённые версии в Git, поэтому эти версии остаются доступными для восстановления.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 993759,
+          "endMilliseconds": 1006870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#save-several-files-and-recover-an-unstaged-deletion"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 1006880,
+      "endMilliseconds": 1018710,
+      "kind": "test_result",
+      "text": "В демонстрации git restore . возвращает удалённые файлы вместе с прежним кодом, показывая восстановление незакомиченного удаления.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1006880,
+          "endMilliseconds": 1018710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#save-several-files-and-recover-an-unstaged-deletion"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 1072400,
+      "endMilliseconds": 1084310,
+      "kind": "fact",
+      "text": "Удаление файлов тоже можно зафиксировать в Git, чтобы отсутствие файлов стало частью сохранённого состояния проекта.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1072400,
+          "endMilliseconds": 1078799
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1072400,
+          "endMilliseconds": 1084310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#visit-the-state-before-a-committed-deletion"
+      }
+    },
+    {
+      "id": "TP-068",
+      "startMilliseconds": 1084320,
+      "endMilliseconds": 1098590,
+      "kind": "edge_case",
+      "text": "После комита удаления git restore . не возвращает эти файлы, потому что текущее сохранённое состояние уже содержит их отсутствие.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1084320,
+          "endMilliseconds": 1098590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#visit-the-state-before-a-committed-deletion"
+      }
+    },
+    {
+      "id": "TP-069",
+      "startMilliseconds": 1098600,
+      "endMilliseconds": 1124710,
+      "kind": "fact",
+      "text": "История git log позволяет выбрать идентификатор предыдущего комита, чтобы обратиться к состоянию до удаления файлов.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1098600,
+          "endMilliseconds": 1124710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#visit-the-state-before-a-committed-deletion"
+      }
+    },
+    {
+      "id": "TP-070",
+      "startMilliseconds": 1124720,
+      "endMilliseconds": 1128270,
+      "kind": "fact",
+      "text": "Клавиша q завершает просмотр истории в показанном режиме, позволяя вернуться к вводу команд.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1124720,
+          "endMilliseconds": 1128270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#visit-the-state-before-a-committed-deletion"
+      }
+    },
+    {
+      "id": "TP-071",
+      "startMilliseconds": 1128280,
+      "endMilliseconds": 1148310,
+      "kind": "test_result",
+      "text": "Команда git checkout с идентификатором старого комита возвращает файлы его состояния, позволяя просмотреть проект до удаления.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1128280,
+          "endMilliseconds": 1148310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#visit-the-state-before-a-committed-deletion"
+      }
+    },
+    {
+      "id": "TP-072",
+      "startMilliseconds": 1148320,
+      "endMilliseconds": 1158270,
+      "kind": "test_result",
+      "text": "Команда git checkout master возвращает состояние основной ветки, в котором удалённые комитом файлы снова отсутствуют.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1148320,
+          "endMilliseconds": 1158270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#visit-the-state-before-a-committed-deletion"
+      }
+    },
+    {
+      "id": "TP-073",
+      "startMilliseconds": 1170960,
+      "endMilliseconds": 1187549,
+      "kind": "reason",
+      "text": "Для дальнейшей работы от выбранного старого комита предлагается создать отдельную ветку, чтобы новые изменения велись независимо от master.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1170960,
+          "endMilliseconds": 1187549
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#start-a-separate-line-of-work"
+      }
+    },
+    {
+      "id": "TP-074",
+      "startMilliseconds": 1187559,
+      "endMilliseconds": 1201149,
+      "kind": "reason",
+      "text": "Экспериментальную функцию можно разрабатывать в отдельной ветке, чтобы её изменения оставались независимыми от основной ветки.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1187559,
+          "endMilliseconds": 1201149
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#start-a-separate-line-of-work"
+      }
+    },
+    {
+      "id": "TP-075",
+      "startMilliseconds": 1201159,
+      "endMilliseconds": 1213870,
+      "kind": "fact",
+      "text": "Команда git checkout с флагом создания ветки создаёт именованную ветку из текущего состояния, позволяя начать отдельную линию изменений.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1201159,
+          "endMilliseconds": 1213870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#start-a-separate-line-of-work"
+      }
+    },
+    {
+      "id": "TP-076",
+      "startMilliseconds": 1213880,
+      "endMilliseconds": 1232110,
+      "kind": "test_result",
+      "text": "В примере существуют экспериментальная ветка с прежними файлами и master без них, демонстрируя разные состояния проекта в разных ветках.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1213880,
+          "endMilliseconds": 1232110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#start-a-separate-line-of-work"
+      }
+    },
+    {
+      "id": "TP-077",
+      "startMilliseconds": 1232120,
+      "endMilliseconds": 1239110,
+      "kind": "fact",
+      "text": "Команда git log позволяет просматривать историю выбранной ветки, чтобы проверить наличие конкретных комитов.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1232120,
+          "endMilliseconds": 1239110
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1234080,
+          "endMilliseconds": 1239110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#start-a-separate-line-of-work"
+      }
+    },
+    {
+      "id": "TP-078",
+      "startMilliseconds": 1239120,
+      "endMilliseconds": 1248950,
+      "kind": "fact",
+      "text": "Команда git checkout с именем ветки переключает работу на эту ветку, позволяя перейти между независимыми состояниями проекта.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1239120,
+          "endMilliseconds": 1242720
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1239120,
+          "endMilliseconds": 1248950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#start-a-separate-line-of-work"
+      }
+    },
+    {
+      "id": "TP-079",
+      "startMilliseconds": 1254760,
+      "endMilliseconds": 1282950,
+      "kind": "code_change",
+      "text": "В экспериментальной ветке добавляется и сохраняется файл D, чтобы создать изменение, отсутствующее в основной ветке.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1254760,
+          "endMilliseconds": 1282950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#start-a-separate-line-of-work"
+      }
+    },
+    {
+      "id": "TP-080",
+      "startMilliseconds": 1282960,
+      "endMilliseconds": 1295549,
+      "kind": "explanation",
+      "text": "Комит добавления файла существует только в экспериментальной ветке, а комит удаления прежних файлов только в master, поэтому ветки имеют разные изменения после общего состояния.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1282960,
+          "endMilliseconds": 1295549
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#start-a-separate-line-of-work"
+      }
+    },
+    {
+      "id": "TP-081",
+      "startMilliseconds": 1295559,
+      "endMilliseconds": 1320750,
+      "kind": "explanation",
+      "text": "Для переноса изменений в основную ветку рассматриваются новые комиты после последнего общего комита, позволяя выделить добавление файла D.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1295559,
+          "endMilliseconds": 1320750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#locate-the-work-unique-to-each-branch"
+      }
+    },
+    {
+      "id": "TP-082",
+      "startMilliseconds": 1323640,
+      "endMilliseconds": 1332510,
+      "kind": "test_result",
+      "text": "История экспериментальной ветки содержит комит добавления файла D и не содержит комита удаления прежних файлов, подтверждая отличие от master.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1323640,
+          "endMilliseconds": 1332510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#locate-the-work-unique-to-each-branch"
+      }
+    },
+    {
+      "id": "TP-083",
+      "startMilliseconds": 1332520,
+      "endMilliseconds": 1341350,
+      "kind": "test_result",
+      "text": "После переключения на master история показывает удаление прежних файлов и отсутствие добавления D, подтверждая независимость изменений веток.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1332520,
+          "endMilliseconds": 1341350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#locate-the-work-unique-to-each-branch"
+      }
+    },
+    {
+      "id": "TP-084",
+      "startMilliseconds": 1341360,
+      "endMilliseconds": 1379150,
+      "kind": "explanation",
+      "text": "Rebase представлен как перенос собственных новых изменений поверх изменений другой ветки после общего комита, чтобы обновить основу рабочей ветки.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1341360,
+          "endMilliseconds": 1379150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-experiment-onto-the-newer-master-history"
+      }
+    },
+    {
+      "id": "TP-085",
+      "startMilliseconds": 1379159,
+      "endMilliseconds": 1398990,
+      "kind": "explanation",
+      "text": "У master и экспериментальной ветки есть общий комит добавления файлов, после которого одна ветка удаляет прежние файлы, а другая добавляет D, показывая точку расхождения истории.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1379159,
+          "endMilliseconds": 1398990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-experiment-onto-the-newer-master-history"
+      }
+    },
+    {
+      "id": "TP-086",
+      "startMilliseconds": 1399000,
+      "endMilliseconds": 1411750,
+      "kind": "explanation",
+      "text": "При показанном rebase определяется общий комит веток, чтобы отделить их последующие изменения от общей истории.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1399000,
+          "endMilliseconds": 1407880
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1399000,
+          "endMilliseconds": 1411750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-experiment-onto-the-newer-master-history"
+      }
+    },
+    {
+      "id": "TP-087",
+      "startMilliseconds": 1411760,
+      "endMilliseconds": 1435310,
+      "kind": "explanation",
+      "text": "В объясняемом результате rebase удаление прежних файлов из master предшествует добавлению D из экспериментальной ветки, объединяя обе группы изменений в последовательную историю.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1411760,
+          "endMilliseconds": 1435310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-experiment-onto-the-newer-master-history"
+      }
+    },
+    {
+      "id": "TP-088",
+      "startMilliseconds": 1436919,
+      "endMilliseconds": 1446549,
+      "kind": "fact",
+      "text": "Команда git rebase master выполняется из обновляемой ветки, чтобы перенести её изменения на основу master.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1436919,
+          "endMilliseconds": 1446549
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-experiment-onto-the-newer-master-history"
+      }
+    },
+    {
+      "id": "TP-089",
+      "startMilliseconds": 1450159,
+      "endMilliseconds": 1469269,
+      "kind": "test_result",
+      "text": "После rebase показанная история включает изменения master и затем собственное изменение экспериментальной ветки, причём указатели веток остаются на разных комитах.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1450159,
+          "endMilliseconds": 1469269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-experiment-onto-the-newer-master-history"
+      }
+    },
+    {
+      "id": "TP-090",
+      "startMilliseconds": 1471760,
+      "endMilliseconds": 1479070,
+      "kind": "scope_boundary",
+      "text": "Случай веток без общего комита обозначен как более сложный и подробно не разобран, ограничивая показанный пример общей историей веток.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1471760,
+          "endMilliseconds": 1479070
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1476799,
+          "endMilliseconds": 1479070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-experiment-onto-the-newer-master-history"
+      }
+    },
+    {
+      "id": "TP-091",
+      "startMilliseconds": 1479080,
+      "endMilliseconds": 1483269,
+      "kind": "explanation",
+      "text": "В объяснении rebase уже присутствующие в обеих ветках комиты пропускаются, чтобы не повторять их при объединении истории.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1479080,
+          "endMilliseconds": 1483269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-experiment-onto-the-newer-master-history"
+      }
+    },
+    {
+      "id": "TP-092",
+      "startMilliseconds": 1483279,
+      "endMilliseconds": 1497950,
+      "kind": "test_result",
+      "text": "После обновления master относительно экспериментальной ветки обе ветки оказываются на одном комите, показывая совпадение их текущего состояния.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1483279,
+          "endMilliseconds": 1497950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-experiment-onto-the-newer-master-history"
+      }
+    },
+    {
+      "id": "TP-093",
+      "startMilliseconds": 1501320,
+      "endMilliseconds": 1513710,
+      "kind": "reason",
+      "text": "Преподаватель рекомендует сохранять основную ветку master и отдельную рабочую ветку на её основе, чтобы выполнять новые изменения отдельно.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1501320,
+          "endMilliseconds": 1513710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-how-branch-work-enters-the-main-history"
+      }
+    },
+    {
+      "id": "TP-094",
+      "startMilliseconds": 1513720,
+      "endMilliseconds": 1534710,
+      "kind": "explanation",
+      "text": "Pull request на GitHub оформляет перенос изменений рабочей ветки в основную и является функцией сервиса, поэтому его нужно отличать от команд самого Git.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1513720,
+          "endMilliseconds": 1534710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-how-branch-work-enters-the-main-history"
+      }
+    },
+    {
+      "id": "TP-095",
+      "startMilliseconds": 1545840,
+      "endMilliseconds": 1551029,
+      "kind": "explanation",
+      "text": "Описанный вариант merge создаёт отдельный комит объединения двух веток, сохраняя факт их слияния в истории.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1545840,
+          "endMilliseconds": 1551029
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-how-branch-work-enters-the-main-history"
+      }
+    },
+    {
+      "id": "TP-096",
+      "startMilliseconds": 1551039,
+      "endMilliseconds": 1566070,
+      "kind": "fact",
+      "text": "Для синхронизации рабочей ветки с master преподаватель рекомендует rebase на master перед последующим включением изменений в основную ветку.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1551039,
+          "endMilliseconds": 1562600
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1554200,
+          "endMilliseconds": 1566070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-how-branch-work-enters-the-main-history"
+      }
+    },
+    {
+      "id": "TP-097",
+      "startMilliseconds": 1566080,
+      "endMilliseconds": 1576909,
+      "kind": "reason",
+      "text": "Предварительный rebase на master представлен как способ упростить последующее слияние, поскольку основа рабочей ветки уже включает изменения master.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1566080,
+          "endMilliseconds": 1576909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-how-branch-work-enters-the-main-history"
+      }
+    },
+    {
+      "id": "TP-098",
+      "startMilliseconds": 1581600,
+      "endMilliseconds": 1594950,
+      "kind": "explanation",
+      "text": "Опция squash объединяет изменения нескольких комитов в один комит, позволяя включить работу ветки в основную историю одной записью.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1581600,
+          "endMilliseconds": 1594950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-how-branch-work-enters-the-main-history"
+      }
+    },
+    {
+      "id": "TP-099",
+      "startMilliseconds": 1594960,
+      "endMilliseconds": 1616630,
+      "kind": "explanation",
+      "text": "Если добавление и последующее изменение файла оформлены двумя комитами, squash включает их общий результат одним комитом вместо двух отдельных записей.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1594960,
+          "endMilliseconds": 1616630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-how-branch-work-enters-the-main-history"
+      }
+    },
+    {
+      "id": "TP-100",
+      "startMilliseconds": 1616640,
+      "endMilliseconds": 1641110,
+      "kind": "explanation",
+      "text": "GitHub хранит удалённую копию репозитория в интернете, чтобы код был доступен вне локального компьютера.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1616640,
+          "endMilliseconds": 1635760
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1629240,
+          "endMilliseconds": 1641110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-the-local-project-a-remote-address"
+      }
+    },
+    {
+      "id": "TP-101",
+      "startMilliseconds": 1641120,
+      "endMilliseconds": 1663950,
+      "kind": "explanation",
+      "text": "Удалённый репозиторий позволяет копировать проект на другой компьютер и передавать локальные изменения через GitHub, чтобы продолжать работу на разных машинах.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1641120,
+          "endMilliseconds": 1663950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-the-local-project-a-remote-address"
+      }
+    },
+    {
+      "id": "TP-102",
+      "startMilliseconds": 1663960,
+      "endMilliseconds": 1680950,
+      "kind": "fact",
+      "text": "Для хранения проекта на GitHub создаётся репозиторий, который в уроке представлен как удалённая папка с Git.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1663960,
+          "endMilliseconds": 1680950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-the-local-project-a-remote-address"
+      }
+    },
+    {
+      "id": "TP-103",
+      "startMilliseconds": 1680960,
+      "endMilliseconds": 1685950,
+      "kind": "reason",
+      "text": "Для первого подключения существующего локального проекта создаётся пустой удалённый репозиторий, чтобы избежать конфликтов с предварительно созданными файлами.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1680960,
+          "endMilliseconds": 1685950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-the-local-project-a-remote-address"
+      }
+    },
+    {
+      "id": "TP-104",
+      "startMilliseconds": 1685960,
+      "endMilliseconds": 1699870,
+      "kind": "fact",
+      "text": "Команда git remote add добавляет связь с удалённым репозиторием, позволяя связать локальный проект с его расположением на GitHub.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1685960,
+          "endMilliseconds": 1699870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-the-local-project-a-remote-address"
+      }
+    },
+    {
+      "id": "TP-105",
+      "startMilliseconds": 1699880,
+      "endMilliseconds": 1705590,
+      "kind": "fact",
+      "text": "Имя удалённого репозитория выбирается при его добавлении, чтобы затем ссылаться на это подключение в командах Git.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1699880,
+          "endMilliseconds": 1705590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-the-local-project-a-remote-address"
+      }
+    },
+    {
+      "id": "TP-106",
+      "startMilliseconds": 1705600,
+      "endMilliseconds": 1713110,
+      "kind": "fact",
+      "text": "Основное удалённое подключение обычно называют origin по соглашению, позволяя использовать привычное имя для регулярно используемого репозитория.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1705600,
+          "endMilliseconds": 1713110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-the-local-project-a-remote-address"
+      }
+    },
+    {
+      "id": "TP-107",
+      "startMilliseconds": 1713120,
+      "endMilliseconds": 1722149,
+      "kind": "fact",
+      "text": "При добавлении удалённого подключения указывается URL репозитория, который в показанном случае допускает окончание .git или его отсутствие.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1713120,
+          "endMilliseconds": 1722149
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-the-local-project-a-remote-address"
+      }
+    },
+    {
+      "id": "TP-108",
+      "startMilliseconds": 1722159,
+      "endMilliseconds": 1729990,
+      "kind": "fact",
+      "text": "SSH представлен как вариант подключения с дополнительной настройкой, тогда как для начального примера предлагается HTTPS.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1722159,
+          "endMilliseconds": 1729990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-the-local-project-a-remote-address"
+      }
+    },
+    {
+      "id": "TP-109",
+      "startMilliseconds": 1730000,
+      "endMilliseconds": 1739470,
+      "kind": "fact",
+      "text": "Команда git remote show origin показывает ранее введённую ссылку, позволяя проверить адрес удалённого подключения.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1730000,
+          "endMilliseconds": 1739470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-the-local-project-a-remote-address"
+      }
+    },
+    {
+      "id": "TP-110",
+      "startMilliseconds": 1744799,
+      "endMilliseconds": 1762070,
+      "kind": "edge_case",
+      "text": "В демонстрации первый git push завершается ошибкой отсутствующего upstream, поэтому локальную ветку нужно связать с удалённой веткой.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1744799,
+          "endMilliseconds": 1762070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#publish-the-main-branch-with-an-upstream"
+      }
+    },
+    {
+      "id": "TP-111",
+      "startMilliseconds": 1762080,
+      "endMilliseconds": 1798830,
+      "kind": "explanation",
+      "text": "Имя origin обозначает ранее настроенный удалённый репозиторий, с веткой которого связывается локальная master для отправки изменений.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1762080,
+          "endMilliseconds": 1786240
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1776600,
+          "endMilliseconds": 1798830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#publish-the-main-branch-with-an-upstream"
+      }
+    },
+    {
+      "id": "TP-112",
+      "startMilliseconds": 1798840,
+      "endMilliseconds": 1810149,
+      "kind": "fact",
+      "text": "При показанной первой отправке запрашивается авторизация через браузер, чтобы разрешить доступ к удалённому репозиторию.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1798840,
+          "endMilliseconds": 1810149
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#publish-the-main-branch-with-an-upstream"
+      }
+    },
+    {
+      "id": "TP-113",
+      "startMilliseconds": 1815240,
+      "endMilliseconds": 1843870,
+      "kind": "test_result",
+      "text": "После успешной авторизации на GitHub появляются файлы и история отправленных изменений, показывая публикацию сохранённой работы из локального репозитория.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1815240,
+          "endMilliseconds": 1843870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#publish-the-main-branch-with-an-upstream"
+      }
+    },
+    {
+      "id": "TP-114",
+      "startMilliseconds": 1843880,
+      "endMilliseconds": 1860790,
+      "kind": "test_result",
+      "text": "На GitHub автор комита отличается от владельца репозитория, поскольку комиты создавались с другими настроенными данными автора.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1843880,
+          "endMilliseconds": 1860790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#publish-the-main-branch-with-an-upstream"
+      }
+    },
+    {
+      "id": "TP-115",
+      "startMilliseconds": 1860799,
+      "endMilliseconds": 1877190,
+      "kind": "explanation",
+      "text": "Авторизация для отправки и записанное авторство комита рассматриваются отдельно, поэтому опубликованный комит сохраняет указанное при создании имя автора.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1860799,
+          "endMilliseconds": 1868840
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1860799,
+          "endMilliseconds": 1877190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#publish-the-main-branch-with-an-upstream"
+      }
+    },
+    {
+      "id": "TP-116",
+      "startMilliseconds": 1877200,
+      "endMilliseconds": 1893669,
+      "kind": "code_change",
+      "text": "В файл D добавляется текст world и создаётся локальный комит, чтобы подготовить новое изменение для отправки.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1877200,
+          "endMilliseconds": 1893669
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#send-a-later-local-commit"
+      }
+    },
+    {
+      "id": "TP-117",
+      "startMilliseconds": 1893679,
+      "endMilliseconds": 1911509,
+      "kind": "explanation",
+      "text": "Новый локальный комит ещё отсутствует на GitHub до отправки, поэтому сохранение в Git и обновление удалённого репозитория являются отдельными действиями.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1893679,
+          "endMilliseconds": 1911509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#send-a-later-local-commit"
+      }
+    },
+    {
+      "id": "TP-118",
+      "startMilliseconds": 1911519,
+      "endMilliseconds": 1920669,
+      "kind": "test_result",
+      "text": "Команда git push отправляет новое локальное изменение в удалённый репозиторий, после чего показанный комит появляется на GitHub.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1911519,
+          "endMilliseconds": 1920669
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#send-a-later-local-commit"
+      }
+    },
+    {
+      "id": "TP-119",
+      "startMilliseconds": 1941600,
+      "endMilliseconds": 1949830,
+      "kind": "fact",
+      "text": "Перед новым изменением экспериментальная ветка обновляется изменениями master, чтобы работа продолжалась на актуальной основе.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1941600,
+          "endMilliseconds": 1949830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#publish-the-next-experiment-separately"
+      }
+    },
+    {
+      "id": "TP-120",
+      "startMilliseconds": 1959600,
+      "endMilliseconds": 1979230,
+      "kind": "code_change",
+      "text": "Файл D изменяется и сохраняется комитом в экспериментальной ветке, чтобы создать отдельное изменение для будущего pull request.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1959600,
+          "endMilliseconds": 1979230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#publish-the-next-experiment-separately"
+      }
+    },
+    {
+      "id": "TP-121",
+      "startMilliseconds": 1979240,
+      "endMilliseconds": 2001350,
+      "kind": "edge_case",
+      "text": "Экспериментальная ветка ещё отсутствует в удалённом репозитории, поэтому для её первой отправки требуется собственная связь с удалённой веткой.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1979240,
+          "endMilliseconds": 2001350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#publish-the-next-experiment-separately"
+      }
+    },
+    {
+      "id": "TP-122",
+      "startMilliseconds": 2001360,
+      "endMilliseconds": 2023549,
+      "kind": "test_result",
+      "text": "После публикации экспериментальная ветка содержит на один комит больше основной, позволяя выделить новое изменение для включения в master.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2001360,
+          "endMilliseconds": 2023549
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#publish-the-next-experiment-separately"
+      }
+    },
+    {
+      "id": "TP-123",
+      "startMilliseconds": 2026080,
+      "endMilliseconds": 2037720,
+      "kind": "fact",
+      "text": "Для включения изменений экспериментальной ветки в master предлагается создать pull request, чтобы оформить перенос между ветками на GitHub.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2026080,
+          "endMilliseconds": 2037720
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2031880,
+          "endMilliseconds": 2037710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bring-the-experiment-into-master-through-a-pull-request"
+      }
+    },
+    {
+      "id": "TP-124",
+      "startMilliseconds": 2037720,
+      "endMilliseconds": 2050710,
+      "kind": "fact",
+      "text": "В pull request выбирается перенос из экспериментальной ветки в master, а сравнение показывает изменения источника, отсутствующие в целевой ветке.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2037720,
+          "endMilliseconds": 2050710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bring-the-experiment-into-master-through-a-pull-request"
+      }
+    },
+    {
+      "id": "TP-125",
+      "startMilliseconds": 2050720,
+      "endMilliseconds": 2067109,
+      "kind": "fact",
+      "text": "После создания pull request действие merge включает изменения экспериментальной ветки в master, завершая перенос между ветками.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2050720,
+          "endMilliseconds": 2067109
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bring-the-experiment-into-master-through-a-pull-request"
+      }
+    },
+    {
+      "id": "TP-126",
+      "startMilliseconds": 2068679,
+      "endMilliseconds": 2079349,
+      "kind": "reason",
+      "text": "После слияния удалённую рабочую ветку можно удалить, поскольку её дополнительные изменения уже находятся в master.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2068679,
+          "endMilliseconds": 2079349
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bring-the-experiment-into-master-through-a-pull-request"
+      }
+    },
+    {
+      "id": "TP-127",
+      "startMilliseconds": 2079359,
+      "endMilliseconds": 2101230,
+      "kind": "test_result",
+      "text": "История master на GitHub показывает перенесённый комит и дополнительный комит слияния pull request, позволяя увидеть результат выбранного способа объединения.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2079359,
+          "endMilliseconds": 2101230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#bring-the-experiment-into-master-through-a-pull-request"
+      }
+    },
+    {
+      "id": "TP-128",
+      "startMilliseconds": 2101240,
+      "endMilliseconds": 2116349,
+      "kind": "edge_case",
+      "text": "Переключение на локальную master после слияния на GitHub ещё не приносит новые комиты, потому что локальная ветка не обновилась автоматически.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2101240,
+          "endMilliseconds": 2116349
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#receive-the-merged-work-on-this-computer"
+      }
+    },
+    {
+      "id": "TP-129",
+      "startMilliseconds": 2116359,
+      "endMilliseconds": 2127270,
+      "kind": "reason",
+      "text": "Изменения удалённого репозитория нужно отдельно получить в локальную ветку, чтобы локальные файлы отражали результат pull request.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2116359,
+          "endMilliseconds": 2124720
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2116359,
+          "endMilliseconds": 2127270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#receive-the-merged-work-on-this-computer"
+      }
+    },
+    {
+      "id": "TP-130",
+      "startMilliseconds": 2124720,
+      "endMilliseconds": 2128910,
+      "kind": "fact",
+      "text": "Команда git pull выполняется в нужной локальной ветке, чтобы получить и включить изменения её удалённого репозитория.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2124720,
+          "endMilliseconds": 2128910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#receive-the-merged-work-on-this-computer"
+      }
+    },
+    {
+      "id": "TP-131",
+      "startMilliseconds": 2128920,
+      "endMilliseconds": 2143589,
+      "kind": "test_result",
+      "text": "После git pull файл D обновляется, а git log показывает два полученных комита, подтверждая появление результата pull request в локальном проекте.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2128920,
+          "endMilliseconds": 2143589
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#receive-the-merged-work-on-this-computer"
+      }
+    }
+  ]
+}
