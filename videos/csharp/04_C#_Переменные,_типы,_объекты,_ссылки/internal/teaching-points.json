@@ -1,0 +1,926 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "wjsV9CvZfGI",
+  "uploadId": "wjsV9CvZfGI",
+  "transcriptSha256": "30cc57bd4937decdb52ab87ef50f00497572ba3ccaab29ced1566e34b6d13c4e",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 12000,
+      "endMilliseconds": 30000,
+      "kind": "explanation",
+      "text": "Declaring a variable named A, assigning 1 2 3 to it, and printing A prints 1 2 3 because the print statement reads whatever value currently sits in that variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 12000,
+          "endMilliseconds": 30000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-and-overwrite-a-variable"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 30480,
+      "endMilliseconds": 45470,
+      "kind": "explanation",
+      "text": "Assigning a new value to an existing variable overwrites the old one, so printing A after writing 2 3 4 now shows 2 3 4.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 30480,
+          "endMilliseconds": 45470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-and-overwrite-a-variable"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 45719,
+      "endMilliseconds": 52470,
+      "kind": "fact",
+      "text": "The central idea of variables is that they store values of a specific type, which is why later code can use them predictably.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 45719,
+          "endMilliseconds": 52470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-and-overwrite-a-variable"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 52480,
+      "endMilliseconds": 63570,
+      "kind": "fact",
+      "text": "A variable can be read for its value and updated for a new value by writing the variable name, the equals sign, and the new value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 52480,
+          "endMilliseconds": 63570
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-and-overwrite-a-variable"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 65880,
+      "endMilliseconds": 84159,
+      "kind": "explanation",
+      "text": "Underneath, the runtime uses two kinds of memory: temporary memory called the stack and dynamic memory called the heap, so declaring a variable is fundamentally a memory operation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 65880,
+          "endMilliseconds": 84159
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#stack-and-heap"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 74000,
+      "endMilliseconds": 80590,
+      "kind": "fact",
+      "text": "Dynamic memory is also called the heap or the куча (heap), complementing the stack as the second memory area.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 74000,
+          "endMilliseconds": 80590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#stack-and-heap"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 80640,
+      "endMilliseconds": 96190,
+      "kind": "explanation",
+      "text": "Writing a type followed by a variable name allocates a memory cell on the stack that can hold a value of exactly the type you specified.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 80640,
+          "endMilliseconds": 96190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#declare-a-typed-memory-cell"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 96190,
+      "endMilliseconds": 119109,
+      "kind": "explanation",
+      "text": "Declaring string reserves enough stack memory to hold a reference to a string, whereas declaring int reserves space for an integer value itself.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 96190,
+          "endMilliseconds": 119109
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#declare-a-typed-memory-cell"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 120000,
+      "endMilliseconds": 129790,
+      "kind": "explanation",
+      "text": "The allocated memory cell effectively receives the variable name, so that name is how you refer to the cell and its contents later in the program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 120000,
+          "endMilliseconds": 129790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#declare-a-typed-memory-cell"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 141590,
+      "endMilliseconds": 165080,
+      "kind": "fact",
+      "text": "Real and integer values are stored directly inside the variable's own stack cell, so writing the name gives access to the value itself.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 141590,
+          "endMilliseconds": 165080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#numbers-live-in-the-cell"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 155959,
+      "endMilliseconds": 165080,
+      "kind": "fact",
+      "text": "Integer and floating-point variables hold their values directly in the stack cell allocated for them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 155959,
+          "endMilliseconds": 165080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#numbers-live-in-the-cell"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 165080,
+      "endMilliseconds": 178830,
+      "kind": "explanation",
+      "text": "It helps to picture a stack variable as a cell in a table where you may write only values of the declared type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 165080,
+          "endMilliseconds": 178830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#numbers-live-in-the-cell"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 182519,
+      "endMilliseconds": 201589,
+      "kind": "explanation",
+      "text": "Creating a variable of a real-number type makes a new cell with that number in it, named B, which accepts only real numbers.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 182519,
+          "endMilliseconds": 201589
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#numbers-live-in-the-cell"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 201589,
+      "endMilliseconds": 213309,
+      "kind": "explanation",
+      "text": "Reference types behave differently: such a variable stores not the value itself but the memory address where that value lives.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 201589,
+          "endMilliseconds": 213309
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-string-variable-refers-to-an-object"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 213309,
+      "endMilliseconds": 244400,
+      "kind": "explanation",
+      "text": "Writing string s = \"hello\" does not place the Hello characters into that cell; instead an object holding the string is allocated in dynamic memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 213309,
+          "endMilliseconds": 244400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-string-variable-refers-to-an-object"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 236360,
+      "endMilliseconds": 241470,
+      "kind": "explanation",
+      "text": "The allocated heap object is the string Hello itself, which is why the reference-typed variable does not contain the characters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 236360,
+          "endMilliseconds": 241470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-string-variable-refers-to-an-object"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 244000,
+      "endMilliseconds": 250030,
+      "kind": "fact",
+      "text": "Every object in memory occupies a fixed place, and that place is what is called the object's address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 244000,
+          "endMilliseconds": 250030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#objects-addresses-and-references"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 254300,
+      "endMilliseconds": 272670,
+      "kind": "explanation",
+      "text": "Assigning a string to a string variable writes only the object's address into the variable, and that address is what later lets you find the object in memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 254300,
+          "endMilliseconds": 272670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#objects-addresses-and-references"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 282800,
+      "endMilliseconds": 296909,
+      "kind": "explanation",
+      "text": "Creating a second variable with a different string allocates another separate object at a different address, and those addresses are independent of each other.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 282800,
+          "endMilliseconds": 296909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-second-string-means-a-second-variable"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 297400,
+      "endMilliseconds": 308510,
+      "kind": "fact",
+      "text": "A new stack cell is allocated for each new variable, named with the identifier you wrote in the declaration.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 297400,
+          "endMilliseconds": 308510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-second-string-means-a-second-variable"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 308640,
+      "endMilliseconds": 331600,
+      "kind": "fact",
+      "text": "The address-taking notation on the variable reads as the memory address of the referenced object, exposing what a reference-typed variable actually holds.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 308640,
+          "endMilliseconds": 331600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-the-cell-and-its-reference"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 319960,
+      "endMilliseconds": 331590,
+      "kind": "explanation",
+      "text": "Assigning a value to a variable makes the runtime allocate a new memory cell for that variable under the name written in the code, because a variable is nothing but a named memory cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 319960,
+          "endMilliseconds": 331590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-the-cell-and-its-reference"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 331590,
+      "endMilliseconds": 351230,
+      "kind": "explanation",
+      "text": "The piece of dynamic memory that holds a value at some address is called an object, and that address, stored in a variable, is called a reference, which is why string variables keep only an address rather than the characters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 331590,
+          "endMilliseconds": 351230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-the-cell-and-its-reference"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 351230,
+      "endMilliseconds": 382390,
+      "kind": "code_change",
+      "text": "The lesson introduces two variables, a and b, and writes a = 2 followed by b = a, to have a concrete example of copying a value between variables.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 351230,
+          "endMilliseconds": 382390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-the-string-copy-example"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 398510,
+      "endMilliseconds": 416879,
+      "kind": "explanation",
+      "text": "A variable like b has no memory until its assignment line runs, so the runtime first creates a cell named b and only then performs b = a, which explains why nothing exists for b at program start.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 398510,
+          "endMilliseconds": 416879
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#execute-the-two-declarations"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 406919,
+      "endMilliseconds": 426869,
+      "kind": "explanation",
+      "text": "On the first line an object holding the string \"привет\" is allocated in dynamic memory at some address, and that address is what gets written into the cell of variable a.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 406919,
+          "endMilliseconds": 426869
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#execute-the-two-declarations"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 426869,
+      "endMilliseconds": 437909,
+      "kind": "fact",
+      "text": "Statements in a program execute from top to bottom, one line at a time, which is what lets the runtime describe the program as a sequence of memory changes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 426869,
+          "endMilliseconds": 437909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#execute-the-two-declarations"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 437909,
+      "endMilliseconds": 481430,
+      "kind": "explanation",
+      "text": "The second line creates a second object for the string \"Hello 1\" at a different address and allocates a new cell for b that is able to hold the address of that object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 437909,
+          "endMilliseconds": 481430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#execute-the-two-declarations"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 481430,
+      "endMilliseconds": 496759,
+      "kind": "explanation",
+      "text": "The assignment b = a copies whatever is stored in a's cell into b's cell, so b ends up holding the address of that string rather than its own independent value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 481430,
+          "endMilliseconds": 496759
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-the-reference"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 485240,
+      "endMilliseconds": 496759,
+      "kind": "explanation",
+      "text": "After the copy, the cell named b holds the address of that string, which is what the next line of the example relies on.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 485240,
+          "endMilliseconds": 496759
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-the-reference"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 496759,
+      "endMilliseconds": 529430,
+      "kind": "explanation",
+      "text": "On the line a = \"Hello 2\" the literal does not exist in dynamic memory beforehand, so a new object is allocated at another address and a's cell is overwritten with that new address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 496759,
+          "endMilliseconds": 529430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-only-the-reference-in-a"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 529430,
+      "endMilliseconds": 549430,
+      "kind": "explanation",
+      "text": "When printing, the program looks at cell b, takes the address stored there, and hands that address to the console-writing function as the information about what to print.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 529430,
+          "endMilliseconds": 549430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#print-through-bs-reference"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 549430,
+      "endMilliseconds": 581920,
+      "kind": "explanation",
+      "text": "The console function receives the object address, looks at what is actually stored inside that object, and prints that string, which is why printing b still shows \"Hello 1\" after a was changed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 549430,
+          "endMilliseconds": 581920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#print-through-bs-reference"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 573519,
+      "endMilliseconds": 581920,
+      "kind": "scope_boundary",
+      "text": "The exact mechanism by which an object is inspected inside the printing function is deliberately left for a later explanation, and only its observable result is shown now.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 573519,
+          "endMilliseconds": 581920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#print-through-bs-reference"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 581920,
+      "endMilliseconds": 605829,
+      "kind": "explanation",
+      "text": "Strings are reference types, while value types such as integers are stored directly in the variable's own stack memory, which makes the value-type case conceptually simpler.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 581920,
+          "endMilliseconds": 605829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-value-types-and-reference-types"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 605829,
+      "endMilliseconds": 624350,
+      "kind": "explanation",
+      "text": "In the integer example the runtime allocates a cell named a that can hold a whole number and writes the number 204 directly into that cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 605829,
+          "endMilliseconds": 624350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-value-types-and-reference-types"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 624350,
+      "endMilliseconds": 640430,
+      "kind": "fact",
+      "text": "For an integer the address of the value is not written anywhere; only the value itself is placed in the variable's cell, unlike the string case.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 624350,
+          "endMilliseconds": 640430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-value-types-and-reference-types"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 640430,
+      "endMilliseconds": 658240,
+      "kind": "explanation",
+      "text": "int is a value type because the variable directly represents the value stored in it, whereas what was demonstrated earlier with the string is a reference type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 640430,
+          "endMilliseconds": 658240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-value-types-and-reference-types"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 658240,
+      "endMilliseconds": 672920,
+      "kind": "explanation",
+      "text": "A reference type means the variable stores a link to an object in dynamic memory instead of holding the object or its value directly, which is why assignment copies the address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 658240,
+          "endMilliseconds": 672920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-value-types-and-reference-types"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 665000,
+      "endMilliseconds": 678190,
+      "kind": "explanation",
+      "text": "A variable of a class type stores not the object itself but a reference to it, that is its address somewhere in dynamic memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 665000,
+          "endMilliseconds": 678190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-value-types-and-reference-types"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 678200,
+      "endMilliseconds": 688030,
+      "kind": "fact",
+      "text": "int is a value type, so no int objects are created in dynamic memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 678200,
+          "endMilliseconds": 688030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-value-types-and-reference-types"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 688040,
+      "endMilliseconds": 701560,
+      "kind": "explanation",
+      "text": "Declaring int A allocates memory for an int named A in which 204 is written.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 688040,
+          "endMilliseconds": 701560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-integers-and-then-change-the-source"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 701560,
+      "endMilliseconds": 714590,
+      "kind": "explanation",
+      "text": "Declaring int B allocates separate memory for another whole number and writes 305 there.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 701560,
+          "endMilliseconds": 714590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-integers-and-then-change-the-source"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 714600,
+      "endMilliseconds": 734150,
+      "kind": "explanation",
+      "text": "In an assignment B = A the value on the right goes into the variable on the left, so B is overwritten with A's value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 714600,
+          "endMilliseconds": 734150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-integers-and-then-change-the-source"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 734160,
+      "endMilliseconds": 742110,
+      "kind": "fact",
+      "text": "The value 607 replaces the value previously stored, which is how copying works for value types.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 734160,
+          "endMilliseconds": 742110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-integers-and-then-change-the-source"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 742120,
+      "endMilliseconds": 754110,
+      "kind": "fact",
+      "text": "Copying values works exactly as it did for strings, except that here the values themselves are stored rather than references.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 742120,
+          "endMilliseconds": 754110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#copy-integers-and-then-change-the-source"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 750199,
+      "endMilliseconds": 757360,
+      "kind": "scope_boundary",
+      "text": "The mechanism behind this behaviour is deferred to a later, more advanced part of the course.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 750199,
+          "endMilliseconds": 757360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#printing-and-the-lessons-boundaries"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 754120,
+      "endMilliseconds": 759440,
+      "kind": "scope_boundary",
+      "text": "The distinction between stored values and references will matter later when the course reaches references.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 754120,
+          "endMilliseconds": 759440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#printing-and-the-lessons-boundaries"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 757360,
+      "endMilliseconds": 769440,
+      "kind": "explanation",
+      "text": "When printing an int the language cannot print the number directly and instead converts it into a dynamic object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 757360,
+          "endMilliseconds": 769440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#printing-and-the-lessons-boundaries"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 769440,
+      "endMilliseconds": 773389,
+      "kind": "explanation",
+      "text": "The converted dynamic object is passed on and its type is then inspected during printing.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 769440,
+          "endMilliseconds": 773389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#printing-and-the-lessons-boundaries"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 773399,
+      "endMilliseconds": 776760,
+      "kind": "fact",
+      "text": "As a result the statement prints whatever value currently sits in B to the console.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 773399,
+          "endMilliseconds": 776760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#printing-and-the-lessons-boundaries"
+      }
+    }
+  ]
+}

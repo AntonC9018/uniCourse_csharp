@@ -1,0 +1,2275 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "mj9E9BhOAhU",
+  "uploadId": "mj9E9BhOAhU",
+  "transcriptSha256": "b8f48db368c24969a66e715f72bd44454bdab704e5de7d3659105c499dccc88f",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 120,
+      "endMilliseconds": 11700,
+      "kind": "scope_boundary",
+      "text": "This lesson aims to cover the syntax of flow control in C# (if, while, for) plus bools, which earlier videos only touched in passing.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 120,
+          "endMilliseconds": 11700
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#lesson-purpose-and-vocabulary"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 11920,
+      "endMilliseconds": 24510,
+      "kind": "fact",
+      "text": "Bools hold the results of checks in variables, which lets later code reuse a decision instead of recomputing it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 11920,
+          "endMilliseconds": 24510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#lesson-purpose-and-vocabulary"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 26500,
+      "endMilliseconds": 45230,
+      "kind": "reason",
+      "text": "The demo game generates a random number capped at 100 by taking the remainder of division by 100, which limits the result to the range 0 to 99 inclusive.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 26500,
+          "endMilliseconds": 45230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-the-hidden-number-and-read-a-first-guess"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 45600,
+      "endMilliseconds": 55340,
+      "kind": "explanation",
+      "text": "The same cap can be expressed by passing 100 as an argument to Random.Next, where it lands in the maxValue parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 45600,
+          "endMilliseconds": 55340
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-the-hidden-number-and-read-a-first-guess"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 55390,
+      "endMilliseconds": 62070,
+      "kind": "edge_case",
+      "text": "Console input must be parsed as a number, and if parsing fails the program needs a branch to handle it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 55390,
+          "endMilliseconds": 62070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-the-hidden-number-and-read-a-first-guess"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 62310,
+      "endMilliseconds": 70690,
+      "kind": "scope_boundary",
+      "text": "This first if already relies on a bool and an if, and the lesson defers the detailed explanation of both to later.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 62310,
+          "endMilliseconds": 70690
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#choose-the-hidden-number-and-read-a-first-guess"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 70790,
+      "endMilliseconds": 83600,
+      "kind": "explanation",
+      "text": "The first branch compares the entered number with the random one and prints a success message when they match.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 70790,
+          "endMilliseconds": 83600
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 73960,
+          "endMilliseconds": 83600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-once-and-extract-the-comparison-function"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 83600,
+      "endMilliseconds": 93300,
+      "kind": "explanation",
+      "text": "The remaining branches compare the entered number against the random value to tell the player to take a higher or a lower number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 83600,
+          "endMilliseconds": 93300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-once-and-extract-the-comparison-function"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 93400,
+      "endMilliseconds": 101950,
+      "kind": "code_change",
+      "text": "The comparison block is moved out into its own function so it can be examined separately later.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 93400,
+          "endMilliseconds": 101950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-once-and-extract-the-comparison-function"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 101960,
+      "endMilliseconds": 114950,
+      "kind": "test_result",
+      "text": "Running the program shows it waits for a number from the console and then reports whether to guess higher or lower.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 101960,
+          "endMilliseconds": 114950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-once-and-extract-the-comparison-function"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 114960,
+      "endMilliseconds": 125350,
+      "kind": "scope_boundary",
+      "text": "The if syntax is analyzed before moving on to the infinite loop.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 114960,
+          "endMilliseconds": 125350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-once-and-extract-the-comparison-function"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 125350,
+      "endMilliseconds": 136470,
+      "kind": "fact",
+      "text": "In C# the block in braces that follows an if runs only when the condition holds, so the braces mark conditional code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 125350,
+          "endMilliseconds": 136470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-if-reads-a-bool-expression"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 136470,
+      "endMilliseconds": 153360,
+      "kind": "explanation",
+      "text": "A condition holds when the processor evaluates the line and finds the left expression equal to the right expression.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 136470,
+          "endMilliseconds": 153360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-if-reads-a-bool-expression"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 153360,
+      "endMilliseconds": 160640,
+      "kind": "reason",
+      "text": "The comparison uses double equals rather than a single equals sign.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 153360,
+          "endMilliseconds": 160640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-if-reads-a-bool-expression"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 153360,
+      "endMilliseconds": 162200,
+      "kind": "reason",
+      "text": "A single equals sign assigns a value into a variable or cell, so it cannot be used to ask whether two values match.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 153360,
+          "endMilliseconds": 162200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-if-reads-a-bool-expression"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 162200,
+      "endMilliseconds": 169350,
+      "kind": "fact",
+      "text": "Double equals is the value-comparison check that reports whether the two sides are equal.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 162200,
+          "endMilliseconds": 169350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-if-reads-a-bool-expression"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 169350,
+      "endMilliseconds": 183710,
+      "kind": "fact",
+      "text": "The equality operator works on two expressions, here num on the left and r on the right, and either side may be a more complex expression.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 169350,
+          "endMilliseconds": 183710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-if-reads-a-bool-expression"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 185950,
+      "endMilliseconds": 190830,
+      "kind": "explanation",
+      "text": "The equality operator is itself an expression, which is why its outcome can be used further.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 185950,
+          "endMilliseconds": 190830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-if-reads-a-bool-expression"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 190830,
+      "endMilliseconds": 203200,
+      "kind": "fact",
+      "text": "The equality expression evaluates to true when both sides are equal and to false when they differ.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 190830,
+          "endMilliseconds": 203200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-if-reads-a-bool-expression"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 215030,
+      "endMilliseconds": 230799,
+      "kind": "explanation",
+      "text": "Because the comparison yields a logical value, its result can be stored in a variable and later used where a condition is needed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 215030,
+          "endMilliseconds": 230799
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-if-reads-a-bool-expression"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 221439,
+      "endMilliseconds": 233509,
+      "kind": "explanation",
+      "text": "The condition can take the true or false value read from a variable instead of repeating the comparison operator.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 221439,
+          "endMilliseconds": 233509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-if-reads-a-bool-expression"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 233509,
+      "endMilliseconds": 241490,
+      "kind": "explanation",
+      "text": "if does not work with conditions as such but with bool expressions, which matters for understanding what may be passed into it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 233509,
+          "endMilliseconds": 241490
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-if-reads-a-bool-expression"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 241490,
+      "endMilliseconds": 250149,
+      "kind": "fact",
+      "text": "Such bool expressions evaluate to either true or false after being computed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 241490,
+          "endMilliseconds": 250149
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#an-if-reads-a-bool-expression"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 250149,
+      "endMilliseconds": 273100,
+      "kind": "fact",
+      "text": "There are operators that combine bool expressions, including equality and the exclamation-mark inequality operator.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 250149,
+          "endMilliseconds": 273100
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-comparisons-and-store-bool-values"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 273100,
+      "endMilliseconds": 276120,
+      "kind": "explanation",
+      "text": "Value checks are logical expressions, so evaluating them gives back true or false.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 273100,
+          "endMilliseconds": 276120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-comparisons-and-store-bool-values"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 276120,
+      "endMilliseconds": 288390,
+      "kind": "fact",
+      "text": "The C# type that represents true or false is bool, named from the English boolean.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 276120,
+          "endMilliseconds": 288390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-comparisons-and-store-bool-values"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 288390,
+      "endMilliseconds": 302479,
+      "kind": "explanation",
+      "text": "For example, assigning A == B to C stores the comparison result, where each side is first replaced by its computed value from the variables, such as five and six.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 288390,
+          "endMilliseconds": 302479
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-comparisons-and-store-bool-values"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 296199,
+      "endMilliseconds": 302469,
+      "kind": "explanation",
+      "text": "When evaluating a comparison the variables are first replaced by their current values, so A becomes 5 and B becomes 6 before any comparison happens.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 296199,
+          "endMilliseconds": 302469
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-comparisons-and-store-bool-values"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 304909,
+      "endMilliseconds": 315270,
+      "kind": "explanation",
+      "text": "Since 5 is not equal to 6 the comparison yields false, and this primitive boolean value is what gets stored in variable C.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 304909,
+          "endMilliseconds": 315270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-comparisons-and-store-bool-values"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 315280,
+      "endMilliseconds": 330870,
+      "kind": "fact",
+      "text": "The not-equal operator checks inequality, so with A replaced by 5 and B by 6 it evaluates to true and C receives true.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 315280,
+          "endMilliseconds": 330870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-comparisons-and-store-bool-values"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 330880,
+      "endMilliseconds": 337029,
+      "kind": "fact",
+      "text": "Inequality can be written both as != and as the negation of equality, !(A == B), which is the same check expressed the other way round.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 330880,
+          "endMilliseconds": 337029
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-comparisons-and-store-bool-values"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 337039,
+      "endMilliseconds": 356710,
+      "kind": "explanation",
+      "text": "The exclamation mark negates the result of the expression to its right, turning true into false and false into true.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 337039,
+          "endMilliseconds": 356710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-comparisons-and-store-bool-values"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 356720,
+      "endMilliseconds": 378230,
+      "kind": "fact",
+      "text": "Because the conditions here are logical expressions, they can be evaluated individually and then combined with other logical expressions via logical operators, as in the upcoming example with A = 7.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 356720,
+          "endMilliseconds": 378230
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 370400,
+          "endMilliseconds": 378230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#combine-checks-with-short-circuit-operators"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 378240,
+      "endMilliseconds": 392550,
+      "kind": "fact",
+      "text": "The logical AND operator requires both the first and the second condition to hold, otherwise the whole expression is not true.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 378240,
+          "endMilliseconds": 392550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#combine-checks-with-short-circuit-operators"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 395629,
+      "endMilliseconds": 406110,
+      "kind": "explanation",
+      "text": "AND evaluates the left expression first, so with A replaced by 5 and B by 6 the check 5 != 6 becomes true before anything else happens.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 395629,
+          "endMilliseconds": 406110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#combine-checks-with-short-circuit-operators"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 406120,
+      "endMilliseconds": 420110,
+      "kind": "explanation",
+      "text": "If the first expression of AND is false the second expression is never evaluated, which is the short-circuit behaviour of the operator.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 406120,
+          "endMilliseconds": 420110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#combine-checks-with-short-circuit-operators"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 420110,
+      "endMilliseconds": 432150,
+      "kind": "explanation",
+      "text": "If the first expression is true then AND proceeds to evaluate the second expression, here the check 5 == 7, which is false.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 420110,
+          "endMilliseconds": 432150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#combine-checks-with-short-circuit-operators"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 434670,
+      "endMilliseconds": 445909,
+      "kind": "explanation",
+      "text": "AND applied to true on the left and false on the right yields false, because both sides would have to be true for the result to be true.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 434670,
+          "endMilliseconds": 445909
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 443599,
+          "endMilliseconds": 445909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#combine-checks-with-short-circuit-operators"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 445910,
+      "endMilliseconds": 451000,
+      "kind": "fact",
+      "text": "There is also the OR operator, which works like AND in that it evaluates the left part first.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 445910,
+          "endMilliseconds": 451000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#combine-checks-with-short-circuit-operators"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 451000,
+      "endMilliseconds": 462070,
+      "kind": "explanation",
+      "text": "If the left part of OR is true the right part is not evaluated at all, because the whole expression is already known to be true.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 451000,
+          "endMilliseconds": 462070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#combine-checks-with-short-circuit-operators"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 462070,
+      "endMilliseconds": 474670,
+      "kind": "explanation",
+      "text": "If the left part of OR is false then OR evaluates the right part, and false OR false gives false for the whole expression.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 462070,
+          "endMilliseconds": 474670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#combine-checks-with-short-circuit-operators"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 474670,
+      "endMilliseconds": 485710,
+      "kind": "explanation",
+      "text": "AND and OR are lazy operators: they evaluate the second part of the expression only when the first part does not already decide the answer.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 474670,
+          "endMilliseconds": 485710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#combine-checks-with-short-circuit-operators"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 485710,
+      "endMilliseconds": 501950,
+      "kind": "reason",
+      "text": "With OR the second part is skipped when the first is true, and with AND the second part is skipped when the first is false, which is why side effects in the other operand may never run.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 485710,
+          "endMilliseconds": 501950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#combine-checks-with-short-circuit-operators"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 501950,
+      "endMilliseconds": 517640,
+      "kind": "code_change",
+      "text": "To show laziness the instructor replaces a == 7 with a call to a function that takes a number, returns whether it equals seven, and first prints that it was called.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 501950,
+          "endMilliseconds": 517640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-skipped-evaluation-visible"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 517640,
+      "endMilliseconds": 527120,
+      "kind": "code_change",
+      "text": "The function call is used in the second condition and C is printed afterwards so the run output will reveal whether the function body executed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 517640,
+          "endMilliseconds": 527120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-skipped-evaluation-visible"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 527120,
+      "endMilliseconds": 537670,
+      "kind": "test_result",
+      "text": "Running the program shows the check was performed because the left condition of AND was true, so AND had to evaluate the right side.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 527120,
+          "endMilliseconds": 537670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-skipped-evaluation-visible"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 537670,
+      "endMilliseconds": 545550,
+      "kind": "explanation",
+      "text": "To know whether the right condition is really true the operator must evaluate that expression, which requires calling the function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 537670,
+          "endMilliseconds": 545550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-skipped-evaluation-visible"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 545550,
+      "endMilliseconds": 562870,
+      "kind": "explanation",
+      "text": "Execution jumps to the first statement of the function, prints that the check was done, returns a bool, and since A is not 7 that result is false, making the whole expression false.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 545550,
+          "endMilliseconds": 562870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-skipped-evaluation-visible"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 562870,
+      "endMilliseconds": 567550,
+      "kind": "test_result",
+      "text": "The output therefore shows false being written into C.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 562870,
+          "endMilliseconds": 567550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-skipped-evaluation-visible"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 567560,
+      "endMilliseconds": 597550,
+      "kind": "reason",
+      "text": "If the operator is changed to OR, the right side that depends on the function is never called because the left condition is already true, so no print from the function appears in the console.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 567560,
+          "endMilliseconds": 597550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-skipped-evaluation-visible"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 587760,
+      "endMilliseconds": 591200,
+      "kind": "reason",
+      "text": "A function called inside the right-hand side of a short-circuiting logical operator is never invoked, because that right-hand side is not evaluated.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 587760,
+          "endMilliseconds": 591200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-skipped-evaluation-visible"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 595240,
+      "endMilliseconds": 602120,
+      "kind": "fact",
+      "text": "The equality operators == and != can be applied directly to bool values without any conversion.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 595240,
+          "endMilliseconds": 602120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-bool-values-directly"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 597550,
+      "endMilliseconds": 599760,
+      "kind": "fact",
+      "text": "The equality and inequality operators can also be applied directly to bool values, not only to numbers.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 597550,
+          "endMilliseconds": 599760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-bool-values-directly"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 602120,
+      "endMilliseconds": 619350,
+      "kind": "explanation",
+      "text": "Comparing two bools held in variables, such as a result stored in C and a literal false in D, and storing the outcome in another variable works exactly as it does for numbers.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 602120,
+          "endMilliseconds": 619350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-bool-values-directly"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 619350,
+      "endMilliseconds": 638110,
+      "kind": "reason",
+      "text": "Because true is not equal to false, the == expression over those two bools evaluates to false.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 619350,
+          "endMilliseconds": 638110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-bool-values-directly"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 638110,
+      "endMilliseconds": 660190,
+      "kind": "reason",
+      "text": "Unlike the || and && operators, == always evaluates both sides because it needs both values to decide the result, so there is no short-circuiting of the right-hand expression.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 638110,
+          "endMilliseconds": 660190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-bool-values-directly"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 660190,
+      "endMilliseconds": 677320,
+      "kind": "explanation",
+      "text": "An if takes only the statement that follows it, and when that statement is a brace block the whole block belongs to the if, so several instructions can be placed inside it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 660190,
+          "endMilliseconds": 677320
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-statement-can-be-a-whole-block"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 670079,
+      "endMilliseconds": 677320,
+      "kind": "explanation",
+      "text": "A whole brace block attached to an if is treated as a single statement, so the block may contain several instructions.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 670079,
+          "endMilliseconds": 677320
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-statement-can-be-a-whole-block"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 677320,
+      "endMilliseconds": 699490,
+      "kind": "explanation",
+      "text": "Everything inside the block attached to an if runs only when the if condition evaluates to true.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 677320,
+          "endMilliseconds": 699490
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-statement-can-be-a-whole-block"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 699490,
+      "endMilliseconds": 714000,
+      "kind": "reason",
+      "text": "When the condition is false the whole block is skipped, but all code after it still runs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 699490,
+          "endMilliseconds": 714000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-statement-can-be-a-whole-block"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 714000,
+      "endMilliseconds": 727840,
+      "kind": "explanation",
+      "text": "A print placed after the if appears in the output regardless of the bool value, which demonstrates that the skipping applies only to the block.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 714000,
+          "endMilliseconds": 727840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-statement-can-be-a-whole-block"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 733990,
+      "endMilliseconds": 739760,
+      "kind": "fact",
+      "text": "If an if block contains a single instruction the curly braces may be omitted, and an if together with its own dependent instruction still counts as one block.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 733990,
+          "endMilliseconds": 739760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#braces-determine-which-statements-belong-to-an-if"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 739760,
+      "endMilliseconds": 757470,
+      "kind": "explanation",
+      "text": "Writing an if with braces and writing it without braces around a single nested if are equivalent representations of the same logic.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 739760,
+          "endMilliseconds": 747839
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 739760,
+          "endMilliseconds": 757470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#braces-determine-which-statements-belong-to-an-if"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 757470,
+      "endMilliseconds": 774990,
+      "kind": "edge_case",
+      "text": "In the brace-less form only one instruction can follow each if, so at most one more instruction can be attached to that if.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 757470,
+          "endMilliseconds": 774990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#braces-determine-which-statements-belong-to-an-if"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 774990,
+      "endMilliseconds": 791350,
+      "kind": "fact",
+      "text": "An if does not look at indentation, so even a second instruction written with identical indentation is not part of the if.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 774990,
+          "endMilliseconds": 791350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#braces-determine-which-statements-belong-to-an-if"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 791350,
+      "endMilliseconds": 795750,
+      "kind": "code_change",
+      "text": "The variable R is declared fixed so that it is not recreated on every pass and its value can be checked.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 791350,
+          "endMilliseconds": 795750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#braces-determine-which-statements-belong-to-an-if"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 795750,
+      "endMilliseconds": 811000,
+      "kind": "test_result",
+      "text": "For the value 50 both instructions executed, while for any other number the first instruction did not execute and the second one ran anyway.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 795750,
+          "endMilliseconds": 811000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#braces-determine-which-statements-belong-to-an-if"
+      }
+    },
+    {
+      "id": "TP-068",
+      "startMilliseconds": 808959,
+      "endMilliseconds": 822000,
+      "kind": "reason",
+      "text": "While learning it is best not to use the brace-less form at all and always to write curly braces, because that makes adding instructions to the block easy later.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 808959,
+          "endMilliseconds": 822000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#braces-determine-which-statements-belong-to-an-if"
+      }
+    },
+    {
+      "id": "TP-069",
+      "startMilliseconds": 811000,
+      "endMilliseconds": 816560,
+      "kind": "reason",
+      "text": "The second statement always ran because it is not part of the if, so to make several statements belong to an if you must wrap them in a block.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 811000,
+          "endMilliseconds": 816560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#braces-determine-which-statements-belong-to-an-if"
+      }
+    },
+    {
+      "id": "TP-070",
+      "startMilliseconds": 823720,
+      "endMilliseconds": 837550,
+      "kind": "fact",
+      "text": "An else can take the same kind of block as an if, and its braces may also be omitted when the block holds a single instruction.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 823720,
+          "endMilliseconds": 837550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#attach-an-else-to-the-false-path"
+      }
+    },
+    {
+      "id": "TP-071",
+      "startMilliseconds": 837550,
+      "endMilliseconds": 845270,
+      "kind": "fact",
+      "text": "An else, like an if, ignores indentation and follows exactly the same block-binding rules.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 837550,
+          "endMilliseconds": 845270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#attach-an-else-to-the-false-path"
+      }
+    },
+    {
+      "id": "TP-072",
+      "startMilliseconds": 845270,
+      "endMilliseconds": 863710,
+      "kind": "fact",
+      "text": "The block bound to an else runs when the preceding if did not run, and an else may only be written directly after an if instruction.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 845270,
+          "endMilliseconds": 863710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#attach-an-else-to-the-false-path"
+      }
+    },
+    {
+      "id": "TP-073",
+      "startMilliseconds": 863710,
+      "endMilliseconds": 877510,
+      "kind": "fact",
+      "text": "An else can be written even when the preceding if has a single instruction and no curly braces, because that single instruction still counts as a block.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 863710,
+          "endMilliseconds": 877510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#attach-an-else-to-the-false-path"
+      }
+    },
+    {
+      "id": "TP-074",
+      "startMilliseconds": 877510,
+      "endMilliseconds": 889320,
+      "kind": "test_result",
+      "text": "For the value 50 the if block runs and the else block does not, while for another value the condition evaluates to false and the else block runs instead.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 877510,
+          "endMilliseconds": 889320
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#attach-an-else-to-the-false-path"
+      }
+    },
+    {
+      "id": "TP-075",
+      "startMilliseconds": 881759,
+      "endMilliseconds": 897509,
+      "kind": "explanation",
+      "text": "When the if condition is false the if block is skipped entirely and only the else block attached to that if runs, after which execution continues normally with the following statements.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 881759,
+          "endMilliseconds": 897509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#attach-an-else-to-the-false-path"
+      }
+    },
+    {
+      "id": "TP-076",
+      "startMilliseconds": 900120,
+      "endMilliseconds": 933189,
+      "kind": "explanation",
+      "text": "The idea of else if is that inside an else block you may place one more condition with its own check, so a wrong guess prints a hint and then triggers a second check.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 900120,
+          "endMilliseconds": 933189
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-an-else-if-chain-from-nested-statements"
+      }
+    },
+    {
+      "id": "TP-077",
+      "startMilliseconds": 933189,
+      "endMilliseconds": 955670,
+      "kind": "fact",
+      "text": "By convention, when the only statement inside an else block is a single if, its braces are omitted and the if is written on one line with the else, which is why else if exists.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 933189,
+          "endMilliseconds": 955670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-an-else-if-chain-from-nested-statements"
+      }
+    },
+    {
+      "id": "TP-078",
+      "startMilliseconds": 955670,
+      "endMilliseconds": 964470,
+      "kind": "explanation",
+      "text": "else if is just shorthand for an else whose single statement is an if with its own block, which is equivalent to writing the nested form with explicit braces.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 955670,
+          "endMilliseconds": 964470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-an-else-if-chain-from-nested-statements"
+      }
+    },
+    {
+      "id": "TP-079",
+      "startMilliseconds": 958199,
+      "endMilliseconds": 964470,
+      "kind": "explanation",
+      "text": "To go back to the fully braced form and keep the code equivalent, an extra else must be added after it with the check placed inside.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 958199,
+          "endMilliseconds": 961670
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 958199,
+          "endMilliseconds": 964470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-an-else-if-chain-from-nested-statements"
+      }
+    },
+    {
+      "id": "TP-080",
+      "startMilliseconds": 961670,
+      "endMilliseconds": 983389,
+      "kind": "edge_case",
+      "text": "The check for the number being greater than R is optional because a number that is neither equal to nor smaller than R is always greater, so the branch can never fail.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 961670,
+          "endMilliseconds": 983389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-an-else-if-chain-from-nested-statements"
+      }
+    },
+    {
+      "id": "TP-081",
+      "startMilliseconds": 983389,
+      "endMilliseconds": 1011990,
+      "kind": "explanation",
+      "text": "An if together with its attached else counts as a single statement, so if braces are omitted this if/else pair binds to the nearest outer else rather than standing on its own.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 983389,
+          "endMilliseconds": 1011990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-an-else-if-chain-from-nested-statements"
+      }
+    },
+    {
+      "id": "TP-082",
+      "startMilliseconds": 1011990,
+      "endMilliseconds": 1025570,
+      "kind": "explanation",
+      "text": "Without braces the whole if/else chain collapses onto one line: the first if/else attaches to the outer else and the second else becomes nested inside that first if.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1011990,
+          "endMilliseconds": 1025570
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-an-else-if-chain-from-nested-statements"
+      }
+    },
+    {
+      "id": "TP-083",
+      "startMilliseconds": 1025570,
+      "endMilliseconds": 1027040,
+      "kind": "test_result",
+      "text": "Running the program confirms it starts once and reports only whether the hidden number is bigger or smaller.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1025570,
+          "endMilliseconds": 1027040
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-an-else-if-chain-from-nested-statements"
+      }
+    },
+    {
+      "id": "TP-084",
+      "startMilliseconds": 1027040,
+      "endMilliseconds": 1036490,
+      "kind": "explanation",
+      "text": "To keep asking for numbers until the correct one is entered, the part of the program that asks and compares must first be identified as the piece that repeats.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1027040,
+          "endMilliseconds": 1036490
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#repeat-the-input-and-comparison"
+      }
+    },
+    {
+      "id": "TP-085",
+      "startMilliseconds": 1029240,
+      "endMilliseconds": 1037590,
+      "kind": "explanation",
+      "text": "The repeating piece is entering the number together with its comparison, so it should be wrapped in an infinite loop and an explicit exit condition added.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1029240,
+          "endMilliseconds": 1037590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#repeat-the-input-and-comparison"
+      }
+    },
+    {
+      "id": "TP-086",
+      "startMilliseconds": 1037590,
+      "endMilliseconds": 1042810,
+      "kind": "explanation",
+      "text": "The loop should be left as soon as the number is guessed, so a way to exit the loop from inside it is required.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1037590,
+          "endMilliseconds": 1042810
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#repeat-the-input-and-comparison"
+      }
+    },
+    {
+      "id": "TP-087",
+      "startMilliseconds": 1042810,
+      "endMilliseconds": 1050420,
+      "kind": "fact",
+      "text": "A while loop evaluates its condition expression every time it runs, so a literal true makes it loop endlessly with no built-in stopping point.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1042810,
+          "endMilliseconds": 1050420
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#repeat-the-input-and-comparison"
+      }
+    },
+    {
+      "id": "TP-088",
+      "startMilliseconds": 1050420,
+      "endMilliseconds": 1053550,
+      "kind": "scope_boundary",
+      "text": "The topic of how to terminate the infinite while true loop is deliberately postponed to a later part of the lesson.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1050420,
+          "endMilliseconds": 1053550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#repeat-the-input-and-comparison"
+      }
+    },
+    {
+      "id": "TP-089",
+      "startMilliseconds": 1053559,
+      "endMilliseconds": 1084429,
+      "kind": "fact",
+      "text": "Like if, a loop has a block of code attached to it, and when that block holds only one statement the braces may be omitted exactly as with if.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1053559,
+          "endMilliseconds": 1084429
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#repeat-the-input-and-comparison"
+      }
+    },
+    {
+      "id": "TP-090",
+      "startMilliseconds": 1084429,
+      "endMilliseconds": 1110570,
+      "kind": "explanation",
+      "text": "After the loop body finishes the processor jumps back to the beginning of the loop instead of the next instruction, which is why the body repeats until the loop is left.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1084429,
+          "endMilliseconds": 1107480
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1100480,
+          "endMilliseconds": 1110570
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#repeat-the-input-and-comparison"
+      }
+    },
+    {
+      "id": "TP-091",
+      "startMilliseconds": 1100570,
+      "endMilliseconds": 1120550,
+      "kind": "fact",
+      "text": "A loop is left early with the break instruction, which finds the nearest enclosing loop, stops its further execution and moves to the first instruction after that loop.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1100570,
+          "endMilliseconds": 1120550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-break-and-continue-inside-the-guessing-loop"
+      }
+    },
+    {
+      "id": "TP-092",
+      "startMilliseconds": 1120550,
+      "endMilliseconds": 1135950,
+      "kind": "explanation",
+      "text": "Because break targets the closest loop containing it, execution resumes at the instruction right after that loop's body rather than inside it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1120550,
+          "endMilliseconds": 1135950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-break-and-continue-inside-the-guessing-loop"
+      }
+    },
+    {
+      "id": "TP-093",
+      "startMilliseconds": 1135950,
+      "endMilliseconds": 1146750,
+      "kind": "fact",
+      "text": "Besides break there is continue, which in a loop performs an early return by jumping straight back to the start of the loop iteration.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1135950,
+          "endMilliseconds": 1146750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-break-and-continue-inside-the-guessing-loop"
+      }
+    },
+    {
+      "id": "TP-094",
+      "startMilliseconds": 1146750,
+      "endMilliseconds": 1183520,
+      "kind": "explanation",
+      "text": "The main logic such as the guessed-number check is placed as the last statement of the loop, while a check for the unsuccessful guesses runs at the loop start before the main action.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1146750,
+          "endMilliseconds": 1183520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-break-and-continue-inside-the-guessing-loop"
+      }
+    },
+    {
+      "id": "TP-095",
+      "startMilliseconds": 1175400,
+      "endMilliseconds": 1180720,
+      "kind": "explanation",
+      "text": "The guessing loop tests the entered value against the hidden number both with a greater-than check and a less-than check, which is what tells the player which way to adjust.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1175400,
+          "endMilliseconds": 1180720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-break-and-continue-inside-the-guessing-loop"
+      }
+    },
+    {
+      "id": "TP-096",
+      "startMilliseconds": 1180720,
+      "endMilliseconds": 1192080,
+      "kind": "reason",
+      "text": "When the less-than branch matches, the value can be neither equal nor greater, so that branch only reports that the guess was too low without any extra conditions.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1180720,
+          "endMilliseconds": 1192080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-break-and-continue-inside-the-guessing-loop"
+      }
+    },
+    {
+      "id": "TP-097",
+      "startMilliseconds": 1192080,
+      "endMilliseconds": 1206390,
+      "kind": "reason",
+      "text": "The continue statement returns control to the start of the loop body so the remaining comparison checks are skipped, and the same pattern applies symmetrically in the other branch.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1192080,
+          "endMilliseconds": 1206390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-break-and-continue-inside-the-guessing-loop"
+      }
+    },
+    {
+      "id": "TP-098",
+      "startMilliseconds": 1206390,
+      "endMilliseconds": 1215190,
+      "kind": "reason",
+      "text": "If a value is neither less nor greater than the hidden number it must be equal to it, so the explicit equality check can be omitted from the code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1206390,
+          "endMilliseconds": 1215190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-break-and-continue-inside-the-guessing-loop"
+      }
+    },
+    {
+      "id": "TP-099",
+      "startMilliseconds": 1215190,
+      "endMilliseconds": 1238470,
+      "kind": "explanation",
+      "text": "continue aborts the current iteration of the loop, so everything that would normally run after it in the body is skipped and execution jumps back to the first statement of the block.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1215190,
+          "endMilliseconds": 1238470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-break-and-continue-inside-the-guessing-loop"
+      }
+    },
+    {
+      "id": "TP-100",
+      "startMilliseconds": 1238470,
+      "endMilliseconds": 1241000,
+      "kind": "explanation",
+      "text": "The loop condition is re-evaluated on every pass of the loop, which is why it can be used to decide when to leave the cycle.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1238470,
+          "endMilliseconds": 1241000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-break-and-continue-inside-the-guessing-loop"
+      }
+    },
+    {
+      "id": "TP-101",
+      "startMilliseconds": 1241000,
+      "endMilliseconds": 1254679,
+      "kind": "code_change",
+      "text": "To demonstrate the loop exit clearly the code is rewritten so the number variable is declared outside the loop and the break statement is removed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1241000,
+          "endMilliseconds": 1254679
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1243799,
+          "endMilliseconds": 1254679
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-exit-test-into-the-loop-condition"
+      }
+    },
+    {
+      "id": "TP-102",
+      "startMilliseconds": 1254679,
+      "endMilliseconds": 1268120,
+      "kind": "explanation",
+      "text": "Without the break the cycle runs forever, so even a correct guess just falls through to the first line and prompts for the number again.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1254679,
+          "endMilliseconds": 1268120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-exit-test-into-the-loop-condition"
+      }
+    },
+    {
+      "id": "TP-103",
+      "startMilliseconds": 1268120,
+      "endMilliseconds": 1294080,
+      "kind": "explanation",
+      "text": "Instead of using break you can test in the cycle condition whether the number is still unguessable, so the loop exits as soon as the guess succeeds and the success message is printed after the loop.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1268120,
+          "endMilliseconds": 1294080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-exit-test-into-the-loop-condition"
+      }
+    },
+    {
+      "id": "TP-104",
+      "startMilliseconds": 1294080,
+      "endMilliseconds": 1297320,
+      "kind": "explanation",
+      "text": "While the number has not been guessed the program asks for it again, and once it is guessed the prompting stops.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1294080,
+          "endMilliseconds": 1297320
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-exit-test-into-the-loop-condition"
+      }
+    },
+    {
+      "id": "TP-105",
+      "startMilliseconds": 1297320,
+      "endMilliseconds": 1304550,
+      "kind": "reason",
+      "text": "The expression written inside the body is effectively cut out and pasted as the first expression of the loop, so it is evaluated before each iteration.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1297320,
+          "endMilliseconds": 1304550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-exit-test-into-the-loop-condition"
+      }
+    },
+    {
+      "id": "TP-106",
+      "startMilliseconds": 1304550,
+      "endMilliseconds": 1319600,
+      "kind": "explanation",
+      "text": "Because that expression becomes the cycle condition, the program leaves the cycle exactly when the expression evaluates to false.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1304550,
+          "endMilliseconds": 1319600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-exit-test-into-the-loop-condition"
+      }
+    },
+    {
+      "id": "TP-107",
+      "startMilliseconds": 1319600,
+      "endMilliseconds": 1328909,
+      "kind": "explanation",
+      "text": "Writing the exit test inside the body is equivalent to writing its inverse as the cycle condition, which is the only way to express the exit when the check lives in the condition.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1319600,
+          "endMilliseconds": 1328909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-exit-test-into-the-loop-condition"
+      }
+    },
+    {
+      "id": "TP-108",
+      "startMilliseconds": 1328909,
+      "endMilliseconds": 1342840,
+      "kind": "explanation",
+      "text": "Reading a variable that has not been assigned yet makes the compiler report an error about reading from an uninitialized variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1328909,
+          "endMilliseconds": 1342840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-exit-test-into-the-loop-condition"
+      }
+    },
+    {
+      "id": "TP-109",
+      "startMilliseconds": 1342840,
+      "endMilliseconds": 1352630,
+      "kind": "reason",
+      "text": "The cycle must run at least once so the variables receive a value before the exit check that reads them is evaluated.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1342840,
+          "endMilliseconds": 1352630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-exit-test-into-the-loop-condition"
+      }
+    },
+    {
+      "id": "TP-110",
+      "startMilliseconds": 1352630,
+      "endMilliseconds": 1366950,
+      "kind": "code_change",
+      "text": "To guarantee the first pass, the exit check is moved to the end of the body by writing do, placing the while condition and its semicolon after the closing brace.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1352630,
+          "endMilliseconds": 1366950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-do-while-and-compare-the-designs"
+      }
+    },
+    {
+      "id": "TP-111",
+      "startMilliseconds": 1366950,
+      "endMilliseconds": 1382070,
+      "kind": "explanation",
+      "text": "The alternative of keeping the check at the top would force initializing the variables with sentinel values that are never real input, which makes the solution worse.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1366950,
+          "endMilliseconds": 1382070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-do-while-and-compare-the-designs"
+      }
+    },
+    {
+      "id": "TP-112",
+      "startMilliseconds": 1382070,
+      "endMilliseconds": 1394470,
+      "kind": "reason",
+      "text": "A drawback of the do-while form is that the variables must be declared outside the cycle, whereas in the infinite-loop version they could be declared right where they are used inside the body.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1382070,
+          "endMilliseconds": 1394470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-do-while-and-compare-the-designs"
+      }
+    },
+    {
+      "id": "TP-113",
+      "startMilliseconds": 1394480,
+      "endMilliseconds": 1402950,
+      "kind": "reason",
+      "text": "A drawback of the do-while form is that the variables must be declared outside the cycle, whereas in the infinite-loop version they could be declared right where they are used inside the body.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1394480,
+          "endMilliseconds": 1402950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-do-while-and-compare-the-designs"
+      }
+    },
+    {
+      "id": "TP-114",
+      "startMilliseconds": 1402950,
+      "endMilliseconds": 1411039,
+      "kind": "explanation",
+      "text": "With the check in the cycle condition the exit is less obvious than in the version that simply used break.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1402950,
+          "endMilliseconds": 1411039
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-do-while-and-compare-the-designs"
+      }
+    },
+    {
+      "id": "TP-115",
+      "startMilliseconds": 1411039,
+      "endMilliseconds": 1423279,
+      "kind": "reason",
+      "text": "If none of the inner comparison conditions match nothing is printed, yet the guessed flag is still used after the loop, so the logic has to be written twice.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1411039,
+          "endMilliseconds": 1423279
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-do-while-and-compare-the-designs"
+      }
+    },
+    {
+      "id": "TP-116",
+      "startMilliseconds": 1423279,
+      "endMilliseconds": 1445559,
+      "kind": "explanation",
+      "text": "With break the exit happened naturally when no comparison matched, whereas a cycle condition forces you to spell out the negation of all those conditions again in the program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1423279,
+          "endMilliseconds": 1445559
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-do-while-and-compare-the-designs"
+      }
+    },
+    {
+      "id": "TP-117",
+      "startMilliseconds": 1445559,
+      "endMilliseconds": 1457480,
+      "kind": "explanation",
+      "text": "The recommended style is to avoid encoding exit logic in the cycle condition and instead leave the loop manually with break once the exit condition is reached.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1445559,
+          "endMilliseconds": 1457480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-do-while-and-compare-the-designs"
+      }
+    },
+    {
+      "id": "TP-118",
+      "startMilliseconds": 1457480,
+      "endMilliseconds": 1476230,
+      "kind": "edge_case",
+      "text": "If the user types something that is not a number, the failed parse yields zero, so the program wrongly treats it as a real guess of zero instead of reporting the input error.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1457480,
+          "endMilliseconds": 1476230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-failed-parse-is-not-a-guess-of-zero"
+      }
+    },
+    {
+      "id": "TP-119",
+      "startMilliseconds": 1468399,
+      "endMilliseconds": 1484570,
+      "kind": "edge_case",
+      "text": "When int.TryParse fails it still returns the variable's prior value, so the program treats failed input as a zero instead of reporting an error.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1468399,
+          "endMilliseconds": 1484570
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-failed-parse-is-not-a-guess-of-zero"
+      }
+    },
+    {
+      "id": "TP-120",
+      "startMilliseconds": 1484620,
+      "endMilliseconds": 1502350,
+      "kind": "code_change",
+      "text": "The input-reading line and the whole parse block, including error reporting and return, must be wrapped in a loop so the number is requested again until a valid value is entered.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1484620,
+          "endMilliseconds": 1502350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retry-input-inside-its-own-function"
+      }
+    },
+    {
+      "id": "TP-121",
+      "startMilliseconds": 1502360,
+      "endMilliseconds": 1511470,
+      "kind": "code_change",
+      "text": "When parsing fails the loop should be restarted from scratch with continue, which makes the code keep asking for input.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1502360,
+          "endMilliseconds": 1511470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retry-input-inside-its-own-function"
+      }
+    },
+    {
+      "id": "TP-122",
+      "startMilliseconds": 1511480,
+      "endMilliseconds": 1524350,
+      "kind": "explanation",
+      "text": "continue jumps to the first statement of the loop, not merely to the next line of the body.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1511480,
+          "endMilliseconds": 1524350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retry-input-inside-its-own-function"
+      }
+    },
+    {
+      "id": "TP-123",
+      "startMilliseconds": 1524360,
+      "endMilliseconds": 1535490,
+      "kind": "reason",
+      "text": "break is unnecessary on the successful parse path because return already terminates both the loop and the whole function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1524360,
+          "endMilliseconds": 1535490
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retry-input-inside-its-own-function"
+      }
+    },
+    {
+      "id": "TP-124",
+      "startMilliseconds": 1535990,
+      "endMilliseconds": 1551399,
+      "kind": "fact",
+      "text": "With this structure the program keeps requesting a number until the user finally enters a valid one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1535990,
+          "endMilliseconds": 1551399
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#retry-input-inside-its-own-function"
+      }
+    }
+  ]
+}
