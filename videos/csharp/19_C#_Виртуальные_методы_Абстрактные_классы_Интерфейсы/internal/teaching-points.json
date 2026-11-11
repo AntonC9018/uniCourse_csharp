@@ -1,0 +1,5286 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "82vaxb6o_rg",
+  "uploadId": "82vaxb6o_rg",
+  "transcriptSha256": "3b0b169b7ff4befa188209d490b22d083c2ad66d598f9326b4e27fa4dc2d6ead",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 10679,
+      "endMilliseconds": 21600,
+      "kind": "fact",
+      "text": "The base class Animal holds no fields and defines a single method that prints three question marks, which gives subclasses a common shape to build on.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 10679,
+          "endMilliseconds": 21600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-hidden-methods-to-runtime-dispatch"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 21439,
+      "endMilliseconds": 27820,
+      "kind": "fact",
+      "text": "The derived class Bird declares a method with the same name as Animal's, and its body prints a chirp instead, so the same call site can produce different output per class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 21439,
+          "endMilliseconds": 27820
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-hidden-methods-to-runtime-dispatch"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 29330,
+      "endMilliseconds": 47350,
+      "kind": "explanation",
+      "text": "Creating a Bird variable and calling its speak method runs the implementation declared in Bird itself.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 29330,
+          "endMilliseconds": 47350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-hidden-methods-to-runtime-dispatch"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 47350,
+      "endMilliseconds": 57440,
+      "kind": "fact",
+      "text": "A Bird instance can be assigned to a variable declared as Animal because Bird inherits from Animal, which is what makes upcasting legal.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 47350,
+          "endMilliseconds": 57440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-hidden-methods-to-runtime-dispatch"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 60549,
+      "endMilliseconds": 83119,
+      "kind": "explanation",
+      "text": "The compiler binds a method call to the declared type of the variable or expression, so calling speak on an Animal-typed variable resolves to Animal's method even though a Bird object is actually stored there.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 60549,
+          "endMilliseconds": 83119
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-hidden-methods-to-runtime-dispatch"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 74439,
+      "endMilliseconds": 83119,
+      "kind": "explanation",
+      "text": "Because the method lookup starts at the class given by the expression's type, the compiler searches Animal for speak and ignores that the variable really holds a Bird.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 74439,
+          "endMilliseconds": 83119
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-hidden-methods-to-runtime-dispatch"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 87159,
+      "endMilliseconds": 98109,
+      "kind": "reason",
+      "text": "To make the call follow the actual object instead of the declared type, dispatch must be resolved from the runtime type of the object rather than from the static type of the variable or expression.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 87159,
+          "endMilliseconds": 98109
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-hidden-methods-to-runtime-dispatch"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 118709,
+      "endMilliseconds": 128529,
+      "kind": "code_change",
+      "text": "Marking the base method with virtual and the derived method with override turns the call into runtime dispatch.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 118709,
+          "endMilliseconds": 128529
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-hidden-methods-to-runtime-dispatch"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 126439,
+      "endMilliseconds": 129589,
+      "kind": "test_result",
+      "text": "After the virtual/override change, running the program executes Bird's speak, confirming the runtime type now drives the call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 126439,
+          "endMilliseconds": 129589
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-hidden-methods-to-runtime-dispatch"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 129589,
+      "endMilliseconds": 146400,
+      "kind": "explanation",
+      "text": "The analyzed program declares two local variables, one per referenced type, and the objects created represent the Animal and Bird types.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 129589,
+          "endMilliseconds": 146400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#two-references-and-one-object"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 146400,
+      "endMilliseconds": 153319,
+      "kind": "fact",
+      "text": "The type of the variable named bird is inferred from the right-hand side of its declaration rather than written explicitly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 146400,
+          "endMilliseconds": 153319
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#two-references-and-one-object"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 153309,
+      "endMilliseconds": 170509,
+      "kind": "explanation",
+      "text": "The right-hand expression constructs a new Bird object whose type is Bird, and the address of that object is the value the expression produces.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 153309,
+          "endMilliseconds": 170509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#two-references-and-one-object"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 170509,
+      "endMilliseconds": 178710,
+      "kind": "explanation",
+      "text": "A second variable declared as Animal receives a copy of the reference from bird, so both variables point at the same object rather than to two separate ones.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 170509,
+          "endMilliseconds": 178710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#two-references-and-one-object"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 180959,
+      "endMilliseconds": 196670,
+      "kind": "fact",
+      "text": "Method bodies are loaded into memory at addresses, so Animal's speak lives at one address and Bird's speak at another, which is what allows two distinct implementations to coexist.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 180959,
+          "endMilliseconds": 196670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#two-references-and-one-object"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 198240,
+      "endMilliseconds": 204670,
+      "kind": "explanation",
+      "text": "The expression syntax a.Speak() splits into two parts: a left expression that leads to the object and a right side naming the method to call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 198240,
+          "endMilliseconds": 204670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#two-references-and-one-object"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 206470,
+      "endMilliseconds": 223760,
+      "kind": "explanation",
+      "text": "The call takes the reference stored in the variable, resolves it to the object at that address, and invokes speak on that object, which is the step that can pick the derived implementation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 206470,
+          "endMilliseconds": 223760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#two-references-and-one-object"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 216360,
+      "endMilliseconds": 223760,
+      "kind": "explanation",
+      "text": "The call targets the speak method belonging to the object's actual runtime type, which is what the polymorphism demonstration relies on.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 216360,
+          "endMilliseconds": 223760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#two-references-and-one-object"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 223760,
+      "endMilliseconds": 241630,
+      "kind": "reason",
+      "text": "To know which method is associated with a type at runtime, the mechanism must decide between several same-named implementations, which requires per-type bookkeeping.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 223760,
+          "endMilliseconds": 241630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-virtual-method-table-model"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 243910,
+      "endMilliseconds": 250519,
+      "kind": "fact",
+      "text": "Each type is linked to a virtual method table, the structure that records the runtime method bindings for that type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 243910,
+          "endMilliseconds": 250519
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-virtual-method-table-model"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 250519,
+      "endMilliseconds": 266710,
+      "kind": "fact",
+      "text": "A virtual method table holds one cell per virtual method, and the cell corresponding to speak stores the address of the speak code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 250519,
+          "endMilliseconds": 266710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-virtual-method-table-model"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 266710,
+      "endMilliseconds": 281629,
+      "kind": "fact",
+      "text": "A derived class also has a virtual method table with a cell for the inherited virtual method, because the method is still virtual as declared in the base class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 266710,
+          "endMilliseconds": 281629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-virtual-method-table-model"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 281639,
+      "endMilliseconds": 296189,
+      "kind": "explanation",
+      "text": "In Animal's virtual method table the cell for speak holds address 100, the address of Animal's speak body, so lookup through that table reaches the base implementation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 281639,
+          "endMilliseconds": 296189
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-virtual-method-table-model"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 287960,
+      "endMilliseconds": 296189,
+      "kind": "fact",
+      "text": "The virtual method table slot for Speak holds the address of the Speak implementation declared in class Animal, which is what lets a call be resolved at runtime.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 287960,
+          "endMilliseconds": 296189
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-virtual-method-table-model"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 296189,
+      "endMilliseconds": 306909,
+      "kind": "explanation",
+      "text": "A derived type such as B has its own virtual method table of the same shape, where the slot for Speak has been filled with the address of the overriding method instead of the inherited one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 296189,
+          "endMilliseconds": 306909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-virtual-method-table-model"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 306909,
+      "endMilliseconds": 313070,
+      "kind": "fact",
+      "text": "The override keyword lets a derived class replace the address stored in the inherited virtual method table slot, which is what makes the derived implementation the one that runs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 306909,
+          "endMilliseconds": 313070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-virtual-method-table-model"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 313070,
+      "endMilliseconds": 326430,
+      "kind": "reason",
+      "text": "If the method were not overridden, the slot in the derived type's virtual method table would by default still hold the address from the base class, so the base implementation would execute.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 313070,
+          "endMilliseconds": 326430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-virtual-method-table-model"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 326430,
+      "endMilliseconds": 357629,
+      "kind": "explanation",
+      "text": "A call written as object.Method means: go through the object's type reference, read the matching cell of that type's virtual method table, and continue execution from the address stored there.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 326430,
+          "endMilliseconds": 357629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-virtual-method-table-model"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 355120,
+      "endMilliseconds": 365080,
+      "kind": "explanation",
+      "text": "Having found the address in the table cell, the runtime jumps to it and calls the method, which closes the virtual dispatch explanation for a variable of derived type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 355120,
+          "endMilliseconds": 365080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-virtual-method-table-model"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 360029,
+      "endMilliseconds": 374190,
+      "kind": "explanation",
+      "text": "In a variant with an extra variable declared as the base type and assigned a freshly constructed object, the variable holds an object whose type reference points to Animal rather than to a derived type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 360029,
+          "endMilliseconds": 374190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-base-objects-and-nonvirtual-calls"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 374190,
+      "endMilliseconds": 389990,
+      "kind": "reason",
+      "text": "Because the object was created from the base type Animal and not from a derived type, storing it in a variable cannot make a derived method run.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 374190,
+          "endMilliseconds": 389990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-base-objects-and-nonvirtual-calls"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 389990,
+      "endMilliseconds": 414870,
+      "kind": "explanation",
+      "text": "Calling Speak on that variable reads the object address, follows the object's type reference to the virtual method table for that type, and jumps to the address in the Speak cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 389990,
+          "endMilliseconds": 414870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-base-objects-and-nonvirtual-calls"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 414870,
+      "endMilliseconds": 431599,
+      "kind": "reason",
+      "text": "Identical call syntax on a variable of type Animal can execute different code than on a variable of a derived type, because the runtime resolves the method through the object's actual runtime type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 414870,
+          "endMilliseconds": 431599
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-base-objects-and-nonvirtual-calls"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 431599,
+      "endMilliseconds": 439639,
+      "kind": "fact",
+      "text": "With the same Speak name and the same Animal-typed expression, the first call runs the Bird implementation while the second runs the base class implementation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 431599,
+          "endMilliseconds": 439639
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-base-objects-and-nonvirtual-calls"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 439639,
+      "endMilliseconds": 453430,
+      "kind": "fact",
+      "text": "Declaring a method as virtual creates a matching cell in the virtual method table of that type and of every subtype, which is the slot an overriding method writes into.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 439639,
+          "endMilliseconds": 453430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-base-objects-and-nonvirtual-calls"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 453430,
+      "endMilliseconds": 464869,
+      "kind": "fact",
+      "text": "override means the address stored in the same-named cell for that type is replaced with the address of the new method implementation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 453430,
+          "endMilliseconds": 464869
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-base-objects-and-nonvirtual-calls"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 464869,
+      "endMilliseconds": 473350,
+      "kind": "explanation",
+      "text": "Replacing the address in that inherited table cell is exactly what method overriding means, which is why the derived version is the one invoked through the base-typed reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 464869,
+          "endMilliseconds": 473350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-base-objects-and-nonvirtual-calls"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 473350,
+      "endMilliseconds": 487360,
+      "kind": "edge_case",
+      "text": "Without the virtual modifier on the base method it could not be overridden, and no Speak entry would exist in the virtual method table at all.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 473350,
+          "endMilliseconds": 487360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-base-objects-and-nonvirtual-calls"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 487360,
+      "endMilliseconds": 508749,
+      "kind": "explanation",
+      "text": "When a non-virtual method is called, the runtime jumps straight to the method address taken from the type of the expression and skips the object's type reference and virtual method table entirely.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 487360,
+          "endMilliseconds": 508749
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-base-objects-and-nonvirtual-calls"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 505680,
+      "endMilliseconds": 523630,
+      "kind": "explanation",
+      "text": "A call that ignores the virtual method table system because the method has no table entry is termed static, meaning the target is fixed by the expression's type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 505680,
+          "endMilliseconds": 523630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-base-objects-and-nonvirtual-calls"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 508749,
+      "endMilliseconds": 513919,
+      "kind": "explanation",
+      "text": "A call to a method that has no entry in the virtual method table is resolved the same way, by using the method address compiled for the expression's type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 508749,
+          "endMilliseconds": 513919
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-base-objects-and-nonvirtual-calls"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 523630,
+      "endMilliseconds": 558069,
+      "kind": "reason",
+      "text": "For a static call the method that will run is known at compile time, so the compiler can state up front that the Animal implementation runs based only on the type of the expression.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 523630,
+          "endMilliseconds": 558069
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-base-objects-and-nonvirtual-calls"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 558069,
+      "endMilliseconds": 574030,
+      "kind": "fact",
+      "text": "When the method that runs instead depends on which object is stored in the variable at runtime, the virtual method system is used and the call is called dynamic, also known as late binding.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 558069,
+          "endMilliseconds": 574030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compare-base-objects-and-nonvirtual-calls"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 574030,
+      "endMilliseconds": 585279,
+      "kind": "explanation",
+      "text": "A further class inheriting from the derived bird class may also override the method, and making the variable's type a more derived one makes the more derived implementation execute.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 574030,
+          "endMilliseconds": 585279
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#continue-the-override-chain"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 577640,
+      "endMilliseconds": 582780,
+      "kind": "explanation",
+      "text": "Calling a virtual method through a base-typed variable still runs the method declared in the more derived runtime type, so a Bird reference can execute the Sparrow implementation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 577640,
+          "endMilliseconds": 582780
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#continue-the-override-chain"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 582780,
+      "endMilliseconds": 593030,
+      "kind": "reason",
+      "text": "The method need not be marked virtual again in the derived class because the base declaration already created the slot in the vtable that the derived class reuses.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 582780,
+          "endMilliseconds": 593030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#continue-the-override-chain"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 593040,
+      "endMilliseconds": 607069,
+      "kind": "fact",
+      "text": "The override keyword may be applied in descendant classes at any inheritance depth, including a subclass of a subclass of the class that declared the method as virtual.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 593040,
+          "endMilliseconds": 607069
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#continue-the-override-chain"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 607069,
+      "endMilliseconds": 625110,
+      "kind": "explanation",
+      "text": "With a variable statically typed as the derived class there are three objects and three matching vtables, and dispatch picks the address stored in the vtable of the variable's own type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 607069,
+          "endMilliseconds": 625110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#continue-the-override-chain"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 625110,
+      "endMilliseconds": 639750,
+      "kind": "explanation",
+      "text": "Marking the derived method with override overwrites the method address that the vtable slot inherited from the base type holds, replacing the base implementation address with the derived one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 625110,
+          "endMilliseconds": 639750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#continue-the-override-chain"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 639760,
+      "endMilliseconds": 651550,
+      "kind": "fact",
+      "text": "The virtual keyword only creates the vtable slot for that method in the declaring type and in the vtables of all types that inherit from it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 639760,
+          "endMilliseconds": 651550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#continue-the-override-chain"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 651560,
+      "endMilliseconds": 664000,
+      "kind": "fact",
+      "text": "Consequently the slot for the virtual method automatically exists in the vtables of both the base class and the derived class, which is what makes overriding it later possible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 651560,
+          "endMilliseconds": 664000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#continue-the-override-chain"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 654160,
+      "endMilliseconds": 663990,
+      "kind": "fact",
+      "text": "The slot created by the virtual declaration automatically appears in the vtables of the base class and of the derived class, so overriding it needs no extra plumbing.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 654160,
+          "endMilliseconds": 663990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#continue-the-override-chain"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 664000,
+      "endMilliseconds": 679550,
+      "kind": "explanation",
+      "text": "Dropping the override keyword in one of the derived classes causes that class's vtable slot to keep pointing at the inherited implementation instead of a new one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 664000,
+          "endMilliseconds": 679550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#continue-the-override-chain"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 679550,
+      "endMilliseconds": 699230,
+      "kind": "edge_case",
+      "text": "If the derived class does not override the method, the call resolves to the base class implementation address 100 rather than the derived address 200.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 679550,
+          "endMilliseconds": 699230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#continue-the-override-chain"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 699230,
+      "endMilliseconds": 707750,
+      "kind": "fact",
+      "text": "Virtual methods can read and write fields exactly like ordinary methods, because the object is available through the hidden this parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 699230,
+          "endMilliseconds": 707750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 707750,
+      "endMilliseconds": 717710,
+      "kind": "explanation",
+      "text": "If the base class declares a name field, a virtual method of a derived type can reference that inherited field and print its value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 707750,
+          "endMilliseconds": 717710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 717710,
+      "endMilliseconds": 723430,
+      "kind": "fact",
+      "text": "Derived types may declare their own fields in addition to the fields they inherit from the base class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 717710,
+          "endMilliseconds": 723430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 723430,
+      "endMilliseconds": 734360,
+      "kind": "code_change",
+      "text": "The derived class example adds an extra field such as a call counter and increments it in the virtual method, which prints once per child object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 723430,
+          "endMilliseconds": 734360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 727160,
+      "endMilliseconds": 732510,
+      "kind": "code_change",
+      "text": "With the extra counter field the virtual method prints one line per child object, showing the method runs for every element of the collection.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 727160,
+          "endMilliseconds": 732510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 732510,
+      "endMilliseconds": 745430,
+      "kind": "edge_case",
+      "text": "Constructing the derived object requires supplying a value for every field, which here means one value for the derived field and one for the inherited base field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 732510,
+          "endMilliseconds": 745430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 745430,
+      "endMilliseconds": 754510,
+      "kind": "test_result",
+      "text": "Running the program prints the speak output five times, matching the five child objects, and the base class implementation is not called at all.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 745430,
+          "endMilliseconds": 754510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 754510,
+      "endMilliseconds": 768790,
+      "kind": "explanation",
+      "text": "The inherited name field is stored in each object but never referenced by the virtual method, so no reference to it is ever produced at runtime.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 754510,
+          "endMilliseconds": 768790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 768790,
+      "endMilliseconds": 782030,
+      "kind": "explanation",
+      "text": "Even though the variable is statically typed as the base class, the hidden this parameter inside the virtual method has the runtime type of the actual object, not the declared variable type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 768790,
+          "endMilliseconds": 782030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 786040,
+      "endMilliseconds": 799519,
+      "kind": "explanation",
+      "text": "A variable declared with the derived type does not store a copy of the object's data but the address of the object, and the virtual call is dispatched on that address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 786040,
+          "endMilliseconds": 799519
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 791680,
+      "endMilliseconds": 799519,
+      "kind": "explanation",
+      "text": "A variable declared with the derived type stores the address of an object rather than a string value, and the virtual call is made on that object address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 791680,
+          "endMilliseconds": 799519
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 799519,
+      "endMilliseconds": 812310,
+      "kind": "explanation",
+      "text": "Calling any virtual method always follows the same path: from the object we reach its type, and from that type we read the method address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 799519,
+          "endMilliseconds": 812310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 822870,
+      "endMilliseconds": 834790,
+      "kind": "reason",
+      "text": "Because dispatch always resolves through the runtime type, the override can assume that the object arriving as this is at least of the base type where the method was overridden.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 822870,
+          "endMilliseconds": 834790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 834790,
+      "endMilliseconds": 852870,
+      "kind": "reason",
+      "text": "That assumption is safe because the virtual method can only appear in the vtable of the base type or of one of its derived types, never for a less derived object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 834790,
+          "endMilliseconds": 852870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-068",
+      "startMilliseconds": 852870,
+      "endMilliseconds": 864110,
+      "kind": "edge_case",
+      "text": "If the method were not overridden in the derived class, the vtable slot would still hold the base implementation address 100 instead of the derived address 200.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 852870,
+          "endMilliseconds": 864110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-069",
+      "startMilliseconds": 864110,
+      "endMilliseconds": 876920,
+      "kind": "explanation",
+      "text": "The same reasoning applies at the top of the hierarchy: a virtual call dispatched on the base type always receives an object that is at least of that base type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 864110,
+          "endMilliseconds": 876920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-070",
+      "startMilliseconds": 867959,
+      "endMilliseconds": 886920,
+      "kind": "explanation",
+      "text": "Calling Speak through a reference of static type Animal guarantees the receiver is at least an Animal, which is why the method body may rely on Animal members.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 867959,
+          "endMilliseconds": 886920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-071",
+      "startMilliseconds": 886920,
+      "endMilliseconds": 892350,
+      "kind": "reason",
+      "text": "The base class virtual-table slot address is copied into the same slot position for the derived type, so a derived object always has a valid Speak entry.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 886920,
+          "endMilliseconds": 892350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-072",
+      "startMilliseconds": 892350,
+      "endMilliseconds": 902389,
+      "kind": "fact",
+      "text": "A derived type may add extra virtual-table slots (for example the new address 100) that simply do not exist in the base type's table.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 892350,
+          "endMilliseconds": 902389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-073",
+      "startMilliseconds": 902389,
+      "endMilliseconds": 915949,
+      "kind": "explanation",
+      "text": "Any object of a derived type can be treated as an object of the base type once the extra trailing fields are ignored.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 902389,
+          "endMilliseconds": 915949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-074",
+      "startMilliseconds": 918839,
+      "endMilliseconds": 941749,
+      "kind": "explanation",
+      "text": "The statically known type of the hidden this parameter is always the class in which the method is declared, regardless of which table slot the method was defined in.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 918839,
+          "endMilliseconds": 941749
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-075",
+      "startMilliseconds": 931519,
+      "endMilliseconds": 941749,
+      "kind": "fact",
+      "text": "Inside Bird's Speak the hidden this parameter has type Bird, not Animal, because only objects of at least Bird are passed there.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 931519,
+          "endMilliseconds": 941749
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#fields-and-the-hidden-receiver"
+      }
+    },
+    {
+      "id": "TP-076",
+      "startMilliseconds": 941759,
+      "endMilliseconds": 946910,
+      "kind": "fact",
+      "text": "Classes may declare virtual methods at any level of the inheritance chain, not only in the root class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 941759,
+          "endMilliseconds": 946910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-a-second-virtual-method"
+      }
+    },
+    {
+      "id": "TP-077",
+      "startMilliseconds": 946910,
+      "endMilliseconds": 955800,
+      "kind": "code_change",
+      "text": "Adding a virtual method such as FlapWings to Bird is legal and makes it callable on Bird and its subtypes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 946910,
+          "endMilliseconds": 955800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-a-second-virtual-method"
+      }
+    },
+    {
+      "id": "TP-078",
+      "startMilliseconds": 955800,
+      "endMilliseconds": 964230,
+      "kind": "explanation",
+      "text": "A method declared first in Bird is absent from Animal's virtual table and appears only in Bird and every subtype of Bird.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 955800,
+          "endMilliseconds": 964230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-a-second-virtual-method"
+      }
+    },
+    {
+      "id": "TP-079",
+      "startMilliseconds": 964230,
+      "endMilliseconds": 971220,
+      "kind": "fact",
+      "text": "A subtype such as Sparrow may override the virtual method introduced at the Bird level.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 964230,
+          "endMilliseconds": 971220
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-a-second-virtual-method"
+      }
+    },
+    {
+      "id": "TP-080",
+      "startMilliseconds": 971220,
+      "endMilliseconds": 982839,
+      "kind": "reason",
+      "text": "With a variable of static type Animal the Bird-only FlapWings cannot be called, because the method exists on Bird rather than on Animal.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 971220,
+          "endMilliseconds": 982839
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-a-second-virtual-method"
+      }
+    },
+    {
+      "id": "TP-081",
+      "startMilliseconds": 982839,
+      "endMilliseconds": 992949,
+      "kind": "explanation",
+      "text": "With a variable of static type Bird the call to FlapWings compiles, and such a variable may actually hold a Sparrow at run time.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 982839,
+          "endMilliseconds": 992949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-a-second-virtual-method"
+      }
+    },
+    {
+      "id": "TP-082",
+      "startMilliseconds": 992949,
+      "endMilliseconds": 998309,
+      "kind": "test_result",
+      "text": "Running the program shows both methods executing from the Sparrow implementation, confirming virtual dispatch.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 992949,
+          "endMilliseconds": 998309
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-a-second-virtual-method"
+      }
+    },
+    {
+      "id": "TP-083",
+      "startMilliseconds": 998309,
+      "endMilliseconds": 1010120,
+      "kind": "code_change",
+      "text": "To shorten the code the author replaces method bodies of a single statement with expression-bodied arrow syntax.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 998309,
+          "endMilliseconds": 1010120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-a-second-virtual-method"
+      }
+    },
+    {
+      "id": "TP-084",
+      "startMilliseconds": 1010120,
+      "endMilliseconds": 1017390,
+      "kind": "fact",
+      "text": "Every base class keeps exactly one virtual-table slot for a method it declares itself, such as Speak in Animal, and that slot is inherited by all derived classes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1010120,
+          "endMilliseconds": 1017390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-a-second-virtual-method"
+      }
+    },
+    {
+      "id": "TP-085",
+      "startMilliseconds": 1017390,
+      "endMilliseconds": 1033550,
+      "kind": "explanation",
+      "text": "In the illustrated hierarchy the Speak slot holds address 100 for Animal, 200 for Bird and 400 for Sparrow, showing one shared slot filled with different implementations.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1017390,
+          "endMilliseconds": 1033550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-a-second-virtual-method"
+      }
+    },
+    {
+      "id": "TP-086",
+      "startMilliseconds": 1033550,
+      "endMilliseconds": 1047310,
+      "kind": "fact",
+      "text": "Declaring a method with the virtual keyword adds one more slot to the virtual table of that class and of all its subtypes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1033550,
+          "endMilliseconds": 1047310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-a-second-virtual-method"
+      }
+    },
+    {
+      "id": "TP-087",
+      "startMilliseconds": 1047310,
+      "endMilliseconds": 1057790,
+      "kind": "explanation",
+      "text": "Bird's table now has two slots: the inherited Speak slot plus an additional FlapWings slot.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1047310,
+          "endMilliseconds": 1057790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-a-second-virtual-method"
+      }
+    },
+    {
+      "id": "TP-088",
+      "startMilliseconds": 1057790,
+      "endMilliseconds": 1064440,
+      "kind": "explanation",
+      "text": "In the new slot Bird holds address 300 and Sparrow holds address 500, while override rules stay per-slot.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1057790,
+          "endMilliseconds": 1064440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-a-second-virtual-method"
+      }
+    },
+    {
+      "id": "TP-089",
+      "startMilliseconds": 1064440,
+      "endMilliseconds": 1074630,
+      "kind": "fact",
+      "text": "Override rules and method-call rules are exactly the same whether the table has one slot or several.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1064440,
+          "endMilliseconds": 1074630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-a-second-virtual-method"
+      }
+    },
+    {
+      "id": "TP-090",
+      "startMilliseconds": 1074630,
+      "endMilliseconds": 1082400,
+      "kind": "reason",
+      "text": "Using override changes only that one slot, so an overridden Speak slot would otherwise still contain the base class address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1074630,
+          "endMilliseconds": 1082400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-a-second-virtual-method"
+      }
+    },
+    {
+      "id": "TP-091",
+      "startMilliseconds": 1091350,
+      "endMilliseconds": 1102890,
+      "kind": "explanation",
+      "text": "Virtual dispatch resolves at run time by following the chain variable to object, object to type, type to virtual table and the table's named slot to the code address that is then executed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1091350,
+          "endMilliseconds": 1102890
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-a-second-virtual-method"
+      }
+    },
+    {
+      "id": "TP-092",
+      "startMilliseconds": 1102890,
+      "endMilliseconds": 1111840,
+      "kind": "explanation",
+      "text": "The call to FlapWings resolves through the same variable-object-type-table chain and lands on the FlapWings slot, then continues execution from that address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1102890,
+          "endMilliseconds": 1111840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-a-second-virtual-method"
+      }
+    },
+    {
+      "id": "TP-093",
+      "startMilliseconds": 1111840,
+      "endMilliseconds": 1135640,
+      "kind": "explanation",
+      "text": "To add new code and still run the logic that already exists in the base class, override the method and delegate to the base implementation instead of copying it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1111840,
+          "endMilliseconds": 1135640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extend-an-implementation-with-base"
+      }
+    },
+    {
+      "id": "TP-094",
+      "startMilliseconds": 1135640,
+      "endMilliseconds": 1149159,
+      "kind": "reason",
+      "text": "Copying a base implementation is bad practice because the original body may be more complex and may depend on encapsulated data inside the base class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1135640,
+          "endMilliseconds": 1149159
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extend-an-implementation-with-base"
+      }
+    },
+    {
+      "id": "TP-095",
+      "startMilliseconds": 1149159,
+      "endMilliseconds": 1163919,
+      "kind": "fact",
+      "text": "The base keyword gives access to base class members, and base.FlapWings() calls the base implementation statically rather than virtually.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1149159,
+          "endMilliseconds": 1163919
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extend-an-implementation-with-base"
+      }
+    },
+    {
+      "id": "TP-096",
+      "startMilliseconds": 1152960,
+      "endMilliseconds": 1160360,
+      "kind": "fact",
+      "text": "The base keyword lets code inside a derived class reach members of its base class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1152960,
+          "endMilliseconds": 1160360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extend-an-implementation-with-base"
+      }
+    },
+    {
+      "id": "TP-097",
+      "startMilliseconds": 1160360,
+      "endMilliseconds": 1164430,
+      "kind": "explanation",
+      "text": "Writing base.FlapWings() binds the call statically to the Bird implementation, because the compiler already knows the static type of the enclosing class, Sparrow.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1160360,
+          "endMilliseconds": 1164430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extend-an-implementation-with-base"
+      }
+    },
+    {
+      "id": "TP-098",
+      "startMilliseconds": 1164430,
+      "endMilliseconds": 1165510,
+      "kind": "reason",
+      "text": "A base-qualified call does not go through the virtual method table, so overriding in a child class cannot affect it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1164430,
+          "endMilliseconds": 1165510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extend-an-implementation-with-base"
+      }
+    },
+    {
+      "id": "TP-099",
+      "startMilliseconds": 1165510,
+      "endMilliseconds": 1169710,
+      "kind": "fact",
+      "text": "Several base-qualified calls can be written in one method and each prints in source order, so repeated base usage is legal and predictable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1165510,
+          "endMilliseconds": 1169710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extend-an-implementation-with-base"
+      }
+    },
+    {
+      "id": "TP-100",
+      "startMilliseconds": 1169710,
+      "endMilliseconds": 1206149,
+      "kind": "fact",
+      "text": "Any other base-class method can also be invoked statically through base from anywhere in the derived class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1169710,
+          "endMilliseconds": 1206149
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extend-an-implementation-with-base"
+      }
+    },
+    {
+      "id": "TP-101",
+      "startMilliseconds": 1206149,
+      "endMilliseconds": 1213390,
+      "kind": "explanation",
+      "text": "A base-qualified call executes the method that lives in the base class itself rather than the override in the derived class or the instance's virtual method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1206149,
+          "endMilliseconds": 1213390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extend-an-implementation-with-base"
+      }
+    },
+    {
+      "id": "TP-102",
+      "startMilliseconds": 1213400,
+      "endMilliseconds": 1232360,
+      "kind": "explanation",
+      "text": "The lesson poses a follow-up question: if Speak calls FlapWings on this, which implementation runs, the base one or the overridden one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1213400,
+          "endMilliseconds": 1232360
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1223760,
+          "endMilliseconds": 1232360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calls-on-this-remain-virtual"
+      }
+    },
+    {
+      "id": "TP-103",
+      "startMilliseconds": 1232360,
+      "endMilliseconds": 1234909,
+      "kind": "code_change",
+      "text": "The overload in Sparrow is removed so that the example has only one FlapWings candidate per class and the dispatch question is unambiguous.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1232360,
+          "endMilliseconds": 1234909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calls-on-this-remain-virtual"
+      }
+    },
+    {
+      "id": "TP-104",
+      "startMilliseconds": 1234919,
+      "endMilliseconds": 1238400,
+      "kind": "code_change",
+      "text": "The extra method call is deleted from the sample so the remaining code isolates the base versus this dispatch behaviour.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1234919,
+          "endMilliseconds": 1238400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calls-on-this-remain-virtual"
+      }
+    },
+    {
+      "id": "TP-105",
+      "startMilliseconds": 1240640,
+      "endMilliseconds": 1247390,
+      "kind": "code_change",
+      "text": "The Animal reference is also removed because it is not needed to demonstrate the dispatch behaviour.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1240640,
+          "endMilliseconds": 1247390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calls-on-this-remain-virtual"
+      }
+    },
+    {
+      "id": "TP-106",
+      "startMilliseconds": 1247390,
+      "endMilliseconds": 1259000,
+      "kind": "explanation",
+      "text": "The simplified sample keeps a virtual Speak, a virtual FlapWings in Bird, and an override of FlapWings in the child class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1247390,
+          "endMilliseconds": 1259000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calls-on-this-remain-virtual"
+      }
+    },
+    {
+      "id": "TP-107",
+      "startMilliseconds": 1259000,
+      "endMilliseconds": 1268070,
+      "kind": "fact",
+      "text": "Calling FlapWings on this from Speak dispatches to the FlapWings override in the child class at run time.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1259000,
+          "endMilliseconds": 1268070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calls-on-this-remain-virtual"
+      }
+    },
+    {
+      "id": "TP-108",
+      "startMilliseconds": 1268070,
+      "endMilliseconds": 1270120,
+      "kind": "fact",
+      "text": "Omitting the this qualifier changes nothing: the call still resolves to the child class implementation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1268070,
+          "endMilliseconds": 1270120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calls-on-this-remain-virtual"
+      }
+    },
+    {
+      "id": "TP-109",
+      "startMilliseconds": 1273360,
+      "endMilliseconds": 1280760,
+      "kind": "edge_case",
+      "text": "There is apparently no way to invoke the Bird implementation of FlapWings from inside Bird, since any unqualified or this-based call is dispatched virtually.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1273360,
+          "endMilliseconds": 1280760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calls-on-this-remain-virtual"
+      }
+    },
+    {
+      "id": "TP-110",
+      "startMilliseconds": 1282919,
+      "endMilliseconds": 1290919,
+      "kind": "reason",
+      "text": "To reach the base behaviour reliably the author would add a private non-virtual helper such as FlapWingsDefault in Bird and call that instead.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1282919,
+          "endMilliseconds": 1290919
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calls-on-this-remain-virtual"
+      }
+    },
+    {
+      "id": "TP-111",
+      "startMilliseconds": 1293640,
+      "endMilliseconds": 1301039,
+      "kind": "code_change",
+      "text": "Moving the body into FlapWingsDefault guarantees that the default implementation runs there and no override can take its place.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1293640,
+          "endMilliseconds": 1301039
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#calls-on-this-remain-virtual"
+      }
+    },
+    {
+      "id": "TP-112",
+      "startMilliseconds": 1306760,
+      "endMilliseconds": 1315440,
+      "kind": "fact",
+      "text": "Inheritance is an is-a relationship: if class A derives from class B, then every A is also a B.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1306760,
+          "endMilliseconds": 1315440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inheritance-must-mean-is-a"
+      }
+    },
+    {
+      "id": "TP-113",
+      "startMilliseconds": 1315440,
+      "endMilliseconds": 1323120,
+      "kind": "explanation",
+      "text": "Because Bird derives from Animal, every bird object can be treated as an animal anywhere an animal is expected.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1315440,
+          "endMilliseconds": 1323120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inheritance-must-mean-is-a"
+      }
+    },
+    {
+      "id": "TP-114",
+      "startMilliseconds": 1323120,
+      "endMilliseconds": 1343919,
+      "kind": "reason",
+      "text": "An A/B/C hierarchy in which B and C derive from A only makes sense if every B really is also an A, so unrelated types should not share a base class for convenience.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1323120,
+          "endMilliseconds": 1343919
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inheritance-must-mean-is-a"
+      }
+    },
+    {
+      "id": "TP-115",
+      "startMilliseconds": 1345600,
+      "endMilliseconds": 1355679,
+      "kind": "reason",
+      "text": "Because B inherits from A, each B instance also carries everything that belongs to A, which exposes the mismatch when B is logically not an A.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1345600,
+          "endMilliseconds": 1355679
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inheritance-must-mean-is-a"
+      }
+    },
+    {
+      "id": "TP-116",
+      "startMilliseconds": 1355679,
+      "endMilliseconds": 1379480,
+      "kind": "explanation",
+      "text": "A grandmother, mother and daughter chain is introduced as another ill-formed hierarchy example to illustrate the same is-a requirement.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1355679,
+          "endMilliseconds": 1370520
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1370520,
+          "endMilliseconds": 1379480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inheritance-must-mean-is-a"
+      }
+    },
+    {
+      "id": "TP-117",
+      "startMilliseconds": 1379480,
+      "endMilliseconds": 1394440,
+      "kind": "correction",
+      "text": "In programming a daughter deriving from a mother does not mean she originates from her mother; it means the daughter literally is also a mother, unlike the real-world reading.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1379480,
+          "endMilliseconds": 1394440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inheritance-must-mean-is-a"
+      }
+    },
+    {
+      "id": "TP-118",
+      "startMilliseconds": 1394440,
+      "endMilliseconds": 1413200,
+      "kind": "explanation",
+      "text": "Turning that hierarchy upside down makes it valid, because a grandmother is a mother and a mother is a daughter of her own mother.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1394440,
+          "endMilliseconds": 1413200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inheritance-must-mean-is-a"
+      }
+    },
+    {
+      "id": "TP-119",
+      "startMilliseconds": 1416200,
+      "endMilliseconds": 1436560,
+      "kind": "fact",
+      "text": "A game hierarchy of Entity with an identifier used for serialization, Monster with health and attack, and a concrete monster subclass is a well-formed is-a chain.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1416200,
+          "endMilliseconds": 1436560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inheritance-must-mean-is-a"
+      }
+    },
+    {
+      "id": "TP-120",
+      "startMilliseconds": 1436560,
+      "endMilliseconds": 1451400,
+      "kind": "reason",
+      "text": "This hierarchy is valid because every monster is an entity and every orc is a monster, so each orc inherits entity identity plus monster attack and health.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1436560,
+          "endMilliseconds": 1451400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inheritance-must-mean-is-a"
+      }
+    },
+    {
+      "id": "TP-121",
+      "startMilliseconds": 1443960,
+      "endMilliseconds": 1451520,
+      "kind": "fact",
+      "text": "An orc is a kind of monster, so every orc type carries the monster's attack and health fields, which is why the type relation already conveys those properties.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1443960,
+          "endMilliseconds": 1451520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inheritance-must-mean-is-a"
+      }
+    },
+    {
+      "id": "TP-122",
+      "startMilliseconds": 1451530,
+      "endMilliseconds": 1457670,
+      "kind": "fact",
+      "text": "Every entity type also has an identifier field, which is a natural consequence of modelling all of them as entities.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1451530,
+          "endMilliseconds": 1457670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#inheritance-must-mean-is-a"
+      }
+    },
+    {
+      "id": "TP-123",
+      "startMilliseconds": 1457680,
+      "endMilliseconds": 1480110,
+      "kind": "explanation",
+      "text": "A worked hierarchy example shows Animal, a FlyingAnimal derived from it, a BlackFlyingAnimal derived from FlyingAnimal, and finally a concrete Hawk derived from BlackFlyingAnimal.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1457680,
+          "endMilliseconds": 1480110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-properties-with-data-and-composition"
+      }
+    },
+    {
+      "id": "TP-124",
+      "startMilliseconds": 1480120,
+      "endMilliseconds": 1493039,
+      "kind": "reason",
+      "text": "Encoding a property such as colour as a subclass chain is fragile, because a black but non-flying bear can appear in the hierarchy and then BlackFlyingAnimal no longer covers it, so a separate BlackAnimal class is required.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1480120,
+          "endMilliseconds": 1493039
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-properties-with-data-and-composition"
+      }
+    },
+    {
+      "id": "TP-125",
+      "startMilliseconds": 1493070,
+      "endMilliseconds": 1510470,
+      "kind": "explanation",
+      "text": "Once BlackAnimal exists, the duplicated 'black' code must be extracted into it, which forces BlackFlyingAnimal to combine code from two parents by inheriting from two classes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1493070,
+          "endMilliseconds": 1510470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-properties-with-data-and-composition"
+      }
+    },
+    {
+      "id": "TP-126",
+      "startMilliseconds": 1510480,
+      "endMilliseconds": 1521720,
+      "kind": "fact",
+      "text": "A class cannot inherit from two classes at once, so this design has to be solved with composition, which the lesson defines next.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1510480,
+          "endMilliseconds": 1521720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-properties-with-data-and-composition"
+      }
+    },
+    {
+      "id": "TP-127",
+      "startMilliseconds": 1513799,
+      "endMilliseconds": 1516990,
+      "kind": "fact",
+      "text": "Inheriting from two classes at the same time is impossible in C#, which is the constraint that forces a different design.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1513799,
+          "endMilliseconds": 1516990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-properties-with-data-and-composition"
+      }
+    },
+    {
+      "id": "TP-128",
+      "startMilliseconds": 1517000,
+      "endMilliseconds": 1521720,
+      "kind": "explanation",
+      "text": "The way out is composition, and the lesson pauses to ask what composition means before defining it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1517000,
+          "endMilliseconds": 1521720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-properties-with-data-and-composition"
+      }
+    },
+    {
+      "id": "TP-129",
+      "startMilliseconds": 1524159,
+      "endMilliseconds": 1531590,
+      "kind": "explanation",
+      "text": "Composition means that instead of expressing properties of an object through subclasses, you place those properties directly on the base class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1524159,
+          "endMilliseconds": 1531590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-properties-with-data-and-composition"
+      }
+    },
+    {
+      "id": "TP-130",
+      "startMilliseconds": 1531600,
+      "endMilliseconds": 1544510,
+      "kind": "fact",
+      "text": "So Animal itself holds a colour and a flying flag, and each Animal instance carries its own values for those properties.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1531600,
+          "endMilliseconds": 1544510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-properties-with-data-and-composition"
+      }
+    },
+    {
+      "id": "TP-131",
+      "startMilliseconds": 1544520,
+      "endMilliseconds": 1562789,
+      "kind": "reason",
+      "text": "The per-property subclasses are then unnecessary, because the values can be supplied when the object is created: a black bear that cannot fly and a black hawk that can.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1544520,
+          "endMilliseconds": 1562789
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-properties-with-data-and-composition"
+      }
+    },
+    {
+      "id": "TP-132",
+      "startMilliseconds": 1562799,
+      "endMilliseconds": 1574750,
+      "kind": "explanation",
+      "text": "The conclusion is that expressing properties through subclasses is a bad idea; such properties belong either in the base class or in composed component objects.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1562799,
+          "endMilliseconds": 1574750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-properties-with-data-and-composition"
+      }
+    },
+    {
+      "id": "TP-133",
+      "startMilliseconds": 1574760,
+      "endMilliseconds": 1592750,
+      "kind": "explanation",
+      "text": "Continuing the code review, even though a more specific type exists, pure logic would demand a separate Mammal subclass rather than reusing Animal for it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1574760,
+          "endMilliseconds": 1592750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-properties-with-data-and-composition"
+      }
+    },
+    {
+      "id": "TP-134",
+      "startMilliseconds": 1584559,
+      "endMilliseconds": 1592670,
+      "kind": "fact",
+      "text": "Following the same logic, a Mammal in this model would need its own dedicated subclass instead of being represented by the existing Animal type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1584559,
+          "endMilliseconds": 1592670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-properties-with-data-and-composition"
+      }
+    },
+    {
+      "id": "TP-135",
+      "startMilliseconds": 1592760,
+      "endMilliseconds": 1598990,
+      "kind": "fact",
+      "text": "At this point in the code the abstract-less Animal type can still be instantiated directly on its own.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1592760,
+          "endMilliseconds": 1598990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#abstract-and-sealed-classes"
+      }
+    },
+    {
+      "id": "TP-136",
+      "startMilliseconds": 1600000,
+      "endMilliseconds": 1607669,
+      "kind": "explanation",
+      "text": "The goal is to forbid creating an Animal directly while still allowing subclasses such as a bird or a mammal to be created.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1600000,
+          "endMilliseconds": 1607669
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#abstract-and-sealed-classes"
+      }
+    },
+    {
+      "id": "TP-137",
+      "startMilliseconds": 1607679,
+      "endMilliseconds": 1623230,
+      "kind": "explanation",
+      "text": "Animal should stay usable only as the declared type for inheritance: a subclass instance can be assigned to an Animal variable, but Animal itself cannot be constructed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1607679,
+          "endMilliseconds": 1623230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#abstract-and-sealed-classes"
+      }
+    },
+    {
+      "id": "TP-138",
+      "startMilliseconds": 1623240,
+      "endMilliseconds": 1634990,
+      "kind": "code_change",
+      "text": "The way to forbid direct construction of an object is to make its class abstract, and after that change the sample code no longer compiles.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1623240,
+          "endMilliseconds": 1634990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#abstract-and-sealed-classes"
+      }
+    },
+    {
+      "id": "TP-139",
+      "startMilliseconds": 1635000,
+      "endMilliseconds": 1645070,
+      "kind": "fact",
+      "text": "The opposite restriction is the sealed modifier: a sealed class such as Bird cannot be inherited from, making it the most derived class possible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1635000,
+          "endMilliseconds": 1645070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#abstract-and-sealed-classes"
+      }
+    },
+    {
+      "id": "TP-140",
+      "startMilliseconds": 1645080,
+      "endMilliseconds": 1652279,
+      "kind": "explanation",
+      "text": "The lesson poses the next problem: preventing creation of a Sparrow subclass of Bird so that sparrows are simply birds with a name field rather than a distinct type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1645080,
+          "endMilliseconds": 1652279
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#abstract-and-sealed-classes"
+      }
+    },
+    {
+      "id": "TP-141",
+      "startMilliseconds": 1652279,
+      "endMilliseconds": 1660559,
+      "kind": "explanation",
+      "text": "The open question is how to make newly created sparrows behave simply as birds with a name field instead of introducing a Sparrow subclass.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1652279,
+          "endMilliseconds": 1660559
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#abstract-and-sealed-classes"
+      }
+    },
+    {
+      "id": "TP-142",
+      "startMilliseconds": 1660560,
+      "endMilliseconds": 1679590,
+      "kind": "fact",
+      "text": "Writing the sealed modifier before a class name forbids inheriting from that class, and it is the logical choice whenever you do not intend to allow inheritance.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1660560,
+          "endMilliseconds": 1679590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#abstract-and-sealed-classes"
+      }
+    },
+    {
+      "id": "TP-143",
+      "startMilliseconds": 1679600,
+      "endMilliseconds": 1692310,
+      "kind": "reason",
+      "text": "Sealed carries a communicative benefit beyond the restriction: it tells other programmers that the class is final and should be used, not inherited.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1679600,
+          "endMilliseconds": 1692310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#abstract-and-sealed-classes"
+      }
+    },
+    {
+      "id": "TP-144",
+      "startMilliseconds": 1692320,
+      "endMilliseconds": 1702630,
+      "kind": "explanation",
+      "text": "Sealed also enables optimizations in some cases, for example a Bird member call can be made as a static-style call when the class is sealed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1692320,
+          "endMilliseconds": 1702630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#abstract-and-sealed-classes"
+      }
+    },
+    {
+      "id": "TP-145",
+      "startMilliseconds": 1702640,
+      "endMilliseconds": 1711750,
+      "kind": "reason",
+      "text": "Because the compiler knows a sealed class cannot be inherited, a member call on Bird can be emitted as a direct static call rather than a polymorphic one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1702640,
+          "endMilliseconds": 1711750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#abstract-and-sealed-classes"
+      }
+    },
+    {
+      "id": "TP-146",
+      "startMilliseconds": 1711760,
+      "endMilliseconds": 1726279,
+      "kind": "explanation",
+      "text": "In the object layout the sealed type's implementation sits in exactly one vtable slot, so the compiler can skip virtual dispatch and call the method directly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1711760,
+          "endMilliseconds": 1726279
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#abstract-and-sealed-classes"
+      }
+    },
+    {
+      "id": "TP-147",
+      "startMilliseconds": 1724080,
+      "endMilliseconds": 1728830,
+      "kind": "explanation",
+      "text": "When a method is not virtual, the compiler emits a direct call to that method and never goes through the virtual method table.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1724080,
+          "endMilliseconds": 1728830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#abstract-and-sealed-classes"
+      }
+    },
+    {
+      "id": "TP-148",
+      "startMilliseconds": 1726280,
+      "endMilliseconds": 1731000,
+      "kind": "scope_boundary",
+      "text": "The direct-call optimization is only one way to get the effect, and the lesson notes the alternative is left for a later explanation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1726280,
+          "endMilliseconds": 1731000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#abstract-and-sealed-classes"
+      }
+    },
+    {
+      "id": "TP-149",
+      "startMilliseconds": 1736039,
+      "endMilliseconds": 1743269,
+      "kind": "fact",
+      "text": "The sealed modifier can be applied to a single method instead of the whole class, and it forbids subclasses from overriding that method again.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1736039,
+          "endMilliseconds": 1743269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#seal-one-override"
+      }
+    },
+    {
+      "id": "TP-150",
+      "startMilliseconds": 1743279,
+      "endMilliseconds": 1747880,
+      "kind": "fact",
+      "text": "If a subclass such as Bird tries to override a sealed method, the compiler rejects it with the error \"Cannot inherit method because it is sealed\".",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1743279,
+          "endMilliseconds": 1747880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#seal-one-override"
+      }
+    },
+    {
+      "id": "TP-151",
+      "startMilliseconds": 1756000,
+      "endMilliseconds": 1765279,
+      "kind": "explanation",
+      "text": "A sealed virtual method means the corresponding cell in the virtual tables of all subclasses permanently holds that one address, so no derived class can substitute its own implementation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1756000,
+          "endMilliseconds": 1765279
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#seal-one-override"
+      }
+    },
+    {
+      "id": "TP-152",
+      "startMilliseconds": 1765279,
+      "endMilliseconds": 1783440,
+      "kind": "explanation",
+      "text": "Calling Speak on a variable of type Bird resolves statically to that single code block because Speak occupies the same fixed slot in every virtual table of Bird's derived classes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1765279,
+          "endMilliseconds": 1783440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#seal-one-override"
+      }
+    },
+    {
+      "id": "TP-153",
+      "startMilliseconds": 1788640,
+      "endMilliseconds": 1805279,
+      "kind": "explanation",
+      "text": "Calling the same method through a variable of type Animal instead of Bird dispatches virtually through the virtual method table because the method is declared virtual on the base class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1788640,
+          "endMilliseconds": 1805269
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1796399,
+          "endMilliseconds": 1805279
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#seal-one-override"
+      }
+    },
+    {
+      "id": "TP-154",
+      "startMilliseconds": 1805279,
+      "endMilliseconds": 1816549,
+      "kind": "fact",
+      "text": "Abstract classes may declare abstract methods, and an abstract method has no implementation in the declaring class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1805279,
+          "endMilliseconds": 1816549
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-behavior-with-abstract-methods"
+      }
+    },
+    {
+      "id": "TP-155",
+      "startMilliseconds": 1816549,
+      "endMilliseconds": 1833750,
+      "kind": "reason",
+      "text": "No object can have an abstract class as its runtime type because an object of that class cannot be instantiated, so every instance is actually of some derived type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1816549,
+          "endMilliseconds": 1833750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-behavior-with-abstract-methods"
+      }
+    },
+    {
+      "id": "TP-156",
+      "startMilliseconds": 1833750,
+      "endMilliseconds": 1849590,
+      "kind": "reason",
+      "text": "Because every instance is of a derived type, the abstract class's own virtual method table is never consulted at runtime to decide which method to call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1833750,
+          "endMilliseconds": 1849590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-behavior-with-abstract-methods"
+      }
+    },
+    {
+      "id": "TP-157",
+      "startMilliseconds": 1849600,
+      "endMilliseconds": 1857199,
+      "kind": "explanation",
+      "text": "So for abstract classes the virtual method tables are effectively unused, yet abstract classes still determine which methods the derived classes must provide.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1849600,
+          "endMilliseconds": 1857199
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-behavior-with-abstract-methods"
+      }
+    },
+    {
+      "id": "TP-158",
+      "startMilliseconds": 1857120,
+      "endMilliseconds": 1867519,
+      "kind": "fact",
+      "text": "A derived class such as Bird is forced to declare Speak, because the abstract declaration in Animal reserves a Speak cell in its virtual table.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1857120,
+          "endMilliseconds": 1867519
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-behavior-with-abstract-methods"
+      }
+    },
+    {
+      "id": "TP-159",
+      "startMilliseconds": 1869760,
+      "endMilliseconds": 1872029,
+      "kind": "fact",
+      "text": "Because Speak was declared abstract in the base Animal class, the derived Bird class is required to provide its own implementation of Speak.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1869760,
+          "endMilliseconds": 1872029
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-behavior-with-abstract-methods"
+      }
+    },
+    {
+      "id": "TP-160",
+      "startMilliseconds": 1872039,
+      "endMilliseconds": 1874830,
+      "kind": "explanation",
+      "text": "An abstract member still occupies a cell in the virtual table, but that cell carries no default implementation to call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1872039,
+          "endMilliseconds": 1874830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-behavior-with-abstract-methods"
+      }
+    },
+    {
+      "id": "TP-161",
+      "startMilliseconds": 1874840,
+      "endMilliseconds": 1885559,
+      "kind": "fact",
+      "text": "Since no default implementation is supplied, the derived Bird class must supply one, and omitting the override produces a compile-time error.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1874840,
+          "endMilliseconds": 1885559
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-behavior-with-abstract-methods"
+      }
+    },
+    {
+      "id": "TP-162",
+      "startMilliseconds": 1885559,
+      "endMilliseconds": 1896870,
+      "kind": "explanation",
+      "text": "An abstract method defines a virtual table cell for all descendant classes and obliges each of them to override the method so that the cell can be initialized.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1885559,
+          "endMilliseconds": 1896870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-behavior-with-abstract-methods"
+      }
+    },
+    {
+      "id": "TP-163",
+      "startMilliseconds": 1896880,
+      "endMilliseconds": 1908029,
+      "kind": "edge_case",
+      "text": "A class that inherits from Bird need not override Speak again, because the implementation already exists in the intermediate base class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1896880,
+          "endMilliseconds": 1908029
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-behavior-with-abstract-methods"
+      }
+    },
+    {
+      "id": "TP-164",
+      "startMilliseconds": 1908039,
+      "endMilliseconds": 1920750,
+      "kind": "explanation",
+      "text": "Such a further subclass simply copies the method address from the base class's virtual table cell instead of defining its own.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1908039,
+          "endMilliseconds": 1920750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#require-behavior-with-abstract-methods"
+      }
+    },
+    {
+      "id": "TP-165",
+      "startMilliseconds": 1920760,
+      "endMilliseconds": 1935789,
+      "kind": "fact",
+      "text": "A virtual method does not have to return void, and its parameter list does not have to be empty, so it can declare any return type and any parameters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1920760,
+          "endMilliseconds": 1935789
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#parameters-return-values-and-overloads"
+      }
+    },
+    {
+      "id": "TP-166",
+      "startMilliseconds": 1935799,
+      "endMilliseconds": 1945079,
+      "kind": "reason",
+      "text": "When you override a virtual method, the return type and the parameters must be exactly the same as in the base declaration, otherwise the override would not match the virtual table contract.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1935799,
+          "endMilliseconds": 1945079
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1938360,
+          "endMilliseconds": 1945079
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#parameters-return-values-and-overloads"
+      }
+    },
+    {
+      "id": "TP-167",
+      "startMilliseconds": 1943120,
+      "endMilliseconds": 1949230,
+      "kind": "fact",
+      "text": "A virtual method may additionally be overloaded, for example declaring one Speak taking a string and another Speak with no parameters, and each overload gets its own independent virtual table cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1943120,
+          "endMilliseconds": 1949230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#parameters-return-values-and-overloads"
+      }
+    },
+    {
+      "id": "TP-168",
+      "startMilliseconds": 1949230,
+      "endMilliseconds": 1977750,
+      "kind": "explanation",
+      "text": "Which overload actually runs is decided by the argument list at the call site, so a call that passes nothing selects the parameterless Speak after the virtual table dispatch.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1949230,
+          "endMilliseconds": 1977750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#parameters-return-values-and-overloads"
+      }
+    },
+    {
+      "id": "TP-169",
+      "startMilliseconds": 1977750,
+      "endMilliseconds": 1994470,
+      "kind": "explanation",
+      "text": "Passing a string to the same call selects the Speak overload that takes a string, again resolved by following the virtual table.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1977750,
+          "endMilliseconds": 1994470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#parameters-return-values-and-overloads"
+      }
+    },
+    {
+      "id": "TP-170",
+      "startMilliseconds": 1994480,
+      "endMilliseconds": 1998310,
+      "kind": "explanation",
+      "text": "Interfaces are in many respects similar to abstract classes, since they also declare methods that implementations must provide.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1994480,
+          "endMilliseconds": 1998310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-171",
+      "startMilliseconds": 1998320,
+      "endMilliseconds": 1999279,
+      "kind": "code_change",
+      "text": "Besides the base class with the Speak method, the example adds an interface with a FlapWings method for the bird type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1998320,
+          "endMilliseconds": 1999279
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-172",
+      "startMilliseconds": 1999279,
+      "endMilliseconds": 2017109,
+      "kind": "fact",
+      "text": "In C# interface names conventionally start with the letter I to mark them as interfaces, and while writing the prefix is not required, the convention is followed anyway.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1999279,
+          "endMilliseconds": 2017109
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-173",
+      "startMilliseconds": 2012120,
+      "endMilliseconds": 2017120,
+      "kind": "fact",
+      "text": "The I in a C# type name stands for interface and is optional to write, but it is the accepted convention so readers immediately recognize the type as an interface.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2012120,
+          "endMilliseconds": 2017120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-174",
+      "startMilliseconds": 2017120,
+      "endMilliseconds": 2024710,
+      "kind": "fact",
+      "text": "A class declaration such as Bird : Animate, IFlapWings shows that the class inherits from both a base class and an interface, combining both forms of inheritance in one list.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2017120,
+          "endMilliseconds": 2024710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-175",
+      "startMilliseconds": 2024710,
+      "endMilliseconds": 2036200,
+      "kind": "explanation",
+      "text": "Methods declared in an interface do not live in the main vtable built from base classes; each inherited interface instead gets its own separate vtable, which is why interface methods are dispatched independently.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2024710,
+          "endMilliseconds": 2036200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-176",
+      "startMilliseconds": 2038710,
+      "endMilliseconds": 2043410,
+      "kind": "fact",
+      "text": "Interface methods are invoked with exactly the same call syntax as ordinary class methods, so implementing an interface does not change how the code calls the method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2038710,
+          "endMilliseconds": 2043410
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-177",
+      "startMilliseconds": 2043280,
+      "endMilliseconds": 2051869,
+      "kind": "fact",
+      "text": "A method declared in an interface is written without a body, for example public void FlapWings(), because the contract only declares what must exist and the class supplies the behavior.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2043280,
+          "endMilliseconds": 2051869
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-178",
+      "startMilliseconds": 2051869,
+      "endMilliseconds": 2058669,
+      "kind": "scope_boundary",
+      "text": "Interfaces can technically carry default method implementations, but this is a newer language feature that the lesson deliberately does not cover yet.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2051869,
+          "endMilliseconds": 2058669
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-179",
+      "startMilliseconds": 2058669,
+      "endMilliseconds": 2064359,
+      "kind": "fact",
+      "text": "Methods written in an interface are implicitly abstract, so every implementing class is forced to provide a real body for them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2058669,
+          "endMilliseconds": 2064359
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-180",
+      "startMilliseconds": 2064359,
+      "endMilliseconds": 2069670,
+      "kind": "fact",
+      "text": "An interface cannot be instantiated, which is the same restriction abstract classes impose.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2064359,
+          "endMilliseconds": 2069670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-181",
+      "startMilliseconds": 2069670,
+      "endMilliseconds": 2087240,
+      "kind": "fact",
+      "text": "Methods defined in an interface are automatically public, so the public modifier before the return type is redundant though still legal.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2069670,
+          "endMilliseconds": 2087240
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2079040,
+          "endMilliseconds": 2087240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-182",
+      "startMilliseconds": 2087240,
+      "endMilliseconds": 2091919,
+      "kind": "edge_case",
+      "text": "Writing the public modifier explicitly on an interface method is allowed and not an error, it is simply unnecessary.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2087240,
+          "endMilliseconds": 2091919
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-183",
+      "startMilliseconds": 2091919,
+      "endMilliseconds": 2101750,
+      "kind": "test_result",
+      "text": "After declaring the interface in the base list the compiler reports that Bird does not contain the required method FlapWings for that interface, which is how the missing implementation surfaces.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2091919,
+          "endMilliseconds": 2101750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-184",
+      "startMilliseconds": 2101750,
+      "endMilliseconds": 2112230,
+      "kind": "code_change",
+      "text": "Satisfying the interface requires declaring a method in the class with the same name, parameters and return type as in the interface, and giving it a body with the implementation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2101750,
+          "endMilliseconds": 2112230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-185",
+      "startMilliseconds": 2112230,
+      "endMilliseconds": 2127480,
+      "kind": "fact",
+      "text": "In a base list such as class Bird : Animate, IFlapWings the compiler sees two separate facts, inheritance from the base class Animate and implementation of the IFlapWings interface.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2112230,
+          "endMilliseconds": 2127480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-186",
+      "startMilliseconds": 2127480,
+      "endMilliseconds": 2133800,
+      "kind": "edge_case",
+      "text": "A class that already extends an abstract base class can still implement an interface, so being abstract does not block interface implementation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2127480,
+          "endMilliseconds": 2133800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-187",
+      "startMilliseconds": 2133800,
+      "endMilliseconds": 2147240,
+      "kind": "reason",
+      "text": "Interfaces only contribute entries to the method vtables, so an interface may contain methods but no fields, with one vtable cell created per declared method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2133800,
+          "endMilliseconds": 2147240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-188",
+      "startMilliseconds": 2145359,
+      "endMilliseconds": 2152359,
+      "kind": "fact",
+      "text": "A type may inherit from an interface alone without inheriting from any class, since interface membership is independent of class hierarchy.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2145359,
+          "endMilliseconds": 2152359
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2147240,
+          "endMilliseconds": 2152359
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-189",
+      "startMilliseconds": 2152359,
+      "endMilliseconds": 2163470,
+      "kind": "test_result",
+      "text": "The compiler now rejects the override keyword on the interface-implementing method because that method does not exist in any base class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2152359,
+          "endMilliseconds": 2163470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-190",
+      "startMilliseconds": 2163470,
+      "endMilliseconds": 2170829,
+      "kind": "reason",
+      "text": "override cannot be used here because the method is not virtual in the class vtable; interface methods live in the separate interface vtable instead of the class vtable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2163470,
+          "endMilliseconds": 2170829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-191",
+      "startMilliseconds": 2170000,
+      "endMilliseconds": 2176500,
+      "kind": "edge_case",
+      "text": "An interface method can still be overridden in the usual way if it is first declared virtual in the class, which puts it into the class vtable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2170000,
+          "endMilliseconds": 2176500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#introduce-an-interface-contract"
+      }
+    },
+    {
+      "id": "TP-192",
+      "startMilliseconds": 2176500,
+      "endMilliseconds": 2181950,
+      "kind": "explanation",
+      "text": "Because Bird implements IFlapWings it is-a FlapWings, so a FlapWings reference can be bound to a Bird instance.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2176500,
+          "endMilliseconds": 2181950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-object-viewed-through-an-interface"
+      }
+    },
+    {
+      "id": "TP-193",
+      "startMilliseconds": 2181950,
+      "endMilliseconds": 2189150,
+      "kind": "fact",
+      "text": "Assigning a Bird to a FlapWings variable stores the same object address, exactly like an assignment to a base class reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2181950,
+          "endMilliseconds": 2189150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-object-viewed-through-an-interface"
+      }
+    },
+    {
+      "id": "TP-194",
+      "startMilliseconds": 2189150,
+      "endMilliseconds": 2201870,
+      "kind": "explanation",
+      "text": "Through a FlapWings reference you can only call methods listed in the FlapWings interface vtable, which is how interface-typed access stays limited to the interface contract.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2189150,
+          "endMilliseconds": 2201870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-object-viewed-through-an-interface"
+      }
+    },
+    {
+      "id": "TP-195",
+      "startMilliseconds": 2196150,
+      "endMilliseconds": 2201870,
+      "kind": "code_change",
+      "text": "Creating the value as FlapWings.FlapWings() lets the interface-typed reference be constructed so a method can be invoked through the interface.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2196150,
+          "endMilliseconds": 2201870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-object-viewed-through-an-interface"
+      }
+    },
+    {
+      "id": "TP-196",
+      "startMilliseconds": 2214119,
+      "endMilliseconds": 2221880,
+      "kind": "explanation",
+      "text": "Through a FlapWings reference you can only call methods listed in the FlapWings interface vtable, which is how interface-typed access stays limited to the interface contract.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2214119,
+          "endMilliseconds": 2221880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-object-viewed-through-an-interface"
+      }
+    },
+    {
+      "id": "TP-197",
+      "startMilliseconds": 2221880,
+      "endMilliseconds": 2235790,
+      "kind": "explanation",
+      "text": "In the example a Bird object is created and its address is the same address the earlier Bird variable held, so the reference does not copy anything.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2221880,
+          "endMilliseconds": 2235790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-object-viewed-through-an-interface"
+      }
+    },
+    {
+      "id": "TP-198",
+      "startMilliseconds": 2235790,
+      "endMilliseconds": 2247330,
+      "kind": "explanation",
+      "text": "Because Bird derives from two sources, a base class and an interface, it ends up with one vtable per source rather than a single shared vtable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2235790,
+          "endMilliseconds": 2247330
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-object-viewed-through-an-interface"
+      }
+    },
+    {
+      "id": "TP-199",
+      "startMilliseconds": 2247330,
+      "endMilliseconds": 2257900,
+      "kind": "explanation",
+      "text": "The class-hierarchy vtable gets one cell per base-class method and the interface vtable gets one cell per interface method, so each source maintains its own dispatch list.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2247330,
+          "endMilliseconds": 2257900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-object-viewed-through-an-interface"
+      }
+    },
+    {
+      "id": "TP-200",
+      "startMilliseconds": 2257900,
+      "endMilliseconds": 2269119,
+      "kind": "fact",
+      "text": "Since the interface declares only one method, its vtable contains only one cell, which keeps interface dispatch overhead proportional to the contract size.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2257900,
+          "endMilliseconds": 2269119
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-object-viewed-through-an-interface"
+      }
+    },
+    {
+      "id": "TP-201",
+      "startMilliseconds": 2269119,
+      "endMilliseconds": 2276470,
+      "kind": "fact",
+      "text": "The base class also declares only one method, so the class-hierarchy vtable likewise holds a single cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2269119,
+          "endMilliseconds": 2276470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-object-viewed-through-an-interface"
+      }
+    },
+    {
+      "id": "TP-202",
+      "startMilliseconds": 2276470,
+      "endMilliseconds": 2287670,
+      "kind": "explanation",
+      "text": "The speak cell is produced by the class hierarchy while the FlapWings cell comes from the IFlapWings interface, and these live in two separate vtables.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2276470,
+          "endMilliseconds": 2287670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-object-viewed-through-an-interface"
+      }
+    },
+    {
+      "id": "TP-203",
+      "startMilliseconds": 2284040,
+      "endMilliseconds": 2297760,
+      "kind": "fact",
+      "text": "FlapWings is an interface, so it owns a virtual table separate from the class hierarchy table: the cell under Speak holds the address of the Speak implementation and the cell under FlapWings holds the address of the FlapWings implementation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2284040,
+          "endMilliseconds": 2297760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-object-viewed-through-an-interface"
+      }
+    },
+    {
+      "id": "TP-204",
+      "startMilliseconds": 2287670,
+      "endMilliseconds": 2292680,
+      "kind": "fact",
+      "text": "Each vtable cell stores the address of the concrete implementation, which is what runtime dispatch jumps to when a virtual or interface call is made.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2287670,
+          "endMilliseconds": 2292680
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-object-viewed-through-an-interface"
+      }
+    },
+    {
+      "id": "TP-205",
+      "startMilliseconds": 2299520,
+      "endMilliseconds": 2303050,
+      "kind": "explanation",
+      "text": "Calling a method through an interface slot works exactly like the previously analyzed virtual-method dispatch, except that the runtime must now pick the interface's own virtual table instead of the class hierarchy's.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2299520,
+          "endMilliseconds": 2303050
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-an-interface-call"
+      }
+    },
+    {
+      "id": "TP-206",
+      "startMilliseconds": 2308040,
+      "endMilliseconds": 2315590,
+      "kind": "explanation",
+      "text": "The dispatch mechanism selects the needed virtual table at the call site, which is why an interface call is resolved through a dedicated table rather than the base-class one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2308040,
+          "endMilliseconds": 2315590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-an-interface-call"
+      }
+    },
+    {
+      "id": "TP-207",
+      "startMilliseconds": 2315599,
+      "endMilliseconds": 2331310,
+      "kind": "reason",
+      "text": "For a call to a class method such as Speak, the runtime takes the table of the class hierarchy in which Speak is virtually defined and then looks up the Speak cell inside it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2315599,
+          "endMilliseconds": 2331310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-an-interface-call"
+      }
+    },
+    {
+      "id": "TP-208",
+      "startMilliseconds": 2331319,
+      "endMilliseconds": 2336550,
+      "kind": "fact",
+      "text": "Creating the FlapWings variable stores the same object address as the original variable, which shows that the interface reference points at the existing object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2331319,
+          "endMilliseconds": 2336550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-an-interface-call"
+      }
+    },
+    {
+      "id": "TP-209",
+      "startMilliseconds": 2339839,
+      "endMilliseconds": 2348680,
+      "kind": "explanation",
+      "text": "Because the static type of the variable is the interface, a FlapWings call invokes the implementation associated with that interface.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2339839,
+          "endMilliseconds": 2348680
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-an-interface-call"
+      }
+    },
+    {
+      "id": "TP-210",
+      "startMilliseconds": 2348680,
+      "endMilliseconds": 2359960,
+      "kind": "explanation",
+      "text": "At dispatch time the runtime takes the object address from the variable, follows it to the object, reads the object's type address, and from the type reaches its virtual tables.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2348680,
+          "endMilliseconds": 2359960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-an-interface-call"
+      }
+    },
+    {
+      "id": "TP-211",
+      "startMilliseconds": 2358760,
+      "endMilliseconds": 2369160,
+      "kind": "explanation",
+      "text": "After reaching the type, the runtime moves from the type to its virtual tables and selects the table belonging to the static type FlapWings.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2358760,
+          "endMilliseconds": 2369160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-an-interface-call"
+      }
+    },
+    {
+      "id": "TP-212",
+      "startMilliseconds": 2365640,
+      "endMilliseconds": 2366839,
+      "kind": "explanation",
+      "text": "Once the type's tables are reached, the table matching the static type FlapWings is the one that will be used for the call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2365640,
+          "endMilliseconds": 2366839
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-an-interface-call"
+      }
+    },
+    {
+      "id": "TP-213",
+      "startMilliseconds": 2372320,
+      "endMilliseconds": 2376430,
+      "kind": "fact",
+      "text": "The search for the needed virtual table happens during program execution, not at compile time.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2372320,
+          "endMilliseconds": 2376430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-an-interface-call"
+      }
+    },
+    {
+      "id": "TP-214",
+      "startMilliseconds": 2376440,
+      "endMilliseconds": 2387030,
+      "kind": "reason",
+      "text": "The table cannot be resolved statically because a variable typed as the interface stores the same address as any other reference, since any class can implement FlapWings and it need not be a Bird.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2376440,
+          "endMilliseconds": 2387030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-an-interface-call"
+      }
+    },
+    {
+      "id": "TP-215",
+      "startMilliseconds": 2387040,
+      "endMilliseconds": 2399910,
+      "kind": "reason",
+      "text": "Even the position of the FlapWings slot inside the type is not known statically, so the interface must first be located among all other tables.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2387040,
+          "endMilliseconds": 2399910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-an-interface-call"
+      }
+    },
+    {
+      "id": "TP-216",
+      "startMilliseconds": 2399920,
+      "endMilliseconds": 2414590,
+      "kind": "fact",
+      "text": "A class can implement arbitrarily many interfaces and inherit from arbitrary types, so there can be arbitrarily many virtual tables with one table per interface.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2399920,
+          "endMilliseconds": 2414590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-an-interface-call"
+      }
+    },
+    {
+      "id": "TP-217",
+      "startMilliseconds": 2414599,
+      "endMilliseconds": 2422390,
+      "kind": "explanation",
+      "text": "Executing that single line of code is what makes the runtime find the required virtual table.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2414599,
+          "endMilliseconds": 2422390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-an-interface-call"
+      }
+    },
+    {
+      "id": "TP-218",
+      "startMilliseconds": 2422400,
+      "endMilliseconds": 2431920,
+      "kind": "fact",
+      "text": "Inside the selected virtual table the runtime locates the FlapWings method cell, calls that method, and continues program execution from the returned address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2422400,
+          "endMilliseconds": 2431920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-an-interface-call"
+      }
+    },
+    {
+      "id": "TP-219",
+      "startMilliseconds": 2431920,
+      "endMilliseconds": 2431920,
+      "kind": "fact",
+      "text": "After the call returns, the program continues executing from the address produced by the invoked method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2431920,
+          "endMilliseconds": 2431920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-an-interface-call"
+      }
+    },
+    {
+      "id": "TP-220",
+      "startMilliseconds": 2434079,
+      "endMilliseconds": 2439030,
+      "kind": "edge_case",
+      "text": "The demonstrated case is extended to a class implementing two interfaces at once, FlapWings and ISpeak.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2434079,
+          "endMilliseconds": 2439030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-two-interfaces-without-a-custom-base-class"
+      }
+    },
+    {
+      "id": "TP-221",
+      "startMilliseconds": 2439040,
+      "endMilliseconds": 2447750,
+      "kind": "code_change",
+      "text": "The Animal base class is replaced with an ISpeak interface and the corresponding override is deleted, so that the demo covers interface-only inheritance.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2439040,
+          "endMilliseconds": 2447750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-two-interfaces-without-a-custom-base-class"
+      }
+    },
+    {
+      "id": "TP-222",
+      "startMilliseconds": 2447760,
+      "endMilliseconds": 2452280,
+      "kind": "fact",
+      "text": "After the change Bird has no base class at all and inherits only from interfaces.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2447760,
+          "endMilliseconds": 2452280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-two-interfaces-without-a-custom-base-class"
+      }
+    },
+    {
+      "id": "TP-223",
+      "startMilliseconds": 2452280,
+      "endMilliseconds": 2462910,
+      "kind": "explanation",
+      "text": "An interface plays the role of an abstract base class for the implementing type, with the key usage difference that an interface cannot declare fields.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2452280,
+          "endMilliseconds": 2462910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-two-interfaces-without-a-custom-base-class"
+      }
+    },
+    {
+      "id": "TP-224",
+      "startMilliseconds": 2462920,
+      "endMilliseconds": 2465430,
+      "kind": "code_change",
+      "text": "The call site is switched from Animal to ISpeak so that the call goes through the interface rather than a base class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2462920,
+          "endMilliseconds": 2465430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-two-interfaces-without-a-custom-base-class"
+      }
+    },
+    {
+      "id": "TP-225",
+      "startMilliseconds": 2467319,
+      "endMilliseconds": 2477710,
+      "kind": "explanation",
+      "text": "The only difference from the previous version is that the virtual table now comes from the interface rather than from a class hierarchy.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2467319,
+          "endMilliseconds": 2477710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-two-interfaces-without-a-custom-base-class"
+      }
+    },
+    {
+      "id": "TP-226",
+      "startMilliseconds": 2477720,
+      "endMilliseconds": 2492110,
+      "kind": "explanation",
+      "text": "Because the static type of the object is IPeak, the runtime finds the virtual table of that interface, calls the method found in its cell, and continues execution from that cell's result.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2477720,
+          "endMilliseconds": 2492110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-two-interfaces-without-a-custom-base-class"
+      }
+    },
+    {
+      "id": "TP-227",
+      "startMilliseconds": 2492119,
+      "endMilliseconds": 2496960,
+      "kind": "fact",
+      "text": "The interface typing mechanism works exactly the same as the typing mechanism for classes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2492119,
+          "endMilliseconds": 2496960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-two-interfaces-without-a-custom-base-class"
+      }
+    },
+    {
+      "id": "TP-228",
+      "startMilliseconds": 2496599,
+      "endMilliseconds": 2510030,
+      "kind": "explanation",
+      "text": "An interface used as a base behaves like any abstract or even ordinary class during type checking, so a class B that implements interface A can be treated as an A everywhere a type is checked.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2496599,
+          "endMilliseconds": 2510030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-two-interfaces-without-a-custom-base-class"
+      }
+    },
+    {
+      "id": "TP-229",
+      "startMilliseconds": 2510040,
+      "endMilliseconds": 2523430,
+      "kind": "reason",
+      "text": "Putting an object of type B where interface A is expected compiles because B derives from A, so a B-to-A cast is legal just like in the class inheritance case.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2510040,
+          "endMilliseconds": 2523430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-two-interfaces-without-a-custom-base-class"
+      }
+    },
+    {
+      "id": "TP-230",
+      "startMilliseconds": 2523440,
+      "endMilliseconds": 2528670,
+      "kind": "fact",
+      "text": "Besides an explicit cast, the same interface conversion can be written as an is-type check combined with a pattern variable declaration, after which operations are performed on the cast object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2523440,
+          "endMilliseconds": 2528670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-two-interfaces-without-a-custom-base-class"
+      }
+    },
+    {
+      "id": "TP-231",
+      "startMilliseconds": 2528680,
+      "endMilliseconds": 2549190,
+      "kind": "scope_boundary",
+      "text": "The lesson deliberately stops elaborating interface typing because the mechanism is identical to class inheritance typing.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2528680,
+          "endMilliseconds": 2549190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-two-interfaces-without-a-custom-base-class"
+      }
+    },
+    {
+      "id": "TP-232",
+      "startMilliseconds": 2549200,
+      "endMilliseconds": 2562589,
+      "kind": "code_change",
+      "text": "For the next analysis Speak is declared virtual in Bird so subclasses can override it, and a subclass is added that declares an override of Speak.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2549200,
+          "endMilliseconds": 2562589
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#virtual-class-methods-can-implement-interface-contracts"
+      }
+    },
+    {
+      "id": "TP-233",
+      "startMilliseconds": 2562599,
+      "endMilliseconds": 2566100,
+      "kind": "code_change",
+      "text": "An instance of the subclass is created in the demo so the virtual dispatch result can be observed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2562599,
+          "endMilliseconds": 2566100
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#virtual-class-methods-can-implement-interface-contracts"
+      }
+    },
+    {
+      "id": "TP-234",
+      "startMilliseconds": 2566100,
+      "endMilliseconds": 2571319,
+      "kind": "test_result",
+      "text": "Running the snippet prints the overridden Speak implementation, confirming that the call dispatched to the subclass version.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2566100,
+          "endMilliseconds": 2571319
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#virtual-class-methods-can-implement-interface-contracts"
+      }
+    },
+    {
+      "id": "TP-235",
+      "startMilliseconds": 2566109,
+      "endMilliseconds": 2571809,
+      "kind": "test_result",
+      "text": "Calling speak through the ISpeak reference on a Bird instance printed the overloaded method, showing the interface dispatch reached the implementation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2566109,
+          "endMilliseconds": 2571809
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#virtual-class-methods-can-implement-interface-contracts"
+      }
+    },
+    {
+      "id": "TP-236",
+      "startMilliseconds": 2580680,
+      "endMilliseconds": 2593829,
+      "kind": "explanation",
+      "text": "A Bird class has two virtual method tables: one for the ISpeak interface and one for its own class hierarchy that derived types also reuse.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2580680,
+          "endMilliseconds": 2593829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#virtual-class-methods-can-implement-interface-contracts"
+      }
+    },
+    {
+      "id": "TP-237",
+      "startMilliseconds": 2593839,
+      "endMilliseconds": 2598430,
+      "kind": "fact",
+      "text": "An override of speak in a derived class replaces not only the hierarchy slot but also the slot belonging to the interface, which is why both dispatch routes reach the override.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2593839,
+          "endMilliseconds": 2598430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#virtual-class-methods-can-implement-interface-contracts"
+      }
+    },
+    {
+      "id": "TP-238",
+      "startMilliseconds": 2598440,
+      "endMilliseconds": 2610390,
+      "kind": "explanation",
+      "text": "virtual means create a cell for Speak in the hierarchy table, and override means replace that cell, additionally replacing the interface table cell when the original cell came from an interface method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2598440,
+          "endMilliseconds": 2610390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#virtual-class-methods-can-implement-interface-contracts"
+      }
+    },
+    {
+      "id": "TP-239",
+      "startMilliseconds": 2610400,
+      "endMilliseconds": 2640390,
+      "kind": "fact",
+      "text": "Different interfaces may declare methods with the same name, return type and parameters, which is what makes the multi-slot situation in the next example possible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2610400,
+          "endMilliseconds": 2640390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#virtual-class-methods-can-implement-interface-contracts"
+      }
+    },
+    {
+      "id": "TP-240",
+      "startMilliseconds": 2640400,
+      "endMilliseconds": 2652670,
+      "kind": "fact",
+      "text": "Creating a speak method in Bird fills both the ISpeak slot and the ISpeak1 slot, so one implementation can serve several interface cells.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2640400,
+          "endMilliseconds": 2650280
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2640400,
+          "endMilliseconds": 2652670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#virtual-class-methods-can-implement-interface-contracts"
+      }
+    },
+    {
+      "id": "TP-241",
+      "startMilliseconds": 2652670,
+      "endMilliseconds": 2654870,
+      "kind": "explanation",
+      "text": "Because the override applied to the base cell, the interface cells and the second interface cell all end up pointing at that base cell from then on.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2652670,
+          "endMilliseconds": 2654870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#virtual-class-methods-can-implement-interface-contracts"
+      }
+    },
+    {
+      "id": "TP-242",
+      "startMilliseconds": 2654880,
+      "endMilliseconds": 2657270,
+      "kind": "fact",
+      "text": "A simpler example sets up two interfaces that each declare a method with the same name, which is the case to be analysed next.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2654880,
+          "endMilliseconds": 2657270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-identical-signatures-explicitly"
+      }
+    },
+    {
+      "id": "TP-243",
+      "startMilliseconds": 2657280,
+      "endMilliseconds": 2659750,
+      "kind": "fact",
+      "text": "The goal is to make a call through one interface and a call through the other interface on the same object print different results.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2657280,
+          "endMilliseconds": 2659750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-identical-signatures-explicitly"
+      }
+    },
+    {
+      "id": "TP-244",
+      "startMilliseconds": 2659760,
+      "endMilliseconds": 2706069,
+      "kind": "test_result",
+      "text": "As first written the code does not compile, because the same method signature was declared twice in one type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2659760,
+          "endMilliseconds": 2706069
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-identical-signatures-explicitly"
+      }
+    },
+    {
+      "id": "TP-245",
+      "startMilliseconds": 2706079,
+      "endMilliseconds": 2718880,
+      "kind": "correction",
+      "text": "The problem is solved by explicit interface implementation: remove public and prefix the method name with the name of the interface it should implement.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2706079,
+          "endMilliseconds": 2718880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-identical-signatures-explicitly"
+      }
+    },
+    {
+      "id": "TP-246",
+      "startMilliseconds": 2713319,
+      "endMilliseconds": 2718879,
+      "kind": "correction",
+      "text": "Explicit interface implementation removes public and prefixes the method name with the interface name, and is repeated for the second interface.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2713319,
+          "endMilliseconds": 2718879
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-identical-signatures-explicitly"
+      }
+    },
+    {
+      "id": "TP-247",
+      "startMilliseconds": 2720880,
+      "endMilliseconds": 2730750,
+      "kind": "test_result",
+      "text": "After the change, a call through ISpeak prints Speak and a call through ISpeak1 prints Speak1, so each interface slot keeps its own implementation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2720880,
+          "endMilliseconds": 2730750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-identical-signatures-explicitly"
+      }
+    },
+    {
+      "id": "TP-248",
+      "startMilliseconds": 2730760,
+      "endMilliseconds": 2746910,
+      "kind": "explanation",
+      "text": "Each explicit interface implementation puts the address of its own method into the corresponding interface slot, which is why the two calls behave differently.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2730760,
+          "endMilliseconds": 2746910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-identical-signatures-explicitly"
+      }
+    },
+    {
+      "id": "TP-249",
+      "startMilliseconds": 2750309,
+      "endMilliseconds": 2757520,
+      "kind": "fact",
+      "text": "An interface may declare more than one method, and its virtual table then holds a separate cell per declared method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2750309,
+          "endMilliseconds": 2757520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-identical-signatures-explicitly"
+      }
+    },
+    {
+      "id": "TP-250",
+      "startMilliseconds": 2760160,
+      "endMilliseconds": 2765440,
+      "kind": "scope_boundary",
+      "text": "Interfaces inheriting other interfaces are left out of this video and not explained here.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2760160,
+          "endMilliseconds": 2765440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#lesson-boundaries"
+      }
+    },
+    {
+      "id": "TP-251",
+      "startMilliseconds": 2765440,
+      "endMilliseconds": 2772400,
+      "kind": "fact",
+      "text": "Virtual methods may be declared protected instead of public, an access modifier option mentioned but not demonstrated.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2765440,
+          "endMilliseconds": 2772400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#lesson-boundaries"
+      }
+    },
+    {
+      "id": "TP-252",
+      "startMilliseconds": 2772400,
+      "endMilliseconds": 2781430,
+      "kind": "scope_boundary",
+      "text": "How base behaves in constructors is deferred to another video and not covered here.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2772400,
+          "endMilliseconds": 2781430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#lesson-boundaries"
+      }
+    },
+    {
+      "id": "TP-253",
+      "startMilliseconds": 2781440,
+      "endMilliseconds": 2789790,
+      "kind": "scope_boundary",
+      "text": "Virtual properties and the backing fields they create are left for the learner to read about separately.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2781440,
+          "endMilliseconds": 2789790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#lesson-boundaries"
+      }
+    },
+    {
+      "id": "TP-254",
+      "startMilliseconds": 2784200,
+      "endMilliseconds": 2795680,
+      "kind": "scope_boundary",
+      "text": "Abstract properties and interface properties are left out of this lesson, and the five remaining open questions are offered for separate study.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2784200,
+          "endMilliseconds": 2795680
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#lesson-boundaries"
+      }
+    },
+    {
+      "id": "TP-255",
+      "startMilliseconds": 2789800,
+      "endMilliseconds": 2793680,
+      "kind": "scope_boundary",
+      "text": "Abstract properties and interface properties are also excluded from this lesson and not explained.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2789800,
+          "endMilliseconds": 2793680
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#lesson-boundaries"
+      }
+    },
+    {
+      "id": "TP-256",
+      "startMilliseconds": 2795680,
+      "endMilliseconds": 2805280,
+      "kind": "scope_boundary",
+      "text": "The five questions left over on the topic are declared out of scope and left for the viewer to explore independently.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2795680,
+          "endMilliseconds": 2805280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#lesson-boundaries"
+      }
+    },
+    {
+      "id": "TP-257",
+      "startMilliseconds": 2805280,
+      "endMilliseconds": 2808800,
+      "kind": "explanation",
+      "text": "The menu action type used in the video could equally have been written as an abstract class, showing the design choice was not forced by the language.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2805280,
+          "endMilliseconds": 2808800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#refactor-menu-functions-into-action-objects"
+      }
+    },
+    {
+      "id": "TP-258",
+      "startMilliseconds": 2808800,
+      "endMilliseconds": 2815400,
+      "kind": "explanation",
+      "text": "An abstract class Action with a single abstract method would let ExecuteAction execute each action polymorphically.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2808800,
+          "endMilliseconds": 2815400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#refactor-menu-functions-into-action-objects"
+      }
+    },
+    {
+      "id": "TP-259",
+      "startMilliseconds": 2815400,
+      "endMilliseconds": 2828880,
+      "kind": "fact",
+      "text": "Because an abstract Action cannot be instantiated directly, ExecuteAction must receive a subclass of it and invoke the action through its abstract method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2815400,
+          "endMilliseconds": 2828880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#refactor-menu-functions-into-action-objects"
+      }
+    },
+    {
+      "id": "TP-260",
+      "startMilliseconds": 2828880,
+      "endMilliseconds": 2834349,
+      "kind": "explanation",
+      "text": "The runtime type of the passed action keeps the information about which method to call, so the invocation resolves by address exactly like a delegate.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2828880,
+          "endMilliseconds": 2834349
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#refactor-menu-functions-into-action-objects"
+      }
+    },
+    {
+      "id": "TP-261",
+      "startMilliseconds": 2834349,
+      "endMilliseconds": 2843440,
+      "kind": "explanation",
+      "text": "Using a delegate that stores the address of a concrete function is practically equivalent to using class-based polymorphism.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2834349,
+          "endMilliseconds": 2843440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#refactor-menu-functions-into-action-objects"
+      }
+    },
+    {
+      "id": "TP-262",
+      "startMilliseconds": 2843440,
+      "endMilliseconds": 2859640,
+      "kind": "reason",
+      "text": "A delegate holds the address of exactly one function, whereas an abstract class lets each subclass supply its own implementation through the same slot.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2843440,
+          "endMilliseconds": 2859640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#refactor-menu-functions-into-action-objects"
+      }
+    },
+    {
+      "id": "TP-263",
+      "startMilliseconds": 2851440,
+      "endMilliseconds": 2852430,
+      "kind": "fact",
+      "text": "A delegate variable stores the address of a single function, while the abstract-class approach used here can hold several functions at once.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2851440,
+          "endMilliseconds": 2852430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#refactor-menu-functions-into-action-objects"
+      }
+    },
+    {
+      "id": "TP-264",
+      "startMilliseconds": 2853960,
+      "endMilliseconds": 2859220,
+      "kind": "explanation",
+      "text": "Using an abstract class instead of a delegate lets you pass multiple pieces of behavior in one variable, which delegates cannot do.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2853960,
+          "endMilliseconds": 2859220
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#refactor-menu-functions-into-action-objects"
+      }
+    },
+    {
+      "id": "TP-265",
+      "startMilliseconds": 2859220,
+      "endMilliseconds": 2863170,
+      "kind": "code_change",
+      "text": "A GreetingAction type is created as a subclass of the action type with a non-static Execute implementation, because the base Execute has to be overridden.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2859220,
+          "endMilliseconds": 2863170
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#refactor-menu-functions-into-action-objects"
+      }
+    },
+    {
+      "id": "TP-266",
+      "startMilliseconds": 2863170,
+      "endMilliseconds": 2870410,
+      "kind": "explanation",
+      "text": "A method that receives an action parameter sees the static type as the abstract action type, so the concrete runtime type is always one of its derived classes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2863170,
+          "endMilliseconds": 2870410
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#refactor-menu-functions-into-action-objects"
+      }
+    },
+    {
+      "id": "TP-267",
+      "startMilliseconds": 2870410,
+      "endMilliseconds": 2881640,
+      "kind": "explanation",
+      "text": "Calling Execute on the action variable resolves at runtime by the object's actual type, which is how the derived class implementation gets chosen.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2870410,
+          "endMilliseconds": 2881640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#refactor-menu-functions-into-action-objects"
+      }
+    },
+    {
+      "id": "TP-268",
+      "startMilliseconds": 2915440,
+      "endMilliseconds": 2922240,
+      "kind": "explanation",
+      "text": "Calling Execute on an action variable is a dynamic dispatch: the runtime looks at the object's type and invokes that type's Execute override.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2915440,
+          "endMilliseconds": 2922240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#refactor-menu-functions-into-action-objects"
+      }
+    },
+    {
+      "id": "TP-269",
+      "startMilliseconds": 2922240,
+      "endMilliseconds": 2928510,
+      "kind": "explanation",
+      "text": "If a GreetingAction instance is passed in, Execute jumps to the first instruction of GreetingAction rather than to the base class body.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2922240,
+          "endMilliseconds": 2928510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#refactor-menu-functions-into-action-objects"
+      }
+    },
+    {
+      "id": "TP-270",
+      "startMilliseconds": 2928510,
+      "endMilliseconds": 2940470,
+      "kind": "reason",
+      "text": "Abstract action classes are better than plain delegates because they can carry extra data such as a name field alongside the behavior.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2928510,
+          "endMilliseconds": 2940470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-greeting-configuration-in-the-action"
+      }
+    },
+    {
+      "id": "TP-271",
+      "startMilliseconds": 2940470,
+      "endMilliseconds": 2947290,
+      "kind": "code_change",
+      "text": "The name argument is removed from the Execute call and read from the field instead, because the value is already fixed in the object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2940470,
+          "endMilliseconds": 2947290
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-greeting-configuration-in-the-action"
+      }
+    },
+    {
+      "id": "TP-272",
+      "startMilliseconds": 2950480,
+      "endMilliseconds": 2956780,
+      "kind": "explanation",
+      "text": "After deleting the standalone greeting function, creating the action now requires constructing an object rather than naming a method group.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2950480,
+          "endMilliseconds": 2956780
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-greeting-configuration-in-the-action"
+      }
+    },
+    {
+      "id": "TP-273",
+      "startMilliseconds": 2956780,
+      "endMilliseconds": 2963470,
+      "kind": "reason",
+      "text": "Because name is a required field, it must be initialized at construction time, which is why the object is created with a name value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2956780,
+          "endMilliseconds": 2963470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-greeting-configuration-in-the-action"
+      }
+    },
+    {
+      "id": "TP-274",
+      "startMilliseconds": 2963470,
+      "endMilliseconds": 2969880,
+      "kind": "explanation",
+      "text": "An action object now stores not only which function to run but also extra information such as the name, because that data lives in the type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2963470,
+          "endMilliseconds": 2969880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-greeting-configuration-in-the-action"
+      }
+    },
+    {
+      "id": "TP-275",
+      "startMilliseconds": 2974280,
+      "endMilliseconds": 2990280,
+      "kind": "reason",
+      "text": "Derived action classes may add data beyond the function definition while the base class only defines the slot for that function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2974280,
+          "endMilliseconds": 2990280
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2982280,
+          "endMilliseconds": 2990070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-greeting-configuration-in-the-action"
+      }
+    },
+    {
+      "id": "TP-276",
+      "startMilliseconds": 2987930,
+      "endMilliseconds": 2995060,
+      "kind": "scope_boundary",
+      "text": "The same refactoring is left to do for every other action, so the example shows only the greeting case first.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2987930,
+          "endMilliseconds": 2995060
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#store-greeting-configuration-in-the-action"
+      }
+    },
+    {
+      "id": "TP-277",
+      "startMilliseconds": 2999060,
+      "endMilliseconds": 3008990,
+      "kind": "code_change",
+      "text": "The Addition method is turned into an AdditionAction subclass and its read helper is moved out and made private.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2999060,
+          "endMilliseconds": 3008990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finish-the-other-action-classes"
+      }
+    },
+    {
+      "id": "TP-278",
+      "startMilliseconds": 3011150,
+      "endMilliseconds": 3023260,
+      "kind": "code_change",
+      "text": "The remaining function is extracted into a NothingAction class whose Execute does nothing, which still satisfies the abstract contract.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3011150,
+          "endMilliseconds": 3023260
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finish-the-other-action-classes"
+      }
+    },
+    {
+      "id": "TP-279",
+      "startMilliseconds": 3023100,
+      "endMilliseconds": 3035500,
+      "kind": "explanation",
+      "text": "A derived class cannot skip the implementation because the base class declares Execute as abstract rather than virtual with an empty body.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3023100,
+          "endMilliseconds": 3035500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finish-the-other-action-classes"
+      }
+    },
+    {
+      "id": "TP-280",
+      "startMilliseconds": 3035480,
+      "endMilliseconds": 3045500,
+      "kind": "edge_case",
+      "text": "If the base method were virtual with an empty body, a derived class that forgot to override it would silently inherit the empty implementation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3035480,
+          "endMilliseconds": 3045500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finish-the-other-action-classes"
+      }
+    },
+    {
+      "id": "TP-281",
+      "startMilliseconds": 3048280,
+      "endMilliseconds": 3055670,
+      "kind": "code_change",
+      "text": "Call sites now construct the actions with new AdditionAction() and new NothingAction() instead of naming methods.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3048280,
+          "endMilliseconds": 3055670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finish-the-other-action-classes"
+      }
+    },
+    {
+      "id": "TP-282",
+      "startMilliseconds": 3056760,
+      "endMilliseconds": 3062200,
+      "kind": "explanation",
+      "text": "An action like AdditionAction carries no related data: it has no configuration, no fields, and uses or changes nothing between calls.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3056760,
+          "endMilliseconds": 3062200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reuse-a-stateless-action-as-a-singleton"
+      }
+    },
+    {
+      "id": "TP-283",
+      "startMilliseconds": 3056760,
+      "endMilliseconds": 3063200,
+      "kind": "fact",
+      "text": "There is also a pattern called singleton, which is relevant for actions that carry no per-call data.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3056760,
+          "endMilliseconds": 3063200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reuse-a-stateless-action-as-a-singleton"
+      }
+    },
+    {
+      "id": "TP-284",
+      "startMilliseconds": 3062300,
+      "endMilliseconds": 3070230,
+      "kind": "reason",
+      "text": "Because such an action has no per-instance data, it can be made a singleton so the program creates only one object of that type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3062300,
+          "endMilliseconds": 3070230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reuse-a-stateless-action-as-a-singleton"
+      }
+    },
+    {
+      "id": "TP-285",
+      "startMilliseconds": 3070230,
+      "endMilliseconds": 3079540,
+      "kind": "reason",
+      "text": "Since the object never changes during execution, reusing one instance each time avoids allocating a new tiny object from dynamic memory every call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3070230,
+          "endMilliseconds": 3079540
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reuse-a-stateless-action-as-a-singleton"
+      }
+    },
+    {
+      "id": "TP-286",
+      "startMilliseconds": 3084060,
+      "endMilliseconds": 3091870,
+      "kind": "explanation",
+      "text": "The first requirement for a singleton is to make sure the type cannot be created from outside, which a private constructor guarantees.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3084060,
+          "endMilliseconds": 3091870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reuse-a-stateless-action-as-a-singleton"
+      }
+    },
+    {
+      "id": "TP-287",
+      "startMilliseconds": 3119359,
+      "endMilliseconds": 3134510,
+      "kind": "reason",
+      "text": "Creating an instance with object-initializer syntax outside the class will not compile, because that creation requires calling the private constructor, which cannot be invoked from outside the class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3119359,
+          "endMilliseconds": 3134510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reuse-a-stateless-action-as-a-singleton"
+      }
+    },
+    {
+      "id": "TP-288",
+      "startMilliseconds": 3140069,
+      "endMilliseconds": 3147670,
+      "kind": "explanation",
+      "text": "A static field ties one single shared instance to the type, which is how the object used by everyone gets created.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3140069,
+          "endMilliseconds": 3147670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reuse-a-stateless-action-as-a-singleton"
+      }
+    },
+    {
+      "id": "TP-289",
+      "startMilliseconds": 3147680,
+      "endMilliseconds": 3151870,
+      "kind": "code_change",
+      "text": "The code now reuses the already-created static instance instead of constructing a new addition each time, so all callers share the same state.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3147680,
+          "endMilliseconds": 3151870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reuse-a-stateless-action-as-a-singleton"
+      }
+    },
+    {
+      "id": "TP-290",
+      "startMilliseconds": 3154160,
+      "endMilliseconds": 3156829,
+      "kind": "reason",
+      "text": "Marking the field readonly prevents any later assignment, otherwise some other place in the code could overwrite the shared reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3154160,
+          "endMilliseconds": 3156829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reuse-a-stateless-action-as-a-singleton"
+      }
+    },
+    {
+      "id": "TP-291",
+      "startMilliseconds": 3156839,
+      "endMilliseconds": 3175710,
+      "kind": "fact",
+      "text": "With readonly the reference can only be assigned once at its declaration site, so the later reassignment shown simply does not compile.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 3156839,
+          "endMilliseconds": 3175710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reuse-a-stateless-action-as-a-singleton"
+      }
+    }
+  ]
+}

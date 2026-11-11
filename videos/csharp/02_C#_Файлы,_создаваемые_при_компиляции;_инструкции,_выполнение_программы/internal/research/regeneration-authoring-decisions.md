@@ -1,0 +1,12 @@
+# Authoring decisions behind the regenerated English note
+
+Source: english_authoring, run 162, session `01a0fc45-d723-7f30-b187-0ed8a9d4fdac` (full regeneration; verified at `8dda92a46ccfa0d6c50fff6b435e9ad02b744b7f`).
+
+- Sample status: code samples are labeled "reduced reconstructions of the recorded actions, not claims of exact committed editor states"; video links identify the recorded states. The recording's demo project exists in no commit, so no exact state can be cited.
+- Runtime boundary kept explicit: launching the compiled output separately does not establish a self-contained .NET deployment. The DLL/executable/runtime vocabulary entry carries that distinction so a reader does not infer packaging from "the exe runs".
+- Statement vs line: the recording and ledger TP-015 present "statement" as the English word for one line. The note adds the caveat the recording omits — "one line" is a convenient description of these examples, not a grammar rule, since a statement can span lines.
+- Semicolon and call operator: the semicolon is introduced as the statement terminator (the recording shows it but never names it), and the PowerShell launch example names the call operator `&`, which the recording uses silently when starting the executable by full path.
+- `void` scope: treated only as "the keyword before the function name" in these definitions, with its return-type meaning explicitly postponed, matching the recorded boundary at t=318s — deliberately not explained.
+- Vocabulary merges decided during authoring: "DLL" expanded into DLL/library/executable; "full path" merged with the call operator because the PowerShell launch needs both; "void, parentheses, braces" extended with the semicolon for the same reason.
+- Coverage mapping self-check: all 46 ledger points map onto 14 headings; every anchor was verified to resolve against the note's headings; every timestamp link was verified to equal its label seconds; the closing code-history trail was verified chronological; fenced blocks balanced. These checks are recorded in the session before the result was returned.
+- The first authoring round (run 58, session `ses_f0923e229ffekWKBdm8KXyjhc6`) started from an untracked folder with an empty `notes.en.md` and no ledger, and built its note from the saved transcript plus repository evidence (root `.gitignore`, labs `02_project.md` and `05_functions.md`, the previous lesson's `notes.en.md`). That note — not the repository — is what the first verification corrected, and its corrected meaning is what the regeneration had to preserve.

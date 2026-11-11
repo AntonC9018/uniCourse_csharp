@@ -1,0 +1,1334 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "dTbrzEXPH-s",
+  "uploadId": "dTbrzEXPH-s",
+  "transcriptSha256": "3fbad58034d9b9a7b148316cc50faeda13a306b5741d7839b6b93bee7a64d6e6",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 80,
+      "endMilliseconds": 18600,
+      "kind": "fact",
+      "text": "A string in C# is an object that represents a sequence of characters, which is why it behaves unlike a primitive value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 80,
+          "endMilliseconds": 18600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#strings-and-immutable-objects"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 18600,
+      "endMilliseconds": 20320,
+      "kind": "explanation",
+      "text": "The only thing a string can contain is characters, so any string content must ultimately be reduced to characters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 18600,
+          "endMilliseconds": 20320
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#strings-and-immutable-objects"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 20320,
+      "endMilliseconds": 23920,
+      "kind": "fact",
+      "text": "A string can also be defined as an array of characters, which gives a second useful mental model for it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 20320,
+          "endMilliseconds": 23920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#strings-and-immutable-objects"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 23920,
+      "endMilliseconds": 32230,
+      "kind": "explanation",
+      "text": "The difference between a string and a character array is mutability: characters taken from a string cannot be modified, while characters in an array can be changed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 23920,
+          "endMilliseconds": 32230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#strings-and-immutable-objects"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 32230,
+      "endMilliseconds": 39000,
+      "kind": "fact",
+      "text": "A string is an immutable type allocated in dynamic memory, so an existing string instance can never be altered in place.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 32230,
+          "endMilliseconds": 39000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#strings-and-immutable-objects"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 39000,
+      "endMilliseconds": 48830,
+      "kind": "explanation",
+      "text": "Because strings are immutable, the only change a program can make is overwriting the variable's reference with a different string, which changes the variable's memory, not the string object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 39000,
+          "endMilliseconds": 48830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#strings-and-immutable-objects"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 55790,
+      "endMilliseconds": 77600,
+      "kind": "fact",
+      "text": "A computer never stores a character's graphic shape in memory, it stores a number, and every character therefore has a number associated with it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 55790,
+          "endMilliseconds": 77600
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 68360,
+          "endMilliseconds": 77600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#characters-literals-and-numeric-output"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 77600,
+      "endMilliseconds": 87500,
+      "kind": "fact",
+      "text": "C# has the special char type, which is a value type rather than a reference type and can hold a single character.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 77600,
+          "endMilliseconds": 87500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#characters-literals-and-numeric-output"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 87500,
+      "endMilliseconds": 95500,
+      "kind": "fact",
+      "text": "A single character can be taken from a string with indexer syntax or obtained directly with the character literal syntax.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 87500,
+          "endMilliseconds": 95500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#characters-literals-and-numeric-output"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 95500,
+      "endMilliseconds": 102400,
+      "kind": "fact",
+      "text": "In C# strings are always written in double quotes while characters are written in single quotes, so the quote style tells the compiler which type is meant.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 95500,
+          "endMilliseconds": 102400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#characters-literals-and-numeric-output"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 102400,
+      "endMilliseconds": 109000,
+      "kind": "explanation",
+      "text": "The compiler converts character literals into their numeric values, so a character can in principle be treated as a plain number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 102400,
+          "endMilliseconds": 109000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#characters-literals-and-numeric-output"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 109000,
+      "endMilliseconds": 115000,
+      "kind": "fact",
+      "text": "Instead of storing a character in a char variable you may store the same symbol in an int variable, which the compiler accepts.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 109000,
+          "endMilliseconds": 115000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#characters-literals-and-numeric-output"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 115000,
+      "endMilliseconds": 127000,
+      "kind": "explanation",
+      "text": "Printing a char variable shows the symbol itself, whereas seeing the character's numeric code requires storing it as a number first.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 115000,
+          "endMilliseconds": 127000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#characters-literals-and-numeric-output"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 127000,
+      "endMilliseconds": 140000,
+      "kind": "fact",
+      "text": "Converting a char value to an int with a cast keeps the very same number in memory, it only changes how the value is typed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 127000,
+          "endMilliseconds": 140000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#characters-literals-and-numeric-output"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 140000,
+      "endMilliseconds": 163160,
+      "kind": "explanation",
+      "text": "Console.WriteLine prints a char as a symbol and an int holding the same number as a number, because it relies on the static type of the expression.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 140000,
+          "endMilliseconds": 157040
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 145879,
+          "endMilliseconds": 163160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#characters-literals-and-numeric-output"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 173920,
+      "endMilliseconds": 186750,
+      "kind": "fact",
+      "text": "The conversion also works in reverse: a stored number such as 72 can be converted back into the corresponding character.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 173920,
+          "endMilliseconds": 186750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#converting-a-number-back-to-a-character"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 186750,
+      "endMilliseconds": 204550,
+      "kind": "reason",
+      "text": "An int can hold values a char cannot, so its memory cell is larger, and shrinking the number back into a char requires an explicit cast.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 186750,
+          "endMilliseconds": 204550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#converting-a-number-back-to-a-character"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 204550,
+      "endMilliseconds": 223110,
+      "kind": "explanation",
+      "text": "A numeric cast behaves unlike a cast between reference types: it simply cuts off the information that does not fit the smaller cell, which is called truncation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 204550,
+          "endMilliseconds": 223110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#converting-a-number-back-to-a-character"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 223110,
+      "endMilliseconds": 225400,
+      "kind": "scope_boundary",
+      "text": "The details of truncation are deliberately left for a later lesson, so the lesson only names the effect here.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 223110,
+          "endMilliseconds": 225400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#converting-a-number-back-to-a-character"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 225400,
+      "endMilliseconds": 231910,
+      "kind": "test_result",
+      "text": "Printing the char variable that holds 72 shows the symbol H, confirming the number-to-character mapping.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 225400,
+          "endMilliseconds": 231910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#converting-a-number-back-to-a-character"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 231910,
+      "endMilliseconds": 242319,
+      "kind": "fact",
+      "text": "The reason 72 is H is that an encoding assigns each character a fixed numeric code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 231910,
+          "endMilliseconds": 242319
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 231920,
+          "endMilliseconds": 242319
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-the-ascii-table"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 242319,
+      "endMilliseconds": 253710,
+      "kind": "fact",
+      "text": "Every character has a related code number, and knowing that number lets you obtain the character back.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 242319,
+          "endMilliseconds": 253710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-the-ascii-table"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 253710,
+      "endMilliseconds": 279000,
+      "kind": "fact",
+      "text": "C# uses the ASCII encoding, a table that maps each character to its decimal numeric code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 253710,
+          "endMilliseconds": 279000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-the-ascii-table"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 279000,
+      "endMilliseconds": 281670,
+      "kind": "fact",
+      "text": "The space character is also a special character that has no graphic representation, which is why ASCII tables write it inside square brackets.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 279000,
+          "endMilliseconds": 281670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-the-ascii-table"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 281670,
+      "endMilliseconds": 290240,
+      "kind": "fact",
+      "text": "In ASCII the punctuation symbols occupy the codes from 33 to 47, so their numbers follow the table order.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 281670,
+          "endMilliseconds": 290240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-the-ascii-table"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 290240,
+      "endMilliseconds": 299670,
+      "kind": "fact",
+      "text": "ASCII uppercase letters start at code 65 and continue consecutively, so letter codes grow by one in alphabet order.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 290240,
+          "endMilliseconds": 299670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-the-ascii-table"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 299670,
+      "endMilliseconds": 307000,
+      "kind": "fact",
+      "text": "ASCII lowercase letters follow the uppercase block and also increase consecutively, preserving alphabet order.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 299670,
+          "endMilliseconds": 307000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-the-ascii-table"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 307000,
+      "endMilliseconds": 321319,
+      "kind": "explanation",
+      "text": "The letter H corresponds to code 72, and writing the symbol H into an int variable stores that number 72 rather than the character itself.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 307000,
+          "endMilliseconds": 321319
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-the-ascii-table"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 312400,
+      "endMilliseconds": 331309,
+      "kind": "explanation",
+      "text": "Writing a character such as 'H' into an int variable stores the code 72, because the compiler looks 'H' up in its character-code table and saves that number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 312400,
+          "endMilliseconds": 331309
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-the-ascii-table"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 329000,
+      "endMilliseconds": 338909,
+      "kind": "fact",
+      "text": "A char variable assigned 'H' actually holds the number 72, not the letter itself, so printing it reveals the code rather than the symbol.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 329000,
+          "endMilliseconds": 338909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-the-ascii-table"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 338909,
+      "endMilliseconds": 349870,
+      "kind": "reason",
+      "text": "Converting an int back to a char requires an explicit cast, because an int does not fit into a char and the compiler rejects that implicit conversion.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 338909,
+          "endMilliseconds": 349870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-the-ascii-table"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 349870,
+      "endMilliseconds": 357070,
+      "kind": "fact",
+      "text": "The character-code table also contains special symbols besides letters and digits, so it covers control characters too.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 349870,
+          "endMilliseconds": 357070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#putting-a-line-feed-in-a-literal"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 357070,
+      "endMilliseconds": 370390,
+      "kind": "fact",
+      "text": "Line Feed is the special symbol for a line break and has code 10, which is why output can contain newlines without a visible character.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 357070,
+          "endMilliseconds": 370390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#putting-a-line-feed-in-a-literal"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 370390,
+      "endMilliseconds": 388070,
+      "kind": "explanation",
+      "text": "In source code a newline is written as the escape sequence backslash-n, and the compiler replaces it with the value 10 when processing the string literal.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 370390,
+          "endMilliseconds": 388070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#putting-a-line-feed-in-a-literal"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 388080,
+      "endMilliseconds": 395800,
+      "kind": "test_result",
+      "text": "Running the program prints \"Hello\" followed by a line break and then \"World\", confirming that the escape sequence produces a real newline.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 388080,
+          "endMilliseconds": 395800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#putting-a-line-feed-in-a-literal"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 391360,
+      "endMilliseconds": 403070,
+      "kind": "edge_case",
+      "text": "Single quotes in C# allow exactly one character, so putting several characters inside them makes the compiler report an error.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 391360,
+          "endMilliseconds": 403070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#putting-a-line-feed-in-a-literal"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 403070,
+      "endMilliseconds": 415550,
+      "kind": "explanation",
+      "text": "Printing the char backslash-n shows only a line break, while storing the same character as an int prints 10, which exposes the underlying code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 403070,
+          "endMilliseconds": 415550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#putting-a-line-feed-in-a-literal"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 415550,
+      "endMilliseconds": 435990,
+      "kind": "fact",
+      "text": "On Linux a newline is one Line Feed character, while on Windows it is two characters, Carriage Return (13) plus Line Feed (10).",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 415550,
+          "endMilliseconds": 435990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#platform-line-endings"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 436000,
+      "endMilliseconds": 452790,
+      "kind": "reason",
+      "text": "Text files on disk store these numeric codes, so opening a file in an editor that shows bytes reveals the codes instead of the characters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 436000,
+          "endMilliseconds": 452790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-text-file-bytes-and-the-bom"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 453190,
+      "endMilliseconds": 475240,
+      "kind": "explanation",
+      "text": "The character 'e' is stored on disk as the number 45, showing that every file byte is a numeric code rather than a glyph.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 453190,
+          "endMilliseconds": 475240
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 464800,
+          "endMilliseconds": 475240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-text-file-bytes-and-the-bom"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 475240,
+      "endMilliseconds": 481200,
+      "kind": "fact",
+      "text": "In the byte dump the line break sits at the very beginning of the first line, which corresponds to the platform newline characters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 475240,
+          "endMilliseconds": 481200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-text-file-bytes-and-the-bom"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 481200,
+      "endMilliseconds": 496830,
+      "kind": "fact",
+      "text": "A UTF-8 BOM is three special bytes EF BB BF placed at the start of some files, so it changes the first bytes of a text file.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 481200,
+          "endMilliseconds": 496830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-text-file-bytes-and-the-bom"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 496830,
+      "endMilliseconds": 502830,
+      "kind": "explanation",
+      "text": "BOM expands to Byte Order Mark, which marks the byte order convention used by the file's encoding.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 496830,
+          "endMilliseconds": 502830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-text-file-bytes-and-the-bom"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 502830,
+      "endMilliseconds": 521829,
+      "kind": "fact",
+      "text": "The byte sequence 0D 0A is Carriage Return followed by Line Feed, which is why a line break can occupy two bytes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 502830,
+          "endMilliseconds": 521829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reading-text-file-bytes-and-the-bom"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 521829,
+      "endMilliseconds": 533630,
+      "kind": "fact",
+      "text": "Russian letters have no entries in this table because it defines only the 127 most frequently used characters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 521829,
+          "endMilliseconds": 533630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#unicode-utf-8-and-the-two-byte-char"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 533630,
+      "endMilliseconds": 544790,
+      "kind": "explanation",
+      "text": "Unicode was invented so that characters of other languages can also be stored, extending beyond the limited 127-character table.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 533630,
+          "endMilliseconds": 544790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#unicode-utf-8-and-the-two-byte-char"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 544800,
+      "endMilliseconds": 558040,
+      "kind": "fact",
+      "text": "UTF-8 is the most commonly used encoding, and UTF-16 and UTF-32 work in a broadly similar way.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 544800,
+          "endMilliseconds": 558040
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#unicode-utf-8-and-the-two-byte-char"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 549320,
+      "endMilliseconds": 560000,
+      "kind": "fact",
+      "text": "Characters present in the code table are always stored as their ASCII code, so their single-byte representation stays stable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 549320,
+          "endMilliseconds": 560000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#unicode-utf-8-and-the-two-byte-char"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 560000,
+      "endMilliseconds": 589790,
+      "kind": "explanation",
+      "text": "Characters missing from the code table need more than one byte - two, three or four - which is exactly how UTF-8 encodes them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 560000,
+          "endMilliseconds": 589790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#unicode-utf-8-and-the-two-byte-char"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 589790,
+      "endMilliseconds": 610000,
+      "kind": "fact",
+      "text": "UTF-16 encodes even table characters in two bytes because its smallest character is 16 bits, whereas UTF-8's smallest is 8 bits.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 589790,
+          "endMilliseconds": 610000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#unicode-utf-8-and-the-two-byte-char"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 610000,
+      "endMilliseconds": 638440,
+      "kind": "explanation",
+      "text": "UTF-16 and UTF-32 pay off when many characters outside Latin alphabets would otherwise need three or four UTF-8 bytes, and the C# char type is a UTF-16 code unit rather than a plain number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 610000,
+          "endMilliseconds": 638440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#unicode-utf-8-and-the-two-byte-char"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 626839,
+      "endMilliseconds": 652069,
+      "kind": "fact",
+      "text": "C# char stores a UTF-16 code unit occupying two bytes, not one, so the informal phrase 'just a char' hides that only BMP characters fit.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 626839,
+          "endMilliseconds": 652069
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#unicode-utf-8-and-the-two-byte-char"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 652069,
+      "endMilliseconds": 679710,
+      "kind": "fact",
+      "text": "On a numeric keypad you can hold Alt and type a Unicode code point (for example Alt 0151 for a long dash) to insert characters that are hard to type otherwise.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 652069,
+          "endMilliseconds": 679710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#entering-hard-to-type-characters"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 679710,
+      "endMilliseconds": 690590,
+      "kind": "fact",
+      "text": "A character produced by an Alt code such as Alt+47 or Alt+89 still fits in two bytes, which is why it can be stored in a char.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 679710,
+          "endMilliseconds": 690590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#entering-hard-to-type-characters"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 690590,
+      "endMilliseconds": 699030,
+      "kind": "fact",
+      "text": "A $ prefix on a string literal turns on C# string interpolation, so formatted values can be embedded directly into the text.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 690590,
+          "endMilliseconds": 699030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#building-a-message-with-interpolation"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 699030,
+      "endMilliseconds": 706350,
+      "kind": "code_change",
+      "text": "Interpolating a variable with braces such as My Age is {age} embeds the current value of age into the message string.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 699030,
+          "endMilliseconds": 706350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#building-a-message-with-interpolation"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 706079,
+      "endMilliseconds": 715360,
+      "kind": "test_result",
+      "text": "Printing the interpolated message yields My Age is 12, proving that the literal 12 was replaced by the value of the age variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 706079,
+          "endMilliseconds": 715360
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 706350,
+          "endMilliseconds": 715360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#building-a-message-with-interpolation"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 715360,
+      "endMilliseconds": 724750,
+      "kind": "explanation",
+      "text": "The interpolation syntax lets you format and insert a value into one shared string without separate concatenation calls.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 715360,
+          "endMilliseconds": 724750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#building-a-message-with-interpolation"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 724750,
+      "endMilliseconds": 740750,
+      "kind": "code_change",
+      "text": "Writing Hello My name is {name} with braces inserts the value of name at that position in the output.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 724750,
+          "endMilliseconds": 740750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#building-a-message-with-interpolation"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 740750,
+      "endMilliseconds": 749949,
+      "kind": "edge_case",
+      "text": "With word wrap enabled in the editor a written line break inside the literal is kept as-is in the final string object, which matters when comparing literal text to output.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 740750,
+          "endMilliseconds": 749949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#building-a-message-with-interpolation"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 749949,
+      "endMilliseconds": 767230,
+      "kind": "explanation",
+      "text": "Text inside curly braces is treated as an expression, 'as if it were a variable', so even a complex expression such as h + 10 is evaluated and inserted as part of the string.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 749949,
+          "endMilliseconds": 767230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#building-a-message-with-interpolation"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 767230,
+      "endMilliseconds": 788839,
+      "kind": "fact",
+      "text": "The static string.Concat method takes several strings as parameters and returns a single new string, which is the simplest way to join pieces of text.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 767230,
+          "endMilliseconds": 788839
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#joining-strings-and-keeping-a-snapshot"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 779760,
+      "endMilliseconds": 792590,
+      "kind": "test_result",
+      "text": "Printing the result of string.Concat shows the two input strings glued together, first string first and second string second.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 779760,
+          "endMilliseconds": 792590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#joining-strings-and-keeping-a-snapshot"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 792590,
+      "endMilliseconds": 806870,
+      "kind": "reason",
+      "text": "string.Concat receives references to the string objects and the resulting new string is not linked to the current values of the variables, so the joined text is a snapshot.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 792590,
+          "endMilliseconds": 806870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#joining-strings-and-keeping-a-snapshot"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 806870,
+      "endMilliseconds": 824750,
+      "kind": "explanation",
+      "text": "Concat builds a new object by writing into it what is in the first referenced object and then what is in the second, which is why later changes to a variable cannot alter the result.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 806870,
+          "endMilliseconds": 824750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#joining-strings-and-keeping-a-snapshot"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 824750,
+      "endMilliseconds": 842199,
+      "kind": "fact",
+      "text": "Because Concat accepts a list of parameters, an extra literal such as ', ' can be passed to insert a separator between parts.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 824750,
+          "endMilliseconds": 842199
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#joining-strings-and-keeping-a-snapshot"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 842199,
+      "endMilliseconds": 849749,
+      "kind": "fact",
+      "text": "The '{...}' interpolation syntax and the explicit string.Concat call are equally valid ways to join text.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 842199,
+          "endMilliseconds": 849749
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#joining-strings-and-keeping-a-snapshot"
+      }
+    },
+    {
+      "id": "TP-068",
+      "startMilliseconds": 849749,
+      "endMilliseconds": 868480,
+      "kind": "fact",
+      "text": "C# overloads the + operator for strings, so concatenating with plus is available instead of calling the function explicitly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 849749,
+          "endMilliseconds": 868480
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 859360,
+          "endMilliseconds": 868480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#joining-strings-and-keeping-a-snapshot"
+      }
+    },
+    {
+      "id": "TP-069",
+      "startMilliseconds": 868480,
+      "endMilliseconds": 876710,
+      "kind": "reason",
+      "text": "The compiler rewrites a string + expression into a call to string.Concat with the three operands as parameters, so both forms behave identically.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 868480,
+          "endMilliseconds": 876710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#joining-strings-and-keeping-a-snapshot"
+      }
+    },
+    {
+      "id": "TP-070",
+      "startMilliseconds": 876710,
+      "endMilliseconds": 881790,
+      "kind": "fact",
+      "text": "Every object in .NET has a ToString method that converts the object into its string representation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 876710,
+          "endMilliseconds": 881790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#converting-a-value-to-text-with-tostring"
+      }
+    },
+    {
+      "id": "TP-071",
+      "startMilliseconds": 881790,
+      "endMilliseconds": 884790,
+      "kind": "fact",
+      "text": "ToString converts values such as int, char and float into text, which makes it usable wherever a string is required.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 881790,
+          "endMilliseconds": 884790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#converting-a-value-to-text-with-tostring"
+      }
+    },
+    {
+      "id": "TP-072",
+      "startMilliseconds": 884790,
+      "endMilliseconds": 896800,
+      "kind": "reason",
+      "text": "ToString is needed only when an explicit conversion is wanted, because WriteLine already works with any object type since it is overloaded and accepts an object parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 884790,
+          "endMilliseconds": 896800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#converting-a-value-to-text-with-tostring"
+      }
+    }
+  ]
+}

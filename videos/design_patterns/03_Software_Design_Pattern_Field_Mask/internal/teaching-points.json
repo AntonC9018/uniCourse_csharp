@@ -1,0 +1,4026 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "BmdWiUEgwNw",
+  "uploadId": "BmdWiUEgwNw",
+  "transcriptSha256": "54a9993caf87451bd2cbb038186f82a71a134d5375dc35f3573b4e95abc9d1c7",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 8000,
+      "endMilliseconds": 16510,
+      "kind": "fact",
+      "text": "The sealed modifier in C# works like final in Java: it marks a class as non-inheritable, which fixes the shape of the domain type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 8000,
+          "endMilliseconds": 16510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-client-domain-model"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 16520,
+      "endMilliseconds": 26520,
+      "kind": "fact",
+      "text": "The required modifier forces a value to be supplied when the object is constructed, so the field can never be null right after initialization.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 16520,
+          "endMilliseconds": 26520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-client-domain-model"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 29590,
+      "endMilliseconds": 54110,
+      "kind": "explanation",
+      "text": "A group-membership property of a client can be modelled either as a bit field or as a list of group enum values such as internal, high-value or not-important.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 29590,
+          "endMilliseconds": 54110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-client-domain-model"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 54120,
+      "endMilliseconds": 76280,
+      "kind": "explanation",
+      "text": "A domain model is a class that represents a real-world entity and holds the fields characterizing that entity, which is why it takes its shape from the task description.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 54120,
+          "endMilliseconds": 76280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-client-domain-model"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 76280,
+      "endMilliseconds": 84000,
+      "kind": "scope_boundary",
+      "text": "Mapping a real-world task description onto a single class is a valid way to model it even when the resulting design is not the best one, so the instructor reviews the approach rather than presenting it as the only option.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 76280,
+          "endMilliseconds": 84000
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 78790,
+          "endMilliseconds": 84000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-client-domain-model"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 84000,
+      "endMilliseconds": 91120,
+      "kind": "explanation",
+      "text": "The shape of the client model depends on how the program intends to use the client, so the modelling choice is driven by usage rather than fixed up front.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 84000,
+          "endMilliseconds": 91120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-client-domain-model"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 91130,
+      "endMilliseconds": 113310,
+      "kind": "reason",
+      "text": "If the client is used as an entity object in simulations or synchronized with a database, a class that holds every characteristic of the client in one place is convenient, because it mirrors the real-world entity.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 91130,
+          "endMilliseconds": 113310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-client-domain-model"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 113320,
+      "endMilliseconds": 129900,
+      "kind": "scope_boundary",
+      "text": "Alternative designs such as a dictionary of properties or splitting the client data across other components exist and are postponed to a later part of the course.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 113320,
+          "endMilliseconds": 129900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-client-domain-model"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 129900,
+      "endMilliseconds": 136000,
+      "kind": "scope_boundary",
+      "text": "The instructor introduces the topic of field masks as the approach to be analysed next, so the audience knows why the following examples matter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 129900,
+          "endMilliseconds": 136000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-client-domain-model"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 136510,
+      "endMilliseconds": 150800,
+      "kind": "explanation",
+      "text": "Independent operations that do not belong to a specific class are placed into a dedicated self-contained class, mirroring the static utility classes familiar from Java.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 136510,
+          "endMilliseconds": 150800
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 143560,
+          "endMilliseconds": 150800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-static-printer-and-its-first-run"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 150800,
+      "endMilliseconds": 159630,
+      "kind": "fact",
+      "text": "C# offers local functions, but the instructor deliberately puts the functions into a class and then into a separate file instead.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 150800,
+          "endMilliseconds": 159630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-static-printer-and-its-first-run"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 159630,
+      "endMilliseconds": 170430,
+      "kind": "explanation",
+      "text": "static means no instance of that type can be created, so the class acts purely as a container for static functions.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 159630,
+          "endMilliseconds": 170430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-static-printer-and-its-first-run"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 170430,
+      "endMilliseconds": 190710,
+      "kind": "code_change",
+      "text": "A function is written that accepts a client and prints all of its fields in a deliberately primitive way, so attention stays on the design question.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 170430,
+          "endMilliseconds": 190710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-static-printer-and-its-first-run"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 190710,
+      "endMilliseconds": 203390,
+      "kind": "code_change",
+      "text": "A client is created, its required fields initialized, and the printing function called, showing the minimal end-to-end usage.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 190710,
+          "endMilliseconds": 203390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-static-printer-and-its-first-run"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 203390,
+      "endMilliseconds": 206000,
+      "kind": "test_result",
+      "text": "Running the program confirms that the client fields are printed by the single function call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 203390,
+          "endMilliseconds": 206000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-static-printer-and-its-first-run"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 206000,
+      "endMilliseconds": 224280,
+      "kind": "explanation",
+      "text": "The next requirement is to make the set of printed fields configurable instead of hardcoded, which motivates the rest of the discussion.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 206000,
+          "endMilliseconds": 224280
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 214920,
+          "endMilliseconds": 224280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-field-selection-must-become-data"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 224280,
+      "endMilliseconds": 240430,
+      "kind": "explanation",
+      "text": "Printing only selected fields by hardcoding a few print statements is possible, so there is no compile-time obstacle to partial printing.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 224280,
+          "endMilliseconds": 240430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-field-selection-must-become-data"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 240430,
+      "endMilliseconds": 264830,
+      "kind": "reason",
+      "text": "The real problem is that a separate function cannot be told which fields to print from the outside, because the field selection is fixed inside its body.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 240430,
+          "endMilliseconds": 264830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-field-selection-must-become-data"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 264830,
+      "endMilliseconds": 277440,
+      "kind": "reason",
+      "text": "Passing the desired field selection in as a parameter would be the natural fix, and it has both advantages and disadvantages compared to the hardcoded approach.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 264830,
+          "endMilliseconds": 277440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-field-selection-must-become-data"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 277440,
+      "endMilliseconds": 288440,
+      "kind": "explanation",
+      "text": "In the hardcoded approach the order of operations can be changed freely, for example printing first name then last name or the reverse.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 277440,
+          "endMilliseconds": 288440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-field-selection-must-become-data"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 288440,
+      "endMilliseconds": 299680,
+      "kind": "reason",
+      "text": "The flags-based implementation fixes the print order, which means that order cannot be serialized and later read back, for example from a configuration file.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 288440,
+          "endMilliseconds": 299680
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-field-selection-must-become-data"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 292880,
+      "endMilliseconds": 304990,
+      "kind": "reason",
+      "text": "The choice of which fields to print must be expressed as data that can be serialized and later read back (for example from a configuration file), because an order of operations cannot be stored or replayed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 292880,
+          "endMilliseconds": 304990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#why-field-selection-must-become-data"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 304990,
+      "endMilliseconds": 318280,
+      "kind": "fact",
+      "text": "A FieldMask is a structure holding a boolean per field indicating whether that field should be printed or skipped, which turns print behavior into data rather than hard-coded calls.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 304990,
+          "endMilliseconds": 318280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-boolean-for-each-field"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 318280,
+      "endMilliseconds": 323510,
+      "kind": "code_change",
+      "text": "The print function now accepts the field mask as a second parameter so the caller decides which fields are emitted.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 318280,
+          "endMilliseconds": 323510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-boolean-for-each-field"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 323510,
+      "endMilliseconds": 359070,
+      "kind": "code_change",
+      "text": "Inside the print function each field (name, surname, groups) is printed only when the corresponding mask flag is set.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 323510,
+          "endMilliseconds": 359070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-boolean-for-each-field"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 359070,
+      "endMilliseconds": 373150,
+      "kind": "explanation",
+      "text": "Once the mask drives the printing, the separate per-field print functions become unnecessary because they will never be called individually again.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 359070,
+          "endMilliseconds": 368280
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 361960,
+          "endMilliseconds": 373150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#one-boolean-for-each-field"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 373150,
+      "endMilliseconds": 381590,
+      "kind": "code_change",
+      "text": "The mask parameter is made optional and given a default so that omitting it still prints everything.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 373150,
+          "endMilliseconds": 381590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#omitted-masks-and-explicit-empty-masks"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 381590,
+      "endMilliseconds": 395910,
+      "kind": "explanation",
+      "text": "The question mark marks the parameter as optional and, combined with the null-coalescing operator, substitutes an all-true mask when no mask is supplied.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 381590,
+          "endMilliseconds": 395910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#omitted-masks-and-explicit-empty-masks"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 395910,
+      "endMilliseconds": 412910,
+      "kind": "code_change",
+      "text": "The print function can initialize the mask itself to print only name and surname, leaving unmentioned fields unprinted.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 395910,
+          "endMilliseconds": 412910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#omitted-masks-and-explicit-empty-masks"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 412910,
+      "endMilliseconds": 425310,
+      "kind": "reason",
+      "text": "Unmentioned fields stay unprinted because the default value of each boolean flag in the mask is false.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 412910,
+          "endMilliseconds": 425310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#omitted-masks-and-explicit-empty-masks"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 425310,
+      "endMilliseconds": 437240,
+      "kind": "explanation",
+      "text": "Without the mask only the explicitly enabled fields are printed, which the demo confirms by running the program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 425310,
+          "endMilliseconds": 437240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#omitted-masks-and-explicit-empty-masks"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 431120,
+      "endMilliseconds": 441390,
+      "kind": "explanation",
+      "text": "The discard symbol tells the compiler the variable is intentionally unused so the unused-variable warning does not block compilation, without changing runtime behavior.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 431120,
+          "endMilliseconds": 441390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#omitted-masks-and-explicit-empty-masks"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 441390,
+      "endMilliseconds": 452350,
+      "kind": "fact",
+      "text": "When the mask is not passed, it takes its default value and everything is printed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 441390,
+          "endMilliseconds": 452350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#omitted-masks-and-explicit-empty-masks"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 452350,
+      "endMilliseconds": 461629,
+      "kind": "reason",
+      "text": "Declaring the mask as a struct keeps it out of the heap, avoiding dynamic memory allocation when the print function is called.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 452350,
+          "endMilliseconds": 461629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#omitted-masks-and-explicit-empty-masks"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 461629,
+      "endMilliseconds": 476159,
+      "kind": "reason",
+      "text": "A record struct is preferred here because it provides an equality operator, which allows comparing the whole mask to a default value in one check.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 461629,
+          "endMilliseconds": 476159
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#omitted-masks-and-explicit-empty-masks"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 476159,
+      "endMilliseconds": 494149,
+      "kind": "code_change",
+      "text": "The code compares the incoming mask to the default and initializes it to the all-true mask when it equals default, leaving the alternative branch inconsequential.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 476159,
+          "endMilliseconds": 494149
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#omitted-masks-and-explicit-empty-masks"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 494149,
+      "endMilliseconds": 512479,
+      "kind": "reason",
+      "text": "Choosing a struct over a class is what removes the heap allocation on each call to the print function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 494149,
+          "endMilliseconds": 512479
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#omitted-masks-and-explicit-empty-masks"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 504000,
+      "endMilliseconds": 519830,
+      "kind": "explanation",
+      "text": "The '?' can also be used for a local variable, which may or may not hold a value and defaults to none, so the null-coalescing pattern can express the fallback inline.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 504000,
+          "endMilliseconds": 519830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#omitted-masks-and-explicit-empty-masks"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 519830,
+      "endMilliseconds": 536630,
+      "kind": "explanation",
+      "text": "If the caller omits the second parameter the value is absent and the code substitutes an all-true mask; if a mask is passed it lands in the variable unchanged.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 519830,
+          "endMilliseconds": 536630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#omitted-masks-and-explicit-empty-masks"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 536630,
+      "endMilliseconds": 563630,
+      "kind": "reason",
+      "text": "Making the mask optional lets a higher-level function configure the filter by taking a mask and returning a modified version of it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 536630,
+          "endMilliseconds": 563630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-mask-before-printing"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 563630,
+      "endMilliseconds": 581240,
+      "kind": "explanation",
+      "text": "That configuration function may apply arbitrary transformations to the chosen fields, including excluding fields that the caller asked for, and may even ask the user.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 563630,
+          "endMilliseconds": 581240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-mask-before-printing"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 573680,
+      "endMilliseconds": 585399,
+      "kind": "explanation",
+      "text": "What the mask controls is only which fields get printed, and the decision logic can be arbitrary: it may ask the user or read other settings to decide what to do with a field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 573680,
+          "endMilliseconds": 585399
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-mask-before-printing"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 589150,
+      "endMilliseconds": 608389,
+      "kind": "code_change",
+      "text": "Now the mask is held in a variable that can be modified, and the original mask is passed into the function as the starting point.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 589150,
+          "endMilliseconds": 608389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-mask-before-printing"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 608389,
+      "endMilliseconds": 618790,
+      "kind": "reason",
+      "text": "The key benefit is that this way the set of operations a third-party function performs can be changed without editing that function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 608389,
+          "endMilliseconds": 618790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#configure-a-mask-before-printing"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 618790,
+      "endMilliseconds": 650320,
+      "kind": "scope_boundary",
+      "text": "It would be convenient to be able to take one mask, user-supplied or default, and remove from it the fields that a different mask declares, where that other mask may come from anywhere.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 618790,
+          "endMilliseconds": 650320
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#subtract-forbidden-fields"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 643200,
+      "endMilliseconds": 662910,
+      "kind": "explanation",
+      "text": "A second mask, a NotTo mask configured elsewhere, lists the fields that must not be printed, while the first mask says that first name and last name should be printed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 643200,
+          "endMilliseconds": 662910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#subtract-forbidden-fields"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 662910,
+      "endMilliseconds": 676190,
+      "kind": "test_result",
+      "text": "Combining the two masks means only the last name is printed, because it is the only field that is both requested for printing and forbidden by the second mask.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 662910,
+          "endMilliseconds": 676190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#subtract-forbidden-fields"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 676190,
+      "endMilliseconds": 697350,
+      "kind": "explanation",
+      "text": "The forbidding mask is applied on top of the printing mask and removes the print configuration for the fields it lists, so a field that is explicitly forbidden is never printed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 676190,
+          "endMilliseconds": 697350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#subtract-forbidden-fields"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 697350,
+      "endMilliseconds": 707110,
+      "kind": "edge_case",
+      "text": "If the forbidding mask names a field the printing mask never configured, the operation simply does nothing, which is the currently chosen behaviour.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 697350,
+          "endMilliseconds": 707110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#subtract-forbidden-fields"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 707110,
+      "endMilliseconds": 718399,
+      "kind": "code_change",
+      "text": "Because the two masks are still kept separately for now, a function has to be written to perform this removal operation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 707110,
+          "endMilliseconds": 718399
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#subtract-forbidden-fields"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 710839,
+      "endMilliseconds": 726230,
+      "kind": "fact",
+      "text": "The Without function takes two masks: the first is the original mask and the second is the mask whose settings must be removed from the first wherever they are present.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 710839,
+          "endMilliseconds": 726230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#subtract-forbidden-fields"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 728160,
+      "endMilliseconds": 737750,
+      "kind": "code_change",
+      "text": "The most primitive implementation is to go through every field and, if it is set in the second mask, clear it in the first.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 728160,
+          "endMilliseconds": 737750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#subtract-forbidden-fields"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 737750,
+      "endMilliseconds": 748389,
+      "kind": "reason",
+      "text": "Enumerating every field in the function is bad because it duplicates the list of fields that already exists in the mask definition.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 737750,
+          "endMilliseconds": 748389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#subtract-forbidden-fields"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 748389,
+      "endMilliseconds": 765870,
+      "kind": "reason",
+      "text": "Adding a new field then requires an extra line in this function in addition to changing the mask, which is easy to forget and introduces a bug.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 748389,
+          "endMilliseconds": 765870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#subtract-forbidden-fields"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 765870,
+      "endMilliseconds": 784839,
+      "kind": "reason",
+      "text": "To avoid this maintenance trap, the mask should be updated through existing functions that already know about the fields instead of a hand-written per-field list.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 765870,
+          "endMilliseconds": 784839
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#subtract-forbidden-fields"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 775880,
+      "endMilliseconds": 800509,
+      "kind": "fact",
+      "text": "An argument written with a colon after the parameter name is passed by name rather than by position, which means the order of the arguments can be swapped freely.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 775880,
+          "endMilliseconds": 800509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#subtract-forbidden-fields"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 814230,
+      "endMilliseconds": 820790,
+      "kind": "test_result",
+      "text": "When everything is done correctly only the first name remains in the printed result, and a field added to the printing mask, such as the group, is still not printed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 814230,
+          "endMilliseconds": 820790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#subtract-forbidden-fields"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 820790,
+      "endMilliseconds": 843829,
+      "kind": "explanation",
+      "text": "The group stays unprinted because it appears both in the list of fields to print and in the list of fields not to print, so it has to be removed from the second list to be printed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 820790,
+          "endMilliseconds": 843829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#subtract-forbidden-fields"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 843839,
+      "endMilliseconds": 852600,
+      "kind": "fact",
+      "text": "The same kind of removal operation exists for hash sets, where it is spelled differently, and for bit sets as bitwise operations.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 843839,
+          "endMilliseconds": 852600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#subtract-forbidden-fields"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 850120,
+      "endMilliseconds": 864069,
+      "kind": "fact",
+      "text": "C# has a bitwise AND operator whose result on flags is equivalent to the Without-style field-mask operation, which is what makes bit-mask field comparison possible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 850120,
+          "endMilliseconds": 864069
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#subtract-forbidden-fields"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 864069,
+      "endMilliseconds": 885110,
+      "kind": "explanation",
+      "text": "A field mask can be used to build a comparison function that reports whether two records are equal only for the fields named by the build mask, not for all fields.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 864069,
+          "endMilliseconds": 885110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compute-and-reuse-a-difference-mask"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 885110,
+      "endMilliseconds": 911310,
+      "kind": "code_change",
+      "text": "The result mask is created with all flags false and each flag is flipped to true only when the corresponding field of the first record differs from the field of the second, so the mask encodes exactly which fields differ.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 885110,
+          "endMilliseconds": 911310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compute-and-reuse-a-difference-mask"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 911310,
+      "endMilliseconds": 927199,
+      "kind": "fact",
+      "text": "A function that computes the per-field difference between two objects is conventionally named diff, which is the name the lecturer uses in his own code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 911310,
+          "endMilliseconds": 927199
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compute-and-reuse-a-difference-mask"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 927199,
+      "endMilliseconds": 937550,
+      "kind": "fact",
+      "text": "The diff routine walks the fields named by the mask rather than all fields, so only the masked fields of the two compared records are examined.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 927199,
+          "endMilliseconds": 937550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compute-and-reuse-a-difference-mask"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 937550,
+      "endMilliseconds": 956590,
+      "kind": "code_change",
+      "text": "In the demo the mask-condition check is removed and only the per-field comparison is kept, which simply reduces the number of checks performed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 937550,
+          "endMilliseconds": 956590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compute-and-reuse-a-difference-mask"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 956590,
+      "endMilliseconds": 976269,
+      "kind": "explanation",
+      "text": "Once the difference between two objects is computed into a variable, later questions such as whether the first name matches can be answered from that stored result instead of re-comparing the fields.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 956590,
+          "endMilliseconds": 976269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compute-and-reuse-a-difference-mask"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 976269,
+      "endMilliseconds": 995670,
+      "kind": "fact",
+      "text": "For strings the inequality operator compares character by character, so differences in diacritics such as accented letters or hats make otherwise similar names compare as different.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 976269,
+          "endMilliseconds": 995670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compute-and-reuse-a-difference-mask"
+      }
+    },
+    {
+      "id": "TP-068",
+      "startMilliseconds": 995670,
+      "endMilliseconds": 1001440,
+      "kind": "edge_case",
+      "text": "To ignore diacritics or hats when comparing names, extra comparison rules must be defined explicitly rather than relying on the plain inequality operator.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 995670,
+          "endMilliseconds": 1001440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compute-and-reuse-a-difference-mask"
+      }
+    },
+    {
+      "id": "TP-069",
+      "startMilliseconds": 1001440,
+      "endMilliseconds": 1011690,
+      "kind": "explanation",
+      "text": "Custom rules such as ignoring diacritics can be encapsulated inside the diff function so that one central place defines how each field must be compared.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1001440,
+          "endMilliseconds": 1011690
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compute-and-reuse-a-difference-mask"
+      }
+    },
+    {
+      "id": "TP-070",
+      "startMilliseconds": 1011690,
+      "endMilliseconds": 1025570,
+      "kind": "reason",
+      "text": "A different inlined comparison elsewhere would still not ignore diacritics, so the same comparison method should be reused at every place where those fields are checked.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1011690,
+          "endMilliseconds": 1025570
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compute-and-reuse-a-difference-mask"
+      }
+    },
+    {
+      "id": "TP-071",
+      "startMilliseconds": 1025570,
+      "endMilliseconds": 1036170,
+      "kind": "reason",
+      "text": "Extracting the comparison into its own function avoids duplicating that operation across the code base.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1025570,
+          "endMilliseconds": 1036170
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compute-and-reuse-a-difference-mask"
+      }
+    },
+    {
+      "id": "TP-072",
+      "startMilliseconds": 1036170,
+      "endMilliseconds": 1044430,
+      "kind": "code_change",
+      "text": "A dedicated helper such as CompareFirstName(a, b) would be called from the check site instead of embedding the comparison inline.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1036170,
+          "endMilliseconds": 1044430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compute-and-reuse-a-difference-mask"
+      }
+    },
+    {
+      "id": "TP-073",
+      "startMilliseconds": 1044430,
+      "endMilliseconds": 1057390,
+      "kind": "code_change",
+      "text": "With the comparison extracted, the call site reduces to a short check that delegates to the helper.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1044430,
+          "endMilliseconds": 1057390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compute-and-reuse-a-difference-mask"
+      }
+    },
+    {
+      "id": "TP-074",
+      "startMilliseconds": 1057390,
+      "endMilliseconds": 1066320,
+      "kind": "reason",
+      "text": "The advantage of the mask approach is that the entire difference between two objects is obtained at once, without checking each field separately.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1057390,
+          "endMilliseconds": 1066320
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compute-and-reuse-a-difference-mask"
+      }
+    },
+    {
+      "id": "TP-075",
+      "startMilliseconds": 1059360,
+      "endMilliseconds": 1083200,
+      "kind": "reason",
+      "text": "The mask approach yields the whole difference between two objects at once and lets chosen fields be ignored, because the per-field comparison results are already available instead of being recomputed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1059360,
+          "endMilliseconds": 1083200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compute-and-reuse-a-difference-mask"
+      }
+    },
+    {
+      "id": "TP-076",
+      "startMilliseconds": 1083200,
+      "endMilliseconds": 1101010,
+      "kind": "explanation",
+      "text": "Because the mask result already contains the outcome of each field comparison, callers reuse those stored results rather than performing name and surname checks again.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1083200,
+          "endMilliseconds": 1101010
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#compute-and-reuse-a-difference-mask"
+      }
+    },
+    {
+      "id": "TP-077",
+      "startMilliseconds": 1101010,
+      "endMilliseconds": 1115920,
+      "kind": "fact",
+      "text": "A concrete use case compares two Word schedule documents: the first schedule valid until the ninth and the new schedule with changes introduced after it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1101010,
+          "endMilliseconds": 1115920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#schedule-comparisons-and-selective-equality"
+      }
+    },
+    {
+      "id": "TP-078",
+      "startMilliseconds": 1115920,
+      "endMilliseconds": 1127040,
+      "kind": "explanation",
+      "text": "The code reads the first document and then the second and, for each cell, runs the diff function to check whether the subject in that cell changed compared with the same day and time before the change.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1115920,
+          "endMilliseconds": 1127040
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#schedule-comparisons-and-selective-equality"
+      }
+    },
+    {
+      "id": "TP-079",
+      "startMilliseconds": 1124600,
+      "endMilliseconds": 1136710,
+      "kind": "explanation",
+      "text": "The comparison function is driven by a mask that selects which fields take part in the check, and the mask can be configured so that all listed fields must differ between two objects.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1124600,
+          "endMilliseconds": 1136710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#schedule-comparisons-and-selective-equality"
+      }
+    },
+    {
+      "id": "TP-080",
+      "startMilliseconds": 1127040,
+      "endMilliseconds": 1132600,
+      "kind": "reason",
+      "text": "After the diff reports on all compared fields, the caller states the condition it needs about which fields must differ, which is what decides whether the schedule cell changed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1127040,
+          "endMilliseconds": 1132600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#schedule-comparisons-and-selective-equality"
+      }
+    },
+    {
+      "id": "TP-081",
+      "startMilliseconds": 1136720,
+      "endMilliseconds": 1156669,
+      "kind": "explanation",
+      "text": "A practical use of the mask is merging items into one cell: when several groups share the same classroom, weekday and time, the mask can check those three fields and ignore the group field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1136720,
+          "endMilliseconds": 1156669
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#schedule-comparisons-and-selective-equality"
+      }
+    },
+    {
+      "id": "TP-082",
+      "startMilliseconds": 1156679,
+      "endMilliseconds": 1165149,
+      "kind": "fact",
+      "text": "Deleting a field from the mask parameter leaves that field out of the comparison criteria while the rest of the checks still run.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1156679,
+          "endMilliseconds": 1165149
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#schedule-comparisons-and-selective-equality"
+      }
+    },
+    {
+      "id": "TP-083",
+      "startMilliseconds": 1166880,
+      "endMilliseconds": 1183830,
+      "kind": "explanation",
+      "text": "Even though the helper still receives the full mask and performs every check, the mask tells it which checks are relevant, so the ignored fields are skipped regardless.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1166880,
+          "endMilliseconds": 1183830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#schedule-comparisons-and-selective-equality"
+      }
+    },
+    {
+      "id": "TP-084",
+      "startMilliseconds": 1187960,
+      "endMilliseconds": 1194270,
+      "kind": "explanation",
+      "text": "The masked check produces the meaningful message that two records with equal surnames but differing other fields may be siblings.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1187960,
+          "endMilliseconds": 1194270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#any-and-all-queries-over-a-difference"
+      }
+    },
+    {
+      "id": "TP-085",
+      "startMilliseconds": 1194280,
+      "endMilliseconds": 1205039,
+      "kind": "explanation",
+      "text": "The set of fields to compare can itself be stored in a variable, so the same function serves many different comparison rules.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1194280,
+          "endMilliseconds": 1205039
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#any-and-all-queries-over-a-difference"
+      }
+    },
+    {
+      "id": "TP-086",
+      "startMilliseconds": 1197960,
+      "endMilliseconds": 1209870,
+      "kind": "explanation",
+      "text": "Naming the list of fields to check as a variable lets the caller name the specific fields in parentheses at the call site instead of hard-coding them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1197960,
+          "endMilliseconds": 1209870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#any-and-all-queries-over-a-difference"
+      }
+    },
+    {
+      "id": "TP-087",
+      "startMilliseconds": 1209880,
+      "endMilliseconds": 1226470,
+      "kind": "fact",
+      "text": "The field mask is declared as a CheckMask/FieldMask value listing which fields must differ, for example first name and last name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1209880,
+          "endMilliseconds": 1226470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#any-and-all-queries-over-a-difference"
+      }
+    },
+    {
+      "id": "TP-088",
+      "startMilliseconds": 1226480,
+      "endMilliseconds": 1230990,
+      "kind": "explanation",
+      "text": "The same without-style helper can query the mask to see whether at least one of the listed fields is present.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1226480,
+          "endMilliseconds": 1230990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#any-and-all-queries-over-a-difference"
+      }
+    },
+    {
+      "id": "TP-089",
+      "startMilliseconds": 1231000,
+      "endMilliseconds": 1237190,
+      "kind": "explanation",
+      "text": "If the requirement is that all fields of the mask differ, an additional helper that operates purely on masks can express that check.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1231000,
+          "endMilliseconds": 1237190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#any-and-all-queries-over-a-difference"
+      }
+    },
+    {
+      "id": "TP-090",
+      "startMilliseconds": 1237200,
+      "endMilliseconds": 1258830,
+      "kind": "explanation",
+      "text": "Such a mask helper takes the first mask and a required flag mask and reports an error when a field that must be checked is not set in the mask.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1237200,
+          "endMilliseconds": 1258830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#any-and-all-queries-over-a-difference"
+      }
+    },
+    {
+      "id": "TP-091",
+      "startMilliseconds": 1258840,
+      "endMilliseconds": 1274360,
+      "kind": "scope_boundary",
+      "text": "The repeated per-field mask checks are knowingly duplicated for now and will be collapsed into a single operation shown later.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1258840,
+          "endMilliseconds": 1274360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#any-and-all-queries-over-a-difference"
+      }
+    },
+    {
+      "id": "TP-092",
+      "startMilliseconds": 1274360,
+      "endMilliseconds": 1283909,
+      "kind": "code_change",
+      "text": "The fields being verified are extracted into a variable and turned into data rather than being written out inline in the condition.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1274360,
+          "endMilliseconds": 1283909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#any-and-all-queries-over-a-difference"
+      }
+    },
+    {
+      "id": "TP-093",
+      "startMilliseconds": 1283919,
+      "endMilliseconds": 1295549,
+      "kind": "edge_case",
+      "text": "The message covers the case where first or last name differs, so if both first and last name happen to be equal the duplicate is not detected by this check.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1283919,
+          "endMilliseconds": 1295549
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#any-and-all-queries-over-a-difference"
+      }
+    },
+    {
+      "id": "TP-094",
+      "startMilliseconds": 1295559,
+      "endMilliseconds": 1300710,
+      "kind": "reason",
+      "text": "Moving the checked fields into a variable is what makes the comparison rules data-driven and therefore the starting point for the later optimization.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1295559,
+          "endMilliseconds": 1300710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#any-and-all-queries-over-a-difference"
+      }
+    },
+    {
+      "id": "TP-095",
+      "startMilliseconds": 1300720,
+      "endMilliseconds": 1328630,
+      "kind": "scope_boundary",
+      "text": "The next approach shown does not rely on masks and also works with plain booleans or a per-field value from another class, and that variant may be demonstrated later.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1300720,
+          "endMilliseconds": 1328630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#any-and-all-queries-over-a-difference"
+      }
+    },
+    {
+      "id": "TP-096",
+      "startMilliseconds": 1335840,
+      "endMilliseconds": 1343590,
+      "kind": "fact",
+      "text": "Every comparable field has a number that serves as its field index, so fields can be addressed positionally rather than by name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1335840,
+          "endMilliseconds": 1343590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-each-field-an-index"
+      }
+    },
+    {
+      "id": "TP-097",
+      "startMilliseconds": 1335840,
+      "endMilliseconds": 1343600,
+      "kind": "fact",
+      "text": "Each comparable field is assigned a number that acts as its field index identifier, which is the basis for iterating fields generically.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1335840,
+          "endMilliseconds": 1343600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-each-field-an-index"
+      }
+    },
+    {
+      "id": "TP-098",
+      "startMilliseconds": 1345960,
+      "endMilliseconds": 1357950,
+      "kind": "fact",
+      "text": "A field-mask enum lists every field together with its numeric value or current position, giving a name to each index.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1345960,
+          "endMilliseconds": 1357950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-each-field-an-index"
+      }
+    },
+    {
+      "id": "TP-099",
+      "startMilliseconds": 1360430,
+      "endMilliseconds": 1367149,
+      "kind": "reason",
+      "text": "A count of the enum fields is needed so the comparison loop knows how many iterations to perform.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1360430,
+          "endMilliseconds": 1367149
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-each-field-an-index"
+      }
+    },
+    {
+      "id": "TP-100",
+      "startMilliseconds": 1367159,
+      "endMilliseconds": 1383310,
+      "kind": "explanation",
+      "text": "The design requires a helper that reads or writes a boolean by index, taking the field-mask enum entry that identifies the field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1367159,
+          "endMilliseconds": 1383310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-each-field-an-index"
+      }
+    },
+    {
+      "id": "TP-101",
+      "startMilliseconds": 1383320,
+      "endMilliseconds": 1389310,
+      "kind": "explanation",
+      "text": "The field mask behaves like a bool per field with no meaningful order, recording only whether a given field is present in the mask.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1383320,
+          "endMilliseconds": 1389310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-each-field-an-index"
+      }
+    },
+    {
+      "id": "TP-102",
+      "startMilliseconds": 1389320,
+      "endMilliseconds": 1395269,
+      "kind": "fact",
+      "text": "Each field-mask enum entry identifies exactly one field, which is what makes generic indexed access possible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1389320,
+          "endMilliseconds": 1395269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-each-field-an-index"
+      }
+    },
+    {
+      "id": "TP-103",
+      "startMilliseconds": 1395279,
+      "endMilliseconds": 1411400,
+      "kind": "code_change",
+      "text": "The remaining work is to resolve which field an identifier refers to and write that mapping logic once, binding the enum identifier to the concrete field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1395279,
+          "endMilliseconds": 1411400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-each-field-an-index"
+      }
+    },
+    {
+      "id": "TP-104",
+      "startMilliseconds": 1404720,
+      "endMilliseconds": 1409510,
+      "kind": "fact",
+      "text": "The binding between a name identifier and its concrete field is established exactly once inside this function and is not repeated in other functions.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1404720,
+          "endMilliseconds": 1409510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-each-field-an-index"
+      }
+    },
+    {
+      "id": "TP-105",
+      "startMilliseconds": 1422720,
+      "endMilliseconds": 1437679,
+      "kind": "explanation",
+      "text": "A contract means the restrictions on input data and the promises about output data, and types are part of that contract.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1422720,
+          "endMilliseconds": 1437679
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enforce-the-field-index-contract"
+      }
+    },
+    {
+      "id": "TP-106",
+      "startMilliseconds": 1437680,
+      "endMilliseconds": 1462350,
+      "kind": "edge_case",
+      "text": "C# allows passing an arbitrary number such as 10 where an enum member is expected, so the type system alone does not guarantee a legal value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1437680,
+          "endMilliseconds": 1462350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enforce-the-field-index-contract"
+      }
+    },
+    {
+      "id": "TP-107",
+      "startMilliseconds": 1462351,
+      "endMilliseconds": 1476870,
+      "kind": "reason",
+      "text": "The receiving function must check that the incoming value is one of the allowed ones so the program immediately reports an error on illegal input.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1462351,
+          "endMilliseconds": 1476870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enforce-the-field-index-contract"
+      }
+    },
+    {
+      "id": "TP-108",
+      "startMilliseconds": 1474159,
+      "endMilliseconds": 1481839,
+      "kind": "reason",
+      "text": "The program should immediately detect an illegal argument and report an error, done either with an assert or with an exception.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1474159,
+          "endMilliseconds": 1481839
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enforce-the-field-index-contract"
+      }
+    },
+    {
+      "id": "TP-109",
+      "startMilliseconds": 1476871,
+      "endMilliseconds": 1481840,
+      "kind": "fact",
+      "text": "That check can be written either as an assert or as an exception, which are the two mechanisms for detecting a wrong incoming value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1476871,
+          "endMilliseconds": 1481840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enforce-the-field-index-contract"
+      }
+    },
+    {
+      "id": "TP-110",
+      "startMilliseconds": 1481840,
+      "endMilliseconds": 1497830,
+      "kind": "fact",
+      "text": "An assert check runs only in the program compiled during development and is removed from the official build handed to the user.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1481840,
+          "endMilliseconds": 1497830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enforce-the-field-index-contract"
+      }
+    },
+    {
+      "id": "TP-111",
+      "startMilliseconds": 1497831,
+      "endMilliseconds": 1513389,
+      "kind": "explanation",
+      "text": "Asserts exist to catch development mistakes such as passing 10 into a function that expects a named field, and those checks vanish in the compiled production program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1497831,
+          "endMilliseconds": 1513389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enforce-the-field-index-contract"
+      }
+    },
+    {
+      "id": "TP-112",
+      "startMilliseconds": 1513390,
+      "endMilliseconds": 1526429,
+      "kind": "fact",
+      "text": "A production build contains no assert checks at all, which only exist in a debug build.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1513390,
+          "endMilliseconds": 1526429
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enforce-the-field-index-contract"
+      }
+    },
+    {
+      "id": "TP-113",
+      "startMilliseconds": 1526430,
+      "endMilliseconds": 1539388,
+      "kind": "fact",
+      "text": "An exception remains in the full build and does not crash the program immediately because it can be caught and handled.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1526430,
+          "endMilliseconds": 1539388
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enforce-the-field-index-contract"
+      }
+    },
+    {
+      "id": "TP-114",
+      "startMilliseconds": 1539389,
+      "endMilliseconds": 1553480,
+      "kind": "fact",
+      "text": "If none of the explicit cases matches, control falls through to the default branch, and the lesson will show both the assert and the exception variant.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1539389,
+          "endMilliseconds": 1553480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enforce-the-field-index-contract"
+      }
+    },
+    {
+      "id": "TP-115",
+      "startMilliseconds": 1545200,
+      "endMilliseconds": 1558590,
+      "kind": "fact",
+      "text": "The default branch handles every remaining case and can throw a new ArgumentException or ArgumentOutOfRangeException.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1545200,
+          "endMilliseconds": 1558590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enforce-the-field-index-contract"
+      }
+    },
+    {
+      "id": "TP-116",
+      "startMilliseconds": 1558591,
+      "endMilliseconds": 1565239,
+      "kind": "code_change",
+      "text": "The exception is constructed correctly with nameof of the field as the parameter name and a message such as invalid value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1558591,
+          "endMilliseconds": 1565239
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enforce-the-field-index-contract"
+      }
+    },
+    {
+      "id": "TP-117",
+      "startMilliseconds": 1565240,
+      "endMilliseconds": 1578189,
+      "kind": "explanation",
+      "text": "The standard choices are ArgumentException and ArgumentOutOfRangeException, with the out-of-range variant likely the more precise one here, though the lesson is not certain.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1565240,
+          "endMilliseconds": 1578189
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enforce-the-field-index-contract"
+      }
+    },
+    {
+      "id": "TP-118",
+      "startMilliseconds": 1578190,
+      "endMilliseconds": 1596119,
+      "kind": "code_change",
+      "text": "The alternative is Debug.Assert, into which the condition is written and, if desired, a message for when the condition fails.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1578190,
+          "endMilliseconds": 1596119
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enforce-the-field-index-contract"
+      }
+    },
+    {
+      "id": "TP-119",
+      "startMilliseconds": 1596120,
+      "endMilliseconds": 1598398,
+      "kind": "explanation",
+      "text": "Debug.Assert.Fail performs an unconditional assert that is always violated and is used together with the message you write.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1596120,
+          "endMilliseconds": 1598398
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enforce-the-field-index-contract"
+      }
+    },
+    {
+      "id": "TP-120",
+      "startMilliseconds": 1598399,
+      "endMilliseconds": 1617239,
+      "kind": "reason",
+      "text": "After a Debug.Assert or Debug.Assert.Fail call a return value must be supplied, because in a production build the check is stripped out.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1598399,
+          "endMilliseconds": 1617239
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enforce-the-field-index-contract"
+      }
+    },
+    {
+      "id": "TP-121",
+      "startMilliseconds": 1614559,
+      "endMilliseconds": 1617239,
+      "kind": "edge_case",
+      "text": "Even if the branch was verified unreachable during development, in theory it can still execute in the shipped program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1614559,
+          "endMilliseconds": 1617239
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enforce-the-field-index-contract"
+      }
+    },
+    {
+      "id": "TP-122",
+      "startMilliseconds": 1617240,
+      "endMilliseconds": 1620240,
+      "kind": "edge_case",
+      "text": "Even if the branch was verified unreachable during development, in theory it can still execute in the shipped program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1617240,
+          "endMilliseconds": 1620240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enforce-the-field-index-contract"
+      }
+    },
+    {
+      "id": "TP-123",
+      "startMilliseconds": 1617240,
+      "endMilliseconds": 1626149,
+      "kind": "reason",
+      "text": "Passing your own tests does not prove a branch is unreachable, because a use case of the function that you did not anticipate can still trigger it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1617240,
+          "endMilliseconds": 1626149
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enforce-the-field-index-contract"
+      }
+    },
+    {
+      "id": "TP-124",
+      "startMilliseconds": 1626150,
+      "endMilliseconds": 1642029,
+      "kind": "explanation",
+      "text": "Both variants can be combined, since the assert crashes the program instantly during development while the exception still crashes it in the shipped build, so the fix keeps the ArgumentException.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1626150,
+          "endMilliseconds": 1642029
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#enforce-the-field-index-contract"
+      }
+    },
+    {
+      "id": "TP-125",
+      "startMilliseconds": 1642039,
+      "endMilliseconds": 1647359,
+      "kind": "code_change",
+      "text": "With the getter that reads the value finished, the next step is to add a setter that assigns the value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1642039,
+          "endMilliseconds": 1647359
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-indexed-writing"
+      }
+    },
+    {
+      "id": "TP-126",
+      "startMilliseconds": 1647360,
+      "endMilliseconds": 1648119,
+      "kind": "scope_boundary",
+      "text": "In C# a getter could return a reference to the field so a single method would change the value, but that advanced syntax is out of scope for this lesson.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1647360,
+          "endMilliseconds": 1648119
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-indexed-writing"
+      }
+    },
+    {
+      "id": "TP-127",
+      "startMilliseconds": 1648120,
+      "endMilliseconds": 1678549,
+      "kind": "fact",
+      "text": "The setter assigns the given value and returns nothing, not a boolean or the value itself.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1648120,
+          "endMilliseconds": 1678549
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-indexed-writing"
+      }
+    },
+    {
+      "id": "TP-128",
+      "startMilliseconds": 1678559,
+      "endMilliseconds": 1687190,
+      "kind": "code_change",
+      "text": "The boolean return type is removed from the setter because a setter sets the value and does not hand it back.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1678559,
+          "endMilliseconds": 1687190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-indexed-writing"
+      }
+    },
+    {
+      "id": "TP-129",
+      "startMilliseconds": 1687200,
+      "endMilliseconds": 1694600,
+      "kind": "code_change",
+      "text": "The call site that checked the mask and assigned the other value can now be reworked using the new setter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1687200,
+          "endMilliseconds": 1694600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-checks-with-loops"
+      }
+    },
+    {
+      "id": "TP-130",
+      "startMilliseconds": 1687200,
+      "endMilliseconds": 1696790,
+      "kind": "code_change",
+      "text": "The hand-written per-field mask checks are rewritten as a loop over all fields, which removes duplicated code and makes handling a new field a one-line change.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1687200,
+          "endMilliseconds": 1696790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-checks-with-loops"
+      }
+    },
+    {
+      "id": "TP-131",
+      "startMilliseconds": 1696790,
+      "endMilliseconds": 1712360,
+      "kind": "reason",
+      "text": "The loop keeps a field index that starts at the first field, and storing that first-field index in a separate constant keeps the iteration correct even if the field order changes later.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1696790,
+          "endMilliseconds": 1712360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-checks-with-loops"
+      }
+    },
+    {
+      "id": "TP-132",
+      "startMilliseconds": 1712360,
+      "endMilliseconds": 1729840,
+      "kind": "explanation",
+      "text": "The loop needs no last-field marker because the field count is already known; once the current index equals the count the iteration has covered every field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1712360,
+          "endMilliseconds": 1729840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-checks-with-loops"
+      }
+    },
+    {
+      "id": "TP-133",
+      "startMilliseconds": 1734200,
+      "endMilliseconds": 1744320,
+      "kind": "reason",
+      "text": "While the index is still below the field count a usable field index remains stored, so the loop can read the next flag with the index getter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1734200,
+          "endMilliseconds": 1744320
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-checks-with-loops"
+      }
+    },
+    {
+      "id": "TP-134",
+      "startMilliseconds": 1744320,
+      "endMilliseconds": 1762279,
+      "kind": "code_change",
+      "text": "Inside the loop the flag for the current field is read from one mask and written into the other mask, exactly what the previous per-field checks did by hand.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1744320,
+          "endMilliseconds": 1762279
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1753600,
+          "endMilliseconds": 1762279
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-checks-with-loops"
+      }
+    },
+    {
+      "id": "TP-135",
+      "startMilliseconds": 1762279,
+      "endMilliseconds": 1765380,
+      "kind": "explanation",
+      "text": "The loop could be tightened further by using an iterator so the first field does not have to be repeated as a separate special case.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1762279,
+          "endMilliseconds": 1765380
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-checks-with-loops"
+      }
+    },
+    {
+      "id": "TP-136",
+      "startMilliseconds": 1767280,
+      "endMilliseconds": 1773070,
+      "kind": "scope_boundary",
+      "text": "The iterator variant is deliberately not written here because iterators are a separate language feature and are left out of this lesson.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1767280,
+          "endMilliseconds": 1773070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-checks-with-loops"
+      }
+    },
+    {
+      "id": "TP-137",
+      "startMilliseconds": 1773080,
+      "endMilliseconds": 1778190,
+      "kind": "reason",
+      "text": "The delete direction needs the same loop, but there the second mask is created inside the method, so it must either be returned or passed by reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1773080,
+          "endMilliseconds": 1778190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-checks-with-loops"
+      }
+    },
+    {
+      "id": "TP-138",
+      "startMilliseconds": 1778190,
+      "endMilliseconds": 1785690,
+      "kind": "reason",
+      "text": "Returning the new mask is chosen because it keeps the method simpler and avoids depending on the C#-specific with-expression feature.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1778190,
+          "endMilliseconds": 1785690
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-checks-with-loops"
+      }
+    },
+    {
+      "id": "TP-139",
+      "startMilliseconds": 1787000,
+      "endMilliseconds": 1794510,
+      "kind": "code_change",
+      "text": "Each iteration produces a mask whose flag at the current field index is set to true or false, which is the equivalent of the with-expression syntax.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1787000,
+          "endMilliseconds": 1794510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-checks-with-loops"
+      }
+    },
+    {
+      "id": "TP-140",
+      "startMilliseconds": 1795080,
+      "endMilliseconds": 1801480,
+      "kind": "explanation",
+      "text": "The helper call can use named arguments so a reader immediately sees which mask and which field index each argument refers to.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1795080,
+          "endMilliseconds": 1801480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-checks-with-loops"
+      }
+    },
+    {
+      "id": "TP-141",
+      "startMilliseconds": 1801430,
+      "endMilliseconds": 1806990,
+      "kind": "explanation",
+      "text": "Clearing a single flag in a mask is the same with-expression call with that field set to false.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1801430,
+          "endMilliseconds": 1806990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-checks-with-loops"
+      }
+    },
+    {
+      "id": "TP-142",
+      "startMilliseconds": 1806990,
+      "endMilliseconds": 1812470,
+      "kind": "edge_case",
+      "text": "The with-expression form cannot be used here because this code sits inside a function rather than in an object initializer.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1806990,
+          "endMilliseconds": 1812470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-checks-with-loops"
+      }
+    },
+    {
+      "id": "TP-143",
+      "startMilliseconds": 1812480,
+      "endMilliseconds": 1816679,
+      "kind": "scope_boundary",
+      "text": "Iterating over fields this way is a general pattern the author also uses outside masks and will demonstrate in later material.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1812480,
+          "endMilliseconds": 1816679
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-checks-with-loops"
+      }
+    },
+    {
+      "id": "TP-144",
+      "startMilliseconds": 1824720,
+      "endMilliseconds": 1829639,
+      "kind": "scope_boundary",
+      "text": "Iterating over fields this way is a general pattern the author also uses outside masks and will demonstrate in later material.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1824720,
+          "endMilliseconds": 1829639
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-repeated-checks-with-loops"
+      }
+    },
+    {
+      "id": "TP-145",
+      "startMilliseconds": 1831679,
+      "endMilliseconds": 1842740,
+      "kind": "explanation",
+      "text": "A common case for this pattern is a class whose fields all share one type and are named by an enum with one member per field, so a single loop can process them all.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1831679,
+          "endMilliseconds": 1842740
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-pattern-extends-beyond-masks"
+      }
+    },
+    {
+      "id": "TP-146",
+      "startMilliseconds": 1842740,
+      "endMilliseconds": 1856200,
+      "kind": "explanation",
+      "text": "When the fields share one type and a single value is supplied per field, that type can be any type, and this construct is called a generic.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1842740,
+          "endMilliseconds": 1856200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-pattern-extends-beyond-masks"
+      }
+    },
+    {
+      "id": "TP-147",
+      "startMilliseconds": 1858200,
+      "endMilliseconds": 1869800,
+      "kind": "scope_boundary",
+      "text": "Generics and looping over fields are not specific to masks, and the loop-over-fields example will be shown in other contexts later.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1858200,
+          "endMilliseconds": 1869800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-pattern-extends-beyond-masks"
+      }
+    },
+    {
+      "id": "TP-148",
+      "startMilliseconds": 1869800,
+      "endMilliseconds": 1881070,
+      "kind": "explanation",
+      "text": "The goal for the masks is to store all the boolean flags as bits of one number, which can be achieved through getters and setters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1869800,
+          "endMilliseconds": 1881070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#properties-hide-a-different-representation"
+      }
+    },
+    {
+      "id": "TP-149",
+      "startMilliseconds": 1881070,
+      "endMilliseconds": 1894200,
+      "kind": "explanation",
+      "text": "Java would spell these accessors as getFirstName and setFirstName methods, while the C# syntax is simplified into a single property with get and set.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1881070,
+          "endMilliseconds": 1894200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#properties-hide-a-different-representation"
+      }
+    },
+    {
+      "id": "TP-150",
+      "startMilliseconds": 1894200,
+      "endMilliseconds": 1902039,
+      "kind": "fact",
+      "text": "In C# one accessor holds both the get function and the set function, and the setter receives the assigned value as a parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1894200,
+          "endMilliseconds": 1902039
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#properties-hide-a-different-representation"
+      }
+    },
+    {
+      "id": "TP-151",
+      "startMilliseconds": 1894200,
+      "endMilliseconds": 1904900,
+      "kind": "reason",
+      "text": "The value passed to the setter is a boolean in this case because the backing field is a bool, matching what a Java void setter would receive.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1894200,
+          "endMilliseconds": 1904900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#properties-hide-a-different-representation"
+      }
+    },
+    {
+      "id": "TP-152",
+      "startMilliseconds": 1904900,
+      "endMilliseconds": 1914300,
+      "kind": "fact",
+      "text": "Using the property means plain assignment of the field rather than a call to a setter method, so the accessor runs implicitly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1904900,
+          "endMilliseconds": 1914300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#properties-hide-a-different-representation"
+      }
+    },
+    {
+      "id": "TP-153",
+      "startMilliseconds": 1914300,
+      "endMilliseconds": 1921230,
+      "kind": "explanation",
+      "text": "Java requires an explicit get or set call, whereas in C# assignment of the property converts itself into the right accessor call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1914300,
+          "endMilliseconds": 1921230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#properties-hide-a-different-representation"
+      }
+    },
+    {
+      "id": "TP-154",
+      "startMilliseconds": 1921230,
+      "endMilliseconds": 1932000,
+      "kind": "explanation",
+      "text": "Writing or reading the field becomes the corresponding get or set call, so the setter logic defines the actual behaviour of the property.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1921230,
+          "endMilliseconds": 1932000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#properties-hide-a-different-representation"
+      }
+    },
+    {
+      "id": "TP-155",
+      "startMilliseconds": 1932000,
+      "endMilliseconds": 1941260,
+      "kind": "explanation",
+      "text": "The setter stores the flags in one value field as a bit mask, where a set first bit means FirstName is true and an unset bit means it is false.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1932000,
+          "endMilliseconds": 1941260
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#properties-hide-a-different-representation"
+      }
+    },
+    {
+      "id": "TP-156",
+      "startMilliseconds": 1941260,
+      "endMilliseconds": 1948400,
+      "kind": "explanation",
+      "text": "Each successive bit encodes the next field, so the second bit stands for LastName and the third for the following boolean field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1941260,
+          "endMilliseconds": 1948400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#properties-hide-a-different-representation"
+      }
+    },
+    {
+      "id": "TP-157",
+      "startMilliseconds": 1948400,
+      "endMilliseconds": 1951120,
+      "kind": "fact",
+      "text": "The index of a field's bit inside the mask is available in code, which is what lets one loop address every flag generically.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1948400,
+          "endMilliseconds": 1951120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#properties-hide-a-different-representation"
+      }
+    },
+    {
+      "id": "TP-158",
+      "startMilliseconds": 1963240,
+      "endMilliseconds": 1969900,
+      "kind": "fact",
+      "text": "The bit position for a flag is taken from the index of its corresponding field, so each flag occupies the bit matching its field position.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1963240,
+          "endMilliseconds": 1969900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#set-and-clear-one-bit"
+      }
+    },
+    {
+      "id": "TP-159",
+      "startMilliseconds": 1969900,
+      "endMilliseconds": 1978100,
+      "kind": "reason",
+      "text": "Any index could technically be used to set a flag, but reusing the field position keeps bit indices and field positions from colliding and stays consistent across fields.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1969900,
+          "endMilliseconds": 1978100
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#set-and-clear-one-bit"
+      }
+    },
+    {
+      "id": "TP-160",
+      "startMilliseconds": 1978100,
+      "endMilliseconds": 1982120,
+      "kind": "explanation",
+      "text": "After obtaining the index, the setter assigns the value at that position, choosing the set-bit branch when value is true.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1978100,
+          "endMilliseconds": 1982120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#set-and-clear-one-bit"
+      }
+    },
+    {
+      "id": "TP-161",
+      "startMilliseconds": 1982120,
+      "endMilliseconds": 1989920,
+      "kind": "explanation",
+      "text": "Setting a bit means shifting the unit 1 into the required bit position and OR-ing it with the original value, which sets only that bit and leaves the others untouched.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1982120,
+          "endMilliseconds": 1989920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#set-and-clear-one-bit"
+      }
+    },
+    {
+      "id": "TP-162",
+      "startMilliseconds": 1989920,
+      "endMilliseconds": 2001560,
+      "kind": "edge_case",
+      "text": "When value is false the same shifted unit is instead used to clear the bit, so the value equals the previous one except that this bit position becomes 0 instead of 1.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1989920,
+          "endMilliseconds": 2001560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#set-and-clear-one-bit"
+      }
+    },
+    {
+      "id": "TP-163",
+      "startMilliseconds": 2039200,
+      "endMilliseconds": 2049280,
+      "kind": "explanation",
+      "text": "The masking expression keeps every bit of the mask except the one for the flag being cleared.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2039200,
+          "endMilliseconds": 2049280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#set-and-clear-one-bit"
+      }
+    },
+    {
+      "id": "TP-164",
+      "startMilliseconds": 2042780,
+      "endMilliseconds": 2049280,
+      "kind": "explanation",
+      "text": "Clearing a flag is done by masking, which keeps all the other bits of the value and affects only the target bit position.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2042780,
+          "endMilliseconds": 2049280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#set-and-clear-one-bit"
+      }
+    },
+    {
+      "id": "TP-165",
+      "startMilliseconds": 2049280,
+      "endMilliseconds": 2063000,
+      "kind": "explanation",
+      "text": "Worked example: with value 101 and the flag bit for first name, the mask V is built as the unit 1 shifted to that field position.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2049280,
+          "endMilliseconds": 2063000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#set-and-clear-one-bit"
+      }
+    },
+    {
+      "id": "TP-166",
+      "startMilliseconds": 2063000,
+      "endMilliseconds": 2065290,
+      "kind": "fact",
+      "text": "V is the unit 1 shifted into the flag position, so negating V yields the complement with zeroes exactly where the flag bit sits.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2063000,
+          "endMilliseconds": 2065290
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#set-and-clear-one-bit"
+      }
+    },
+    {
+      "id": "TP-167",
+      "startMilliseconds": 2065290,
+      "endMilliseconds": 2073000,
+      "kind": "fact",
+      "text": "For the example flag in the first position, the negated mask V becomes 0111.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2065290,
+          "endMilliseconds": 2073000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#set-and-clear-one-bit"
+      }
+    },
+    {
+      "id": "TP-168",
+      "startMilliseconds": 2073000,
+      "endMilliseconds": 2090400,
+      "kind": "explanation",
+      "text": "Bitwise AND copies the value bit into the result only where both operands have a 1, so only positions allowed by the mask survive.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2073000,
+          "endMilliseconds": 2090400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#set-and-clear-one-bit"
+      }
+    },
+    {
+      "id": "TP-169",
+      "startMilliseconds": 2090400,
+      "endMilliseconds": 2097530,
+      "kind": "explanation",
+      "text": "If at least one operand has a 0 in a position, the result bit in that position is 0, which is why clearing is safe for the other bits.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2090400,
+          "endMilliseconds": 2097530
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#set-and-clear-one-bit"
+      }
+    },
+    {
+      "id": "TP-170",
+      "startMilliseconds": 2097530,
+      "endMilliseconds": 2105910,
+      "kind": "fact",
+      "text": "The setter lives on the class, so instead of calling SetFirstName explicitly you can simply assign the property.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2097530,
+          "endMilliseconds": 2105910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#set-and-clear-one-bit"
+      }
+    },
+    {
+      "id": "TP-171",
+      "startMilliseconds": 2105910,
+      "endMilliseconds": 2130320,
+      "kind": "fact",
+      "text": "Writing FirstName = true invokes SetFirstName with value set to true, so property assignment and an explicit setter call are equivalent.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2105910,
+          "endMilliseconds": 2130320
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#set-and-clear-one-bit"
+      }
+    },
+    {
+      "id": "TP-172",
+      "startMilliseconds": 2121359,
+      "endMilliseconds": 2132100,
+      "kind": "fact",
+      "text": "Assigning FirstName = true calls SetFirstName with the assigned value, so the true branch of the setter body executes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2121359,
+          "endMilliseconds": 2132100
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#set-and-clear-one-bit"
+      }
+    },
+    {
+      "id": "TP-173",
+      "startMilliseconds": 2132100,
+      "endMilliseconds": 2140990,
+      "kind": "fact",
+      "text": "The property assignment syntax is only sugar that calls the method on the underlying field, which is why behaviour matches the explicit call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2132100,
+          "endMilliseconds": 2140990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#set-and-clear-one-bit"
+      }
+    },
+    {
+      "id": "TP-174",
+      "startMilliseconds": 2140990,
+      "endMilliseconds": 2145780,
+      "kind": "code_change",
+      "text": "The getter needs the same bit logic: take the unit in the flag position and test it against the mask.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2140990,
+          "endMilliseconds": 2145780
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-one-bit"
+      }
+    },
+    {
+      "id": "TP-175",
+      "startMilliseconds": 2145780,
+      "endMilliseconds": 2154870,
+      "kind": "explanation",
+      "text": "The check-mask argument, such as value with only required bit, is the whole mask with every bit erased except the single bit being queried.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2145780,
+          "endMilliseconds": 2154870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-one-bit"
+      }
+    },
+    {
+      "id": "TP-176",
+      "startMilliseconds": 2154870,
+      "endMilliseconds": 2163300,
+      "kind": "edge_case",
+      "text": "If the queried bit is not set in the mask, the AND with the single-bit mask yields zero for the whole value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2154870,
+          "endMilliseconds": 2163300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-one-bit"
+      }
+    },
+    {
+      "id": "TP-177",
+      "startMilliseconds": 2163300,
+      "endMilliseconds": 2169480,
+      "kind": "fact",
+      "text": "If the queried bit is present in the mask, the result is not zero, which the getter treats as the flag being set.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2163300,
+          "endMilliseconds": 2169480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-one-bit"
+      }
+    },
+    {
+      "id": "TP-178",
+      "startMilliseconds": 2169480,
+      "endMilliseconds": 2181470,
+      "kind": "explanation",
+      "text": "Worked example: with value 101 and the single-bit mask, the result is 1 because only positions where the mask has a one contribute.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2169480,
+          "endMilliseconds": 2181470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-one-bit"
+      }
+    },
+    {
+      "id": "TP-179",
+      "startMilliseconds": 2181470,
+      "endMilliseconds": 2190600,
+      "kind": "explanation",
+      "text": "Positions where the mask has zeroes stay zero in the result, and positions where the mask has a one copy the value bit.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2181470,
+          "endMilliseconds": 2190600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-one-bit"
+      }
+    },
+    {
+      "id": "TP-180",
+      "startMilliseconds": 2190600,
+      "endMilliseconds": 2202480,
+      "kind": "fact",
+      "text": "A non-zero result means the flag bit was set in the original mask, and a zero result means it was not set.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2190600,
+          "endMilliseconds": 2202480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-one-bit"
+      }
+    },
+    {
+      "id": "TP-181",
+      "startMilliseconds": 2196240,
+      "endMilliseconds": 2202000,
+      "kind": "reason",
+      "text": "Because the masked result only copies bits allowed by the mask, a zero in the value at that position forces a zero result, which is how a not-set flag is detected.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2196240,
+          "endMilliseconds": 2202000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-one-bit"
+      }
+    },
+    {
+      "id": "TP-182",
+      "startMilliseconds": 2202000,
+      "endMilliseconds": 2206900,
+      "kind": "fact",
+      "text": "The single expression covers both the flag-set and flag-not-set cases, so the getter works for any mask configuration.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2202000,
+          "endMilliseconds": 2206900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-one-bit"
+      }
+    },
+    {
+      "id": "TP-183",
+      "startMilliseconds": 2206900,
+      "endMilliseconds": 2221860,
+      "kind": "reason",
+      "text": "The same code must be written for every other field, where only the field index changes while all other actions stay identical.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2206900,
+          "endMilliseconds": 2221860
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-the-bit-logic-between-properties"
+      }
+    },
+    {
+      "id": "TP-184",
+      "startMilliseconds": 2221860,
+      "endMilliseconds": 2230200,
+      "kind": "code_change",
+      "text": "Helper methods can therefore be introduced that set a field given the field index and the mask value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2221860,
+          "endMilliseconds": 2230200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-the-bit-logic-between-properties"
+      }
+    },
+    {
+      "id": "TP-185",
+      "startMilliseconds": 2230200,
+      "endMilliseconds": 2240800,
+      "kind": "code_change",
+      "text": "A single SetField taking the field index and the value is used, with first name passed in as the parameter so the logic is written once.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2230200,
+          "endMilliseconds": 2240800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-the-bit-logic-between-properties"
+      }
+    },
+    {
+      "id": "TP-186",
+      "startMilliseconds": 2240800,
+      "endMilliseconds": 2248030,
+      "kind": "reason",
+      "text": "Passing the field name as a parameter lets the bit-manipulation code be reused instead of duplicated in every property.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2240800,
+          "endMilliseconds": 2248030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-the-bit-logic-between-properties"
+      }
+    },
+    {
+      "id": "TP-187",
+      "startMilliseconds": 2248030,
+      "endMilliseconds": 2250900,
+      "kind": "code_change",
+      "text": "The first property is reduced to a call such as SetFirstField with the incoming value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2248030,
+          "endMilliseconds": 2250900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-the-bit-logic-between-properties"
+      }
+    },
+    {
+      "id": "TP-188",
+      "startMilliseconds": 2250900,
+      "endMilliseconds": 2261800,
+      "kind": "fact",
+      "text": "C# allows an expression-bodied accessor with the => arrow when the body is a single statement, and this works for getters as well as setters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2250900,
+          "endMilliseconds": 2261800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-the-bit-logic-between-properties"
+      }
+    },
+    {
+      "id": "TP-189",
+      "startMilliseconds": 2261800,
+      "endMilliseconds": 2266200,
+      "kind": "code_change",
+      "text": "A getter can be written compactly as a private bool expression-bodied member returning the backing field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2261800,
+          "endMilliseconds": 2266200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-the-bit-logic-between-properties"
+      }
+    },
+    {
+      "id": "TP-190",
+      "startMilliseconds": 2266200,
+      "endMilliseconds": 2276000,
+      "kind": "fact",
+      "text": "Reading the value from the backing field keeps the field assignable so its state can still be changed through the property.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2266200,
+          "endMilliseconds": 2276000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-the-bit-logic-between-properties"
+      }
+    },
+    {
+      "id": "TP-191",
+      "startMilliseconds": 2270240,
+      "endMilliseconds": 2274720,
+      "kind": "explanation",
+      "text": "The accessors take their value from the backing field, so the flag value can both be read and assigned through them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2270240,
+          "endMilliseconds": 2274720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-the-bit-logic-between-properties"
+      }
+    },
+    {
+      "id": "TP-192",
+      "startMilliseconds": 2274720,
+      "endMilliseconds": 2283630,
+      "kind": "fact",
+      "text": "A flag getter takes a single parameter, the flag index, and the same accessor must be written for every flag.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2274720,
+          "endMilliseconds": 2283630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-the-bit-logic-between-properties"
+      }
+    },
+    {
+      "id": "TP-193",
+      "startMilliseconds": 2283630,
+      "endMilliseconds": 2297490,
+      "kind": "scope_boundary",
+      "text": "Duplicated accessors can only be removed with a source generator, which the lesson treats as an advanced topic it has not reached.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2283630,
+          "endMilliseconds": 2297490
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-the-bit-logic-between-properties"
+      }
+    },
+    {
+      "id": "TP-194",
+      "startMilliseconds": 2297490,
+      "endMilliseconds": 2304110,
+      "kind": "scope_boundary",
+      "text": "For now the duplicated accessor code is left in place rather than generated.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2297490,
+          "endMilliseconds": 2304110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#share-the-bit-logic-between-properties"
+      }
+    },
+    {
+      "id": "TP-195",
+      "startMilliseconds": 2304110,
+      "endMilliseconds": 2306790,
+      "kind": "fact",
+      "text": "All flags are stored in a single integer, which is what makes the mask approach possible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2304110,
+          "endMilliseconds": 2306790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-indexed-access-on-the-mask"
+      }
+    },
+    {
+      "id": "TP-196",
+      "startMilliseconds": 2306790,
+      "endMilliseconds": 2312530,
+      "kind": "reason",
+      "text": "Flag getters and setters do not depend on each other, so each setter can stand on its own.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2306790,
+          "endMilliseconds": 2312530
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-indexed-access-on-the-mask"
+      }
+    },
+    {
+      "id": "TP-197",
+      "startMilliseconds": 2312530,
+      "endMilliseconds": 2324390,
+      "kind": "code_change",
+      "text": "The setter is made public so flags can be set and read by index both inside the class and from outside.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2312530,
+          "endMilliseconds": 2324390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-indexed-access-on-the-mask"
+      }
+    },
+    {
+      "id": "TP-198",
+      "startMilliseconds": 2324390,
+      "endMilliseconds": 2331940,
+      "kind": "explanation",
+      "text": "The flags are wrapped in a mask field and it already works, because the mask modifies an existing object rather than replacing it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2324390,
+          "endMilliseconds": 2331940
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-indexed-access-on-the-mask"
+      }
+    },
+    {
+      "id": "TP-199",
+      "startMilliseconds": 2331940,
+      "endMilliseconds": 2341900,
+      "kind": "reason",
+      "text": "With the mask in place the individual flag getters are no longer needed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2331940,
+          "endMilliseconds": 2341900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-indexed-access-on-the-mask"
+      }
+    },
+    {
+      "id": "TP-200",
+      "startMilliseconds": 2340280,
+      "endMilliseconds": 2349599,
+      "kind": "code_change",
+      "text": "The leftover per-index bit reading logic is trivial, so it is deleted from the class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2340280,
+          "endMilliseconds": 2346590
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2341900,
+          "endMilliseconds": 2349599
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-indexed-access-on-the-mask"
+      }
+    },
+    {
+      "id": "TP-201",
+      "startMilliseconds": 2346590,
+      "endMilliseconds": 2353000,
+      "kind": "code_change",
+      "text": "Call sites are rewritten to use the mask as a method instead of the removed accessors.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2346590,
+          "endMilliseconds": 2353000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#expose-indexed-access-on-the-mask"
+      }
+    },
+    {
+      "id": "TP-202",
+      "startMilliseconds": 2353000,
+      "endMilliseconds": 2360740,
+      "kind": "explanation",
+      "text": "Instead of looping over each bit, a single bitwise operation can clear the selected bits.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2353000,
+          "endMilliseconds": 2360740
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-mask-subtraction-with-one-operation"
+      }
+    },
+    {
+      "id": "TP-203",
+      "startMilliseconds": 2360740,
+      "endMilliseconds": 2373130,
+      "kind": "explanation",
+      "text": "Combining the mask with the inverse of the bits to delete clears exactly those bits and leaves the rest untouched.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2360740,
+          "endMilliseconds": 2373130
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-mask-subtraction-with-one-operation"
+      }
+    },
+    {
+      "id": "TP-204",
+      "startMilliseconds": 2373130,
+      "endMilliseconds": 2381590,
+      "kind": "code_change",
+      "text": "The loop over bits is no longer needed because one bitwise action does the same job.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2373130,
+          "endMilliseconds": 2381590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-mask-subtraction-with-one-operation"
+      }
+    },
+    {
+      "id": "TP-205",
+      "startMilliseconds": 2381590,
+      "endMilliseconds": 2392470,
+      "kind": "explanation",
+      "text": "Worked example: deleting the firstName and group bits, where the tilde inverts the delete mask so it marks what to clear.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2381590,
+          "endMilliseconds": 2392470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-mask-subtraction-with-one-operation"
+      }
+    },
+    {
+      "id": "TP-206",
+      "startMilliseconds": 2392470,
+      "endMilliseconds": 2402430,
+      "kind": "explanation",
+      "text": "Only bits not marked for deletion survive, so the deleted positions become zero while every other position stays one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2392470,
+          "endMilliseconds": 2402430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-mask-subtraction-with-one-operation"
+      }
+    },
+    {
+      "id": "TP-207",
+      "startMilliseconds": 2402430,
+      "endMilliseconds": 2407510,
+      "kind": "explanation",
+      "text": "Clearing the last flagged position finishes the example and leaves only the wanted flags set.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2402430,
+          "endMilliseconds": 2407510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-mask-subtraction-with-one-operation"
+      }
+    },
+    {
+      "id": "TP-208",
+      "startMilliseconds": 2407510,
+      "endMilliseconds": 2413750,
+      "kind": "explanation",
+      "text": "Second example: delete only the firstName bit, which means keeping everything else.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2407510,
+          "endMilliseconds": 2413750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-mask-subtraction-with-one-operation"
+      }
+    },
+    {
+      "id": "TP-209",
+      "startMilliseconds": 2413750,
+      "endMilliseconds": 2428290,
+      "kind": "explanation",
+      "text": "In that case the selected position is zeroed and all remaining positions are copied unchanged from the original mask.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2413750,
+          "endMilliseconds": 2421930
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2416920,
+          "endMilliseconds": 2428290
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-mask-subtraction-with-one-operation"
+      }
+    },
+    {
+      "id": "TP-210",
+      "startMilliseconds": 2421930,
+      "endMilliseconds": 2424160,
+      "kind": "reason",
+      "text": "The bitwise work was pulled into a method so callers do not repeat it, and the next part explains why.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2421930,
+          "endMilliseconds": 2424160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-mask-subtraction-with-one-operation"
+      }
+    },
+    {
+      "id": "TP-211",
+      "startMilliseconds": 2428290,
+      "endMilliseconds": 2437820,
+      "kind": "reason",
+      "text": "The bitwise logic lives in a method because raw bitwise operations are harder to read than a named call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2428290,
+          "endMilliseconds": 2437820
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-mask-subtraction-with-one-operation"
+      }
+    },
+    {
+      "id": "TP-212",
+      "startMilliseconds": 2437820,
+      "endMilliseconds": 2449190,
+      "kind": "explanation",
+      "text": "The method hides the fact that one integer stores the flags and which operation it performs, exposing only a meaningful name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2437820,
+          "endMilliseconds": 2449190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-mask-subtraction-with-one-operation"
+      }
+    },
+    {
+      "id": "TP-213",
+      "startMilliseconds": 2449190,
+      "endMilliseconds": 2459120,
+      "kind": "reason",
+      "text": "The mask also does fewer operations than walking bits one by one, so the abstraction is cheaper as well as clearer.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2449190,
+          "endMilliseconds": 2459120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-mask-subtraction-with-one-operation"
+      }
+    },
+    {
+      "id": "TP-214",
+      "startMilliseconds": 2459120,
+      "endMilliseconds": 2468310,
+      "kind": "explanation",
+      "text": "To test flags the code compares the bits present in the mask with the bits required, by taking the bits common to both masks.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2459120,
+          "endMilliseconds": 2468310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-every-required-flag-at-once"
+      }
+    },
+    {
+      "id": "TP-215",
+      "startMilliseconds": 2468310,
+      "endMilliseconds": 2479200,
+      "kind": "explanation",
+      "text": "If the common bits are not all the requested ones the result differs from the checked mask and the answer is false.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2468310,
+          "endMilliseconds": 2479200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-every-required-flag-at-once"
+      }
+    },
+    {
+      "id": "TP-216",
+      "startMilliseconds": 2479200,
+      "endMilliseconds": 2486910,
+      "kind": "explanation",
+      "text": "If the result equals the mask being checked, then every requested flag is set and the answer is true.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2479200,
+          "endMilliseconds": 2486910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-every-required-flag-at-once"
+      }
+    },
+    {
+      "id": "TP-217",
+      "startMilliseconds": 2486910,
+      "endMilliseconds": 2500520,
+      "kind": "explanation",
+      "text": "Worked example: the check asks whether two specific bits are set while explicitly ignoring the other bits.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2486910,
+          "endMilliseconds": 2500520
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2491359,
+          "endMilliseconds": 2499660
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-every-required-flag-at-once"
+      }
+    },
+    {
+      "id": "TP-218",
+      "startMilliseconds": 2499660,
+      "endMilliseconds": 2506100,
+      "kind": "explanation",
+      "text": "In that example the third and fourth bits stay unset because the second mask has zeros there, and only the first two bits are copied from the original mask.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2499660,
+          "endMilliseconds": 2506100
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-every-required-flag-at-once"
+      }
+    },
+    {
+      "id": "TP-219",
+      "startMilliseconds": 2506100,
+      "endMilliseconds": 2513670,
+      "kind": "reason",
+      "text": "If every required position was one, the copied result equals the checked mask exactly, which is what proves the flags are set.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2506100,
+          "endMilliseconds": 2513670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-every-required-flag-at-once"
+      }
+    },
+    {
+      "id": "TP-220",
+      "startMilliseconds": 2513670,
+      "endMilliseconds": 2521600,
+      "kind": "edge_case",
+      "text": "If even one required position was zero, the zero gets copied and the result no longer matches, so the check fails.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2513670,
+          "endMilliseconds": 2521600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-every-required-flag-at-once"
+      }
+    },
+    {
+      "id": "TP-221",
+      "startMilliseconds": 2521600,
+      "endMilliseconds": 2535680,
+      "kind": "explanation",
+      "text": "That equality between the computed result and the requested mask is the whole decision rule for the flag test.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 2521600,
+          "endMilliseconds": 2535680
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#test-every-required-flag-at-once"
+      }
+    }
+  ]
+}
