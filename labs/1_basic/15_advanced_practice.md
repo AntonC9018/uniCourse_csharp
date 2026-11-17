@@ -26,10 +26,15 @@ slug: ru/labs/basic/advanced-practice
 Операция может не удаться по двум совершенно разным причинам.
 
 **Нарушенное предусловие** означает, что вызывающий код нарушил контракт:
-индекс за пределами массива, `null` там, где его быть не может,
+индекс за пределами массива, когда контракт требует допустимый индекс,
+`null` там, где его быть не может,
 значение `enum`, которое не обрабатывает ни одна ветка.
 В программе ошибка, поэтому осмысленного значения для возврата нет.
 `Debug.Assert` останавливает программу ровно там, где произошла ошибка.
+`Debug.Assert` — инструмент отладки:
+в сборке без символа `DEBUG` эти вызовы не компилируются.
+Обязательства вызывающего кода никуда не исчезают,
+и `Debug.Assert` никогда не заменяет проверку пользовательского ввода.
 
 **Обычный результат** означает, что данные говорят «нет»:
 слот уже занят, очередь полна, пиццы нет в холодильнике.
@@ -38,14 +43,21 @@ slug: ru/labs/basic/advanced-practice
 
 Не превращайте нарушенное предусловие в возвращённый `false`.
 Вызывающий код, который проигнорирует результат, продолжит работать
-с некорректным состоянием, и ошибка уедет дальше от своего источника.
+с некорректным состоянием, и ошибка проявится дальше от своего источника.
 Не проверяйте через `Debug.Assert` и обычные данные: занятая полка — не ошибка.
+
+При проектировании функции решают, к какой категории относится проверка.
+Функции книжной полки ниже требуют допустимого индекса,
+поэтому неверный индекс — нарушенный контракт.
+Торговый автомат ниже принимает любой выбор покупателя,
+поэтому неверный выбор — обычные данные, о которых он сообщает.
 
 | Ситуация | Вид | Реакция |
 | --- | --- | --- |
-| индекс за пределами массива | нарушенное предусловие | `Debug.Assert` |
+| неверный индекс при требовании допустимого | нарушенное предусловие | `Debug.Assert` |
 | `null` там, где он недопустим | нарушенное предусловие | `Debug.Assert` |
 | значение `enum` без подходящей ветки | нарушенное предусловие | `Debug.Assert` |
+| неверный выбор, который функция обязана проверить | обычный результат | вернуть его |
 | слот уже занят | обычный результат | вернуть его |
 | очередь полна | обычный результат | вернуть его |
 | элемент не найден | обычный результат | вернуть его |
@@ -737,8 +749,9 @@ slug: ru/labs/basic/advanced-practice
   Поиск этого места — отдельная функция:
   она отдаёт индекс слота или `-1`, когда очередь полна.
   Добавление просто заполняет этот слот.
-  Параметр типа `Client` не может быть пустой ссылкой, поэтому клиент не проверяется;
-  переполненная очередь — это штатная ситуация, о ней сообщается возвращаемым значением:
+  Аннотация `Client` не запрещает `null` во время выполнения:
+  это обещание вызывающего кода, поэтому его проверяет `Debug.Assert`.
+  Переполненная очередь — штатная ситуация, о ней сообщается возвращаемым значением:
 
   ```csharp
   enum AddClientResult
@@ -761,6 +774,7 @@ slug: ru/labs/basic/advanced-practice
 
   static AddClientResult AddClient(Shop shop, Client client)
   {
+      Debug.Assert(client != null); // клиент всегда существует
       int slot = FindFreeSlot(shop);
       if (slot < 0)
       {
@@ -844,6 +858,7 @@ slug: ru/labs/basic/advanced-practice
       {
           return TickResult.Unassigned;
       }
+      Debug.Assert(client.hairCompletion.value >= 0); // длительность стрижки не может быть отрицательной
       if (client.hairCompletion.value > 0)
       {
           CutOneMinute(client);
@@ -1003,7 +1018,8 @@ slug: ru/labs/basic/advanced-practice
   Генератор работает в цикле, пока не закончится езда.
   Сначала он ищет водителя, который уже отдохнул.
   Такой водитель проезжает один отрезок пути — до своего лимита или до конца рейса, —
-  а затем ему положен отдых за часы езды.
+  а отдых всех остальных за эти часы сокращается.
+  Затем водитель должен отдохнуть столько, сколько ему положено за часы езды.
   Если не готов никто, грузовик простаивает, пока не закончится самый короткий
   оставшийся отдых; на это время отдых сокращается у всех.
   Каждый шаг записывает ровно одно событие.
@@ -1043,6 +1059,20 @@ slug: ru/labs/basic/advanced-practice
                   hours = tripHours;
               }
               tripHours -= hours;
+
+              // Пока один водитель едет, остальные отдыхают.
+              for (int i = 0; i < drivers.Length; i++)
+              {
+                  if (i == freeIndex || drivers[i].restLeft <= 0.0)
+                  {
+                      continue;
+                  }
+                  drivers[i].restLeft -= hours;
+                  if (drivers[i].restLeft < 0.0)
+                  {
+                      drivers[i].restLeft = 0.0;
+                  }
+              }
               driver.restLeft = driver.restPerDriveHour * hours;
 
               Debug.Assert(count < events.Length);
@@ -1097,6 +1127,9 @@ slug: ru/labs/basic/advanced-practice
           case EventKind.Idle:
               Console.WriteLine($"truck idle for {e.hours} h");
               break;
+          default:
+              Debug.Assert(false); // все значения EventKind обработаны выше
+              break;
       }
   }
   ```
@@ -1134,17 +1167,16 @@ slug: ru/labs/basic/advanced-practice
   }
   ```
 
-  Первой по списку едет alice: 4 часа, после чего ей положено 2 часа отдыха.
-  Дальше едет bob: 3 часа и 3 часа отдыха, затем cid: 2 часа и 4 часа отдыха.
-  Теперь отдыхают все, и грузовик простаивает 2 часа — это самый короткий отдых.
-  Оставшиеся 3 часа проезжает alice:
+  alice проезжает свои 4 часа, затем ей положено 2 часа отдыха.
+  bob едет 3 часа — за это время alice успевает отдохнуть и снова готова ехать.
+  alice проезжает ещё 4 часа, пока bob отдыхает, а последний час едет bob.
+  Грузовику не приходится простаивать:
 
   ```text
   alice drove 4 h
   bob drove 3 h
-  cid drove 2 h
-  truck idle for 2 h
-  alice drove 3 h
+  alice drove 4 h
+  bob drove 1 h
   ```
   </details>
 
@@ -1204,7 +1236,24 @@ class VendingSlot
 
 class VendingMachine
 {
-    public VendingSlot[] slots = new VendingSlot[3];
+    public VendingSlot[] slots =
+    [
+        new VendingSlot
+        {
+            snack = Snack.Chips,
+            price = 3,
+        },
+        new VendingSlot
+        {
+            snack = null,
+            price = 2,
+        },
+        new VendingSlot
+        {
+            snack = Snack.Water,
+            price = 2,
+        },
+    ];
 }
 ```
 
@@ -1257,6 +1306,7 @@ static Purchase BuySnack(VendingMachine machine, int slotIndex, int coins)
     }
 
     VendingSlot slot = machine.slots[slotIndex];
+    Debug.Assert(slot != null);  // каждый слот должен быть создан
     Debug.Assert(slot.price > 0); // у каждого слота должна быть положительная цена
     if (slot.snack == null)
     {
@@ -1292,6 +1342,8 @@ static Purchase BuySnack(VendingMachine machine, int slotIndex, int coins)
 ```csharp
 static void PrintPurchase(Purchase purchase)
 {
+    // Данные о покупке есть тогда и только тогда, когда она успешна.
+    Debug.Assert((purchase.bought != null) == (purchase.status == PurchaseStatus.Bought));
     switch (purchase.status)
     {
         case PurchaseStatus.Bought:
@@ -1310,6 +1362,9 @@ static void PrintPurchase(Purchase purchase)
         case PurchaseStatus.NotEnoughCoins:
             Console.WriteLine("not enough coins");
             break;
+        default:
+            Debug.Assert(false); // все значения PurchaseStatus обработаны выше
+            break;
     }
 }
 ```
@@ -1317,27 +1372,7 @@ static void PrintPurchase(Purchase purchase)
 Использование в основной функции:
 
 ```csharp
-VendingMachine machine = new()
-{
-    slots =
-    [
-        new VendingSlot
-        {
-            snack = Snack.Chips,
-            price = 3,
-        },
-        new VendingSlot
-        {
-            snack = null,
-            price = 2,
-        },
-        new VendingSlot
-        {
-            snack = Snack.Water,
-            price = 2,
-        },
-    ],
-};
+VendingMachine machine = new();
 
 PrintPurchase(BuySnack(machine, 9, 5)); // no such slot
 PrintPurchase(BuySnack(machine, 0, 5)); // bought chips, change 2
@@ -1346,7 +1381,7 @@ PrintPurchase(BuySnack(machine, 2, 1)); // not enough coins
 ```
 
 Второй вызов — единственный, который меняет автомат.
-Остальные два оставляют все слоты точно такими, какими они были.
+Остальные три оставляют все слоты точно такими, какими они были.
 
 ## Планирование мутации как значения
 
@@ -1382,9 +1417,21 @@ static string PaintName(Paint paint)
     return "";
 }
 
+static bool IsKnownPaint(Paint paint)
+{
+    switch (paint)
+    {
+        case Paint.Red:
+        case Paint.Blue:
+        case Paint.Green:
+            return true;
+    }
+    return false;
+}
+
 class Car
 {
-    public string model;
+    public string model = "";
     public Paint paint;
 }
 
@@ -1399,7 +1446,9 @@ class Repaint
 static Repaint PlanRepaint(Car[] cars, int carIndex, Paint newPaint)
 {
     Debug.Assert(carIndex >= 0 && carIndex < cars.Length); // план должен указывать на существующую машину
+    Debug.Assert(IsKnownPaint(newPaint));                  // новый цвет должен быть допустимым значением Paint
     Car car = cars[carIndex];
+    Debug.Assert(IsKnownPaint(car.paint)); // текущий цвет должен быть допустимым значением Paint
     int hours = car.paint == newPaint ? 1 : 3;
     return new Repaint
     {
@@ -1418,6 +1467,7 @@ static void PrintRepaint(Repaint repaint)
 static void ApplyRepaint(Car[] cars, Repaint repaint)
 {
     Debug.Assert(repaint.carIndex >= 0 && repaint.carIndex < cars.Length); // план должен указывать на существующую машину
+    Debug.Assert(IsKnownPaint(repaint.newPaint)); // новый цвет должен быть допустимым значением Paint
     cars[repaint.carIndex].paint = repaint.newPaint;
 }
 ```
