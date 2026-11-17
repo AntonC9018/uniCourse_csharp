@@ -16,7 +16,171 @@ slug: ru/labs/basic/advanced-practice
 - Изменение объектов через ссылки: изменение видно через любую ссылку на тот же объект;
 - Написание маленьких функций, возвращающих `bool` или количество,
   с использованием `if` с ранними возвратами (guard clauses) и `switch` по `enum`;
+- Предусловия функций (`Debug.Assert`), которые объясняются в этой работе;
+- Моделирование результата операции и планирование мутации как значений;
 - Перебор объектов в цикле, подсчёт пустых мест, поиск первого пустого места.
+
+## Предусловия и результаты
+
+**Предусловие** — то, что уже должно быть верно при вызове функции.
+Например, функции, которая меняет элемент массива, нужен индекс существующего элемента.
+Передать индекс за пределами массива — ошибка в вызывающем коде.
+Для её обнаружения используют `Debug.Assert`.
+
+**Обычный результат** может быть неудачным, даже если вызывающий код написан правильно.
+Бронирование может не удаться, потому что все билеты проданы,
+но для программы это обычная ситуация.
+Верните результат, чтобы вызывающий код мог на него отреагировать.
+
+### Пример: запись очков игрока
+
+В игре очки трёх игроков хранятся по индексам 0, 1 и 2.
+`RecordScore` меняет очки существующего игрока:
+
+```csharp
+using System.Diagnostics;
+
+static void RecordScore(int[] scores, int playerIndex, int score)
+{
+    Debug.Assert(playerIndex >= 0 && playerIndex < scores.Length);
+    scores[playerIndex] = score;
+}
+```
+
+<details>
+<summary>
+Что произойдёт, если игра вызовет <code>RecordScore(scores, 3, 10)</code>?
+</summary>
+
+Игрока с индексом 3 нет, поэтому проверка `Debug.Assert` не пройдёт.
+Вызывающий код перепутал номер игрока 3 с индексом 2.
+Если вместо этого вернуть `false`, игра может проигнорировать неудачное обновление
+и продолжить работу со старыми очками. Ошибка проявится лишь при объявлении неверного победителя.
+Нужно исправить индекс в вызывающем коде; неудачное обновление очков — не обычный исход игры.
+
+</details>
+
+> `Debug.Assert` — инструмент отладки: без символа `DEBUG` эти вызовы не компилируются.
+> Вызывающий код всё равно должен передавать допустимые аргументы.
+> `Debug.Assert` никогда не заменяет проверку пользовательского ввода.
+
+### Пример: бронирование билета в кино
+
+В кинотеатре могут закончиться билеты. `BookTicket` сообщает, удалось ли забронировать билет.
+Параметр `ref` позволяет менять число билетов у вызывающего кода;
+при вызове его тоже указывают: `BookTicket(ref ticketsLeft)`.
+
+```csharp
+static bool BookTicket(ref int ticketsLeft)
+{
+    Debug.Assert(ticketsLeft >= 0);
+    if (ticketsLeft == 0)
+    {
+        return false;
+    }
+    ticketsLeft--;
+    return true;
+}
+```
+
+Отрицательное число оставшихся билетов было бы ошибкой;
+именно это здесь проверяет `Debug.Assert`.
+Ноль оставшихся билетов допустим — он просто означает, что все билеты проданы.
+
+<details>
+<summary>
+Остался один билет. Что произойдёт, если два покупателя по очереди попытаются его забронировать?
+</summary>
+
+Первый вызов уменьшит `ticketsLeft` с 1 до 0 и вернёт `true`.
+Второй оставит 0 и вернёт `false`.
+Вызывающий код может показать «билеты закончились» или предложить другой сеанс.
+Если заменить `if` на `Debug.Assert(ticketsLeft > 0)`, исправная программа остановится
+просто потому, что последний билет уже продан.
+
+</details>
+
+Другие проверки, для которых **не нужен** `Debug.Assert`:
+
+- В форме входа ввели неверный пароль.
+  `Debug.Assert(enteredPassword == savedPassword)` остановит программу
+  при обычной неудачной попытке входа.
+  Программа должна сообщить, что пароль не подошёл, и дать пользователю попробовать ещё раз.
+- Поиск студента `"Mira"` никого не нашёл.
+  `Debug.Assert(found != null)` превратит обычное отсутствие результата в ошибку программы.
+  Верните `null`, чтобы вызывающий код мог показать «студент не найден».
+- В поле возраста пользователь ввёл `-5`.
+  `Debug.Assert(age >= 0)` остановит программу вместо обработки неверного ввода.
+  Сообщите о неверном возрасте и попросите другое значение, прежде чем его использовать.
+
+### Пример: `TakeOut` и `TryTakeOut`
+
+Для одного действия можно написать две функции с разными требованиями:
+
+- `TryOperation` — мягкий вариант: допускает обычную неудачу и возвращает результат для проверки.
+- `Operation` — жёсткий вариант: необходимые для действия условия должны быть выполнены.
+  Если необходимое условие не выполнено, это ошибка в программе, которую обнаружит `Debug.Assert`.
+
+В микроволновке либо стоит одно блюдо, либо ничего нет.
+Используйте `TakeOut`, если в этом месте программы уже известно, что внутри есть еда.
+Функция возвращает блюдо и освобождает микроволновку; вызвать её для пустой микроволновки — ошибка.
+Вызывайте `TryTakeOut`, когда пустая микроволновка — ожидаемая ситуация, которую нужно обработать.
+Она возвращает `Meal?`: блюдо при успехе или `null`, если брать нечего.
+
+```csharp
+using System.Diagnostics;
+
+class Meal
+{
+    public string name = "";
+}
+
+class Microwave
+{
+    public Meal? meal;
+}
+
+static Meal TakeOut(Microwave microwave)
+{
+    Debug.Assert(microwave.meal != null);
+    Meal meal = microwave.meal;
+    microwave.meal = null;
+    return meal;
+}
+
+static Meal? TryTakeOut(Microwave microwave)
+{
+    if (microwave.meal == null)
+    {
+        return null;
+    }
+    return TakeOut(microwave);
+}
+```
+
+`TryTakeOut` проверяет, не пуста ли микроволновка, прежде чем вызвать `TakeOut`.
+Если блюдо есть, обе функции вынимают его; разница лишь в случае пустой микроволновки.
+
+```csharp
+Microwave microwave = new() { meal = new Meal { name = "soup" } };
+Meal soup = TakeOut(microwave);
+Meal? second = TryTakeOut(microwave);
+```
+
+<details>
+<summary>Что вернут вызовы? А если во втором вызвать <code>TakeOut</code>?</summary>
+
+`TakeOut` вернёт суп, после чего микроволновка будет пуста.
+`TryTakeOut` затем вернёт `null`, оставив её пустой.
+Вызывающий код может проверить `second != null` и решить приготовить что-нибудь ещё.
+Повторный `TakeOut` не пройдёт проверку `Debug.Assert`: вызывающий код пытается вынуть блюдо,
+не убедившись, что оно есть.
+
+</details>
+
+Выбирайте функцию, требования которой подходят вызывающему коду.
+Не вызывайте `TakeOut`, чтобы проверить, есть ли внутри еда;
+для этого нужна `TryTakeOut`.
 
 ## Задачи для практики
 
@@ -33,7 +197,7 @@ slug: ru/labs/basic/advanced-practice
 
   Слот полки либо хранит книгу, либо пуст, поэтому тип слота — `Book?`:
   пустой слот — это `null`.
-  Сами классы нужны лишь для группировки, как в прошлой работе:
+  Классы объединяют данные: название книги и слоты полки.
 
   ```csharp
   class Book
@@ -51,18 +215,17 @@ slug: ru/labs/basic/advanced-practice
   изменения в слотах видит вызывающий код.
 
   Допустим, слоты 0 и 3 хранят книги, а остальные пусты.
-  Чтобы положить «Атлас» в слот 2, нужны две проверки:
-  индекс 2 в пределах массива, в слоте 2 нет книги, —
-  только тогда сохраняем книгу и возвращаем успех (`true`).
-  В слоте 0 последняя проверка не проходит, поэтому возвращаем `false`, ничего не меняя:
+  Чтобы положить «Атлас» в слот 2, нужны две проверки.
+  Вызывающий код должен выбрать индекс в пределах массива.
+  `Debug.Assert` обнаружит индекс вроде 5: такого слота на этой полке нет.
+  В слоте 2 не должно быть книги — это обычные данные,
+  поэтому, если слот занят, функция возвращает `false`.
+  В слоте 0 слот занят, поэтому книгу не кладём и ничего не меняем:
 
   ```csharp
   static bool ShelveBook(Bookshelf shelf, int index, Book book)
   {
-      if (index < 0 || index >= shelf.slots.Length)
-      {
-          return false;
-      }
+      Debug.Assert(index >= 0 && index < shelf.slots.Length);
       if (shelf.slots[index] != null)
       {
           return false;
@@ -72,16 +235,14 @@ slug: ru/labs/basic/advanced-practice
   }
   ```
 
-  Взятие книги — зеркальный случай: в слоте 0 есть книга, поэтому очищаем его (`null`)
-  и возвращаем `true`; для пустого слота возвращаем `false`:
+  Чтобы взять книгу, тоже нужен существующий слот, поэтому `Debug.Assert` проверяет индекс;
+  в слоте 0 есть книга, поэтому очищаем его (`null`) и возвращаем `true`;
+  пустой слот — это обычные данные, поэтому возвращаем `false`:
 
   ```csharp
   static bool TakeBook(Bookshelf shelf, int index)
   {
-      if (index < 0 || index >= shelf.slots.Length)
-      {
-          return false;
-      }
+      Debug.Assert(index >= 0 && index < shelf.slots.Length);
       if (shelf.slots[index] == null)
       {
           return false;
@@ -163,25 +324,20 @@ slug: ru/labs/basic/advanced-practice
   ```
 
   Допустим, на полке 1 холодильника лежит пицца, а полка 0 морозилки пуста.
-  При перемещении проходим проверки по порядку:
-  оба индекса в допустимых пределах,
-  в источнике есть продукт, цель свободна.
+  Вызывающий код должен выбрать существующие полки в обоих контейнерах.
+  Две проверки `Debug.Assert` обнаружат выход за пределы любого из массивов.
+  Есть ли продукт в источнике и свободна ли цель — это обычные данные,
+  поэтому эти проверки возвращают `false`.
   Затем два шага: переносим ссылку на продукт на полку 0 морозилки,
   очищаем полку 1 холодильника.
   С этого момента пицца живёт ровно в одном месте — в этом и состоит идея владения.
-  Если хоть одна проверка не прошла, возвращаем `false` и ничего не трогаем:
+  Неудачная проверка данных возвращает `false` и ничего не трогает:
 
   ```csharp
   static bool MoveFood(Fridge from, int fromIndex, Freezer to, int toIndex)
   {
-      if (fromIndex < 0 || fromIndex >= from.shelves.Length)
-      {
-          return false;
-      }
-      if (toIndex < 0 || toIndex >= to.shelves.Length)
-      {
-          return false;
-      }
+      Debug.Assert(fromIndex >= 0 && fromIndex < from.shelves.Length);
+      Debug.Assert(toIndex >= 0 && toIndex < to.shelves.Length);
       if (from.shelves[fromIndex] == null)
       {
           return false;
@@ -338,12 +494,13 @@ slug: ru/labs/basic/advanced-practice
   }
   ```
 
-  Разберём случай красного зелья для героя с 50 единицами здоровья и 0 щита:
-  ветка `switch` для `Red` добавляет 20 здоровья
-  и возвращает `true` — теперь у героя 70 здоровья.
+  Красное зелье поднимает здоровье героя с 50 до 70:
+  ветка `Red` добавляет 20 и возвращает `true`.
   Синее зелье идёт в следующую ветку и добавляет 10 щита.
   Испорченное зелье идёт в последнюю ветку и возвращает `false`,
-  не меняя героя:
+  не меняя героя.
+  Все значения `PotionKind` обработаны, поэтому выход из `switch`
+  означает испорченное значение — его ловит `Debug.Assert`:
 
   ```csharp
   static bool DrinkPotion(Hero hero, Potion potion)
@@ -359,7 +516,8 @@ slug: ru/labs/basic/advanced-practice
           case PotionKind.Spoiled:
               return false;
       }
-      return false;
+      Debug.Assert(false); // все значения PotionKind обработаны выше
+      return false;        // недостижимо
   }
   ```
 
@@ -573,6 +731,9 @@ slug: ru/labs/basic/advanced-practice
 
   Допустим, на полке 1 холодильника лежит пицца, а полка 1 морозилки пуста.
   Вызывающий код упаковывает `"pizza"` и `1` в `FoodMove`.
+  Целевой индекс должен указывать на существующую полку морозилки;
+  это проверяет `Debug.Assert`.
+  Занятая целевая полка — обычная ситуация: функция возвращает `false`.
   Цикл перебирает полки холодильника по очереди: на полке 0 пиццы нет, поэтому пропускаем её;
   на полке 1 есть пицца, поэтому переносим ссылку в морозилку и очищаем старую полку,
   затем сигнализируем об успехе, возвращая `true`.
@@ -581,10 +742,7 @@ slug: ru/labs/basic/advanced-practice
   ```csharp
   static bool MoveFood(Fridge fridge, Freezer to, FoodMove move)
   {
-      if (move.toIndex < 0 || move.toIndex >= to.shelves.Length)
-      {
-          return false;
-      }
+      Debug.Assert(move.toIndex >= 0 && move.toIndex < to.shelves.Length);
       if (to.shelves[move.toIndex] != null)
       {
           return false;
@@ -708,8 +866,9 @@ slug: ru/labs/basic/advanced-practice
   Поиск этого места — отдельная функция:
   она отдаёт индекс слота или `-1`, когда очередь полна.
   Добавление просто заполняет этот слот.
-  Параметр типа `Client` не может быть пустой ссылкой, поэтому клиент не проверяется;
-  переполненная очередь — это штатная ситуация, о ней сообщается возвращаемым значением:
+  Аннотация `Client` не запрещает `null` во время выполнения:
+  это обещание вызывающего кода, поэтому его проверяет `Debug.Assert`.
+  Переполненная очередь — штатная ситуация, о ней сообщается возвращаемым значением:
 
   ```csharp
   enum AddClientResult
@@ -732,6 +891,7 @@ slug: ru/labs/basic/advanced-practice
 
   static AddClientResult AddClient(Shop shop, Client client)
   {
+      Debug.Assert(client != null); // клиент всегда существует
       int slot = FindFreeSlot(shop);
       if (slot < 0)
       {
@@ -787,11 +947,15 @@ slug: ru/labs/basic/advanced-practice
   }
   ```
 
-  Стрижка одной минуты и проверка готовности клиента — тоже отдельные функции:
+  `CutOneMinute` можно вызывать, только если до конца стрижки осталось больше нуля минут.
+  `Debug.Assert` обнаружит попытку продолжить уже законченную стрижку.
+  `TickWorker` допускает ноль минут: такой клиент уже готов.
+  Отрицательная длительность — ошибка; проверка не даёт работнику остаться занятым навсегда:
 
   ```csharp
   static void CutOneMinute(Client client)
   {
+      Debug.Assert(client.hairCompletion.value > 0); // должно остаться что стричь
       client.hairCompletion.value--;
   }
 
@@ -814,6 +978,7 @@ slug: ru/labs/basic/advanced-practice
       {
           return TickResult.Unassigned;
       }
+      Debug.Assert(client.hairCompletion.value >= 0); // длительность стрижки не может быть отрицательной
       if (client.hairCompletion.value > 0)
       {
           CutOneMinute(client);
@@ -973,15 +1138,27 @@ slug: ru/labs/basic/advanced-practice
   Генератор работает в цикле, пока не закончится езда.
   Сначала он ищет водителя, который уже отдохнул.
   Такой водитель проезжает один отрезок пути — до своего лимита или до конца рейса, —
-  а затем ему положен отдых за часы езды.
+  а отдых всех остальных за эти часы сокращается.
+  Затем водитель должен отдохнуть столько, сколько ему положено за часы езды.
   Если не готов никто, грузовик простаивает, пока не закончится самый короткий
   оставшийся отдых; на это время отдых сокращается у всех.
-  Каждый шаг записывает ровно одно событие; считаем, что мест в массиве событий хватает:
+  Каждый шаг записывает ровно одно событие.
+  `Debug.Assert` проверяет, что есть хотя бы один водитель, время рейса
+  и коэффициент отдыха неотрицательны, лимит езды положителен, а под событие есть место.
+  С нулевым лимитом езды рейс не продвинется.
+  Если никто не готов, самый короткий оставшийся отдых должен быть положительным:
 
   ```csharp
   // Записывает события рейса в events, возвращает их количество.
   static int GenerateEvents(Driver[] drivers, double tripHours, Event[] events)
   {
+      Debug.Assert(drivers.Length > 0);   // у грузовика всегда есть хотя бы один водитель
+      Debug.Assert(tripHours >= 0.0);     // рейс не может длиться отрицательное время
+      for (int i = 0; i < drivers.Length; i++)
+      {
+          Debug.Assert(drivers[i].maxDriveHours > 0.0); // водитель без запаса хода остановит рейс
+          Debug.Assert(drivers[i].restPerDriveHour >= 0.0);
+      }
       int count = 0;
       while (tripHours > 0.0)
       {
@@ -1004,8 +1181,23 @@ slug: ru/labs/basic/advanced-practice
                   hours = tripHours;
               }
               tripHours -= hours;
+
+              // Пока один водитель едет, остальные отдыхают.
+              for (int i = 0; i < drivers.Length; i++)
+              {
+                  if (i == freeIndex || drivers[i].restLeft <= 0.0)
+                  {
+                      continue;
+                  }
+                  drivers[i].restLeft -= hours;
+                  if (drivers[i].restLeft < 0.0)
+                  {
+                      drivers[i].restLeft = 0.0;
+                  }
+              }
               driver.restLeft = driver.restPerDriveHour * hours;
 
+              Debug.Assert(count < events.Length);
               events[count] = new Event
               {
                   kind = EventKind.Drive,
@@ -1025,11 +1217,13 @@ slug: ru/labs/basic/advanced-practice
                   idleHours = drivers[i].restLeft;
               }
           }
+          Debug.Assert(idleHours > 0.0); // иначе кто-то из водителей был бы готов
           for (int i = 0; i < drivers.Length; i++)
           {
               drivers[i].restLeft -= idleHours;
           }
 
+          Debug.Assert(count < events.Length);
           events[count] = new Event
           {
               kind = EventKind.Idle,
@@ -1054,6 +1248,9 @@ slug: ru/labs/basic/advanced-practice
               break;
           case EventKind.Idle:
               Console.WriteLine($"truck idle for {e.hours} h");
+              break;
+          default:
+              Debug.Assert(false); // все значения EventKind обработаны выше
               break;
       }
   }
@@ -1092,17 +1289,16 @@ slug: ru/labs/basic/advanced-practice
   }
   ```
 
-  Первой по списку едет alice: 4 часа, после чего ей положено 2 часа отдыха.
-  Дальше едет bob: 3 часа и 3 часа отдыха, затем cid: 2 часа и 4 часа отдыха.
-  Теперь отдыхают все, и грузовик простаивает 2 часа — это самый короткий отдых.
-  Оставшиеся 3 часа проезжает alice:
+  alice проезжает свои 4 часа, затем ей положено 2 часа отдыха.
+  bob едет 3 часа — за это время alice успевает отдохнуть и снова готова ехать.
+  alice проезжает ещё 4 часа, пока bob отдыхает, а последний час едет bob.
+  Грузовику не приходится простаивать:
 
   ```text
   alice drove 4 h
   bob drove 3 h
-  cid drove 2 h
-  truck idle for 2 h
-  alice drove 3 h
+  alice drove 4 h
+  bob drove 1 h
   ```
   </details>
 
@@ -1119,3 +1315,319 @@ slug: ru/labs/basic/advanced-practice
   Обнимите всех по разу.
 
   ![Массив семьи из пяти элементов с индексами 0–4 и пять карточек участников, каждая из которых хранит массив из четырёх индексов обнятых родственников](./images/21_family_hugs_indices.svg)
+
+## Моделирование результатов операций
+
+`bool` говорит только, получилось ли выполнить операцию.
+Часто вызывающему коду нужно знать, *что* произошло:
+какой снек куплен, сколько осталось сдачи, почему автомат отказал.
+Оформите результат отдельным типом, а печать пусть реагирует на него.
+
+В автомате со снеками есть слоты со снеком и ценой:
+
+```csharp
+using System.Diagnostics;
+
+enum Snack
+{
+    Chips,
+    Chocolate,
+    Water,
+}
+
+static string SnackName(Snack snack)
+{
+    switch (snack)
+    {
+        case Snack.Chips:
+            return "chips";
+        case Snack.Chocolate:
+            return "chocolate";
+        case Snack.Water:
+            return "water";
+    }
+    Debug.Assert(false); // все значения Snack обработаны выше
+    return "";
+}
+
+class VendingSlot
+{
+    public Snack? snack;
+    public int price;
+}
+
+class VendingMachine
+{
+    public VendingSlot[] slots =
+    [
+        new VendingSlot
+        {
+            snack = Snack.Chips,
+            price = 3,
+        },
+        new VendingSlot
+        {
+            snack = null,
+            price = 2,
+        },
+        new VendingSlot
+        {
+            snack = Snack.Water,
+            price = 2,
+        },
+    ];
+}
+```
+
+Покупка сообщает один из нескольких исходов.
+Индекс слота и число монет приходят от покупателя,
+поэтому функция сообщает о неверном выборе и оплате через результат.
+Неверная цена — ошибка при настройке автомата, поэтому её проверяет `Debug.Assert`:
+у каждого слота должна быть положительная цена.
+Кроме того, каждый слот должен быть создан: массив ссылок сам по себе не создаёт объекты.
+Успешный результат — отдельный класс,
+поэтому результат не может содержать половину покупки:
+
+```csharp
+enum PurchaseStatus
+{
+    Bought,
+    InvalidSelection,
+    InvalidPayment,
+    EmptySlot,
+    NotEnoughCoins,
+}
+
+class BoughtSnack
+{
+    public Snack snack;
+    public int change;
+}
+
+class Purchase
+{
+    public PurchaseStatus status;
+    public BoughtSnack? bought; // есть ровно при status == Bought
+}
+
+static Purchase BuySnack(VendingMachine machine, int slotIndex, int coins)
+{
+    if (slotIndex < 0 || slotIndex >= machine.slots.Length)
+    {
+        return new Purchase
+        {
+            status = PurchaseStatus.InvalidSelection,
+        };
+    }
+    if (coins < 0)
+    {
+        return new Purchase
+        {
+            status = PurchaseStatus.InvalidPayment,
+        };
+    }
+
+    VendingSlot slot = machine.slots[slotIndex];
+    Debug.Assert(slot != null);  // каждый слот должен быть создан
+    Debug.Assert(slot.price > 0); // у каждого слота должна быть положительная цена
+    if (slot.snack == null)
+    {
+        return new Purchase
+        {
+            status = PurchaseStatus.EmptySlot,
+        };
+    }
+    if (coins < slot.price)
+    {
+        return new Purchase
+        {
+            status = PurchaseStatus.NotEnoughCoins,
+        };
+    }
+
+    Purchase purchase = new()
+    {
+        status = PurchaseStatus.Bought,
+        bought = new BoughtSnack
+        {
+            snack = slot.snack.Value,
+            change = coins - slot.price,
+        },
+    };
+    slot.snack = null; // автомат меняется только после успешной покупки
+    return purchase;
+}
+```
+
+Печать выбирает ветку по статусу покупки.
+При успехе результат должен содержать снек и сдачу, при неудаче — не должен.
+Первая проверка обнаружит неверно собранный результат.
+Проверка в `default` обнаружит неизвестный статус,
+при котором печать иначе просто ничего не выведет:
+
+```csharp
+static void PrintPurchase(Purchase purchase)
+{
+    // Данные о покупке есть тогда и только тогда, когда она успешна.
+    Debug.Assert((purchase.bought != null) == (purchase.status == PurchaseStatus.Bought));
+    switch (purchase.status)
+    {
+        case PurchaseStatus.Bought:
+            Debug.Assert(purchase.bought != null); // у Bought всегда есть снек
+            Console.WriteLine($"bought {SnackName(purchase.bought.snack)}, change {purchase.bought.change}");
+            break;
+        case PurchaseStatus.InvalidSelection:
+            Console.WriteLine("no such slot");
+            break;
+        case PurchaseStatus.InvalidPayment:
+            Console.WriteLine("the payment is invalid");
+            break;
+        case PurchaseStatus.EmptySlot:
+            Console.WriteLine("the slot is empty");
+            break;
+        case PurchaseStatus.NotEnoughCoins:
+            Console.WriteLine("not enough coins");
+            break;
+        default:
+            Debug.Assert(false); // все значения PurchaseStatus обработаны выше
+            break;
+    }
+}
+```
+
+Использование в основной функции:
+
+```csharp
+VendingMachine machine = new();
+
+PrintPurchase(BuySnack(machine, 9, 5)); // no such slot
+PrintPurchase(BuySnack(machine, 0, 5)); // bought chips, change 2
+PrintPurchase(BuySnack(machine, 0, 5)); // the slot is empty
+PrintPurchase(BuySnack(machine, 2, 1)); // not enough coins
+```
+
+Второй вызов — единственный, который меняет автомат.
+Остальные три оставляют все слоты точно такими, какими они были.
+
+## Планирование мутации как значения
+
+Ещё один способ разделить обязанности — сделать изменение самостоятельным значением.
+Одна функция читает текущее состояние и вычисляет изменение;
+другая печатает, что сейчас произойдёт;
+третья применяет изменение.
+Состояние меняется в одном месте, а план можно рассмотреть до применения.
+
+В гараже перекрашивают машины. План хранит, какую машину красят, новый цвет,
+оценку времени и цену; его вычисление ничего не меняет.
+Для планирования нужны существующая машина и допустимые значения текущего и нового цвета.
+При применении индекс и новый цвет проверяются снова: план мог быть создан отдельно.
+Проверки не дают записать недопустимый цвет, даже если план ни разу не печатали:
+
+```csharp
+enum Paint
+{
+    Red,
+    Blue,
+    Green,
+}
+
+static string PaintName(Paint paint)
+{
+    switch (paint)
+    {
+        case Paint.Red:
+            return "red";
+        case Paint.Blue:
+            return "blue";
+        case Paint.Green:
+            return "green";
+    }
+    Debug.Assert(false); // все значения Paint обработаны выше
+    return "";
+}
+
+static bool IsKnownPaint(Paint paint)
+{
+    switch (paint)
+    {
+        case Paint.Red:
+        case Paint.Blue:
+        case Paint.Green:
+            return true;
+    }
+    return false;
+}
+
+class Car
+{
+    public string model = "";
+    public Paint paint;
+}
+
+class Repaint
+{
+    public int carIndex;
+    public Paint newPaint;
+    public int hours;
+    public int price;
+}
+
+static Repaint PlanRepaint(Car[] cars, int carIndex, Paint newPaint)
+{
+    Debug.Assert(carIndex >= 0 && carIndex < cars.Length); // план должен указывать на существующую машину
+    Debug.Assert(IsKnownPaint(newPaint));                  // новый цвет должен быть допустимым значением Paint
+    Car car = cars[carIndex];
+    Debug.Assert(IsKnownPaint(car.paint)); // текущий цвет должен быть допустимым значением Paint
+    int hours = car.paint == newPaint ? 1 : 3;
+    return new Repaint
+    {
+        carIndex = carIndex,
+        newPaint = newPaint,
+        hours = hours,
+        price = hours * 1000,
+    };
+}
+
+static void PrintRepaint(Repaint repaint)
+{
+    Console.WriteLine($"car {repaint.carIndex} will be repainted {PaintName(repaint.newPaint)} in {repaint.hours} h for {repaint.price}");
+}
+
+static void ApplyRepaint(Car[] cars, Repaint repaint)
+{
+    Debug.Assert(repaint.carIndex >= 0 && repaint.carIndex < cars.Length); // план должен указывать на существующую машину
+    Debug.Assert(IsKnownPaint(repaint.newPaint)); // новый цвет должен быть допустимым значением Paint
+    cars[repaint.carIndex].paint = repaint.newPaint;
+}
+```
+
+Использование в основной функции: план печатается до применения,
+поэтому вывод показывает, что именно сейчас произойдёт:
+
+```csharp
+Car[] cars =
+[
+    new Car
+    {
+        model = "Supra",
+        paint = Paint.Red,
+    },
+    new Car
+    {
+        model = "Civic",
+        paint = Paint.Green,
+    },
+    new Car
+    {
+        model = "Miata",
+        paint = Paint.Red,
+    },
+];
+
+Repaint repaint = PlanRepaint(cars, 0, Paint.Blue);
+PrintRepaint(repaint);
+ApplyRepaint(cars, repaint);
+```
+
+План — обычное значение: его можно напечатать, сохранить или отбросить,
+не трогая машины.
