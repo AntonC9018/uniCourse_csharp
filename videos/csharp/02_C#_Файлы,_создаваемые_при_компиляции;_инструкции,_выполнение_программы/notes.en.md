@@ -189,8 +189,11 @@ Hello world!
 
 [00:04:22](https://www.youtube.com/watch?v=jLWY_id6nXU&t=262s) Once the greeting statement finishes, execution proceeds to the following statement, then to the next. [00:04:36](https://www.youtube.com/watch?v=jLWY_id6nXU&t=276s) If an action takes a long time, the following actions wait for it. This description concerns the sequential program in the lesson; it is not a claim about all concurrent programs.
 
+Animation: follow each statement through printing and completion before the next begins.
+The playback pace illustrates execution order, not CPU time.
+
 <!-- <course-animation id="sequential-execution" source="internal/scenes/sequential_execution.py"> -->
-https://github.com/user-attachments/assets/9da79a27-081d-45fa-9b17-ea05653ebf37
+https://github.com/user-attachments/assets/0c10f88d-3362-49fd-bcdf-1e1b8b7375ef
 <!-- </course-animation> -->
 
 <details>
@@ -217,7 +220,10 @@ Console.WriteLine(3);
 
 The order stays the same; the added pauses expose the time spent waiting. Later samples omit the delays to keep the call paths readable. The same completion-before-continuation rule applies if delays remain in a function body.
 
+Animation: watch each 0–1000 ms timer while the console stays unchanged, then follow the next print.
+
 <!-- <course-animation id="sleep-delay" source="internal/scenes/sleep_delay.py"> -->
+https://github.com/user-attachments/assets/c4b216dd-efb7-46e1-9c47-0573aa9b062f
 <!-- </course-animation> -->
 
 ## Defining a named sequence
@@ -283,7 +289,10 @@ Anton
 
 Returning “to the call” describes resuming its continuation. It does not mean executing the same call again automatically. The call is completed only after its body finishes.
 
+Animation: follow `Example()` into its body, then back to the waiting outside `Anton` print.
+
 <!-- <course-animation id="function-call-return" source="internal/scenes/function_call_return.py"> -->
+https://github.com/user-attachments/assets/8453bc1b-17c1-4413-a210-1609cc99ebec
 <!-- </course-animation> -->
 
 ## Running the same body again
@@ -419,8 +428,10 @@ Follow each transfer rather than just reading down the entire file:
 6. [00:10:25](https://www.youtube.com/watch?v=jLWY_id6nXU&t=625s) Because that was `Hello`'s final instruction, `Hello` also finishes.
 7. [00:10:33](https://www.youtube.com/watch?v=jLWY_id6nXU&t=633s) Execution returns again, this time to the startup call. With nothing after it, the program ends.
 
+Animation: follow both returns: `Other` → `Hello`, then `Hello` → the startup call.
+
 <!-- <course-animation id="nested-calls" source="internal/scenes/nested_calls.py"> -->
-https://github.com/user-attachments/assets/60c20ca2-7bb4-43cc-b28c-38698c7d4a16
+https://github.com/user-attachments/assets/d54c92a8-f04b-49b8-bf76-eb5cc59f52fb
 <!-- </course-animation> -->
 
 The shorter description “a function calls Hello” works the same way: reverse which body contains the call, and the call enters `Hello` first, prints its three actions in order, and returns to that caller. What matters is the call site and its continuation, not which name is the outer one.
