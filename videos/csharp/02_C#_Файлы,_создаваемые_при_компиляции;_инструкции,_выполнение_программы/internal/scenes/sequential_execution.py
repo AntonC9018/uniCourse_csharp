@@ -6,7 +6,7 @@ The C# sample deliberately contains no delays or additional statements.
 
 from manim import (
     Scene, Text, VGroup, RoundedRectangle, Rectangle, Line,
-    FadeIn, FadeOut, LEFT,
+    FadeIn, FadeOut, Arrow, GrowArrow, LEFT,
 )
 
 
@@ -24,12 +24,13 @@ class CourseAnimation(Scene):
         sans = "DejaVu Sans"
 
         def label(text, size, color=ink, font=sans):
-            return Text(text, font=font, font_size=size, color=color)
+            return Text(
+                text, font=font, font_size=size, color=color,
+                disable_ligatures=True,
+            )
 
-        title = label("Statements execute in source order", 34)
+        title = label("Sequential execution", 34)
         title.move_to([0, 3.24, 0])
-        subtitle = label("Each statement finishes before the next begins.", 23, muted)
-        subtitle.move_to([0, 2.66, 0])
 
         source_panel = RoundedRectangle(
             width=8.2, height=3.95, corner_radius=0.16,
@@ -80,28 +81,23 @@ class CourseAnimation(Scene):
 
         empty = label("No output yet", 22, muted)
         empty.move_to([2.96, row_y[0], 0], aligned_edge=LEFT)
-        footer = label("Reduced reconstruction • Illustrative pacing, not CPU time.", 18, muted)
+        footer = label("Illustrative pacing • not CPU time", 18, muted)
         footer.move_to([0, -3.33, 0])
-        status = label("Ready to run", 27)
+        status = label("Ready", 27)
         status.move_to([0, -2.08, 0])
-        explanation = label("Read the source from top to bottom.", 22, muted)
-        explanation.move_to([0, -2.63, 0])
 
-        def set_state(primary, secondary, color=ink):
-            nonlocal status, explanation
-            self.remove(status, explanation)
-            status = label(primary, 27, color)
+        def set_state(text, color=ink):
+            nonlocal status
+            self.remove(status)
+            status = label(text, 27, color)
             status.move_to([0, -2.08, 0])
-            explanation = label(secondary, 22, muted)
-            explanation.move_to([0, -2.63, 0])
-            self.add(status, explanation)
+            self.add(status)
 
         self.add(
-            title, subtitle, source_panel, console_panel, source_heading,
-            console_heading, rules, code_rows, numbers, empty, footer,
-            status, explanation,
+            title, source_panel, console_panel, source_heading,
+            console_heading, rules, code_rows, numbers, empty, footer, status,
         )
-        self.wait(2.0)
+        self.wait(1.2)
 
         for index, y in enumerate(row_y):
             # One indicator exists at a time. The previous one has been removed
@@ -114,49 +110,33 @@ class CourseAnimation(Scene):
             active.set_z_index(1)
             code_rows.set_z_index(2)
             numbers.set_z_index(2)
-            set_state(
-                f"Statement {index + 1} active",
-                (
-                    "This statement is executing; later statements have not started."
-                    if index < len(statements) - 1
-                    else "The final statement is executing; it has not completed yet."
-                ),
-                accent,
-            )
-            self.play(FadeIn(active), run_time=0.3)
-            self.wait(1.25)
+            set_state(f"{index + 1} · executing", accent)
+            self.play(FadeIn(active), run_time=0.2)
+            self.wait(0.6)
 
-            # Appending is distinct from completion. Already printed lines stay.
+            # Connect this active source row to its new console row without
+            # moving duplicate glyphs across the code or existing output.
+            transfer = Arrow(
+                [1.72, y, 0], [2.48, y, 0], buff=0,
+                color=accent, stroke_width=2.5, max_tip_length_to_length_ratio=0.2,
+            )
             if index == 0:
                 self.remove(empty)
-            set_state(
-                f"Statement {index + 1}: output appended",
-                "Console.WriteLine adds its value on a new line.",
-                accent,
-            )
+            set_state(f"{index + 1} · printing", accent)
+            self.play(GrowArrow(transfer), run_time=0.3)
             self.play(FadeIn(output_rows[index]), run_time=0.4)
-            self.wait(1.15)
+            set_state(f"{index + 1} · output appended", accent)
+            self.wait(0.5)
 
-            set_state(
-                f"Statement {index + 1} completed",
-                (
-                    "Only now can execution advance to the next statement."
-                    if index < 3
-                    else "All statements have finished; no next statement remains."
-                ),
-                done,
-            )
+            set_state(f"{index + 1} · completed", done)
             self.play(
                 FadeOut(active),
+                FadeOut(transfer),
                 code_rows[index].animate.set_color(done),
                 FadeIn(checks[index]),
                 run_time=0.3,
             )
-            self.wait(1.1)
+            self.wait(0.6)
 
-        set_state(
-            "Program complete",
-            "The console keeps the output in source order.",
-            done,
-        )
-        self.wait(3.0)
+        set_state("Program complete", done)
+        self.wait(1.2)
