@@ -25,8 +25,10 @@ class CourseAnimation(Scene):
         sans = "DejaVu Sans"
 
         def label(value, size=22, color=ink, font=sans):
-            return Text(value, font=font, font_size=size, color=color,
-                        disable_ligatures=True)
+            return Text(
+                value, font=font, font_size=size, color=color,
+                disable_ligatures=True,
+            )
 
         def at_left(value, x, y, size=22, color=ink, font=sans):
             return label(value, size, color, font).move_to(
@@ -162,7 +164,7 @@ class CourseAnimation(Scene):
             # intact. A gutter route avoids all unrelated source and stack text.
             literal = rows[index][-4 if index in (10, 11) else -3]
             target = output_rows[output_index]
-            token = target.copy().set_color(active).move_to(literal.get_center())
+            token = literal.copy().set_color(active)
             start = token.get_center()
             end = target.get_center()
             path = VMobject().set_points_as_corners([

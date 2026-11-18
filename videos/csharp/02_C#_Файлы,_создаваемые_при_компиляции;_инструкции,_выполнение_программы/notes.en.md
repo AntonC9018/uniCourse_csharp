@@ -193,7 +193,7 @@ Animation: follow each statement through printing and completion before the next
 The playback pace illustrates execution order, not CPU time.
 
 <!-- <course-animation id="sequential-execution" source="internal/scenes/sequential_execution.py"> -->
-https://github.com/user-attachments/assets/0c10f88d-3362-49fd-bcdf-1e1b8b7375ef
+https://github.com/user-attachments/assets/00e9a0f0-849e-4743-b387-58f17c370a10
 <!-- </course-animation> -->
 
 <details>
