@@ -1,12 +1,12 @@
 """Nested calls and both returns, matching the note's reduced sample.
 
 Recording coverage: 579–637 seconds. Other, A and B are illustrative, as
-qualified in the note. Holds support reading; they do not represent CPU time.
+qualified in the note. Pacing illustrates control flow, not CPU time.
 """
 
 from manim import (
     Scene, Text, VGroup, RoundedRectangle, Line, Polygon, Dot, VMobject,
-    FadeIn, MoveAlongPath, LEFT, linear,
+    MoveAlongPath, LEFT, linear,
 )
 
 
@@ -25,7 +25,8 @@ class CourseAnimation(Scene):
         sans = "DejaVu Sans"
 
         def label(value, size=22, color=ink, font=sans):
-            return Text(value, font=font, font_size=size, color=color)
+            return Text(value, font=font, font_size=size, color=color,
+                        disable_ligatures=True)
 
         def at_left(value, x, y, size=22, color=ink, font=sans):
             return label(value, size, color, font).move_to(
@@ -39,9 +40,9 @@ class CourseAnimation(Scene):
                 fill_color="#182438", fill_opacity=1,
             ).move_to([x, y, 0])
 
-        title = label("Calls inside function bodies", 32).move_to([0, 3.49, 0])
+        title = label("Nested calls", 28).move_to([0, 3.49, 0])
         subtitle = label(
-            "Reduced sample • Other, A and B are illustrative", 21, muted,
+            "Other, A and B are illustrative", 20, muted,
         ).move_to([0, 2.96, 0])
         panels = VGroup(
             panel(8.0, 5.5, -2.6, -0.10),
@@ -103,26 +104,22 @@ class CourseAnimation(Scene):
             for i, value in enumerate(["1", "2", "3", "A", "B"])
         ]
 
-        status = label("Start at the startup call", 25).move_to([0, -3.18, 0])
-        detail = label(
-            "Definitions supply bodies. Calls choose when those bodies run.", 20, muted,
-        ).move_to([0, -3.65, 0])
+        status = label("Startup", 25).move_to([0, -3.32, 0])
 
-        def set_state(primary, secondary, color=ink):
-            nonlocal status, detail
-            self.remove(status, detail)
-            status = label(primary, 25, color).move_to([0, -3.18, 0])
-            detail = label(secondary, 20, muted).move_to([0, -3.65, 0])
-            self.add(status, detail)
+        def set_state(value, color=ink):
+            nonlocal status
+            self.remove(status)
+            status = label(value, 25, color).move_to([0, -3.32, 0])
+            self.add(status)
 
         def set_stack(frames):
             nonlocal stack
             self.remove(stack, stack_empty)
             stack = VGroup()
             for i, (name, continuation, color) in enumerate(frames):
-                y = 1.55 - 0.88 * i
+                y = 1.55 - 0.84 * i
                 box = RoundedRectangle(
-                    width=4.10, height=0.75, corner_radius=0.08,
+                    width=4.10, height=0.72, corner_radius=0.08,
                     stroke_color=color, stroke_width=1.8,
                     fill_color="#111E2D", fill_opacity=1,
                 ).move_to([4.10, y, 0])
@@ -145,7 +142,7 @@ class CourseAnimation(Scene):
             self.remove(pointer)
 
         def transfer(start, end, color):
-            # Travel through the gutter, never through intervening definitions.
+            # Control travels in the gutter, past unexecuted definitions.
             self.remove(pointer)
             path = VMobject().set_points_as_corners([
                 [-6.36, row_y[start], 0], [-6.82, row_y[start], 0],
@@ -153,137 +150,117 @@ class CourseAnimation(Scene):
             ]).set_stroke(color, width=2)
             token = Dot(path.get_start(), radius=0.055, color=color)
             self.add(path, token)
-            self.play(MoveAlongPath(token, path), run_time=1.5, rate_func=linear)
+            self.play(MoveAlongPath(token, path), run_time=1, rate_func=linear)
             self.remove(path, token)
 
-        def print_value(index, output_index, body, value):
+        def print_value(index, output_index):
             activate(index)
-            set_state(
-                f"{body}: print {value}",
-                "Finish this statement before moving to the next one.", active,
-            )
-            self.wait(0.8)
-            self.remove(output_empty)
-            self.play(FadeIn(output_rows[output_index]), run_time=0.3)
-            self.wait(1.2)
-            complete(index)
-            self.wait(0.7)
+            set_state("Print", active)
+            self.wait(0.4)
 
-        startup_waiting = ("Startup • waiting", "Hello() must finish", saved)
-        hello_waiting = ("Hello • waiting", "Other() must finish", saved)
+            # Copy the literal's glyph to the next console row. The source stays
+            # intact. A gutter route avoids all unrelated source and stack text.
+            literal = rows[index][-4 if index in (10, 11) else -3]
+            target = output_rows[output_index]
+            token = target.copy().set_color(active).move_to(literal.get_center())
+            start = token.get_center()
+            end = target.get_center()
+            path = VMobject().set_points_as_corners([
+                start, [1.55, start[1], 0], [1.55, end[1], 0], end,
+            ])
+            self.remove(output_empty)
+            self.add(token)
+            self.play(MoveAlongPath(token, path), run_time=0.65, rate_func=linear)
+            self.remove(token)
+            self.add(target)
+            self.wait(0.55)
+            complete(index)
+            self.wait(0.1)
+
+        startup_waiting = ("Startup • waiting", "After Hello() → end", saved)
+        hello_waiting = ("Hello • waiting", "After Other() → end Hello", saved)
         self.add(
             title, subtitle, panels, headings, rules, rows, numbers,
-            startup_tag, definitions_tag, stack_empty, output_empty, status, detail,
+            startup_tag, definitions_tag, stack_empty, output_empty, status,
         )
-        self.wait(3)
+        self.wait(1)
 
         activate(0)
         set_stack([startup_waiting])
-        set_state(
-            "Startup calls Hello",
-            "Save startup's continuation: after Hello(), there is no next statement.",
-            active,
-        )
-        self.wait(3)
-
-        set_state(
-            "Enter Hello at its first statement",
-            "The startup call stays pending while Hello runs.", active,
-        )
+        set_state("Call Hello", active)
+        self.wait(1.2)
+        set_state("Startup → Hello", active)
         transfer(0, 3, active)
-        set_stack([("Hello • running", "Print 1, then 2, then 3", active), startup_waiting])
+        set_stack([
+            ("Hello • running", "Return → startup: line 1", active),
+            startup_waiting,
+        ])
         activate(3)
-        self.wait(1.5)
+        self.wait(0.5)
 
-        for index, value in enumerate(["1", "2", "3"]):
-            print_value(3 + index, index, "Hello", value)
+        for index in range(3):
+            print_value(3 + index, index)
 
         activate(6)
         set_stack([hello_waiting, startup_waiting])
-        set_state(
-            "Hello's final statement calls Other",
-            "Hello cannot finish yet: its Other() call is still pending.", active,
-        )
-        self.wait(3)
-
-        set_state(
-            "Enter Other at its first statement",
-            "Both callers wait. Other now runs its own body.", active,
-        )
+        set_state("Call Other • Hello waits", active)
+        self.wait(1.4)
+        set_state("Hello → Other", active)
         transfer(6, 10, active)
         set_stack([
-            ("Other • running", "Print A, then B", active),
+            ("Other • running", "Return → Hello: line 8", active),
             hello_waiting, startup_waiting,
         ])
         activate(10)
-        self.wait(1.5)
+        self.wait(0.5)
 
-        print_value(10, 3, "Other", "A")
-        print_value(11, 4, "Other", "B")
+        print_value(10, 3)
+        print_value(11, 4)
 
         activate(12)
         set_stack([
-            ("Other • finished", "Return to Hello's Other()", done),
+            ("Other • finished", "Return → Hello: line 8", done),
             hello_waiting, startup_waiting,
         ])
-        set_state(
-            "Other's body is finished",
-            "Return 1 goes to the Other() call inside Hello.", done,
-        )
-        self.wait(3)
+        set_state("Other finishes", done)
+        self.wait(1.2)
         complete(12)
 
-        set_state(
-            "Return 1: Other → Hello",
-            "Resume the caller at line 8. The nested call can now complete.", saved,
-        )
+        set_state("Return 1: Other → Hello", saved)
         transfer(12, 6, saved)
         activate(6)
         set_stack([
-            ("Hello • resumed", "Other() has completed", done), startup_waiting,
+            ("Hello • resumed", "At Other(): line 8", active), startup_waiting,
         ])
+        self.wait(0.8)
         complete(6)
-        set_state(
-            "Back in Hello: Other(); is completed",
-            "This was Hello's last statement. Startup is still waiting.", done,
-        )
-        self.wait(4)
+        set_stack([
+            ("Hello • resumed", "Other() completed", done), startup_waiting,
+        ])
+        set_state("Other(); completed • back in Hello", done)
+        self.wait(1.2)
 
         activate(7)
         set_stack([
-            ("Hello • finished", "Return to startup's Hello()", done), startup_waiting,
+            ("Hello • finished", "Return → startup: line 1", done), startup_waiting,
         ])
-        set_state(
-            "Hello now finishes",
-            "Its final nested call has completed; there are no body statements left.", done,
-        )
-        self.wait(4)
+        set_state("Hello finishes after its final call", done)
+        self.wait(1.6)
         complete(7)
 
-        set_state(
-            "Return 2: Hello → startup",
-            "Return to the original Hello() call at line 1.", saved,
-        )
+        set_state("Return 2: Hello → startup", saved)
         transfer(7, 0, saved)
         activate(0)
-        set_stack([("Startup • resumed", "Hello() has completed", done)])
+        set_stack([("Startup • resumed", "At Hello(): line 1", active)])
+        self.wait(0.8)
         complete(0)
-        set_state(
-            "Back in startup: Hello(); is completed",
-            "Both returns have happened: Other → Hello, then Hello → startup.", done,
-        )
-        self.wait(4)
+        set_stack([("Startup • resumed", "Hello() completed", done)])
+        set_state("Hello(); completed • back in startup", done)
+        self.wait(1.2)
 
-        set_state(
-            "No startup statements remain",
-            "The nearby definitions do not run as extra startup actions.", done,
-        )
-        self.wait(4)
+        set_state("No startup statements remain", done)
+        self.wait(1.2)
         set_stack([])
-        ended = at_left("Program ended", 2.10, 1.58, 22, done)
-        self.add(ended)
-        set_state(
-            "Program ends • Output: 1, 2, 3, A, B",
-            "Each call finished before its caller could finish.", done,
-        )
-        self.wait(6)
+        self.add(at_left("Program ended", 2.10, 1.58, 22, done))
+        set_state("Program ends", done)
+        self.wait(2)
