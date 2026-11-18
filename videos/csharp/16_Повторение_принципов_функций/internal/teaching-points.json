@@ -1,0 +1,1558 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "L62Og-Y4poE",
+  "uploadId": "L62Og-Y4poE",
+  "transcriptSha256": "42036d77168f64ab6bff1a40da8fa7680a6f141ceec92f3dbd847720ad99d276",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 280,
+      "endMilliseconds": 14000,
+      "kind": "reason",
+      "text": "Functions let you group several instructions under one name, which is why they exist at all.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 280,
+          "endMilliseconds": 14000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-two-instructions-under-one-name"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 14120,
+      "endMilliseconds": 19990,
+      "kind": "fact",
+      "text": "A function declaration starts with the return type, and this function returns void because it only runs commands.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 14120,
+          "endMilliseconds": 19990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-two-instructions-under-one-name"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 19990,
+      "endMilliseconds": 22560,
+      "kind": "scope_boundary",
+      "text": "The static keyword is deliberately postponed, so it is out of scope for this syntax review.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 19990,
+          "endMilliseconds": 22560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-two-instructions-under-one-name"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 24590,
+      "endMilliseconds": 34700,
+      "kind": "reason",
+      "text": "The return type is void here because the function produces no result, so it merely executes its commands.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 24590,
+          "endMilliseconds": 34700
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-two-instructions-under-one-name"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 34700,
+      "endMilliseconds": 41590,
+      "kind": "fact",
+      "text": "After the name come the parameters in parentheses; in this example the parameter list is empty and the two instructions go into the body.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 34700,
+          "endMilliseconds": 41590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#group-two-instructions-under-one-name"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 41590,
+      "endMilliseconds": 55549,
+      "kind": "reason",
+      "text": "Running a program that only defines a function does nothing, because a definition must be followed by an actual call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 41590,
+          "endMilliseconds": 55549
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#call-the-function-and-return-to-the-caller"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 55549,
+      "endMilliseconds": 64700,
+      "kind": "fact",
+      "text": "A function is used by writing its name followed by parentheses, and the parentheses must be present even when there are no parameters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 55549,
+          "endMilliseconds": 64700
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#call-the-function-and-return-to-the-caller"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 64640,
+      "endMilliseconds": 72680,
+      "kind": "explanation",
+      "text": "Calling a function means jumping to the function with that name and executing its instructions in order.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 64640,
+          "endMilliseconds": 72680
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 64700,
+          "endMilliseconds": 72680
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#call-the-function-and-return-to-the-caller"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 72870,
+      "endMilliseconds": 79800,
+      "kind": "explanation",
+      "text": "After the function finishes its instructions, execution returns to the code where the call was written.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 72870,
+          "endMilliseconds": 79800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#call-the-function-and-return-to-the-caller"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 80000,
+      "endMilliseconds": 87800,
+      "kind": "explanation",
+      "text": "With two calls in a row, the function body runs twice - Hello World then Hello You - before execution resumes at the call site.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 80000,
+          "endMilliseconds": 87800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#call-the-function-and-return-to-the-caller"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 87900,
+      "endMilliseconds": 92500,
+      "kind": "explanation",
+      "text": "When no instructions remain after the last call, the program terminates.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 87900,
+          "endMilliseconds": 92500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#call-the-function-and-return-to-the-caller"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 92520,
+      "endMilliseconds": 100200,
+      "kind": "explanation",
+      "text": "A function declaration is not an instruction itself; the function exists outside the program flow as a separate entity.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 92520,
+          "endMilliseconds": 100200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#call-the-function-and-return-to-the-caller"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 100200,
+      "endMilliseconds": 113300,
+      "kind": "fact",
+      "text": "In a void function the compiler inserts an implicit return as the last instruction so execution can go back to the call site.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 100200,
+          "endMilliseconds": 113300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#call-the-function-and-return-to-the-caller"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 113300,
+      "endMilliseconds": 139599,
+      "kind": "fact",
+      "text": "Functions may both take parameters and return values, which is what the next part of the lesson builds on.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 113300,
+          "endMilliseconds": 139599
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-parameters-and-a-return-value"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 139599,
+      "endMilliseconds": 143350,
+      "kind": "fact",
+      "text": "Functions may both take parameters and return values, which distinguishes them from the void example shown before.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 139599,
+          "endMilliseconds": 143350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-parameters-and-a-return-value"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 143350,
+      "endMilliseconds": 151949,
+      "kind": "explanation",
+      "text": "Parameters are what you write in the parentheses; at each call a local variable with the same name is created for every parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 143350,
+          "endMilliseconds": 151949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-parameters-and-a-return-value"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 153500,
+      "endMilliseconds": 164670,
+      "kind": "fact",
+      "text": "The values you pass at the call site to initialize those locals are called arguments, for example a receives 1 and b receives 2.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 153500,
+          "endMilliseconds": 164670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-parameters-and-a-return-value"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 164760,
+      "endMilliseconds": 169430,
+      "kind": "fact",
+      "text": "Because the return type is int, the call can be used as an expression whose value is what the function returns.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 164760,
+          "endMilliseconds": 169430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#add-parameters-and-a-return-value"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 169430,
+      "endMilliseconds": 186470,
+      "kind": "explanation",
+      "text": "Such a single line expands into three steps: declaring an empty uninitialized variable, computing the expression, and assigning the result to that variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 169430,
+          "endMilliseconds": 186470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-one-call-from-declaration-to-assignment"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 186470,
+      "endMilliseconds": 189290,
+      "kind": "explanation",
+      "text": "Declaring a variable only allocates a cell for it and leaves it without a value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 186470,
+          "endMilliseconds": 189290
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-one-call-from-declaration-to-assignment"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 189290,
+      "endMilliseconds": 205280,
+      "kind": "explanation",
+      "text": "Computing the expression is simple here because the arguments are already known, although the following example has unknown arguments.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 189290,
+          "endMilliseconds": 205280
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 198879,
+          "endMilliseconds": 205280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-one-call-from-declaration-to-assignment"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 206159,
+      "endMilliseconds": 213869,
+      "kind": "fact",
+      "text": "Evaluating the call to the function Compute creates the local variables a and b and copies in the values given at the call site.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 206159,
+          "endMilliseconds": 213869
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-one-call-from-declaration-to-assignment"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 213869,
+      "endMilliseconds": 217350,
+      "kind": "explanation",
+      "text": "After the arguments are prepared, execution moves to the first instruction inside the function of that name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 213869,
+          "endMilliseconds": 217350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-one-call-from-declaration-to-assignment"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 217350,
+      "endMilliseconds": 224670,
+      "kind": "explanation",
+      "text": "Inside the function, a variable named red is created and the expression a + b is computed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 217350,
+          "endMilliseconds": 224670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-one-call-from-declaration-to-assignment"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 224670,
+      "endMilliseconds": 232470,
+      "kind": "explanation",
+      "text": "The identifiers a and b inside the function refer to the local variables that were initialized with the values 1 and 2.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 224670,
+          "endMilliseconds": 232470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-one-call-from-declaration-to-assignment"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 232470,
+      "endMilliseconds": 242440,
+      "kind": "explanation",
+      "text": "The expression is replaced by its computed result, that result is written into red, and red becomes the result of the function call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 232470,
+          "endMilliseconds": 242440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-one-call-from-declaration-to-assignment"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 242440,
+      "endMilliseconds": 247440,
+      "kind": "explanation",
+      "text": "The return statement replaces the call expression with whatever value the function hands back to the caller.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 242440,
+          "endMilliseconds": 247440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-one-call-from-declaration-to-assignment"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 247440,
+      "endMilliseconds": 275199,
+      "kind": "explanation",
+      "text": "Return takes the value currently stored in red, which is why it works even when the result was computed into a local variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 247440,
+          "endMilliseconds": 275199
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-one-call-from-declaration-to-assignment"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 267040,
+      "endMilliseconds": 287750,
+      "kind": "explanation",
+      "text": "When a function returns, the call expression itself is replaced by the value returned at that moment, which is why the surrounding expression can continue to be computed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 267040,
+          "endMilliseconds": 287750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-one-call-from-declaration-to-assignment"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 287750,
+      "endMilliseconds": 305430,
+      "kind": "explanation",
+      "text": "The value returned by the last executed function call, here 3, becomes the final result of the whole statement and is stored into the variable sum.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 287750,
+          "endMilliseconds": 305430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#trace-one-call-from-declaration-to-assignment"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 305430,
+      "endMilliseconds": 321670,
+      "kind": "reason",
+      "text": "The plus operator can only be applied to two values, so each function call inside the expression must first be converted into the value it returns.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 305430,
+          "endMilliseconds": 321670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#combine-call-results-in-a-larger-expression"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 321670,
+      "endMilliseconds": 335080,
+      "kind": "explanation",
+      "text": "After the operands become values the expression is computed as 3 + 5 = 8, and that plain value is what finally lands in variable sum.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 321670,
+          "endMilliseconds": 335080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#combine-call-results-in-a-larger-expression"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 335080,
+      "endMilliseconds": 340830,
+      "kind": "explanation",
+      "text": "Writing sum = Operation(a, b) is therefore equivalent to writing the sum of eight directly into sum, since both produce the same final value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 335080,
+          "endMilliseconds": 340830
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 338720,
+          "endMilliseconds": 340830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#combine-call-results-in-a-larger-expression"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 340830,
+      "endMilliseconds": 352670,
+      "kind": "reason",
+      "text": "Functions pay off when an operand is not a constant but comes from an external source such as user input, a network response or a file read.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 340830,
+          "endMilliseconds": 352670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#combine-call-results-in-a-larger-expression"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 352670,
+      "endMilliseconds": 364070,
+      "kind": "fact",
+      "text": "When the body of the function is hidden behind a name, the caller cannot tell what it does and must judge purely by the abstraction the name gives.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 352670,
+          "endMilliseconds": 364070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#combine-call-results-in-a-larger-expression"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 364070,
+      "endMilliseconds": 390230,
+      "kind": "explanation",
+      "text": "The evaluation mechanism is unchanged with such calls: a larger expression is split into two smaller ones, each is evaluated separately, and their values are then summed by the plus.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 364070,
+          "endMilliseconds": 390230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arguments-before-entering-the-function"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 390230,
+      "endMilliseconds": 409680,
+      "kind": "explanation",
+      "text": "Evaluating the second operand means calling the function, and calling it first requires evaluating its arguments, the first of which is already computed here because a constant is passed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 390230,
+          "endMilliseconds": 409680
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arguments-before-entering-the-function"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 401960,
+      "endMilliseconds": 409670,
+      "kind": "explanation",
+      "text": "Calling a function requires its arguments to be evaluated first, so argument computation always precedes the call itself.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 401960,
+          "endMilliseconds": 409670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arguments-before-entering-the-function"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 409670,
+      "endMilliseconds": 417950,
+      "kind": "fact",
+      "text": "An argument written as a variable reference is itself an expression, and after evaluation it yields the value stored in that variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 409670,
+          "endMilliseconds": 417950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arguments-before-entering-the-function"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 417950,
+      "endMilliseconds": 424390,
+      "kind": "edge_case",
+      "text": "An argument need not be a bare variable: a more complex expression such as a * 10 is also a valid argument and is evaluated before the call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 417950,
+          "endMilliseconds": 424390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arguments-before-entering-the-function"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 424390,
+      "endMilliseconds": 441240,
+      "kind": "explanation",
+      "text": "The complex argument expression is evaluated to a single value, and that value is what gets passed and stored in the local parameter variable for the second position.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 424390,
+          "endMilliseconds": 441240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arguments-before-entering-the-function"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 441240,
+      "endMilliseconds": 455870,
+      "kind": "reason",
+      "text": "The plus needs both of its operands computed, and computing the second operand means performing the call whose argument expression must first shrink to the value 9.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 441240,
+          "endMilliseconds": 455870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arguments-before-entering-the-function"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 455870,
+      "endMilliseconds": 471800,
+      "kind": "explanation",
+      "text": "With the inner product reduced to 9 * 2 = 18, the outer addition 18 + 10 can finally be computed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 455870,
+          "endMilliseconds": 471800
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 463319,
+          "endMilliseconds": 471800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arguments-before-entering-the-function"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 471800,
+      "endMilliseconds": 491400,
+      "kind": "fact",
+      "text": "This whole procedure is called expression evaluation: the first expression yields 29, the second yields 12, and the two results are then summed to 41.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 471800,
+          "endMilliseconds": 491400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#evaluate-arguments-before-entering-the-function"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 491400,
+      "endMilliseconds": 504790,
+      "kind": "fact",
+      "text": "The variable a used outside the call is a different variable from the parameter a created for that call, because they exist in different scopes, also called zones of visibility.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 491400,
+          "endMilliseconds": 504790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-scopes-and-name-the-arguments"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 504790,
+      "endMilliseconds": 518350,
+      "kind": "fact",
+      "text": "Arguments may be passed positionally or by parameter name using the named arguments syntax.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 504790,
+          "endMilliseconds": 518350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-scopes-and-name-the-arguments"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 518350,
+      "endMilliseconds": 532430,
+      "kind": "reason",
+      "text": "Named arguments let you pass values in an order different from their positions in the parameter list, which removes the need to remember the parameter order.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 518350,
+          "endMilliseconds": 532430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-scopes-and-name-the-arguments"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 531959,
+      "endMilliseconds": 541150,
+      "kind": "fact",
+      "text": "The order of arguments at the call site decides which parameter each value binds to, independently of the order the parameters are declared in, so a value written first becomes the first parameter even if it is listed second in the signature.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 531959,
+          "endMilliseconds": 541150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-scopes-and-name-the-arguments"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 532430,
+      "endMilliseconds": 538720,
+      "kind": "fact",
+      "text": "With the named syntax the explicitly named value is bound to the matching parameter regardless of where it is written in the call.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 532430,
+          "endMilliseconds": 538720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-scopes-and-name-the-arguments"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 541160,
+      "endMilliseconds": 552990,
+      "kind": "explanation",
+      "text": "A static local function gets no access to the local variables of the enclosing block, which makes its dependencies invisible at the call site and forces them to be passed explicitly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 541160,
+          "endMilliseconds": 552990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-local-dependencies-explicit-with-static"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 553000,
+      "endMilliseconds": 567949,
+      "kind": "edge_case",
+      "text": "Without the static modifier the function body may read the enclosing local variable, but that is only legal at run time if the variable is already initialized at the moment the function is called.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 553000,
+          "endMilliseconds": 567949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-local-dependencies-explicit-with-static"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 567959,
+      "endMilliseconds": 582630,
+      "kind": "edge_case",
+      "text": "If the enclosing local variable is initialized before the first call of the local function, referring to it from inside the function body is valid.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 567959,
+          "endMilliseconds": 582630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#make-local-dependencies-explicit-with-static"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 582640,
+      "endMilliseconds": 590470,
+      "kind": "fact",
+      "text": "A parameter and an enclosing local variable that share the same name are two separate entities, so the parameter shadows the outer variable inside the function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 582640,
+          "endMilliseconds": 590470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#resolve-shadowing-with-distinct-names"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 590480,
+      "endMilliseconds": 602150,
+      "kind": "edge_case",
+      "text": "When a parameter shadows an enclosing local variable, the local variable cannot be referenced from the function at all, and the compiler rejects such code with an error.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 590480,
+          "endMilliseconds": 602150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#resolve-shadowing-with-distinct-names"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 602160,
+      "endMilliseconds": 608560,
+      "kind": "fact",
+      "text": "The compiler message 'A is a local variable with the same name' is the shadowing diagnostic, raised when a name in one scope collides with a same-named name in the outer scope.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 602160,
+          "endMilliseconds": 608560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#resolve-shadowing-with-distinct-names"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 608560,
+      "endMilliseconds": 623949,
+      "kind": "explanation",
+      "text": "Inside a shadowing scope the inner name resolves to the parameter, while the outer variable with the same name remains visible only as the shadowed outer entity, which is why the parameter wins.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 608560,
+          "endMilliseconds": 623949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#resolve-shadowing-with-distinct-names"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 623959,
+      "endMilliseconds": 632829,
+      "kind": "reason",
+      "text": "Shadowing is best avoided by giving one of the colliding names a distinct name such as A1, so the reader can tell which variable the code means.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 623959,
+          "endMilliseconds": 632829
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#resolve-shadowing-with-distinct-names"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 632839,
+      "endMilliseconds": 644389,
+      "kind": "reason",
+      "text": "If a function does not actually depend on the surrounding local variables, it is better to mark it static and pass what it needs as parameters, which removes the accidental capture.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 632839,
+          "endMilliseconds": 644389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#resolve-shadowing-with-distinct-names"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 644399,
+      "endMilliseconds": 656389,
+      "kind": "explanation",
+      "text": "Without a parameter the function body simply reads the outer variable directly, so its result silently depends on the enclosing scope.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 644399,
+          "endMilliseconds": 656389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-capture-as-shared-variable-access"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 656399,
+      "endMilliseconds": 670629,
+      "kind": "explanation",
+      "text": "Conceptually the compiler rewrites such a local function into a function whose parameter list additionally contains a reference to the captured variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 656399,
+          "endMilliseconds": 670629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-capture-as-shared-variable-access"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 667560,
+      "endMilliseconds": 673389,
+      "kind": "reason",
+      "text": "The captured variable is passed by reference rather than by copy because the function may reassign it and the caller must observe that change.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 667560,
+          "endMilliseconds": 673389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-capture-as-shared-variable-access"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 680720,
+      "endMilliseconds": 691990,
+      "kind": "explanation",
+      "text": "Your source code stays exactly as written and the compiler only rewrites the call site into a form that passes a reference to the local variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 680720,
+          "endMilliseconds": 691990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-capture-as-shared-variable-access"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 692000,
+      "endMilliseconds": 705350,
+      "kind": "explanation",
+      "text": "The compiler effectively turns the local function into a static local function that no longer touches the enclosing fields and instead receives references to the variables it actually uses.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 692000,
+          "endMilliseconds": 705350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-capture-as-shared-variable-access"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 705360,
+      "endMilliseconds": 717350,
+      "kind": "fact",
+      "text": "Functions most often exist not as local functions but as class members, and member functions are called methods.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 705360,
+          "endMilliseconds": 717350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-function-into-a-class"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 717360,
+      "endMilliseconds": 728230,
+      "kind": "fact",
+      "text": "To move a local function into a static class it needs the public modifier, otherwise it cannot be called from another class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 717360,
+          "endMilliseconds": 728230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-function-into-a-class"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 728240,
+      "endMilliseconds": 736269,
+      "kind": "fact",
+      "text": "A function placed in a class is invoked by qualifying it with the class name, the dot operator and the function name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 728240,
+          "endMilliseconds": 736269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-function-into-a-class"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 734279,
+      "endMilliseconds": 740959,
+      "kind": "fact",
+      "text": "A static class may only contain static methods, and those static methods are often referred to simply as functions.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 734279,
+          "endMilliseconds": 740959
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-function-into-a-class"
+      }
+    },
+    {
+      "id": "TP-068",
+      "startMilliseconds": 740959,
+      "endMilliseconds": 754150,
+      "kind": "explanation",
+      "text": "A static method has no context beyond the parameters you pass it, so its result must be determined by those parameters even though it may still read static fields.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 740959,
+          "endMilliseconds": 754150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-function-into-a-class"
+      }
+    },
+    {
+      "id": "TP-069",
+      "startMilliseconds": 754160,
+      "endMilliseconds": 763310,
+      "kind": "reason",
+      "text": "Static variables should not be used to pass information to functions because parameters make the data flow explicit and easier to follow.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 754160,
+          "endMilliseconds": 763310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-the-function-into-a-class"
+      }
+    },
+    {
+      "id": "TP-070",
+      "startMilliseconds": 763320,
+      "endMilliseconds": 779870,
+      "kind": "fact",
+      "text": "Top-level code that sits in no function at all is wrapped by the compiler into a Program class with a public Main method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 763320,
+          "endMilliseconds": 779870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#recognize-the-entry-point-behind-top-level-code"
+      }
+    },
+    {
+      "id": "TP-071",
+      "startMilliseconds": 779880,
+      "endMilliseconds": 788750,
+      "kind": "scope_boundary",
+      "text": "The int return type and the optional string[] args parameter of the generated Main need not be written by hand, and the lesson leaves what int means for a later topic.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 779880,
+          "endMilliseconds": 788750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#recognize-the-entry-point-behind-top-level-code"
+      }
+    },
+    {
+      "id": "TP-072",
+      "startMilliseconds": 788760,
+      "endMilliseconds": 804910,
+      "kind": "fact",
+      "text": "The compiler generates a non-static Program class containing a static Main method, so none of that boilerplate has to be typed by the developer.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 788760,
+          "endMilliseconds": 804910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#recognize-the-entry-point-behind-top-level-code"
+      }
+    },
+    {
+      "id": "TP-073",
+      "startMilliseconds": 801240,
+      "endMilliseconds": 805760,
+      "kind": "fact",
+      "text": "Alongside static methods C# also has instance methods, and instance methods may only be declared on non-static classes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 801240,
+          "endMilliseconds": 805760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-an-instance-method-its-object"
+      }
+    },
+    {
+      "id": "TP-074",
+      "startMilliseconds": 804920,
+      "endMilliseconds": 809800,
+      "kind": "fact",
+      "text": "Instance methods can be defined only in non-static classes, which is the counterpart to the rule that static classes hold only static methods.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 804920,
+          "endMilliseconds": 809800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-an-instance-method-its-object"
+      }
+    },
+    {
+      "id": "TP-075",
+      "startMilliseconds": 805760,
+      "endMilliseconds": 811800,
+      "kind": "fact",
+      "text": "Static methods may be declared on any class, including non-static ones.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 805760,
+          "endMilliseconds": 811800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-an-instance-method-its-object"
+      }
+    },
+    {
+      "id": "TP-076",
+      "startMilliseconds": 811800,
+      "endMilliseconds": 819000,
+      "kind": "explanation",
+      "text": "Instance methods can read the values of the instance's fields, because the call target object is passed to them as a hidden first parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 811800,
+          "endMilliseconds": 819000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-an-instance-method-its-object"
+      }
+    },
+    {
+      "id": "TP-077",
+      "startMilliseconds": 819000,
+      "endMilliseconds": 828990,
+      "kind": "explanation",
+      "text": "The hidden first parameter of an instance method is a reference to the object the method was called on, which is how it reaches its own fields.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 819000,
+          "endMilliseconds": 828990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-an-instance-method-its-object"
+      }
+    },
+    {
+      "id": "TP-078",
+      "startMilliseconds": 829000,
+      "endMilliseconds": 847640,
+      "kind": "reason",
+      "text": "To call an instance method you first need an object of the declaring type and may set its fields, so the right instance is supplied as the hidden parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 829000,
+          "endMilliseconds": 847640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-an-instance-method-its-object"
+      }
+    },
+    {
+      "id": "TP-079",
+      "startMilliseconds": 847640,
+      "endMilliseconds": 863830,
+      "kind": "fact",
+      "text": "Calling an instance method uses object name, dot, method name, then the explicit arguments, so the receiver expression is what gets passed as the hidden parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 847640,
+          "endMilliseconds": 863830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#give-an-instance-method-its-object"
+      }
+    },
+    {
+      "id": "TP-080",
+      "startMilliseconds": 863830,
+      "endMilliseconds": 880759,
+      "kind": "edge_case",
+      "text": "The receiver expression in a call can be any expression, not only a variable name, so even a freshly created object can serve as the instance the method is called on.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 863830,
+          "endMilliseconds": 880759
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-receiver-expressions-and-this"
+      }
+    },
+    {
+      "id": "TP-081",
+      "startMilliseconds": 871480,
+      "endMilliseconds": 880759,
+      "kind": "edge_case",
+      "text": "Because the receiver is an arbitrary expression, you can create a new object inline, call the method on it and never store a reference to that object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 871480,
+          "endMilliseconds": 880759
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-receiver-expressions-and-this"
+      }
+    },
+    {
+      "id": "TP-082",
+      "startMilliseconds": 880759,
+      "endMilliseconds": 886310,
+      "kind": "edge_case",
+      "text": "Creating an object inside the call expression and discarding the reference is legal, since only the call needs the instance while it runs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 880759,
+          "endMilliseconds": 886310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-receiver-expressions-and-this"
+      }
+    },
+    {
+      "id": "TP-083",
+      "startMilliseconds": 886310,
+      "endMilliseconds": 900110,
+      "kind": "explanation",
+      "text": "Inside an instance method a field access resolves to the field of the object received in the hidden parameter rather than to any other Animal instance.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 886310,
+          "endMilliseconds": 900110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-receiver-expressions-and-this"
+      }
+    },
+    {
+      "id": "TP-084",
+      "startMilliseconds": 900110,
+      "endMilliseconds": 914070,
+      "kind": "fact",
+      "text": "The hidden parameter is named this, which is why writing this.field is equivalent to naming the parameter and then its field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 900110,
+          "endMilliseconds": 914070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-receiver-expressions-and-this"
+      }
+    },
+    {
+      "id": "TP-085",
+      "startMilliseconds": 914070,
+      "endMilliseconds": 919880,
+      "kind": "explanation",
+      "text": "To reach a field of the object you already have in hand, name that object explicitly instead of this, because this refers to the instance passed in as the hidden parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 914070,
+          "endMilliseconds": 919880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-receiver-expressions-and-this"
+      }
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# Rule-wording self-corrections the note preserves
+
+- Positive-integer check: the instructor first says "если тот A который запарсил меньше чем ноль" and immediately corrects it to "или скажем меньше чем равно нулю" at t=966s–975s, then ties the message to it: "Number must be [positive] … в случае если а меньше или равно нулю" (t=977s–982s). The note therefore states the rule as `A <= 0` with the "Number must be positive" message, not `A < 0`.
+- The corrected rule covers the demonstrated edge case: at t=1000s–1010s the run enters a negative number and the program answers that the number must be positive and asks again — the message the note attributes to the `<= 0` branch.
+- Triangle-rule check: at t=1336s the extension is introduced as "C должно быть больше чем A + B" (C must be greater than A + B), and at t=1345s the note records the check itself as returning false when `C <= A + B` — the code tests the negated condition, the note states both forms so the sample matches the video state.
+- Why this is research, not trivia: both are places where the video contradicts itself once. A note that copied the first wording verbatim would teach a wrong condition; the preserved corrections are the evidence that the final taught state uses `<= 0` and the negated triangle test.
+- Traceability: verifier run 141 / session `ses_f065bf2acffeZV0OzYZjByxp91` inspected `internal/transcript.md` ranges t=966s–982s, t=1000s–1010s, t=1336s–1345s against `notes.en.md` sections `#require-a-positive-integer` and `#validate-the-values-together`; approved with no findings.

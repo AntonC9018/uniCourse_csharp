@@ -1,0 +1,2331 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "C6plSGSYuyc",
+  "uploadId": "C6plSGSYuyc",
+  "transcriptSha256": "d30951993fada094948cf201a47c663fab21fa1a6fc35a146c7e0b32291eb949",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 120,
+      "endMilliseconds": 25000,
+      "kind": "scope_boundary",
+      "text": "The lesson frames its goal as learning to solve non-trivial problems that must be decomposed into several solution steps, rather than primitives solved in one pass, and connects this to how programs as a whole are built from tasks.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 120,
+          "endMilliseconds": 25000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#what-an-algorithm-is-made-of"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 25000,
+      "endMilliseconds": 45200,
+      "kind": "fact",
+      "text": "Cooking borscht, summing numbers, averaging, measuring string length from a file, and multiplying two numbers all serve as example tasks used to explain the general idea.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 25000,
+          "endMilliseconds": 45200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#example-tasks"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 45200,
+      "endMilliseconds": 52600,
+      "kind": "fact",
+      "text": "Every algorithm, however different, has two things: input data and output data, conventionally named input and output.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 45200,
+          "endMilliseconds": 52600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#input-and-output-exist-even-when-unstated"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 52600,
+      "endMilliseconds": 64800,
+      "kind": "explanation",
+      "text": "Input and output data exist for every task even when a high-level problem statement does not spell them out, since a task like cooking borscht cannot have no input data.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 52600,
+          "endMilliseconds": 64800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#input-and-output-exist-even-when-unstated"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 64800,
+      "endMilliseconds": 76800,
+      "kind": "fact",
+      "text": "Inputs of a task can be domain objects such as borscht ingredients or the money spent buying them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 64800,
+          "endMilliseconds": 76800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#input-and-output-exist-even-when-unstated"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 76800,
+      "endMilliseconds": 85119,
+      "kind": "explanation",
+      "text": "Inputs are often not obvious from a simple, high-level statement of the task, so the statement has to be unpacked to find what the program consumes and produces.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 76800,
+          "endMilliseconds": 85119
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#input-and-output-exist-even-when-unstated"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 85119,
+      "endMilliseconds": 99800,
+      "kind": "explanation",
+      "text": "For a concrete task such as cooking borscht the input is at least the ingredients and the output is the cooked borscht, showing that even vague tasks have identifiable input and output.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 85119,
+          "endMilliseconds": 99800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#input-and-output-exist-even-when-unstated"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 99800,
+      "endMilliseconds": 121800,
+      "kind": "fact",
+      "text": "Summing several numbers takes numbers as input and a sum as output, averaging produces an average, reading a string length from a file takes a file as input, and multiplying two numbers takes two numbers and yields a product.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 99800,
+          "endMilliseconds": 121800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#input-and-output-exist-even-when-unstated"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 121800,
+      "endMilliseconds": 154300,
+      "kind": "explanation",
+      "text": "For these algorithms the input and output are concretely defined, so sums, products, averages and lengths are unambiguous values that pin down what the program must do.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 121800,
+          "endMilliseconds": 154300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#input-and-output-exist-even-when-unstated"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 154300,
+      "endMilliseconds": 170900,
+      "kind": "reason",
+      "text": "Unlike numbers, a file cannot be handed to a program directly, because what counts as the file needs its own representation before the program can use it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 154300,
+          "endMilliseconds": 170900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#how-a-file-can-become-input-data"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 160440,
+      "endMilliseconds": 177000,
+      "kind": "fact",
+      "text": "Numbers are easy inputs because they can be passed straight to the program as parameters, while a file input is not so simple.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 160440,
+          "endMilliseconds": 177000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#how-a-file-can-become-input-data"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 177000,
+      "endMilliseconds": 198600,
+      "kind": "explanation",
+      "text": "A file input can be represented as a file-system name, which forces the program to interact with the file system as external context, or as a copy of the file's content held in memory as zeros and ones.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 177000,
+          "endMilliseconds": 198600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#how-a-file-can-become-input-data"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 198600,
+      "endMilliseconds": 208000,
+      "kind": "fact",
+      "text": "Different representations of the same file can be handed to the program that solves the task, so the representation of input data is a design choice.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 198600,
+          "endMilliseconds": 208000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#how-a-file-can-become-input-data"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 208000,
+      "endMilliseconds": 231800,
+      "kind": "explanation",
+      "text": "Ingredients can similarly be represented as objects in a virtual world or identifiers in a game, stored in a database, or as the real items to buy in a shop or market.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 208000,
+          "endMilliseconds": 231800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#how-a-file-can-become-input-data"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 231800,
+      "endMilliseconds": 249280,
+      "kind": "reason",
+      "text": "For complex problems you record a more abstract representation of the inputs rather than the obvious basic one, so the algorithm stays independent of incidental concrete details.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 231800,
+          "endMilliseconds": 249280
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 241640,
+          "endMilliseconds": 249280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#how-a-file-can-become-input-data"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 249280,
+      "endMilliseconds": 271000,
+      "kind": "explanation",
+      "text": "Abstractly the inputs can be written as something like ingredients or files, and how that abstraction looks concretely depends on the specific requirements and on how you build the program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 249280,
+          "endMilliseconds": 271000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#how-a-file-can-become-input-data"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 271000,
+      "endMilliseconds": 290000,
+      "kind": "scope_boundary",
+      "text": "The abstraction covers only input and output data, not how the program that solves the task actually works internally.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 271000,
+          "endMilliseconds": 290000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#how-a-file-can-become-input-data"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 290000,
+      "endMilliseconds": 300000,
+      "kind": "fact",
+      "text": "The input and output data of a program have a constantly used name in programming: the interface.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 290000,
+          "endMilliseconds": 300000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#interface-and-implementation"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 300000,
+      "endMilliseconds": 314000,
+      "kind": "explanation",
+      "text": "The interface is called that because the program is treated as a box that you give ingredients or numbers to and get the result back, such as getting the sum of numbers back.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 300000,
+          "endMilliseconds": 314000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#interface-and-implementation"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 312280,
+      "endMilliseconds": 323230,
+      "kind": "fact",
+      "text": "A box that takes input data and performs a task on it is called a realization (implementation), which together with the input and output data makes up a program that solves the task.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 312280,
+          "endMilliseconds": 323230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#interface-and-implementation"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 314000,
+      "endMilliseconds": 323240,
+      "kind": "fact",
+      "text": "An interface means the system of interaction with some system, and it and the implementation together are the two sides of any program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 314000,
+          "endMilliseconds": 323240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#interface-and-implementation"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 323230,
+      "endMilliseconds": 335520,
+      "kind": "fact",
+      "text": "A program that performs a task is called an algorithm, and it consists of input data, output data and a concrete realization of the steps.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 323230,
+          "endMilliseconds": 335520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#interface-and-implementation"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 335520,
+      "endMilliseconds": 345710,
+      "kind": "explanation",
+      "text": "An algorithm can be presented as a list of steps describing what must be done with the input data to obtain the result.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 335520,
+          "endMilliseconds": 345710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#interface-and-implementation"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 351080,
+      "endMilliseconds": 364390,
+      "kind": "explanation",
+      "text": "To illustrate the algorithm the two numbers are given the names A and B, so the steps can refer to them concretely.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 351080,
+          "endMilliseconds": 364390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-first-algorithm-multiply-two-numbers"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 364390,
+      "endMilliseconds": 377950,
+      "kind": "explanation",
+      "text": "Multiplying two numbers decomposes into three steps: take A, take B, and multiply them, where the third step produces the output of the algorithm.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 364390,
+          "endMilliseconds": 377950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-first-algorithm-multiply-two-numbers"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 381039,
+      "endMilliseconds": 394909,
+      "kind": "explanation",
+      "text": "Decomposition is needed only to one level here, since multiplying A and B consists of a single primitive action.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 381039,
+          "endMilliseconds": 394909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#a-first-algorithm-multiply-two-numbers"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 394909,
+      "endMilliseconds": 414430,
+      "kind": "explanation",
+      "text": "To find the average line length in a file you first name the file and then break the task into simpler steps.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 394909,
+          "endMilliseconds": 410800
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 406710,
+          "endMilliseconds": 414430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#decomposing-the-average-line-length-task"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 414430,
+      "endMilliseconds": 434430,
+      "kind": "explanation",
+      "text": "A task is split into simpler sub-steps repeatedly until elementary primitive steps are reached, such as multiplying numbers, taking the value of the first number, or converting it into the second number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 414430,
+          "endMilliseconds": 434430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#decomposing-the-average-line-length-task"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 434430,
+      "endMilliseconds": 443630,
+      "kind": "reason",
+      "text": "There is no need to decompose sub-steps forever, because the point of the decomposition is to reach a level where a known operation or algorithm can carry out each step.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 434430,
+          "endMilliseconds": 443630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#decomposing-the-average-line-length-task"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 443630,
+      "endMilliseconds": 473629,
+      "kind": "explanation",
+      "text": "Elementary steps need not be truly primitive, because a step may be delegated to another algorithm you already have, such as summing several lists by summing each list and then summing the sums.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 443630,
+          "endMilliseconds": 473629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#decomposing-the-average-line-length-task"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 473629,
+      "endMilliseconds": 485120,
+      "kind": "reason",
+      "text": "An existing algorithm for summing a list can be reused inside the new algorithm instead of being written again.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 473629,
+          "endMilliseconds": 485120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#decomposing-the-average-line-length-task"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 477199,
+      "endMilliseconds": 485120,
+      "kind": "explanation",
+      "text": "Returning to the average line length in a file task, the next step is to analyze exactly what is required.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 477199,
+          "endMilliseconds": 485120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#analyzing-the-average-requirement"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 487670,
+      "endMilliseconds": 502230,
+      "kind": "fact",
+      "text": "The average line length means the mean of the lengths of all the lines, so it requires finding each line's length and then averaging those values.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 487670,
+          "endMilliseconds": 502230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#analyzing-the-average-requirement"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 502230,
+      "endMilliseconds": 530469,
+      "kind": "explanation",
+      "text": "Analyzing the requirement splits it into two sub-items: the lines themselves, and the ability to obtain the length of a single line from a given string.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 502230,
+          "endMilliseconds": 530469
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#analyzing-the-average-requirement"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 531509,
+      "endMilliseconds": 546269,
+      "kind": "explanation",
+      "text": "The averaging requirement is decomposed further and can be satisfied by an already available base algorithm.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 531509,
+          "endMilliseconds": 546269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#analyzing-the-average-requirement"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 543190,
+      "endMilliseconds": 556519,
+      "kind": "fact",
+      "text": "Fully decomposed, the average value is the sum of all values divided by their count, so this sub-task must also be broken into pieces.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 543190,
+          "endMilliseconds": 556519
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#analyzing-the-average-requirement"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 547600,
+      "endMilliseconds": 556519,
+      "kind": "explanation",
+      "text": "Fully decomposed, the average value is the sum of all values divided by their count, so this sub-task must also be broken into pieces.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 547600,
+          "endMilliseconds": 556519
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#analyzing-the-average-requirement"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 559519,
+      "endMilliseconds": 574949,
+      "kind": "explanation",
+      "text": "The sub-task of summing all values decomposes into needing the values themselves and the ability to sum them, so summing requires visiting every value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 559519,
+          "endMilliseconds": 574949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#analyzing-the-average-requirement"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 574949,
+      "endMilliseconds": 575870,
+      "kind": "explanation",
+      "text": "To sum the values you must iterate over each of them and add it to the running total.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 574949,
+          "endMilliseconds": 575870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#analyzing-the-average-requirement"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 578040,
+      "endMilliseconds": 597980,
+      "kind": "explanation",
+      "text": "Summing a list of numbers means taking the first number, adding the second to it, adding the third to the result, and so on, which is recorded as the step of adding each element to the current sum.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 578040,
+          "endMilliseconds": 597980
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#analyzing-the-average-requirement"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 597980,
+      "endMilliseconds": 617269,
+      "kind": "scope_boundary",
+      "text": "The step of adding each element to the current sum is left without further decomposition for now.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 597980,
+          "endMilliseconds": 617269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#analyzing-the-average-requirement"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 617269,
+      "endMilliseconds": 630550,
+      "kind": "explanation",
+      "text": "The second aspect of the whole algorithm is splitting the file into lines and finding the length of each line.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 617269,
+          "endMilliseconds": 630550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#getting-the-lines-out-of-a-file"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 630550,
+      "endMilliseconds": 651000,
+      "kind": "explanation",
+      "text": "The lines come from the file, so the algorithm needs the ability to extract lines from a file, and a line is a part of the file delimited by a newline transition.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 630550,
+          "endMilliseconds": 651000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#getting-the-lines-out-of-a-file"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 640639,
+      "endMilliseconds": 659590,
+      "kind": "fact",
+      "text": "Строки файла — это части всего файла, разделённые переходами на новую строку.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 640639,
+          "endMilliseconds": 659590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#getting-the-lines-out-of-a-file"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 660000,
+      "endMilliseconds": 684790,
+      "kind": "explanation",
+      "text": "Чтобы получить строки из файла, нужно сначала считать всё содержимое файла, а затем разбить его в местах переходов на новую строку.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 660000,
+          "endMilliseconds": 684790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#getting-the-lines-out-of-a-file"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 685800,
+      "endMilliseconds": 704790,
+      "kind": "explanation",
+      "text": "После разбиения первая строка идёт от начала содержимого до первого перехода, вторая — до второго перехода, третья — до третьего.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 685800,
+          "endMilliseconds": 704790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#getting-the-lines-out-of-a-file"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 705279,
+      "endMilliseconds": 713590,
+      "kind": "scope_boundary",
+      "text": "Считывание всего файла целиком — лишь один из возможных алгоритмов, а не единственный способ работы с файлом.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 705279,
+          "endMilliseconds": 713590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#getting-the-lines-out-of-a-file"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 713600,
+      "endMilliseconds": 731710,
+      "kind": "scope_boundary",
+      "text": "Для больших систем можно читать не весь файл, а по кусочкам до следующей строки или в буфер максимального размера, анализируя буфер и сохраняя значение между его чтениями, но этот вариант мы не рассматриваем.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 713600,
+          "endMilliseconds": 728079
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 722990,
+          "endMilliseconds": 731710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#getting-the-lines-out-of-a-file"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 718760,
+      "endMilliseconds": 728079,
+      "kind": "explanation",
+      "text": "В простой версии алгоритма мы считываем всё содержимое файла, находим переходы на новую строку и делим строку по этим переходам.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 718760,
+          "endMilliseconds": 728079
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 723000,
+          "endMilliseconds": 728079
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#getting-the-lines-out-of-a-file"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 730389,
+      "endMilliseconds": 741269,
+      "kind": "explanation",
+      "text": "Чтобы найти длину строки, достаточно посмотреть, сколько символов в ней содержится, и это одна из базовых операций, доступных практически в любом языке программирования.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 730389,
+          "endMilliseconds": 741269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#getting-the-lines-out-of-a-file"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 742400,
+      "endMilliseconds": 758710,
+      "kind": "explanation",
+      "text": "Сложную задачу полезно разбивать на компоненты, компоненты — на более мелкие, и так далее, пока не дойдёшь до примитивных операций.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 742400,
+          "endMilliseconds": 758710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#getting-the-lines-out-of-a-file"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 759790,
+      "endMilliseconds": 769990,
+      "kind": "fact",
+      "text": "Считывание содержимого файла является примитивной операцией, доступной в языке программирования.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 759790,
+          "endMilliseconds": 769990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#getting-the-lines-out-of-a-file"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 769990,
+      "endMilliseconds": 782470,
+      "kind": "explanation",
+      "text": "Поиск переходов на новую строку не является примитивом: для него нужен цикл по каждому символу с добавлением его к текущей сумме, и даже этот цикл приходится строить вручную.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 769990,
+          "endMilliseconds": 782470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#getting-the-lines-out-of-a-file"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 794680,
+      "endMilliseconds": 811590,
+      "kind": "explanation",
+      "text": "Чтобы объяснить проход по каждому из значений, нужно сначала разобраться, что такое массив.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 794680,
+          "endMilliseconds": 811590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#arrays-and-indices"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 811590,
+      "endMilliseconds": 833590,
+      "kind": "fact",
+      "text": "Массив — это участок памяти, где значения (в данном случае числа) записаны друг за другом, и ячеек памяти столько же, сколько значений.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 811590,
+          "endMilliseconds": 833590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#arrays-and-indices"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 833590,
+      "endMilliseconds": 850590,
+      "kind": "explanation",
+      "text": "Помимо ячеек памяти с самими значениями существует ещё один кусочек памяти, который хранит, сколько значений содержится в массиве.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 833590,
+          "endMilliseconds": 850590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#arrays-and-indices"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 850600,
+      "endMilliseconds": 868710,
+      "kind": "explanation",
+      "text": "Проходить по значениям массива принято по индексу — позиции относительно начала участка памяти, то есть по тому, через сколько элементов нужно перепрыгнуть, чтобы добраться до нужного элемента.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 850600,
+          "endMilliseconds": 868710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#arrays-and-indices"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 863000,
+      "endMilliseconds": 872880,
+      "kind": "explanation",
+      "text": "Индекс обычно обозначают буквой, а нулевой индекс означает первый элемент, потому что отсчёт ведётся от начала массива: чтобы дойти до него, перескакиваем ноль элементов и остаёмся на месте.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 863000,
+          "endMilliseconds": 872880
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 868720,
+          "endMilliseconds": 872880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#arrays-and-indices"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 872880,
+      "endMilliseconds": 898030,
+      "kind": "explanation",
+      "text": "С помощью индекса можно обозначить, на каком именно элементе массива мы находимся в данный момент.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 872880,
+          "endMilliseconds": 898030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#arrays-and-indices"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 898030,
+      "endMilliseconds": 921839,
+      "kind": "explanation",
+      "text": "Чтобы перейти к следующему элементу, индекс увеличивают на единицу, то есть сдвигаются на один элемент дальше: индекс 1 соответствует перескакиванию одного элемента, а индекс 2 — двух элементов.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 898030,
+          "endMilliseconds": 921839
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#arrays-and-indices"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 930319,
+      "endMilliseconds": 950270,
+      "kind": "edge_case",
+      "text": "Максимально доступный индекс равен количеству элементов минус один, потому что отступ последнего элемента на единицу меньше, чем у всех предыдущих.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 930319,
+          "endMilliseconds": 950270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#arrays-and-indices"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 947839,
+      "endMilliseconds": 957910,
+      "kind": "explanation",
+      "text": "The listing is formatted with an extra indent before the first cell and before the last cell so that the padding from the last cell to the end of the list is visually distinguishable, which makes the snippet easier to read.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 947839,
+          "endMilliseconds": 957910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#arrays-and-indices"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 957920,
+      "endMilliseconds": 960880,
+      "kind": "explanation",
+      "text": "У первой ячейки массива отступ равен нулю, а у последней — количеству элементов минус один, поэтому чтобы добраться до последней ячейки, нужно отсчитать именно столько элементов.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 957920,
+          "endMilliseconds": 960880
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#arrays-and-indices"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 960439,
+      "endMilliseconds": 976590,
+      "kind": "fact",
+      "text": "For a list of N elements the last valid index is N - 1, so eight elements end at index seven, which is why the traversal bound is computed as N - 1.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 960439,
+          "endMilliseconds": 976590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#arrays-and-indices"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 979440,
+      "endMilliseconds": 986189,
+      "kind": "explanation",
+      "text": "The idea of walking over every value is decomposed into a named sub-algorithm whose steps can be written down and reasoned about separately.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 979440,
+          "endMilliseconds": 986189
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#naming-the-traversal-as-a-sub-algorithm"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 994800,
+      "endMilliseconds": 1005990,
+      "kind": "explanation",
+      "text": "Traversing the values means iterating over every index in turn and reading the value stored at that index, while keeping a current index that moves forward on each step.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 994800,
+          "endMilliseconds": 1005990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#naming-the-traversal-as-a-sub-algorithm"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 1000749,
+      "endMilliseconds": 1016470,
+      "kind": "explanation",
+      "text": "The behaviour of the current index is described by four rules, which together specify how the index must be initialized, updated, and when the traversal must stop.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1000749,
+          "endMilliseconds": 1016470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#naming-the-traversal-as-a-sub-algorithm"
+      }
+    },
+    {
+      "id": "TP-068",
+      "startMilliseconds": 1007470,
+      "endMilliseconds": 1036400,
+      "kind": "fact",
+      "text": "The current index starts at zero and is incremented by one at every step, which is what makes the traversal visit elements in order.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1007470,
+          "endMilliseconds": 1036400
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1029520,
+          "endMilliseconds": 1036400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#naming-the-traversal-as-a-sub-algorithm"
+      }
+    },
+    {
+      "id": "TP-069",
+      "startMilliseconds": 1036400,
+      "endMilliseconds": 1049810,
+      "kind": "explanation",
+      "text": "The last index is the termination rule of the algorithm: because the current index grows by one per step, it exceeding the last index means every available value has been visited.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1036400,
+          "endMilliseconds": 1049810
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#naming-the-traversal-as-a-sub-algorithm"
+      }
+    },
+    {
+      "id": "TP-070",
+      "startMilliseconds": 1052280,
+      "endMilliseconds": 1065530,
+      "kind": "reason",
+      "text": "Passing beyond the last index is the signal that all indices have been traversed, so this comparison replaces any explicit count of iterations.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1052280,
+          "endMilliseconds": 1065530
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#naming-the-traversal-as-a-sub-algorithm"
+      }
+    },
+    {
+      "id": "TP-071",
+      "startMilliseconds": 1068190,
+      "endMilliseconds": 1075670,
+      "kind": "explanation",
+      "text": "The count of jumps from the beginning is what tells the algorithm whether to pull a value out of the list or not, so the index encodes both position and loop progress.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1068190,
+          "endMilliseconds": 1075670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#naming-the-traversal-as-a-sub-algorithm"
+      }
+    },
+    {
+      "id": "TP-072",
+      "startMilliseconds": 1081000,
+      "endMilliseconds": 1097560,
+      "kind": "explanation",
+      "text": "Program instructions are a list of concrete steps that the program must perform in order to produce the sum, and those steps are now written down using the derived rules.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1081000,
+          "endMilliseconds": 1097560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#writing-the-traversal-as-steps"
+      }
+    },
+    {
+      "id": "TP-073",
+      "startMilliseconds": 1097560,
+      "endMilliseconds": 1108080,
+      "kind": "reason",
+      "text": "The first step creates a memory cell for the current index, because that index changes during execution and a variable is the only way to remember its value between steps.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1097560,
+          "endMilliseconds": 1108080
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1097600,
+          "endMilliseconds": 1108080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#writing-the-traversal-as-steps"
+      }
+    },
+    {
+      "id": "TP-074",
+      "startMilliseconds": 1108080,
+      "endMilliseconds": 1143070,
+      "kind": "code_change",
+      "text": "A variable is a memory cell into which values can be written, so the current index is stored there and initialized with zero, making the traversal start at the beginning of the list.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1108080,
+          "endMilliseconds": 1143070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#writing-the-traversal-as-steps"
+      }
+    },
+    {
+      "id": "TP-075",
+      "startMilliseconds": 1143070,
+      "endMilliseconds": 1152520,
+      "kind": "explanation",
+      "text": "The third step checks whether the end of the list has already been reached, because an empty list has no available indices at all and therefore counts as already finished.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1143070,
+          "endMilliseconds": 1152520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#writing-the-traversal-as-steps"
+      }
+    },
+    {
+      "id": "TP-076",
+      "startMilliseconds": 1152520,
+      "endMilliseconds": 1166520,
+      "kind": "edge_case",
+      "text": "When the end of the list is detected the algorithm terminates, which prevents reading past the end of the array.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1152520,
+          "endMilliseconds": 1166520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#writing-the-traversal-as-steps"
+      }
+    },
+    {
+      "id": "TP-077",
+      "startMilliseconds": 1166520,
+      "endMilliseconds": 1177919,
+      "kind": "explanation",
+      "text": "Fetching a value means stepping from the start of the array as many times as the stored index says, with the stored number counting 0, then 1, then 2 until the whole list has been covered.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1166520,
+          "endMilliseconds": 1177919
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#writing-the-traversal-as-steps"
+      }
+    },
+    {
+      "id": "TP-078",
+      "startMilliseconds": 1177919,
+      "endMilliseconds": 1184360,
+      "kind": "explanation",
+      "text": "After the fetched element is added to the running sum, the algorithm must advance to the next index and continue with the next element.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1177919,
+          "endMilliseconds": 1184360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#writing-the-traversal-as-steps"
+      }
+    },
+    {
+      "id": "TP-079",
+      "startMilliseconds": 1184630,
+      "endMilliseconds": 1195790,
+      "kind": "explanation",
+      "text": "The fourth step increments the current index by one, which is the operation that moves the traversal to the next element of the list.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1184630,
+          "endMilliseconds": 1195790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#writing-the-traversal-as-steps"
+      }
+    },
+    {
+      "id": "TP-080",
+      "startMilliseconds": 1195790,
+      "endMilliseconds": 1202140,
+      "kind": "edge_case",
+      "text": "Right after incrementing, the algorithm checks the bounds again and exits if the index has left the list, so the out-of-range step never executes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1195790,
+          "endMilliseconds": 1202140
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#writing-the-traversal-as-steps"
+      }
+    },
+    {
+      "id": "TP-081",
+      "startMilliseconds": 1202140,
+      "endMilliseconds": 1219300,
+      "kind": "explanation",
+      "text": "The fetch, add and increment steps form a loop that must repeat until the index goes beyond the bounds of the array, which is what turns the three steps into a full traversal.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1202140,
+          "endMilliseconds": 1219300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#writing-the-traversal-as-steps"
+      }
+    },
+    {
+      "id": "TP-082",
+      "startMilliseconds": 1223000,
+      "endMilliseconds": 1229310,
+      "kind": "explanation",
+      "text": "Step six adds each element to the current sum, referring back to the running sum that was deferred while the traversal steps were written.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1223000,
+          "endMilliseconds": 1229310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#adding-each-element-to-the-current-sum"
+      }
+    },
+    {
+      "id": "TP-083",
+      "startMilliseconds": 1241590,
+      "endMilliseconds": 1250350,
+      "kind": "edge_case",
+      "text": "For an empty list the sum of its elements is defined as zero, so the algorithm must still produce zero rather than failing to initialize the sum.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1241590,
+          "endMilliseconds": 1250350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#adding-each-element-to-the-current-sum"
+      }
+    },
+    {
+      "id": "TP-084",
+      "startMilliseconds": 1250350,
+      "endMilliseconds": 1262750,
+      "kind": "explanation",
+      "text": "The definition of an empty sum as zero follows from the associativity of addition, where adding elements two at a time always leaves an untouched element contributing nothing.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1250350,
+          "endMilliseconds": 1262750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#adding-each-element-to-the-current-sum"
+      }
+    },
+    {
+      "id": "TP-085",
+      "startMilliseconds": 1254960,
+      "endMilliseconds": 1276710,
+      "kind": "explanation",
+      "text": "Summing a list is presented as a left-to-right fold: add the first element to the second, add the result to the third, and so on until the last operation yields the total, which is valid because addition is associative.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1254960,
+          "endMilliseconds": 1276710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#adding-each-element-to-the-current-sum"
+      }
+    },
+    {
+      "id": "TP-086",
+      "startMilliseconds": 1272400,
+      "endMilliseconds": 1280630,
+      "kind": "explanation",
+      "text": "The total can be decomposed into a base sum plus each element added one after another, which turns a single long expression into a sequence of simple additions.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1272400,
+          "endMilliseconds": 1280630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#adding-each-element-to-the-current-sum"
+      }
+    },
+    {
+      "id": "TP-087",
+      "startMilliseconds": 1282559,
+      "endMilliseconds": 1301630,
+      "kind": "reason",
+      "text": "Because the base sum is zero, starting from it and adding the first, second, third, fourth and fifth element in order produces exactly the full sum.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1282559,
+          "endMilliseconds": 1301630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#adding-each-element-to-the-current-sum"
+      }
+    },
+    {
+      "id": "TP-088",
+      "startMilliseconds": 1296520,
+      "endMilliseconds": 1312870,
+      "kind": "explanation",
+      "text": "Summing therefore reduces to walking every element of the collection and adding each of them in turn, and the algorithm for iterating over elements has already been built earlier.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1296520,
+          "endMilliseconds": 1312870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#adding-each-element-to-the-current-sum"
+      }
+    },
+    {
+      "id": "TP-089",
+      "startMilliseconds": 1312240,
+      "endMilliseconds": 1316710,
+      "kind": "explanation",
+      "text": "The running total is kept in a dedicated cell that starts out holding the base value, so every element is added onto the accumulated value rather than being combined pairwise.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1312240,
+          "endMilliseconds": 1316710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#adding-each-element-to-the-current-sum"
+      }
+    },
+    {
+      "id": "TP-090",
+      "startMilliseconds": 1316200,
+      "endMilliseconds": 1318710,
+      "kind": "code_change",
+      "text": "To perform the addition against the current value, a new cell is introduced that stores the current sum.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1316200,
+          "endMilliseconds": 1318710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#adding-each-element-to-the-current-sum"
+      }
+    },
+    {
+      "id": "TP-091",
+      "startMilliseconds": 1328790,
+      "endMilliseconds": 1341149,
+      "kind": "explanation",
+      "text": "On the first pass through the loop the current sum holds the base value and is combined with the first element, producing a temporary sum that is then extended with each following element.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1328790,
+          "endMilliseconds": 1341149
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#adding-each-element-to-the-current-sum"
+      }
+    },
+    {
+      "id": "TP-092",
+      "startMilliseconds": 1341110,
+      "endMilliseconds": 1360259,
+      "kind": "explanation",
+      "text": "Each subsequent element is added to the temporary sum and the result is written back into the current-sum cell, so 5 plus 5 gives 10 and then 10 plus 4 gives 19 for the following step.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1341110,
+          "endMilliseconds": 1360259
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#adding-each-element-to-the-current-sum"
+      }
+    },
+    {
+      "id": "TP-093",
+      "startMilliseconds": 1390880,
+      "endMilliseconds": 1404159,
+      "kind": "explanation",
+      "text": "At every step the current sum equals one node and moves to the next node by adding that node's value: 19 plus 3 gives 22, and 22 plus 8 gives 30.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1390880,
+          "endMilliseconds": 1404159
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#adding-each-element-to-the-current-sum"
+      }
+    },
+    {
+      "id": "TP-094",
+      "startMilliseconds": 1402829,
+      "endMilliseconds": 1417107,
+      "kind": "reason",
+      "text": "The last node holds the final sum, and because the current-sum cell passes through all nodes and stops at the last one, the answer is left in that cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1402829,
+          "endMilliseconds": 1413159
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1403679,
+          "endMilliseconds": 1417107
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#adding-each-element-to-the-current-sum"
+      }
+    },
+    {
+      "id": "TP-095",
+      "startMilliseconds": 1419720,
+      "endMilliseconds": 1429799,
+      "kind": "explanation",
+      "text": "Implementing the summing algorithm requires adding each element's value to the current sum, which combines the previously explained iteration over elements with the idea of accumulating.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1419720,
+          "endMilliseconds": 1429799
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#adding-each-element-to-the-current-sum"
+      }
+    },
+    {
+      "id": "TP-096",
+      "startMilliseconds": 1440529,
+      "endMilliseconds": 1459531,
+      "kind": "code_change",
+      "text": "The pseudocode gains one extra step before the loop that creates a cell for the current sum and writes the base sum into it, after which the existing element-by-element loop runs and the result is read from that cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1440529,
+          "endMilliseconds": 1459531
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#adding-each-element-to-the-current-sum"
+      }
+    },
+    {
+      "id": "TP-097",
+      "startMilliseconds": 1461590,
+      "endMilliseconds": 1469470,
+      "kind": "reason",
+      "text": "After the loop has passed over every element the current sum equals the value stored in the final node, which is why that cell can be returned as the list sum.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1461590,
+          "endMilliseconds": 1469470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#adding-each-element-to-the-current-sum"
+      }
+    },
+    {
+      "id": "TP-098",
+      "startMilliseconds": 1485440,
+      "endMilliseconds": 1492259,
+      "kind": "reason",
+      "text": "After the loop has passed over every element the current sum equals the value stored in the final node, which is why that cell can be returned as the list sum.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1485440,
+          "endMilliseconds": 1492259
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#adding-each-element-to-the-current-sum"
+      }
+    },
+    {
+      "id": "TP-099",
+      "startMilliseconds": 1494729,
+      "endMilliseconds": 1505890,
+      "kind": "explanation",
+      "text": "The written algorithm translates directly into code: a cell for the current sum is created and the base sum is written into it before the loop starts.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1494729,
+          "endMilliseconds": 1505890
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-written-steps-to-code"
+      }
+    },
+    {
+      "id": "TP-100",
+      "startMilliseconds": 1505910,
+      "endMilliseconds": 1516710,
+      "kind": "code_change",
+      "text": "The code allocates memory for the current index, writes into that cell, and checks whether the index has reached the list length, in which case the answer is in the current-sum cell.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1505910,
+          "endMilliseconds": 1516710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-written-steps-to-code"
+      }
+    },
+    {
+      "id": "TP-101",
+      "startMilliseconds": 1517450,
+      "endMilliseconds": 1532480,
+      "kind": "code_change",
+      "text": "Inside the loop the code adds the array element at the current index to the current sum, then increments the index by one and jumps back to the third step.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1517450,
+          "endMilliseconds": 1532480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-written-steps-to-code"
+      }
+    },
+    {
+      "id": "TP-102",
+      "startMilliseconds": 1532900,
+      "endMilliseconds": 1543050,
+      "kind": "fact",
+      "text": "The manual increment and jump-back is usually replaced by a for loop, a small modification to the same code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1532900,
+          "endMilliseconds": 1543050
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-written-steps-to-code"
+      }
+    },
+    {
+      "id": "TP-103",
+      "startMilliseconds": 1543350,
+      "endMilliseconds": 1583190,
+      "kind": "explanation",
+      "text": "A step-by-step algorithm description maps almost one-to-one onto program code, so wrapping it in a function with a name, parameters and a return type yields a complete summing function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1543350,
+          "endMilliseconds": 1583190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-written-steps-to-code"
+      }
+    },
+    {
+      "id": "TP-104",
+      "startMilliseconds": 1574840,
+      "endMilliseconds": 1583210,
+      "kind": "explanation",
+      "text": "Giving the average-value sub-algorithm a name plus its input data and return type turns the prose description into a complete callable interface.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1574840,
+          "endMilliseconds": 1583210
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-written-steps-to-code"
+      }
+    },
+    {
+      "id": "TP-105",
+      "startMilliseconds": 1583990,
+      "endMilliseconds": 1591660,
+      "kind": "fact",
+      "text": "The average is computed by summing the values and dividing the sum by the list length, which is a trivial primitive-level operation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1583990,
+          "endMilliseconds": 1591660
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-written-steps-to-code"
+      }
+    },
+    {
+      "id": "TP-106",
+      "startMilliseconds": 1591660,
+      "endMilliseconds": 1598330,
+      "kind": "reason",
+      "text": "The list length is already available as a stored primitive value, so the division needs only reading the sum, reading the length, and dividing them.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1591660,
+          "endMilliseconds": 1598330
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-written-steps-to-code"
+      }
+    },
+    {
+      "id": "TP-107",
+      "startMilliseconds": 1598330,
+      "endMilliseconds": 1601790,
+      "kind": "fact",
+      "text": "Dividing the obtained sum by the length yields the answer, which completes this sub-algorithm.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1598330,
+          "endMilliseconds": 1601790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#from-written-steps-to-code"
+      }
+    },
+    {
+      "id": "TP-108",
+      "startMilliseconds": 1601790,
+      "endMilliseconds": 1605590,
+      "kind": "scope_boundary",
+      "text": "The next sub-algorithm is deliberately harder and is worked out by hand here.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1601790,
+          "endMilliseconds": 1605590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-harder-sub-algorithm-worked-out-by-hand"
+      }
+    },
+    {
+      "id": "TP-109",
+      "startMilliseconds": 1605590,
+      "endMilliseconds": 1621430,
+      "kind": "explanation",
+      "text": "The hand analysis walks the string one character at a time until a newline, then takes the slice from the previous saved position to the current one as the first line, saves the new position, and repeats for the next line.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1605590,
+          "endMilliseconds": 1621430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-harder-sub-algorithm-worked-out-by-hand"
+      }
+    },
+    {
+      "id": "TP-110",
+      "startMilliseconds": 1621430,
+      "endMilliseconds": 1637420,
+      "kind": "explanation",
+      "text": "This character-scanning algorithm can likewise be decomposed into basic steps like the previous one.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1621430,
+          "endMilliseconds": 1637420
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-harder-sub-algorithm-worked-out-by-hand"
+      }
+    },
+    {
+      "id": "TP-111",
+      "startMilliseconds": 1637420,
+      "endMilliseconds": 1657919,
+      "kind": "explanation",
+      "text": "Anyone who knows these [redacted] principles and logic such as how to sum a few numbers can turn such a decomposition into code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1637420,
+          "endMilliseconds": 1657919
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1650159,
+          "endMilliseconds": 1657919
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-harder-sub-algorithm-worked-out-by-hand"
+      }
+    },
+    {
+      "id": "TP-112",
+      "startMilliseconds": 1657919,
+      "endMilliseconds": 1675460,
+      "kind": "explanation",
+      "text": "If a ready function that sums all values already exists, it can be used instead of decomposing that sub-step further into elementary operations.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1657919,
+          "endMilliseconds": 1675460
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#the-harder-sub-algorithm-worked-out-by-hand"
+      }
+    },
+    {
+      "id": "TP-113",
+      "startMilliseconds": 1675460,
+      "endMilliseconds": 1682950,
+      "kind": "fact",
+      "text": "High level means using an existing ready-made algorithm, while low level means splitting the algorithm into primitive steps.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1675460,
+          "endMilliseconds": 1682950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#high-level-low-level-and-abstraction"
+      }
+    },
+    {
+      "id": "TP-114",
+      "startMilliseconds": 1682950,
+      "endMilliseconds": 1690490,
+      "kind": "explanation",
+      "text": "An algorithm written in a more primitive, detailed way is the low-level description of the same behaviour.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1682950,
+          "endMilliseconds": 1690490
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#high-level-low-level-and-abstraction"
+      }
+    },
+    {
+      "id": "TP-115",
+      "startMilliseconds": 1690490,
+      "endMilliseconds": 1735559,
+      "kind": "explanation",
+      "text": "High level means knowing an algorithm exists and what it does, such as summing a list of numbers, without thinking about how it internally allocates variables and walks the list.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1690490,
+          "endMilliseconds": 1735559
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1729159,
+          "endMilliseconds": 1735559
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#high-level-low-level-and-abstraction"
+      }
+    },
+    {
+      "id": "TP-116",
+      "startMilliseconds": 1735559,
+      "endMilliseconds": 1751079,
+      "kind": "fact",
+      "text": "Referring to an existing algorithm by name without knowing how it works internally is called abstraction.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1735559,
+          "endMilliseconds": 1751079
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#high-level-low-level-and-abstraction"
+      }
+    },
+    {
+      "id": "TP-117",
+      "startMilliseconds": 1751079,
+      "endMilliseconds": 1755350,
+      "kind": "explanation",
+      "text": "Abstraction means using a name that simply describes what will happen at a high level.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1751079,
+          "endMilliseconds": 1755350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#high-level-low-level-and-abstraction"
+      }
+    },
+    {
+      "id": "TP-118",
+      "startMilliseconds": 1755350,
+      "endMilliseconds": 1770500,
+      "kind": "explanation",
+      "text": "Algorithms should be decomposed not only into steps but also into an interface.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1755350,
+          "endMilliseconds": 1770500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#drawing-an-algorithm-as-memory-cells"
+      }
+    },
+    {
+      "id": "TP-119",
+      "startMilliseconds": 1770500,
+      "endMilliseconds": 1778720,
+      "kind": "fact",
+      "text": "The interface of an algorithm consists of its input and its output.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1770500,
+          "endMilliseconds": 1778720
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#drawing-an-algorithm-as-memory-cells"
+      }
+    },
+    {
+      "id": "TP-120",
+      "startMilliseconds": 1778720,
+      "endMilliseconds": 1787460,
+      "kind": "fact",
+      "text": "The implementation is the concrete steps plus the working memory, which is the temporary memory created as cells for variables.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1778720,
+          "endMilliseconds": 1787460
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#drawing-an-algorithm-as-memory-cells"
+      }
+    },
+    {
+      "id": "TP-121",
+      "startMilliseconds": 1787460,
+      "endMilliseconds": 1814120,
+      "kind": "explanation",
+      "text": "An algorithm is drawn as memory cells for input, separate memory cells for output, and a separate memory space for the temporary memory used while running.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1787460,
+          "endMilliseconds": 1814120
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1803600,
+          "endMilliseconds": 1814120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#drawing-an-algorithm-as-memory-cells"
+      }
+    },
+    {
+      "id": "TP-122",
+      "startMilliseconds": 1814120,
+      "endMilliseconds": 1819070,
+      "kind": "fact",
+      "text": "Input memory cells hold data the algorithm cannot control, since they are supplied from outside.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1814120,
+          "endMilliseconds": 1819070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#drawing-an-algorithm-as-memory-cells"
+      }
+    },
+    {
+      "id": "TP-123",
+      "startMilliseconds": 1819070,
+      "endMilliseconds": 1842269,
+      "kind": "explanation",
+      "text": "For an algorithm that adds two numbers, the input cells hold a and b, and a temporary cell stores the sum so the answer 11 can be produced.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1819070,
+          "endMilliseconds": 1842269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#drawing-an-algorithm-as-memory-cells"
+      }
+    },
+    {
+      "id": "TP-124",
+      "startMilliseconds": 1842269,
+      "endMilliseconds": 1845910,
+      "kind": "scope_boundary",
+      "text": "This cell representation only describes what an algorithm is, so in practice the question becomes how to pass a list of elements into it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1842269,
+          "endMilliseconds": 1845910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#passing-a-list-in-practice"
+      }
+    },
+    {
+      "id": "TP-125",
+      "startMilliseconds": 1845910,
+      "endMilliseconds": 1856039,
+      "kind": "edge_case",
+      "text": "Writing every list element one after another and additionally passing the length separately is not how this is normally done.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1845910,
+          "endMilliseconds": 1856039
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#passing-a-list-in-practice"
+      }
+    },
+    {
+      "id": "TP-126",
+      "startMilliseconds": 1856039,
+      "endMilliseconds": 1887799,
+      "kind": "explanation",
+      "text": "Normally an object representing the list lives at some address whose value is passed in a memory cell, and inside it are the elements, the length, and the returned values, all of which can be thought of as separate memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1856039,
+          "endMilliseconds": 1887799
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#passing-a-list-in-practice"
+      }
+    }
+  ]
+}

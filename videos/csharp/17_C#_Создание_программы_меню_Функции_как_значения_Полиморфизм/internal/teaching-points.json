@@ -1,0 +1,3255 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "nKGsQISMrbQ",
+  "uploadId": "nKGsQISMrbQ",
+  "transcriptSha256": "17977dde27098740d5597482b88df4aaa76267b578b3ded75ea34ec4d58eb1f5",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 160,
+      "endMilliseconds": 5230,
+      "kind": "fact",
+      "text": "The goal of this video is a worked example of a menu-driven console program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 160,
+          "endMilliseconds": 5230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-menu-that-can-evolve"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 5240,
+      "endMilliseconds": 11600,
+      "kind": "fact",
+      "text": "The program will build a simple menu of numbered options that the user picks from.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 5240,
+          "endMilliseconds": 11600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-menu-that-can-evolve"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 11600,
+      "endMilliseconds": 16180,
+      "kind": "fact",
+      "text": "The options can be shown in a different order than the code defines, so menu entries are kept as data.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 11600,
+          "endMilliseconds": 16180
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-menu-that-can-evolve"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 16180,
+      "endMilliseconds": 21190,
+      "kind": "fact",
+      "text": "The set of options can be determined dynamically instead of being hardcoded.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 16180,
+          "endMilliseconds": 21190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-menu-that-can-evolve"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 21190,
+      "endMilliseconds": 26910,
+      "kind": "explanation",
+      "text": "An enum represents the available actions, giving each one a named constant instead of a bare number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 21190,
+          "endMilliseconds": 26910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-menu-that-can-evolve"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 26910,
+      "endMilliseconds": 43100,
+      "kind": "explanation",
+      "text": "A second approach stores actions in a list and converts the user-selected index into the action stored at that position.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 26910,
+          "endMilliseconds": 43100
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-menu-that-can-evolve"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 43100,
+      "endMilliseconds": 60670,
+      "kind": "explanation",
+      "text": "A third approach stores both the enum member identifying the action and the function that performs it, so each entry carries its own implementation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 43100,
+          "endMilliseconds": 60670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-menu-that-can-evolve"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 60670,
+      "endMilliseconds": 63180,
+      "kind": "fact",
+      "text": "Storing a function as a value lets a menu entry describe both what to do and how to do it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 60670,
+          "endMilliseconds": 63180
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-menu-that-can-evolve"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 63180,
+      "endMilliseconds": 72460,
+      "kind": "fact",
+      "text": "The demo menu uses three options so the whole pattern fits in one short example.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 63180,
+          "endMilliseconds": 72460
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-menu-that-can-evolve"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 72460,
+      "endMilliseconds": 80920,
+      "kind": "fact",
+      "text": "The first menu option sums two numbers the user types in the console.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 72460,
+          "endMilliseconds": 80920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-menu-that-can-evolve"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 74479,
+      "endMilliseconds": 79320,
+      "kind": "fact",
+      "text": "The second menu option greets the user after prompting for a name in the console.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 74479,
+          "endMilliseconds": 79320
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-menu-that-can-evolve"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 79320,
+      "endMilliseconds": 83180,
+      "kind": "fact",
+      "text": "The third menu option generates a random number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 79320,
+          "endMilliseconds": 83180
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-menu-that-can-evolve"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 83180,
+      "endMilliseconds": 93300,
+      "kind": "explanation",
+      "text": "The menu packages three smaller programs into one and only decides which of them runs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 83180,
+          "endMilliseconds": 93300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-menu-that-can-evolve"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 93300,
+      "endMilliseconds": 105550,
+      "kind": "scope_boundary",
+      "text": "The three actions share one program context and are never launched as separate processes, so all work happens at function level.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 93300,
+          "endMilliseconds": 105550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#build-a-menu-that-can-evolve"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 105550,
+      "endMilliseconds": 117270,
+      "kind": "explanation",
+      "text": "To dispatch on a menu choice the action must be representable as a program value, which the enum provides.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 105550,
+          "endMilliseconds": 117270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-actions-and-dispatch-with-an-enum"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 117270,
+      "endMilliseconds": 133470,
+      "kind": "fact",
+      "text": "The enum declares three members: Addition for adding two numbers, Greeting for greeting the user, and RandomNumber for random number generation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 117270,
+          "endMilliseconds": 133470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-actions-and-dispatch-with-an-enum"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 133470,
+      "endMilliseconds": 144030,
+      "kind": "explanation",
+      "text": "The menu loop has three parts: an enum naming the actions, reading the chosen option, and executing the action bound to that option.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 133470,
+          "endMilliseconds": 144030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-actions-and-dispatch-with-an-enum"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 144030,
+      "endMilliseconds": 153599,
+      "kind": "fact",
+      "text": "The chosen action can be dispatched with if statements or a switch statement, as shown in an earlier video.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 144030,
+          "endMilliseconds": 153599
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 146400,
+          "endMilliseconds": 153599
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-actions-and-dispatch-with-an-enum"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 153599,
+      "endMilliseconds": 165390,
+      "kind": "fact",
+      "text": "Dispatch is written as an ExecuteAction function that takes the action to run as a parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 153599,
+          "endMilliseconds": 165390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-actions-and-dispatch-with-an-enum"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 165390,
+      "endMilliseconds": 185190,
+      "kind": "explanation",
+      "text": "Inside ExecuteAction the action value selects which function is called, for example Addition runs the sum function and Greeting runs the greeting function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 165390,
+          "endMilliseconds": 185190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-actions-and-dispatch-with-an-enum"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 185190,
+      "endMilliseconds": 195190,
+      "kind": "edge_case",
+      "text": "If the action value matches no known enum member the switch has no matching branch, so it must be treated as an error.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 185190,
+          "endMilliseconds": 195190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-actions-and-dispatch-with-an-enum"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 195190,
+      "endMilliseconds": 217590,
+      "kind": "fact",
+      "text": "The menu therefore needs separate functions for the enum members Addition, Greeting and RandomNumber, each called from its own branch.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 195190,
+          "endMilliseconds": 217590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-actions-and-dispatch-with-an-enum"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 217590,
+      "endMilliseconds": 226990,
+      "kind": "code_change",
+      "text": "The using System.Diagnostics directive moves to the top of the file because the switch calls Debug.Fail.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 217590,
+          "endMilliseconds": 226990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-actions-and-dispatch-with-an-enum"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 224519,
+      "endMilliseconds": 233599,
+      "kind": "code_change",
+      "text": "The separate functions are implemented starting with Addition, which prompts for each number and tries to parse the input as an int.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 224519,
+          "endMilliseconds": 233599
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 226990,
+          "endMilliseconds": 233599
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-reusable-integer-input"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 233599,
+      "endMilliseconds": 236789,
+      "kind": "edge_case",
+      "text": "If the input cannot be parsed as an int the loop starts over and asks again.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 233599,
+          "endMilliseconds": 236789
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-reusable-integer-input"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 236789,
+      "endMilliseconds": 244869,
+      "kind": "scope_boundary",
+      "text": "This retry-on-parse-failure loop pattern was covered in earlier videos, so the lesson does not dwell on it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 236789,
+          "endMilliseconds": 244869
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-reusable-integer-input"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 244869,
+      "endMilliseconds": 252429,
+      "kind": "reason",
+      "text": "The parsed int must be declared outside the loop and the loop needs a break, so the value survives after the loop ends.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 244869,
+          "endMilliseconds": 252429
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-reusable-integer-input"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 252429,
+      "endMilliseconds": 267909,
+      "kind": "reason",
+      "text": "Because the same reading logic is needed for both A and B, it is extracted into a helper ReadIntIn that takes the variable name as a string.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 252429,
+          "endMilliseconds": 267909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-reusable-integer-input"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 267909,
+      "endMilliseconds": 280629,
+      "kind": "code_change",
+      "text": "The helper returns the parsed result and prints the supplied variable name instead of a hardcoded A.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 267909,
+          "endMilliseconds": 280629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-reusable-integer-input"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 280629,
+      "endMilliseconds": 291510,
+      "kind": "code_change",
+      "text": "Both A and B are read through the ReadIntIn helper instead of duplicated inline code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 280629,
+          "endMilliseconds": 291510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-reusable-integer-input"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 291510,
+      "endMilliseconds": 296390,
+      "kind": "scope_boundary",
+      "text": "The reading loop itself was explained in the dedicated input video, so it is only referenced here.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 291510,
+          "endMilliseconds": 296390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-reusable-integer-input"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 296390,
+      "endMilliseconds": 303479,
+      "kind": "code_change",
+      "text": "Addition then computes a plus b and prints the resulting sum.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 296390,
+          "endMilliseconds": 303479
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#extract-reusable-integer-input"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 303479,
+      "endMilliseconds": 311710,
+      "kind": "reason",
+      "text": "The greet-user function is declared static void because it returns no value and only asks the user for a name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 303479,
+          "endMilliseconds": 311710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finish-greeting-and-random-number-actions"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 317479,
+      "endMilliseconds": 330550,
+      "kind": "explanation",
+      "text": "Random number is the simplest remaining action because generating a number requires first obtaining an object that produces random values.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 317479,
+          "endMilliseconds": 330550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finish-greeting-and-random-number-actions"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 333189,
+      "endMilliseconds": 338000,
+      "kind": "fact",
+      "text": "In C# the random generator is available as the static property Random.Shared, which you can call to get a random number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 333189,
+          "endMilliseconds": 338000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#finish-greeting-and-random-number-actions"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 342080,
+      "endMilliseconds": 352950,
+      "kind": "code_change",
+      "text": "The main function now handles reading the option number and interpreting it as an action.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 342080,
+          "endMilliseconds": 352950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-and-validate-a-numeric-choice"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 356230,
+      "endMilliseconds": 369469,
+      "kind": "fact",
+      "text": "The menu numbers are mapped to actions: 0 adds two numbers, 1 greets the user, and 2 prints a random number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 356230,
+          "endMilliseconds": 369469
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-and-validate-a-numeric-choice"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 369479,
+      "endMilliseconds": 381840,
+      "kind": "code_change",
+      "text": "The option is read with ReadInt and then validated: if it is less than 0 or greater than 2 the input code runs again.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 369479,
+          "endMilliseconds": 381840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-and-validate-a-numeric-choice"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 371880,
+      "endMilliseconds": 388629,
+      "kind": "code_change",
+      "text": "The option is read with ReadInt and validated by rerunning the input block plus printing an error whenever it is less than 0 or greater than 2.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 371880,
+          "endMilliseconds": 388629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-and-validate-a-numeric-choice"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 388629,
+      "endMilliseconds": 400550,
+      "kind": "code_change",
+      "text": "After the read and validation the number in the variable holds the option, and a separate variable of the action type is declared at the top of the method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 388629,
+          "endMilliseconds": 400550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-and-validate-a-numeric-choice"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 400550,
+      "endMilliseconds": 414350,
+      "kind": "explanation",
+      "text": "The validated number only has to be interpreted as the action enum, which is safe because the check already proved the value lies between 0 and 2.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 400550,
+          "endMilliseconds": 414350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-and-validate-a-numeric-choice"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 414350,
+      "endMilliseconds": 422510,
+      "kind": "reason",
+      "text": "Repeating the read whenever the value falls outside 0 to 2 guarantees that after the check the value is always inside the valid range.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 414350,
+          "endMilliseconds": 422510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-and-validate-a-numeric-choice"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 422510,
+      "endMilliseconds": 431870,
+      "kind": "code_change",
+      "text": "The number from 0 to 2 is cast directly to the action enum, using the same enum behavior shown earlier.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 422510,
+          "endMilliseconds": 431870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-and-validate-a-numeric-choice"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 431870,
+      "endMilliseconds": 443909,
+      "kind": "code_change",
+      "text": "The validation loop is moved into its own static method that returns the action, keeping the main function readable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 431870,
+          "endMilliseconds": 443909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-and-validate-a-numeric-choice"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 443909,
+      "endMilliseconds": 459589,
+      "kind": "explanation",
+      "text": "What remains is an ExecuteAction step that reads the action and calls the function matching the action the user picked.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 443909,
+          "endMilliseconds": 459589
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-and-validate-a-numeric-choice"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 451919,
+      "endMilliseconds": 459589,
+      "kind": "explanation",
+      "text": "ExecuteAction calls the function that corresponds to whichever action the user entered.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 451919,
+          "endMilliseconds": 459589
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-and-validate-a-numeric-choice"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 459589,
+      "endMilliseconds": 467990,
+      "kind": "fact",
+      "text": "A user cannot type a function itself as a console value, so the program must accept something else to select an action.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 459589,
+          "endMilliseconds": 467990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#accept-an-option-name-before-parsing-a-number"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 467990,
+      "endMilliseconds": 474029,
+      "kind": "explanation",
+      "text": "The user could either type the number that matches a function or type a string containing that function name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 467990,
+          "endMilliseconds": 474029
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#accept-an-option-name-before-parsing-a-number"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 474029,
+      "endMilliseconds": 478589,
+      "kind": "scope_boundary",
+      "text": "This version deliberately requires the user to enter the number corresponding to the function, not its name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 474029,
+          "endMilliseconds": 478589
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#accept-an-option-name-before-parsing-a-number"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 478589,
+      "endMilliseconds": 499469,
+      "kind": "reason",
+      "text": "Calling a function by a name string is impossible here because the call is resolved statically at compile time and becomes a direct call by address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 478589,
+          "endMilliseconds": 499469
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#accept-an-option-name-before-parsing-a-number"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 499469,
+      "endMilliseconds": 512509,
+      "kind": "code_change",
+      "text": "The selection logic is extended so the option can also be chosen by function name instead of only by its number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 499469,
+          "endMilliseconds": 512509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#accept-an-option-name-before-parsing-a-number"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 512509,
+      "endMilliseconds": 528560,
+      "kind": "code_change",
+      "text": "Since a name string cannot be converted to int, the validation has to be rewritten: the function is copied out and the input string is checked before any conversion is attempted.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 512509,
+          "endMilliseconds": 528560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#accept-an-option-name-before-parsing-a-number"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 520959,
+      "endMilliseconds": 531590,
+      "kind": "code_change",
+      "text": "Before trying to convert the input to an int, the code first checks whether the string the user typed is one of the allowed option names.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 520959,
+          "endMilliseconds": 531590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#accept-an-option-name-before-parsing-a-number"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 531590,
+      "endMilliseconds": 546910,
+      "kind": "code_change",
+      "text": "Each allowed string (addition, greeting, random number) is compared with the input and the matching action is returned.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 531590,
+          "endMilliseconds": 546910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#accept-an-option-name-before-parsing-a-number"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 546910,
+      "endMilliseconds": 561120,
+      "kind": "scope_boundary",
+      "text": "Generalizing this chain of string comparisons with reflection is possible but is intentionally not shown in this video.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 546910,
+          "endMilliseconds": 561120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#accept-an-option-name-before-parsing-a-number"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 561120,
+      "endMilliseconds": 581630,
+      "kind": "fact",
+      "text": "C# lets you obtain the string bound to a name, so nameof(Addition) yields \"Addition\" as a string.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 561120,
+          "endMilliseconds": 581630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-names-synchronized-with-nameof"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 581630,
+      "endMilliseconds": 599509,
+      "kind": "explanation",
+      "text": "nameof works on functions too and the compiler substitutes the member name as a string, so renaming the function changes the string automatically.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 581630,
+          "endMilliseconds": 599509
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-names-synchronized-with-nameof"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 599509,
+      "endMilliseconds": 609440,
+      "kind": "fact",
+      "text": "Manually typing a different name instead of using nameof breaks compilation, while an editor rename updates the nameof string consistently.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 599509,
+          "endMilliseconds": 609440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-names-synchronized-with-nameof"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 599519,
+      "endMilliseconds": 617990,
+      "kind": "reason",
+      "text": "Using a deliberately wrong placeholder name in the code turns the mismatch into a compile error, so the mistake is caught by the compiler and an editor rename updates every usage of that symbol.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 599519,
+          "endMilliseconds": 617990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-names-synchronized-with-nameof"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 617990,
+      "endMilliseconds": 632590,
+      "kind": "fact",
+      "text": "The == comparison checks option names one after another, and the resulting rename is applied while the project compiles with dotnet build rather than when the program runs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 617990,
+          "endMilliseconds": 632590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-names-synchronized-with-nameof"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 632590,
+      "endMilliseconds": 638949,
+      "kind": "explanation",
+      "text": "Renaming a menu entry this way is fully equivalent to typing the new name into the hardcoded string, so the option label can never drift out of sync with the code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 632590,
+          "endMilliseconds": 638949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-names-synchronized-with-nameof"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 638949,
+      "endMilliseconds": 656790,
+      "kind": "test_result",
+      "text": "Running the program shows the renamed option is accepted when its number is entered, while a letter input is rejected and a valid number produces the expected result, confirming the rename propagated correctly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 638949,
+          "endMilliseconds": 656790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-both-input-styles"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 656790,
+      "endMilliseconds": 675830,
+      "kind": "test_result",
+      "text": "Entering the new option name spelled with letters dispatches the greeting function, and entering the random-number option by number still prints a random value, so both input styles work after the rename.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 656790,
+          "endMilliseconds": 675830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#check-both-input-styles"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 675839,
+      "endMilliseconds": 684440,
+      "kind": "explanation",
+      "text": "Everything works, but the code now has a problem: the full list of options is written out a second time.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 675839,
+          "endMilliseconds": 684440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#find-the-duplicated-option-list"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 684440,
+      "endMilliseconds": 702040,
+      "kind": "explanation",
+      "text": "Each option is mentioned in two places, once in the source code and once in the printed string, so the duplicated lists can drift apart.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 684440,
+          "endMilliseconds": 702040
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#find-the-duplicated-option-list"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 702040,
+      "endMilliseconds": 722750,
+      "kind": "reason",
+      "text": "Adding a new function after the random number means also editing the printed string to insert a comma and the new number, and nothing connects that number to the function semantically.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 702040,
+          "endMilliseconds": 722750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#find-the-duplicated-option-list"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 722750,
+      "endMilliseconds": 734710,
+      "kind": "reason",
+      "text": "No matter what is added to the program, the new option must be linked semantically to its action, and the fix is to introduce a dedicated Option class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 722750,
+          "endMilliseconds": 734710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#find-the-duplicated-option-list"
+      }
+    },
+    {
+      "id": "TP-068",
+      "startMilliseconds": 734710,
+      "endMilliseconds": 753269,
+      "kind": "code_change",
+      "text": "A new Option class is created so that each option carries a name, an action that runs when the user selects it, and later a description.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 734710,
+          "endMilliseconds": 753269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-menu-entries-as-option-objects"
+      }
+    },
+    {
+      "id": "TP-069",
+      "startMilliseconds": 746240,
+      "endMilliseconds": 755150,
+      "kind": "code_change",
+      "text": "The Option class also carries a description field, so an option can describe itself to the user.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 746240,
+          "endMilliseconds": 755150
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 753269,
+          "endMilliseconds": 755150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-menu-entries-as-option-objects"
+      }
+    },
+    {
+      "id": "TP-070",
+      "startMilliseconds": 755160,
+      "endMilliseconds": 770389,
+      "kind": "explanation",
+      "text": "For every option in turn the code prints its index, its name and its description, so one loop can render the whole menu.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 755160,
+          "endMilliseconds": 770389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-menu-entries-as-option-objects"
+      }
+    },
+    {
+      "id": "TP-071",
+      "startMilliseconds": 770389,
+      "endMilliseconds": 777790,
+      "kind": "explanation",
+      "text": "After printing, the input is compared against the option names and indexes and the matching action is selected by index.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 770389,
+          "endMilliseconds": 777790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-menu-entries-as-option-objects"
+      }
+    },
+    {
+      "id": "TP-072",
+      "startMilliseconds": 777790,
+      "endMilliseconds": 791870,
+      "kind": "code_change",
+      "text": "To simplify this, a list holding all the actions as Option objects is created in one place instead of being scattered across the function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 777790,
+          "endMilliseconds": 791870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-menu-entries-as-option-objects"
+      }
+    },
+    {
+      "id": "TP-073",
+      "startMilliseconds": 791870,
+      "endMilliseconds": 806870,
+      "kind": "code_change",
+      "text": "The list is filled with options for addition, for greeting and for random number, each giving its name, its description and its action.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 791870,
+          "endMilliseconds": 806870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-menu-entries-as-option-objects"
+      }
+    },
+    {
+      "id": "TP-074",
+      "startMilliseconds": 806870,
+      "endMilliseconds": 816389,
+      "kind": "reason",
+      "text": "Because the options now live in one list they can be placed in any order, the index is no longer bound directly to a specific action, and the program becomes more flexible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 806870,
+          "endMilliseconds": 816389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-menu-entries-as-option-objects"
+      }
+    },
+    {
+      "id": "TP-075",
+      "startMilliseconds": 816389,
+      "endMilliseconds": 824389,
+      "kind": "code_change",
+      "text": "The options list is now passed into the function because the further choice of action is based on it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 816389,
+          "endMilliseconds": 824389
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-menu-entries-as-option-objects"
+      }
+    },
+    {
+      "id": "TP-076",
+      "startMilliseconds": 824399,
+      "endMilliseconds": 831320,
+      "kind": "code_change",
+      "text": "The function accepts the list of options as a parameter, because the later action selection is derived from that list.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 824399,
+          "endMilliseconds": 831320
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-menu-entries-as-option-objects"
+      }
+    },
+    {
+      "id": "TP-077",
+      "startMilliseconds": 831320,
+      "endMilliseconds": 843749,
+      "kind": "code_change",
+      "text": "The fixed prompt string is replaced with an Enter an option message and the printing loop continues afterwards.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 831320,
+          "endMilliseconds": 843749
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-menu-entries-as-option-objects"
+      }
+    },
+    {
+      "id": "TP-078",
+      "startMilliseconds": 843749,
+      "endMilliseconds": 857269,
+      "kind": "code_change",
+      "text": "A loop walks the options and prints each one as an index or a name followed by its description.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 843749,
+          "endMilliseconds": 857269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-menu-entries-as-option-objects"
+      }
+    },
+    {
+      "id": "TP-079",
+      "startMilliseconds": 857269,
+      "endMilliseconds": 868590,
+      "kind": "scope_boundary",
+      "text": "A period rather than a semicolon is printed after each option, deliberately avoiding extra list formatting for now.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 857269,
+          "endMilliseconds": 868590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#represent-menu-entries-as-option-objects"
+      }
+    },
+    {
+      "id": "TP-080",
+      "startMilliseconds": 868590,
+      "endMilliseconds": 886350,
+      "kind": "code_change",
+      "text": "To match a name the code loops over all options and, when an option name equals the user input, that option becomes the result and its action is returned.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 868590,
+          "endMilliseconds": 886350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#select-from-the-options-collection"
+      }
+    },
+    {
+      "id": "TP-081",
+      "startMilliseconds": 886350,
+      "endMilliseconds": 891310,
+      "kind": "edge_case",
+      "text": "If the loop over all options completes without a name match, nothing was found and execution falls through to parsing the input as a number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 886350,
+          "endMilliseconds": 891310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#select-from-the-options-collection"
+      }
+    },
+    {
+      "id": "TP-082",
+      "startMilliseconds": 891310,
+      "endMilliseconds": 897470,
+      "kind": "reason",
+      "text": "After parsing succeeds the index is validated, and since the minimum valid index is zero any value below zero is an error.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 891310,
+          "endMilliseconds": 897470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#select-from-the-options-collection"
+      }
+    },
+    {
+      "id": "TP-083",
+      "startMilliseconds": 895920,
+      "endMilliseconds": 915000,
+      "kind": "explanation",
+      "text": "The option-selection code validates the entered index against the array bounds, treating a value below zero or greater than or equal to the array length as an error, so a bad menu choice cannot crash the program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 895920,
+          "endMilliseconds": 915000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#select-from-the-options-collection"
+      }
+    },
+    {
+      "id": "TP-084",
+      "startMilliseconds": 897470,
+      "endMilliseconds": 906279,
+      "kind": "edge_case",
+      "text": "An index greater than or equal to the length of the options list is also rejected as an error, since no such option exists.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 897470,
+          "endMilliseconds": 906279
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#select-from-the-options-collection"
+      }
+    },
+    {
+      "id": "TP-085",
+      "startMilliseconds": 915000,
+      "endMilliseconds": 917670,
+      "kind": "code_change",
+      "text": "Instead of converting the numeric index into an action, the code now takes the action object directly out of the options array, which removes the index-to-action translation step.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 915000,
+          "endMilliseconds": 917670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#select-from-the-options-collection"
+      }
+    },
+    {
+      "id": "TP-086",
+      "startMilliseconds": 917670,
+      "endMilliseconds": 934790,
+      "kind": "explanation",
+      "text": "Options may be defined in any order because the array is only read by index, so addition now sits at position one rather than zero after the change.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 917670,
+          "endMilliseconds": 934790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#select-from-the-options-collection"
+      }
+    },
+    {
+      "id": "TP-087",
+      "startMilliseconds": 934790,
+      "endMilliseconds": 948189,
+      "kind": "test_result",
+      "text": "Re-running the program with a differently spelled number such as a random number in letters still resolves the option and returns early without running the remaining code, confirming parsing of the option happens before execution.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 934790,
+          "endMilliseconds": 948189
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#select-from-the-options-collection"
+      }
+    },
+    {
+      "id": "TP-088",
+      "startMilliseconds": 948189,
+      "endMilliseconds": 981240,
+      "kind": "explanation",
+      "text": "Because the option list can now be built elsewhere, it can be created outside the main function, for example in a static Options class exposing an AddOption function that receives the list and fills it item by item.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 948189,
+          "endMilliseconds": 981240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-registration-out-of-main"
+      }
+    },
+    {
+      "id": "TP-089",
+      "startMilliseconds": 972319,
+      "endMilliseconds": 995150,
+      "kind": "code_change",
+      "text": "Option registration is moved into a dedicated AddOptions function that receives the list as a parameter and adds entries one by one, which makes the set of available actions configurable rather than hardcoded.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 972319,
+          "endMilliseconds": 995150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-registration-out-of-main"
+      }
+    },
+    {
+      "id": "TP-090",
+      "startMilliseconds": 995150,
+      "endMilliseconds": 1001110,
+      "kind": "code_change",
+      "text": "The main function now calls AddOptions to set up the available actions, so configuration is injected into the program from one place.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 995150,
+          "endMilliseconds": 1001110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-registration-out-of-main"
+      }
+    },
+    {
+      "id": "TP-091",
+      "startMilliseconds": 1001110,
+      "endMilliseconds": 1013970,
+      "kind": "explanation",
+      "text": "The main function neither chooses which options exist nor contains the code that picks a concrete option from the list, which separates menu content from program flow.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1001110,
+          "endMilliseconds": 1013970
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-registration-out-of-main"
+      }
+    },
+    {
+      "id": "TP-092",
+      "startMilliseconds": 1013970,
+      "endMilliseconds": 1025900,
+      "kind": "explanation",
+      "text": "The main function still needs no code for executing the chosen action itself, since execution lives in the dedicated action-dispatch function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1013970,
+          "endMilliseconds": 1025900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-registration-out-of-main"
+      }
+    },
+    {
+      "id": "TP-093",
+      "startMilliseconds": 1025900,
+      "endMilliseconds": 1037900,
+      "kind": "reason",
+      "text": "The main function only needs access to three functions: one that initializes the list, one that reads the actions, and one that selects the action, which keeps its coupling minimal.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1025900,
+          "endMilliseconds": 1037900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-registration-out-of-main"
+      }
+    },
+    {
+      "id": "TP-094",
+      "startMilliseconds": 1037900,
+      "endMilliseconds": 1054760,
+      "kind": "reason",
+      "text": "Because no action is executed directly in the main function, it never needs direct access to the individual action implementations, so they can stay internal to their own class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1037900,
+          "endMilliseconds": 1054760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-registration-out-of-main"
+      }
+    },
+    {
+      "id": "TP-095",
+      "startMilliseconds": 1046720,
+      "endMilliseconds": 1054750,
+      "kind": "test_result",
+      "text": "Without touching the main function, removing one entry from the options list removed that entry from the menu, showing that the configuration function alone controls what the program offers.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1046720,
+          "endMilliseconds": 1054750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-registration-out-of-main"
+      }
+    },
+    {
+      "id": "TP-096",
+      "startMilliseconds": 1054750,
+      "endMilliseconds": 1062110,
+      "kind": "explanation",
+      "text": "Only the configuration function was changed and the main function stayed identical, which shows the code keeps working for any number of registered actions.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1054750,
+          "endMilliseconds": 1062110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-registration-out-of-main"
+      }
+    },
+    {
+      "id": "TP-097",
+      "startMilliseconds": 1062110,
+      "endMilliseconds": 1080900,
+      "kind": "fact",
+      "text": "The actions are currently stored as plain numbers, and the only place these numbers are used is the action-selection function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1062110,
+          "endMilliseconds": 1080900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-action-identifiers-with-functions"
+      }
+    },
+    {
+      "id": "TP-098",
+      "startMilliseconds": 1080900,
+      "endMilliseconds": 1102620,
+      "kind": "explanation",
+      "text": "If each option stored the action itself instead of a number that is later turned into an action, the numbers and the manual linking inside the action-execution function would no longer be needed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1080900,
+          "endMilliseconds": 1102620
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-action-identifiers-with-functions"
+      }
+    },
+    {
+      "id": "TP-099",
+      "startMilliseconds": 1102620,
+      "endMilliseconds": 1114490,
+      "kind": "scope_boundary",
+      "text": "Storing the action directly raises the question of whether actions could be represented in some other way than as in-memory numbers at all.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1102620,
+          "endMilliseconds": 1114490
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-action-identifiers-with-functions"
+      }
+    },
+    {
+      "id": "TP-100",
+      "startMilliseconds": 1114490,
+      "endMilliseconds": 1125960,
+      "kind": "reason",
+      "text": "A second reason to change the representation is that if an action could be denoted as a function outright, the system would be extended simply by adding new functions.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1114490,
+          "endMilliseconds": 1125960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-action-identifiers-with-functions"
+      }
+    },
+    {
+      "id": "TP-101",
+      "startMilliseconds": 1117520,
+      "endMilliseconds": 1125960,
+      "kind": "reason",
+      "text": "If an action were denoted as a function directly, adding a new capability to the system would mean only writing that function and listing it among the options.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1117520,
+          "endMilliseconds": 1125960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-action-identifiers-with-functions"
+      }
+    },
+    {
+      "id": "TP-102",
+      "startMilliseconds": 1125960,
+      "endMilliseconds": 1151190,
+      "kind": "explanation",
+      "text": "With functions as actions, even a private function could be registered, because it is never invoked by name and the options list only stores a reference to it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1125960,
+          "endMilliseconds": 1151190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-action-identifiers-with-functions"
+      }
+    },
+    {
+      "id": "TP-103",
+      "startMilliseconds": 1151190,
+      "endMilliseconds": 1189500,
+      "kind": "reason",
+      "text": "Today a function cannot be made private because making it a valid action requires adding it to the action list with a number and adding its execution to the action-execution function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1151190,
+          "endMilliseconds": 1189500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-action-identifiers-with-functions"
+      }
+    },
+    {
+      "id": "TP-104",
+      "startMilliseconds": 1189500,
+      "endMilliseconds": 1201280,
+      "kind": "scope_boundary",
+      "text": "Since the function is called from outside its class it cannot be private, but passing a direct reference at option-creation time would let it be invoked by reference, making its visibility irrelevant.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1189500,
+          "endMilliseconds": 1201280
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-action-identifiers-with-functions"
+      }
+    },
+    {
+      "id": "TP-105",
+      "startMilliseconds": 1194640,
+      "endMilliseconds": 1204970,
+      "kind": "explanation",
+      "text": "A delegate-based command is invoked through a reference rather than by name, so whether the target method is private no longer blocks the call from anywhere.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1194640,
+          "endMilliseconds": 1204970
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-action-identifiers-with-functions"
+      }
+    },
+    {
+      "id": "TP-106",
+      "startMilliseconds": 1204990,
+      "endMilliseconds": 1214870,
+      "kind": "reason",
+      "text": "Because the call goes through a reference, external code can inject its own actions without touching the centralized dispatch code that finds the target action.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1204990,
+          "endMilliseconds": 1214870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#replace-action-identifiers-with-functions"
+      }
+    },
+    {
+      "id": "TP-107",
+      "startMilliseconds": 1217040,
+      "endMilliseconds": 1223130,
+      "kind": "scope_boundary",
+      "text": "To explain how functions store variables, the lesson steps down to a lower level and reviews what functions actually are before going deeper into how they work.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1217040,
+          "endMilliseconds": 1223130
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-source-code-into-il"
+      }
+    },
+    {
+      "id": "TP-108",
+      "startMilliseconds": 1223140,
+      "endMilliseconds": 1248390,
+      "kind": "fact",
+      "text": "Compiling C# source code converts the source instructions into IL (Intermediate Language), a bytecode form used by compiled programs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1223140,
+          "endMilliseconds": 1248390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-source-code-into-il"
+      }
+    },
+    {
+      "id": "TP-109",
+      "startMilliseconds": 1255320,
+      "endMilliseconds": 1268270,
+      "kind": "explanation",
+      "text": "The compiler reads the source code and produces IL, which is why the IL is what ends up inside the compiled artifact.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1255320,
+          "endMilliseconds": 1268270
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-source-code-into-il"
+      }
+    },
+    {
+      "id": "TP-110",
+      "startMilliseconds": 1262320,
+      "endMilliseconds": 1270760,
+      "kind": "fact",
+      "text": "When the program is compiled, a DLL containing the IL is produced, so the DLL is where the intermediate code lives.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1262320,
+          "endMilliseconds": 1270760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-source-code-into-il"
+      }
+    },
+    {
+      "id": "TP-111",
+      "startMilliseconds": 1268240,
+      "endMilliseconds": 1270760,
+      "kind": "fact",
+      "text": "When a program is compiled, a DLL (Dynamic Link Library) containing that IL is produced.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1268240,
+          "endMilliseconds": 1270760
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-source-code-into-il"
+      }
+    },
+    {
+      "id": "TP-112",
+      "startMilliseconds": 1270760,
+      "endMilliseconds": 1271650,
+      "kind": "fact",
+      "text": "The DLL contains the IL (Intermediate Language) representation of the program's code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1270760,
+          "endMilliseconds": 1271650
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-source-code-into-il"
+      }
+    },
+    {
+      "id": "TP-113",
+      "startMilliseconds": 1271659,
+      "endMilliseconds": 1286870,
+      "kind": "explanation",
+      "text": "IL stores the instructions as numeric identifiers, so the result is no longer source code but instructions at a lower level.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1271659,
+          "endMilliseconds": 1286870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-source-code-into-il"
+      }
+    },
+    {
+      "id": "TP-114",
+      "startMilliseconds": 1286880,
+      "endMilliseconds": 1291600,
+      "kind": "fact",
+      "text": "The SharpLab site lets you paste your C# code and inspect the IL that the compiler produces from it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1286880,
+          "endMilliseconds": 1291600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-source-code-into-il"
+      }
+    },
+    {
+      "id": "TP-115",
+      "startMilliseconds": 1291610,
+      "endMilliseconds": 1299770,
+      "kind": "explanation",
+      "text": "In the IL listing you can see structures such as the Program class, its Main function, and the calls to your own functions and console output.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1291610,
+          "endMilliseconds": 1299770
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-source-code-into-il"
+      }
+    },
+    {
+      "id": "TP-116",
+      "startMilliseconds": 1299780,
+      "endMilliseconds": 1303380,
+      "kind": "scope_boundary",
+      "text": "The exact IL instructions need not be memorized; only the idea that source code becomes lower-level instructions matters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1299780,
+          "endMilliseconds": 1303380
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-source-code-into-il"
+      }
+    },
+    {
+      "id": "TP-117",
+      "startMilliseconds": 1303390,
+      "endMilliseconds": 1314180,
+      "kind": "explanation",
+      "text": "The IL translation step also happens when you run the dotnet build command shown earlier.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1303390,
+          "endMilliseconds": 1314180
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-source-code-into-il"
+      }
+    },
+    {
+      "id": "TP-118",
+      "startMilliseconds": 1336200,
+      "endMilliseconds": 1341010,
+      "kind": "fact",
+      "text": "Running the executable loads the IL code, which the runtime then compiles further for the actual machine.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1336200,
+          "endMilliseconds": 1341010
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-il-into-machine-code"
+      }
+    },
+    {
+      "id": "TP-119",
+      "startMilliseconds": 1341010,
+      "endMilliseconds": 1350910,
+      "kind": "explanation",
+      "text": "The runtime turns the IL into machine code for your system and processor, which is the only kind of code the processor understands.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1341010,
+          "endMilliseconds": 1350910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-il-into-machine-code"
+      }
+    },
+    {
+      "id": "TP-120",
+      "startMilliseconds": 1350520,
+      "endMilliseconds": 1357800,
+      "kind": "scope_boundary",
+      "text": "The precise syntax of the assembly listing in SharpLab does not need to be learned, because only the IL-to-machine-code pipeline matters here.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1350520,
+          "endMilliseconds": 1357800
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-il-into-machine-code"
+      }
+    },
+    {
+      "id": "TP-121",
+      "startMilliseconds": 1357900,
+      "endMilliseconds": 1366060,
+      "kind": "explanation",
+      "text": "IL is loaded at program start and recompiled into instructions your processor can execute directly, so Main itself ends up as such machine instructions.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1357900,
+          "endMilliseconds": 1366060
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-il-into-machine-code"
+      }
+    },
+    {
+      "id": "TP-122",
+      "startMilliseconds": 1366120,
+      "endMilliseconds": 1377080,
+      "kind": "explanation",
+      "text": "The assembly-looking lines in SharpLab are only a readable view; each displayed instruction actually has a numeric code associated with it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1366120,
+          "endMilliseconds": 1377080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-il-into-machine-code"
+      }
+    },
+    {
+      "id": "TP-123",
+      "startMilliseconds": 1408240,
+      "endMilliseconds": 1415140,
+      "kind": "correction",
+      "text": "The numbers shown for the assembly instructions are only illustrative; the real point is that each machine instruction has its own code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1408240,
+          "endMilliseconds": 1415140
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-il-into-machine-code"
+      }
+    },
+    {
+      "id": "TP-124",
+      "startMilliseconds": 1415140,
+      "endMilliseconds": 1421530,
+      "kind": "explanation",
+      "text": "Each CPU architecture defines both the instructions it supports and their numeric codes, which is why machine code is processor-specific.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1415140,
+          "endMilliseconds": 1421530
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-il-into-machine-code"
+      }
+    },
+    {
+      "id": "TP-125",
+      "startMilliseconds": 1421540,
+      "endMilliseconds": 1431140,
+      "kind": "reason",
+      "text": "At startup .NET converts the IL into machine code matching the CPU that is running, so the same IL can execute on any machine.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1421540,
+          "endMilliseconds": 1431140
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-il-into-machine-code"
+      }
+    },
+    {
+      "id": "TP-126",
+      "startMilliseconds": 1431160,
+      "endMilliseconds": 1440600,
+      "kind": "fact",
+      "text": "dotnet run lets you go from source code to a running program without thinking about the IL step explicitly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1431160,
+          "endMilliseconds": 1440600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-il-into-machine-code"
+      }
+    },
+    {
+      "id": "TP-127",
+      "startMilliseconds": 1440600,
+      "endMilliseconds": 1448180,
+      "kind": "fact",
+      "text": "dotnet run still passes through the IL stage before machine code is produced, even though the intermediate step is hidden from you.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1440600,
+          "endMilliseconds": 1448180
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-il-into-machine-code"
+      }
+    },
+    {
+      "id": "TP-128",
+      "startMilliseconds": 1448200,
+      "endMilliseconds": 1454310,
+      "kind": "explanation",
+      "text": "Simplified: your code's instructions become numbers at program start and are then kept in memory for execution.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1448200,
+          "endMilliseconds": 1454310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-il-into-machine-code"
+      }
+    },
+    {
+      "id": "TP-129",
+      "startMilliseconds": 1478279,
+      "endMilliseconds": 1487590,
+      "kind": "fact",
+      "text": "Before execution the instructions of your source code are turned into plain numbers and kept in memory, because that is the only form the machine can work with.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1478279,
+          "endMilliseconds": 1487590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-il-into-machine-code"
+      }
+    },
+    {
+      "id": "TP-130",
+      "startMilliseconds": 1487590,
+      "endMilliseconds": 1500180,
+      "kind": "reason",
+      "text": "A processor can execute only instructions already loaded into the computer's memory, so source code has to be converted and loaded before it runs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1487590,
+          "endMilliseconds": 1500180
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#follow-il-into-machine-code"
+      }
+    },
+    {
+      "id": "TP-131",
+      "startMilliseconds": 1500240,
+      "endMilliseconds": 1517590,
+      "kind": "explanation",
+      "text": "Your program code exists in process memory as machine code, that is as instructions specific to your processor, not in the form in which you wrote it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1500240,
+          "endMilliseconds": 1517590
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-function-addresses"
+      }
+    },
+    {
+      "id": "TP-132",
+      "startMilliseconds": 1517590,
+      "endMilliseconds": 1534530,
+      "kind": "fact",
+      "text": "Each function's instructions occupy some address in memory, so the instructions of one function and of another function are placed at separate addresses in converted form.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1517590,
+          "endMilliseconds": 1534530
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-function-addresses"
+      }
+    },
+    {
+      "id": "TP-133",
+      "startMilliseconds": 1534530,
+      "endMilliseconds": 1548960,
+      "kind": "explanation",
+      "text": "A function call written in source code is not resolved by name in machine code, where only a reference to the function remains.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1534530,
+          "endMilliseconds": 1548960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-function-addresses"
+      }
+    },
+    {
+      "id": "TP-134",
+      "startMilliseconds": 1540320,
+      "endMilliseconds": 1548900,
+      "kind": "explanation",
+      "text": "The machine code never mentions the source-level function name such as SamOperations, it only carries a reference to that function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1540320,
+          "endMilliseconds": 1548900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-function-addresses"
+      }
+    },
+    {
+      "id": "TP-135",
+      "startMilliseconds": 1548900,
+      "endMilliseconds": 1559870,
+      "kind": "fact",
+      "text": "Concretely the machine code asks to call the function at address 900 and then to continue executing from address 900, which is how execution enters another function at all.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1548900,
+          "endMilliseconds": 1559870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-function-addresses"
+      }
+    },
+    {
+      "id": "TP-136",
+      "startMilliseconds": 1559870,
+      "endMilliseconds": 1568900,
+      "kind": "fact",
+      "text": "Console.WriteLine also exists somewhere in memory as console code loaded from the standard library rather than as your own code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1559870,
+          "endMilliseconds": 1568900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-function-addresses"
+      }
+    },
+    {
+      "id": "TP-137",
+      "startMilliseconds": 1568900,
+      "endMilliseconds": 1579670,
+      "kind": "reason",
+      "text": "Calls to that library function have no name reference in machine code either and are resolved by accessing the address where its instructions sit in memory.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1568900,
+          "endMilliseconds": 1579670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-function-addresses"
+      }
+    },
+    {
+      "id": "TP-138",
+      "startMilliseconds": 1579670,
+      "endMilliseconds": 1609150,
+      "kind": "explanation",
+      "text": "The example walks through a local function inside another function to show why addresses matter: Main is loaded at one address and SamOperations at another, each as its own block of machine instructions.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1579670,
+          "endMilliseconds": 1609150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-function-addresses"
+      }
+    },
+    {
+      "id": "TP-139",
+      "startMilliseconds": 1608919,
+      "endMilliseconds": 1616840,
+      "kind": "edge_case",
+      "text": "Even though a local function is bound to the current invocation of its enclosing function, its code is loaded into memory only once, which the compiler transformation makes possible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1608919,
+          "endMilliseconds": 1616840
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-local-function-code-from-captured-state"
+      }
+    },
+    {
+      "id": "TP-140",
+      "startMilliseconds": 1616840,
+      "endMilliseconds": 1631830,
+      "kind": "explanation",
+      "text": "When a local function is created it effectively becomes a static function, and the original call that read local variables is replaced by generated code passing references to those locals.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1616840,
+          "endMilliseconds": 1631830
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-local-function-code-from-captured-state"
+      }
+    },
+    {
+      "id": "TP-141",
+      "startMilliseconds": 1631830,
+      "endMilliseconds": 1641570,
+      "kind": "fact",
+      "text": "After that transformation the local function becomes an ordinary but private method, since it is not visible outside its class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1631830,
+          "endMilliseconds": 1641570
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-local-function-code-from-captured-state"
+      }
+    },
+    {
+      "id": "TP-142",
+      "startMilliseconds": 1641570,
+      "endMilliseconds": 1657300,
+      "kind": "reason",
+      "text": "The compiler additionally mangles the generated name so another function with its own local function of the same source name cannot clash with it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1641570,
+          "endMilliseconds": 1657300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-local-function-code-from-captured-state"
+      }
+    },
+    {
+      "id": "TP-143",
+      "startMilliseconds": 1657300,
+      "endMilliseconds": 1669870,
+      "kind": "explanation",
+      "text": "So although the local function appears to be created afresh on each call of the enclosing function, its code exists in memory only a single time.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1657300,
+          "endMilliseconds": 1669870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-local-function-code-from-captured-state"
+      }
+    },
+    {
+      "id": "TP-144",
+      "startMilliseconds": 1669870,
+      "endMilliseconds": 1680480,
+      "kind": "reason",
+      "text": "This works because for functions that use local variables the compiler replaces the call with a call that passes references to the captured local variables.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1669870,
+          "endMilliseconds": 1680480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-local-function-code-from-captured-state"
+      }
+    },
+    {
+      "id": "TP-145",
+      "startMilliseconds": 1680480,
+      "endMilliseconds": 1686399,
+      "kind": "explanation",
+      "text": "The usage of the local function is rewritten into a request for the function by its address in machine code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1680480,
+          "endMilliseconds": 1686399
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-local-function-code-from-captured-state"
+      }
+    },
+    {
+      "id": "TP-146",
+      "startMilliseconds": 1680480,
+      "endMilliseconds": 1686399,
+      "kind": "explanation",
+      "text": "The usage of the local function is therefore rewritten into a request for the function by its address in machine code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1680480,
+          "endMilliseconds": 1686399
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-local-function-code-from-captured-state"
+      }
+    },
+    {
+      "id": "TP-147",
+      "startMilliseconds": 1686399,
+      "endMilliseconds": 1689600,
+      "kind": "fact",
+      "text": "Using the local function in the code becomes a request for it by address in machine code.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1686399,
+          "endMilliseconds": 1689600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-local-function-code-from-captured-state"
+      }
+    },
+    {
+      "id": "TP-148",
+      "startMilliseconds": 1689600,
+      "endMilliseconds": 1703300,
+      "kind": "explanation",
+      "text": "The key idea to carry forward is that the code of functions falls into memory and becomes reachable by address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1689600,
+          "endMilliseconds": 1703300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-local-function-code-from-captured-state"
+      }
+    },
+    {
+      "id": "TP-149",
+      "startMilliseconds": 1703300,
+      "endMilliseconds": 1715900,
+      "kind": "reason",
+      "text": "Because functions are addressed rather than named, we can refer to them indirectly through their address, which is exactly what polymorphism is built on.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1703300,
+          "endMilliseconds": 1715900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#prepare-for-indirect-calls"
+      }
+    },
+    {
+      "id": "TP-150",
+      "startMilliseconds": 1715900,
+      "endMilliseconds": 1719870,
+      "kind": "scope_boundary",
+      "text": "Polymorphism itself is deliberately deferred, since what it means is explained a little later in the lesson.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1715900,
+          "endMilliseconds": 1719870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#prepare-for-indirect-calls"
+      }
+    },
+    {
+      "id": "TP-151",
+      "startMilliseconds": 1719870,
+      "endMilliseconds": 1724700,
+      "kind": "code_change",
+      "text": "The locally declared Action in the example file is deleted so the discussion can continue with the built-in type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1719870,
+          "endMilliseconds": 1724700
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-the-built-in-action-delegate"
+      }
+    },
+    {
+      "id": "TP-152",
+      "startMilliseconds": 1724700,
+      "endMilliseconds": 1743200,
+      "kind": "fact",
+      "text": "C# has a built-in type named Action that represents a function without parameters, and it had earlier been shadowed by the locally declared Action because local names take priority.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1724700,
+          "endMilliseconds": 1743200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-the-built-in-action-delegate"
+      }
+    },
+    {
+      "id": "TP-153",
+      "startMilliseconds": 1743200,
+      "endMilliseconds": 1749310,
+      "kind": "fact",
+      "text": "Once the local Action is removed, the name Action in the code refers to the public delegate void Action from the standard library.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1743200,
+          "endMilliseconds": 1749310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-the-built-in-action-delegate"
+      }
+    },
+    {
+      "id": "TP-154",
+      "startMilliseconds": 1749310,
+      "endMilliseconds": 1758519,
+      "kind": "explanation",
+      "text": "Because the void part makes it parameterless and a delegate type merely stores a reference to a function, an Action value is a function reference that ties the address-based picture together.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1749310,
+          "endMilliseconds": 1758519
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-the-built-in-action-delegate"
+      }
+    },
+    {
+      "id": "TP-155",
+      "startMilliseconds": 1750559,
+      "endMilliseconds": 1768480,
+      "kind": "explanation",
+      "text": "The option type is declared as Action, i.e. a delegate that stores a reference to a function which returns nothing and takes no parameters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1750559,
+          "endMilliseconds": 1768480
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-the-built-in-action-delegate"
+      }
+    },
+    {
+      "id": "TP-156",
+      "startMilliseconds": 1768480,
+      "endMilliseconds": 1783180,
+      "kind": "explanation",
+      "text": "Invoking an Action means jumping to the first address of the referenced function, continuing execution from there and returning to the caller when the function finishes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1768480,
+          "endMilliseconds": 1783180
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-the-built-in-action-delegate"
+      }
+    },
+    {
+      "id": "TP-157",
+      "startMilliseconds": 1783180,
+      "endMilliseconds": 1797370,
+      "kind": "code_change",
+      "text": "All the menu actions are extracted out of the main function into the separate MenuOptions class so the menu logic no longer lives inline.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1783180,
+          "endMilliseconds": 1797370
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-private-methods-as-delegates"
+      }
+    },
+    {
+      "id": "TP-158",
+      "startMilliseconds": 1797370,
+      "endMilliseconds": 1805020,
+      "kind": "reason",
+      "text": "The action methods are made private because they are never called by name from outside the class, only through the stored reference to their address.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1797370,
+          "endMilliseconds": 1805020
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-private-methods-as-delegates"
+      }
+    },
+    {
+      "id": "TP-159",
+      "startMilliseconds": 1805020,
+      "endMilliseconds": 1811900,
+      "kind": "code_change",
+      "text": "Where the option value previously came from nameof, it is now taken as a direct reference to the function itself.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1805020,
+          "endMilliseconds": 1811900
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-private-methods-as-delegates"
+      }
+    },
+    {
+      "id": "TP-160",
+      "startMilliseconds": 1811900,
+      "endMilliseconds": 1829200,
+      "kind": "explanation",
+      "text": "Assigning a static method to the variable writes into it a delegate reference bound to that object and that function, so the variable holds an address instead of a number.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1811900,
+          "endMilliseconds": 1829200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-private-methods-as-delegates"
+      }
+    },
+    {
+      "id": "TP-161",
+      "startMilliseconds": 1820600,
+      "endMilliseconds": 1826960,
+      "kind": "explanation",
+      "text": "The code being discussed puts a reference to the object and the function that references that code into the delegate variable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1820600,
+          "endMilliseconds": 1826960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-private-methods-as-delegates"
+      }
+    },
+    {
+      "id": "TP-162",
+      "startMilliseconds": 1826960,
+      "endMilliseconds": 1850540,
+      "kind": "fact",
+      "text": "In modern C# a delegate object created from a static function reference exists only once for the whole lifetime of the program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1826960,
+          "endMilliseconds": 1829200
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1826960,
+          "endMilliseconds": 1850540
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-private-methods-as-delegates"
+      }
+    },
+    {
+      "id": "TP-163",
+      "startMilliseconds": 1850540,
+      "endMilliseconds": 1870550,
+      "kind": "reason",
+      "text": "Whenever a static function is mentioned in the program as an object reference of function type, the compiler caches the delegate object, so only one such object ever exists.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1850540,
+          "endMilliseconds": 1870550
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#register-private-methods-as-delegates"
+      }
+    },
+    {
+      "id": "TP-164",
+      "startMilliseconds": 1870550,
+      "endMilliseconds": 1876250,
+      "kind": "fact",
+      "text": "Just like any other symbol, the option name can still be produced with nameof by passing the function name there.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1870550,
+          "endMilliseconds": 1876250
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-labels-separate-from-callable-actions"
+      }
+    },
+    {
+      "id": "TP-165",
+      "startMilliseconds": 1876250,
+      "endMilliseconds": 1892190,
+      "kind": "explanation",
+      "text": "Inside nameof there is no function taking a delegate parameter; it is a compile-time operator that expands at compilation rather than a function executed at run time.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1876250,
+          "endMilliseconds": 1892190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-labels-separate-from-callable-actions"
+      }
+    },
+    {
+      "id": "TP-166",
+      "startMilliseconds": 1889639,
+      "endMilliseconds": 1895710,
+      "kind": "edge_case",
+      "text": "Even a static function that does nothing could be added to the same list as one of the options.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1889639,
+          "endMilliseconds": 1895710
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1894300,
+          "endMilliseconds": 1895710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-labels-separate-from-callable-actions"
+      }
+    },
+    {
+      "id": "TP-167",
+      "startMilliseconds": 1892190,
+      "endMilliseconds": 1894300,
+      "kind": "explanation",
+      "text": "The nameof operator works like a macro that is expanded at compile time into the name written at that place.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1892190,
+          "endMilliseconds": 1894300
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-labels-separate-from-callable-actions"
+      }
+    },
+    {
+      "id": "TP-168",
+      "startMilliseconds": 1896790,
+      "endMilliseconds": 1902980,
+      "kind": "fact",
+      "text": "The chosen name is not bound to the function's own name, so any identifier may be used for the option.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1896790,
+          "endMilliseconds": 1902980
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-labels-separate-from-callable-actions"
+      }
+    },
+    {
+      "id": "TP-169",
+      "startMilliseconds": 1902980,
+      "endMilliseconds": 1909540,
+      "kind": "code_change",
+      "text": "The rest of the code stays unchanged; only the way the action is invoked changes from a name-based lookup to a reference.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1902980,
+          "endMilliseconds": 1909540
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#invoke-the-selected-action-through-polymorphism"
+      }
+    },
+    {
+      "id": "TP-170",
+      "startMilliseconds": 1909540,
+      "endMilliseconds": 1915640,
+      "kind": "test_result",
+      "text": "After running the program the same options appear, and selecting the first one calls the referenced function by address with the given parameters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1909540,
+          "endMilliseconds": 1915640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#invoke-the-selected-action-through-polymorphism"
+      }
+    },
+    {
+      "id": "TP-171",
+      "startMilliseconds": 1915640,
+      "endMilliseconds": 1922240,
+      "kind": "code_change",
+      "text": "The code inside Main is left as it was, so only the storage representation of the option changes.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1915640,
+          "endMilliseconds": 1922240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#invoke-the-selected-action-through-polymorphism"
+      }
+    },
+    {
+      "id": "TP-172",
+      "startMilliseconds": 1922240,
+      "endMilliseconds": 1931640,
+      "kind": "explanation",
+      "text": "The field now stores a reference to the action itself, the function, instead of a number that previously represented that action and was converted later.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1922240,
+          "endMilliseconds": 1931640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#invoke-the-selected-action-through-polymorphism"
+      }
+    },
+    {
+      "id": "TP-173",
+      "startMilliseconds": 1931640,
+      "endMilliseconds": 1942440,
+      "kind": "reason",
+      "text": "Storing a reference buys flexibility: menu actions can be defined separately, even outside the main function, as long as there is a way to add them to the list.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1931640,
+          "endMilliseconds": 1942440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#invoke-the-selected-action-through-polymorphism"
+      }
+    },
+    {
+      "id": "TP-174",
+      "startMilliseconds": 1942440,
+      "endMilliseconds": 1965679,
+      "kind": "fact",
+      "text": "The only public member of the options class used for configuration is the add function, so the class exposes just one entry point.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1942440,
+          "endMilliseconds": 1965679
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#invoke-the-selected-action-through-polymorphism"
+      }
+    },
+    {
+      "id": "TP-175",
+      "startMilliseconds": 1959200,
+      "endMilliseconds": 1964050,
+      "kind": "fact",
+      "text": "The add function is the only public configuration entry point of the class, and in principle this class could even be moved into a separate file.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1959200,
+          "endMilliseconds": 1964050
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#invoke-the-selected-action-through-polymorphism"
+      }
+    },
+    {
+      "id": "TP-176",
+      "startMilliseconds": 1964050,
+      "endMilliseconds": 1973570,
+      "kind": "explanation",
+      "text": "The variable holding a name or address decides what runs: different contents of that variable cause different actions to execute.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1964050,
+          "endMilliseconds": 1973570
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#invoke-the-selected-action-through-polymorphism"
+      }
+    },
+    {
+      "id": "TP-177",
+      "startMilliseconds": 1973570,
+      "endMilliseconds": 1981400,
+      "kind": "reason",
+      "text": "At the call site it is not known which function will run, because that depends on what was added to the list and which option the user chooses.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1973570,
+          "endMilliseconds": 1981400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#invoke-the-selected-action-through-polymorphism"
+      }
+    },
+    {
+      "id": "TP-178",
+      "startMilliseconds": 1981400,
+      "endMilliseconds": 1985260,
+      "kind": "fact",
+      "text": "Calling one action while the concrete function is only decided at run time is called polymorphism.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1981400,
+          "endMilliseconds": 1985260
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#invoke-the-selected-action-through-polymorphism"
+      }
+    },
+    {
+      "id": "TP-179",
+      "startMilliseconds": 1985260,
+      "endMilliseconds": 2005360,
+      "kind": "explanation",
+      "text": "Polymorphism means invoking an action not directly but through the address saved in a variable, which lets one call site run different functions.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1985260,
+          "endMilliseconds": 2005360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#invoke-the-selected-action-through-polymorphism"
+      }
+    }
+  ]
+}

@@ -1,0 +1,2252 @@
+{
+  "schemaVersion": 1,
+  "courseVideoId": "UVLUbfcCcG0",
+  "uploadId": "UVLUbfcCcG0",
+  "transcriptSha256": "ba62d62ad561463677d3ff46e1212deed6573ca94f2a9ba41e4a463aa394a132",
+  "teachingPoints": [
+    {
+      "id": "TP-001",
+      "startMilliseconds": 4470,
+      "endMilliseconds": 9240,
+      "kind": "fact",
+      "text": "This lesson's first goal is to show how to use several source files, because the project so far has only one source file, Program.cs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 4470,
+          "endMilliseconds": 9240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#split-the-program-into-source-files"
+      }
+    },
+    {
+      "id": "TP-002",
+      "startMilliseconds": 9240,
+      "endMilliseconds": 33000,
+      "kind": "fact",
+      "text": "A C# project may contain as many source files as you like as long as they live in the project folder or one of its nested folders, and any file added there is picked up by the project automatically.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 9240,
+          "endMilliseconds": 33000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#split-the-program-into-source-files"
+      }
+    },
+    {
+      "id": "TP-003",
+      "startMilliseconds": 33000,
+      "endMilliseconds": 45500,
+      "kind": "explanation",
+      "text": "Program.cs is special because code written directly in it is top-level statements that execute immediately when the program starts.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 33000,
+          "endMilliseconds": 45500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#split-the-program-into-source-files"
+      }
+    },
+    {
+      "id": "TP-004",
+      "startMilliseconds": 45500,
+      "endMilliseconds": 73600,
+      "kind": "reason",
+      "text": "You cannot repeat the same top-level statements in a second file, because the compiler reports an error: the entry point may exist in only one file.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 45500,
+          "endMilliseconds": 73600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#split-the-program-into-source-files"
+      }
+    },
+    {
+      "id": "TP-005",
+      "startMilliseconds": 73600,
+      "endMilliseconds": 80920,
+      "kind": "fact",
+      "text": "Other source files are used by putting class declarations into them, since a class declaration can be moved out of Program.cs into a separate file.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 73600,
+          "endMilliseconds": 80920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#split-the-program-into-source-files"
+      }
+    },
+    {
+      "id": "TP-006",
+      "startMilliseconds": 80920,
+      "endMilliseconds": 90000,
+      "kind": "code_change",
+      "text": "A block of code is cut from Program.cs and pasted into another file because both files belong to the same project.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 80920,
+          "endMilliseconds": 90000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#split-the-program-into-source-files"
+      }
+    },
+    {
+      "id": "TP-007",
+      "startMilliseconds": 80920,
+      "endMilliseconds": 98500,
+      "kind": "fact",
+      "text": "Everything written in Program.cs becomes automatically available in the other file of the same project, so the moved code needs no explicit wiring.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 80920,
+          "endMilliseconds": 98500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#split-the-program-into-source-files"
+      }
+    },
+    {
+      "id": "TP-008",
+      "startMilliseconds": 98500,
+      "endMilliseconds": 116000,
+      "kind": "fact",
+      "text": "Classes declared in the extra file are visible to the main file, which is why go-to-definition on such a class jumps into the other file.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 98500,
+          "endMilliseconds": 116000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#split-the-program-into-source-files"
+      }
+    },
+    {
+      "id": "TP-009",
+      "startMilliseconds": 116000,
+      "endMilliseconds": 130000,
+      "kind": "fact",
+      "text": "Unlike C or C++, C# does not allow a function to be moved into another file as a free function, because free functions do not exist at file level.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 116000,
+          "endMilliseconds": 130000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-functions-into-a-static-class"
+      }
+    },
+    {
+      "id": "TP-010",
+      "startMilliseconds": 130000,
+      "endMilliseconds": 146000,
+      "kind": "reason",
+      "text": "Moving function declarations to another file therefore requires wrapping the names in some container.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 130000,
+          "endMilliseconds": 146000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-functions-into-a-static-class"
+      }
+    },
+    {
+      "id": "TP-011",
+      "startMilliseconds": 146000,
+      "endMilliseconds": 156000,
+      "kind": "fact",
+      "text": "The only things that can be declared at file level in C# are types, namely classes or structs.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 146000,
+          "endMilliseconds": 156000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-functions-into-a-static-class"
+      }
+    },
+    {
+      "id": "TP-012",
+      "startMilliseconds": 156000,
+      "endMilliseconds": 162000,
+      "kind": "fact",
+      "text": "To declare static functions in another file you must put them inside a class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 156000,
+          "endMilliseconds": 162000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-functions-into-a-static-class"
+      }
+    },
+    {
+      "id": "TP-013",
+      "startMilliseconds": 158319,
+      "endMilliseconds": 166400,
+      "kind": "explanation",
+      "text": "A static class serves as a container for those functions so they can be used from outside the file they were declared in.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 158319,
+          "endMilliseconds": 166400
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 162000,
+          "endMilliseconds": 166400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-functions-into-a-static-class"
+      }
+    },
+    {
+      "id": "TP-014",
+      "startMilliseconds": 166400,
+      "endMilliseconds": 174500,
+      "kind": "fact",
+      "text": "Functions living in another file must be qualified with the name of the class that holds them before they can be called from outside.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 166400,
+          "endMilliseconds": 174500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-functions-into-a-static-class"
+      }
+    },
+    {
+      "id": "TP-015",
+      "startMilliseconds": 174500,
+      "endMilliseconds": 181200,
+      "kind": "scope_boundary",
+      "text": "What exactly the class-name prefix does is left for a more detailed explanation later in the course.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 174500,
+          "endMilliseconds": 181200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-functions-into-a-static-class"
+      }
+    },
+    {
+      "id": "TP-016",
+      "startMilliseconds": 181200,
+      "endMilliseconds": 198500,
+      "kind": "fact",
+      "text": "After adding the static keyword the functions are called through the class name, where the dot means 'look inside this class for the function'.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 181200,
+          "endMilliseconds": 198500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-functions-into-a-static-class"
+      }
+    },
+    {
+      "id": "TP-017",
+      "startMilliseconds": 198500,
+      "endMilliseconds": 213500,
+      "kind": "reason",
+      "text": "A static class is only a container for functions, so declaring fields in it is impossible and the compiler reports that a static class cannot have fields.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 198500,
+          "endMilliseconds": 213500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-functions-into-a-static-class"
+      }
+    },
+    {
+      "id": "TP-018",
+      "startMilliseconds": 213500,
+      "endMilliseconds": 245309,
+      "kind": "reason",
+      "text": "Because a static class can only serve as a container, an object of that type cannot be created and the compiler reports that creating a static class is impossible.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 213500,
+          "endMilliseconds": 245309
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 242680,
+          "endMilliseconds": 245309
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-functions-into-a-static-class"
+      }
+    },
+    {
+      "id": "TP-019",
+      "startMilliseconds": 245309,
+      "endMilliseconds": 254869,
+      "kind": "fact",
+      "text": "Functions declared inside a class are called methods, and in this case specifically static methods.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 245309,
+          "endMilliseconds": 250519
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 245309,
+          "endMilliseconds": 254869
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-functions-into-a-static-class"
+      }
+    },
+    {
+      "id": "TP-020",
+      "startMilliseconds": 254869,
+      "endMilliseconds": 260150,
+      "kind": "scope_boundary",
+      "text": "The exact meaning of static is deliberately deferred to a later part of this same video.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 254869,
+          "endMilliseconds": 260150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-functions-into-a-static-class"
+      }
+    },
+    {
+      "id": "TP-021",
+      "startMilliseconds": 260150,
+      "endMilliseconds": 275200,
+      "kind": "fact",
+      "text": "Functions marked static inside a class are called static methods, whereas the same functions without the static keyword would be non-static instance methods.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 260150,
+          "endMilliseconds": 275200
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-the-members-of-a-class"
+      }
+    },
+    {
+      "id": "TP-022",
+      "startMilliseconds": 275200,
+      "endMilliseconds": 288000,
+      "kind": "fact",
+      "text": "The single word used to refer either to a field or to a method is called a member.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 275200,
+          "endMilliseconds": 288000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-the-members-of-a-class"
+      }
+    },
+    {
+      "id": "TP-023",
+      "startMilliseconds": 288000,
+      "endMilliseconds": 301000,
+      "kind": "fact",
+      "text": "A member is either a field or a method, and member function is simply another name for a method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 288000,
+          "endMilliseconds": 301000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#name-the-members-of-a-class"
+      }
+    },
+    {
+      "id": "TP-024",
+      "startMilliseconds": 301000,
+      "endMilliseconds": 312000,
+      "kind": "reason",
+      "text": "Static fields are generally discouraged to use, especially static fields whose values can change, because mutable global state is hard to reason about.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 301000,
+          "endMilliseconds": 312000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-shared-static-counter"
+      }
+    },
+    {
+      "id": "TP-025",
+      "startMilliseconds": 312000,
+      "endMilliseconds": 331240,
+      "kind": "fact",
+      "text": "Non-static fields are bound to an object of the class type, so a variable of that type carries those fields, while a static class can still hold a static field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 312000,
+          "endMilliseconds": 331240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-shared-static-counter"
+      }
+    },
+    {
+      "id": "TP-026",
+      "startMilliseconds": 321280,
+      "endMilliseconds": 331230,
+      "kind": "fact",
+      "text": "In C# a static class can hold static fields, so a counter shared by all objects is declared as a static field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 321280,
+          "endMilliseconds": 331230
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-shared-static-counter"
+      }
+    },
+    {
+      "id": "TP-027",
+      "startMilliseconds": 331240,
+      "endMilliseconds": 343430,
+      "kind": "code_change",
+      "text": "A static field is added to count how many enemies were added, and the counter is incremented inside the enemy-adding function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 331240,
+          "endMilliseconds": 343430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-shared-static-counter"
+      }
+    },
+    {
+      "id": "TP-028",
+      "startMilliseconds": 343440,
+      "endMilliseconds": 354629,
+      "kind": "explanation",
+      "text": "A static field belongs to the type as a whole rather than to any single instance of that type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 343440,
+          "endMilliseconds": 354629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-shared-static-counter"
+      }
+    },
+    {
+      "id": "TP-029",
+      "startMilliseconds": 354639,
+      "endMilliseconds": 365909,
+      "kind": "explanation",
+      "text": "A static field works like a global variable: exactly one copy exists for the whole lifetime of the program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 354639,
+          "endMilliseconds": 365909
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-shared-static-counter"
+      }
+    },
+    {
+      "id": "TP-030",
+      "startMilliseconds": 365919,
+      "endMilliseconds": 382430,
+      "kind": "fact",
+      "text": "From inside the class that declares the static field the field can be referenced without the class-name qualifier.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 365919,
+          "endMilliseconds": 382430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-shared-static-counter"
+      }
+    },
+    {
+      "id": "TP-031",
+      "startMilliseconds": 382430,
+      "endMilliseconds": 392430,
+      "kind": "reason",
+      "text": "Writing the class name plus a dot before a static field access from inside the declaring class is equivalent to omitting it, because the reference still resolves to that class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 382430,
+          "endMilliseconds": 392430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-shared-static-counter"
+      }
+    },
+    {
+      "id": "TP-032",
+      "startMilliseconds": 392440,
+      "endMilliseconds": 399560,
+      "kind": "edge_case",
+      "text": "Outside the declaring class the static field must be addressed through the class name, for example inside a separate main method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 392440,
+          "endMilliseconds": 399560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-shared-static-counter"
+      }
+    },
+    {
+      "id": "TP-033",
+      "startMilliseconds": 399560,
+      "endMilliseconds": 408469,
+      "kind": "edge_case",
+      "text": "A static field is reachable from anywhere in the program once written as ClassName.FieldName, which the speaker recommends avoiding.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 399560,
+          "endMilliseconds": 408469
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-shared-static-counter"
+      }
+    },
+    {
+      "id": "TP-034",
+      "startMilliseconds": 408479,
+      "endMilliseconds": 425950,
+      "kind": "reason",
+      "text": "Static fields are discouraged because any function can depend on and mutate that shared data, hiding dependencies instead of passing them explicitly as parameters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 408479,
+          "endMilliseconds": 425950
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-shared-static-counter"
+      }
+    },
+    {
+      "id": "TP-035",
+      "startMilliseconds": 425960,
+      "endMilliseconds": 434189,
+      "kind": "reason",
+      "text": "A function should receive what it depends on as a parameter, and with static fields this is impossible because the fields are visible to everyone at any time.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 425960,
+          "endMilliseconds": 434189
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#try-a-shared-static-counter"
+      }
+    },
+    {
+      "id": "TP-036",
+      "startMilliseconds": 434199,
+      "endMilliseconds": 450390,
+      "kind": "explanation",
+      "text": "All game-related data currently lives inside the single GameState class, so one variable holds everything the game knows.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 434199,
+          "endMilliseconds": 450390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#put-the-counter-in-the-game-state"
+      }
+    },
+    {
+      "id": "TP-037",
+      "startMilliseconds": 450400,
+      "endMilliseconds": 464589,
+      "kind": "reason",
+      "text": "Keeping all game data in one state variable makes it easy to run several games at once or to serialize the state to a file, read it back, or send it over the network.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 450400,
+          "endMilliseconds": 464589
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#put-the-counter-in-the-game-state"
+      }
+    },
+    {
+      "id": "TP-038",
+      "startMilliseconds": 464599,
+      "endMilliseconds": 472520,
+      "kind": "explanation",
+      "text": "It becomes obvious that the state of the game is what the game depends on and where it currently resides.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 464599,
+          "endMilliseconds": 472520
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#put-the-counter-in-the-game-state"
+      }
+    },
+    {
+      "id": "TP-039",
+      "startMilliseconds": 472520,
+      "endMilliseconds": 488710,
+      "kind": "reason",
+      "text": "With a state object the game state is restored into that object, while static fields lose that property and would let several games run at once while sharing one global menu.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 472520,
+          "endMilliseconds": 488710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#put-the-counter-in-the-game-state"
+      }
+    },
+    {
+      "id": "TP-040",
+      "startMilliseconds": 488720,
+      "endMilliseconds": 495870,
+      "kind": "scope_boundary",
+      "text": "The cases where static fields are genuinely needed will be covered later in the course.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 488720,
+          "endMilliseconds": 495870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#put-the-counter-in-the-game-state"
+      }
+    },
+    {
+      "id": "TP-041",
+      "startMilliseconds": 495880,
+      "endMilliseconds": 515150,
+      "kind": "edge_case",
+      "text": "When static fields are the right choice they should be immutable constants fixed at program start, never mutated and never holding game state.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 495880,
+          "endMilliseconds": 515150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#put-the-counter-in-the-game-state"
+      }
+    },
+    {
+      "id": "TP-042",
+      "startMilliseconds": 515159,
+      "endMilliseconds": 526750,
+      "kind": "code_change",
+      "text": "The speaker writes the counter increment into the game state instead of a static field and adds a print of the counter when the game ends.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 515159,
+          "endMilliseconds": 526750
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#put-the-counter-in-the-game-state"
+      }
+    },
+    {
+      "id": "TP-043",
+      "startMilliseconds": 526760,
+      "endMilliseconds": 535350,
+      "kind": "test_result",
+      "text": "Running the game prints six at the end, confirming the counter tracked six added enemies.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 526760,
+          "endMilliseconds": 535350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#put-the-counter-in-the-game-state"
+      }
+    },
+    {
+      "id": "TP-044",
+      "startMilliseconds": 535360,
+      "endMilliseconds": 546599,
+      "kind": "explanation",
+      "text": "Without a static variable the counter belongs to the shared game context and starts at zero there.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 535360,
+          "endMilliseconds": 546599
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#put-the-counter-in-the-game-state"
+      }
+    },
+    {
+      "id": "TP-045",
+      "startMilliseconds": 544000,
+      "endMilliseconds": 556560,
+      "kind": "explanation",
+      "text": "The counter is increased inside the state object rather than in a global variable, so the value belongs to the game instance.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 544000,
+          "endMilliseconds": 556560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#put-the-counter-in-the-game-state"
+      }
+    },
+    {
+      "id": "TP-046",
+      "startMilliseconds": 546599,
+      "endMilliseconds": 556560,
+      "kind": "code_change",
+      "text": "The counter is now incremented in the state object rather than in a global static field.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 546599,
+          "endMilliseconds": 556560
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#put-the-counter-in-the-game-state"
+      }
+    },
+    {
+      "id": "TP-047",
+      "startMilliseconds": 556560,
+      "endMilliseconds": 570310,
+      "kind": "code_change",
+      "text": "The counter is printed from the state after the game loop ends, keeping the read and write of that data inside the state.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 556560,
+          "endMilliseconds": 570310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#put-the-counter-in-the-game-state"
+      }
+    },
+    {
+      "id": "TP-048",
+      "startMilliseconds": 570320,
+      "endMilliseconds": 577510,
+      "kind": "reason",
+      "text": "Static functions are best placed in a static class because that keeps utility code separate from instance logic.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 570320,
+          "endMilliseconds": 577510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-static-methods-as-factories"
+      }
+    },
+    {
+      "id": "TP-049",
+      "startMilliseconds": 577519,
+      "endMilliseconds": 589110,
+      "kind": "edge_case",
+      "text": "It is acceptable to put a static function in a normal non-static class as well, since any static function can be declared in either kind of class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 577519,
+          "endMilliseconds": 589110
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-static-methods-as-factories"
+      }
+    },
+    {
+      "id": "TP-050",
+      "startMilliseconds": 589120,
+      "endMilliseconds": 602030,
+      "kind": "fact",
+      "text": "A static function declared in a static class can also be called from any other class, static or not.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 589120,
+          "endMilliseconds": 602030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-static-methods-as-factories"
+      }
+    },
+    {
+      "id": "TP-051",
+      "startMilliseconds": 602040,
+      "endMilliseconds": 616870,
+      "kind": "explanation",
+      "text": "Such a call is written as ClassName.MethodName because a static function is attached to the class rather than to an instance of it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 602040,
+          "endMilliseconds": 616870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-static-methods-as-factories"
+      }
+    },
+    {
+      "id": "TP-052",
+      "startMilliseconds": 616880,
+      "endMilliseconds": 628310,
+      "kind": "reason",
+      "text": "Static functions are meaningful for factory functions, which create and return an object of that type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 616880,
+          "endMilliseconds": 628310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-static-methods-as-factories"
+      }
+    },
+    {
+      "id": "TP-053",
+      "startMilliseconds": 628320,
+      "endMilliseconds": 643000,
+      "kind": "explanation",
+      "text": "A factory function is a function whose job is to create an object of a given type, for example a static function in a Stats class that creates a Stats instance.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 628320,
+          "endMilliseconds": 643000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-static-methods-as-factories"
+      }
+    },
+    {
+      "id": "TP-054",
+      "startMilliseconds": 633760,
+      "endMilliseconds": 656269,
+      "kind": "explanation",
+      "text": "A static method can be declared inside the Stat class to create and pre-initialize objects of that same type, so callers do not have to fill in the fields themselves.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 633760,
+          "endMilliseconds": 656269
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-static-methods-as-factories"
+      }
+    },
+    {
+      "id": "TP-055",
+      "startMilliseconds": 656269,
+      "endMilliseconds": 701790,
+      "kind": "explanation",
+      "text": "Factory functions are usually attached to the type they produce, and their names should say which object they return, so the name itself documents the created object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 656269,
+          "endMilliseconds": 701790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-static-methods-as-factories"
+      }
+    },
+    {
+      "id": "TP-056",
+      "startMilliseconds": 701800,
+      "endMilliseconds": 721790,
+      "kind": "fact",
+      "text": "Without a factory an enemy would have no attack and health values at all, which is why a default factory returning 1 attack and 10 health encodes the class defaults.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 701800,
+          "endMilliseconds": 721790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-static-methods-as-factories"
+      }
+    },
+    {
+      "id": "TP-057",
+      "startMilliseconds": 720160,
+      "endMilliseconds": 727920,
+      "kind": "explanation",
+      "text": "Other factories of the same kind can create different stat sets, for example a strong-stats factory returning 5 attack and 10 health.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 720160,
+          "endMilliseconds": 727920
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 723150,
+          "endMilliseconds": 727920
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-static-methods-as-factories"
+      }
+    },
+    {
+      "id": "TP-058",
+      "startMilliseconds": 730600,
+      "endMilliseconds": 739030,
+      "kind": "explanation",
+      "text": "Stat factories are not required to live in the Stat class, because they can be placed anywhere in the game logic as long as the name makes clear which stats they create.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 730600,
+          "endMilliseconds": 739030
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-static-methods-as-factories"
+      }
+    },
+    {
+      "id": "TP-059",
+      "startMilliseconds": 737040,
+      "endMilliseconds": 749020,
+      "kind": "fact",
+      "text": "A typical use is calling the stat-creation factory for each enemy so that all enemies get the default attack and health values.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 737040,
+          "endMilliseconds": 749020
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-static-methods-as-factories"
+      }
+    },
+    {
+      "id": "TP-060",
+      "startMilliseconds": 760949,
+      "endMilliseconds": 770310,
+      "kind": "code_change",
+      "text": "Renaming the call from Stats to CreateDef or a similar Create-prefixed name is valid and makes factory-style function calls read clearly at the call site.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 760949,
+          "endMilliseconds": 770310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-static-methods-as-factories"
+      }
+    },
+    {
+      "id": "TP-061",
+      "startMilliseconds": 775390,
+      "endMilliseconds": 781680,
+      "kind": "fact",
+      "text": "This pattern is called a factory function: its purpose is to create and initialize an object of the given type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 775390,
+          "endMilliseconds": 781680
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#use-static-methods-as-factories"
+      }
+    },
+    {
+      "id": "TP-062",
+      "startMilliseconds": 785120,
+      "endMilliseconds": 806519,
+      "kind": "explanation",
+      "text": "Besides functions, static fields can be bound to a type such as Enemy and read or incremented in Main, which makes them a single global value shared by all instances of that type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 785120,
+          "endMilliseconds": 806519
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-type-data-from-object-data"
+      }
+    },
+    {
+      "id": "TP-063",
+      "startMilliseconds": 799279,
+      "endMilliseconds": 806519,
+      "kind": "explanation",
+      "text": "A static field inside a class is effectively a global variable, so every object of that type shares the single stored value.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 799279,
+          "endMilliseconds": 806519
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-type-data-from-object-data"
+      }
+    },
+    {
+      "id": "TP-064",
+      "startMilliseconds": 806519,
+      "endMilliseconds": 825990,
+      "kind": "reason",
+      "text": "Using such a static field is discouraged because shared state should instead be attached to whatever the data really belongs to, such as the game or the command, and be made non-static.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 806519,
+          "endMilliseconds": 825990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-type-data-from-object-data"
+      }
+    },
+    {
+      "id": "TP-065",
+      "startMilliseconds": 825990,
+      "endMilliseconds": 843629,
+      "kind": "fact",
+      "text": "After removing static, the value no longer belongs to the type but lives inside each object of that type, so each instance keeps its own copy.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 825990,
+          "endMilliseconds": 843629
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-type-data-from-object-data"
+      }
+    },
+    {
+      "id": "TP-066",
+      "startMilliseconds": 845870,
+      "endMilliseconds": 870160,
+      "kind": "explanation",
+      "text": "A class holds both static methods and fields bound to the type and non-static members bound to the objects of that type, and the same distinction applies to methods.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 845870,
+          "endMilliseconds": 870160
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#separate-type-data-from-object-data"
+      }
+    },
+    {
+      "id": "TP-067",
+      "startMilliseconds": 872230,
+      "endMilliseconds": 882519,
+      "kind": "code_change",
+      "text": "A static method such as TakeDamage can be defined to subtract an amount from the enemy health and then be called from the player's attack logic instead of writing the health subtraction inline.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 872230,
+          "endMilliseconds": 882519
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#convert-damage-handling-to-an-instance-method"
+      }
+    },
+    {
+      "id": "TP-068",
+      "startMilliseconds": 875600,
+      "endMilliseconds": 882519,
+      "kind": "explanation",
+      "text": "The refactored damage code is just a call of a static function with the needed parameters, matching the earlier call style.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 875600,
+          "endMilliseconds": 882519
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#convert-damage-handling-to-an-instance-method"
+      }
+    },
+    {
+      "id": "TP-069",
+      "startMilliseconds": 882519,
+      "endMilliseconds": 899279,
+      "kind": "code_change",
+      "text": "The same damage method can be made non-static by dropping the static keyword and dropping the object parameter that was passed explicitly, keeping only the following parameters.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 882519,
+          "endMilliseconds": 899279
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#convert-damage-handling-to-an-instance-method"
+      }
+    },
+    {
+      "id": "TP-070",
+      "startMilliseconds": 900790,
+      "endMilliseconds": 914310,
+      "kind": "explanation",
+      "text": "When the object parameter is removed, the remaining parameters automatically become the first parameters of the method, and the current object's data is read through the first of them by name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 900790,
+          "endMilliseconds": 914310
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#convert-damage-handling-to-an-instance-method"
+      }
+    },
+    {
+      "id": "TP-071",
+      "startMilliseconds": 915700,
+      "endMilliseconds": 929990,
+      "kind": "reason",
+      "text": "The distinction matters because a static function is bound to the type while a non-static one is bound to the object, so a non-static function cannot be called through the class name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 915700,
+          "endMilliseconds": 929990
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#convert-damage-handling-to-an-instance-method"
+      }
+    },
+    {
+      "id": "TP-072",
+      "startMilliseconds": 931839,
+      "endMilliseconds": 957949,
+      "kind": "explanation",
+      "text": "A non-static method must be called on an object, and the cost of that is that the object is passed automatically as a hidden first parameter, unlike the explicit type-plus-parameter call used for a static method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 931839,
+          "endMilliseconds": 957949
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#convert-damage-handling-to-an-instance-method"
+      }
+    },
+    {
+      "id": "TP-073",
+      "startMilliseconds": 953959,
+      "endMilliseconds": 962240,
+      "kind": "explanation",
+      "text": "A non-static method is called by writing the object name first, then the method name, so the caller needs a reference to the instance that should run the method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 953959,
+          "endMilliseconds": 962240
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#convert-damage-handling-to-an-instance-method"
+      }
+    },
+    {
+      "id": "TP-074",
+      "startMilliseconds": 959150,
+      "endMilliseconds": 964279,
+      "kind": "fact",
+      "text": "For a non-static method you write the name of the object it is called on, and that object is supplied as the hidden first parameter you do not pass yourself.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 959150,
+          "endMilliseconds": 964279
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#convert-damage-handling-to-an-instance-method"
+      }
+    },
+    {
+      "id": "TP-075",
+      "startMilliseconds": 962240,
+      "endMilliseconds": 974350,
+      "kind": "reason",
+      "text": "The first parameter of an instance method is a hidden parameter that you do not write in the call site because the compiler adds the object reference automatically.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 962240,
+          "endMilliseconds": 974350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#convert-damage-handling-to-an-instance-method"
+      }
+    },
+    {
+      "id": "TP-076",
+      "startMilliseconds": 974350,
+      "endMilliseconds": 989910,
+      "kind": "explanation",
+      "text": "The compiler resolves the called method name inside the class of the object's type, which is why the method's declaring class must be known from the receiver's type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 974350,
+          "endMilliseconds": 989910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#convert-damage-handling-to-an-instance-method"
+      }
+    },
+    {
+      "id": "TP-077",
+      "startMilliseconds": 989910,
+      "endMilliseconds": 998710,
+      "kind": "fact",
+      "text": "In the call the hidden object parameter is the first parameter and the declared value is the second parameter, so the argument list is offset by one relative to the declaration.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 989910,
+          "endMilliseconds": 998710
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#convert-damage-handling-to-an-instance-method"
+      }
+    },
+    {
+      "id": "TP-078",
+      "startMilliseconds": 998710,
+      "endMilliseconds": 1019510,
+      "kind": "fact",
+      "text": "An example instance method is declared static and takes as its only parameter the object whose damage should be reduced, which is the shape the compiler fills in for the hidden receiver.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 998710,
+          "endMilliseconds": 1019510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reduce-attack-without-an-explicit-object-argument"
+      }
+    },
+    {
+      "id": "TP-079",
+      "startMilliseconds": 1021280,
+      "endMilliseconds": 1043510,
+      "kind": "reason",
+      "text": "When calling a static method with a single object argument the compiler still binds that argument as the hidden first parameter when the method's type has no second parameter, so no extra value is passed.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1021280,
+          "endMilliseconds": 1043510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reduce-attack-without-an-explicit-object-argument"
+      }
+    },
+    {
+      "id": "TP-080",
+      "startMilliseconds": 1043799,
+      "endMilliseconds": 1056080,
+      "kind": "code_change",
+      "text": "To write the same function as an instance method you simply omit the static modifier and keep the rest of the signature unchanged, which makes the receiver the implicit first parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1043799,
+          "endMilliseconds": 1056080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reduce-attack-without-an-explicit-object-argument"
+      }
+    },
+    {
+      "id": "TP-081",
+      "startMilliseconds": 1043799,
+      "endMilliseconds": 1056080,
+      "kind": "code_change",
+      "text": "Writing the method without the static modifier, for example ReduceDamage, makes it an instance method and any name may be chosen for it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1043799,
+          "endMilliseconds": 1056080
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reduce-attack-without-an-explicit-object-argument"
+      }
+    },
+    {
+      "id": "TP-082",
+      "startMilliseconds": 1056080,
+      "endMilliseconds": 1068870,
+      "kind": "explanation",
+      "text": "Calling ReduceDamage without spelling out the receiver means the compiler turns the call into an instance call whose first parameter is supplied automatically.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1056080,
+          "endMilliseconds": 1068870
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reduce-attack-without-an-explicit-object-argument"
+      }
+    },
+    {
+      "id": "TP-083",
+      "startMilliseconds": 1071490,
+      "endMilliseconds": 1081910,
+      "kind": "explanation",
+      "text": "Because the hidden first parameter is the object, an instance method can read and change the data of that object from inside its body.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1071490,
+          "endMilliseconds": 1081910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reduce-attack-without-an-explicit-object-argument"
+      }
+    },
+    {
+      "id": "TP-084",
+      "startMilliseconds": 1071910,
+      "endMilliseconds": 1086320,
+      "kind": "fact",
+      "text": "To invoke an instance method you write the object name, a dot, and the method name, and you pass no argument for the hidden receiver parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1071910,
+          "endMilliseconds": 1086320
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reduce-attack-without-an-explicit-object-argument"
+      }
+    },
+    {
+      "id": "TP-085",
+      "startMilliseconds": 1086320,
+      "endMilliseconds": 1099320,
+      "kind": "explanation",
+      "text": "The call syntax with just object name and method name works because the compiler looks the method up in the receiver's type and treats the receiver itself as the first parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1086320,
+          "endMilliseconds": 1099320
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#reduce-attack-without-an-explicit-object-argument"
+      }
+    },
+    {
+      "id": "TP-086",
+      "startMilliseconds": 1099320,
+      "endMilliseconds": 1112669,
+      "kind": "fact",
+      "text": "Inside an instance method writing the this prefix before a field name is optional, so the field name alone is enough to reach the object's data.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1099320,
+          "endMilliseconds": 1112669
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-instance-fields-through-this"
+      }
+    },
+    {
+      "id": "TP-087",
+      "startMilliseconds": 1112669,
+      "endMilliseconds": 1132039,
+      "kind": "reason",
+      "text": "The same rule as with static fields applies: the type name prefix before a field is not required inside a method of that type, so the code stays readable without repeating the qualifier.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1112669,
+          "endMilliseconds": 1132039
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-instance-fields-through-this"
+      }
+    },
+    {
+      "id": "TP-088",
+      "startMilliseconds": 1132039,
+      "endMilliseconds": 1139360,
+      "kind": "fact",
+      "text": "Inside an instance method the type name in front of a field is optional, so the field can be addressed directly.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1132039,
+          "endMilliseconds": 1139360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-instance-fields-through-this"
+      }
+    },
+    {
+      "id": "TP-089",
+      "startMilliseconds": 1132039,
+      "endMilliseconds": 1139360,
+      "kind": "fact",
+      "text": "Since the method belongs to the type of the object it is invoked on, the type name before the field access is not required and can be omitted.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1132039,
+          "endMilliseconds": 1139360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-instance-fields-through-this"
+      }
+    },
+    {
+      "id": "TP-090",
+      "startMilliseconds": 1139360,
+      "endMilliseconds": 1161510,
+      "kind": "explanation",
+      "text": "Such methods are called instance methods, and the Russian term for instance means an object of that type, which explains why the method is bound to a particular object.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1139360,
+          "endMilliseconds": 1161510
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-instance-fields-through-this"
+      }
+    },
+    {
+      "id": "TP-091",
+      "startMilliseconds": 1161510,
+      "endMilliseconds": 1179910,
+      "kind": "code_change",
+      "text": "Removing the static keyword from the method declaration leaves an instance method that receives its target object as the first parameter and modifies its data.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1161510,
+          "endMilliseconds": 1179910
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#read-instance-fields-through-this"
+      }
+    },
+    {
+      "id": "TP-092",
+      "startMilliseconds": 1195140,
+      "endMilliseconds": 1209700,
+      "kind": "scope_boundary",
+      "text": "A practice task is given: write a method that takes a Stats object as its first parameter and returns whether that object's health is less than or equal to zero.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1195140,
+          "endMilliseconds": 1209700
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#return-and-store-a-death-decision"
+      }
+    },
+    {
+      "id": "TP-093",
+      "startMilliseconds": 1201090,
+      "endMilliseconds": 1209700,
+      "kind": "reason",
+      "text": "The boolean result of the method should be stored in a bool variable and then checked, instead of nesting the call inside the condition, so the check stays readable.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1201090,
+          "endMilliseconds": 1209700
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#return-and-store-a-death-decision"
+      }
+    },
+    {
+      "id": "TP-094",
+      "startMilliseconds": 1209700,
+      "endMilliseconds": 1213600,
+      "kind": "code_change",
+      "text": "The practice solution is written as an instance method by dropping the static modifier from the signature.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1209700,
+          "endMilliseconds": 1213600
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#return-and-store-a-death-decision"
+      }
+    },
+    {
+      "id": "TP-095",
+      "startMilliseconds": 1213600,
+      "endMilliseconds": 1223130,
+      "kind": "fact",
+      "text": "The solution keeps the same return type as the original function, which works because an instance method may return exactly what its static counterpart returned.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1213600,
+          "endMilliseconds": 1223130
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#return-and-store-a-death-decision"
+      }
+    },
+    {
+      "id": "TP-096",
+      "startMilliseconds": 1223130,
+      "endMilliseconds": 1244400,
+      "kind": "reason",
+      "text": "No value is passed for the first parameter at the call site because the instance method's receiver is passed automatically by the compiler.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1223130,
+          "endMilliseconds": 1244400
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#return-and-store-a-death-decision"
+      }
+    },
+    {
+      "id": "TP-097",
+      "startMilliseconds": 1237799,
+      "endMilliseconds": 1250700,
+      "kind": "reason",
+      "text": "At the call site nothing is passed for the first parameter because the instance method receives the object automatically, so the code only needs the object name, a dot, and the method name.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1237799,
+          "endMilliseconds": 1250700
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#return-and-store-a-death-decision"
+      }
+    },
+    {
+      "id": "TP-098",
+      "startMilliseconds": 1250700,
+      "endMilliseconds": 1253070,
+      "kind": "code_change",
+      "text": "The inline check is replaced by saving the returned value into a variable first, which makes the boolean result reusable and easier to read.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1250700,
+          "endMilliseconds": 1253070
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#return-and-store-a-death-decision"
+      }
+    },
+    {
+      "id": "TP-099",
+      "startMilliseconds": 1274480,
+      "endMilliseconds": 1278630,
+      "kind": "explanation",
+      "text": "Calling the method yields a true or false value from the instance method, and the program then proceeds with the first instruction of that method.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1274480,
+          "endMilliseconds": 1278630
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#return-and-store-a-death-decision"
+      }
+    },
+    {
+      "id": "TP-100",
+      "startMilliseconds": 1278630,
+      "endMilliseconds": 1288570,
+      "kind": "explanation",
+      "text": "When an expression is evaluated its result replaces the expression itself, and that result is what gets assigned to the variable on the right-hand side of the assignment.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1278630,
+          "endMilliseconds": 1288570
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#return-and-store-a-death-decision"
+      }
+    },
+    {
+      "id": "TP-101",
+      "startMilliseconds": 1321640,
+      "endMilliseconds": 1332360,
+      "kind": "scope_boundary",
+      "text": "Instance methods declared inside a type may be written in a different place in the file instead of inline, which is left for the next demonstration.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1321640,
+          "endMilliseconds": 1332360
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-behavior-into-an-extension-method"
+      }
+    },
+    {
+      "id": "TP-102",
+      "startMilliseconds": 1325120,
+      "endMilliseconds": 1335640,
+      "kind": "fact",
+      "text": "Methods inside a class can also be declared outside that class in a separate file, which keeps the class focused on its own data.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1325120,
+          "endMilliseconds": 1335640
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-behavior-into-an-extension-method"
+      }
+    },
+    {
+      "id": "TP-103",
+      "startMilliseconds": 1335640,
+      "endMilliseconds": 1346390,
+      "kind": "reason",
+      "text": "A method invoked through an object reference like object.Method cannot be an instance method, so it has to be declared static.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1335640,
+          "endMilliseconds": 1346390
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-behavior-into-an-extension-method"
+      }
+    },
+    {
+      "id": "TP-104",
+      "startMilliseconds": 1346390,
+      "endMilliseconds": 1358790,
+      "kind": "explanation",
+      "text": "Because a static method has no access to instance state, the class's static values must be passed in as parameters, which returns us to the earlier static-method form.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1346390,
+          "endMilliseconds": 1358790
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-behavior-into-an-extension-method"
+      }
+    },
+    {
+      "id": "TP-105",
+      "startMilliseconds": 1358790,
+      "endMilliseconds": 1370960,
+      "kind": "fact",
+      "text": "A static method may be declared in another file or another class, but the object.Method call syntax does not work for it in C# as currently taught.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1358790,
+          "endMilliseconds": 1370960
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-behavior-into-an-extension-method"
+      }
+    },
+    {
+      "id": "TP-106",
+      "startMilliseconds": 1370960,
+      "endMilliseconds": 1391850,
+      "kind": "explanation",
+      "text": "Writing this as the first parameter of a method is what makes the object.Method call syntax legal for values of that type.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1370960,
+          "endMilliseconds": 1391850
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-behavior-into-an-extension-method"
+      }
+    },
+    {
+      "id": "TP-107",
+      "startMilliseconds": 1391850,
+      "endMilliseconds": 1421120,
+      "kind": "edge_case",
+      "text": "A method whose first parameter is this may only be placed in a static class, otherwise the compiler rejects it with a must be in a static class error.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1391850,
+          "endMilliseconds": 1420120
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1411799,
+          "endMilliseconds": 1421120
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-behavior-into-an-extension-method"
+      }
+    },
+    {
+      "id": "TP-108",
+      "startMilliseconds": 1421120,
+      "endMilliseconds": 1431000,
+      "kind": "fact",
+      "text": "Static classes are used constantly in modern C#, especially when configuring systems with the builder pattern, which is one of the most useful patterns.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1421120,
+          "endMilliseconds": 1431000
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-behavior-into-an-extension-method"
+      }
+    },
+    {
+      "id": "TP-109",
+      "startMilliseconds": 1431000,
+      "endMilliseconds": 1435440,
+      "kind": "scope_boundary",
+      "text": "The builder pattern itself is deliberately postponed to a later part of the course.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1431000,
+          "endMilliseconds": 1435440
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-behavior-into-an-extension-method"
+      }
+    },
+    {
+      "id": "TP-110",
+      "startMilliseconds": 1439740,
+      "endMilliseconds": 1451980,
+      "kind": "scope_boundary",
+      "text": "The question of why to use extension methods when instance methods exist is deferred until the encapsulation material is studied.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1439740,
+          "endMilliseconds": 1451980
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#move-behavior-into-an-extension-method"
+      }
+    },
+    {
+      "id": "TP-111",
+      "startMilliseconds": 1451980,
+      "endMilliseconds": 1463430,
+      "kind": "fact",
+      "text": "The special top-level main file does not exist as code by itself; the compiler rewrites it into ordinary classes and static methods.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1451980,
+          "endMilliseconds": 1463430
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-the-generated-entry-point"
+      }
+    },
+    {
+      "id": "TP-112",
+      "startMilliseconds": 1463430,
+      "endMilliseconds": 1488540,
+      "kind": "explanation",
+      "text": "The compiler wraps the main file in a class named Program by default and puts a public static int Main method into it that accepts the command-line argument array.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1463430,
+          "endMilliseconds": 1488540
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-the-generated-entry-point"
+      }
+    },
+    {
+      "id": "TP-113",
+      "startMilliseconds": 1485840,
+      "endMilliseconds": 1493039,
+      "kind": "scope_boundary",
+      "text": "The command-line arguments passed to Main are deliberately left for a later discussion.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1485840,
+          "endMilliseconds": 1493039
+        },
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1488540,
+          "endMilliseconds": 1493039
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-the-generated-entry-point"
+      }
+    },
+    {
+      "id": "TP-114",
+      "startMilliseconds": 1493039,
+      "endMilliseconds": 1506700,
+      "kind": "explanation",
+      "text": "Everything you write in the top-level main file is placed by the compiler before the generated type declarations, so your own type declarations appear above it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1493039,
+          "endMilliseconds": 1506700
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-the-generated-entry-point"
+      }
+    },
+    {
+      "id": "TP-115",
+      "startMilliseconds": 1506700,
+      "endMilliseconds": 1522670,
+      "kind": "edge_case",
+      "text": "Types may also be declared inside other types, and the compiler may do this automatically when generating your program structure.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1506700,
+          "endMilliseconds": 1522670
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-the-generated-entry-point"
+      }
+    },
+    {
+      "id": "TP-116",
+      "startMilliseconds": 1522670,
+      "endMilliseconds": 1528500,
+      "kind": "scope_boundary",
+      "text": "Whatever else the compiler appends at the end of the generated file is explicitly postponed to a later explanation.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1522670,
+          "endMilliseconds": 1528500
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-the-generated-entry-point"
+      }
+    },
+    {
+      "id": "TP-117",
+      "startMilliseconds": 1528500,
+      "endMilliseconds": 1541150,
+      "kind": "explanation",
+      "text": "The static functions declared in the main file end up after all of your own code and before the generated type declaration, which is why they behave as if they belonged to that generated class.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1528500,
+          "endMilliseconds": 1541150
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#understand-the-generated-entry-point"
+      }
+    },
+    {
+      "id": "TP-118",
+      "startMilliseconds": 1541150,
+      "endMilliseconds": 1552470,
+      "kind": "fact",
+      "text": "A static local function can be declared at the end of Main even after the return statement, because a declaration is not executed code and does not change the exit flow.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1541150,
+          "endMilliseconds": 1552470
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-local-function-dependencies-explicit"
+      }
+    },
+    {
+      "id": "TP-119",
+      "startMilliseconds": 1552470,
+      "endMilliseconds": 1568399,
+      "kind": "explanation",
+      "text": "Declaring a function inside another function means it can only be called from inside the function where it was declared.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1552470,
+          "endMilliseconds": 1568399
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-local-function-dependencies-explicit"
+      }
+    },
+    {
+      "id": "TP-120",
+      "startMilliseconds": 1560440,
+      "endMilliseconds": 1573190,
+      "kind": "fact",
+      "text": "A function declared inside Main is visible only inside Main and simply does not exist outside of it.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1560440,
+          "endMilliseconds": 1573190
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-local-function-dependencies-explicit"
+      }
+    },
+    {
+      "id": "TP-121",
+      "startMilliseconds": 1573190,
+      "endMilliseconds": 1591350,
+      "kind": "reason",
+      "text": "If you omit static on a local function declared inside another function, it captures by default all local variables of the enclosing function.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1573190,
+          "endMilliseconds": 1591350
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-local-function-dependencies-explicit"
+      }
+    },
+    {
+      "id": "TP-122",
+      "startMilliseconds": 1591350,
+      "endMilliseconds": 1611410,
+      "kind": "edge_case",
+      "text": "The compiler reports that the local function already sees a variable with the given name, and if the first parameter is removed the name would silently refer to Main's local variable instead of the parameter.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1591350,
+          "endMilliseconds": 1611410
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-local-function-dependencies-explicit"
+      }
+    },
+    {
+      "id": "TP-123",
+      "startMilliseconds": 1611410,
+      "endMilliseconds": 1619919,
+      "kind": "reason",
+      "text": "Always write static before a local function's name, otherwise you could accidentally reference the enclosing local variable instead of your parameter and break the program.",
+      "evidence": [
+        {
+          "type": "transcript_range",
+          "startMilliseconds": 1611410,
+          "endMilliseconds": 1619919
+        }
+      ],
+      "englishCoverage": {
+        "status": "covered",
+        "anchor": "#keep-local-function-dependencies-explicit"
+      }
+    }
+  ]
+}
