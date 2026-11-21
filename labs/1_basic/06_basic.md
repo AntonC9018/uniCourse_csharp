@@ -2,7 +2,7 @@
 slug: ru/labs/basic/basic
 ---
 <!-- course-site-backlink:start -->
-[Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/basic/basic/)
+[Этот урок на сайте](https://csharp.curmanschii.top/ru/labs/basic/basic/)
 <!-- course-site-backlink:end -->
 # Элементарные техники программирования
 

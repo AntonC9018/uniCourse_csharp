@@ -2,7 +2,7 @@
 slug: ru/labs/design/dependenices
 ---
 <!-- course-site-backlink:start -->
-[Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/design/dependenices/)
+[Этот урок на сайте](https://csharp.curmanschii.top/ru/labs/design/dependenices/)
 <!-- course-site-backlink:end -->
 # Зависимости абстракций
 

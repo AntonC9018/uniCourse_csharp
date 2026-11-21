@@ -2,7 +2,7 @@
 slug: ru/labs/basic/functions
 ---
 <!-- course-site-backlink:start -->
-[Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/basic/functions/)
+[Этот урок на сайте](https://csharp.curmanschii.top/ru/labs/basic/functions/)
 <!-- course-site-backlink:end -->
 # Функции с параметрами
 

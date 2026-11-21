@@ -2,7 +2,7 @@
 slug: ru/labs/basic/bool
 ---
 <!-- course-site-backlink:start -->
-[Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/basic/bool/)
+[Этот урок на сайте](https://csharp.curmanschii.top/ru/labs/basic/bool/)
 <!-- course-site-backlink:end -->
 # Логические выражения и операторы
 

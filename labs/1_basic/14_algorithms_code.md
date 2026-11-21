@@ -2,7 +2,7 @@
 slug: ru/labs/basic/algorithms-code
 ---
 <!-- course-site-backlink:start -->
-[Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/basic/algorithms-code/)
+[Этот урок на сайте](https://csharp.curmanschii.top/ru/labs/basic/algorithms-code/)
 <!-- course-site-backlink:end -->
 # Реализация алгоритмов в языке программирования
 
