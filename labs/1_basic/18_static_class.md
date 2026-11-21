@@ -2,7 +2,7 @@
 slug: ru/labs/basic/static-class
 ---
 <!-- course-site-backlink:start -->
-[Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/basic/static-class/)
+[Этот урок на сайте](https://csharp.curmanschii.top/ru/labs/basic/static-class/)
 <!-- course-site-backlink:end -->
 # static классы
 

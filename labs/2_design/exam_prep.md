@@ -2,7 +2,7 @@
 slug: ru/labs/design/exam-prep
 ---
 <!-- course-site-backlink:start -->
-[Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/design/exam-prep/)
+[Этот урок на сайте](https://csharp.curmanschii.top/ru/labs/design/exam-prep/)
 <!-- course-site-backlink:end -->
 # Подготовка к экзамену
 

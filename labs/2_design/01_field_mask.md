@@ -2,7 +2,7 @@
 slug: ru/labs/design/field-mask
 ---
 <!-- course-site-backlink:start -->
-[Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/design/field-mask/)
+[Этот урок на сайте](https://csharp.curmanschii.top/ru/labs/design/field-mask/)
 <!-- course-site-backlink:end -->
 # Field Mask
 

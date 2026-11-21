@@ -2,7 +2,7 @@
 slug: ru/labs/advanced/di-container
 ---
 <!-- course-site-backlink:start -->
-[Этот урок на сайте](https://AntonC9018.github.io/uniCourse_csharp/ru/labs/advanced/di-container/)
+[Этот урок на сайте](https://csharp.curmanschii.top/ru/labs/advanced/di-container/)
 <!-- course-site-backlink:end -->
 # Создание DI контейнера
 
